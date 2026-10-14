@@ -1,0 +1,865 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ajustes v3: error de la encuesta, serie C, imputación y posición &#8212; Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05_ajustes_v3';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Datos sospechosos y pendientes" href="07_datos_sospechosos.html" />
+    <link rel="prev" title="Metodología" href="04_metodologia.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_fuentes.html">Fuentes, decisiones y glosario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ajustes v3: error de la encuesta, serie C, imputación y posición</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/mcarocantillo/tesis-datos-barranquilla" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/05_ajustes_v3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ajustes v3: error de la encuesta, serie C, imputación y posición</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efecto-de-diseno-de-la-ecv-2024">2. Efecto de diseño de la ECV 2024</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-de-tenencia-de-a-c-20152027-variante-c">3. Serie de tenencia de A/C 2015–2027 (variante C)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidad-de-a-c-por-vivienda-del-catastro-variante-c">4. Probabilidad de A/C por vivienda del catastro (variante C)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-frente-a-la-cubierta-lectura-correcta">5. Posición frente a la cubierta: lectura correcta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otros-ajustes">6. Otros ajustes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ajustes-v3-error-de-la-encuesta-serie-c-imputacion-y-posicion">
+<h1>Ajustes v3: error de la encuesta, serie C, imputación y posición<a class="headerlink" href="#ajustes-v3-error-de-la-encuesta-serie-c-imputacion-y-posicion" title="Link to this heading">#</a></h1>
+<section id="efecto-de-diseno-de-la-ecv-2024">
+<h2>2. Efecto de diseño de la ECV 2024<a class="headerlink" href="#efecto-de-diseno-de-la-ecv-2024" title="Link to this heading">#</a></h2>
+<p>El error real de la tenencia de A/C es 1,5 veces mayor en varianza que el de un muestreo al azar hogar por hogar. La ECV no sortea hogares sueltos: sortea segmentos (grupos de manzanas) y encuesta varios hogares en cada uno, y los vecinos se parecen entre sí.</p>
+<p><strong>Cómo se calculó.</strong> El archivo «Variables diseño muestral» de la ECV 2024 trae el SEGMENTO de cada vivienda: 76 segmentos en Barranquilla, todos en un mismo estrato de diseño. Para una proporción ponderada p = Σ w·y / Σ w se usó la linealización de Taylor, con segmentos tratados como sorteados con reemplazo:</p>
+<div class="math notranslate nohighlight">
+\[z_i = \frac{w_i\,(y_i - \hat p)}{\sum_j w_j}, \qquad \widehat{V}(\hat p) = \frac{C}{C-1} \sum_{c=1}^{C} \Big(Z_c - \bar Z\Big)^2, \quad Z_c = \sum_{i \in c} z_i\]</div>
+<p>donde C = 76 segmentos. Para un estrato se usa la misma fórmula con y y w iguales a cero fuera del estrato (estimación por dominio). El efecto de diseño es deff = V(conglomerados) / V(muestreo simple), con V(muestreo simple) = p(1 − p)/n. Para la ciudad se aplicó a la suma postestratificada Σ W_e p_e, con W_e = suscriptores del SUI en diciembre de 2024.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tenencia de A/C 2024</p></th>
+<th class="head"><p>n hogares</p></th>
+<th class="head"><p>Segmentos</p></th>
+<th class="head"><p>p</p></th>
+<th class="head"><p>IC95 muestreo simple (pp)</p></th>
+<th class="head"><p>IC95 con diseño (pp)</p></th>
+<th class="head"><p>deff</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Estrato 1</p></td>
+<td><p>250</p></td>
+<td><p>26</p></td>
+<td><p>12,4 %</p></td>
+<td><p>± 4,1</p></td>
+<td><p>± 4,9</p></td>
+<td><p>1,43</p></td>
+</tr>
+<tr class="row-odd"><td><p>Estrato 2</p></td>
+<td><p>161</p></td>
+<td><p>22</p></td>
+<td><p>34,2 %</p></td>
+<td><p>± 7,3</p></td>
+<td><p>± 9,3</p></td>
+<td><p>1,60</p></td>
+</tr>
+<tr class="row-even"><td><p>Estrato 3</p></td>
+<td><p>125</p></td>
+<td><p>23</p></td>
+<td><p>45,8 %</p></td>
+<td><p>± 8,7</p></td>
+<td><p>± 11,2</p></td>
+<td><p>1,64</p></td>
+</tr>
+<tr class="row-odd"><td><p>Estrato 4</p></td>
+<td><p>52</p></td>
+<td><p>12</p></td>
+<td><p>78,2 %</p></td>
+<td><p>± 11,2</p></td>
+<td><p>± 10,2</p></td>
+<td><p>0,83</p></td>
+</tr>
+<tr class="row-even"><td><p>Estrato 5</p></td>
+<td><p>38</p></td>
+<td><p>6</p></td>
+<td><p>81,3 %</p></td>
+<td><p>± 12,4</p></td>
+<td><p>± 13,9</p></td>
+<td><p>1,25</p></td>
+</tr>
+<tr class="row-odd"><td><p>Estrato 6</p></td>
+<td><p>20</p></td>
+<td><p>4</p></td>
+<td><p>100 %</p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>Ciudad (postestratificada)</p></td>
+<td><p>646</p></td>
+<td><p>76</p></td>
+<td><p>41,4 %</p></td>
+<td><p>± 3,3</p></td>
+<td><p>± 4,1</p></td>
+<td><p>1,54</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Para el ventilador el efecto es casi nulo (deff 0,98 en la ciudad); para la nevera es 1,45.</p></li>
+<li><p>Las olas 2018–2023 y 2025 no se procesaron con su diseño; se les aplica deff = 1,5 dividiendo su n por 1,5.</p></li>
+<li><p>El estrato 4 sale con deff &lt; 1 por azar: con 12 segmentos ese cálculo es inestable.</p></li>
+</ul>
+</section>
+<section id="serie-de-tenencia-de-a-c-20152027-variante-c">
+<h2>3. Serie de tenencia de A/C 2015–2027 (variante C)<a class="headerlink" href="#serie-de-tenencia-de-a-c-20152027-variante-c" title="Link to this heading">#</a></h2>
+<p>Con la variante C, la ciudad pasa de 31,3 % de hogares con A/C en 2015 a 41,2 % en 2024 y 45,4 % en 2027. Se eligió porque la tendencia entre olas solo es clara en los estratos 1 y 3, y la variante C no obliga a decidir si existe en los demás.</p>
+<p><strong>Datos.</strong> Tasa ponderada de hogares con A/C (P1077S11, factor FEX_C) por estrato en las olas 2018, 2019, 2021, 2022, 2023, 2024 y 2025 de la ECV en Barranquilla. La ola 2020 se excluye (encuesta en parte telefónica, año fuera de la calibración); 2015, 2016 y 2017 no traen municipio.</p>
+<p><strong>Dos ajustes por estrato</strong> (modelo lineal generalizado binomial, enlace logit, peso = n de hogares):</p>
+<div class="math notranslate nohighlight">
+\[\text{A:}\ \operatorname{logit} p_{e,t} = b_{0e} + b_{1e}\,(t - 2021), \qquad \text{B:}\ \operatorname{logit} p_{e,t} = b_{0e} \ \text{(salvo E1 y E3, que conservan la tendencia)}\]</div>
+<ul class="simple">
+<li><p>A: tendencia en los seis estratos y n sin corregir (la serie anterior).</p></li>
+<li><p>B: tendencia solo donde es significativa, E1 (p = 0,03) y E3 (p = 0,007); nivel constante en E2, E4, E5 y E6 (p de la tendencia entre 0,39 y 0,53); n efectivo = n / 1,5 por el efecto de diseño.</p></li>
+<li><p>En ambos, la covarianza de los coeficientes se multiplica por la sobredispersión φ = χ² de Pearson / grados de libertad (mínimo 1); para cada año, media m = logística(η) y desviación DE = m(1 − m)·EE(η) (método delta).</p></li>
+</ul>
+<p><strong>Mezcla C.</strong> Mitad A y mitad B, para cada estrato y año:</p>
+<div class="math notranslate nohighlight">
+\[m_C = \tfrac{1}{2}(m_A + m_B), \qquad \mathrm{DE}_C^2 = \tfrac{1}{2}(\mathrm{DE}_A^2 + \mathrm{DE}_B^2) + \tfrac{1}{4}(m_A - m_B)^2\]</div>
+<p>El último término agrega la distancia entre A y B a la incertidumbre. La Beta de cada celda se obtiene por momentos: α = m·k, β = (1 − m)·k, con k = m(1 − m)/DE² − 1. La ciudad es Σ W_e m_e con los suscriptores del SUI de diciembre de cada año (2026–2027 con los de 2025) y DE = √Σ W_e² DE_e².</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tenencia C, % (DE)</p></th>
+<th class="head"><p>E1</p></th>
+<th class="head"><p>E2</p></th>
+<th class="head"><p>E3</p></th>
+<th class="head"><p>E4</p></th>
+<th class="head"><p>E5</p></th>
+<th class="head"><p>E6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2015*</p></td>
+<td><p>5,0 (1,9)</p></td>
+<td><p>25,3 (4,7)</p></td>
+<td><p>32,7 (4,6)</p></td>
+<td><p>68,1 (13,0)</p></td>
+<td><p>83,1 (9,8)</p></td>
+<td><p>95,5 (5,1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2017*</p></td>
+<td><p>6,3 (1,8)</p></td>
+<td><p>26,0 (3,6)</p></td>
+<td><p>36,0 (3,6)</p></td>
+<td><p>70,2 (9,1)</p></td>
+<td><p>84,2 (6,8)</p></td>
+<td><p>96,5 (2,5)</p></td>
+</tr>
+<tr class="row-even"><td><p>2019</p></td>
+<td><p>7,8 (1,5)</p></td>
+<td><p>26,7 (2,7)</p></td>
+<td><p>39,5 (2,5)</p></td>
+<td><p>72,2 (6,0)</p></td>
+<td><p>85,2 (4,5)</p></td>
+<td><p>97,2 (1,4)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2021</p></td>
+<td><p>9,7 (1,3)</p></td>
+<td><p>27,4 (2,0)</p></td>
+<td><p>43,0 (1,8)</p></td>
+<td><p>74,0 (4,8)</p></td>
+<td><p>86,1 (3,2)</p></td>
+<td><p>97,6 (1,3)</p></td>
+</tr>
+<tr class="row-even"><td><p>2024</p></td>
+<td><p>13,2 (2,0)</p></td>
+<td><p>28,6 (2,7)</p></td>
+<td><p>48,5 (2,6)</p></td>
+<td><p>76,4 (6,6)</p></td>
+<td><p>87,4 (3,7)</p></td>
+<td><p>98,1 (1,5)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025</p></td>
+<td><p>14,7 (2,7)</p></td>
+<td><p>29,0 (3,3)</p></td>
+<td><p>50,3 (3,2)</p></td>
+<td><p>77,2 (7,5)</p></td>
+<td><p>87,7 (4,2)</p></td>
+<td><p>98,2 (1,6)</p></td>
+</tr>
+<tr class="row-even"><td><p>2027*</p></td>
+<td><p>17,9 (4,5)</p></td>
+<td><p>29,8 (4,7)</p></td>
+<td><p>54,0 (4,5)</p></td>
+<td><p>78,5 (9,2)</p></td>
+<td><p>88,4 (5,2)</p></td>
+<td><p>98,3 (1,6)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>* años sin ola de la ECV. Todos los años 2015–2027, con α y β, están en <code class="docutils literal notranslate"><span class="pre">Tenencia_AC_sensibilidad_AB.csv</span></code> (filas con variante = C). Ejemplo, 2024: E1 Beta(37,3; 244,3), E4 Beta(30,7; 9,5).</p>
+<p>La diferencia entre A y B en la ciudad llega a 2,9 puntos en 2015 y se reduce a 0,1 en 2021, el centro de los datos. La ciudad con C:</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/tenencia_ciudad_variantes.png"><img alt="_images/tenencia_ciudad_variantes.png" src="_images/tenencia_ciudad_variantes.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 3 </span><span class="caption-text">ECV 2018–2025 (sin 2020) y suscriptores SUI de diciembre.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="probabilidad-de-a-c-por-vivienda-del-catastro-variante-c">
+<h2>4. Probabilidad de A/C por vivienda del catastro (variante C)<a class="headerlink" href="#probabilidad-de-a-c-por-vivienda-del-catastro-variante-c" title="Link to this heading">#</a></h2>
+<p>Con la variante C, 40,7 % de las 332.718 viviendas del catastro tendría A/C en 2024 (unas 135.400) y 35,7 % en 2019. Con la variante A daba 41,3 % y 35,2 %.</p>
+<p><strong>Procedimiento</strong> (igual al de la variante A; solo cambia la tasa objetivo):</p>
+<ol class="arabic simple">
+<li><p>Tasa objetivo p_e,t = media de la variante C para el estrato e y el año t.</p></li>
+<li><p>Dentro del estrato, P(A/C | techo) = logística(a_e + b_techo), con b del modelo M2 de la ECV 2024 (techo + estrato): concreto 0; asbesto-cemento −1,061; zinc u otro −1,954.</p></li>
+<li><p>Techo de cada vivienda: concreto si está en un edificio de 4 o más pisos (uso catastral «Apartamentos»); si no, la mezcla de techos de la ECV 2024 del estrato, descontando el concreto que ya ocupan los edificios altos.</p></li>
+<li><p>El intercepto a_e se busca numéricamente (método de Brent) para que la media de las viviendas del catastro del estrato sea exactamente p_e,t.</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>2024, variante C</p></th>
+<th class="head"><p>E1</p></th>
+<th class="head"><p>E2</p></th>
+<th class="head"><p>E3</p></th>
+<th class="head"><p>E4</p></th>
+<th class="head"><p>E5</p></th>
+<th class="head"><p>E6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tasa objetivo</p></td>
+<td><p>13,2 %</p></td>
+<td><p>28,6 %</p></td>
+<td><p>48,5 %</p></td>
+<td><p>76,4 %</p></td>
+<td><p>87,4 %</p></td>
+<td><p>98,1 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Viviendas en edificio de 4+ pisos</p></td>
+<td><p>29,5 %</p></td>
+<td><p>7,3 %</p></td>
+<td><p>33,9 %</p></td>
+<td><p>69,4 %</p></td>
+<td><p>73,8 %</p></td>
+<td><p>84,2 %</p></td>
+</tr>
+<tr class="row-even"><td><p>P(A/C), edificio de 4+ pisos</p></td>
+<td><p>23,9 %</p></td>
+<td><p>39,9 %</p></td>
+<td><p>63,3 %</p></td>
+<td><p>79,0 %</p></td>
+<td><p>89,2 %</p></td>
+<td><p>98,4 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>P(A/C), vivienda de hasta 3 pisos</p></td>
+<td><p>8,8 %</p></td>
+<td><p>27,7 %</p></td>
+<td><p>40,9 %</p></td>
+<td><p>70,7 %</p></td>
+<td><p>82,3 %</p></td>
+<td><p>96,6 %</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ciudad según el catastro, variante C (% de viviendas con A/C): 2015 32,3 · 2016 33,1 · 2017 34,0 · 2018 34,8 · 2019 35,7 · 2020 36,7 · 2021 37,6 · 2022 38,6 · 2023 39,6 · 2024 40,7 · 2025 41,7 · 2026 42,9 · 2027 44,0. Difiere un poco de la serie de la sección 3 porque aquí cada estrato pesa por sus viviendas del catastro y allá por sus suscriptores del SUI.</p>
+<ul class="simple">
+<li><p>El estrato 1 queda forzado a la tasa de la ECV. Sin forzar, su P(A/C) en el catastro subiría unos 2 puntos (sensibilidad registrada).</p></li>
+<li><p>La mezcla de techos es la de 2024 en todos los años: cambia el reparto dentro del estrato, no su total.</p></li>
+<li><p>Archivo: <code class="docutils literal notranslate"><span class="pre">Catastro_PAC_por_anio_estrato_tipo_C.csv</span></code> (unir por estrato y tipo de edificio).</p></li>
+</ul>
+</section>
+<section id="posicion-frente-a-la-cubierta-lectura-correcta">
+<h2>5. Posición frente a la cubierta: lectura correcta<a class="headerlink" href="#posicion-frente-a-la-cubierta-lectura-correcta" title="Link to this heading">#</a></h2>
+<p>La mayor parte de la diferencia de A/C entre posiciones se debe al estrato, no a la cubierta. Las casas con cubierta propia se concentran en los estratos 1 y 2, y los apartamentos intermedios en torres de estratos 4 a 6.</p>
+<p><strong>Cómo se separó.</strong> Para cada posición se calculó la P(A/C) media de 2024 (variante C) tal como sale del catastro y estandarizada: el promedio de la P(A/C) de esa posición dentro de cada estrato, ponderado por la mezcla de estratos de toda la ciudad. Si la posición no importara, las cuatro cifras estandarizadas serían iguales.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Posición (2024, variante C)</p></th>
+<th class="head"><p>P(A/C) tal como sale</p></th>
+<th class="head"><p>P(A/C) estandarizada por estrato</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Casa (suelo y cubierta propia)</p></td>
+<td><p>27,3 %</p></td>
+<td><p>36,2 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Primer piso con vivienda encima</p></td>
+<td><p>41,5 %</p></td>
+<td><p>42,4 %</p></td>
+</tr>
+<tr class="row-even"><td><p>Último piso (bajo cubierta)</p></td>
+<td><p>50,1 %</p></td>
+<td><p>43,2 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Piso intermedio</p></td>
+<td><p>63,8 %</p></td>
+<td><p>49,6 %</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>El rango baja de 37 a 13 puntos. Esos 13 puntos tampoco son un dato observado: salen de dos supuestos de la imputación, el efecto del techo del modelo M2 de 2024 y el techo de concreto para todo edificio de 4 o más pisos. El catastro no registra el material del techo ni el A/C.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/pac_posicion.png"><img alt="_images/pac_posicion.png" src="_images/pac_posicion.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 4 </span><span class="caption-text">P(A/C) media de 2024 por posición, variante C.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Redacción sugerida para la tesis:</strong> «Tras la imputación, las casas con cubierta propia quedan con la menor probabilidad de A/C (27 % frente a 64 % en los pisos intermedios). La mayor parte de esa diferencia se debe a que se concentran en los estratos 1 y 2; el resto (unos 13 puntos a igual estrato) refleja el supuesto de techo liviano en las viviendas de hasta tres pisos y no una observación directa.»</p>
+</section>
+<section id="otros-ajustes">
+<h2>6. Otros ajustes<a class="headerlink" href="#otros-ajustes" title="Link to this heading">#</a></h2>
+<p><strong>Estacionalidad del SUI con 2015–2025.</strong> El patrón no cambia al agregar 2015–2018. Alza = promedio de agosto y septiembre / promedio de febrero y marzo − 1, por año con al menos 10 meses sin bandera, luego promedio entre años.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Alza ago.–sep. vs feb.–mar.</p></th>
+<th class="head"><p>E1</p></th>
+<th class="head"><p>E2</p></th>
+<th class="head"><p>E3</p></th>
+<th class="head"><p>E4</p></th>
+<th class="head"><p>E5</p></th>
+<th class="head"><p>E6</p></th>
+<th class="head"><p>Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2015–2018</p></td>
+<td><p>+10,4 %</p></td>
+<td><p>+17,1 %</p></td>
+<td><p>+22,8 %</p></td>
+<td><p>+28,8 %</p></td>
+<td><p>+28,0 %</p></td>
+<td><p>+25,3 %</p></td>
+<td><p>+19,1 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>2019–2025</p></td>
+<td><p>+11,1 %</p></td>
+<td><p>+16,2 %</p></td>
+<td><p>+23,9 %</p></td>
+<td><p>+27,6 %</p></td>
+<td><p>+29,8 %</p></td>
+<td><p>+28,9 %</p></td>
+<td><p>+19,0 %</p></td>
+</tr>
+<tr class="row-even"><td><p>2015–2025</p></td>
+<td><p>+10,9 %</p></td>
+<td><p>+16,5 %</p></td>
+<td><p>+23,5 %</p></td>
+<td><p>+28,0 %</p></td>
+<td><p>+29,1 %</p></td>
+<td><p>+27,6 %</p></td>
+<td><p>+19,0 %</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>ECV 2015</strong> (catálogo 419 del DANE). Trae departamento pero no municipio, así que no sirve para Barranquilla. Sí tiene el módulo de uso de energéticos con el tipo y las horas de A/C y ventilador (P5523–P5526), igual que la de 2019, pero solo a nivel del Atlántico.</p>
+<p><strong>SUI, estrato 3, diciembre de 2024.</strong> El consumo es normal (265 kWh por suscriptor), pero el valor facturado equivale a 449 COP/kWh, frente a 676–858 en los meses vecinos. Lo más probable es un crédito o una refacturación después de octubre de 2024, mes en que no se reportó consumo. Ese mes se usa para consumo y no para tarifa. Noviembre de 2024 (todos los estratos) puede incluir consumo atrasado de octubre. Ambos quedan marcados en la columna nueva <code class="docutils literal notranslate"><span class="pre">bandera_revision</span></code> del archivo del SUI.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04_metodologia.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Metodología</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07_datos_sospechosos.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Datos sospechosos y pendientes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efecto-de-diseno-de-la-ecv-2024">2. Efecto de diseño de la ECV 2024</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-de-tenencia-de-a-c-20152027-variante-c">3. Serie de tenencia de A/C 2015–2027 (variante C)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidad-de-a-c-por-vivienda-del-catastro-variante-c">4. Probabilidad de A/C por vivienda del catastro (variante C)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-frente-a-la-cubierta-lectura-correcta">5. Posición frente a la cubierta: lectura correcta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otros-ajustes">6. Otros ajustes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por María Carolina Cantillo Orozco
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

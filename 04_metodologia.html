@@ -1,0 +1,1071 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Metodología &#8212; Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_metodologia';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Ajustes v3: error de la encuesta, serie C, imputación y posición" href="05_ajustes_v3.html" />
+    <link rel="prev" title="Resultados" href="03_resultados.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_fuentes.html">Fuentes, decisiones y glosario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Ajustes v3: error de la encuesta, serie C, imputación y posición</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/mcarocantillo/tesis-datos-barranquilla" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/04_metodologia.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Metodología</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-cada-fuente">Procesamiento de cada fuente</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principios-generales">1. Principios generales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecv-2019-dane-catalogo-678">2. ECV 2019 (DANE, catálogo 678)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecv-2024-dane-catalogo-861">3. ECV 2024 (DANE, catálogo 861)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enut-20242025-dane-catalogo-910">4. ENUT 2024–2025 (DANE, catálogo 910)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geih-2024-dane-catalogo-819">5. GEIH 2024 (DANE, catálogo 819)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sui-superservicios">6. SUI (Superservicios)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculos-que-combinan-fuentes">7. Cálculos que combinan fuentes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representatividad-por-estrato">7.1 Representatividad por estrato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penetracion-de-ac-en-la-ciudad-post-estratificacion">7.2 Penetración de AC en la ciudad (post-estratificación)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chequeo-del-numero-de-hogares">7.3 Chequeo del número de hogares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cota-de-consumo-de-ac-supuesto-no-medido">7.4 Cota de consumo de AC (supuesto, no medido)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gasto-con-y-sin-ac-y-cruces-de-tenencia">7.5 Gasto con y sin AC y cruces de tenencia</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-anual-regresion-e-imputacion">Serie anual, regresión e imputación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postestratificacion-anual-postestrat-anual-py-postestrat-xlsx-py">5.1 Postestratificación anual (<code class="docutils literal notranslate"><span class="pre">postestrat_anual.py</span></code>, <code class="docutils literal notranslate"><span class="pre">postestrat_xlsx.py</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recalculo-de-tablas-ecv-2024-ecv24-tablas-py">5.2 Recalculo de tablas ECV 2024 (<code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-logistica-ecv-2024-logit-ecv24-py">5.3 Regresión logística ECV 2024 (<code class="docutils literal notranslate"><span class="pre">logit_ecv24.py</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-suavizada-y-beta-serie-suavizada-py">5.4 Serie suavizada y Beta (<code class="docutils literal notranslate"><span class="pre">serie_suavizada.py</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-p-ac-al-catastro-por-ano-imputacion-catastro-anual-py-suavizada-xlsx-py">5.5 Imputación de P(AC) al catastro por año (<code class="docutils literal notranslate"><span class="pre">imputacion_catastro_anual.py</span></code>, <code class="docutils literal notranslate"><span class="pre">suavizada_xlsx.py</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correcciones-a-la-metodologia-del-procesamiento-de-fuentes">Correcciones a la metodología del procesamiento de fuentes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="metodologia">
+<h1>Metodología<a class="headerlink" href="#metodologia" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Las cifras de la ECV 2024 de este capítulo están corregidas (709 hogares). La serie de tenencia que usa el modelo y el efecto de diseño están en «Ajustes v3».</p>
+</div>
+<section id="procesamiento-de-cada-fuente">
+<h2>Procesamiento de cada fuente<a class="headerlink" href="#procesamiento-de-cada-fuente" title="Link to this heading">#</a></h2>
+<p>Esta pestaña explica, paso a paso, cómo se obtuvo cada cifra del informe: qué archivos se usaron, cómo se unieron, qué filtros se aplicaron, cómo se construyó cada variable y con qué fórmula se calculó cada estadística. Todo se procesó en Python (pandas) a partir de los microdatos originales del DANE y de los reportes del SUI.</p>
+<section id="principios-generales">
+<h3>1. Principios generales<a class="headerlink" href="#principios-generales" title="Link to this heading">#</a></h3>
+<p>Toda cifra de encuesta del informe es <strong>ponderada</strong> con el factor de expansión de la encuesta, salvo que se diga lo contrario; los tamaños de muestra (n) se reportan <strong>sin ponderar</strong>.</p>
+<p><strong>Factor de expansión (w).</strong> Cada registro representa w hogares o personas de la población: FEX_C en ECV y ENUT, FEX_C18 en GEIH. En la GEIH cada mes está expandido a la población completa, así que al juntar 12 meses se usa w = FEX_C18 / 12. En la ECV 2019 el factor viene con coma decimal («364,91») y se convirtió a número.</p>
+<p><strong>Fórmulas usadas</strong> (sumas sobre los registros i del grupo analizado, por ejemplo un estrato):</p>
+<div class="math notranslate nohighlight">
+\[\text{Proporción ponderada: } \hat p = \frac{\sum_i w_i \, \mathbb{1}[\text{condición}_i]}{\sum_i w_i}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{Media ponderada: } \bar x = \frac{\sum_i w_i x_i}{\sum_i w_i} \quad (\text{solo registros con } x_i \text{ válido})\]</div>
+<ul class="simple">
+<li><p><strong>Mediana y percentiles ponderados:</strong> se ordenan los registros por x, se acumulan los pesos y se toma el primer valor cuyo peso acumulado alcanza 50 % (o 25 %, 75 %, 90 %) del total.</p></li>
+<li><p><strong>Distribuciones por estrato:</strong> suma de w de cada estrato dividida por la suma de w de los estratos 1–6. Los códigos 0 (sin estrato), 8 (planta eléctrica) y 9 (no sabe) se excluyen de las tablas por estrato.</p></li>
+<li><p><strong>Intervalo de confianza del 95 %</strong> de una proporción por estrato: p ± 1,96·√(p(1−p)/n), con n = hogares de la muestra en ese estrato. Supone muestreo aleatorio simple; como la ECV es una muestra por conglomerados, el intervalo real es más ancho (efecto de diseño no aplicado).</p></li>
+<li><p><strong>Valores faltantes:</strong> una pregunta vacía se trata como «no aplica» y se excluye del denominador de las medias; en las variables de tenencia, vacío = no tiene (ver cada encuesta).</p></li>
+<li><p><strong>Redondeo:</strong> porcentajes a un decimal; horas a un decimal; pesos colombianos a miles.</p></li>
+</ul>
+</section>
+<section id="ecv-2019-dane-catalogo-678">
+<h3>2. ECV 2019 (DANE, catálogo 678)<a class="headerlink" href="#ecv-2019-dane-catalogo-678" title="Link to this heading">#</a></h3>
+<p><strong>Archivos usados:</strong> Datos de la vivienda, Servicios del hogar, Uso de energéticos del hogar, Tenencia y financiación de la vivienda, Características y composición del hogar, Fuerza de trabajo y Municipio de aplicación.</p>
+<p><strong>Unión de archivos (llaves):</strong></p>
+<ul class="simple">
+<li><p>Hogar = DIRECTORIO + SECUENCIA_ENCUESTA + SECUENCIA_P (archivos de vivienda, servicios, energéticos y tenencia).</p></li>
+<li><p>Personas → hogar = DIRECTORIO + SECUENCIA_P. En los archivos de personas SECUENCIA_ENCUESTA numera a la persona, no al hogar; usar la llave de tres campos perdía casi todas las personas.</p></li>
+<li><p>Municipio = archivo «Municipio de aplicación», unido por DIRECTORIO.</p></li>
+</ul>
+<p><strong>Filtro de Barranquilla:</strong> P1_DEPARTAMENTO = 08 y P1_MUNICIPIO = 001 → 1.009 hogares (901 en cabecera y 108 en centros poblados o rural). Las tablas incluyen todo el municipio.</p>
+<p><strong>Variables derivadas:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable del informe</p></th>
+<th class="head"><p>Cómo se construyó</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Estrato</p></td>
+<td><p>P8520S1A1 (estrato para tarifa de energía); 0, 8 y 9 fuera de las tablas por estrato</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tiene AC</p></td>
+<td><p>P5523 (tipo de AC) respondido = 1; vacío = 0. Tipo: 1 mini-split, 2 pared/ventana, 3 central</p></td>
+</tr>
+<tr class="row-even"><td><p>Horas de AC</p></td>
+<td><p>P5524, horas al día sumadas de todos los equipos; se resumen solo entre hogares con AC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tiene ventilador</p></td>
+<td><p>alguna de P5525S1–S4 = 1 (techo, pared, mesa, pedestal) o P5526 &gt; 0</p></td>
+</tr>
+<tr class="row-even"><td><p>Horas de ventilador</p></td>
+<td><p>P5526 entre hogares con P5526 &gt; 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tiene nevera</p></td>
+<td><p>P5514 (tamaño) respondido; no hay pregunta directa de tenencia</p></td>
+</tr>
+<tr class="row-even"><td><p>Tamaño y antigüedad de nevera</p></td>
+<td><p>P5514 (1 pequeña, 2 mediana, 3 grande); P5515 en años, 99 = no sabe → excluido</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lavadora, TV, PC, calentador</p></td>
+<td><p>tenencia inferida de que el hogar responda el uso: P5509 (lavadora), P5522S1 (TV LCD/LED), P5521S1 (TV convencional), P5527 (PC), P5529 &gt; 0 (portátiles), P5518 (calentador)</p></td>
+</tr>
+<tr class="row-even"><td><p>Bombillas</p></td>
+<td><p>P5533S1 incandescente, S2 fluorescente compacta, S3 LED; % LED = Σw·LED / Σw·total de bombillas</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pago mensual de electricidad</p></td>
+<td><p>P5018 (último pago) ÷ P5018S1 (meses que cubre); se descartan valores &lt; 1.000 o &gt; 3.000.000 COP/mes</p></td>
+</tr>
+<tr class="row-even"><td><p>Personas del hogar</p></td>
+<td><p>CANT_PERSONAS_HOGAR (Servicios)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edades</p></td>
+<td><p>P6040 de cada persona, agregada por hogar: menores de 5, 5–14, 15–64, 65+</p></td>
+</tr>
+<tr class="row-even"><td><p>Jefatura</p></td>
+<td><p>P6051 = 1 (jefe); sexo P6020 y edad P6040 de esa persona</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ocupados y actividad</p></td>
+<td><p>P6240 de Fuerza de trabajo (1 trabajó, 2 buscó trabajo, 3 estudió, 4 oficios del hogar, 5 incapacitado, 6 otra), contados por hogar; hogar sin ocupados = 0 personas con P6240 = 1</p></td>
+</tr>
+<tr class="row-even"><td><p>Personas por dormitorio y hacinamiento</p></td>
+<td><p>CANT_PERSONAS_HOGAR ÷ P5010; hacinamiento = más de 3 personas por dormitorio</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ingreso</p></td>
+<td><p>I_HOGAR y PERCAPITA (imputados por el DANE)</p></td>
+</tr>
+<tr class="row-even"><td><p>Quintiles de ingreso</p></td>
+<td><p>cortes en los percentiles ponderados 20, 40, 60 y 80 del ingreso per cápita de los hogares de estratos 1–6 de Barranquilla (ingreso faltante = 0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tenencia de la vivienda</p></td>
+<td><p>P5095: 1–2 propia, 3 arriendo, 4–6 otra (usufructo, posesión, colectiva)</p></td>
+</tr>
+<tr class="row-even"><td><p>Techo, pisos, paredes</p></td>
+<td><p>P4567, P4015, P4005 con las categorías del diccionario DANE</p></td>
+</tr>
+<tr class="row-odd"><td><p>Combustible para cocinar</p></td>
+<td><p>P8536</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>Gasto con y sin AC:</strong> mediana ponderada del pago mensual dentro de cada grupo de estrato (1–2, 3–4, 5–6), separando hogares con P5523 respondido y sin él. Diferencia = mediana con AC / mediana sin AC − 1.</p></li>
+</ul>
+</section>
+<section id="ecv-2024-dane-catalogo-861">
+<h3>3. ECV 2024 (DANE, catálogo 861)<a class="headerlink" href="#ecv-2024-dane-catalogo-861" title="Link to this heading">#</a></h3>
+<p><strong>Archivos usados:</strong> Datos de la vivienda, Condiciones de vida del hogar y tenencia de bienes, Servicios del hogar, Tenencia y financiación de la vivienda y Características y composición del hogar. Se descargaron pero no se usaron: Variables de diseño muestral, factores PDET, programas, beneficiarios y escritura.</p>
+<p><strong>Filtro y llaves:</strong> en 2024 el municipio viene en «Datos de la vivienda» (P1_DEPARTAMENTO = 08 y P1_MUNICIPIO = 001 → 698 viviendas). Los hogares de esas viviendas se toman del archivo de bienes (por DIRECTORIO) y se unen a los demás archivos por DIRECTORIO + SECUENCIA_ENCUESTA (en los archivos de hogar SECUENCIA_P vale siempre 1) → 709 hogares: 649 en cabecera y 60 rurales, todos con estrato 0, que por eso no entran en las tablas por estrato. El factor de expansión viene con punto decimal.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable del informe</p></th>
+<th class="head"><p>Cómo se construyó</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tiene AC, ventilador, nevera, lavadora, TV LED, TV convencional, PC, portátil, calentador</p></td>
+<td><p>P1077S11, S12, S2, S1, S8, S7, S21, S22, S6 = 1 (pregunta directa ¿cuáles de los siguientes bienes posee este hogar?)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Estrato</p></td>
+<td><p>P8520S1A1 de la vivienda</p></td>
+</tr>
+<tr class="row-even"><td><p>Cuartos, dormitorios, sanitarios</p></td>
+<td><p>P5000, P5010, P5024</p></td>
+</tr>
+<tr class="row-odd"><td><p>Personas, ingreso</p></td>
+<td><p>CANT_PERSONAS_HOGAR, I_HOGAR, PERCAPITA</p></td>
+</tr>
+<tr class="row-even"><td><p>Menores de 5 y mayores de 65</p></td>
+<td><p>conteo por hogar de P6040 en Características y composición</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pago mensual de electricidad</p></td>
+<td><p>P5018 ÷ P5018S1; se descartan valores &lt; 1.000 o &gt; 5.000.000 COP/mes</p></td>
+</tr>
+<tr class="row-even"><td><p>Tenencia, techo, tipo de vivienda</p></td>
+<td><p>P5095, P4567, P1070 (mismas categorías que 2019)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Quintiles de ingreso</p></td>
+<td><p>percentiles ponderados 20–40–60–80 del ingreso per cápita de 2024</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>Diferencia con 2019:</strong> en 2019 la tenencia de electrodomésticos se infiere de las preguntas de uso; en 2024 es pregunta directa. Por eso las comparaciones de lavadora y TV entre años deben leerse con cautela; la de AC es comparable porque en ambos años se basa en una pregunta específica sobre el equipo.</p></li>
+</ul>
+</section>
+<section id="enut-20242025-dane-catalogo-910">
+<h3>4. ENUT 2024–2025 (DANE, catálogo 910)<a class="headerlink" href="#enut-20242025-dane-catalogo-910" title="Link to this heading">#</a></h3>
+<p><strong>Archivos usados:</strong> C1 (vivienda), C2 (hogar y bienes), C3 (personas), C6 (educación), C7 y C7_1 (trabajo) y C8 (uso del tiempo). Las etiquetas de cada variable se tomaron de los metadatos DDI del catálogo.</p>
+<p><strong>Filtro y llaves:</strong> DPTO = 08 (Atlántico) y CLASE = 1 (cabecera). La ENUT no trae municipio, así que incluye Barranquilla, Soledad, Malambo y las demás cabeceras. Vivienda = DIRECTORIO; hogar = DIRECTORIO + SECUENCIA_P; persona = DIRECTORIO + SECUENCIA_P + ORDEN. Las estadísticas de tiempo son de las 5.533 personas de 10 años o más, ponderadas con FEX_C.</p>
+<p><strong>Día de referencia:</strong> DIA_REF está en días desde el 1-ene-1970; se convirtió a fecha (17-sep-2024 a 13-sep-2025), día de la semana y mes. Fin de semana = sábado o domingo.</p>
+<p><strong>Minutos por actividad:</strong> para cada actividad, minutos = horas (…A1) × 60 + minutos (…A2), sumando los ítems que la componen. Quien no realizó la actividad cuenta como 0.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Actividad</p></th>
+<th class="head"><p>Ítems de C8 sumados</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Dormir, comer, asearse, descansar</p></td>
+<td><p>P1144S1, S2, S3, S6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cocinar, lavar loza</p></td>
+<td><p>P1143S1, S2</p></td>
+</tr>
+<tr class="row-even"><td><p>Ropa, limpiar la vivienda</p></td>
+<td><p>P1142S1, P1136S1</p></td>
+</tr>
+<tr class="row-odd"><td><p>TV</p></td>
+<td><p>P1110S1 (solo TV) + S2 (TV haciendo otra cosa)</p></td>
+</tr>
+<tr class="row-even"><td><p>Internet recreativo</p></td>
+<td><p>P1110S5 + S6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Música o radio</p></td>
+<td><p>P1110S3 + S4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable de trabajo y estudio</p></th>
+<th class="head"><p>Cómo se construyó</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Trabajo del día</p></td>
+<td><p>P1150S1/S2 (empleo principal) + P6535S1A1/A2 (segundo empleo) + P6530S1A1/A2 (colaboró en un negocio)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Viajes al trabajo</p></td>
+<td><p>2 × (P1099S1/S2 + P6534S1/S2): la ENUT pregunta el viaje de ida y se supone igual el de vuelta</p></td>
+</tr>
+<tr class="row-even"><td><p>Viajes al estudio</p></td>
+<td><p>2 × P1159S1/S2 (C6)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Trabaja en su vivienda</p></td>
+<td><p>P6880 = 2 (C7_1)</p></td>
+</tr>
+<tr class="row-even"><td><p>Fuera por trabajo</p></td>
+<td><p>trabajo del día (si no trabaja en su vivienda) + viajes al trabajo</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fuera por trabajo o estudio</p></td>
+<td><p>lo anterior + viajes al estudio. <strong>No incluye las horas de clase</strong>, que la ENUT no mide; para estudiantes es una subestimación</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tipo de persona</strong> (en este orden): ocupado si P1152 = 1; mayor de 65 no ocupado si edad ≥ 65 y P1152 ≠ 1; estudiante si P1152 = 3; oficios del hogar si P1152 = 4; busca trabajo si P1152 = 2; el resto, otro o incapacitado.</p>
+<ul class="simple">
+<li><p><strong>Hogar con alguien en casa todo el día:</strong> por hogar (todos sus miembros reportan el mismo día), al menos una persona de 10+ con 0 minutos fuera por trabajo o estudio. Ponderado con el factor del hogar. No captura salidas por compras, trámites u ocio.</p></li>
+<li><p><strong>Distribución del tiempo fuera:</strong> proporción ponderada de personas en cada tramo (0 h, hasta 4 h, 4–8 h, 8–10 h, más de 10 h).</p></li>
+<li><p><strong>Estrato:</strong> P4030S1A1 de la vivienda (C1), agrupado en 1–2, 3–4 y 5–6.</p></li>
+<li><p><strong>Bienes:</strong> P1176S1 (lavadora), S2 (secadora), S3 (nevera) = 1, a nivel de hogar.</p></li>
+</ul>
+</section>
+<section id="geih-2024-dane-catalogo-819">
+<h3>5. GEIH 2024 (DANE, catálogo 819)<a class="headerlink" href="#geih-2024-dane-catalogo-819" title="Link to this heading">#</a></h3>
+<p><strong>Archivos usados:</strong> de cada uno de los 12 zips mensuales, los módulos «Datos del hogar y la vivienda», «Características generales, seguridad social en salud y educación» y «Ocupados» (en marzo y abril los CSV venían en un zip anidado).</p>
+<p><strong>Filtro y llaves:</strong> AREA = 08, que corresponde al área metropolitana de Barranquilla (todos los registros son cabecera). Hogar = MES + DIRECTORIO + SECUENCIA_P; persona = hogar + ORDEN. Ningún hogar se repite entre meses (verificado), así que los 12 meses se apilan: 7.772 hogares. Factor anual = FEX_C18 / 12.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable del informe</p></th>
+<th class="head"><p>Cómo se construyó</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Estrato</p></td>
+<td><p>P4030S1A1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apartamento / casa</p></td>
+<td><p>P4000 = 2 / 1</p></td>
+</tr>
+<tr class="row-even"><td><p>Paredes, pisos</p></td>
+<td><p>P4010, P4020; «piso de cerámica o mejor» = códigos 4–7</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cuartos, dormitorios</p></td>
+<td><p>P5000, P5010</p></td>
+</tr>
+<tr class="row-even"><td><p>Tenencia</p></td>
+<td><p>P5090: 1–2 propia, 3 arriendo</p></td>
+</tr>
+<tr class="row-odd"><td><p>Valor de la vivienda</p></td>
+<td><p>P5110 (precio mínimo de venta estimado por el hogar). <strong>Mediana sin ponderar</strong> de los hogares que responden, que son sobre todo propietarios</p></td>
+</tr>
+<tr class="row-even"><td><p>Personas</p></td>
+<td><p>P6008</p></td>
+</tr>
+<tr class="row-odd"><td><p>Grupos de edad</p></td>
+<td><p>conteo de P6040 por hogar (menores de 5, 5–17, 18–64, 65+)</p></td>
+</tr>
+<tr class="row-even"><td><p>Ocupados por hogar</p></td>
+<td><p>número de personas del hogar en el módulo Ocupados</p></td>
+</tr>
+<tr class="row-odd"><td><p>Horas normales de trabajo</p></td>
+<td><p>P6800; promedio por ocupado = Σ w·(horas del hogar) / Σ w·(ocupados del hogar)</p></td>
+</tr>
+<tr class="row-even"><td><p>Trabajo en la vivienda</p></td>
+<td><p>P6880 = 1 («en esta vivienda»); % = Σ w·(ocupados en casa) / Σ w·(ocupados)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hogares sin ocupados</p></td>
+<td><p>hogares con 0 personas en el módulo Ocupados</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sui-superservicios">
+<h3>6. SUI (Superservicios)<a class="headerlink" href="#sui-superservicios" title="Link to this heading">#</a></h3>
+<p><strong>Extracción:</strong> reporte ele_com_096 «Consolidado Energía por Empresa, Departamento y Municipio» de reportes.sui.gov.co, en formato HTML, consultado mes a mes (ene-2019 a ago-2026) con los filtros: ubicación = Urbano, departamento = Atlántico, municipio = Barranquilla, y variable = suscriptores, consumo (kWh) o valor del consumo (COP). Son 92 meses × 3 variables; el reporte no trae datos residenciales de junio de 2022.</p>
+<p><strong>Suma de comercializadoras:</strong> cada consulta devuelve una fila por empresa (Electricaribe hasta sep-2020, luego Air-e, más Vatia, Qi Energy, Enertotal y otras menores). Se conservaron las filas con dato en «Total residencial», «ND» se tomó como 0 y se sumaron las empresas para cada estrato (1–6) y para el total residencial.</p>
+<p><strong>Indicadores derivados por mes y estrato:</strong></p>
+<ul class="simple">
+<li><p>kWh por suscriptor = consumo / suscriptores.</p></li>
+<li><p>COP por kWh = valor del consumo / consumo (no separa subsidios ni contribuciones).</p></li>
+</ul>
+<p><strong>Banderas de calidad</strong> (columna «bandera» del CSV y del Excel), calculadas por estrato:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bandera</p></th>
+<th class="head"><p>Regla</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>consumo_atipico</p></td>
+<td><p>kWh por suscriptor &lt; 0,5 × o &gt; 1,5 × la mediana de todos los meses de ese estrato</p></td>
+</tr>
+<tr class="row-odd"><td><p>valor_negativo</p></td>
+<td><p>valor del consumo &lt; 0 (refacturaciones)</p></td>
+</tr>
+<tr class="row-even"><td><p>valor_atipico</p></td>
+<td><p>COP/kWh &gt; 3 × o &lt; 0,3 × la mediana del estrato</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Un mes queda fuera de un cálculo de consumo si su fila tiene bandera de consumo; fuera de un cálculo de tarifa si tiene cualquier bandera. Meses afectados en el total: sep-2022, ene-2023, mar-2023, sep-2024, oct-2024 y ago-2025 (consumo) y mar–ago 2026 (valor).</p>
+<p><strong>Cálculos del informe:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cifra</p></th>
+<th class="head"><p>Fórmula</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Participación por estrato</p></td>
+<td><p>suscriptores del estrato / suma de estratos 1–6, en diciembre del año</p></td>
+</tr>
+<tr class="row-odd"><td><p>kWh/mes por suscriptor de un año</p></td>
+<td><p>promedio simple de los meses válidos de ese año</p></td>
+</tr>
+<tr class="row-even"><td><p>COP/kWh de un año</p></td>
+<td><p>promedio simple de los meses sin bandera</p></td>
+</tr>
+<tr class="row-odd"><td><p>Alza ago–sep vs feb–mar</p></td>
+<td><p>para cada año: promedio (ago, sep) / promedio (feb, mar) − 1, con meses válidos; luego promedio de 2019–2025</p></td>
+</tr>
+<tr class="row-even"><td><p>Índice estacional del mes</p></td>
+<td><p>para cada año con 10 o más meses válidos: kWh del mes / promedio del año; luego promedio entre años (2019–2025)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Consumo sobre la base feb–mar</p></td>
+<td><p>para cada año: 1 − promedio (feb, mar) / promedio del año; en kWh: promedio del año − promedio (feb, mar); luego promedio, mínimo y máximo entre años</p></td>
+</tr>
+<tr class="row-even"><td><p>Consumo residencial anual (GWh)</p></td>
+<td><p>promedio mensual del total en meses válidos × 12 / 10⁶</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>No residencial:</strong> misma consulta, columnas Industrial, Comercial, Oficial y Otros sumadas sobre todas las empresas (incluye usuarios no regulados) y sin banderas; se reporta la mediana anual del consumo comercial.</p>
+</section>
+<section id="calculos-que-combinan-fuentes">
+<h3>7. Cálculos que combinan fuentes<a class="headerlink" href="#calculos-que-combinan-fuentes" title="Link to this heading">#</a></h3>
+</section>
+<section id="representatividad-por-estrato">
+<h3>7.1 Representatividad por estrato<a class="headerlink" href="#representatividad-por-estrato" title="Link to this heading">#</a></h3>
+<p>Para cada fuente se calculó la participación de cada estrato sobre los estratos 1–6: en encuestas con pesos (Σw del estrato / Σw total), en el SUI con suscriptores de diciembre y en catastro con los predios residenciales de la base limpia de la tesis (332.718, cifras entregadas por la autora). La cifra de la Alcaldía se tomó tal cual del tablero (solo viene en tres grupos).</p>
+</section>
+<section id="penetracion-de-ac-en-la-ciudad-post-estratificacion">
+<h3>7.2 Penetración de AC en la ciudad (post-estratificación)<a class="headerlink" href="#penetracion-de-ac-en-la-ciudad-post-estratificacion" title="Link to this heading">#</a></h3>
+<p>Las encuestas tienen más hogares de estrato 1 que la ciudad real, y el estrato 1 es el que menos AC tiene; el promedio directo de la encuesta sale sesgado hacia abajo. Por eso se combinan la tasa de cada estrato (encuesta) con el peso real de cada estrato (SUI):</p>
+<div class="math notranslate nohighlight">
+\[P_{\text{ciudad}} = \sum_{e=1}^{6} W_e \, p_e, \qquad W_e = \frac{\text{suscriptores}_e}{\sum_{k=1}^{6}\text{suscriptores}_k}\]</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Estrato</p></th>
+<th class="head"><p>W 2019 (SUI dic)</p></th>
+<th class="head"><p>p 2019 (ECV)</p></th>
+<th class="head"><p>W·p</p></th>
+<th class="head"><p>W 2024 (SUI dic)</p></th>
+<th class="head"><p>p 2024 (ECV)</p></th>
+<th class="head"><p>W·p</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0,338</p></td>
+<td><p>0,077</p></td>
+<td><p>0,026</p></td>
+<td><p>0,333</p></td>
+<td><p>0,124</p></td>
+<td><p>0,041</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0,199</p></td>
+<td><p>0,251</p></td>
+<td><p>0,050</p></td>
+<td><p>0,193</p></td>
+<td><p>0,342</p></td>
+<td><p>0,066</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>0,228</p></td>
+<td><p>0,427</p></td>
+<td><p>0,097</p></td>
+<td><p>0,229</p></td>
+<td><p>0,458</p></td>
+<td><p>0,105</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>0,140</p></td>
+<td><p>0,538</p></td>
+<td><p>0,075</p></td>
+<td><p>0,150</p></td>
+<td><p>0,782</p></td>
+<td><p>0,118</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>0,052</p></td>
+<td><p>0,867</p></td>
+<td><p>0,045</p></td>
+<td><p>0,054</p></td>
+<td><p>0,813</p></td>
+<td><p>0,044</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>0,042</p></td>
+<td><p>0,983</p></td>
+<td><p>0,041</p></td>
+<td><p>0,041</p></td>
+<td><p>1,000</p></td>
+<td><p>0,041</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total</strong></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p><strong>0,335</strong></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p><strong>0,414</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Incertidumbre</strong> (muestreo aleatorio simple, n = hogares de la ECV en cada estrato):</p>
+<div class="math notranslate nohighlight">
+\[SE(P) = \sqrt{\sum_e W_e^2 \, \frac{p_e (1-p_e)}{n_e}}\]</div>
+<ul class="simple">
+<li><p>2019: SE ≈ 1,4 puntos → 33,5 % ± 2,8.</p></li>
+<li><p>2024: SE ≈ 1,7 puntos → 41,4 % ± 3,3 (± 4,1 con el efecto de diseño; ver «Ajustes v3»).</p></li>
+<li><p>Diferencia: 7,9 puntos, con SE ≈ √(1,4² + 1,7²) ≈ 2,2 → z ≈ 3,6.</p></li>
+</ul>
+</section>
+<section id="chequeo-del-numero-de-hogares">
+<h3>7.3 Chequeo del número de hogares<a class="headerlink" href="#chequeo-del-numero-de-hogares" title="Link to this heading">#</a></h3>
+<p>Población 2025 (DANE, tablero de la Alcaldía) ÷ personas por hogar (ECV 2024) = 1.279.344 / 3,51 ≈ 364.000 hogares. Se compara con suscriptores SUI (≈ 330.000) y predios de catastro (332.718). Con la base corregida, la ECV 2024 expande a 389.372 hogares (plausible); aun así la expansión a la ciudad se hace con el SUI.</p>
+</section>
+<section id="cota-de-consumo-de-ac-supuesto-no-medido">
+<h3>7.4 Cota de consumo de AC (supuesto, no medido)<a class="headerlink" href="#cota-de-consumo-de-ac-supuesto-no-medido" title="Link to this heading">#</a></h3>
+<p>kWh/mes por hogar con AC ≈ potencia × horas × días = 1 kW × 8 h × 30 = 240 kWh. Por suscriptor del estrato: 240 × p_e (tenencia 2024), por ejemplo 240 × 0,124 ≈ 30 kWh en estrato 1 y 240 × 1,00 = 240 kWh en estrato 6. La potencia de 1 kW para un mini-split de 12.000 BTU/h es un supuesto de orden de magnitud que debe reemplazarse por datos de etiqueta (RETIQ) o de mercado.</p>
+</section>
+<section id="gasto-con-y-sin-ac-y-cruces-de-tenencia">
+<h3>7.5 Gasto con y sin AC y cruces de tenencia<a class="headerlink" href="#gasto-con-y-sin-ac-y-cruces-de-tenencia" title="Link to this heading">#</a></h3>
+<p>Todos los cruces (AC por quintil, tenencia de la vivienda, tamaño del hogar, techo y tipo de vivienda) son proporciones ponderadas de hogares con AC dentro de cada celda; las celdas con menos de 30 hogares se señalan como indicativas en el texto.</p>
+</section>
+</section>
+<section id="serie-anual-regresion-e-imputacion">
+<h2>Serie anual, regresión e imputación<a class="headerlink" href="#serie-anual-regresion-e-imputacion" title="Link to this heading">#</a></h2>
+<section id="postestratificacion-anual-postestrat-anual-py-postestrat-xlsx-py">
+<h3>5.1 Postestratificación anual (<code class="docutils literal notranslate"><span class="pre">postestrat_anual.py</span></code>, <code class="docutils literal notranslate"><span class="pre">postestrat_xlsx.py</span></code>)<a class="headerlink" href="#postestratificacion-anual-postestrat-anual-py-postestrat-xlsx-py" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Datos: tasas ponderadas por estrato (<code class="docutils literal notranslate"><span class="pre">ECV_2018_2025_Barranquilla_tenencia_por_estrato.csv</span></code>, columnas w y w_ac) y suscriptores SUI de diciembre de cada año (estratos 1–6). Se excluye el grupo 0 (sin estrato, sobre todo rural).</p></li>
+<li><p>Fórmula: P = Σ W_e · p_e, con W_e = suscriptores_e / Σ suscriptores (E1–E6).</p></li>
+<li><p>EE = √Σ W_e² · p_e(1 − p_e) / n_e (muestreo simple). Control Agresti–Coull: p̃ = (x + 2)/(n + 4), var = p̃(1 − p̃)/(n + 4); cambia el IC como mucho 0,2 pp.</p></li>
+<li><p>z entre años: (P_t − P_2019) / √(EE_t² + EE_2019²), años independientes.</p></li>
+<li><p>Descomposición frente a 2019: efecto tasas = Σ W_e^2019 (p_e^t − p_e^2019); efecto composición = Σ (W_e^t − W_e^2019) p_e^t.</p></li>
+<li><p>Tendencia: mínimos cuadrados ponderados de P contra el año con pesos 1/EE².</p></li>
+<li><p>Ejemplo 2024: W = 0,333 / 0,193 / 0,229 / 0,150 / 0,054 / 0,041; p = 0,124 / 0,342 / 0,458 / 0,782 / 0,813 / 1,000 → P = 0,414, EE = 1,70 pp.</p></li>
+<li><p>El Excel <code class="docutils literal notranslate"><span class="pre">Postestratificacion_AC_2018_2025.xlsx</span></code> hace el cálculo con fórmulas (hojas Resumen_anual y Detalle_estrato).</p></li>
+</ul>
+</section>
+<section id="recalculo-de-tablas-ecv-2024-ecv24-tablas-py">
+<h3>5.2 Recalculo de tablas ECV 2024 (<code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code>)<a class="headerlink" href="#recalculo-de-tablas-ecv-2024-ecv24-tablas-py" title="Link to this heading">#</a></h3>
+<p>Con la base corregida (709 hogares, 646 en E1–E6): tenencia por estrato, pago mediano (P5018 ÷ P5018S1, válidos 1.000–5.000.000 COP/mes), pago con/sin AC por grupo de estrato, AC por tenencia de vivienda (P5095) y tipo (P1070), quintiles de ingreso por persona (percentiles ponderados 20–40–60–80), techo (P4567: 1 concreto, 2 barro, 3 asbesto, 4 zinc, 5 plástica). Se verificó que 13 hogares con ingreso 0 (sobre todo E3–E5, 53 % con AC) distorsionan Q1.</p>
+</section>
+<section id="regresion-logistica-ecv-2024-logit-ecv24-py">
+<h3>5.3 Regresión logística ECV 2024 (<code class="docutils literal notranslate"><span class="pre">logit_ecv24.py</span></code>)<a class="headerlink" href="#regresion-logistica-ecv-2024-logit-ecv24-py" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>n = 633 (E1–E6 sin ingreso 0). Techo en 3 categorías: concreto (P4567 = 1), asbesto (3), «zinc u otro» (4 zinc, 42 hogares, y 2 barro, 3). Estrato agrupado E1–2 (ref.), E3, E4, E5–6. Apartamento: P1070 = 2. ln(ingreso pc) con piso de 10.000 COP. M4 agrega tenencia (P5095: 1–2 propia, 3 arriendo, resto otra) y hogar de 5+ personas.</p></li>
+<li><p>Estimación: GLM binomial (statsmodels), var_weights = FEX_C normalizado a media 1, errores HC1. Se reportan OR = e^β con IC95, pseudo-R² de McFadden y AUC ponderado.</p></li>
+<li><p>El modelo de imputación «I» (estrato + apartamento, n = 646) se estimó pero no se usa: el tipo de vivienda de la ECV no corresponde al tipo de edificio del catastro.</p></li>
+</ul>
+</section>
+<section id="serie-suavizada-y-beta-serie-suavizada-py">
+<h3>5.4 Serie suavizada y Beta (<code class="docutils literal notranslate"><span class="pre">serie_suavizada.py</span></code>)<a class="headerlink" href="#serie-suavizada-y-beta-serie-suavizada-py" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Olas usadas por estrato: 2018, 2019, 2021, 2022, 2023, 2024, 2025 (2020 excluida: encuesta en parte telefónica y año fuera de la calibración de la propuesta).</p></li>
+<li><p>Modelo por estrato: logit(p_e,año) = b0_e + b1_e (año − 2021). GLM binomial con la tasa ponderada como respuesta y var_weights = n de cada ola.</p></li>
+<li><p>Sobredispersión: φ = χ² de Pearson / gl, mínimo 1; la matriz de covarianza de (b0, b1) se multiplica por φ.</p></li>
+<li><p>Para cada año: η = b0 + b1 (año − 2021); m = 1/(1 + e^−η); EE(η) = √(x” Σ x); DE = m(1 − m) EE(η) (método delta); IC90 = logística(η ± 1,645 EE(η)).</p></li>
+<li><p>Beta por momentos: α = m (m(1 − m)/DE² − 1), β = (1 − m)(m(1 − m)/DE² − 1). El Excel comprueba que α/(α + β) = m.</p></li>
+<li><p>Ciudad: Σ W_e m_e con pesos SUI de diciembre de cada año (2026–2027 con los de 2025); DE = √Σ W_e² DE_e².</p></li>
+<li><p>Limitaciones: tendencia lineal en logit (no capta el bache de E1 en 2020–2021), 2015–2017 y 2026–2027 extrapolados, estratos ajustados por separado (un modelo jerárquico sería una mejora).</p></li>
+</ol>
+</section>
+<section id="imputacion-de-p-ac-al-catastro-por-ano-imputacion-catastro-anual-py-suavizada-xlsx-py">
+<h3>5.5 Imputación de P(AC) al catastro por año (<code class="docutils literal notranslate"><span class="pre">imputacion_catastro_anual.py</span></code>, <code class="docutils literal notranslate"><span class="pre">suavizada_xlsx.py</span></code>)<a class="headerlink" href="#imputacion-de-p-ac-al-catastro-por-ano-imputacion-catastro-anual-py-suavizada-xlsx-py" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Tasa objetivo p_e,año = media de la serie suavizada.</p></li>
+<li><p>Dentro del estrato: P(AC | e, techo t) = 1/(1 + e^−(a_e + b_t)), con b_t del modelo M2 2024 (concreto 0, asbesto −1,061, zinc/otro −1,954). Se usa M2 y no M3 porque el catastro no tiene ingreso: interesa la asociación total del techo dentro del estrato.</p></li>
+<li><p>Catastro: si el uso contiene «Apartamentos» (edificio 4+), techo = concreto. Si no (hasta 3 pisos), concreto restante c” = máx(s_concreto − f_e, 0)/(1 − f_e), con f_e = fracción de viviendas del estrato en edificios 4+ y s_t = mezcla de techos de la ECV 2024 en el estrato; el resto (1 − c”) se reparte entre asbesto y zinc en la proporción de la ECV.</p></li>
+<li><p>a_e se calcula (método de Brent) para que la P(AC) media <strong>de las viviendas del catastro</strong> del estrato sea exactamente p_e,año (E1 queda forzado; control = 0 en el Excel).</p></li>
+<li><p>Simplificación: la mezcla de techos es la de la ECV 2024 en todos los años (afecta el reparto dentro del estrato, no su total).</p></li>
+<li><p>Salidas: <code class="docutils literal notranslate"><span class="pre">Catastro_PAC_por_anio_estrato_tipo.csv</span></code> (unir por estrato_num + tipo de edificio) y hojas Imputacion_catastro, Ciudad_catastro y Por_posicion del Excel.</p></li>
+<li><p>Sensibilidad E1 sin forzar (2024): a_E1 calibrado con la mezcla de la ECV → P(AC) E1 en catastro 14,4 % (edificio 4+ 25,8 %, hasta 3 pisos 9,7 %).</p></li>
+</ol>
+</section>
+</section>
+<section id="correcciones-a-la-metodologia-del-procesamiento-de-fuentes">
+<h2>Correcciones a la metodología del procesamiento de fuentes<a class="headerlink" href="#correcciones-a-la-metodologia-del-procesamiento-de-fuentes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>ECV 2024: hogar = DIRECTORIO + SECUENCIA_ENCUESTA (no DIRECTORIO + SECUENCIA_P). Todas las cifras 2024 de <code class="docutils literal notranslate"><span class="pre">Metodologia_(exportado).md</span></code> y del informe viejo están mal; usar las de esta nota o del informe nuevo.</p></li>
+<li><p>Horas de AC (P5524): en las tablas nuevas se excluyen valores fuera de 0–24 h (antes se decía «máximo 30 h»).</p></li>
+<li><p>Penetración 2024: 41,4 % ± 3,3 (no 39,4 %). Diferencia 2019–2024: 7,9 pp, z ≈ 3,6.</p></li>
+<li><p>Chequeo de hogares: 1.279.344 hab ÷ 3,46 personas/hogar ≈ 370.000; la ECV 2024 corregida expande a 389.372 (plausible).</p></li>
+<li><p>Efecto de diseño: medido en v3 para la ECV 2024 (≈ 1,5 en la tenencia de AC).</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_resultados.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Resultados</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05_ajustes_v3.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Ajustes v3: error de la encuesta, serie C, imputación y posición</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-cada-fuente">Procesamiento de cada fuente</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principios-generales">1. Principios generales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecv-2019-dane-catalogo-678">2. ECV 2019 (DANE, catálogo 678)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecv-2024-dane-catalogo-861">3. ECV 2024 (DANE, catálogo 861)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enut-20242025-dane-catalogo-910">4. ENUT 2024–2025 (DANE, catálogo 910)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geih-2024-dane-catalogo-819">5. GEIH 2024 (DANE, catálogo 819)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sui-superservicios">6. SUI (Superservicios)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculos-que-combinan-fuentes">7. Cálculos que combinan fuentes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representatividad-por-estrato">7.1 Representatividad por estrato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penetracion-de-ac-en-la-ciudad-post-estratificacion">7.2 Penetración de AC en la ciudad (post-estratificación)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chequeo-del-numero-de-hogares">7.3 Chequeo del número de hogares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cota-de-consumo-de-ac-supuesto-no-medido">7.4 Cota de consumo de AC (supuesto, no medido)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gasto-con-y-sin-ac-y-cruces-de-tenencia">7.5 Gasto con y sin AC y cruces de tenencia</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-anual-regresion-e-imputacion">Serie anual, regresión e imputación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postestratificacion-anual-postestrat-anual-py-postestrat-xlsx-py">5.1 Postestratificación anual (<code class="docutils literal notranslate"><span class="pre">postestrat_anual.py</span></code>, <code class="docutils literal notranslate"><span class="pre">postestrat_xlsx.py</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recalculo-de-tablas-ecv-2024-ecv24-tablas-py">5.2 Recalculo de tablas ECV 2024 (<code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-logistica-ecv-2024-logit-ecv24-py">5.3 Regresión logística ECV 2024 (<code class="docutils literal notranslate"><span class="pre">logit_ecv24.py</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-suavizada-y-beta-serie-suavizada-py">5.4 Serie suavizada y Beta (<code class="docutils literal notranslate"><span class="pre">serie_suavizada.py</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-p-ac-al-catastro-por-ano-imputacion-catastro-anual-py-suavizada-xlsx-py">5.5 Imputación de P(AC) al catastro por año (<code class="docutils literal notranslate"><span class="pre">imputacion_catastro_anual.py</span></code>, <code class="docutils literal notranslate"><span class="pre">suavizada_xlsx.py</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correcciones-a-la-metodologia-del-procesamiento-de-fuentes">Correcciones a la metodología del procesamiento de fuentes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por María Carolina Cantillo Orozco
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
