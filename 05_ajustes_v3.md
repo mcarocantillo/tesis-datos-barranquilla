@@ -22,6 +22,12 @@ donde C = 76 segmentos. Para un estrato se usa la misma fórmula con y y w igual
 | Estrato 6 | 20 | 4 | 100 % | — | — | — |
 | Ciudad (postestratificada) | 646 | 76 | 41,4 % | ± 3,3 | ± 4,1 | 1,54 |
 
+
+```{figure} figuras/efecto_diseno.png
+:width: 100%
+Semiancho del IC 95 % con y sin el diseño muestral.
+```
+
 - Para el ventilador el efecto es casi nulo (deff 0,98 en la ciudad); para la nevera es 1,45.
 - Las olas 2018–2023 y 2025 no se procesaron con su diseño; se les aplica deff = 1,5 dividiendo su n por 1,5.
 - El estrato 4 sale con deff < 1 por azar: con 12 segmentos ese cálculo es inestable.
@@ -66,7 +72,7 @@ La diferencia entre A y B en la ciudad llega a 2,9 puntos en 2015 y se reduce a 
 
 ```{figure} figuras/tenencia_ciudad_variantes.png
 :width: 100%
-ECV 2018–2025 (sin 2020) y suscriptores SUI de diciembre.
+Variantes A, B y C para la ciudad.
 ```
 
 ## 4. Probabilidad de A/C por vivienda del catastro (variante C)

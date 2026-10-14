@@ -8,7 +8,7 @@ La tenencia de aire acondicionado (A/C) que usará el modelo cambia a la **varia
 
 ```{figure} figuras/tenencia_estrato_C.png
 :width: 100%
-Tenencia de A/C por estrato. Líneas: variante C con su intervalo del 95 %; puntos: tasas observadas en cada ola de la ECV (2020 no se usa en el ajuste).
+Serie de tenencia que usa el modelo (variante C). La ola 2020 no entra en el ajuste.
 ```
 
 ## Cómo leer este sitio

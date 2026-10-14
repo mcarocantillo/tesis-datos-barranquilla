@@ -12,6 +12,8 @@ sphinx:
   config:
     html_show_copyright: false
     language: es
+    html_static_path: ["_static"]
+    html_css_files: ["custom.css"]
 html:
   use_repository_button: true
   home_page_in_navbar: true

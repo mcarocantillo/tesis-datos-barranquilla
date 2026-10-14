@@ -53,6 +53,11 @@ Ajuste por estrato (cambio del logit por año, EE, p, sobredispersión): E1 +0,1
 
 ## 4.4 Uso (ECV 2019), sin cambios
 
+```{figure} figuras/horas_ac.png
+:width: 100%
+Distribución de horas de uso del A/C.
+```
+
 - Horas de AC (hogares con AC): mediana 8 h/día en todos los estratos; media 7,2; 17 % usa 12 h o más, 3,4 % más de 12 h, 1 % 24 h (7 % en E6). Tipo: 92,5 % mini-split, 3,1 % ventana, 4,4 % central (17,7 % en E6).
 - Ventilador: con AC 9,8 h/día, sin AC 11,1 (razón 0,88). Por estrato, razón con/sin AC: E1 0,97; E2 0,90; E3 0,96; E4 1,07; E5–E6 sin datos suficientes (7 y 1 hogares sin AC). Se excluyeron 9 respuestas > 24 h. Recomendación: p_c casi nulo (≈ 0,05) en E1–E4.
 - Número de equipos: la ECV 2019 no lo pregunta. Prior desde horas y AC central. **Falta la fracción climatizada de CEELA** (la propuesta cita: habitación en VIS y E3–E4, toda la vivienda en E5–E6).
@@ -73,7 +78,23 @@ Ajuste por estrato (cambio del logit por año, EE, p, sobredispersión): E1 +0,1
 
 Modelo M2 2024 (techo + estrato), usado en la imputación: b_asbesto = −1,061, b_zinc/otro = −1,954. Todos los coeficientes en `Logit_ECV2024_modelos.csv`.
 
+
+```{figure} figuras/techos_estrato.png
+:width: 100%
+Material del techo por grupo de estrato.
+```
+
+```{figure} figuras/logit_or.png
+:width: 100%
+Razones de momios del modelo M3, ECV 2024.
+```
+
 ## 4.6 Posición frente a la cubierta (catastro) e imputación de P(AC)
+
+```{figure} figuras/pac_tipo_edificio.png
+:width: 100%
+P(A/C) imputada por tipo de edificio, variante C.
+```
 
 | Estrato | Casa | Último piso | Intermedio | 1.er piso con vivienda encima | En edificio 4+ | P(AC) 2024 edificio 4+ | P(AC) 2024 hasta 3 pisos |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -90,6 +111,11 @@ Ciudad 2024 con el catastro: 41,3 % (≈ 137.500 viviendas con AC), frente a 41,
 P(AC) media por posición (2024): casas con cubierta propia 27,8 %, primeros pisos 42,1 %, últimos pisos 50,9 %, intermedios 64,7 %. **Corregido en v3:** la diferencia es sobre todo efecto del estrato (estandarizada: 36,9 / 43,1 / 43,9 / 50,3 %) y el resto viene del supuesto de imputación, no de una observación.
 
 ## 4.7 SUI 2015–2025 (kWh/mes por suscriptor, meses válidos)
+
+```{figure} figuras/sui_suscriptores.png
+:width: 100%
+Suscriptores residenciales por estrato.
+```
 
 | Año | E1 | E2 | E3 | E4 | E5 | E6 | Total | GWh/año | Suscriptores dic |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -108,5 +134,10 @@ P(AC) media por posición (2024): casas con cubierta propia 27,8 %, primeros pis
 Estacionalidad (2019–2025; recalculada con 2015–2025 en v3, sin cambios relevantes): alza ago–sep vs feb–mar +11 % (E1) a +28 % (E6), total +19 %. Ningún mes de 2015–2018 tiene bandera de calidad.
 
 ## 4.8 Ocupación (ENUT/GEIH), sin cambios
+
+```{figure} figuras/geih_trabajo_casa.png
+:width: 100%
+Trabajo en la propia vivienda.
+```
 
 En 82–86 % de los hogares alguien está en casa todo el día hábil; un ocupado pasa ≈ 7,7 h fuera. Jornada escolar: 57,6 % mañana, 24,9 % tarde, 11,1 % única, 5,1 % noche. Trabajo en casa (GEIH): 15,6 % de los ocupados en E1 a 28,5 % en E6.
