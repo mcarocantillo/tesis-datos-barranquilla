@@ -1,0 +1,15 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Lo principal
+    chapters:
+      - file: 02_analisis
+      - file: 06_propuesta
+  - caption: Detalle
+    chapters:
+      - file: 01_fuentes
+      - file: 03_resultados
+      - file: 04_metodologia
+      - file: 05_ajustes_v3
+      - file: 07_datos_sospechosos
+      - file: 08_reproducibilidad

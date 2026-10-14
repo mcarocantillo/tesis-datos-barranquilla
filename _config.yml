@@ -1,0 +1,20 @@
+title: "Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla"
+author: "María Carolina Cantillo Orozco"
+copyright: "2026"
+logo: ""
+language: es
+execute:
+  execute_notebooks: "off"
+exclude_patterns: ["_build/*", "README.md", "scripts/*", "tablas/*"]
+parse:
+  myst_enable_extensions: [dollarmath, amsmath, colon_fence, deflist]
+sphinx:
+  config:
+    html_show_copyright: false
+    language: es
+html:
+  use_repository_button: true
+  home_page_in_navbar: true
+repository:
+  url: https://github.com/mcarocantillo/tesis-datos-barranquilla
+  branch: main
