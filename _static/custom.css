@@ -1,0 +1,12 @@
+:root{--acento:#2a78d6;--acento2:#eb6834;--acento3:#1baf7a;}
+html[data-theme="light"]{--pst-color-primary:#2a78d6;--pst-color-secondary:#eb6834;--pst-color-link:#2a78d6;--pst-color-link-hover:#eb6834;}
+html[data-theme="dark"]{--pst-color-primary:#3987e5;--pst-color-secondary:#d95926;--pst-color-link:#6aa6ef;}
+.bd-article h1{color:var(--pst-color-primary);border-bottom:4px solid var(--acento2);padding-bottom:.3em;}
+.bd-article h2{color:var(--pst-color-primary);border-left:5px solid var(--acento3);padding-left:.5em;}
+.bd-article h3{color:var(--acento2);}
+.bd-article table thead th{background:#2a78d6;color:#fff;}
+.bd-article table tbody tr:nth-child(even){background:rgba(42,120,214,.06);}
+.bd-sidebar-primary .navbar-brand{border-bottom:4px solid var(--acento2);}
+nav.bd-links li.toctree-l1.current>a{color:var(--acento2)!important;border-left:3px solid var(--acento2);}
+figure img{border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.admonition.note{border-color:var(--acento3);}

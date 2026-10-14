@@ -16,9 +16,51 @@ Los datos muestran una ciudad donde casi todos los hogares tienen ventilador y n
 | Consumo real | El consumo sube en la temporada caliente y más en los estratos con más A/C | 297 kWh/mes por suscriptor (2025); E6 692; alza ago.–sep. frente a feb.–mar. de 11 % (E1) a 29 % (E5) | SUI 2015–2025 |
 | Gasto | La factura de un hogar con A/C es mayor a igual estrato | 2024, mediana sin/con A/C: E1–E2 104.000 / 140.000; E3–E4 215.000 / 324.000; E5–E6 276.000 / 620.000 COP/mes | ECV 2024 |
 
+## Las cifras en gráficas
+
+```{figure} figuras/ac_estrato_2019_2024.png
+:width: 100%
+Tenencia de A/C por estrato en las dos olas con más detalle.
+```
+
+```{figure} figuras/ac_quintil.png
+:width: 100%
+El ingreso pesa aun dentro del estrato.
+```
+
+```{figure} figuras/ventilador_con_sin_ac.png
+:width: 100%
+A/C y ventilador se usan juntos.
+```
+
+```{figure} figuras/neveras_tamano.png
+:width: 100%
+Tamaño de la nevera por estrato.
+```
+
+```{figure} figuras/neveras_edad.png
+:width: 100%
+Antigüedad de las neveras.
+```
+
+```{figure} figuras/catastro_posicion.png
+:width: 100%
+Tipo de vivienda frente a la cubierta.
+```
+
+```{figure} figuras/enut_horas.png
+:width: 100%
+Presencia en casa según el tipo de persona.
+```
+
+```{figure} figuras/sui_kwh_estrato.png
+:width: 100%
+Nivel de consumo por estrato.
+```
+
 ```{figure} figuras/estacionalidad_sui.png
 :width: 100%
-Índice mensual de consumo por suscriptor (kWh del mes / promedio del año), meses sin bandera de calidad, 2015–2025.
+Patrón estacional del consumo.
 ```
 
 ## Qué implican para el modelo
