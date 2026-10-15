@@ -11,7 +11,7 @@
 | Quintiles 2024 | Q1 > Q2 por 13 hogares con ingreso 0 | Excluirlos |
 | E5–E6 | 7–72 hogares por ola; E6 en 100 % | Agresti–Coull / serie suavizada |
 | Meses SUI | Falta jun-2022; sep–oct 2024 y ago-2025 sin consumo; sep-2022, ene y mar 2023 negativos; mar–ago 2026 tarifa 10–20× en E5–E6 | Excluidos con banderas |
-| SUI E3 dic-2024 | 449 COP/kWh vs 676–858 en meses vecinos | Revisado en v3: usar para kWh, no para tarifa (columna bandera_revision) |
+| SUI E3 dic-2024 | 449 COP/kWh vs 676–858 en meses vecinos | Usar para kWh, no para tarifa (columna bandera_revision) |
 | Techo concreto E1–2 | 15,5 % (2019) → 28,6 % (2024) | Posible ruido; promediar olas |
 | Lavadora E1 | 62 % → 48 % | Cambio de pregunta |
 | Hogares expandidos ECV | 329.000 (2019) → 399.000 (2025) | Expandir con SUI |

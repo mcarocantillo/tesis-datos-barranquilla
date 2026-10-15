@@ -1,8 +1,8 @@
 # Resultados
 
-## 4.1 Tenencia de AC por estrato, ECV 2019 y 2024 corregida
+## 4.1 Tenencia de AC por estrato, ECV 2019 y 2024
 
-| Estrato | AC 2019 (n) | AC 2024 corregida (n) |
+| Estrato | AC 2019 (n) | AC 2024 (n) |
 | --- | --- | --- |
 | E1 | 7,7 % (436) | 12,4 % (250) |
 | E2 | 25,1 % (155) | 34,2 % (161) |
@@ -12,7 +12,7 @@
 | E6 | 98,3 % (58) | 100 % (20) |
 | Ciudad postestratificada | 33,5 % ± 2,8 | 41,4 % ± 3,3 |
 
-Otras cifras 2024 corregidas: AC por quintil 17,2 / 15,6 / 27,8 / 42,0 / 83,1 % (sin hogares de ingreso 0: 12,8 / 16,5 / 27,8 / 43,8 / 82,9 %); techo E1–2 concreto 28,6 %, asbesto 60,4 %, zinc 11,0 %; E3–4: 58,2 / 39,8 / 0; E5–6: 88,9 / 11,1 / 0. Pago mediano sin/con AC 2024: E1–2 104.000 / 140.000; E3–4 215.000 / 324.000; E5–6 276.000 / 620.000 COP/mes. Distribución por estrato en la ECV 2024 corregida: 38,6 / 22,5 / 20,6 / 9,0 / 6,0 / 3,4 %. Ciudad 2024: 64,7 % apartamentos, 47,2 % vivienda propia, 3,46 personas por hogar, nevera 91,4 %, ventilador 98,4 %.
+Otras cifras 2024: AC por quintil 17,2 / 15,6 / 27,8 / 42,0 / 83,1 % (sin hogares de ingreso 0: 12,8 / 16,5 / 27,8 / 43,8 / 82,9 %); techo E1–2 concreto 28,6 %, asbesto 60,4 %, zinc 11,0 %; E3–4: 58,2 / 39,8 / 0; E5–6: 88,9 / 11,1 / 0. Pago mediano sin/con AC 2024: E1–2 104.000 / 140.000; E3–4 215.000 / 324.000; E5–6 276.000 / 620.000 COP/mes. Distribución por estrato en la ECV 2024: 38,6 / 22,5 / 20,6 / 9,0 / 6,0 / 3,4 %. Ciudad 2024: 64,7 % apartamentos, 47,2 % vivienda propia, 3,46 personas por hogar, nevera 91,4 %, ventilador 98,4 %.
 
 ## 4.2 Serie anual postestratificada (sin suavizar)
 
@@ -24,10 +24,10 @@ Otras cifras 2024 corregidas: AC por quintil 17,2 / 15,6 / 27,8 / 42,0 / 83,1 % 
 
 Tendencia +1,2 pp/año (EE 0,24); sin 2020–2021 +1,4 (EE 0,25). Cambio 2019→2025: +11,6 pp (z ≈ 5,1), de ellos 10,4 pp por tasas dentro de cada estrato y 1,2 pp por composición. 2019 con P1077S11 = 33,3 %; con P5523 = 33,5 %.
 
-## 4.3 Serie suavizada 2015–2027, variante A (reemplazada por la C)
+## 4.3 Serie suavizada 2015–2027, variante A (sensibilidad)
 
 ```{note}
-Esta es la variante A. El modelo usa la variante C; ver el capítulo «Ajustes v3».
+Esta es la variante A. El modelo usa la variante C; ver el capítulo «Serie de tenencia, error de la encuesta e imputación».
 ```
 
 
@@ -108,7 +108,7 @@ P(A/C) imputada por tipo de edificio, variante C.
 
 Ciudad 2024 con el catastro: 41,3 % (≈ 137.500 viviendas con AC), frente a 41,8 % de la serie suavizada postestratificada (41,4 % sin suavizar). Serie del catastro 2015–2027: 30,7 / 31,8 / 32,9 / 34,1 / 35,2 / 36,4 / 37,6 / 38,8 / 40,0 / 41,3 / 42,6 / 43,9 / 45,3 %.
 
-P(AC) media por posición (2024): casas con cubierta propia 27,8 %, primeros pisos 42,1 %, últimos pisos 50,9 %, intermedios 64,7 %. **Corregido en v3:** la diferencia es sobre todo efecto del estrato (estandarizada: 36,9 / 43,1 / 43,9 / 50,3 %) y el resto viene del supuesto de imputación, no de una observación.
+P(AC) media por posición (2024): casas con cubierta propia 27,8 %, primeros pisos 42,1 %, últimos pisos 50,9 %, intermedios 64,7 %. **Lectura:** la diferencia es sobre todo efecto del estrato (estandarizada: 36,9 / 43,1 / 43,9 / 50,3 %) y el resto viene del supuesto de imputación, no de una observación.
 
 ## 4.7 SUI 2015–2025 (kWh/mes por suscriptor, meses válidos)
 
@@ -131,7 +131,7 @@ Suscriptores residenciales por estrato.
 | 2024 | 318 | 205 | 245 | 319 | 396 | 690 | 299 | 1.178 | 330.101 |
 | 2025 | 317 | 196 | 242 | 324 | 389 | 692 | 297 | 1.181 | 329.892 |
 
-Estacionalidad (2019–2025; recalculada con 2015–2025 en v3, sin cambios relevantes): alza ago–sep vs feb–mar +11 % (E1) a +28 % (E6), total +19 %. Ningún mes de 2015–2018 tiene bandera de calidad.
+Estacionalidad (2019–2025; igual con 2015–2025): alza ago–sep vs feb–mar +11 % (E1) a +28 % (E6), total +19 %. Ningún mes de 2015–2018 tiene bandera de calidad.
 
 ## 4.8 Ocupación (ENUT/GEIH), sin cambios
 

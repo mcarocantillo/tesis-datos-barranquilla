@@ -1,6 +1,6 @@
 # Análisis y conclusiones
 
-Los datos muestran una ciudad donde casi todos los hogares tienen ventilador y nevera, el aire acondicionado depende sobre todo del estrato y el ingreso, y la vivienda rara vez queda vacía de día. Las cifras son las corregidas (ECV 2024 con 709 hogares, variante C, efecto de diseño).
+Los datos muestran una ciudad donde casi todos los hogares tienen ventilador y nevera, el aire acondicionado depende sobre todo del estrato y el ingreso, y la vivienda rara vez queda vacía de día. Las cifras usan la ECV 2024 (709 hogares), la variante C de la serie de tenencia y el efecto de diseño de la encuesta.
 
 ## Hallazgos por tema
 
