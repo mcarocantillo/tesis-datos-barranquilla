@@ -36,6 +36,11 @@ Semiancho del IC 95 % con y sin el diseño muestral.
 
 Con la variante C, la ciudad pasa de 31,3 % de hogares con A/C en 2015 a 41,2 % en 2024 y 45,4 % en 2027. Se eligió porque la tendencia entre olas solo es clara en los estratos 1 y 3, y la variante C no obliga a decidir si existe en los demás.
 
+```{admonition} En palabras simples
+:class: tip
+Las muestras de la ECV por estrato son pequeñas, así que la cifra cruda salta de un año a otro (estrato 4: 75 % en 2018, 53 % en 2019, 92 % en 2020). Por eso se usa una curva suavizada. La variante A supone que la tenencia sube a ritmo constante en todos los estratos; la B solo lo supone en E1 y E3, donde la subida es clara, y deja plano el resto. Como no se sabe cuál es la correcta, C toma el promedio de las dos y amplía la incertidumbre donde difieren (sobre todo 2015–2017 y 2026–2027). En 2019 la ciudad queda en 35,6 % frente a 33,3 % sin suavizar, sobre todo porque la curva corrige el 53 % atípico del estrato 4; en 2024 ambas coinciden (41,2 % y 41,4 %).
+```
+
 **Datos.** Tasa ponderada de hogares con A/C (P1077S11, factor FEX\_C) por estrato en las olas 2018, 2019, 2021, 2022, 2023, 2024 y 2025 de la ECV en Barranquilla. La ola 2020 se excluye (encuesta en parte telefónica, año fuera de la calibración); 2015, 2016 y 2017 no traen municipio.
 
 **Dos ajustes por estrato** (modelo lineal generalizado binomial, enlace logit, peso = n de hogares):
