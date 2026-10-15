@@ -34,6 +34,7 @@
 2. **IDEAM**, estación 0029045190 «APTO ERNESTO CORTISSOZ», datos.gov.co: temperatura (sbwg-7ju4), humedad relativa (uext-mhny), viento (sgfv-3yp8). Registros cada pocos minutos: agregar a horario. Sin radiación.
 3. **Fracción climatizada de CEELA** para el prior del número de equipos.
 4. Confirmar con Air-e el consumo/tarifa de E1 y pedir curva horaria.
+4b. **Año de construcción del catastro.** Preguntar a la Gerencia de Gestión Catastral qué registra `anio_construccion` (¿fecha original o última incorporación/actualización?). Solo 1.442 casas de la ciudad son anteriores a 1975 y 15.376 apartamentos de E1–E2 en bloques recientes tienen años 1932–1972. Mientras tanto se usa como «año de registro catastral» (supuesto S13); revisar también la variable `antiguedad` del entregable de ML.
 
 **Procesamiento pendiente:**
 

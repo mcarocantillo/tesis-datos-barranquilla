@@ -502,6 +502,12 @@
 <td><p>Hogares de la proyección demográfica</p></td>
 <td><p>Hogares por medidor de Air-e</p></td>
 </tr>
+<tr class="row-even"><td><p>S13</p></td>
+<td><p>El año de construcción del catastro se usa como «año de registro catastral», no como antigüedad física; los 24 lotes con años de 1932 a 1972 se tratan como faltantes</p></td>
+<td><p>Aporta información sobre materiales para el juicio de expertos (Fase 1, paso 6); su significado no está documentado</p></td>
+<td><p>Excluir la variable de los arquetipos</p></td>
+<td><p>Definición del campo por la Gerencia de Gestión Catastral; imágenes históricas</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -607,7 +613,7 @@
 <li><p><strong>Calidad del SUI.</strong> Hay meses faltantes, consumos nulos o negativos y tarifas atípicas; se marcaron con banderas y se excluyen (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>). El consumo del estrato 1 está por encima del de los estratos 2 y 3 y debe confirmarse.</p></li>
 <li><p><strong>Materiales sin registro.</strong> El catastro no informa materiales. El techo de cada vivienda se asigna con la ECV por estrato, y en los edificios altos con un supuesto (S6). La ECV casi no capta los edificios de estrato 1, así que su distribución de techos describe sobre todo casas.</p></li>
 <li><p><strong>Comparaciones ecológicas.</strong> La relación entre la tenencia de A/C y el alza estacional del consumo se mide con seis estratos agregados. Es coherente con el efecto del A/C, pero no lo identifica a nivel de hogar.</p></li>
-<li><p><strong>Año de construcción.</strong> 15.376 apartamentos de estratos 1 y 2 en edificios de 4 o más pisos registran años entre 1932 y 1972, muy poco probables para su tipología. Mientras no se confirmen con el catastro, se tratarán como faltantes.</p></li>
+<li><p><strong>Año de construcción.</strong> El campo <code class="docutils literal notranslate"><span class="pre">anio_construccion</span></code> del catastro parece registrar el año de la última incorporación o actualización de la construcción, no su fecha original: solo 1.442 casas de toda la ciudad son anteriores a 1975, y 15.376 apartamentos de estratos 1 y 2 en bloques recientes registran años entre 1932 y 1972. Se usará como «año de registro catastral» (S13), con esos 24 lotes como faltantes, hasta confirmar su significado con el catastro.</p></li>
 </ol>
 </section>
 </section>
