@@ -14,8 +14,8 @@ La propuesta pide que cada supuesto quede registrado con su fuente, su rango, su
 | S3 | La tasa de la ciudad usa los pesos por estrato del SUI y no los de la ECV | La ECV sobrerrepresenta el estrato 1 ({numref}`tab-coherencia-estratos`) | Factores de expansión de la ECV | — |
 | S4 | El efecto de diseño de 2024 (1,5 en varianza) vale para las demás olas | Solo la ola 2024 se procesó con sus segmentos (76 conglomerados) | Muestreo aleatorio simple | Variables de diseño de cada ola |
 | S5 | El efecto del techo sobre el A/C (modelo M2) es el mismo en todos los años y estratos | Se estima con la ECV 2024 (633 hogares); con la ECV 2019 (944 hogares) el efecto tiene el mismo signo y es algo menor | Efectos de 2019 o del modelo M3 | Olas adicionales con techo y A/C |
-| S6 | Las viviendas en edificios de 4 pisos o más tienen techo de concreto | El catastro no registra materiales; la ECV no identifica la altura del edificio | Asignar el techo según la ECV por estrato | Inspección o registro de materiales |
-| S7 | La tenencia imputada al catastro en el estrato 1 se iguala a la de la ECV | La tenencia no se calibra (Fase 3, paso 4) | Intercepto calculado con la mezcla de la ECV | Datos de Air-e por barrio |
+| S6 | Las viviendas en edificios de 4 pisos o más tienen techo de concreto | El catastro no registra materiales; la ECV casi no capta los edificios del estrato 1 ({numref}`tab-e1-edificios`). Solo afecta al último piso, 16 % de las unidades en edificios | Último piso con teja de asbesto-cemento | Inspección o registro de materiales |
+| S7 | La tenencia imputada al catastro en el estrato 1 se iguala a la de la ECV | La tenencia no se calibra (Fase 3, paso 4) | Intercepto calculado con la mezcla de la ECV; ECV reponderada a la composición de edificios del catastro | Datos de Air-e por barrio; olas de la ECV con más segmentos en edificios |
 | S8 | Las horas de uso por equipo de 2019 valen para todos los años | La ECV dejó de preguntarlas después de 2019 | Rango de las horas de 2019 | Medición o encuesta de uso reciente |
 | S9 | $p_c \approx 0{,}95$, igual en todos los estratos | Horas de ventilador casi iguales con y sin A/C en E1–E4 ({numref}`tab-pc`) | 0,8–1,0 | Medición en hogares con ambos equipos |
 | S10 | La presencia en la vivienda de las cabeceras del Atlántico representa a Barranquilla | La ENUT no identifica el municipio | — | ENUT con municipio |
@@ -41,6 +41,7 @@ La propuesta pide que cada supuesto quede registrado con su fuente, su rango, su
 | S5, modelo M3 en lugar de M2 | Razón de momios, asbesto-cemento / zinc | 0,35 / 0,14 | 0,37 / 0,15 | +0,02 / +0,01 |
 | S5, ECV 2019 en lugar de 2024 (M2) | Razón de momios, asbesto-cemento / zinc | 0,35 / 0,14 | 0,48 / 0,18 | +0,13 / +0,04 |
 | S7, E1 sin igualar a la ECV | Tenencia del estrato 1 en el catastro, 2024 | 13,2 | 14,4 | +1,2 (ciudad +0,7) |
+| S7, ECV reponderada por tipo de edificio | Tenencia del estrato 1, 2024 (tasa directa) | 12,4 | 14,5–15,2 | +2,1 a +2,8 (ciudad +0,7 a +0,9) |
 ```
 
 La elección entre variantes de la serie (S1) mueve la tenencia de la ciudad menos de 1,5 puntos en cualquier año. Es menos que el semiancho del intervalo de confianza de 2024 (± 2,9 puntos), y por eso la diferencia entre variantes se incorpora a la varianza de la serie en lugar de tratarse como una decisión. El supuesto con mayor efecto es la ponderación de la ciudad (S3), que cambia la tasa de 2024 en 4,3 puntos. Ese supuesto, sin embargo, está respaldado por la coincidencia entre el catastro y el SUI ({numref}`tab-coherencia-estratos`).
@@ -54,5 +55,6 @@ El supuesto S6 tiene un efecto que no se ve en la tasa de la ciudad, sino en el 
 3. **Sin hora de uso.** Ninguna encuesta registra a qué hora se usan los equipos. La ENUT da duraciones de las actividades, no horarios. La forma horaria del perfil dependerá del módulo térmico y de la demanda de XM, como reconoce la propuesta (Fase 3, paso 7).
 4. **Sin número de equipos ni fracción climatizada.** La ECV registra si el hogar tiene A/C, pero no cuántos equipos tiene. El prior depende de CEELA, aún pendiente.
 5. **Calidad del SUI.** Hay meses faltantes, consumos nulos o negativos y tarifas atípicas; se marcaron con banderas y se excluyen ([Datos sospechosos y pendientes](07_datos_sospechosos.md)). El consumo del estrato 1 está por encima del de los estratos 2 y 3 y debe confirmarse.
-6. **Materiales sin registro.** El catastro no informa materiales. El techo de cada vivienda se asigna con la ECV por estrato, y en los edificios altos con un supuesto (S6).
+6. **Materiales sin registro.** El catastro no informa materiales. El techo de cada vivienda se asigna con la ECV por estrato, y en los edificios altos con un supuesto (S6). La ECV casi no capta los edificios de estrato 1, así que su distribución de techos describe sobre todo casas.
 7. **Comparaciones ecológicas.** La relación entre la tenencia de A/C y el alza estacional del consumo se mide con seis estratos agregados. Es coherente con el efecto del A/C, pero no lo identifica a nivel de hogar.
+8. **Año de construcción.** 15.376 apartamentos de estratos 1 y 2 en edificios de 4 o más pisos registran años entre 1932 y 1972, incompatibles con su tipología. Se tratarán como faltantes.
