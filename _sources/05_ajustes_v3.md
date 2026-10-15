@@ -1,4 +1,4 @@
-# Ajustes v3: error de la encuesta, serie C, imputación y posición
+# Serie de tenencia, error de la encuesta e imputación
 
 ## 2. Efecto de diseño de la ECV 2024
 
@@ -49,7 +49,7 @@ Las muestras de la ECV por estrato son pequeñas, así que la cifra cruda salta 
 \text{A:}\ \operatorname{logit} p_{e,t} = b_{0e} + b_{1e}\,(t - 2021), \qquad \text{B:}\ \operatorname{logit} p_{e,t} = b_{0e} \ \text{(salvo E1 y E3, que conservan la tendencia)}
 ```
 
-- A: tendencia en los seis estratos y n sin corregir (la serie anterior).
+- A: tendencia en los seis estratos y n sin corregir.
 - B: tendencia solo donde es significativa, E1 (p = 0,03) y E3 (p = 0,007); nivel constante en E2, E4, E5 y E6 (p de la tendencia entre 0,39 y 0,53); n efectivo = n / 1,5 por el efecto de diseño.
 - En ambos, la covarianza de los coeficientes se multiplica por la sobredispersión φ = χ² de Pearson / grados de libertad (mínimo 1); para cada año, media m = logística(η) y desviación DE = m(1 − m)·EE(η) (método delta).
 
@@ -82,7 +82,7 @@ Variantes A, B y C para la ciudad.
 
 ## 4. Probabilidad de A/C por vivienda del catastro (variante C)
 
-Con la variante C, 40,7 % de las 332.718 viviendas del catastro tendría A/C en 2024 (unas 135.400) y 35,7 % en 2019. Con la variante A daba 41,3 % y 35,2 %.
+Con la variante C, 40,7 % de las 332.718 viviendas del catastro tendría A/C en 2024 (unas 135.400) y 35,7 % en 2019. Con la variante A serían 41,3 % y 35,2 %.
 
 **Procedimiento** (igual al de la variante A; solo cambia la tasa objetivo):
 

@@ -1,7 +1,7 @@
 # Metodología
 
 ```{note}
-Las cifras de la ECV 2024 de este capítulo están corregidas (709 hogares). La serie de tenencia que usa el modelo y el efecto de diseño están en «Ajustes v3».
+La ECV 2024 se procesa con 709 hogares. La serie de tenencia que usa el modelo y el efecto de diseño están en «Serie de tenencia, error de la encuesta e imputación».
 ```
 
 ## Procesamiento de cada fuente
@@ -210,12 +210,12 @@ SE(P) = \sqrt{\sum_e W_e^2 \, \frac{p_e (1-p_e)}{n_e}}
 ```
 
 - 2019: SE ≈ 1,4 puntos → 33,5 % ± 2,8.
-- 2024: SE ≈ 1,7 puntos → 41,4 % ± 3,3 (± 4,1 con el efecto de diseño; ver «Ajustes v3»).
+- 2024: SE ≈ 1,7 puntos → 41,4 % ± 3,3 (± 4,1 con el efecto de diseño; ver «Serie de tenencia, error de la encuesta e imputación»).
 - Diferencia: 7,9 puntos, con SE ≈ √(1,4² + 1,7²) ≈ 2,2 → z ≈ 3,6.
 
 ### 7.3 Chequeo del número de hogares
 
-Población 2025 (DANE, tablero de la Alcaldía) ÷ personas por hogar (ECV 2024) = 1.279.344 / 3,51 ≈ 364.000 hogares. Se compara con suscriptores SUI (≈ 330.000) y predios de catastro (332.718). Con la base corregida, la ECV 2024 expande a 389.372 hogares (plausible); aun así la expansión a la ciudad se hace con el SUI.
+Población 2025 (DANE, tablero de la Alcaldía) ÷ personas por hogar (ECV 2024) = 1.279.344 / 3,51 ≈ 364.000 hogares. Se compara con suscriptores SUI (≈ 330.000) y predios de catastro (332.718). La ECV 2024 expande a 389.372 hogares (plausible); aun así la expansión a la ciudad se hace con el SUI.
 
 ### 7.4 Cota de consumo de AC (supuesto, no medido)
 
@@ -243,7 +243,7 @@ Todos los cruces (AC por quintil, tenencia de la vivienda, tamaño del hogar, te
 
 ### 5.2 Recalculo de tablas ECV 2024 (`ecv24_tablas.py`)
 
-Con la base corregida (709 hogares, 646 en E1–E6): tenencia por estrato, pago mediano (P5018 ÷ P5018S1, válidos 1.000–5.000.000 COP/mes), pago con/sin AC por grupo de estrato, AC por tenencia de vivienda (P5095) y tipo (P1070), quintiles de ingreso por persona (percentiles ponderados 20–40–60–80), techo (P4567: 1 concreto, 2 barro, 3 asbesto, 4 zinc, 5 plástica). Se verificó que 13 hogares con ingreso 0 (sobre todo E3–E5, 53 % con AC) distorsionan Q1.
+Con la base (709 hogares, 646 en E1–E6): tenencia por estrato, pago mediano (P5018 ÷ P5018S1, válidos 1.000–5.000.000 COP/mes), pago con/sin AC por grupo de estrato, AC por tenencia de vivienda (P5095) y tipo (P1070), quintiles de ingreso por persona (percentiles ponderados 20–40–60–80), techo (P4567: 1 concreto, 2 barro, 3 asbesto, 4 zinc, 5 plástica). Se verificó que 13 hogares con ingreso 0 (sobre todo E3–E5, 53 % con AC) distorsionan Q1.
 
 ### 5.3 Regresión logística ECV 2024 (`logit_ecv24.py`)
 
@@ -270,11 +270,3 @@ Con la base corregida (709 hogares, 646 en E1–E6): tenencia por estrato, pago 
 5. Simplificación: la mezcla de techos es la de la ECV 2024 en todos los años (afecta el reparto dentro del estrato, no su total).
 6. Salidas: `Catastro_PAC_por_anio_estrato_tipo.csv` (unir por estrato_num + tipo de edificio) y hojas Imputacion_catastro, Ciudad_catastro y Por_posicion del Excel.
 7. Sensibilidad E1 sin forzar (2024): a_E1 calibrado con la mezcla de la ECV → P(AC) E1 en catastro 14,4 % (edificio 4+ 25,8 %, hasta 3 pisos 9,7 %).
-
-## Correcciones a la metodología del procesamiento de fuentes
-
-- ECV 2024: hogar = DIRECTORIO + SECUENCIA_ENCUESTA (no DIRECTORIO + SECUENCIA_P). Todas las cifras 2024 de `Metodologia_(exportado).md` y del informe viejo están mal; usar las de esta nota o del informe nuevo.
-- Horas de AC (P5524): en las tablas nuevas se excluyen valores fuera de 0–24 h (antes se decía «máximo 30 h»).
-- Penetración 2024: 41,4 % ± 3,3 (no 39,4 %). Diferencia 2019–2024: 7,9 pp, z ≈ 3,6.
-- Chequeo de hogares: 1.279.344 hab ÷ 3,46 personas/hogar ≈ 370.000; la ECV 2024 corregida expande a 389.372 (plausible).
-- Efecto de diseño: medido en v3 para la ECV 2024 (≈ 1,5 en la tenencia de AC).

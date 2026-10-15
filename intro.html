@@ -228,7 +228,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_fuentes.html">Fuentes, decisiones y glosario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Ajustes v3: error de la encuesta, serie C, imputación y posición</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
 </ul>
@@ -407,7 +407,7 @@
 <h1>Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla<a class="headerlink" href="#datos-de-entrada-de-la-tesis-demanda-de-enfriamiento-residencial-en-barranquilla" title="Link to this heading">#</a></h1>
 <p><strong>María Carolina Cantillo Orozco</strong> · Maestría en Ingeniería Mecánica, Universidad del Norte · Actualizado: 14 de octubre de 2026</p>
 <p>Este sitio reúne el procesamiento de las fuentes públicas que alimentan el modelo <em>bottom-up</em> horario de aire acondicionado (A/C), ventiladores y neveras de la tesis «Perfiles horarios de demanda eléctrica de climatización y refrigeración residencial por estrato socioeconómico en Barranquilla»: la Encuesta Nacional de Calidad de Vida (ECV) del DANE, la Encuesta Nacional de Uso del Tiempo (ENUT), la Gran Encuesta Integrada de Hogares (GEIH), el consumo del Sistema Único de Información de servicios públicos (SUI) y el catastro de Barranquilla.</p>
-<p>La tenencia de aire acondicionado (A/C) que usará el modelo cambia a la <strong>variante C</strong>: una mezcla de la serie con tendencia y la serie sin tendencia, que da 35,6 % de hogares con A/C en la ciudad en 2019 y 41,2 % en 2024. Además, el margen de error de la ECV es 1,5 veces mayor en varianza de lo que se suponía (41,4 % ± 4,1 puntos en 2024, no ± 3,3), y la relación entre posición frente a la cubierta y A/C debe presentarse como resultado de la imputación, no como un dato observado.</p>
+<p>La tenencia de aire acondicionado (A/C) que usará el modelo es la <strong>variante C</strong>: una mezcla de la serie con tendencia y la serie sin tendencia, que da 35,6 % de hogares con A/C en la ciudad en 2019 y 41,2 % en 2024. Los márgenes de error incluyen el diseño muestral de la encuesta, que los amplía 1,5 veces en varianza (± 4,1 puntos para la ciudad en 2024), y la relación entre la posición de la vivienda frente a la cubierta y el A/C se presenta como resultado de la imputación, no como un dato observado.</p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/tenencia_estrato_C.png"><img alt="_images/tenencia_estrato_C.png" src="_images/tenencia_estrato_C.png" style="width: 100%;" />
 </a>
@@ -420,7 +420,7 @@
 <ul class="simple">
 <li><p><strong>Análisis y conclusiones</strong>: qué dicen los datos y qué implican para el modelo.</p></li>
 <li><p><strong>Fuentes y decisiones</strong>, <strong>Resultados</strong> y <strong>Metodología</strong>: cifras y cálculos detallados.</p></li>
-<li><p><strong>Ajustes v3</strong> y <strong>Cambios a la propuesta</strong>: las correcciones más recientes, listas para llevar a la propuesta.</p></li>
+<li><p><strong>Serie de tenencia, error de la encuesta e imputación</strong> y <strong>Cambios a la propuesta</strong>: los métodos más recientes y los textos listos para la propuesta.</p></li>
 <li><p><strong>Reproducibilidad</strong>: scripts y tablas resumen de este repositorio.</p></li>
 </ul>
 <p>Las bases por hogar y por vivienda no se publican aquí; los microdatos son públicos en el <a class="reference external" href="https://microdatos.dane.gov.co">catálogo del DANE</a> y el <a class="reference external" href="https://reportes.sui.gov.co">SUI</a>.</p>

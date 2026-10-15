@@ -68,7 +68,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Ajustes v3: error de la encuesta, serie C, imputación y posición" href="05_ajustes_v3.html" />
+    <link rel="next" title="Serie de tenencia, error de la encuesta e imputación" href="05_ajustes_v3.html" />
     <link rel="prev" title="Resultados" href="03_resultados.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -227,7 +227,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_fuentes.html">Fuentes, decisiones y glosario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Metodología</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Ajustes v3: error de la encuesta, serie C, imputación y posición</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
 </ul>
@@ -413,7 +413,6 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-p-ac-al-catastro-por-ano-imputacion-catastro-anual-py-suavizada-xlsx-py">5.5 Imputación de P(AC) al catastro por año (<code class="docutils literal notranslate"><span class="pre">imputacion_catastro_anual.py</span></code>, <code class="docutils literal notranslate"><span class="pre">suavizada_xlsx.py</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correcciones-a-la-metodologia-del-procesamiento-de-fuentes">Correcciones a la metodología del procesamiento de fuentes</a></li>
 </ul>
             </nav>
         </div>
@@ -429,7 +428,7 @@
 <h1>Metodología<a class="headerlink" href="#metodologia" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Las cifras de la ECV 2024 de este capítulo están corregidas (709 hogares). La serie de tenencia que usa el modelo y el efecto de diseño están en «Ajustes v3».</p>
+<p>La ECV 2024 se procesa con 709 hogares. La serie de tenencia que usa el modelo y el efecto de diseño están en «Serie de tenencia, error de la encuesta e imputación».</p>
 </div>
 <section id="procesamiento-de-cada-fuente">
 <h2>Procesamiento de cada fuente<a class="headerlink" href="#procesamiento-de-cada-fuente" title="Link to this heading">#</a></h2>
@@ -851,13 +850,13 @@
 \[SE(P) = \sqrt{\sum_e W_e^2 \, \frac{p_e (1-p_e)}{n_e}}\]</div>
 <ul class="simple">
 <li><p>2019: SE ≈ 1,4 puntos → 33,5 % ± 2,8.</p></li>
-<li><p>2024: SE ≈ 1,7 puntos → 41,4 % ± 3,3 (± 4,1 con el efecto de diseño; ver «Ajustes v3»).</p></li>
+<li><p>2024: SE ≈ 1,7 puntos → 41,4 % ± 3,3 (± 4,1 con el efecto de diseño; ver «Serie de tenencia, error de la encuesta e imputación»).</p></li>
 <li><p>Diferencia: 7,9 puntos, con SE ≈ √(1,4² + 1,7²) ≈ 2,2 → z ≈ 3,6.</p></li>
 </ul>
 </section>
 <section id="chequeo-del-numero-de-hogares">
 <h3>7.3 Chequeo del número de hogares<a class="headerlink" href="#chequeo-del-numero-de-hogares" title="Link to this heading">#</a></h3>
-<p>Población 2025 (DANE, tablero de la Alcaldía) ÷ personas por hogar (ECV 2024) = 1.279.344 / 3,51 ≈ 364.000 hogares. Se compara con suscriptores SUI (≈ 330.000) y predios de catastro (332.718). Con la base corregida, la ECV 2024 expande a 389.372 hogares (plausible); aun así la expansión a la ciudad se hace con el SUI.</p>
+<p>Población 2025 (DANE, tablero de la Alcaldía) ÷ personas por hogar (ECV 2024) = 1.279.344 / 3,51 ≈ 364.000 hogares. Se compara con suscriptores SUI (≈ 330.000) y predios de catastro (332.718). La ECV 2024 expande a 389.372 hogares (plausible); aun así la expansión a la ciudad se hace con el SUI.</p>
 </section>
 <section id="cota-de-consumo-de-ac-supuesto-no-medido">
 <h3>7.4 Cota de consumo de AC (supuesto, no medido)<a class="headerlink" href="#cota-de-consumo-de-ac-supuesto-no-medido" title="Link to this heading">#</a></h3>
@@ -885,7 +884,7 @@
 </section>
 <section id="recalculo-de-tablas-ecv-2024-ecv24-tablas-py">
 <h3>5.2 Recalculo de tablas ECV 2024 (<code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code>)<a class="headerlink" href="#recalculo-de-tablas-ecv-2024-ecv24-tablas-py" title="Link to this heading">#</a></h3>
-<p>Con la base corregida (709 hogares, 646 en E1–E6): tenencia por estrato, pago mediano (P5018 ÷ P5018S1, válidos 1.000–5.000.000 COP/mes), pago con/sin AC por grupo de estrato, AC por tenencia de vivienda (P5095) y tipo (P1070), quintiles de ingreso por persona (percentiles ponderados 20–40–60–80), techo (P4567: 1 concreto, 2 barro, 3 asbesto, 4 zinc, 5 plástica). Se verificó que 13 hogares con ingreso 0 (sobre todo E3–E5, 53 % con AC) distorsionan Q1.</p>
+<p>Con la base (709 hogares, 646 en E1–E6): tenencia por estrato, pago mediano (P5018 ÷ P5018S1, válidos 1.000–5.000.000 COP/mes), pago con/sin AC por grupo de estrato, AC por tenencia de vivienda (P5095) y tipo (P1070), quintiles de ingreso por persona (percentiles ponderados 20–40–60–80), techo (P4567: 1 concreto, 2 barro, 3 asbesto, 4 zinc, 5 plástica). Se verificó que 13 hogares con ingreso 0 (sobre todo E3–E5, 53 % con AC) distorsionan Q1.</p>
 </section>
 <section id="regresion-logistica-ecv-2024-logit-ecv24-py">
 <h3>5.3 Regresión logística ECV 2024 (<code class="docutils literal notranslate"><span class="pre">logit_ecv24.py</span></code>)<a class="headerlink" href="#regresion-logistica-ecv-2024-logit-ecv24-py" title="Link to this heading">#</a></h3>
@@ -919,16 +918,6 @@
 <li><p>Sensibilidad E1 sin forzar (2024): a_E1 calibrado con la mezcla de la ECV → P(AC) E1 en catastro 14,4 % (edificio 4+ 25,8 %, hasta 3 pisos 9,7 %).</p></li>
 </ol>
 </section>
-</section>
-<section id="correcciones-a-la-metodologia-del-procesamiento-de-fuentes">
-<h2>Correcciones a la metodología del procesamiento de fuentes<a class="headerlink" href="#correcciones-a-la-metodologia-del-procesamiento-de-fuentes" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>ECV 2024: hogar = DIRECTORIO + SECUENCIA_ENCUESTA (no DIRECTORIO + SECUENCIA_P). Todas las cifras 2024 de <code class="docutils literal notranslate"><span class="pre">Metodologia_(exportado).md</span></code> y del informe viejo están mal; usar las de esta nota o del informe nuevo.</p></li>
-<li><p>Horas de AC (P5524): en las tablas nuevas se excluyen valores fuera de 0–24 h (antes se decía «máximo 30 h»).</p></li>
-<li><p>Penetración 2024: 41,4 % ± 3,3 (no 39,4 %). Diferencia 2019–2024: 7,9 pp, z ≈ 3,6.</p></li>
-<li><p>Chequeo de hogares: 1.279.344 hab ÷ 3,46 personas/hogar ≈ 370.000; la ECV 2024 corregida expande a 389.372 (plausible).</p></li>
-<li><p>Efecto de diseño: medido en v3 para la ECV 2024 (≈ 1,5 en la tenencia de AC).</p></li>
-</ul>
 </section>
 </section>
 
@@ -976,7 +965,7 @@
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Ajustes v3: error de la encuesta, serie C, imputación y posición</p>
+        <p class="prev-next-title">Serie de tenencia, error de la encuesta e imputación</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1021,7 +1010,6 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-p-ac-al-catastro-por-ano-imputacion-catastro-anual-py-suavizada-xlsx-py">5.5 Imputación de P(AC) al catastro por año (<code class="docutils literal notranslate"><span class="pre">imputacion_catastro_anual.py</span></code>, <code class="docutils literal notranslate"><span class="pre">suavizada_xlsx.py</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correcciones-a-la-metodologia-del-procesamiento-de-fuentes">Correcciones a la metodología del procesamiento de fuentes</a></li>
 </ul>
   </nav></div>
 

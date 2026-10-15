@@ -1,6 +1,6 @@
 # Cambios a la propuesta
 
-Son seis cambios sobre la versión corregida (v3). Los textos propuestos están listos para pegar; los números salen de el capítulo «Ajustes v3».
+Son seis cambios sobre la versión v3 de la propuesta. Los textos propuestos están listos para pegar; los números salen del capítulo «Serie de tenencia, error de la encuesta e imputación».
 
 | # | Dónde | Texto actual (resumido) | Texto propuesto |
 | --- | --- | --- | --- |
@@ -11,4 +11,4 @@ Son seis cambios sobre la versión corregida (v3). Los textos propuestos están 
 | 5 | Tabla 10, columna «Alza ago.–sep. frente a feb.–mar.» y su nota | +11 / +16 / +24 / +26 / +27 / +28 %; nota «meses válidos de 2019 a 2025» | +11 / +17 / +24 / +28 / +29 / +28 %; nota «meses válidos de 2015 a 2025» (opcional: el patrón no cambia) |
 | 6 | Fase 3, Paso 4 (Calibración con 2015–2019) | Sin mención de la tenencia en esos años | Añadir: «La tenencia de 2015–2017 no tiene ola propia; su incertidumbre (± 2 puntos en la ciudad) se propaga con la Beta de cada estrato y se reportará en la banda de los resultados calibrados.» |
 
-Si en la tesis se menciona la relación entre la posición frente a la cubierta y el A/C, usar la redacción del capítulo «Ajustes v3».
+Si en la tesis se menciona la relación entre la posición frente a la cubierta y el A/C, usar la redacción del capítulo «Serie de tenencia, error de la encuesta e imputación».

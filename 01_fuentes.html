@@ -225,7 +225,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Fuentes, decisiones y glosario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Ajustes v3: error de la encuesta, serie C, imputación y posición</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
 </ul>
@@ -420,7 +420,7 @@
 </tr>
 <tr class="row-odd"><td><p>ECV 2024 (cat. 861)</p></td>
 <td><p>Tenencia (P1077S11 AC, S12 ventilador, S2 nevera), techo, tipo, ingreso</p></td>
-<td><p><strong>709 hogares</strong> en 698 viviendas (corregido)</p></td>
+<td><p><strong>709 hogares</strong> en 698 viviendas</p></td>
 </tr>
 <tr class="row-even"><td><p>ECV 2018–2025 (cat. 607, 678, 718, 734, 793, 827, 861, 905)</p></td>
 <td><p>Serie anual de tenencia</p></td>
@@ -446,15 +446,15 @@
 </table>
 </div>
 <p><strong>Llaves de hogar (importante):</strong> en archivos de hogar de la ECV, hogar = DIRECTORIO + SECUENCIA_ENCUESTA (SECUENCIA_P vale siempre 1). En archivos de personas, SECUENCIA_P = hogar y SECUENCIA_ENCUESTA = persona.</p>
-<p><strong>Regla general:</strong> de las encuestas se usan solo las tasas dentro de cada estrato; la expansión a la ciudad se hace con suscriptores SUI o viviendas de catastro. IC con muestreo aleatorio simple; el efecto de diseño medido en 2024 es ≈ 1,5 (ver Novedades v3): multiplicar varianzas por 1,5.</p>
+<p><strong>Regla general:</strong> de las encuestas se usan solo las tasas dentro de cada estrato; la expansión a la ciudad se hace con suscriptores SUI o viviendas de catastro. IC con muestreo aleatorio simple; el efecto de diseño medido en 2024 es ≈ 1,5 (ver «Serie de tenencia, error de la encuesta e imputación»): multiplicar varianzas por 1,5.</p>
 </section>
 <hr class="docutils" />
 <section id="decisiones-metodologicas">
 <h2>Decisiones metodológicas<a class="headerlink" href="#decisiones-metodologicas" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>ECV 2024 corregida</strong> (llaves de hogar): 709 hogares, 389.372 hogares expandidos. Todas las tablas de 2024 se recalcularon (<code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code>).</p></li>
+<li><p><strong>ECV 2024</strong> (hogar = DIRECTORIO + SECUENCIA_ENCUESTA): 709 hogares, 389.372 hogares expandidos. Todas las tablas de 2024 se recalcularon (<code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code>).</p></li>
 <li><p><strong>Penetración de la ciudad = postestratificación</strong> con suscriptores SUI de diciembre de cada año (no con los pesos de la ECV, que subestiman 1–6 pp porque la ECV tiene demasiados hogares de E1).</p></li>
-<li><p><strong>Tenencia para el modelo = variante C (v3) de la serie suavizada por estrato y año</strong> (antes variante A: tendencia logit-lineal por estrato, sin la ola 2020, con sobredispersión), expresada como <strong>Beta por estrato y año</strong>, 2015–2027. Esto sigue la propuesta («ola de cada año, suavizada entre olas», «cada proporción como Beta»).</p></li>
+<li><p><strong>Tenencia para el modelo = variante C de la serie suavizada por estrato y año</strong> (mezcla de un ajuste logit-lineal y uno de nivel constante, sin la ola 2020, con sobredispersión), expresada como <strong>Beta por estrato y año</strong>, 2015–2027. Esto sigue la propuesta («ola de cada año, suavizada entre olas», «cada proporción como Beta»).</p></li>
 <li><p><strong>Estrato 4</strong>: ya no se fija un valor; se usa la serie suavizada (70,4 % en 2019, 79,0 % en 2024). El 53 % observado en 2019 se considera sospechoso.</p></li>
 <li><p><strong>Estrato 1 en el catastro forzado a la tasa de la ECV</strong> (suavizada), porque la propuesta dice que la tenencia viene de la ECV y no se calibra. La versión sin forzar (≈ +2 pp en E1, +0,7 pp en la ciudad) queda como <strong>sensibilidad</strong> en el registro de supuestos.</p></li>
 <li><p><strong>Imputación al catastro</strong>: tasa del estrato fija; la regresión (modelo M2 de 2024) solo reparte la tenencia según el techo dentro del estrato; edificio de 4+ pisos (uso catastral con «Apartamentos») = techo de concreto.</p></li>
