@@ -4,9 +4,9 @@
 
 Este sitio reúne el procesamiento de las fuentes públicas que alimentan el modelo *bottom-up* horario de aire acondicionado (A/C), ventiladores y neveras de la tesis «Perfiles horarios de demanda eléctrica de climatización y refrigeración residencial por estrato socioeconómico en Barranquilla»: la Encuesta Nacional de Calidad de Vida (ECV) del DANE, la Encuesta Nacional de Uso del Tiempo (ENUT), la Gran Encuesta Integrada de Hogares (GEIH), el consumo del Sistema Único de Información de servicios públicos (SUI) y el catastro de Barranquilla.
 
-Uno de los insumos centrales del modelo es **cuántos hogares tienen aire acondicionado (A/C)** en cada estrato y en cada año. La ECV del DANE lo pregunta, pero en Barranquilla encuesta pocos hogares por estrato, así que la cifra sube y baja de un año a otro más por azar que por cambios reales. Por eso se estima una curva que suaviza esos saltos. Según ella, **el 35,6 % de los hogares de la ciudad tenía A/C en 2019 y el 41,2 % en 2024**.
+Uno de los insumos centrales del modelo es la **tenencia de aire acondicionado (A/C) por estrato socioeconómico y por año**. La ECV del DANE registra esta variable, pero el tamaño de la muestra de Barranquilla en cada estrato es reducido, por lo que las proporciones anuales presentan una variabilidad muestral elevada. Para obtener una serie estable, la tenencia de cada estrato se modela con una regresión logística sobre las olas 2018–2025 de la encuesta. Con esta serie, la proporción de hogares con A/C en la ciudad es de **35,6 % en 2019 y 41,2 % en 2024**.
 
-Los datos no permiten saber si la tenencia viene creciendo en todos los estratos o solo en algunos, así que la curva promedia las dos posibilidades (en este sitio se llama *variante C*). Su margen de error incluye esa duda y la forma en que se diseñó la muestra de la encuesta: para la ciudad en 2024 es de unos ± 4 puntos.
+Dado que la evidencia de una tendencia temporal solo es concluyente en los estratos 1 y 3, la serie adoptada (*variante C*) combina en partes iguales un ajuste con tendencia lineal y uno de nivel constante. Su incertidumbre incorpora la discrepancia entre ambos ajustes y el efecto del diseño muestral de la encuesta; para la ciudad, el intervalo de confianza del 95 % en 2024 es de ± 2,9 puntos porcentuales.
 
 ```{figure} figuras/tenencia_estrato_C.png
 :width: 100%
