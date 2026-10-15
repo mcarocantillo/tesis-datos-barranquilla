@@ -21,6 +21,7 @@ La propuesta pide que cada supuesto quede registrado con su fuente, su rango, su
 | S10 | La presencia en la vivienda de las cabeceras del Atlántico representa a Barranquilla | La ENUT no identifica el municipio | — | ENUT con municipio |
 | S11 | Una proporción observada de 100 % se representa con una Beta de Jeffreys actualizada | El método de momentos no aplica con varianza cero | Beta(1; 1) actualizada | Muestras mayores en E4–E6 |
 | S12 | Un suscriptor residencial del SUI equivale a un hogar | Catastro y SUI coinciden en número y distribución ({numref}`tab-coherencia-hogares`) | Hogares de la proyección demográfica | Hogares por medidor de Air-e |
+| S13 | El año de construcción del catastro se usa como «año de registro catastral», no como antigüedad física; los 24 lotes con años de 1932 a 1972 se tratan como faltantes | Aporta información sobre materiales para el juicio de expertos (Fase 1, paso 6); su significado no está documentado | Excluir la variable de los arquetipos | Definición del campo por la Gerencia de Gestión Catastral; imágenes históricas |
 ```
 
 ## Sensibilidad cuantificada
@@ -57,4 +58,4 @@ El supuesto S6 tiene un efecto que no se ve en la tasa de la ciudad, sino en el 
 5. **Calidad del SUI.** Hay meses faltantes, consumos nulos o negativos y tarifas atípicas; se marcaron con banderas y se excluyen ([Datos sospechosos y pendientes](07_datos_sospechosos.md)). El consumo del estrato 1 está por encima del de los estratos 2 y 3 y debe confirmarse.
 6. **Materiales sin registro.** El catastro no informa materiales. El techo de cada vivienda se asigna con la ECV por estrato, y en los edificios altos con un supuesto (S6). La ECV casi no capta los edificios de estrato 1, así que su distribución de techos describe sobre todo casas.
 7. **Comparaciones ecológicas.** La relación entre la tenencia de A/C y el alza estacional del consumo se mide con seis estratos agregados. Es coherente con el efecto del A/C, pero no lo identifica a nivel de hogar.
-8. **Año de construcción.** 15.376 apartamentos de estratos 1 y 2 en edificios de 4 o más pisos registran años entre 1932 y 1972, muy poco probables para su tipología. Mientras no se confirmen con el catastro, se tratarán como faltantes.
+8. **Año de construcción.** El campo `anio_construccion` del catastro parece registrar el año de la última incorporación o actualización de la construcción, no su fecha original: solo 1.442 casas de toda la ciudad son anteriores a 1975, y 15.376 apartamentos de estratos 1 y 2 en bloques recientes registran años entre 1932 y 1972. Se usará como «año de registro catastral» (S13), con esos 24 lotes como faltantes, hasta confirmar su significado con el catastro.
