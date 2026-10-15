@@ -6,7 +6,7 @@
 | E4 2020–2021 | 91,5 % (n = 58) y 89,2 %; 2020 en parte telefónica | 2020 fuera del ajuste |
 | E1 en el SUI | Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6) | Confirmar con Air-e; calibrar con E2–E6 mientras tanto |
 | Catastro vs ECV en E1 | 29,5 % de viviendas de E1 en edificios 4+, pero solo 17 % con techo de concreto en la ECV | Revisado: la altura del catastro es coherente (74 lotes de bloques de 5 pisos, 43 m² de mediana); la ECV casi no capta esos edificios (2 de 26 segmentos con hogares de E1, 7,7 esperados). Usar los techos de la ECV solo para casas; A/C de E1 2024 reponderado 14,5–15,2 % como sensibilidad. Script `catastro_e1_edificios.py` |
-| Año de construcción en edificios de E1–E2 | 15.376 apartamentos en edificios de 4+ pisos con años 1932–1972 (ninguno en E3–E6 antes de 1975) | Tratar como faltante antes de la Fase 1 |
+| Año de construcción en edificios de E1–E2 | 15.376 apartamentos en edificios de 4+ pisos con años 1932–1972 (ninguno en E3–E6 antes de 1975) | Muy probablemente erróneos (un solo año por lote, vienen así en la descarga original); confirmar con Catastro o imágenes históricas y, mientras tanto, tratar como faltantes en la Fase 1 |
 | SUI dic-2021 | 356.575 suscriptores (E1 120.329), vuelve a 317.080 en 2022 | No usar para totales |
 | Rurales ECV 2024 | 24,8 % con AC (n = 60) vs 6 % en 2019 y 2025 | Quedan fuera (estrato 0) |
 | Quintiles 2024 | Q1 > Q2 por 13 hogares con ingreso 0 | Excluirlos |
