@@ -8,6 +8,7 @@ parts:
       - file: 06_propuesta
   - caption: Detalle
     chapters:
+      - file: 14_encuestas
       - file: 01_fuentes
       - file: 03_resultados
       - file: 04_metodologia

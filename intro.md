@@ -47,6 +47,7 @@ Tenencia de A/C por estrato y año (variante C) con su intervalo de confianza de
 ## Cómo leer este sitio
 
 - **Análisis y conclusiones**, **Insumos del modelo** y **Cambios a la propuesta**: los resultados principales y lo que la tesis toma de ellos.
+- **Encuestas usadas y representatividad**: qué encuestas y años se usaron y qué parte de la población representa cada muestra.
 - **Fuentes**, **Resultados**, **Metodología** y **Serie de tenencia, error de la encuesta e imputación**: cifras y cálculos detallados.
 - **Coherencia entre fuentes** y **Supuestos, sensibilidad y limitaciones**: la validación de los datos y el registro de supuestos.
 - **Reproducibilidad** y **Referencias**: scripts, tablas y bibliografía.
