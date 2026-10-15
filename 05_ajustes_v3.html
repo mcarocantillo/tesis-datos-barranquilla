@@ -34,10 +34,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=80038813" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -68,7 +68,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Datos sospechosos y pendientes" href="07_datos_sospechosos.html" />
+    <link rel="next" title="Coherencia entre fuentes y validación" href="11_coherencia.html" />
     <link rel="prev" title="Metodología" href="04_metodologia.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -220,6 +220,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
@@ -228,7 +229,15 @@
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Serie de tenencia, error de la encuesta e imputación</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="11_coherencia.html">Coherencia entre fuentes y validación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_supuestos.html">Supuestos, sensibilidad y limitaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_referencias.html">Referencias</a></li>
 </ul>
@@ -413,8 +422,8 @@
 <h2>2. Efecto de diseño de la ECV 2024<a class="headerlink" href="#efecto-de-diseno-de-la-ecv-2024" title="Link to this heading">#</a></h2>
 <p>El error real de la tenencia de A/C es 1,5 veces mayor en varianza que el de un muestreo al azar hogar por hogar. La ECV no sortea hogares sueltos: sortea segmentos (grupos de manzanas) y encuesta varios hogares en cada uno, y los vecinos se parecen entre sí.</p>
 <p><strong>Cómo se calculó.</strong> El archivo «Variables diseño muestral» de la ECV 2024 trae el SEGMENTO de cada vivienda: 76 segmentos en Barranquilla, todos en un mismo estrato de diseño. Para una proporción ponderada p = Σ w·y / Σ w se usó la linealización de Taylor, con segmentos tratados como sorteados con reemplazo:</p>
-<div class="math notranslate nohighlight">
-\[z_i = \frac{w_i\,(y_i - \hat p)}{\sum_j w_j}, \qquad \widehat{V}(\hat p) = \frac{C}{C-1} \sum_{c=1}^{C} \Big(Z_c - \bar Z\Big)^2, \quad Z_c = \sum_{i \in c} z_i\]</div>
+<div class="math notranslate nohighlight" id="equation-05-ajustes-v3-0">
+<span class="eqno">(7)<a class="headerlink" href="#equation-05-ajustes-v3-0" title="Link to this equation">#</a></span>\[z_i = \frac{w_i\,(y_i - \hat p)}{\sum_j w_j}, \qquad \widehat{V}(\hat p) = \frac{C}{C-1} \sum_{c=1}^{C} \Big(Z_c - \bar Z\Big)^2, \quad Z_c = \sum_{i \in c} z_i\]</div>
 <p>donde C = 76 segmentos. Para un estrato se usa la misma fórmula con y y w iguales a cero fuera del estrato (estimación por dominio). El efecto de diseño es deff = V(conglomerados) / V(muestreo simple), con V(muestreo simple) = p(1 − p)/n. Para la ciudad se aplicó a la suma postestratificada Σ W_e p_e, con W_e = suscriptores del SUI en diciembre de 2024.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -487,11 +496,11 @@
 </tbody>
 </table>
 </div>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="fig-efecto-diseno">
 <a class="reference internal image-reference" href="_images/efecto_diseno.png"><img alt="_images/efecto_diseno.png" src="_images/efecto_diseno.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 17 </span><span class="caption-text">Semiancho del IC 95 % con y sin el diseño muestral.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 18 </span><span class="caption-text">Semiancho del IC 95 % con y sin el diseño muestral.</span><a class="headerlink" href="#fig-efecto-diseno" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -509,16 +518,16 @@
 </div>
 <p><strong>Datos.</strong> Tasa ponderada de hogares con A/C (P1077S11, factor FEX_C) por estrato en las olas 2018, 2019, 2021, 2022, 2023, 2024 y 2025 de la ECV en Barranquilla. La ola 2020 se excluye (encuesta en parte telefónica, año fuera de la calibración); 2015, 2016 y 2017 no traen municipio.</p>
 <p><strong>Dos ajustes por estrato</strong> (modelo lineal generalizado binomial, enlace logit, peso = n de hogares):</p>
-<div class="math notranslate nohighlight">
-\[\text{A:}\ \operatorname{logit} p_{e,t} = b_{0e} + b_{1e}\,(t - 2021), \qquad \text{B:}\ \operatorname{logit} p_{e,t} = b_{0e} \ \text{(salvo E1 y E3, que conservan la tendencia)}\]</div>
+<div class="math notranslate nohighlight" id="equation-05-ajustes-v3-1">
+<span class="eqno">(8)<a class="headerlink" href="#equation-05-ajustes-v3-1" title="Link to this equation">#</a></span>\[\text{A:}\ \operatorname{logit} p_{e,t} = b_{0e} + b_{1e}\,(t - 2021), \qquad \text{B:}\ \operatorname{logit} p_{e,t} = b_{0e} \ \text{(salvo E1 y E3, que conservan la tendencia)}\]</div>
 <ul class="simple">
 <li><p>A: tendencia en los seis estratos y n sin corregir.</p></li>
 <li><p>B: tendencia solo donde es significativa, E1 (p = 0,03) y E3 (p = 0,007); nivel constante en E2, E4, E5 y E6 (p de la tendencia entre 0,39 y 0,53); n efectivo = n / 1,5 por el efecto de diseño.</p></li>
 <li><p>En ambos, la covarianza de los coeficientes se multiplica por la sobredispersión φ = χ² de Pearson / grados de libertad (mínimo 1); para cada año, media m = logística(η) y desviación DE = m(1 − m)·EE(η) (método delta).</p></li>
 </ul>
 <p><strong>Mezcla C.</strong> Mitad A y mitad B, para cada estrato y año:</p>
-<div class="math notranslate nohighlight">
-\[m_C = \tfrac{1}{2}(m_A + m_B), \qquad \mathrm{DE}_C^2 = \tfrac{1}{2}(\mathrm{DE}_A^2 + \mathrm{DE}_B^2) + \tfrac{1}{4}(m_A - m_B)^2\]</div>
+<div class="math notranslate nohighlight" id="equation-05-ajustes-v3-2">
+<span class="eqno">(9)<a class="headerlink" href="#equation-05-ajustes-v3-2" title="Link to this equation">#</a></span>\[m_C = \tfrac{1}{2}(m_A + m_B), \qquad \mathrm{DE}_C^2 = \tfrac{1}{2}(\mathrm{DE}_A^2 + \mathrm{DE}_B^2) + \tfrac{1}{4}(m_A - m_B)^2\]</div>
 <p>El último término agrega la distancia entre A y B a la incertidumbre. La Beta de cada celda se obtiene por momentos: α = m·k, β = (1 − m)·k, con k = m(1 − m)/DE² − 1. La ciudad es Σ W_e m_e con los suscriptores del SUI de diciembre de cada año (2026–2027 con los de 2025) y DE = √Σ W_e² DE_e².</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -593,11 +602,11 @@
 </div>
 <p>* años sin ola de la ECV. Todos los años 2015–2027, con α y β, están en <code class="docutils literal notranslate"><span class="pre">Tenencia_AC_sensibilidad_AB.csv</span></code> (filas con variante = C). Ejemplo, 2024: E1 Beta(37,3; 244,3), E4 Beta(30,7; 9,5).</p>
 <p>La diferencia entre A y B en la ciudad llega a 2,9 puntos en 2015 y se reduce a 0,1 en 2021, el centro de los datos. La ciudad con C:</p>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="fig-tenencia-ciudad-variantes">
 <a class="reference internal image-reference" href="_images/tenencia_ciudad_variantes.png"><img alt="_images/tenencia_ciudad_variantes.png" src="_images/tenencia_ciudad_variantes.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 18 </span><span class="caption-text">Variantes A, B y C para la ciudad.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 19 </span><span class="caption-text">Variantes A, B y C para la ciudad.</span><a class="headerlink" href="#fig-tenencia-ciudad-variantes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -697,11 +706,11 @@
 </table>
 </div>
 <p>El rango baja de 37 a 13 puntos. Esos 13 puntos tampoco son un dato observado: salen de dos supuestos de la imputación, el efecto del techo del modelo M2 de 2024 y el techo de concreto para todo edificio de 4 o más pisos. El catastro no registra el material del techo ni el A/C.</p>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="fig-pac-posicion">
 <a class="reference internal image-reference" href="_images/pac_posicion.png"><img alt="_images/pac_posicion.png" src="_images/pac_posicion.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 19 </span><span class="caption-text">P(A/C) media de 2024 por posición, variante C.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 20 </span><span class="caption-text">P(A/C) media de 2024 por posición, variante C.</span><a class="headerlink" href="#fig-pac-posicion" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Redacción sugerida para la tesis:</strong> «Tras la imputación, las casas con cubierta propia quedan con la menor probabilidad de A/C (27 % frente a 64 % en los pisos intermedios). La mayor parte de esa diferencia se debe a que se concentran en los estratos 1 y 2; el resto (unos 13 puntos a igual estrato) refleja el supuesto de techo liviano en las viviendas de hasta tres pisos y no una observación directa.»</p>
@@ -754,7 +763,7 @@
 </div>
 <p><strong>ECV 2015</strong> (catálogo 419 del DANE). Trae departamento pero no municipio, así que no sirve para Barranquilla. Sí tiene el módulo de uso de energéticos con el tipo y las horas de A/C y ventilador (P5523–P5526), igual que la de 2019, pero solo a nivel del Atlántico.</p>
 <p><strong>SUI, estrato 3, diciembre de 2024.</strong> El consumo es normal (265 kWh por suscriptor), pero el valor facturado equivale a 449 COP/kWh, frente a 676–858 en los meses vecinos. Lo más probable es un crédito o una refacturación después de octubre de 2024, mes en que no se reportó consumo. Ese mes se usa para consumo y no para tarifa. Noviembre de 2024 (todos los estratos) puede incluir consumo atrasado de octubre. Ambos quedan marcados en la columna nueva <code class="docutils literal notranslate"><span class="pre">bandera_revision</span></code> del archivo del SUI.</p>
-<p><strong>Referencias de los métodos:</strong> efecto de diseño y linealización de Taylor (Kish, 1965; Wolter, 2007); postestratificación (Holt y Smith, 1979); modelo binomial y sobredispersión (McCullagh y Nelder, 1989); método delta (Oehlert, 1992); promedio de especificaciones (Hoeting et al., 1999); búsqueda de raíces (Brent, 1973). Ver <a class="reference internal" href="09_referencias.html"><span class="std std-doc">Referencias</span></a>.</p>
+<p><strong>Referencias de los métodos:</strong> efecto de diseño <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id29" title="Leslie Kish. Survey Sampling. Wiley, New York, 1965.">Kish, 1965</a>)</span> y linealización de Taylor <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id31" title="Kirk M. Wolter. Introduction to Variance Estimation. Springer, New York, 2007.">Wolter, 2007</a>)</span>; postestratificación <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id30" title="D. Holt y T. M. F. Smith. Post stratification. Journal of the Royal Statistical Society, Series A, 142(1):33–46, 1979.">Holt y Smith, 1979</a>)</span>; modelo binomial y sobredispersión <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id34" title="P. McCullagh y J. A. Nelder. Generalized Linear Models. Chapman &amp; Hall, London, 1989.">McCullagh y Nelder, 1989</a>)</span>; método delta <span class="bibtex-citation" id="id5">(<a class="reference internal" href="09_referencias.html#id40" title="Gary W. Oehlert. A note on the delta method. The American Statistician, 46(1):27–29, 1992.">Oehlert, 1992</a>)</span>; promedio de especificaciones <span class="bibtex-citation" id="id6">(<a class="reference internal" href="09_referencias.html#id41" title="Jennifer A. Hoeting, David Madigan, Adrian E. Raftery y Chris T. Volinsky. Bayesian model averaging: a tutorial. Statistical Science, 14(4):382–401, 1999.">Hoeting et al., 1999</a>)</span>; búsqueda de raíces <span class="bibtex-citation" id="id7">(<a class="reference internal" href="09_referencias.html#id43" title="Richard P. Brent. Algorithms for Minimization without Derivatives. Prentice-Hall, Englewood Cliffs, 1973.">Brent, 1973</a>)</span>. Ver <a class="reference internal" href="09_referencias.html"><span class="std std-doc">Referencias</span></a>.</p>
 </section>
 </section>
 
@@ -798,11 +807,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="07_datos_sospechosos.html"
+       href="11_coherencia.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Datos sospechosos y pendientes</p>
+        <p class="prev-next-title">Coherencia entre fuentes y validación</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

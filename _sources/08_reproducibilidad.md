@@ -37,6 +37,7 @@ Separador «;», codificación UTF-8 con BOM. No se publican las bases por hogar
 - `enut_out.py`
 - `enut_stats.py`
 - `estacionalidad_sui.py`
+- `figuras.py`
 - `geih.py`
 - `geih2.py`
 - `imputacion_catastro_anual.py`
@@ -55,12 +56,22 @@ Separador «;», codificación UTF-8 con BOM. No se publican las bases por hogar
 - `sui3.py`
 - `xlsx.py`
 
-Orden: `build_ecv2019.py` y `ecv24.py` → `ecv24_tablas.py`, `enut*.py`, `geih*.py`, `sui*.py` → `postestrat_anual.py` → `logit_ecv24.py` → `serie_suavizada.py` → `deff_ecv24.py` → `sensibilidad_serie.py` → `imputacion_catastro_anual_C.py` → `pac_posicion_estrato_C.py`, `estacionalidad_sui.py`.
+Orden: `build_ecv2019.py` y `ecv24.py` → `ecv24_tablas.py`, `enut*.py`, `geih*.py`, `sui*.py` → `postestrat_anual.py` → `logit_ecv24.py` → `serie_suavizada.py` → `deff_ecv24.py` → `sensibilidad_serie.py` → `imputacion_catastro_anual_C.py` → `pac_posicion_estrato_C.py`, `estacionalidad_sui.py` → `figuras.py`.
+
+## Entorno
+
+Python 3.13 con las versiones fijadas en `requirements.txt` (pandas 3.0, numpy 2.5, scipy 1.18, statsmodels 0.15 y matplotlib 3.11).
 
 ## Construir el sitio
 
 ```bash
-pip install "jupyter-book>=1,<2" ghp-import
+pip install -r requirements.txt
 jupyter-book build .
 ghp-import -n -p -f _build/html
 ```
+
+Las figuras se generan con `figuras.py` y las citas se resuelven desde `referencias.bib` con sphinxcontrib-bibtex.
+
+## Licencia y cita
+
+El código se distribuye con licencia MIT y los textos, figuras y tablas resumen con licencia CC BY 4.0. Los metadatos de cita están en `CITATION.cff`.

@@ -19,46 +19,55 @@ Los datos muestran una ciudad donde casi todos los hogares tienen ventilador y n
 ## Las cifras en gráficas
 
 ```{figure} figuras/ac_estrato_2019_2024.png
+:name: fig-ac-estrato-2019-2024
 :width: 100%
 Tenencia de A/C por estrato en las dos olas con más detalle.
 ```
 
 ```{figure} figuras/ac_quintil.png
+:name: fig-ac-quintil
 :width: 100%
 El ingreso pesa aun dentro del estrato.
 ```
 
 ```{figure} figuras/ventilador_con_sin_ac.png
+:name: fig-ventilador-con-sin-ac
 :width: 100%
 A/C y ventilador se usan juntos.
 ```
 
 ```{figure} figuras/neveras_tamano.png
+:name: fig-neveras-tamano
 :width: 100%
 Tamaño de la nevera por estrato.
 ```
 
 ```{figure} figuras/neveras_edad.png
+:name: fig-neveras-edad
 :width: 100%
 Antigüedad de las neveras.
 ```
 
 ```{figure} figuras/catastro_posicion.png
+:name: fig-catastro-posicion
 :width: 100%
 Tipo de vivienda frente a la cubierta.
 ```
 
 ```{figure} figuras/enut_horas.png
+:name: fig-enut-horas
 :width: 100%
 Presencia en casa según el tipo de persona.
 ```
 
 ```{figure} figuras/sui_kwh_estrato.png
+:name: fig-sui-kwh-estrato
 :width: 100%
 Nivel de consumo por estrato.
 ```
 
 ```{figure} figuras/estacionalidad_sui.png
+:name: fig-estacionalidad-sui
 :width: 100%
 Patrón estacional del consumo.
 ```

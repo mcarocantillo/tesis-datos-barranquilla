@@ -34,10 +34,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=80038813" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -62,6 +62,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03_resultados';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Índice" href="genindex.html" />
@@ -218,6 +220,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
@@ -226,7 +229,15 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="11_coherencia.html">Coherencia entre fuentes y validación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_supuestos.html">Supuestos, sensibilidad y limitaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_referencias.html">Referencias</a></li>
 </ul>
@@ -648,16 +659,16 @@
 </section>
 <section id="uso-ecv-2019-sin-cambios">
 <h2>4.4 Uso (ECV 2019), sin cambios<a class="headerlink" href="#uso-ecv-2019-sin-cambios" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="fig-horas-ac">
 <a class="reference internal image-reference" href="_images/horas_ac.png"><img alt="_images/horas_ac.png" src="_images/horas_ac.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 11 </span><span class="caption-text">Distribución de horas de uso del A/C.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 12 </span><span class="caption-text">Distribución de horas de uso del A/C.</span><a class="headerlink" href="#fig-horas-ac" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>Horas de AC (hogares con AC): mediana 8 h/día en todos los estratos; media 7,2; 17 % usa 12 h o más, 3,4 % más de 12 h, 1 % 24 h (7 % en E6). Tipo: 92,5 % mini-split, 3,1 % ventana, 4,4 % central (17,7 % en E6).</p></li>
-<li><p>Ventilador: con AC 9,8 h/día, sin AC 11,1 (razón 0,88). Por estrato, razón con/sin AC: E1 0,97; E2 0,90; E3 0,96; E4 1,07; E5–E6 sin datos suficientes (7 y 1 hogares sin AC). Se excluyeron 9 respuestas &gt; 24 h. Recomendación: p_c casi nulo (≈ 0,05) en E1–E4.</p></li>
+<li><p>Horas de AC (hogares con AC): mediana 8 h/día (6 h en E3 y 7 h en E4); media 7,2; 17 % usa 12 h o más, 3,4 % más de 12 h, 1 % 24 h (7 % en E6). Tipo: 92,5 % mini-split, 3,1 % ventana, 4,4 % central (17,7 % en E6).</p></li>
+<li><p>Ventilador: con AC 9,8 h/día, sin AC 11,1 (razón 0,88). Por estrato, razón con/sin AC: E1 0,97; E2 0,90; E3 0,96; E4 1,07; E5–E6 sin datos suficientes (7 y 1 hogares sin AC). Se excluyeron 9 respuestas &gt; 24 h. El A/C desplaza menos de media hora de ventilador al día en E1, E3 y E4 y 1,2 h en E2, de modo que <span class="math notranslate nohighlight">\(p_c\)</span>, la probabilidad de que el ventilador siga encendido mientras funciona el A/C, es alta: ≈ 0,95, con rango de 0,8 a 1,0 (ver «Insumos del modelo»).</p></li>
 <li><p>Número de equipos: la ECV 2019 no lo pregunta. Prior desde horas y AC central. <strong>Falta la fracción climatizada de CEELA</strong> (la propuesta cita: habitación en VIS y E3–E4, toda la vivienda en E5–E6).</p></li>
 </ul>
 </section>
@@ -721,28 +732,28 @@
 </table>
 </div>
 <p>Modelo M2 2024 (techo + estrato), usado en la imputación: b_asbesto = −1,061, b_zinc/otro = −1,954. Todos los coeficientes en <code class="docutils literal notranslate"><span class="pre">Logit_ECV2024_modelos.csv</span></code>.</p>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="fig-techos-estrato">
 <a class="reference internal image-reference" href="_images/techos_estrato.png"><img alt="_images/techos_estrato.png" src="_images/techos_estrato.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 12 </span><span class="caption-text">Material del techo por grupo de estrato.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 13 </span><span class="caption-text">Material del techo por grupo de estrato.</span><a class="headerlink" href="#fig-techos-estrato" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="fig-logit-or">
 <a class="reference internal image-reference" href="_images/logit_or.png"><img alt="_images/logit_or.png" src="_images/logit_or.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 13 </span><span class="caption-text">Razones de momios del modelo M3, ECV 2024.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 14 </span><span class="caption-text">Razones de momios del modelo M3, ECV 2024.</span><a class="headerlink" href="#fig-logit-or" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="posicion-frente-a-la-cubierta-catastro-e-imputacion-de-p-ac">
 <h2>4.6 Posición frente a la cubierta (catastro) e imputación de P(AC)<a class="headerlink" href="#posicion-frente-a-la-cubierta-catastro-e-imputacion-de-p-ac" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="fig-pac-tipo-edificio">
 <a class="reference internal image-reference" href="_images/pac_tipo_edificio.png"><img alt="_images/pac_tipo_edificio.png" src="_images/pac_tipo_edificio.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 14 </span><span class="caption-text">P(A/C) imputada por tipo de edificio, variante C.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 15 </span><span class="caption-text">P(A/C) imputada por tipo de edificio, variante C.</span><a class="headerlink" href="#fig-pac-tipo-edificio" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -829,11 +840,11 @@
 </section>
 <section id="sui-20152025-kwh-mes-por-suscriptor-meses-validos">
 <h2>4.7 SUI 2015–2025 (kWh/mes por suscriptor, meses válidos)<a class="headerlink" href="#sui-20152025-kwh-mes-por-suscriptor-meses-validos" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="fig-sui-suscriptores">
 <a class="reference internal image-reference" href="_images/sui_suscriptores.png"><img alt="_images/sui_suscriptores.png" src="_images/sui_suscriptores.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 15 </span><span class="caption-text">Suscriptores residenciales por estrato.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 16 </span><span class="caption-text">Suscriptores residenciales por estrato.</span><a class="headerlink" href="#fig-sui-suscriptores" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -979,11 +990,11 @@
 </section>
 <section id="ocupacion-enut-geih-sin-cambios">
 <h2>4.8 Ocupación (ENUT/GEIH), sin cambios<a class="headerlink" href="#ocupacion-enut-geih-sin-cambios" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="fig-geih-trabajo-casa">
 <a class="reference internal image-reference" href="_images/geih_trabajo_casa.png"><img alt="_images/geih_trabajo_casa.png" src="_images/geih_trabajo_casa.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 16 </span><span class="caption-text">Trabajo en la propia vivienda.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 17 </span><span class="caption-text">Trabajo en la propia vivienda.</span><a class="headerlink" href="#fig-geih-trabajo-casa" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>En 82–86 % de los hogares alguien está en casa todo el día hábil; un ocupado pasa ≈ 7,7 h fuera. Jornada escolar: 57,6 % mañana, 24,9 % tarde, 11,1 % única, 5,1 % noche. Trabajo en casa (GEIH): 15,6 % de los ocupados en E1 a 28,5 % en E6.</p>

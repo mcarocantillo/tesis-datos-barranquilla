@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Supuestos, sensibilidad y limitaciones &#8212; Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '12_supuestos';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Datos sospechosos y pendientes" href="07_datos_sospechosos.html" />
+    <link rel="prev" title="Coherencia entre fuentes y validación" href="11_coherencia.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_fuentes.html">Fuentes, decisiones y glosario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="11_coherencia.html">Coherencia entre fuentes y validación</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Supuestos, sensibilidad y limitaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_referencias.html">Referencias</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/mcarocantillo/tesis-datos-barranquilla" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/12_supuestos.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Supuestos, sensibilidad y limitaciones</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registro-de-supuestos">Registro de supuestos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensibilidad-cuantificada">Sensibilidad cuantificada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-de-los-datos">Limitaciones de los datos</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="supuestos-sensibilidad-y-limitaciones">
+<h1>Supuestos, sensibilidad y limitaciones<a class="headerlink" href="#supuestos-sensibilidad-y-limitaciones" title="Link to this heading">#</a></h1>
+<p>La propuesta pide que cada supuesto quede registrado con su fuente, su rango, su influencia y el dato que lo reemplazaría (Fase 3, paso 9). Este capítulo abre ese registro para los datos de entrada. La <a class="reference internal" href="#tab-supuestos"><span class="std std-numref">Tabla 16</span></a> lista los supuestos del procesamiento y la <a class="reference internal" href="#tab-sensibilidad"><span class="std std-numref">Tabla 17</span></a> cuantifica su efecto en las cifras principales. Los supuestos del modelo de simulación (consigna, umbrales de encendido, potencias) se agregarán en la Fase 2.</p>
+<section id="registro-de-supuestos">
+<h2>Registro de supuestos<a class="headerlink" href="#registro-de-supuestos" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-supuestos">
+<caption><span class="caption-number">Tabla 16 </span><span class="caption-text">Registro de supuestos de los datos de entrada.</span><a class="headerlink" href="#tab-supuestos" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>N.º</p></th>
+<th class="head"><p>Supuesto</p></th>
+<th class="head"><p>Justificación</p></th>
+<th class="head"><p>Alternativa o rango</p></th>
+<th class="head"><p>Dato que lo reemplazaría</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S1</p></td>
+<td><p>La tenencia de A/C por estrato y año es la mezcla, con igual peso, de un ajuste con tendencia y uno de nivel constante (variante C)</p></td>
+<td><p>La tendencia es significativa solo en E1 (<span class="math notranslate nohighlight">\(p = 0{,}03\)</span>) y E3 (<span class="math notranslate nohighlight">\(p = 0{,}007\)</span>); en los demás estratos <span class="math notranslate nohighlight">\(p\)</span> está entre 0,39 y 0,53</p></td>
+<td><p>Variante A (tendencia en todos) o B (tendencia solo en E1 y E3)</p></td>
+<td><p>Nuevas olas de la ECV (2026 en adelante)</p></td>
+</tr>
+<tr class="row-odd"><td><p>S2</p></td>
+<td><p>La ola 2020 no entra en el ajuste de la serie</p></td>
+<td><p>Encuesta en parte telefónica y ocupación de las viviendas alterada por la pandemia</p></td>
+<td><p>Incluirla</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>S3</p></td>
+<td><p>La tasa de la ciudad usa los pesos por estrato del SUI y no los de la ECV</p></td>
+<td><p>La ECV sobrerrepresenta el estrato 1 (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 13</span></a>)</p></td>
+<td><p>Factores de expansión de la ECV</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>S4</p></td>
+<td><p>El efecto de diseño de 2024 (1,5 en varianza) vale para las demás olas</p></td>
+<td><p>Solo la ola 2024 se procesó con sus segmentos (76 conglomerados)</p></td>
+<td><p>Muestreo aleatorio simple</p></td>
+<td><p>Variables de diseño de cada ola</p></td>
+</tr>
+<tr class="row-even"><td><p>S5</p></td>
+<td><p>El efecto del techo sobre el A/C (modelo M2) es el mismo en todos los años y estratos</p></td>
+<td><p>Se estima con la ECV 2024 (633 hogares); con la ECV 2019 (944 hogares) el efecto tiene el mismo signo y es algo menor</p></td>
+<td><p>Efectos de 2019 o del modelo M3</p></td>
+<td><p>Olas adicionales con techo y A/C</p></td>
+</tr>
+<tr class="row-odd"><td><p>S6</p></td>
+<td><p>Las viviendas en edificios de 4 pisos o más tienen techo de concreto</p></td>
+<td><p>El catastro no registra materiales; la ECV no identifica la altura del edificio</p></td>
+<td><p>Asignar el techo según la ECV por estrato</p></td>
+<td><p>Inspección o registro de materiales</p></td>
+</tr>
+<tr class="row-even"><td><p>S7</p></td>
+<td><p>La tenencia imputada al catastro en el estrato 1 se iguala a la de la ECV</p></td>
+<td><p>La tenencia no se calibra (Fase 3, paso 4)</p></td>
+<td><p>Intercepto calculado con la mezcla de la ECV</p></td>
+<td><p>Datos de Air-e por barrio</p></td>
+</tr>
+<tr class="row-odd"><td><p>S8</p></td>
+<td><p>Las horas de uso por equipo de 2019 valen para todos los años</p></td>
+<td><p>La ECV dejó de preguntarlas después de 2019</p></td>
+<td><p>Rango de las horas de 2019</p></td>
+<td><p>Medición o encuesta de uso reciente</p></td>
+</tr>
+<tr class="row-even"><td><p>S9</p></td>
+<td><p><span class="math notranslate nohighlight">\(p_c \approx 0{,}95\)</span>, igual en todos los estratos</p></td>
+<td><p>Horas de ventilador casi iguales con y sin A/C en E1–E4 (<a class="reference internal" href="10_insumos.html#tab-pc"><span class="std std-numref">Tabla 8</span></a>)</p></td>
+<td><p>0,8–1,0</p></td>
+<td><p>Medición en hogares con ambos equipos</p></td>
+</tr>
+<tr class="row-odd"><td><p>S10</p></td>
+<td><p>La presencia en la vivienda de las cabeceras del Atlántico representa a Barranquilla</p></td>
+<td><p>La ENUT no identifica el municipio</p></td>
+<td><p>—</p></td>
+<td><p>ENUT con municipio</p></td>
+</tr>
+<tr class="row-even"><td><p>S11</p></td>
+<td><p>Una proporción observada de 100 % se representa con una Beta de Jeffreys actualizada</p></td>
+<td><p>El método de momentos no aplica con varianza cero</p></td>
+<td><p>Beta(1; 1) actualizada</p></td>
+<td><p>Muestras mayores en E4–E6</p></td>
+</tr>
+<tr class="row-odd"><td><p>S12</p></td>
+<td><p>Un suscriptor residencial del SUI equivale a un hogar</p></td>
+<td><p>Catastro y SUI coinciden en número y distribución (<a class="reference internal" href="11_coherencia.html#tab-coherencia-hogares"><span class="std std-numref">Tabla 14</span></a>)</p></td>
+<td><p>Hogares de la proyección demográfica</p></td>
+<td><p>Hogares por medidor de Air-e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sensibilidad-cuantificada">
+<h2>Sensibilidad cuantificada<a class="headerlink" href="#sensibilidad-cuantificada" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-sensibilidad">
+<caption><span class="caption-number">Tabla 17 </span><span class="caption-text">Efecto de los supuestos sobre las cifras principales (puntos porcentuales de hogares con A/C).</span><a class="headerlink" href="#tab-sensibilidad" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Supuesto</p></th>
+<th class="head"><p>Cifra afectada</p></th>
+<th class="head"><p>Valor adoptado</p></th>
+<th class="head"><p>Alternativa</p></th>
+<th class="head"><p>Diferencia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S1, variante de la serie</p></td>
+<td><p>Ciudad 2015</p></td>
+<td><p>31,3 (C)</p></td>
+<td><p>29,8 (A); 32,7 (B)</p></td>
+<td><p>−1,5 a +1,4</p></td>
+</tr>
+<tr class="row-odd"><td><p>S1, variante de la serie</p></td>
+<td><p>Ciudad 2019</p></td>
+<td><p>35,6 (C)</p></td>
+<td><p>35,1 (A); 36,1 (B)</p></td>
+<td><p>± 0,5</p></td>
+</tr>
+<tr class="row-even"><td><p>S1, variante de la serie</p></td>
+<td><p>Ciudad 2024</p></td>
+<td><p>41,2 (C)</p></td>
+<td><p>41,8 (A); 40,6 (B)</p></td>
+<td><p>± 0,6</p></td>
+</tr>
+<tr class="row-odd"><td><p>S1, variante de la serie</p></td>
+<td><p>Ciudad 2027</p></td>
+<td><p>45,4 (C)</p></td>
+<td><p>46,7 (A); 44,1 (B)</p></td>
+<td><p>± 1,3</p></td>
+</tr>
+<tr class="row-even"><td><p>S2, incluir la ola 2020 (variante A)</p></td>
+<td><p>Ciudad 2015 / 2019 / 2024</p></td>
+<td><p>29,8 / 35,1 / 41,8</p></td>
+<td><p>31,2 / 35,9 / 42,1</p></td>
+<td><p>+0,3 a +1,4</p></td>
+</tr>
+<tr class="row-odd"><td><p>S3, pesos de la ECV en lugar del SUI</p></td>
+<td><p>Ciudad 2019 (tasa directa)</p></td>
+<td><p>33,3</p></td>
+<td><p>30,9</p></td>
+<td><p>−2,4</p></td>
+</tr>
+<tr class="row-even"><td><p>S3, pesos de la ECV en lugar del SUI</p></td>
+<td><p>Ciudad 2024 (tasa directa)</p></td>
+<td><p>41,4</p></td>
+<td><p>37,1</p></td>
+<td><p>−4,3</p></td>
+</tr>
+<tr class="row-odd"><td><p>S4, sin efecto de diseño</p></td>
+<td><p>Semiancho del IC 95 %, ciudad 2024 (tasa directa)</p></td>
+<td><p>± 4,1</p></td>
+<td><p>± 3,3</p></td>
+<td><p>−0,8</p></td>
+</tr>
+<tr class="row-even"><td><p>S5, modelo M3 en lugar de M2</p></td>
+<td><p>Razón de momios, asbesto-cemento / zinc</p></td>
+<td><p>0,35 / 0,14</p></td>
+<td><p>0,37 / 0,15</p></td>
+<td><p>+0,02 / +0,01</p></td>
+</tr>
+<tr class="row-odd"><td><p>S5, ECV 2019 en lugar de 2024 (M2)</p></td>
+<td><p>Razón de momios, asbesto-cemento / zinc</p></td>
+<td><p>0,35 / 0,14</p></td>
+<td><p>0,48 / 0,18</p></td>
+<td><p>+0,13 / +0,04</p></td>
+</tr>
+<tr class="row-even"><td><p>S7, E1 sin igualar a la ECV</p></td>
+<td><p>Tenencia del estrato 1 en el catastro, 2024</p></td>
+<td><p>13,2</p></td>
+<td><p>14,4</p></td>
+<td><p>+1,2 (ciudad +0,7)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La elección entre variantes de la serie (S1) mueve la tenencia de la ciudad menos de 1,5 puntos en cualquier año. Es menos que el semiancho del intervalo de confianza de 2024 (± 2,9 puntos), y por eso la diferencia entre variantes se incorpora a la varianza de la serie en lugar de tratarse como una decisión. El supuesto con mayor efecto es la ponderación de la ciudad (S3), que cambia la tasa de 2024 en 4,3 puntos. Ese supuesto, sin embargo, está respaldado por la coincidencia entre el catastro y el SUI (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 13</span></a>).</p>
+<p>El supuesto S6 tiene un efecto que no se ve en la tasa de la ciudad, sino en el reparto entre viviendas. Antes de estandarizar por estrato, la P(A/C) imputada difiere 37 puntos entre la casa y el apartamento intermedio. Dentro de cada estrato la diferencia baja a 13 puntos, y esos 13 puntos provienen del supuesto de techo, no de una observación. Por eso la relación entre la posición frente a la cubierta y el A/C se presenta como resultado de la imputación.</p>
+</section>
+<section id="limitaciones-de-los-datos">
+<h2>Limitaciones de los datos<a class="headerlink" href="#limitaciones-de-los-datos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Muestras pequeñas en los estratos altos.</strong> La ECV 2024 tiene 52, 38 y 20 hogares en los estratos 4, 5 y 6. Sus proporciones tienen intervalos de ± 10 a ± 14 puntos, y en el estrato 6 la tenencia observada de A/C es de 100 %. La serie suavizada y las distribuciones Beta reflejan esa incertidumbre, pero no la eliminan.</p></li>
+<li><p><strong>Años sin encuesta utilizable.</strong> Las ECV 2015, 2016 y 2017 no identifican el municipio en los microdatos. Los años 2015–2017 del periodo de calibración son extrapolaciones de la serie, con desviaciones estándar de 2,4 puntos en la ciudad en 2015.</p></li>
+<li><p><strong>Sin hora de uso.</strong> Ninguna encuesta registra a qué hora se usan los equipos. La ENUT da duraciones de las actividades, no horarios. La forma horaria del perfil dependerá del módulo térmico y de la demanda de XM, como reconoce la propuesta (Fase 3, paso 7).</p></li>
+<li><p><strong>Sin número de equipos ni fracción climatizada.</strong> La ECV registra si el hogar tiene A/C, pero no cuántos equipos tiene. El prior depende de CEELA, aún pendiente.</p></li>
+<li><p><strong>Calidad del SUI.</strong> Hay meses faltantes, consumos nulos o negativos y tarifas atípicas; se marcaron con banderas y se excluyen (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>). El consumo del estrato 1 está por encima del de los estratos 2 y 3 y debe confirmarse.</p></li>
+<li><p><strong>Materiales sin registro.</strong> El catastro no informa materiales. El techo de cada vivienda se asigna con la ECV por estrato, y en los edificios altos con un supuesto (S6).</p></li>
+<li><p><strong>Comparaciones ecológicas.</strong> La relación entre la tenencia de A/C y el alza estacional del consumo se mide con seis estratos agregados. Es coherente con el efecto del A/C, pero no lo identifica a nivel de hogar.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="11_coherencia.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Coherencia entre fuentes y validación</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07_datos_sospechosos.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Datos sospechosos y pendientes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registro-de-supuestos">Registro de supuestos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensibilidad-cuantificada">Sensibilidad cuantificada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-de-los-datos">Limitaciones de los datos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por María Carolina Cantillo Orozco
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

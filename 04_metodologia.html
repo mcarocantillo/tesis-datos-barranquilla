@@ -34,10 +34,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=80038813" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -220,6 +220,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
@@ -228,7 +229,15 @@
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="11_coherencia.html">Coherencia entre fuentes y validación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_supuestos.html">Supuestos, sensibilidad y limitaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_referencias.html">Referencias</a></li>
 </ul>
@@ -439,10 +448,10 @@
 <p>Toda cifra de encuesta del informe es <strong>ponderada</strong> con el factor de expansión de la encuesta, salvo que se diga lo contrario; los tamaños de muestra (n) se reportan <strong>sin ponderar</strong>.</p>
 <p><strong>Factor de expansión (w).</strong> Cada registro representa w hogares o personas de la población: FEX_C en ECV y ENUT, FEX_C18 en GEIH. En la GEIH cada mes está expandido a la población completa, así que al juntar 12 meses se usa w = FEX_C18 / 12. En la ECV 2019 el factor viene con coma decimal («364,91») y se convirtió a número.</p>
 <p><strong>Fórmulas usadas</strong> (sumas sobre los registros i del grupo analizado, por ejemplo un estrato):</p>
-<div class="math notranslate nohighlight">
-\[\text{Proporción ponderada: } \hat p = \frac{\sum_i w_i \, \mathbb{1}[\text{condición}_i]}{\sum_i w_i}\]</div>
-<div class="math notranslate nohighlight">
-\[\text{Media ponderada: } \bar x = \frac{\sum_i w_i x_i}{\sum_i w_i} \quad (\text{solo registros con } x_i \text{ válido})\]</div>
+<div class="math notranslate nohighlight" id="equation-04-metodologia-0">
+<span class="eqno">(3)<a class="headerlink" href="#equation-04-metodologia-0" title="Link to this equation">#</a></span>\[\text{Proporción ponderada: } \hat p = \frac{\sum_i w_i \, \mathbb{1}[\text{condición}_i]}{\sum_i w_i}\]</div>
+<div class="math notranslate nohighlight" id="equation-04-metodologia-1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-04-metodologia-1" title="Link to this equation">#</a></span>\[\text{Media ponderada: } \bar x = \frac{\sum_i w_i x_i}{\sum_i w_i} \quad (\text{solo registros con } x_i \text{ válido})\]</div>
 <ul class="simple">
 <li><p><strong>Mediana y percentiles ponderados:</strong> se ordenan los registros por x, se acumulan los pesos y se toma el primer valor cuyo peso acumulado alcanza 50 % (o 25 %, 75 %, 90 %) del total.</p></li>
 <li><p><strong>Distribuciones por estrato:</strong> suma de w de cada estrato dividida por la suma de w de los estratos 1–6. Los códigos 0 (sin estrato), 8 (planta eléctrica) y 9 (no sabe) se excluyen de las tablas por estrato.</p></li>
@@ -773,8 +782,8 @@
 <section id="penetracion-de-ac-en-la-ciudad-post-estratificacion">
 <h3>7.2 Penetración de AC en la ciudad (post-estratificación)<a class="headerlink" href="#penetracion-de-ac-en-la-ciudad-post-estratificacion" title="Link to this heading">#</a></h3>
 <p>Las encuestas tienen más hogares de estrato 1 que la ciudad real, y el estrato 1 es el que menos AC tiene; el promedio directo de la encuesta sale sesgado hacia abajo. Por eso se combinan la tasa de cada estrato (encuesta) con el peso real de cada estrato (SUI):</p>
-<div class="math notranslate nohighlight">
-\[P_{\text{ciudad}} = \sum_{e=1}^{6} W_e \, p_e, \qquad W_e = \frac{\text{suscriptores}_e}{\sum_{k=1}^{6}\text{suscriptores}_k}\]</div>
+<div class="math notranslate nohighlight" id="equation-04-metodologia-2">
+<span class="eqno">(5)<a class="headerlink" href="#equation-04-metodologia-2" title="Link to this equation">#</a></span>\[P_{\text{ciudad}} = \sum_{e=1}^{6} W_e \, p_e, \qquad W_e = \frac{\text{suscriptores}_e}{\sum_{k=1}^{6}\text{suscriptores}_k}\]</div>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Estrato</p></th>
@@ -847,8 +856,8 @@
 </table>
 </div>
 <p><strong>Incertidumbre</strong> (muestreo aleatorio simple, n = hogares de la ECV en cada estrato):</p>
-<div class="math notranslate nohighlight">
-\[SE(P) = \sqrt{\sum_e W_e^2 \, \frac{p_e (1-p_e)}{n_e}}\]</div>
+<div class="math notranslate nohighlight" id="equation-04-metodologia-3">
+<span class="eqno">(6)<a class="headerlink" href="#equation-04-metodologia-3" title="Link to this equation">#</a></span>\[SE(P) = \sqrt{\sum_e W_e^2 \, \frac{p_e (1-p_e)}{n_e}}\]</div>
 <ul class="simple">
 <li><p>2019: SE ≈ 1,4 puntos → 33,5 % ± 2,8.</p></li>
 <li><p>2024: SE ≈ 1,7 puntos → 41,4 % ± 3,3 (± 4,1 con el efecto de diseño; ver «Serie de tenencia, error de la encuesta e imputación»).</p></li>
@@ -918,7 +927,7 @@
 <li><p>Salidas: <code class="docutils literal notranslate"><span class="pre">Catastro_PAC_por_anio_estrato_tipo.csv</span></code> (unir por estrato_num + tipo de edificio) y hojas Imputacion_catastro, Ciudad_catastro y Por_posicion del Excel.</p></li>
 <li><p>Sensibilidad E1 sin forzar (2024): a_E1 calibrado con la mezcla de la ECV → P(AC) E1 en catastro 14,4 % (edificio 4+ 25,8 %, hasta 3 pisos 9,7 %).</p></li>
 </ol>
-<p><strong>Referencias de los métodos:</strong> factores de expansión y estimación por dominios (Lohr, 2019); intervalos de Agresti y Coull (1998); regresión logística ponderada (Hosmer et al., 2013; <a class="reference external" href="https://lihkir.github.io/MachineLearning/linear_model.html#modelos-lineales-para-clasificacion">Rubio, notas de clase, sección 3.8</a>); errores robustos HC1 (White, 1980; MacKinnon y White, 1985); pseudo-R² (McFadden, 1974); AUC (Hanley y McNeil, 1982; <a class="reference external" href="https://lihkir.github.io/MachineLearning/model_evaluation.html#curvas-precision-recall-y-roc">Rubio, sección 9.4</a>); Beta por momentos (Gelman et al., 2013). Ver <a class="reference internal" href="09_referencias.html"><span class="std std-doc">Referencias</span></a>.</p>
+<p><strong>Referencias de los métodos:</strong> factores de expansión y estimación por dominios <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id32" title="Sharon L. Lohr. Sampling: Design and Analysis. CRC Press, Boca Raton, 2019.">Lohr, 2019</a>)</span>; intervalos de Agresti y Coull <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id33" title="Alan Agresti y Brent A. Coull. Approximate is better than “exact” for interval estimation of binomial proportions. The American Statistician, 52(2):119–126, 1998.">Agresti y Coull, 1998</a>)</span>; regresión logística ponderada <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id35" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>)</span> y <a class="reference external" href="https://lihkir.github.io/MachineLearning/linear_model.html#modelos-lineales-para-clasificacion">Rubio, notas de clase, sección 3.8</a>; errores robustos HC1 <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id37" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>, <a class="reference internal" href="09_referencias.html#id36" title="Halbert White. A heteroskedasticity-consistent covariance matrix estimator and a direct test for heteroskedasticity. Econometrica, 48(4):817–838, 1980.">White, 1980</a>)</span>; pseudo-R² <span class="bibtex-citation" id="id5">(<a class="reference internal" href="09_referencias.html#id38" title="Daniel McFadden. Conditional logit analysis of qualitative choice behavior. En P. Zarembka, ed., Frontiers in Econometrics, pp. 105–142. Academic Press, New York, 1974.">McFadden, 1974</a>)</span>; área bajo la curva ROC <span class="bibtex-citation" id="id6">(<a class="reference internal" href="09_referencias.html#id39" title="James A. Hanley y Barbara J. McNeil. The meaning and use of the area under a receiver operating characteristic (ROC) curve. Radiology, 143(1):29–36, 1982.">Hanley y McNeil, 1982</a>)</span> y <a class="reference external" href="https://lihkir.github.io/MachineLearning/model_evaluation.html#curvas-precision-recall-y-roc">Rubio, sección 9.4</a>; distribución Beta por momentos <span class="bibtex-citation" id="id7">(<a class="reference internal" href="09_referencias.html#id42" title="Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari y Donald B. Rubin. Bayesian Data Analysis. CRC Press, Boca Raton, 2013.">Gelman et al., 2013</a>)</span>. Ver <a class="reference internal" href="09_referencias.html"><span class="std std-doc">Referencias</span></a>.</p>
 </section>
 </section>
 </section>

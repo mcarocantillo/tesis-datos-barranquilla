@@ -34,10 +34,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=80038813" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -217,15 +217,24 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_fuentes.html">Fuentes, decisiones y glosario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="11_coherencia.html">Coherencia entre fuentes y validación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_supuestos.html">Supuestos, sensibilidad y limitaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Referencias</a></li>
 </ul>
@@ -388,11 +397,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos">Datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notas-de-clase">Notas de clase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-estimacion-con-encuestas">Muestreo y estimación con encuestas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-estadisticos">Modelos estadísticos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-y-su-respaldo">Métodos y su respaldo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notas-de-clase-secciones-usadas">Notas de clase: secciones usadas</a></li>
 </ul>
             </nav>
         </div>
@@ -406,66 +413,215 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="referencias">
 <h1>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
-<p>Fuentes de los datos, de los métodos estadísticos y del software usados en este sitio. Las secciones de las notas de clase del profesor Lihki Rubio se citan con su enlace directo.</p>
-<section id="datos">
-<h2>Datos<a class="headerlink" href="#datos" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Alcaldía de Barranquilla, Gerencia de Gestión Catastral. <em>Catastro: servicio de datos abiertos</em> (capas 305, 315, 500, 505, 601 y 602). https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer. Consultado: 15 sep. 2026.</p></li>
-<li><p>Alcaldía de Barranquilla, Gerencia de Ciudad. <em>Tablero Estadísticas de Ciudad</em>. https://barranquilla.gov.co/gerencia-de-ciudad/tablero-estadisticas-de-ciudad. Consultado: 14 oct. 2026.</p></li>
-<li><p>DANE (2016–2026). <em>Encuesta Nacional de Calidad de Vida (ECV)</em>, microdatos 2015 (cat. 419), 2016 (456), 2017 (544), 2018 (607), 2019 (678), 2020 (718), 2021 (734), 2022 (793), 2023 (827), 2024 (861) y 2025 (905). https://microdatos.dane.gov.co/index.php/catalog/861</p></li>
-<li><p>DANE (2025). <em>Encuesta Nacional de Uso del Tiempo (ENUT) 2024–2025</em>, cat. 910. https://microdatos.dane.gov.co/index.php/catalog/910</p></li>
-<li><p>DANE (2025). <em>Gran Encuesta Integrada de Hogares (GEIH) 2024</em>, cat. 819. https://microdatos.dane.gov.co/index.php/catalog/819</p></li>
-<li><p>Superintendencia de Servicios Públicos Domiciliarios. <em>SUI, reporte ele_com_096: consolidado de energía por empresa, departamento y municipio</em>. https://reportes.sui.gov.co/fabricaReportes/frameSet.jsp?idreporte=ele_com_096. Consultado: oct. 2026.</p></li>
-<li><p>Cantillo Orozco, M. C., y Oñoro Araujo, J. C. (2026). <em>Estrato socioeconómico y características catastrales de la vivienda en Barranquilla. Entregable 1</em>, curso de aprendizaje automático, Universidad del Norte. https://mcarocantillo.github.io/entregable1-ml-barranquilla/</p></li>
-</ul>
+<p>Este capítulo reúne las fuentes de los datos, los métodos estadísticos y el software usados en el sitio. La <a class="reference internal" href="#tab-metodos-refs"><span class="std std-numref">Tabla 18</span></a> indica qué referencia respalda cada método y en qué capítulo se aplica. Las secciones de las notas de clase del profesor Lihki Rubio <span class="bibtex-citation" id="id1">(<a class="reference internal" href="#id28" title="Lihki Rubio. Machine Learning: notas de clase. 2026. URL: https://lihkir.github.io/MachineLearning/.">Rubio, 2026</a>)</span> se enlazan directamente al final.</p>
+<section id="metodos-y-su-respaldo">
+<h2>Métodos y su respaldo<a class="headerlink" href="#metodos-y-su-respaldo" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-metodos-refs">
+<caption><span class="caption-number">Tabla 18 </span><span class="caption-text">Métodos usados en el procesamiento y referencias que los respaldan.</span><a class="headerlink" href="#tab-metodos-refs" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Método</p></th>
+<th class="head"><p>Uso en este trabajo</p></th>
+<th class="head"><p>Referencia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Estimación ponderada por dominios</p></td>
+<td><p>Proporciones y medias por estrato con los factores de expansión</p></td>
+<td><p><span class="bibtex-citation" id="id2">Lohr (<a class="reference internal" href="#id32" title="Sharon L. Lohr. Sampling: Design and Analysis. CRC Press, Boca Raton, 2019.">2019</a>)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Efecto de diseño</p></td>
+<td><p>Error de la ECV 2024 con 76 segmentos como conglomerados</p></td>
+<td><p><span class="bibtex-citation" id="id3">Kish (<a class="reference internal" href="#id29" title="Leslie Kish. Survey Sampling. Wiley, New York, 1965.">1965</a>)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Linealización de Taylor</p></td>
+<td><p>Varianza de una razón con conglomerados</p></td>
+<td><p><span class="bibtex-citation" id="id4">Wolter (<a class="reference internal" href="#id31" title="Kirk M. Wolter. Introduction to Variance Estimation. Springer, New York, 2007.">2007</a>)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Postestratificación</p></td>
+<td><p>Tasa de la ciudad con los pesos del SUI</p></td>
+<td><p><span class="bibtex-citation" id="id5">Holt y Smith (<a class="reference internal" href="#id30" title="D. Holt y T. M. F. Smith. Post stratification. Journal of the Royal Statistical Society, Series A, 142(1):33–46, 1979.">1979</a>)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Intervalos de Agresti y Coull</p></td>
+<td><p>Proporciones con muestras pequeñas (E5, E6)</p></td>
+<td><p><span class="bibtex-citation" id="id6">Agresti y Coull (<a class="reference internal" href="#id33" title="Alan Agresti y Brent A. Coull. Approximate is better than “exact” for interval estimation of binomial proportions. The American Statistician, 52(2):119–126, 1998.">1998</a>)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Modelo lineal generalizado binomial con sobredispersión</p></td>
+<td><p>Serie anual de tenencia por estrato</p></td>
+<td><p><span class="bibtex-citation" id="id7">McCullagh y Nelder (<a class="reference internal" href="#id34" title="P. McCullagh y J. A. Nelder. Generalized Linear Models. Chapman &amp; Hall, London, 1989.">1989</a>)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Método delta</p></td>
+<td><p>Desviación estándar de la tenencia suavizada</p></td>
+<td><p><span class="bibtex-citation" id="id8">Oehlert (<a class="reference internal" href="#id40" title="Gary W. Oehlert. A note on the delta method. The American Statistician, 46(1):27–29, 1992.">1992</a>)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Promedio de especificaciones</p></td>
+<td><p>Variante C de la serie y varianza entre modelos</p></td>
+<td><p><span class="bibtex-citation" id="id9">Hoeting et al. (<a class="reference internal" href="#id41" title="Jennifer A. Hoeting, David Madigan, Adrian E. Raftery y Chris T. Volinsky. Bayesian model averaging: a tutorial. Statistical Science, 14(4):382–401, 1999.">1999</a>)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Distribución Beta por momentos</p></td>
+<td><p>Insumos de tenencia como distribuciones</p></td>
+<td><p><span class="bibtex-citation" id="id10">Gelman et al. (<a class="reference internal" href="#id42" title="Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari y Donald B. Rubin. Bayesian Data Analysis. CRC Press, Boca Raton, 2013.">2013</a>)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Regresión logística ponderada</p></td>
+<td><p>Tenencia de A/C según techo, estrato e ingreso</p></td>
+<td><p><span class="bibtex-citation" id="id11">Hosmer et al. (<a class="reference internal" href="#id35" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">2013</a>)</span>; <span class="bibtex-citation" id="id12">Rubio (<a class="reference internal" href="#id28" title="Lihki Rubio. Machine Learning: notas de clase. 2026. URL: https://lihkir.github.io/MachineLearning/.">2026</a>)</span>, sección 3.8</p></td>
+</tr>
+<tr class="row-even"><td><p>Errores estándar robustos HC1</p></td>
+<td><p>Inferencia de la regresión logística</p></td>
+<td><p><span class="bibtex-citation" id="id13">White (<a class="reference internal" href="#id36" title="Halbert White. A heteroskedasticity-consistent covariance matrix estimator and a direct test for heteroskedasticity. Econometrica, 48(4):817–838, 1980.">1980</a>)</span>; <span class="bibtex-citation" id="id14">MacKinnon y White (<a class="reference internal" href="#id37" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">1985</a>)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Pseudo-R² de McFadden</p></td>
+<td><p>Ajuste de la regresión logística</p></td>
+<td><p><span class="bibtex-citation" id="id15">McFadden (<a class="reference internal" href="#id38" title="Daniel McFadden. Conditional logit analysis of qualitative choice behavior. En P. Zarembka, ed., Frontiers in Econometrics, pp. 105–142. Academic Press, New York, 1974.">1974</a>)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Área bajo la curva ROC</p></td>
+<td><p>Discriminación de la regresión logística</p></td>
+<td><p><span class="bibtex-citation" id="id16">Hanley y McNeil (<a class="reference internal" href="#id39" title="James A. Hanley y Barbara J. McNeil. The meaning and use of the area under a receiver operating characteristic (ROC) curve. Radiology, 143(1):29–36, 1982.">1982</a>)</span>; <span class="bibtex-citation" id="id17">Rubio (<a class="reference internal" href="#id28" title="Lihki Rubio. Machine Learning: notas de clase. 2026. URL: https://lihkir.github.io/MachineLearning/.">2026</a>)</span>, sección 9.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Método de Brent</p></td>
+<td><p>Intercepto de la imputación al catastro</p></td>
+<td><p><span class="bibtex-citation" id="id18">Brent (<a class="reference internal" href="#id43" title="Richard P. Brent. Algorithms for Minimization without Derivatives. Prentice-Hall, Englewood Cliffs, 1973.">1973</a>)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Índice de disimilitud</p></td>
+<td><p>Comparación de la distribución por estrato entre fuentes</p></td>
+<td><p><span class="bibtex-citation" id="id19">Duncan y Duncan (<a class="reference internal" href="#id49" title="Otis Dudley Duncan y Beverly Duncan. A methodological analysis of segregation indexes. American Sociological Review, 20(2):210–217, 1955. doi:10.2307/2088328.">1955</a>)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="notas-de-clase">
-<h2>Notas de clase<a class="headerlink" href="#notas-de-clase" title="Link to this heading">#</a></h2>
+<section id="bibliografia">
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id20">
+<div role="list" class="citation-list">
+<div class="citation" id="id33" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">1</a><span class="fn-bracket">]</span></span>
+<p>Alan Agresti y Brent A. Coull. Approximate is better than “exact” for interval estimation of binomial proportions. <em>The American Statistician</em>, 52(2):119–126, 1998.</p>
+</div>
+<div class="citation" id="id22" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Alcaldía de Barranquilla, Gerencia de Ciudad. Tablero Estadísticas de Ciudad. 2026. Consultado: 14 oct. 2026. URL: <a class="reference external" href="https://barranquilla.gov.co/gerencia-de-ciudad/tablero-estadisticas-de-ciudad">https://barranquilla.gov.co/gerencia-de-ciudad/tablero-estadisticas-de-ciudad</a>.</p>
+</div>
+<div class="citation" id="id21" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 305, 315, 500, 505, 601 y 602). ArcGIS REST, 2026. Consultado: 15 sep. 2026. URL: <a class="reference external" href="https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer">https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer</a>.</p>
+</div>
+<div class="citation" id="id43" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">4</a><span class="fn-bracket">]</span></span>
+<p>Richard P. Brent. <em>Algorithms for Minimization without Derivatives</em>. Prentice-Hall, Englewood Cliffs, 1973.</p>
+</div>
+<div class="citation" id="id27" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<p>María Carolina Cantillo Orozco y Juan Camilo Oñoro Araujo. Estrato socioeconómico y características catastrales de la vivienda en Barranquilla. Entregable 1, curso de aprendizaje automático. 2026. URL: <a class="reference external" href="https://mcarocantillo.github.io/entregable1-ml-barranquilla/">https://mcarocantillo.github.io/entregable1-ml-barranquilla/</a>.</p>
+</div>
+<div class="citation" id="id24" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
+<p>DANE. Encuesta Nacional de Uso del Tiempo (ENUT) 2024–2025, catálogo 910. 2025. URL: <a class="reference external" href="https://microdatos.dane.gov.co/index.php/catalog/910">https://microdatos.dane.gov.co/index.php/catalog/910</a>.</p>
+</div>
+<div class="citation" id="id25" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<p>DANE. Gran Encuesta Integrada de Hogares (GEIH) 2024, catálogo 819. 2025. URL: <a class="reference external" href="https://microdatos.dane.gov.co/index.php/catalog/819">https://microdatos.dane.gov.co/index.php/catalog/819</a>.</p>
+</div>
+<div class="citation" id="id23" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
+<p>DANE. Encuesta Nacional de Calidad de Vida (ECV), microdatos 2015–2025 (catálogos 419, 456, 544, 607, 678, 718, 734, 793, 827, 861 y 905). 2026. URL: <a class="reference external" href="https://microdatos.dane.gov.co/index.php/catalog/861">https://microdatos.dane.gov.co/index.php/catalog/861</a>.</p>
+</div>
+<div class="citation" id="id49" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">9</a><span class="fn-bracket">]</span></span>
+<p>Otis Dudley Duncan y Beverly Duncan. A methodological analysis of segregation indexes. <em>American Sociological Review</em>, 20(2):210–217, 1955. <a class="reference external" href="https://doi.org/10.2307/2088328">doi:10.2307/2088328</a>.</p>
+</div>
+<div class="citation" id="id48" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
+<p>Executable Books Community. Jupyter Book. 2020. URL: <a class="reference external" href="https://jupyterbook.org">https://jupyterbook.org</a>.</p>
+</div>
+<div class="citation" id="id42" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">11</a><span class="fn-bracket">]</span></span>
+<p>Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari y Donald B. Rubin. <em>Bayesian Data Analysis</em>. CRC Press, Boca Raton, 2013.</p>
+</div>
+<div class="citation" id="id39" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">12</a><span class="fn-bracket">]</span></span>
+<p>James A. Hanley y Barbara J. McNeil. The meaning and use of the area under a receiver operating characteristic (ROC) curve. <em>Radiology</em>, 143(1):29–36, 1982.</p>
+</div>
+<div class="citation" id="id41" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">13</a><span class="fn-bracket">]</span></span>
+<p>Jennifer A. Hoeting, David Madigan, Adrian E. Raftery y Chris T. Volinsky. Bayesian model averaging: a tutorial. <em>Statistical Science</em>, 14(4):382–401, 1999.</p>
+</div>
+<div class="citation" id="id30" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">14</a><span class="fn-bracket">]</span></span>
+<p>D. Holt y T. M. F. Smith. Post stratification. <em>Journal of the Royal Statistical Society, Series A</em>, 142(1):33–46, 1979.</p>
+</div>
+<div class="citation" id="id35" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">15</a><span class="fn-bracket">]</span></span>
+<p>David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. <em>Applied Logistic Regression</em>. Wiley, Hoboken, 2013.</p>
+</div>
+<div class="citation" id="id47" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
+<p>John D. Hunter. Matplotlib: A 2D graphics environment. <em>Computing in Science &amp; Engineering</em>, 9(3):90–95, 2007.</p>
+</div>
+<div class="citation" id="id29" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">17</a><span class="fn-bracket">]</span></span>
+<p>Leslie Kish. <em>Survey Sampling</em>. Wiley, New York, 1965.</p>
+</div>
+<div class="citation" id="id32" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">18</a><span class="fn-bracket">]</span></span>
+<p>Sharon L. Lohr. <em>Sampling: Design and Analysis</em>. CRC Press, Boca Raton, 2019.</p>
+</div>
+<div class="citation" id="id37" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">19</a><span class="fn-bracket">]</span></span>
+<p>James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. <em>Journal of Econometrics</em>, 29(3):305–325, 1985.</p>
+</div>
+<div class="citation" id="id34" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">20</a><span class="fn-bracket">]</span></span>
+<p>P. McCullagh y J. A. Nelder. <em>Generalized Linear Models</em>. Chapman &amp; Hall, London, 1989.</p>
+</div>
+<div class="citation" id="id38" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">21</a><span class="fn-bracket">]</span></span>
+<p>Daniel McFadden. Conditional logit analysis of qualitative choice behavior. En P. Zarembka, ed., <em>Frontiers in Econometrics</em>, pp. 105–142. Academic Press, New York, 1974.</p>
+</div>
+<div class="citation" id="id44" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></span>
+<p>Wes McKinney. Data structures for statistical computing in Python. En <em>Proceedings of the 9th Python in Science Conference</em>, 56–61. 2010.</p>
+</div>
+<div class="citation" id="id40" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">23</a><span class="fn-bracket">]</span></span>
+<p>Gary W. Oehlert. A note on the delta method. <em>The American Statistician</em>, 46(1):27–29, 1992.</p>
+</div>
+<div class="citation" id="id28" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id12">2</a>,<a role="doc-backlink" href="#id17">3</a>)</span>
+<p>Lihki Rubio. Machine Learning: notas de clase. 2026. URL: <a class="reference external" href="https://lihkir.github.io/MachineLearning/">https://lihkir.github.io/MachineLearning/</a>.</p>
+</div>
+<div class="citation" id="id45" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></span>
+<p>Skipper Seabold y Josef Perktold. statsmodels: Econometric and statistical modeling with Python. En <em>Proceedings of the 9th Python in Science Conference</em>, 92–96. 2010.</p>
+</div>
+<div class="citation" id="id26" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></span>
+<p>Superintendencia de Servicios Públicos Domiciliarios. SUI, reporte ele_com_096: consolidado de energía por empresa, departamento y municipio. 2026. Consultado: oct. 2026. URL: <a class="reference external" href="https://reportes.sui.gov.co/fabricaReportes/frameSet.jsp?idreporte=ele_com_096">https://reportes.sui.gov.co/fabricaReportes/frameSet.jsp?idreporte=ele_com_096</a>.</p>
+</div>
+<div class="citation" id="id46" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></span>
+<p>Pauli Virtanen y SciPy 1.0 Contributors. SciPy 1.0: Fundamental algorithms for scientific computing in Python. <em>Nature Methods</em>, 17:261–272, 2020.</p>
+</div>
+<div class="citation" id="id36" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">28</a><span class="fn-bracket">]</span></span>
+<p>Halbert White. A heteroskedasticity-consistent covariance matrix estimator and a direct test for heteroskedasticity. <em>Econometrica</em>, 48(4):817–838, 1980.</p>
+</div>
+<div class="citation" id="id31" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">29</a><span class="fn-bracket">]</span></span>
+<p>Kirk M. Wolter. <em>Introduction to Variance Estimation</em>. Springer, New York, 2007.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="notas-de-clase-secciones-usadas">
+<h2>Notas de clase: secciones usadas<a class="headerlink" href="#notas-de-clase-secciones-usadas" title="Link to this heading">#</a></h2>
+<p>Rubio, L. (2026). <em>Machine Learning: notas de clase</em>. Universidad del Norte. <a class="reference external" href="https://lihkir.github.io/MachineLearning/">https://lihkir.github.io/MachineLearning/</a></p>
 <ul class="simple">
-<li><p>Rubio, L. (2026). <em>Machine Learning: notas de clase</em>. Universidad del Norte. https://lihkir.github.io/MachineLearning/</p>
-<ul>
 <li><p>Sección 2.6, <a class="reference external" href="https://lihkir.github.io/MachineLearning/knn_model.html#analisis-exploratorio-de-datos">Análisis exploratorio de datos</a>: descripción y depuración de las bases.</p></li>
 <li><p>Sección 3.8, <a class="reference external" href="https://lihkir.github.io/MachineLearning/linear_model.html#modelos-lineales-para-clasificacion">Modelos lineales para clasificación</a>: regresión logística de la tenencia de A/C.</p></li>
 <li><p>Secciones 9.3 y 9.4, <a class="reference external" href="https://lihkir.github.io/MachineLearning/model_evaluation.html#metricas-de-evaluacion-y-scoring">Métricas de evaluación</a> y <a class="reference external" href="https://lihkir.github.io/MachineLearning/model_evaluation.html#curvas-precision-recall-y-roc">curvas ROC</a>: AUC del modelo logístico.</p></li>
-<li><p>Sección 10.3, <a class="reference external" href="https://lihkir.github.io/MachineLearning/chains_pipelines.html#data-leakage">Data leakage</a>: separación entre datos de calibración (2015–2019) y de validación.</p></li>
-<li><p>Secciones 8.1, 8.2 y 8.5, <a class="reference external" href="https://lihkir.github.io/MachineLearning/clustering.html#k-means">K-Means</a>, <a class="reference external" href="https://lihkir.github.io/MachineLearning/clustering.html#seleccion-automatica-de-k">selección de k</a> y <a class="reference external" href="https://lihkir.github.io/MachineLearning/clustering.html#dbscan">DBSCAN</a>: base de la construcción de arquetipos (siguiente fase).</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="muestreo-y-estimacion-con-encuestas">
-<h2>Muestreo y estimación con encuestas<a class="headerlink" href="#muestreo-y-estimacion-con-encuestas" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Kish, L. (1965). <em>Survey Sampling</em>. Wiley. — Efecto de diseño (deff) y tamaño efectivo de muestra.</p></li>
-<li><p>Holt, D., y Smith, T. M. F. (1979). Post stratification. <em>Journal of the Royal Statistical Society, Series A</em>, 142(1), 33–46. — Postestratificación con los suscriptores del SUI.</p></li>
-<li><p>Wolter, K. M. (2007). <em>Introduction to Variance Estimation</em> (2.ª ed.). Springer. — Linealización de Taylor para la varianza de una razón con conglomerados.</p></li>
-<li><p>Lohr, S. L. (2019). <em>Sampling: Design and Analysis</em> (2.ª ed.). CRC Press. — Estimación por dominios, factores de expansión y postestratificación.</p></li>
-<li><p>Agresti, A., y Coull, B. A. (1998). Approximate is better than «exact» for interval estimation of binomial proportions. <em>The American Statistician</em>, 52(2), 119–126. — Intervalos de proporciones con muestras pequeñas (estratos 5 y 6).</p></li>
-</ul>
-</section>
-<section id="modelos-estadisticos">
-<h2>Modelos estadísticos<a class="headerlink" href="#modelos-estadisticos" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>McCullagh, P., y Nelder, J. A. (1989). <em>Generalized Linear Models</em> (2.ª ed.). Chapman &amp; Hall. — Modelo binomial con enlace logit y estimación de la sobredispersión con el χ² de Pearson.</p></li>
-<li><p>Hosmer, D. W., Lemeshow, S., y Sturdivant, R. X. (2013). <em>Applied Logistic Regression</em> (3.ª ed.). Wiley. — Regresión logística ponderada y razones de momios.</p></li>
-<li><p>White, H. (1980). A heteroskedasticity-consistent covariance matrix estimator and a direct test for heteroskedasticity. <em>Econometrica</em>, 48(4), 817–838.</p></li>
-<li><p>MacKinnon, J. G., y White, H. (1985). Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. <em>Journal of Econometrics</em>, 29(3), 305–325. — Errores estándar robustos HC1.</p></li>
-<li><p>McFadden, D. (1974). Conditional logit analysis of qualitative choice behavior. En P. Zarembka (Ed.), <em>Frontiers in Econometrics</em> (pp. 105–142). Academic Press. — Pseudo-R².</p></li>
-<li><p>Hanley, J. A., y McNeil, B. J. (1982). The meaning and use of the area under a receiver operating characteristic (ROC) curve. <em>Radiology</em>, 143(1), 29–36. — AUC.</p></li>
-<li><p>Oehlert, G. W. (1992). A note on the delta method. <em>The American Statistician</em>, 46(1), 27–29. — Desviación estándar de la tenencia suavizada.</p></li>
-<li><p>Hoeting, J. A., Madigan, D., Raftery, A. E., y Volinsky, C. T. (1999). Bayesian model averaging: a tutorial. <em>Statistical Science</em>, 14(4), 382–401. — Promedio de especificaciones (variante C) y varianza entre modelos.</p></li>
-<li><p>Gelman, A., Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., y Rubin, D. B. (2013). <em>Bayesian Data Analysis</em> (3.ª ed.). CRC Press. — Distribución Beta como prior de una proporción.</p></li>
-<li><p>Brent, R. P. (1973). <em>Algorithms for Minimization without Derivatives</em>. Prentice-Hall. — Búsqueda del intercepto en la imputación al catastro.</p></li>
-</ul>
-</section>
-<section id="software">
-<h2>Software<a class="headerlink" href="#software" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>McKinney, W. (2010). Data structures for statistical computing in Python. <em>Proceedings of the 9th Python in Science Conference</em>, 56–61. — pandas.</p></li>
-<li><p>Seabold, S., y Perktold, J. (2010). statsmodels: Econometric and statistical modeling with Python. <em>Proceedings of the 9th Python in Science Conference</em>, 92–96.</p></li>
-<li><p>Virtanen, P., et al. (2020). SciPy 1.0: Fundamental algorithms for scientific computing in Python. <em>Nature Methods</em>, 17, 261–272.</p></li>
-<li><p>Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. <em>Computing in Science &amp; Engineering</em>, 9(3), 90–95.</p></li>
-<li><p>Executable Books Community (2020). <em>Jupyter Book</em>. https://jupyterbook.org</p></li>
+<li><p>Sección 10.3, <a class="reference external" href="https://lihkir.github.io/MachineLearning/chains_pipelines.html#data-leakage">Data leakage</a>: separación entre los datos de calibración (2015–2019) y los de validación.</p></li>
+<li><p>Secciones 8.1, 8.2 y 8.5, <a class="reference external" href="https://lihkir.github.io/MachineLearning/clustering.html#k-means">K-Means</a>, <a class="reference external" href="https://lihkir.github.io/MachineLearning/clustering.html#seleccion-automatica-de-k">selección de k</a> y <a class="reference external" href="https://lihkir.github.io/MachineLearning/clustering.html#dbscan">DBSCAN</a>: base de la construcción de arquetipos (Fase 1).</p></li>
 </ul>
 </section>
 </section>
@@ -527,11 +683,9 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos">Datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notas-de-clase">Notas de clase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-estimacion-con-encuestas">Muestreo y estimación con encuestas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-estadisticos">Modelos estadísticos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-y-su-respaldo">Métodos y su respaldo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notas-de-clase-secciones-usadas">Notas de clase: secciones usadas</a></li>
 </ul>
   </nav></div>
 
