@@ -270,3 +270,7 @@ Con la base (709 hogares, 646 en E1–E6): tenencia por estrato, pago mediano (P
 5. Simplificación: la mezcla de techos es la de la ECV 2024 en todos los años (afecta el reparto dentro del estrato, no su total).
 6. Salidas: `Catastro_PAC_por_anio_estrato_tipo.csv` (unir por estrato_num + tipo de edificio) y hojas Imputacion_catastro, Ciudad_catastro y Por_posicion del Excel.
 7. Sensibilidad E1 sin forzar (2024): a_E1 calibrado con la mezcla de la ECV → P(AC) E1 en catastro 14,4 % (edificio 4+ 25,8 %, hasta 3 pisos 9,7 %).
+
+
+
+**Referencias de los métodos:** factores de expansión y estimación por dominios (Lohr, 2019); intervalos de Agresti y Coull (1998); regresión logística ponderada (Hosmer et al., 2013; [Rubio, notas de clase, sección 3.8](https://lihkir.github.io/MachineLearning/linear_model.html#modelos-lineales-para-clasificacion)); errores robustos HC1 (White, 1980; MacKinnon y White, 1985); pseudo-R² (McFadden, 1974); AUC (Hanley y McNeil, 1982; [Rubio, sección 9.4](https://lihkir.github.io/MachineLearning/model_evaluation.html#curvas-precision-recall-y-roc)); Beta por momentos (Gelman et al., 2013). Ver [Referencias](09_referencias.md).

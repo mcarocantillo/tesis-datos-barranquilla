@@ -139,3 +139,7 @@ P(A/C) media de 2024 por posición, variante C.
 **ECV 2015** (catálogo 419 del DANE). Trae departamento pero no municipio, así que no sirve para Barranquilla. Sí tiene el módulo de uso de energéticos con el tipo y las horas de A/C y ventilador (P5523–P5526), igual que la de 2019, pero solo a nivel del Atlántico.
 
 **SUI, estrato 3, diciembre de 2024.** El consumo es normal (265 kWh por suscriptor), pero el valor facturado equivale a 449 COP/kWh, frente a 676–858 en los meses vecinos. Lo más probable es un crédito o una refacturación después de octubre de 2024, mes en que no se reportó consumo. Ese mes se usa para consumo y no para tarifa. Noviembre de 2024 (todos los estratos) puede incluir consumo atrasado de octubre. Ambos quedan marcados en la columna nueva `bandera_revision` del archivo del SUI.
+
+
+
+**Referencias de los métodos:** efecto de diseño y linealización de Taylor (Kish, 1965; Wolter, 2007); postestratificación (Holt y Smith, 1979); modelo binomial y sobredispersión (McCullagh y Nelder, 1989); método delta (Oehlert, 1992); promedio de especificaciones (Hoeting et al., 1999); búsqueda de raíces (Brent, 1973). Ver [Referencias](09_referencias.md).
