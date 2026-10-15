@@ -24,6 +24,7 @@ donde C = 76 segmentos. Para un estrato se usa la misma fórmula con y y w igual
 
 
 ```{figure} figuras/efecto_diseno.png
+:name: fig-efecto-diseno
 :width: 100%
 Semiancho del IC 95 % con y sin el diseño muestral.
 ```
@@ -76,6 +77,7 @@ El último término agrega la distancia entre A y B a la incertidumbre. La Beta 
 La diferencia entre A y B en la ciudad llega a 2,9 puntos en 2015 y se reduce a 0,1 en 2021, el centro de los datos. La ciudad con C:
 
 ```{figure} figuras/tenencia_ciudad_variantes.png
+:name: fig-tenencia-ciudad-variantes
 :width: 100%
 Variantes A, B y C para la ciudad.
 ```
@@ -120,6 +122,7 @@ La mayor parte de la diferencia de A/C entre posiciones se debe al estrato, no a
 El rango baja de 37 a 13 puntos. Esos 13 puntos tampoco son un dato observado: salen de dos supuestos de la imputación, el efecto del techo del modelo M2 de 2024 y el techo de concreto para todo edificio de 4 o más pisos. El catastro no registra el material del techo ni el A/C.
 
 ```{figure} figuras/pac_posicion.png
+:name: fig-pac-posicion
 :width: 100%
 P(A/C) media de 2024 por posición, variante C.
 ```
@@ -142,4 +145,4 @@ P(A/C) media de 2024 por posición, variante C.
 
 
 
-**Referencias de los métodos:** efecto de diseño y linealización de Taylor (Kish, 1965; Wolter, 2007); postestratificación (Holt y Smith, 1979); modelo binomial y sobredispersión (McCullagh y Nelder, 1989); método delta (Oehlert, 1992); promedio de especificaciones (Hoeting et al., 1999); búsqueda de raíces (Brent, 1973). Ver [Referencias](09_referencias.md).
+**Referencias de los métodos:** efecto de diseño {cite:p}`kish1965` y linealización de Taylor {cite:p}`wolter2007`; postestratificación {cite:p}`holt1979`; modelo binomial y sobredispersión {cite:p}`mccullagh1989`; método delta {cite:p}`oehlert1992`; promedio de especificaciones {cite:p}`hoeting1999`; búsqueda de raíces {cite:p}`brent1973`. Ver [Referencias](09_referencias.md).

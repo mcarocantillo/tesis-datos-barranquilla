@@ -10,3 +10,11 @@ html[data-theme="dark"]{--pst-color-primary:#3987e5;--pst-color-secondary:#d9592
 nav.bd-links li.toctree-l1.current>a{color:var(--acento2)!important;border-left:3px solid var(--acento2);}
 figure img{border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.08);}
 .admonition.note{border-color:var(--acento3);}
+/* bibliografía autor-año: sin etiquetas numéricas, sangría francesa */
+.bd-article div.citation-list{display:block;}
+.bd-article div.citation-list > div.citation{display:block;padding-left:2em;text-indent:-2em;margin:0 0 .6em 0;}
+.bd-article div.citation-list > div.citation > span.label{display:none;}
+.bd-article div.citation-list > div.citation > p{display:inline;margin:0;}
+/* leyendas de figuras y tablas */
+.bd-article figcaption, .bd-article table caption{font-size:.92em;color:var(--pst-color-text-muted);}
+.bd-article figcaption .caption-number, .bd-article table caption .caption-number{font-weight:700;font-style:normal;color:var(--pst-color-primary);}

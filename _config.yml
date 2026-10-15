@@ -5,15 +5,31 @@ logo: ""
 language: es
 execute:
   execute_notebooks: "off"
-exclude_patterns: ["_build/*", "README.md", "scripts/*", "tablas/*"]
+exclude_patterns: ["_build/*", "README.md", "scripts/*", "tablas/*", "_ext/*"]
+only_build_toc_files: true
+bibtex_bibfiles:
+  - referencias.bib
 parse:
   myst_enable_extensions: [dollarmath, amsmath, colon_fence, deflist]
 sphinx:
+  local_extensions:
+    estilo_bib: _ext
   config:
     html_show_copyright: false
     language: es
     html_static_path: ["_static"]
     html_css_files: ["custom.css"]
+    numfig: true
+    numfig_secnum_depth: 0
+    numfig_format:
+      figure: "Figura %s"
+      table: "Tabla %s"
+      code-block: "Código %s"
+      section: "Sección %s"
+    math_number_all: true
+    math_numfig: true
+    bibtex_reference_style: autor_anio_es
+    bibtex_default_style: apa_es
 html:
   use_repository_button: true
   home_page_in_navbar: true

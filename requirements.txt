@@ -1,0 +1,10 @@
+jupyter-book==1.0.4.post1
+sphinxcontrib-bibtex==2.7.0
+pybtex==0.26.1
+ghp-import==2.1.0
+pandas==3.0.5
+numpy==2.5.3
+scipy==1.18.1
+statsmodels==0.15.0
+matplotlib==3.11.2
+openpyxl==3.1.5

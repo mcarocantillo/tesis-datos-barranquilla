@@ -4,6 +4,7 @@ parts:
   - caption: Lo principal
     chapters:
       - file: 02_analisis
+      - file: 10_insumos
       - file: 06_propuesta
   - caption: Detalle
     chapters:
@@ -11,6 +12,12 @@ parts:
       - file: 03_resultados
       - file: 04_metodologia
       - file: 05_ajustes_v3
+  - caption: Validación
+    chapters:
+      - file: 11_coherencia
+      - file: 12_supuestos
       - file: 07_datos_sospechosos
+  - caption: Anexos
+    chapters:
       - file: 08_reproducibilidad
       - file: 09_referencias

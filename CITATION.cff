@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Si usa este material, cítelo con estos metadatos."
+title: "Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla"
+type: dataset
+authors:
+  - family-names: "Cantillo Orozco"
+    given-names: "María Carolina"
+    affiliation: "Universidad del Norte"
+version: "1.0"
+date-released: "2026-10-14"
+url: "https://mcarocantillo.github.io/tesis-datos-barranquilla/"
+repository-code: "https://github.com/mcarocantillo/tesis-datos-barranquilla"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - demanda de enfriamiento
+  - aire acondicionado
+  - modelo bottom-up
+  - estrato socioeconómico
+  - Barranquilla
+  - encuestas de hogares
+abstract: "Procesamiento, documentación y validación de los datos de entrada (ECV, ENUT, GEIH, SUI y catastro) de un modelo bottom-up horario de climatización y refrigeración residencial por estrato socioeconómico en Barranquilla, Colombia."
