@@ -434,49 +434,53 @@
 </tr>
 <tr class="row-odd"><td><p>Catastro vs ECV en E1</p></td>
 <td><p>29,5 % de viviendas de E1 en edificios 4+, pero solo 17 % con techo de concreto en la ECV</p></td>
-<td><p>E1 forzado a la ECV; resolver en la Fase 1 al asignar techos</p></td>
+<td><p>Revisado: la altura del catastro es coherente (74 lotes de bloques de 5 pisos, 43 m² de mediana); la ECV casi no capta esos edificios (2 de 26 segmentos con hogares de E1, 7,7 esperados). Usar los techos de la ECV solo para casas; A/C de E1 2024 reponderado 14,5–15,2 % como sensibilidad. Script <code class="docutils literal notranslate"><span class="pre">catastro_e1_edificios.py</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>SUI dic-2021</p></td>
+<tr class="row-even"><td><p>Año de construcción en edificios de E1–E2</p></td>
+<td><p>15.376 apartamentos en edificios de 4+ pisos con años 1932–1972 (ninguno en E3–E6 antes de 1975)</p></td>
+<td><p>Tratar como faltante antes de la Fase 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUI dic-2021</p></td>
 <td><p>356.575 suscriptores (E1 120.329), vuelve a 317.080 en 2022</p></td>
 <td><p>No usar para totales</p></td>
 </tr>
-<tr class="row-odd"><td><p>Rurales ECV 2024</p></td>
+<tr class="row-even"><td><p>Rurales ECV 2024</p></td>
 <td><p>24,8 % con AC (n = 60) vs 6 % en 2019 y 2025</p></td>
 <td><p>Quedan fuera (estrato 0)</p></td>
 </tr>
-<tr class="row-even"><td><p>Quintiles 2024</p></td>
+<tr class="row-odd"><td><p>Quintiles 2024</p></td>
 <td><p>Q1 &gt; Q2 por 13 hogares con ingreso 0</p></td>
 <td><p>Excluirlos</p></td>
 </tr>
-<tr class="row-odd"><td><p>E5–E6</p></td>
+<tr class="row-even"><td><p>E5–E6</p></td>
 <td><p>7–72 hogares por ola; E6 en 100 %</p></td>
 <td><p>Agresti–Coull / serie suavizada</p></td>
 </tr>
-<tr class="row-even"><td><p>Meses SUI</p></td>
+<tr class="row-odd"><td><p>Meses SUI</p></td>
 <td><p>Falta jun-2022; sep–oct 2024 y ago-2025 sin consumo; sep-2022, ene y mar 2023 negativos; mar–ago 2026 tarifa 10–20× en E5–E6</p></td>
 <td><p>Excluidos con banderas</p></td>
 </tr>
-<tr class="row-odd"><td><p>SUI E3 dic-2024</p></td>
+<tr class="row-even"><td><p>SUI E3 dic-2024</p></td>
 <td><p>449 COP/kWh vs 676–858 en meses vecinos</p></td>
 <td><p>Usar para kWh, no para tarifa (columna bandera_revision)</p></td>
 </tr>
-<tr class="row-even"><td><p>Techo concreto E1–2</p></td>
+<tr class="row-odd"><td><p>Techo concreto E1–2</p></td>
 <td><p>15,5 % (2019) → 28,6 % (2024)</p></td>
 <td><p>Posible ruido; promediar olas</p></td>
 </tr>
-<tr class="row-odd"><td><p>Lavadora E1</p></td>
+<tr class="row-even"><td><p>Lavadora E1</p></td>
 <td><p>62 % → 48 %</p></td>
 <td><p>Cambio de pregunta</p></td>
 </tr>
-<tr class="row-even"><td><p>Hogares expandidos ECV</p></td>
+<tr class="row-odd"><td><p>Hogares expandidos ECV</p></td>
 <td><p>329.000 (2019) → 399.000 (2025)</p></td>
 <td><p>Expandir con SUI</p></td>
 </tr>
-<tr class="row-odd"><td><p>Alcaldía</p></td>
+<tr class="row-even"><td><p>Alcaldía</p></td>
 <td><p>13 % de viviendas en E5–6 vs 9 % catastro/SUI</p></td>
 <td><p>Diferencia de universo</p></td>
 </tr>
-<tr class="row-even"><td><p>«Apartamento» ECV</p></td>
+<tr class="row-odd"><td><p>«Apartamento» ECV</p></td>
 <td><p>48 % de E1 vive en «apartamento», 68 % bajo asbesto</p></td>
 <td><p>No usar como proxy de altura</p></td>
 </tr>

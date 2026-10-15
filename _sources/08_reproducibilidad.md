@@ -5,6 +5,8 @@ Los cálculos se hicieron en Python (pandas, numpy, scipy, statsmodels) a partir
 ## Tablas resumen (carpeta `tablas/` del repositorio)
 
 - `Calculos_nuevos_metodologia.xlsx`
+- `Catastro_E1_edificios_4pisos_por_lote.csv`
+- `Catastro_ECV_E1_edificios_resumen.csv`
 - `Catastro_PAC_por_anio_estrato_tipo_C.csv`
 - `ECV2024_efecto_diseno.csv`
 - `ECV_2018_2025_AC_postestratificado_SUI.csv`
@@ -28,6 +30,7 @@ Separador «;», codificación UTF-8 con BOM. No se publican las bases por hogar
 
 - `build_ecv2019.py`
 - `catastro_cubierta.py`
+- `catastro_e1_edificios.py`
 - `deep.py`
 - `deff_ecv24.py`
 - `ecv19_extra.py`
@@ -56,7 +59,7 @@ Separador «;», codificación UTF-8 con BOM. No se publican las bases por hogar
 - `sui3.py`
 - `xlsx.py`
 
-Orden: `build_ecv2019.py` y `ecv24.py` → `ecv24_tablas.py`, `enut*.py`, `geih*.py`, `sui*.py` → `postestrat_anual.py` → `logit_ecv24.py` → `serie_suavizada.py` → `deff_ecv24.py` → `sensibilidad_serie.py` → `imputacion_catastro_anual_C.py` → `pac_posicion_estrato_C.py`, `estacionalidad_sui.py` → `figuras.py`.
+Orden: `build_ecv2019.py` y `ecv24.py` → `ecv24_tablas.py`, `enut*.py`, `geih*.py`, `sui*.py` → `postestrat_anual.py` → `logit_ecv24.py` → `serie_suavizada.py` → `deff_ecv24.py` → `sensibilidad_serie.py` → `imputacion_catastro_anual_C.py` → `pac_posicion_estrato_C.py`, `estacionalidad_sui.py`, `catastro_e1_edificios.py` → `figuras.py`.
 
 ## Entorno
 

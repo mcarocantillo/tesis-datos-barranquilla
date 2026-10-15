@@ -404,6 +404,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numero-de-hogares">Número de hogares</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tenencia-de-equipos-medida-por-fuentes-distintas">Tenencia de equipos medida por fuentes distintas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-frente-a-facturacion">Encuesta frente a facturación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edificios-del-estrato-1-frente-al-techo-declarado-en-la-ecv">Edificios del estrato 1 frente al techo declarado en la ECV</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-pendiente">Validación pendiente</a></li>
 </ul>
             </nav>
@@ -591,6 +592,50 @@ D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
 </figure>
 <p>La correlación entre las dos magnitudes es alta: <span class="math notranslate nohighlight">\(r = 0{,}93\)</span> de Pearson (<span class="math notranslate nohighlight">\(p = 0{,}007\)</span>, seis estratos), y la relación es creciente hasta el estrato 4. En los estratos 4 a 6 el alza se estabiliza entre 28 % y 29 % aunque la tenencia sigue subiendo, de 72 % a 97 %. Esto es coherente con un uso por hogar que no crece en proporción a la tenencia, y con el número de equipos y la fracción climatizada como factores que la tenencia no captura. La comparación tiene dos limitaciones. Es ecológica, con seis puntos agregados, así que no mide el efecto del A/C en un hogar. Y la nevera también consume más con el calor, de modo que una parte del alza no es del A/C. Por eso la propuesta reporta el reparto entre A/C y nevera con su capa de incertidumbre (Fase 3, paso 7).</p>
 </section>
+<section id="edificios-del-estrato-1-frente-al-techo-declarado-en-la-ecv">
+<h2>Edificios del estrato 1 frente al techo declarado en la ECV<a class="headerlink" href="#edificios-del-estrato-1-frente-al-techo-declarado-en-la-ecv" title="Link to this heading">#</a></h2>
+<p>En el catastro, 29,5 % de las viviendas de estrato 1 (32.178) están en edificios de 4 o más pisos. En la ECV, en cambio, solo 17,1 % de los hogares de ese estrato declara techo de plancha de concreto en 2024 (10,6 % en 2019). Como en un edificio todas las viviendas, salvo las del último piso, tienen otra vivienda encima, las dos cifras no son compatibles a primera vista. Se revisó si la diferencia viene de un error del catastro o de la muestra de la encuesta.</p>
+<figure class="align-default" id="fig-e1-edificios">
+<a class="reference internal image-reference" href="_images/catastro_e1_edificios.png"><img alt="_images/catastro_e1_edificios.png" src="_images/catastro_e1_edificios.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 23 </span><span class="caption-text">Izquierda: lotes del catastro con viviendas de estrato 1 en edificios de 4 o más pisos, sobre el resto de viviendas del estrato. Derecha: viviendas de estrato 1 con otra vivienda encima según el catastro y hogares con techo de plancha según la ECV.</span><a class="headerlink" href="#fig-e1-edificios" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>El catastro es coherente.</strong> La altura de los edificios no tiene errores apreciables. Solo 20 de las 32.178 unidades están en lotes cuyo piso más alto es menor de 4, y solo 10 viviendas de hasta 3 pisos registran más de 3 plantas. Las unidades se reparten casi por igual entre los pisos 1 a 5 (unas 5.790 por piso), lo que corresponde a bloques de 5 pisos sin ascensor; unas pocas torres llegan a 12. Las 32.178 viviendas están en solo 74 lotes matriz, con una mediana de 43 m² y 2 habitaciones, concentrados en pocas zonas del occidente y el suroccidente de la ciudad (<a class="reference internal" href="#fig-e1-edificios"><span class="std std-numref">Figura 23</span></a>). Son rasgos propios de los proyectos de vivienda de interés prioritario. El 29,5 % es, por tanto, un dato real. Sí aparece otro error: 14.610 apartamentos de estrato 1 y 766 de estrato 2 en esos lotes registran años de construcción entre 1932 y 1972. Ningún apartamento de los estratos 3 a 6 en edificios de 4 o más pisos tiene un año anterior a 1975, de modo que esos años deben tratarse como faltantes antes de usar la antigüedad en la Fase 1.</p>
+<p><strong>La muestra de la ECV casi no capta esos edificios.</strong> La pregunta de la ECV es «¿Cuál es el material predominante del techo o cubierta?», sin instrucción para los apartamentos <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id23" title="DANE. Encuesta Nacional de Calidad de Vida (ECV), microdatos 2015–2025 (catálogos 419, 456, 544, 607, 678, 718, 734, 793, 827, 861 y 905). 2026. URL: https://microdatos.dane.gov.co/index.php/catalog/861.">DANE, 2026</a>)</span>. Un hogar con otra vivienda encima tiene una placa de concreto sobre su techo, de modo que, si responde por su propio techo, la proporción de plancha en el estrato 1 debería ser de al menos 31,2 %. La ECV registra 17,1 %, y solo 11,7 % de los hogares de estrato 1 vive en un apartamento con plancha, frente a 24,8 % de las viviendas en edificios con otra vivienda encima según el catastro. La ECV 2024 tiene 26 segmentos con hogares de estrato 1, y solo 2 tienen el perfil de un bloque de apartamentos, con todos sus hogares en apartamento y bajo plancha. Si los segmentos se seleccionaran en proporción a las viviendas, se esperarían 7,7 (<span class="math notranslate nohighlight">\(p = 0{,}01\)</span> de observar 2 o menos con una binomial). La muestra no permite separar las causas posibles: el azar en una muestra por conglomerados, un marco muestral que incorpora con rezago los edificios construidos después del censo de 2018 (5.683 de estas viviendas tienen año 2019 o posterior), o hogares de estos edificios que declaran otro estrato.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-e1-edificios">
+<caption><span class="caption-number">Tabla 16 </span><span class="caption-text">Consecuencias de la subrepresentación de los edificios de estrato 1 en la ECV 2024.</span><a class="headerlink" href="#tab-e1-edificios" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Concepto</p></th>
+<th class="head"><p>Valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tenencia de A/C, hogares de E1 en apartamento con plancha (30 hogares, 11 segmentos)</p></td>
+<td><p>26,2 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tenencia de A/C, demás hogares de E1</p></td>
+<td><p>10,6 %</p></td>
+</tr>
+<tr class="row-even"><td><p>Tenencia de A/C de E1, ECV con sus factores de expansión</p></td>
+<td><p>12,4 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tenencia de A/C de E1, reponderada a la composición del catastro (24,8 % a 29,5 % en edificios)</p></td>
+<td><p>14,5 % a 15,2 %</p></td>
+</tr>
+<tr class="row-even"><td><p>Efecto en la tenencia de la ciudad</p></td>
+<td><p>+0,7 a +0,9 puntos</p></td>
+</tr>
+<tr class="row-odd"><td><p>P(A/C) imputada a los edificios de E1 en el catastro (variante C)</p></td>
+<td><p>23,9 %</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La reponderación y la imputación al catastro sin igualar el estrato 1 a la ECV (14,4 %, supuesto S7) apuntan en la misma dirección: la tenencia de A/C del estrato 1 en 2024 estaría entre 1 y 3 puntos por encima de la que da la ECV. La P(A/C) que la imputación asigna a los edificios de estrato 1 (23,9 %) coincide con la observada en los hogares de la ECV en apartamento con plancha (26,2 %). La evidencia es limitada: son 30 hogares, y en la ECV 2019 no hay diferencia entre los dos grupos (7,6 % y 7,7 %). Por eso la serie adoptada conserva la tasa de la ECV y la diferencia queda como sensibilidad (<a class="reference internal" href="12_supuestos.html#tab-sensibilidad"><span class="std std-numref">Tabla 18</span></a>).</p>
+<p>Para la Fase 1 se desprenden dos consecuencias. La distribución de techos de la ECV en el estrato 1 describe sobre todo casas (12,8 % de plancha en las casas en 2024), por lo que debe aplicarse a las casas y no a todas las viviendas del estrato. En los edificios, el techo solo es superficie exterior en el último piso, que reúne 16 % de sus unidades (4,7 % de las viviendas del estrato), y su material no se conoce (supuesto S6).</p>
+</section>
 <section id="validacion-pendiente">
 <h2>Validación pendiente<a class="headerlink" href="#validacion-pendiente" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -671,6 +716,7 @@ D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numero-de-hogares">Número de hogares</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tenencia-de-equipos-medida-por-fuentes-distintas">Tenencia de equipos medida por fuentes distintas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-frente-a-facturacion">Encuesta frente a facturación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edificios-del-estrato-1-frente-al-techo-declarado-en-la-ecv">Edificios del estrato 1 frente al techo declarado en la ECV</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-pendiente">Validación pendiente</a></li>
 </ul>
   </nav></div>

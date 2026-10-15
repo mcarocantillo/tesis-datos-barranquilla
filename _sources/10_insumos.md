@@ -79,7 +79,7 @@ Los parámetros de todos los años están en `tablas/Tenencia_AC_sensibilidad_AB
 | Razón de momios del A/C, zinc frente a concreto (M2) | 0,14 (0,05–0,44) | | |
 ```
 
-Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 {cite:p}`hosmer2013,mackinnon1985`, con 633 hogares.
+Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 {cite:p}`hosmer2013,mackinnon1985`, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas ({numref}`tab-e1-edificios`).
 
 ```{table} Viviendas del catastro por estrato y posición frente a la cubierta (% de las viviendas de cada estrato).
 :name: tab-posicion
