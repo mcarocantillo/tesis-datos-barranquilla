@@ -23,20 +23,22 @@ No se usan las ECV 2015, 2016 y 2017, porque sus microdatos no identifican el mu
 
 ## ECV: muestra de Barranquilla por año
 
-```{table} Hogares de Barranquilla en la muestra de la ECV, población que representan y uso de cada ola.
+```{table} Hogares de Barranquilla en la muestra de la ECV, y población que representan.
 :name: tab-ecv-muestra
 
-| Año | Hogares en la muestra | Hogares expandidos | Suscriptores residenciales (SUI, dic.) | Fracción de muestreo | Hogares representados por cada hogar entrevistado | Expandidos frente al SUI | Uso |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 2018 | 1.003 | 338.861 | 300.745 | 0,33 % | 300 | 112,7 % | Serie de tenencia |
-| 2019 | 1.022 | 329.059 | 319.399 | 0,32 % | 313 | 103,0 % | Serie de tenencia; módulo de energéticos (horas, tipo de A/C, ventilador, nevera); techo |
-| 2020 | 778 | 341.102 | 323.568 | 0,24 % | 416 | 105,4 % | No se usa (encuesta en parte telefónica, pandemia) |
-| 2021 | 834 | 358.886 | 356.575 | 0,23 % | 428 | 100,6 % | Serie de tenencia |
-| 2022 | 774 | 368.614 | 317.080 | 0,24 % | 410 | 116,3 % | Serie de tenencia |
-| 2023 | 728 | 378.731 | 327.032 | 0,22 % | 449 | 115,8 % | Serie de tenencia |
-| 2024 | 709 | 389.372 | 330.101 | 0,21 % | 466 | 118,0 % | Serie de tenencia; efecto de diseño; techo y regresión logística; equipos, personas y cuartos |
-| 2025 | 693 | 399.248 | 329.892 | 0,21 % | 476 | 121,0 % | Serie de tenencia |
+| Año | Hogares en la muestra | Hogares expandidos | Suscriptores residenciales (SUI, dic.) | Fracción de muestreo | Hogares representados por cada hogar entrevistado | Expandidos frente al SUI |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2018 | 1.003 | 338.861 | 300.745 | 0,33 % | 300 | 112,7 % |
+| 2019 | 1.022 | 329.059 | 319.399 | 0,32 % | 313 | 103,0 % |
+| 2020* | 778 | 341.102 | 323.568 | 0,24 % | 416 | 105,4 % |
+| 2021 | 834 | 358.886 | 356.575 | 0,23 % | 428 | 100,6 % |
+| 2022 | 774 | 368.614 | 317.080 | 0,24 % | 410 | 116,3 % |
+| 2023 | 728 | 378.731 | 327.032 | 0,22 % | 449 | 115,8 % |
+| 2024 | 709 | 389.372 | 330.101 | 0,21 % | 466 | 118,0 % |
+| 2025 | 693 | 399.248 | 329.892 | 0,21 % | 476 | 121,0 % |
 ```
+
+\*La ola 2020 no se usa en la tesis.
 
 En cada ola se entrevistan entre 700 y 1.000 hogares de Barranquilla, entre 0,21 % y 0,33 % de los hogares de la ciudad: cada hogar entrevistado representa a entre 300 y 480 hogares. La muestra es pequeña en términos absolutos, pero está diseñada para ser representativa de la ciudad mediante los factores de expansión. La suma de esos factores es entre 1 % y 21 % mayor que el número de suscriptores, porque la ECV cuenta hogares (puede haber varios por vivienda y viviendas sin medidor propio) y porque sus proyecciones de población difieren de las del registro de facturación. Por eso la tasa de la ciudad se calcula con los pesos del SUI ({numref}`tab-coherencia-estratos`).
 
