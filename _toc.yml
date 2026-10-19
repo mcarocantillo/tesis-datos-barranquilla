@@ -13,6 +13,8 @@ parts:
       - file: 03_resultados
       - file: 04_metodologia
       - file: 05_ajustes_v3
+      - file: 15_compuerta_horaria
+      - file: 16_ceela
   - caption: Validación
     chapters:
       - file: 11_coherencia

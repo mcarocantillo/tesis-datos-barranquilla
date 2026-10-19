@@ -243,9 +243,9 @@ print('ok')
 # 20 diagrama de flujo de datos (horizontal)
 from matplotlib.patches import FancyBboxPatch
 fig,ax=plt.subplots(figsize=(16,7.6)); ax.set_xlim(0,100); ax.set_ylim(0,100); ax.axis('off')
-cols=[(0.5,'Fuentes',PAL[0],[('ECV 2018–2025 (DANE)',0),('ENUT 2024–2025',0),('GEIH 2024',0),('Catastro de Barranquilla',0),('SUI 2015–2026',0),('Clima ERA5-Land / IDEAM',1),('Demanda horaria XM',1)]),
-      (21,'Procesamiento',PAL[1],[('Ponderación (FEX) y\nefecto de diseño',0),('Postestratificación\ncon suscriptores SUI',0),('Serie suavizada de\ntenencia (variante C, Beta)',0),('Regresión logística e\nimputación al catastro',0),('Depuración SUI\n(banderas de calidad)',0)]),
-      (41.5,'Insumos del modelo',PAL[2],[('Tenencia de A/C,\nventilador y nevera',0),('Horas de uso y tipo de equipo',0),('Presencia en casa\npor tipo de persona',0),('Envolvente: techo y\nposición bajo cubierta',0),('Hogares por estrato\n(expansión)',0),('Consumo mensual y\nestacionalidad observados',0)]),
+cols=[(0.5,'Fuentes',PAL[0],[('ECV 2018–2025 (DANE)',0),('ENUT 2024–2025',0),('GEIH 2024',0),('Catastro de Barranquilla',0),('SUI 2015–2026',0),('Clima ERA5-Land / IDEAM',0),('Demanda horaria XM',0),('Línea base CEELA (UPME)',0)]),
+      (21,'Procesamiento',PAL[1],[('Ponderación (FEX) y\nefecto de diseño',0),('Postestratificación\ncon suscriptores SUI',0),('Serie suavizada de\ntenencia (variante C, Beta)',0),('Regresión logística e\nimputación al catastro',0),('Depuración SUI\n(banderas de calidad)',0),('Compuerta horaria:\nrespuesta de XM al calor',0)]),
+      (41.5,'Insumos del modelo',PAL[2],[('Tenencia de A/C,\nventilador y nevera',0),('Horas de uso y tipo de equipo',0),('Presencia en casa\npor tipo de persona',0),('Envolvente: techo y\nposición bajo cubierta',0),('Hogares por estrato\n(expansión)',0),('Consumo mensual y\nestacionalidad observados',0),('Envolvente, consigna y\nCOP de CEELA',0),('Respuesta al calor\npor franjas (validación)',0)]),
       (62,'Modelo de la tesis',PAL[6],[('Fase 1: arquetipos\nde vivienda',0),('Fase 2: simulación\nhoraria por equipo',0),('Fase 3: calibración\n(ABC-SMC) y validación',0)]),
       (82.5,'Resultado',PAL[5],[('Perfiles horarios de\nclimatización y\nrefrigeración\npor estrato',0)])]
 W_=17; centers={}

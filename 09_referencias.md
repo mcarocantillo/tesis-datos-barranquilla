@@ -24,6 +24,9 @@ Este capítulo reúne las fuentes de los datos, los métodos estadísticos y el 
 | Área bajo la curva ROC | Discriminación de la regresión logística | {cite:t}`hanley1982`; {cite:t}`rubio_ml`, sección 9.4 |
 | Método de Brent | Intercepto de la imputación al catastro | {cite:t}`brent1973` |
 | Índice de disimilitud | Comparación de la distribución por estrato entre fuentes | {cite:t}`duncan1955` |
+| Humedad relativa por la fórmula de Magnus | Humedad a partir de la temperatura y el punto de rocío de ERA5-Land | {cite:t}`alduchov1996` |
+| Índice de calor de la NOAA | Variable climática de la compuerta horaria | {cite:t}`rothfusz1990` |
+| Errores estándar HAC | Inferencia de la respuesta horaria de la demanda al calor | {cite:t}`newey1987` |
 ```
 
 ## Bibliografía

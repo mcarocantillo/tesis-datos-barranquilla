@@ -1,0 +1,42 @@
+{
+  "regla": "Capa B si (C1) la franja 22-5 h tiene b > 0 con IC 95 % sobre cero en 2021-2025 y al menos 6 de las 8 horas nocturnas también; (C2a) el nivel nocturno es significativo en al menos 4 de 5 años y no difiere entre años (Wald HAC, p > 0,05); y (C2b) la forma nocturna centrada (b_h menos la media nocturna) no difiere entre años (Wald conjunto agrupado por semana, p > 0,05). Si no, capa C.",
+  "C1_noche_distinta_de_cero": true,
+  "C2a_nivel_nocturno_estable": true,
+  "C2b_forma_nocturna_estable": false,
+  "capa": "C",
+  "b_noche_2021_2025": [
+    1.919259058056326,
+    1.7930218457847253,
+    2.0454962703279267
+  ],
+  "horas_noche_con_ic_sobre_0": 8,
+  "anios_noche_significativa": 5,
+  "wald_homogeneidad_nivel_noche": {
+    "estadistico": 4.425735323322242,
+    "p": 0.35144439602736294
+  },
+  "forma_noche_existe_p": 2.2734879625447786e-18,
+  "forma_noche_amplitud_pp": 0.3882335433774765,
+  "forma_noche_igual_entre_anios_p": 0.008363822080284843,
+  "forma_noche_contigua_existe_p": 1.1496784982454009e-14,
+  "forma_noche_contigua_igual_entre_anios_p": 0.00012651445622431277,
+  "forma_dia_existe_p": 4.343281413820444e-29,
+  "forma_dia_igual_entre_anios_p": 6.899648332571609e-30,
+  "corr_24h_min_descriptiva": -0.042265855600576635,
+  "corr_forma_2015_2019_vs_2021_2025": 0.7350085230737066,
+  "reparto_noche_pct_por_anio": {
+    "2021": 34.09,
+    "2022": 32.92,
+    "2023": 32.5,
+    "2024": 33.37,
+    "2025": 31.04
+  },
+  "exclusiones": {
+    "dias_2021_2025": 1826,
+    "dias_con_horas_anomalas": 221,
+    "dias_con_DNA_mayor_0.5pct": 239,
+    "dias_excluidos": 427
+  },
+  "dias_en_regresion": 1399,
+  "sd_hi_media_dentro_de_mes": 1.2251967559975845
+}

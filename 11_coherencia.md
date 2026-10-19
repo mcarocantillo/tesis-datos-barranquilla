@@ -108,8 +108,30 @@ La reponderación y la imputación al catastro sin igualar el estrato 1 a la ECV
 
 Para la Fase 1 se desprenden dos consecuencias. La distribución de techos de la ECV en el estrato 1 describe sobre todo casas (12,8 % de plancha en las casas en 2024), por lo que debe aplicarse a las casas y no a todas las viviendas del estrato. En los edificios, el techo solo es superficie exterior en el último piso, que reúne 16 % de sus unidades (4,7 % de las viviendas del estrato), y su material no se conoce (supuesto S6).
 
+## Clima: ERA5-Land frente a la estación del IDEAM
+
+La serie horaria de ERA5-Land en la celda de Barranquilla (copia de Open-Meteo) se contrastó con la estación del aeropuerto Ernesto Cortissoz del IDEAM, hora a hora, con el sesgo (ERA5-Land menos IDEAM) y la raíz del error cuadrático medio (RMSE). La serie del IDEAM ya está en hora local: el RMSE de la temperatura es mínimo sin desfase.
+
+```{table} ERA5-Land frente a la estación 0029045190 del IDEAM, 2015–2026 (75.531 horas con ambas fuentes).
+:name: tab-coherencia-clima
+
+| Variable | Sesgo | RMSE | Sesgo de 22 a 5 h (media) | Sesgo más negativo, por hora | Correlación de las medias diarias |
+| --- | --- | --- | --- | --- | --- |
+| Temperatura (°C) | −0,70 | 1,96 | +0,17 | −2,23 (13 h) | 0,82 |
+| Humedad relativa (puntos) | −2,8 | 11,1 | −4,4 | −7,0 (7 h) | 0,38 |
+| Índice de calor (°C) | −2,4 | 5,0 | −0,28 | −5,9 (13 h) | 0,84 |
+```
+
+ERA5-Land reproduce bien la noche y subestima el calor del mediodía ({numref}`tab-coherencia-clima`). De 22 a 5 h el sesgo de la temperatura es casi nulo (+0,17 °C) y el RMSE es de 1,0 °C. De 11 a 17 h la temperatura queda entre 1,5 y 2,2 °C por debajo de la de la estación y el índice de calor hasta 5,9 °C por debajo. Por mes, el sesgo de la temperatura va de −1,0 °C (abril) a −0,3 °C (octubre), sin un patrón estacional marcado. Una diferencia de mediodía de este tipo es común en los reanálisis: la celda de ERA5-Land (0,1°, unos 11 km) promedia superficies distintas de la del aeropuerto donde está la estación. Las medias diarias del índice de calor de las dos fuentes correlacionan 0,85 en los 2.882 días en que la estación tiene al menos 20 horas. Para la compuerta horaria se usa ERA5-Land, porque cubre todos los días y no tiene huecos; con el índice de calor del IDEAM la respuesta nocturna de la demanda baja de 1,92 a 0,94 %/°C ([Respuesta horaria al calor](15_compuerta_horaria.md)). Ese cambio de nivel indica que $b$ depende de la fuente de clima y no debe usarse como valor absoluto.
+
+## Demanda horaria de XM
+
+Las series de XM son coherentes entre sí. La respuesta nocturna de la demanda al índice de calor es de 1,92 %/°C con el mercado regulado de Air-e en 2021–2025, de 1,94 %/°C con la demanda real más pérdidas del agente Air-e, de 1,92 %/°C con los agentes de Electricaribe en 2015–2019 y de 1,97 %/°C con el mercado de Electricaribe en sus siete departamentos («COSTA CARIBE») en 2017–2019. La forma del perfil de respuesta de 2015–2019 correlaciona 0,74 con la de 2021–2025. El nivel nocturno es, por tanto, estable entre periodos y entre definiciones de la demanda, pero la forma hora a hora cambia entre años, y por eso la forma horaria del A/C queda en capa C.
+
+La comparación con las encuestas y el SUI es indirecta. El mercado de Air-e incluye Atlántico, Magdalena y La Guajira, y usuarios no residenciales, así que su respuesta al calor no se puede atribuir al A/C de los hogares de Barranquilla. Lo que sí es coherente es el signo y el orden de magnitud: la demanda sube con el calor en todas las horas, como el consumo facturado sube en los meses calurosos en todos los estratos ({numref}`fig-coherencia-alza`).
+
 ## Validación pendiente
 
-- **Clima.** Las series de ERA5-Land se contrastarán con la estación del aeropuerto Ernesto Cortissoz del IDEAM, por hora del día y mes, con el sesgo y la raíz del error cuadrático medio (Fase 2, paso 1).
-- **Demanda horaria.** La suma del consumo facturado del SUI y las pérdidas debe acercarse a la demanda regulada de XM del mercado de Air-e (Fase 3, paso 1).
-- **Consumo del estrato 1.** El consumo por suscriptor del estrato 1 es mayor que el de los estratos 2 y 3, lo que no es coherente con su menor tenencia de A/C. Queda pendiente confirmarlo con Air-e.
+- **Clima.** Repetir el contraste con IDEAM cuando se descargue ERA5-Land del Climate Data Store, por hora del día y mes, y agregar la radiación (Fase 2, paso 1).
+- **Demanda horaria.** La suma del consumo facturado del SUI y las pérdidas debe acercarse a la demanda regulada de XM del mercado de Air-e (Fase 3, paso 1). Para esa comparación hace falta el SUI de los tres departamentos del mercado, no solo el de Barranquilla.
+- **Consumo del estrato 1.** El consumo por suscriptor del estrato 1 es mayor que el de los estratos 2 y 3, lo que no es coherente con su menor tenencia de A/C. Con solo lecturas reales, CEELA da 36 % menos para el estrato 1 en 2021–2024 ({numref}`tab-ceela-sui`). Queda pendiente descargar el SUI con el filtro de tipo de lectura y confirmarlo con Air-e.

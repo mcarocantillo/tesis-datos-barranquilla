@@ -9,9 +9,9 @@ Datos de entrada de la tesis de maestría «Perfiles horarios de demanda eléctr
 - `*.md`, `_config.yml`, `_toc.yml`, `referencias.bib`, `_ext/`, `_static/`: fuentes del Jupyter Book.
 - `figuras/`: figuras del sitio.
 - `tablas/`: tablas resumen (CSV con separador «;» y Excel).
-- `scripts/`: procesamiento en Python.
+- `scripts/`: procesamiento en Python; `scripts/compuerta/` tiene la descarga y la estimación de la respuesta horaria de la demanda de XM al calor.
 
-Las bases por hogar y por vivienda no se publican; los microdatos son públicos en el catálogo del DANE y en el SUI.
+Las bases por hogar y por vivienda no se publican; los microdatos son públicos en el catálogo del DANE y en el SUI. Las descargas crudas de XM, Open-Meteo e IDEAM tampoco se versionan: los scripts de `scripts/compuerta/` las reconstruyen desde las fuentes públicas.
 
 ## Reproducir
 

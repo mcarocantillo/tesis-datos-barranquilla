@@ -15,6 +15,8 @@ Los datos muestran una ciudad donde casi todos los hogares tienen ventilador y n
 | Ocupación | La vivienda casi nunca queda vacía de día, a diferencia de los modelos europeos | Alguien en casa todo el día hábil en 82–86 % de los hogares; un ocupado pasa 7,7 h fuera; trabaja en casa 15,6 % (E1) a 28,5 % (E6) | ENUT, GEIH |
 | Consumo real | El consumo sube en la temporada caliente y más en los estratos con más A/C | 297 kWh/mes por suscriptor (2025); E6 692; alza ago.–sep. frente a feb.–mar. de 11 % (E1) a 29 % (E5) | SUI 2015–2025 |
 | Gasto | La factura de un hogar con A/C es mayor a igual estrato | 2024, mediana sin/con A/C: E1–E2 104.000 / 140.000; E3–E4 215.000 / 324.000; E5–E6 276.000 / 620.000 COP/mes | ECV 2024 |
+| Respuesta horaria al calor | La demanda del mercado de Air-e sube con el calor en todas las horas, también de noche; el nivel es estable, pero la forma hora a hora cambia entre años | Noche 1,92 %/°C de índice de calor diario (1,79–2,05); la noche aporta 31–34 % de la respuesta diaria; forma nocturna distinta entre años ($p = 0{,}008$) | XM 2021–2025, ERA5-Land |
+| Envolvente y climatización (CEELA) | Los edificios nuevos de Barranquilla tienen vidrio simple y cubiertas de baja resistencia; en VIS se climatiza una habitación y en E5–E6 toda la vivienda | U de muros 1,9–4,1 y de cubiertas 3,6–6,6 W/m²K; consigna 26,5 °C; COP 3,0; refrigeración de 64–107 kWh/m²·año climatizando toda la vivienda | CEELA 2025 |
 
 ## Las cifras en gráficas
 
@@ -83,9 +85,9 @@ Patrón estacional del consumo.
 
 ## Limitaciones abiertas
 
-- Ninguna fuente da la hora del día del uso; la forma del perfil dependerá de supuestos y de la calibración con XM.
-- La ECV no registra el número de equipos de A/C; falta la fracción climatizada de CEELA.
+- Ninguna fuente da la hora del día del uso. La demanda de XM responde al calor también de noche, pero su forma horaria cambia entre años, así que la forma del perfil queda como supuesto con rango (capa C) y XM se usa solo como blanco de validación por franjas ([Respuesta horaria al calor](15_compuerta_horaria.md)).
+- La ECV no registra el número de equipos de A/C. CEELA da la zona climatizada típica (una habitación en VIS, toda la vivienda en E5–E6), pero no una medición en hogares ([Línea base de CEELA](16_ceela.md)).
 - Los estratos 5 y 6 tienen 20 a 72 hogares por ola; sus tasas son inciertas aunque cercanas a 100 %.
-- El estrato 1 consume en el SUI más que el 2 y el 3 con poco A/C; falta la respuesta de Air-e.
+- El estrato 1 consume en el SUI más que el 2 y el 3 con poco A/C. Con solo lecturas reales, CEELA da 36 % menos para 2021–2024; falta descargar el SUI con ese filtro y la respuesta de Air-e.
 - El 16,2 % de las viviendas del catastro no tiene coordenadas (sobre todo estratos 1–2) y la ciudad informal no está.
-- El clima horario (ERA5-Land e IDEAM) y la demanda horaria de XM aún no están procesados.
+- El clima horario se procesó con la copia de ERA5-Land de Open-Meteo; falta repetir el procesamiento con el archivo del Climate Data Store.
