@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
@@ -62,6 +62,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '08_reproducibilidad';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Índice" href="genindex.html" />
@@ -228,6 +230,8 @@
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
 <ul class="nav bd-sidenav">
@@ -401,6 +405,7 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tablas-resumen-carpeta-tablas-del-repositorio">Tablas resumen (carpeta <code class="docutils literal notranslate"><span class="pre">tablas/</span></code> del repositorio)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-carpeta-scripts">Scripts (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compuerta-horaria-carpeta-scripts-compuerta">Compuerta horaria (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entorno">Entorno</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-el-sitio">Construir el sitio</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licencia-y-cita">Licencia y cita</a></li>
@@ -421,14 +426,21 @@
 <section id="tablas-resumen-carpeta-tablas-del-repositorio">
 <h2>Tablas resumen (carpeta <code class="docutils literal notranslate"><span class="pre">tablas/</span></code> del repositorio)<a class="headerlink" href="#tablas-resumen-carpeta-tablas-del-repositorio" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">b_h_niveles_reparto.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b_h_por_hora.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Calculos_nuevos_metodologia.xlsx</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Catastro_E1_edificios_4pisos_por_lote.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Catastro_ECV_E1_edificios_resumen.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Catastro_PAC_por_anio_estrato_tipo_C.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CEELA_SUI_2021_2024_comparacion.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contraste_era5land_ideam.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">decision.json</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ECV2024_efecto_diseno.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ECV_2018_2025_AC_postestratificado_SUI.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ECV_2018_2025_Barranquilla_tenencia_por_estrato.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ENUT2024_25_Atlantico_horas_por_tipo.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">estabilidad.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">franjas.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">GEIH2024_Barranquilla_AM_resumen_estrato.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Logit_ECV2024_modelos.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PAC_por_posicion_dentro_estrato_C.xlsx</span></code></p></li>
@@ -441,7 +453,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">Tenencia_AC_ciudad_sensibilidad_AB.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Tenencia_AC_sensibilidad_AB.csv</span></code></p></li>
 </ul>
-<p>Separador «;», codificación UTF-8 con BOM. No se publican las bases por hogar (ECV, ENUT, GEIH) ni el catastro por vivienda.</p>
+<p>Separador «;», codificación UTF-8 con BOM. No se publican las bases por hogar (ECV, ENUT, GEIH) ni el catastro por vivienda. Las tablas de la compuerta horaria (<code class="docutils literal notranslate"><span class="pre">b_h_*.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">franjas.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">estabilidad.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">contraste_era5land_ideam.csv</span></code> y <code class="docutils literal notranslate"><span class="pre">decision.json</span></code>) son las salidas de <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/03_estimar.py</span></code> y <code class="docutils literal notranslate"><span class="pre">01_clima.py</span></code>; los scripts las escriben con separador «,» y aquí se publicaron con «;».</p>
 </section>
 <section id="scripts-carpeta-scripts">
 <h2>Scripts (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/</span></code>)<a class="headerlink" href="#scripts-carpeta-scripts" title="Link to this heading">#</a></h2>
@@ -449,6 +461,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">build_ecv2019.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">catastro_cubierta.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">catastro_e1_edificios.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ceela_sui.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">deep.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">deff_ecv24.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ecv19_extra.py</span></code></p></li>
@@ -477,11 +490,43 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">sui3.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">xlsx.py</span></code></p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">ceela_sui.py</span></code> se corre desde la raíz del repositorio y compara el SUI con la Tabla 42 de CEELA.</p>
 <p>Orden: <code class="docutils literal notranslate"><span class="pre">build_ecv2019.py</span></code> y <code class="docutils literal notranslate"><span class="pre">ecv24.py</span></code> → <code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code>, <code class="docutils literal notranslate"><span class="pre">enut*.py</span></code>, <code class="docutils literal notranslate"><span class="pre">geih*.py</span></code>, <code class="docutils literal notranslate"><span class="pre">sui*.py</span></code> → <code class="docutils literal notranslate"><span class="pre">postestrat_anual.py</span></code> → <code class="docutils literal notranslate"><span class="pre">logit_ecv24.py</span></code> → <code class="docutils literal notranslate"><span class="pre">serie_suavizada.py</span></code> → <code class="docutils literal notranslate"><span class="pre">deff_ecv24.py</span></code> → <code class="docutils literal notranslate"><span class="pre">sensibilidad_serie.py</span></code> → <code class="docutils literal notranslate"><span class="pre">imputacion_catastro_anual_C.py</span></code> → <code class="docutils literal notranslate"><span class="pre">pac_posicion_estrato_C.py</span></code>, <code class="docutils literal notranslate"><span class="pre">estacionalidad_sui.py</span></code>, <code class="docutils literal notranslate"><span class="pre">catastro_e1_edificios.py</span></code> → <code class="docutils literal notranslate"><span class="pre">figuras.py</span></code>.</p>
+</section>
+<section id="compuerta-horaria-carpeta-scripts-compuerta">
+<h2>Compuerta horaria (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/</span></code>)<a class="headerlink" href="#compuerta-horaria-carpeta-scripts-compuerta" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Paso</p></th>
+<th class="head"><p>Script</p></th>
+<th class="head"><p>Qué hace</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">01_clima.py</span> <span class="pre">descargar</span> <span class="pre">procesar</span></code></p></td>
+<td><p>Descarga ERA5-Land (copia de Open-Meteo) e IDEAM 0029045190; humedad relativa, índice de calor y contraste por hora y mes</p></td>
+</tr>
+<tr class="row-odd"><td><p>1b</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">01a_descargar_era5land_cds.py</span></code></p></td>
+<td><p>Descarga ERA5-Land del Climate Data Store con la cuenta personal del CDS (<code class="docutils literal notranslate"><span class="pre">~/.cdsapirc</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cdsapi</span></code>); después se repite <code class="docutils literal notranslate"><span class="pre">01_clima.py</span> <span class="pre">procesar</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">02_descargar_xm.py</span></code></p></td>
+<td><p>API pública de XM: mercados CARIBE SOL y COSTA CARIBE, agentes de Air-e y Electricaribe, demanda no atendida por subárea</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">03_estimar.py</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(b_h\)</span>, franjas, estabilidad entre años, decisión de la compuerta y figura</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">comun.py</span></code> reúne las rutas y funciones compartidas. Los scripts se corren desde <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/</span></code> y guardan las descargas en <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/datos/</span></code> (unos 150 MB) y las salidas en <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/salidas/</span></code>; ninguna de las dos carpetas se versiona.</p>
 </section>
 <section id="entorno">
 <h2>Entorno<a class="headerlink" href="#entorno" title="Link to this heading">#</a></h2>
-<p>Python 3.13 con las versiones fijadas en <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> (pandas 3.0, numpy 2.5, scipy 1.18, statsmodels 0.15 y matplotlib 3.11).</p>
+<p>Python 3.13 con las versiones fijadas en <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> (pandas 3.0, numpy 2.5, scipy 1.18, statsmodels 0.15 y matplotlib 3.11). La compuerta horaria usa además requests, holidays, xarray y netCDF4, y se corrió con Python 3.14.</p>
 </section>
 <section id="construir-el-sitio">
 <h2>Construir el sitio<a class="headerlink" href="#construir-el-sitio" title="Link to this heading">#</a></h2>
@@ -566,6 +611,7 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tablas-resumen-carpeta-tablas-del-repositorio">Tablas resumen (carpeta <code class="docutils literal notranslate"><span class="pre">tablas/</span></code> del repositorio)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-carpeta-scripts">Scripts (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compuerta-horaria-carpeta-scripts-compuerta">Compuerta horaria (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entorno">Entorno</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-el-sitio">Construir el sitio</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licencia-y-cita">Licencia y cita</a></li>

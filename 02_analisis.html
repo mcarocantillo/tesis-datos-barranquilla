@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
@@ -62,6 +62,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '02_analisis';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Índice" href="genindex.html" />
@@ -228,6 +230,8 @@
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
 <ul class="nav bd-sidenav">
@@ -473,6 +477,16 @@
 <td><p>2024, mediana sin/con A/C: E1–E2 104.000 / 140.000; E3–E4 215.000 / 324.000; E5–E6 276.000 / 620.000 COP/mes</p></td>
 <td><p>ECV 2024</p></td>
 </tr>
+<tr class="row-odd"><td><p>Respuesta horaria al calor</p></td>
+<td><p>La demanda del mercado de Air-e sube con el calor en todas las horas, también de noche; el nivel es estable, pero la forma hora a hora cambia entre años</p></td>
+<td><p>Noche 1,92 %/°C de índice de calor diario (1,79–2,05); la noche aporta 31–34 % de la respuesta diaria; forma nocturna distinta entre años (<span class="math notranslate nohighlight">\(p = 0{,}008\)</span>)</p></td>
+<td><p>XM 2021–2025, ERA5-Land</p></td>
+</tr>
+<tr class="row-even"><td><p>Envolvente y climatización (CEELA)</p></td>
+<td><p>Los edificios nuevos de Barranquilla tienen vidrio simple y cubiertas de baja resistencia; en VIS se climatiza una habitación y en E5–E6 toda la vivienda</p></td>
+<td><p>U de muros 1,9–4,1 y de cubiertas 3,6–6,6 W/m²K; consigna 26,5 °C; COP 3,0; refrigeración de 64–107 kWh/m²·año climatizando toda la vivienda</p></td>
+<td><p>CEELA 2025</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -557,12 +571,12 @@
 <section id="limitaciones-abiertas">
 <h2>Limitaciones abiertas<a class="headerlink" href="#limitaciones-abiertas" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Ninguna fuente da la hora del día del uso; la forma del perfil dependerá de supuestos y de la calibración con XM.</p></li>
-<li><p>La ECV no registra el número de equipos de A/C; falta la fracción climatizada de CEELA.</p></li>
+<li><p>Ninguna fuente da la hora del día del uso. La demanda de XM responde al calor también de noche, pero su forma horaria cambia entre años, así que la forma del perfil queda como supuesto con rango (capa C) y XM se usa solo como blanco de validación por franjas (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>).</p></li>
+<li><p>La ECV no registra el número de equipos de A/C. CEELA da la zona climatizada típica (una habitación en VIS, toda la vivienda en E5–E6), pero no una medición en hogares (<a class="reference internal" href="16_ceela.html"><span class="std std-doc">Línea base de CEELA</span></a>).</p></li>
 <li><p>Los estratos 5 y 6 tienen 20 a 72 hogares por ola; sus tasas son inciertas aunque cercanas a 100 %.</p></li>
-<li><p>El estrato 1 consume en el SUI más que el 2 y el 3 con poco A/C; falta la respuesta de Air-e.</p></li>
+<li><p>El estrato 1 consume en el SUI más que el 2 y el 3 con poco A/C. Con solo lecturas reales, CEELA da 36 % menos para 2021–2024; falta descargar el SUI con ese filtro y la respuesta de Air-e.</p></li>
 <li><p>El 16,2 % de las viviendas del catastro no tiene coordenadas (sobre todo estratos 1–2) y la ciudad informal no está.</p></li>
-<li><p>El clima horario (ERA5-Land e IDEAM) y la demanda horaria de XM aún no están procesados.</p></li>
+<li><p>El clima horario se procesó con la copia de ERA5-Land de Open-Meteo; falta repetir el procesamiento con el archivo del Climate Data Store.</p></li>
 </ul>
 </section>
 </section>

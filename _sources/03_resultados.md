@@ -61,7 +61,7 @@ Distribución de horas de uso del A/C.
 
 - Horas de AC (hogares con AC): mediana 8 h/día (6 h en E3 y 7 h en E4); media 7,2; 17 % usa 12 h o más, 3,4 % más de 12 h, 1 % 24 h (7 % en E6). Tipo: 92,5 % mini-split, 3,1 % ventana, 4,4 % central (17,7 % en E6).
 - Ventilador: con AC 9,8 h/día, sin AC 11,1 (razón 0,88). Por estrato, razón con/sin AC: E1 0,97; E2 0,90; E3 0,96; E4 1,07; E5–E6 sin datos suficientes (7 y 1 hogares sin AC). Se excluyeron 9 respuestas > 24 h. El A/C desplaza menos de media hora de ventilador al día en E1, E3 y E4 y 1,2 h en E2, de modo que $p_c$, la probabilidad de que el ventilador siga encendido mientras funciona el A/C, es alta: ≈ 0,95, con rango de 0,8 a 1,0 (ver «Insumos del modelo»).
-- Número de equipos: la ECV 2019 no lo pregunta. Prior desde horas y AC central. **Falta la fracción climatizada de CEELA** (la propuesta cita: habitación en VIS y E3–E4, toda la vivienda en E5–E6).
+- Número de equipos: la ECV 2019 no lo pregunta. Prior desde horas y AC central. La zona climatizada típica de CEELA confirma lo que cita la propuesta: una habitación en VIS y E3–E4, toda la vivienda en E5–E6 ({numref}`tab-ceela-climatizacion`).
 
 ## 4.5 Techo y regresión logística
 

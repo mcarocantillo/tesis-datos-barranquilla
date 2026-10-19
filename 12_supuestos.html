@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
@@ -230,6 +230,8 @@
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
 <ul class="current nav bd-sidenav">
@@ -417,11 +419,11 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="supuestos-sensibilidad-y-limitaciones">
 <h1>Supuestos, sensibilidad y limitaciones<a class="headerlink" href="#supuestos-sensibilidad-y-limitaciones" title="Link to this heading">#</a></h1>
-<p>La propuesta pide que cada supuesto quede registrado con su fuente, su rango, su influencia y el dato que lo reemplazaría (Fase 3, paso 9). Este capítulo abre ese registro para los datos de entrada. La <a class="reference internal" href="#tab-supuestos"><span class="std std-numref">Tabla 20</span></a> lista los supuestos del procesamiento y la <a class="reference internal" href="#tab-sensibilidad"><span class="std std-numref">Tabla 21</span></a> cuantifica su efecto en las cifras principales. Los supuestos del modelo de simulación (consigna, umbrales de encendido, potencias) se agregarán en la Fase 2.</p>
+<p>La propuesta pide que cada supuesto quede registrado con su fuente, su rango, su influencia y el dato que lo reemplazaría (Fase 3, paso 9). Este capítulo abre ese registro para los datos de entrada. La <a class="reference internal" href="#tab-supuestos"><span class="std std-numref">Tabla 28</span></a> lista los supuestos del procesamiento y la <a class="reference internal" href="#tab-sensibilidad"><span class="std std-numref">Tabla 29</span></a> cuantifica su efecto en las cifras principales. Los supuestos S14 a S17 ya corresponden al modelo de simulación (consigna, envolvente, forma horaria y clima); los demás supuestos de la simulación (umbrales de encendido, potencias) se agregarán en la Fase 2.</p>
 <section id="registro-de-supuestos">
 <h2>Registro de supuestos<a class="headerlink" href="#registro-de-supuestos" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-supuestos">
-<caption><span class="caption-number">Tabla 20 </span><span class="caption-text">Registro de supuestos de los datos de entrada.</span><a class="headerlink" href="#tab-supuestos" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 28 </span><span class="caption-text">Registro de supuestos de los datos de entrada.</span><a class="headerlink" href="#tab-supuestos" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>N.º</p></th>
 <th class="head"><p>Supuesto</p></th>
@@ -445,7 +447,7 @@
 </tr>
 <tr class="row-even"><td><p>S3</p></td>
 <td><p>La tasa de la ciudad usa los pesos por estrato del SUI y no los de la ECV</p></td>
-<td><p>La ECV sobrerrepresenta el estrato 1 (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 16</span></a>)</p></td>
+<td><p>La ECV sobrerrepresenta el estrato 1 (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 23</span></a>)</p></td>
 <td><p>Factores de expansión de la ECV</p></td>
 <td><p>—</p></td>
 </tr>
@@ -463,7 +465,7 @@
 </tr>
 <tr class="row-odd"><td><p>S6</p></td>
 <td><p>Las viviendas en edificios de 4 pisos o más tienen techo de concreto</p></td>
-<td><p>El catastro no registra materiales; la ECV casi no capta los edificios del estrato 1 (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 19</span></a>). Solo afecta al último piso, 16 % de las unidades en edificios</p></td>
+<td><p>El catastro no registra materiales; la ECV casi no capta los edificios del estrato 1 (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 26</span></a>). Solo afecta al último piso, 16 % de las unidades en edificios</p></td>
 <td><p>Último piso con teja de asbesto-cemento</p></td>
 <td><p>Inspección o registro de materiales</p></td>
 </tr>
@@ -481,7 +483,7 @@
 </tr>
 <tr class="row-even"><td><p>S9</p></td>
 <td><p><span class="math notranslate nohighlight">\(p_c \approx 0{,}95\)</span>, igual en todos los estratos</p></td>
-<td><p>Horas de ventilador casi iguales con y sin A/C en E1–E4 (<a class="reference internal" href="10_insumos.html#tab-pc"><span class="std std-numref">Tabla 8</span></a>)</p></td>
+<td><p>Horas de ventilador casi iguales con y sin A/C en E1–E4 (<a class="reference internal" href="10_insumos.html#tab-pc"><span class="std std-numref">Tabla 9</span></a>)</p></td>
 <td><p>0,8–1,0</p></td>
 <td><p>Medición en hogares con ambos equipos</p></td>
 </tr>
@@ -499,7 +501,7 @@
 </tr>
 <tr class="row-odd"><td><p>S12</p></td>
 <td><p>Un suscriptor residencial del SUI equivale a un hogar</p></td>
-<td><p>Catastro y SUI coinciden en número y distribución (<a class="reference internal" href="11_coherencia.html#tab-coherencia-hogares"><span class="std std-numref">Tabla 17</span></a>)</p></td>
+<td><p>Catastro y SUI coinciden en número y distribución (<a class="reference internal" href="11_coherencia.html#tab-coherencia-hogares"><span class="std std-numref">Tabla 24</span></a>)</p></td>
 <td><p>Hogares de la proyección demográfica</p></td>
 <td><p>Hogares por medidor de Air-e</p></td>
 </tr>
@@ -509,6 +511,30 @@
 <td><p>Excluir la variable de los arquetipos</p></td>
 <td><p>Definición del campo por la Gerencia de Gestión Catastral; imágenes históricas</p></td>
 </tr>
+<tr class="row-odd"><td><p>S14</p></td>
+<td><p>La consigna de refrigeración del A/C está entre 22 y 26,5 °C</p></td>
+<td><p>El límite superior es la consigna operativa de CEELA para Barranquilla, del confort adaptativo de ASHRAE 55 <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id55" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025c. 21 de agosto de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025c</a>)</span>; el límite inferior, 22 °C, es un supuesto propio de este trabajo, para cubrir consignas más bajas que la de confort</p></td>
+<td><p>Consigna fija de 26,5 °C; rango más estrecho</p></td>
+<td><p>Medición de consignas o temperaturas interiores en hogares de Barranquilla</p></td>
+</tr>
+<tr class="row-even"><td><p>S15</p></td>
+<td><p>Los parámetros de envolvente, zona climatizada y COP de CEELA son el centro de los rangos de cada arquetipo; la VIS representa los estratos 1 y 2 y la no VIS los estratos 3 a 6</p></td>
+<td><p>Es la única caracterización de la envolvente de Barranquilla con planos de edificios reales (<a class="reference internal" href="16_ceela.html#tab-ceela-envolvente"><span class="std std-numref">Tabla 20</span></a>); CEELA usa esa correspondencia en su análisis del SUI</p></td>
+<td><p>Rangos de la literatura sin centro local</p></td>
+<td><p>Inspección de viviendas antiguas e informales; más de un edificio por tipología</p></td>
+</tr>
+<tr class="row-odd"><td><p>S16</p></td>
+<td><p>La forma horaria del uso del A/C (hora media del encendido nocturno y su dispersión) es un supuesto con rango (capa C), no un parámetro calibrado con XM</p></td>
+<td><p>La forma nocturna de la respuesta al calor cambia entre años (<span class="math notranslate nohighlight">\(p = 0{,}008\)</span>; <a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>)</p></td>
+<td><p>Calibrarla con XM (capa B)</p></td>
+<td><p>Curvas horarias de usuarios residenciales de Air-e; medición en hogares</p></td>
+</tr>
+<tr class="row-even"><td><p>S17</p></td>
+<td><p>El clima horario de ERA5-Land de la copia de Open-Meteo equivale al del Climate Data Store</p></td>
+<td><p>Open-Meteo sirve ERA5-Land sin credenciales; viento y radiación vienen de ERA5 (0,25°)</p></td>
+<td><p>Archivo del CDS</p></td>
+<td><p>Descarga del CDS (<code class="docutils literal notranslate"><span class="pre">01a_descargar_era5land_cds.py</span></code>)</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -516,7 +542,7 @@
 <section id="sensibilidad-cuantificada">
 <h2>Sensibilidad cuantificada<a class="headerlink" href="#sensibilidad-cuantificada" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-sensibilidad">
-<caption><span class="caption-number">Tabla 21 </span><span class="caption-text">Efecto de los supuestos sobre las cifras principales (puntos porcentuales de hogares con A/C).</span><a class="headerlink" href="#tab-sensibilidad" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 29 </span><span class="caption-text">Efecto de los supuestos sobre las cifras principales (puntos porcentuales de hogares con A/C).</span><a class="headerlink" href="#tab-sensibilidad" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Supuesto</p></th>
 <th class="head"><p>Cifra afectada</p></th>
@@ -601,7 +627,7 @@
 </tbody>
 </table>
 </div>
-<p>La elección entre variantes de la serie (S1) mueve la tenencia de la ciudad menos de 1,5 puntos en cualquier año. Es menos que el semiancho del intervalo de confianza de 2024 (± 2,9 puntos), y por eso la diferencia entre variantes se incorpora a la varianza de la serie en lugar de tratarse como una decisión. El supuesto con mayor efecto es la ponderación de la ciudad (S3), que cambia la tasa de 2024 en 4,3 puntos. Ese supuesto, sin embargo, está respaldado por la coincidencia entre el catastro y el SUI (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 16</span></a>).</p>
+<p>La elección entre variantes de la serie (S1) mueve la tenencia de la ciudad menos de 1,5 puntos en cualquier año. Es menos que el semiancho del intervalo de confianza de 2024 (± 2,9 puntos), y por eso la diferencia entre variantes se incorpora a la varianza de la serie en lugar de tratarse como una decisión. El supuesto con mayor efecto es la ponderación de la ciudad (S3), que cambia la tasa de 2024 en 4,3 puntos. Ese supuesto, sin embargo, está respaldado por la coincidencia entre el catastro y el SUI (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 23</span></a>).</p>
 <p>El supuesto S6 tiene un efecto que no se ve en la tasa de la ciudad, sino en el reparto entre viviendas. Antes de estandarizar por estrato, la P(A/C) imputada difiere 37 puntos entre la casa y el apartamento intermedio. Dentro de cada estrato la diferencia baja a 13 puntos, y esos 13 puntos provienen del supuesto de techo, no de una observación. Por eso la relación entre la posición frente a la cubierta y el A/C se presenta como resultado de la imputación.</p>
 </section>
 <section id="limitaciones-de-los-datos">
@@ -609,8 +635,8 @@
 <ol class="arabic simple">
 <li><p><strong>Muestras pequeñas en los estratos altos.</strong> La ECV 2024 tiene 52, 38 y 20 hogares en los estratos 4, 5 y 6. Sus proporciones tienen intervalos de ± 10 a ± 14 puntos, y en el estrato 6 la tenencia observada de A/C es de 100 %. La serie suavizada y las distribuciones Beta reflejan esa incertidumbre, pero no la eliminan.</p></li>
 <li><p><strong>Años sin encuesta utilizable.</strong> Las ECV 2015, 2016 y 2017 no identifican el municipio en los microdatos. Los años 2015–2017 del periodo de calibración son extrapolaciones de la serie, con desviaciones estándar de 2,4 puntos en la ciudad en 2015.</p></li>
-<li><p><strong>Sin hora de uso.</strong> Ninguna encuesta registra a qué hora se usan los equipos. La ENUT da duraciones de las actividades, no horarios. La forma horaria del perfil dependerá del módulo térmico y de la demanda de XM, como reconoce la propuesta (Fase 3, paso 7).</p></li>
-<li><p><strong>Sin número de equipos ni fracción climatizada.</strong> La ECV registra si el hogar tiene A/C, pero no cuántos equipos tiene. El prior depende de CEELA, aún pendiente.</p></li>
+<li><p><strong>Sin hora de uso.</strong> Ninguna encuesta registra a qué hora se usan los equipos. La ENUT da duraciones de las actividades, no horarios. La demanda de XM tampoco permite calibrar la forma horaria, porque su respuesta nocturna al calor cambia de forma entre años; solo restringe la respuesta por franjas (S16). La forma horaria del perfil dependerá del módulo térmico y de supuestos declarados.</p></li>
+<li><p><strong>Sin número de equipos ni fracción climatizada medidos.</strong> La ECV registra si el hogar tiene A/C, pero no cuántos equipos tiene. CEELA da la zona climatizada típica por tipología (una habitación en VIS, las habitaciones en E3–E4, toda la vivienda en E5–E6; <a class="reference internal" href="16_ceela.html#tab-ceela-climatizacion"><span class="std std-numref">Tabla 21</span></a>), pero a partir de edificios nuevos del mercado formal, no de una medición en hogares.</p></li>
 <li><p><strong>Calidad del SUI.</strong> Hay meses faltantes, consumos nulos o negativos y tarifas atípicas; se marcaron con banderas y se excluyen (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>). El consumo del estrato 1 está por encima del de los estratos 2 y 3 y debe confirmarse.</p></li>
 <li><p><strong>Materiales sin registro.</strong> El catastro no informa materiales. El techo de cada vivienda se asigna con la ECV por estrato, y en los edificios altos con un supuesto (S6). La ECV casi no capta los edificios de estrato 1, así que su distribución de techos describe sobre todo casas.</p></li>
 <li><p><strong>Comparaciones ecológicas.</strong> La relación entre la tenencia de A/C y el alza estacional del consumo se mide con seis estratos agregados. Es coherente con el efecto del A/C, pero no lo identifica a nivel de hogar.</p></li>

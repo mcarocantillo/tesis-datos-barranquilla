@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
@@ -228,6 +228,8 @@
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
 <ul class="nav bd-sidenav">
@@ -416,11 +418,11 @@
   <section class="tex2jax_ignore mathjax_ignore" id="encuestas-usadas-y-representatividad">
 <h1>Encuestas usadas y representatividad<a class="headerlink" href="#encuestas-usadas-y-representatividad" title="Link to this heading">#</a></h1>
 <p>Este capítulo indica qué encuestas y qué años se usaron, para qué se usó cada una y qué parte de la población de Barranquilla representa su muestra. Las encuestas son muestras: unos cientos de hogares entrevistados representan a toda la ciudad mediante los factores de expansión del DANE. Por eso se reportan dos cifras. La primera es la <strong>fracción de muestreo</strong>, es decir, qué porcentaje de los hogares de la ciudad fue entrevistado. La segunda es la <strong>población expandida</strong>, que es el total de hogares o personas que la encuesta dice representar y que se compara con una cifra de referencia independiente.</p>
-<p>Como referencia del número de hogares se usan los suscriptores residenciales de energía de los estratos 1 a 6 en diciembre de cada año (SUI), que coinciden con las 332.718 viviendas del catastro (<a class="reference internal" href="11_coherencia.html#tab-coherencia-hogares"><span class="std std-numref">Tabla 17</span></a>). Como referencia de personas se usa la población de Barranquilla en 2025, 1.279.344 habitantes (DANE, publicada por la Alcaldía) <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id22" title="Alcaldía de Barranquilla, Gerencia de Ciudad. Tablero Estadísticas de Ciudad. 2026. Consultado: 14 oct. 2026. URL: https://barranquilla.gov.co/gerencia-de-ciudad/tablero-estadisticas-de-ciudad.">Alcaldía de Barranquilla, Gerencia de Ciudad, 2026</a>)</span>.</p>
+<p>Como referencia del número de hogares se usan los suscriptores residenciales de energía de los estratos 1 a 6 en diciembre de cada año (SUI), que coinciden con las 332.718 viviendas del catastro (<a class="reference internal" href="11_coherencia.html#tab-coherencia-hogares"><span class="std std-numref">Tabla 24</span></a>). Como referencia de personas se usa la población de Barranquilla en 2025, 1.279.344 habitantes (DANE, publicada por la Alcaldía) <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id25" title="Alcaldía de Barranquilla, Gerencia de Ciudad. Tablero Estadísticas de Ciudad. 2026. Consultado: 14 oct. 2026. URL: https://barranquilla.gov.co/gerencia-de-ciudad/tablero-estadisticas-de-ciudad.">Alcaldía de Barranquilla, Gerencia de Ciudad, 2026</a>)</span>.</p>
 <section id="encuestas-y-anos-usados">
 <h2>Encuestas y años usados<a class="headerlink" href="#encuestas-y-anos-usados" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-encuestas-usadas">
-<caption><span class="caption-number">Tabla 13 </span><span class="caption-text">Encuestas, años y dominio geográfico usados en la tesis.</span><a class="headerlink" href="#tab-encuestas-usadas" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 14 </span><span class="caption-text">Encuestas, años y dominio geográfico usados en la tesis.</span><a class="headerlink" href="#tab-encuestas-usadas" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Encuesta</p></th>
 <th class="head"><p>Años usados</p></th>
@@ -430,7 +432,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>ECV, DANE <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id23" title="DANE. Encuesta Nacional de Calidad de Vida (ECV), microdatos 2015–2025 (catálogos 419, 456, 544, 607, 678, 718, 734, 793, 827, 861 y 905). 2026. URL: https://microdatos.dane.gov.co/index.php/catalog/861.">DANE, 2026</a>)</span></p></td>
+<tr class="row-even"><td><p>ECV, DANE <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id26" title="DANE. Encuesta Nacional de Calidad de Vida (ECV), microdatos 2015–2025 (catálogos 419, 456, 544, 607, 678, 718, 734, 793, 827, 861 y 905). 2026. URL: https://microdatos.dane.gov.co/index.php/catalog/861.">DANE, 2026</a>)</span></p></td>
 <td><p>2018, 2019, 2021, 2022, 2023, 2024 y 2025</p></td>
 <td><p>Barranquilla (cabecera y resto)</p></td>
 <td><p>Hogar</p></td>
@@ -448,13 +450,13 @@
 <td><p>Hogar</p></td>
 <td><p>Efecto de diseño, material del techo, regresión logística, personas y cuartos</p></td>
 </tr>
-<tr class="row-odd"><td><p>ENUT, DANE <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id24" title="DANE. Encuesta Nacional de Uso del Tiempo (ENUT) 2024–2025, catálogo 910. 2025. URL: https://microdatos.dane.gov.co/index.php/catalog/910.">DANE, 2025</a>)</span></p></td>
+<tr class="row-odd"><td><p>ENUT, DANE <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id27" title="DANE. Encuesta Nacional de Uso del Tiempo (ENUT) 2024–2025, catálogo 910. 2025. URL: https://microdatos.dane.gov.co/index.php/catalog/910.">DANE, 2025</a>)</span></p></td>
 <td><p>2024–2025 (septiembre de 2024 a septiembre de 2025)</p></td>
 <td><p>Cabeceras del Atlántico</p></td>
 <td><p>Persona</p></td>
 <td><p>Composición del hogar, sueño, tiempo fuera de casa y presencia diurna</p></td>
 </tr>
-<tr class="row-even"><td><p>GEIH, DANE <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id25" title="DANE. Gran Encuesta Integrada de Hogares (GEIH) 2024, catálogo 819. 2025. URL: https://microdatos.dane.gov.co/index.php/catalog/819.">DANE, 2025</a>)</span></p></td>
+<tr class="row-even"><td><p>GEIH, DANE <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id28" title="DANE. Gran Encuesta Integrada de Hogares (GEIH) 2024, catálogo 819. 2025. URL: https://microdatos.dane.gov.co/index.php/catalog/819.">DANE, 2025</a>)</span></p></td>
 <td><p>2024 (12 meses)</p></td>
 <td><p>Área metropolitana de Barranquilla</p></td>
 <td><p>Hogar y persona</p></td>
@@ -463,12 +465,12 @@
 </tbody>
 </table>
 </div>
-<p>No se usan las ECV 2015, 2016 y 2017, porque sus microdatos no identifican el municipio, ni la ECV 2020, que se hizo en parte por teléfono durante la pandemia. Además de las encuestas, el trabajo usa dos registros administrativos que cubren toda la población y no son muestras: el consumo facturado del SUI de 2015 a 2026 <span class="bibtex-citation" id="id5">(<a class="reference internal" href="09_referencias.html#id26" title="Superintendencia de Servicios Públicos Domiciliarios. SUI, reporte ele_com_096: consolidado de energía por empresa, departamento y municipio. 2026. Consultado: oct. 2026. URL: https://reportes.sui.gov.co/fabricaReportes/frameSet.jsp?idreporte=ele_com_096.">Superintendencia de Servicios Públicos Domiciliarios, 2026</a>)</span> y el catastro de 2026, con 332.718 viviendas <span class="bibtex-citation" id="id6">(<a class="reference internal" href="09_referencias.html#id21" title="Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 305, 315, 500, 505, 601 y 602). ArcGIS REST, 2026. Consultado: 15 sep. 2026. URL: https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer.">Alcaldía de Barranquilla, Gerencia de Gestión Catastral, 2026</a>)</span>.</p>
+<p>No se usan las ECV 2015, 2016 y 2017, porque sus microdatos no identifican el municipio, ni la ECV 2020, que se hizo en parte por teléfono durante la pandemia. Además de las encuestas, el trabajo usa dos registros administrativos que cubren toda la población y no son muestras: el consumo facturado del SUI de 2015 a 2026 <span class="bibtex-citation" id="id5">(<a class="reference internal" href="09_referencias.html#id29" title="Superintendencia de Servicios Públicos Domiciliarios. SUI, reporte ele_com_096: consolidado de energía por empresa, departamento y municipio. 2026. Consultado: oct. 2026. URL: https://reportes.sui.gov.co/fabricaReportes/frameSet.jsp?idreporte=ele_com_096.">Superintendencia de Servicios Públicos Domiciliarios, 2026</a>)</span> y el catastro de 2026, con 332.718 viviendas <span class="bibtex-citation" id="id6">(<a class="reference internal" href="09_referencias.html#id24" title="Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 305, 315, 500, 505, 601 y 602). ArcGIS REST, 2026. Consultado: 15 sep. 2026. URL: https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer.">Alcaldía de Barranquilla, Gerencia de Gestión Catastral, 2026</a>)</span>.</p>
 </section>
 <section id="ecv-muestra-de-barranquilla-por-ano">
 <h2>ECV: muestra de Barranquilla por año<a class="headerlink" href="#ecv-muestra-de-barranquilla-por-ano" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-ecv-muestra">
-<caption><span class="caption-number">Tabla 14 </span><span class="caption-text">Hogares de Barranquilla en la muestra de la ECV, y población que representan.</span><a class="headerlink" href="#tab-ecv-muestra" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 15 </span><span class="caption-text">Hogares de Barranquilla en la muestra de la ECV, y población que representan.</span><a class="headerlink" href="#tab-ecv-muestra" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Año</p></th>
 <th class="head"><p>Hogares en la muestra</p></th>
@@ -548,14 +550,14 @@
 </table>
 </div>
 <p>*La ola 2020 no se usa en la tesis.</p>
-<p>En cada ola se entrevistan entre 700 y 1.000 hogares de Barranquilla, entre 0,21 % y 0,33 % de los hogares de la ciudad: cada hogar entrevistado representa a entre 300 y 480 hogares. La muestra es pequeña en términos absolutos, pero está diseñada para ser representativa de la ciudad mediante los factores de expansión. La suma de esos factores es entre 1 % y 21 % mayor que el número de suscriptores, porque la ECV cuenta hogares (puede haber varios por vivienda y viviendas sin medidor propio) y porque sus proyecciones de población difieren de las del registro de facturación. Por eso la tasa de la ciudad se calcula con los pesos del SUI (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 16</span></a>).</p>
+<p>En cada ola se entrevistan entre 700 y 1.000 hogares de Barranquilla, entre 0,21 % y 0,33 % de los hogares de la ciudad: cada hogar entrevistado representa a entre 300 y 480 hogares. La muestra es pequeña en términos absolutos, pero está diseñada para ser representativa de la ciudad mediante los factores de expansión. La suma de esos factores es entre 1 % y 21 % mayor que el número de suscriptores, porque la ECV cuenta hogares (puede haber varios por vivienda y viviendas sin medidor propio) y porque sus proyecciones de población difieren de las del registro de facturación. Por eso la tasa de la ciudad se calcula con los pesos del SUI (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 23</span></a>).</p>
 <p>En personas, la ECV 2019 entrevistó a 3.865 personas y la ECV 2024 a 2.436, que expandidas representan 1.257.767 y 1.347.343 personas. Frente a los 1.279.344 habitantes de 2025, la muestra de 2024 equivale a 0,19 % de la población, y su expansión, a 105 % de ella.</p>
-<p>Por estrato la muestra es mucho menor. En 2024 hubo 250 hogares en el estrato 1, 161 en el 2, 125 en el 3, 52 en el 4, 38 en el 5 y 20 en el 6 (<a class="reference internal" href="10_insumos.html#tab-vent-nevera"><span class="std std-numref">Tabla 6</span></a>). Por eso los estratos 4 a 6 tienen los intervalos de confianza más amplios y la tenencia se suaviza entre olas.</p>
+<p>Por estrato la muestra es mucho menor. En 2024 hubo 250 hogares en el estrato 1, 161 en el 2, 125 en el 3, 52 en el 4, 38 en el 5 y 20 en el 6 (<a class="reference internal" href="10_insumos.html#tab-vent-nevera"><span class="std std-numref">Tabla 7</span></a>). Por eso los estratos 4 a 6 tienen los intervalos de confianza más amplios y la tenencia se suaviza entre olas.</p>
 </section>
 <section id="enut-y-geih">
 <h2>ENUT y GEIH<a class="headerlink" href="#enut-y-geih" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-enut-geih-muestra">
-<caption><span class="caption-number">Tabla 15 </span><span class="caption-text">Muestra y población representada por la ENUT y la GEIH.</span><a class="headerlink" href="#tab-enut-geih-muestra" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 16 </span><span class="caption-text">Muestra y población representada por la ENUT y la GEIH.</span><a class="headerlink" href="#tab-enut-geih-muestra" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Encuesta</p></th>
 <th class="head"><p>Dominio</p></th>
@@ -586,7 +588,7 @@
 </tbody>
 </table>
 </div>
-<p>Ninguna de las dos identifica a Barranquilla por separado. La ENUT solo distingue el departamento y la zona (cabecera o resto); su dominio incluye Barranquilla, Soledad, Malambo, Puerto Colombia y las demás cabeceras del Atlántico. Si la muestra se reparte en proporción a la población, unos 890 de sus 1.894 hogares serían de Barranquilla, alrededor de 0,27 % de los hogares de la ciudad. La GEIH cubre el área metropolitana (Barranquilla, Soledad, Malambo, Puerto Colombia y Galapa) durante los 12 meses de 2024; con el mismo supuesto, unos 4.900 de sus hogares serían de Barranquilla, alrededor de 1,5 % de los hogares de la ciudad. En ambos casos se supone que el comportamiento del dominio representa al de la ciudad (supuesto S10 en <a class="reference internal" href="12_supuestos.html#tab-supuestos"><span class="std std-numref">Tabla 20</span></a>). Las comparaciones por estrato de la GEIH muestran que el área metropolitana tiene más hogares de estratos bajos que Barranquilla (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 16</span></a>), y por eso solo se usa para el trabajo en casa dentro de cada estrato.</p>
+<p>Ninguna de las dos identifica a Barranquilla por separado. La ENUT solo distingue el departamento y la zona (cabecera o resto); su dominio incluye Barranquilla, Soledad, Malambo, Puerto Colombia y las demás cabeceras del Atlántico. Si la muestra se reparte en proporción a la población, unos 890 de sus 1.894 hogares serían de Barranquilla, alrededor de 0,27 % de los hogares de la ciudad. La GEIH cubre el área metropolitana (Barranquilla, Soledad, Malambo, Puerto Colombia y Galapa) durante los 12 meses de 2024; con el mismo supuesto, unos 4.900 de sus hogares serían de Barranquilla, alrededor de 1,5 % de los hogares de la ciudad. En ambos casos se supone que el comportamiento del dominio representa al de la ciudad (supuesto S10 en <a class="reference internal" href="12_supuestos.html#tab-supuestos"><span class="std std-numref">Tabla 28</span></a>). Las comparaciones por estrato de la GEIH muestran que el área metropolitana tiene más hogares de estratos bajos que Barranquilla (<a class="reference internal" href="11_coherencia.html#tab-coherencia-estratos"><span class="std std-numref">Tabla 23</span></a>), y por eso solo se usa para el trabajo en casa dentro de cada estrato.</p>
 </section>
 </section>
 

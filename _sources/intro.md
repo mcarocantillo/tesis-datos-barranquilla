@@ -1,6 +1,6 @@
 # Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla
 
-**María Carolina Cantillo Orozco** · Maestría en Ingeniería Mecánica, Universidad del Norte · Actualizado: 14 de octubre de 2026
+**María Carolina Cantillo Orozco** · Maestría en Ingeniería Mecánica, Universidad del Norte · Actualizado: 19 de octubre de 2026
 
 ## Resumen
 
@@ -29,7 +29,7 @@
 ```{figure} figuras/flujo_datos.png
 :name: fig-flujo
 :width: 100%
-Flujo de los datos de entrada hacia las tres fases del modelo de la tesis. Los recuadros punteados son fuentes aún no procesadas.
+Flujo de los datos de entrada hacia las tres fases del modelo de la tesis.
 ```
 
 ## Tenencia de aire acondicionado
@@ -49,6 +49,7 @@ Tenencia de A/C por estrato y año (variante C) con su intervalo de confianza de
 - **Análisis y conclusiones**, **Insumos del modelo** y **Cambios a la propuesta**: los resultados principales y lo que la tesis toma de ellos.
 - **Encuestas usadas y representatividad**: qué encuestas y años se usaron y qué parte de la población representa cada muestra.
 - **Fuentes**, **Resultados**, **Metodología** y **Serie de tenencia, error de la encuesta e imputación**: cifras y cálculos detallados.
+- **Respuesta horaria al calor** y **Línea base de CEELA**: la demanda horaria de XM frente al clima (compuerta horaria) y la envolvente, la climatización y los consumos de los edificios representativos de CEELA.
 - **Coherencia entre fuentes** y **Supuestos, sensibilidad y limitaciones**: la validación de los datos y el registro de supuestos.
 - **Reproducibilidad** y **Referencias**: scripts, tablas y bibliografía.
 

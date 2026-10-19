@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
@@ -69,7 +69,7 @@
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Supuestos, sensibilidad y limitaciones" href="12_supuestos.html" />
-    <link rel="prev" title="Serie de tenencia, error de la encuesta e imputación" href="05_ajustes_v3.html" />
+    <link rel="prev" title="Línea base de CEELA para Barranquilla" href="16_ceela.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   <meta name="docsearch:version" content="" />
@@ -230,6 +230,8 @@
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
 <ul class="current nav bd-sidenav">
@@ -406,6 +408,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tenencia-de-equipos-medida-por-fuentes-distintas">Tenencia de equipos medida por fuentes distintas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-frente-a-facturacion">Encuesta frente a facturación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edificios-del-estrato-1-frente-al-techo-declarado-en-la-ecv">Edificios del estrato 1 frente al techo declarado en la ECV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clima-era5-land-frente-a-la-estacion-del-ideam">Clima: ERA5-Land frente a la estación del IDEAM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demanda-horaria-de-xm">Demanda horaria de XM</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-pendiente">Validación pendiente</a></li>
 </ul>
             </nav>
@@ -427,17 +431,17 @@
 <a class="reference internal image-reference" href="_images/coherencia_estratos.png"><img alt="_images/coherencia_estratos.png" src="_images/coherencia_estratos.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 21 </span><span class="caption-text">Distribución de viviendas, suscriptores u hogares por estrato según la fuente. El catastro y el SUI coinciden; las encuestas tienen más hogares de estrato 1 que la ciudad.</span><a class="headerlink" href="#fig-coherencia-estratos" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 22 </span><span class="caption-text">Distribución de viviendas, suscriptores u hogares por estrato según la fuente. El catastro y el SUI coinciden; las encuestas tienen más hogares de estrato 1 que la ciudad.</span><a class="headerlink" href="#fig-coherencia-estratos" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Para resumir la diferencia entre dos distribuciones se usa el índice de disimilitud <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id49" title="Otis Dudley Duncan y Beverly Duncan. A methodological analysis of segregation indexes. American Sociological Review, 20(2):210–217, 1955. doi:10.2307/2088328.">Duncan y Duncan, 1955</a>)</span>:</p>
+<p>Para resumir la diferencia entre dos distribuciones se usa el índice de disimilitud <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id52" title="Otis Dudley Duncan y Beverly Duncan. A methodological analysis of segregation indexes. American Sociological Review, 20(2):210–217, 1955. doi:10.2307/2088328.">Duncan y Duncan, 1955</a>)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eq-disimilitud">
-<span class="eqno">(10)<a class="headerlink" href="#equation-eq-disimilitud" title="Link to this equation">#</a></span>\[
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq-disimilitud" title="Link to this equation">#</a></span>\[
 D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\pi_{A,e}\)</span> es la proporción del estrato <span class="math notranslate nohighlight">\(e\)</span> en la fuente <span class="math notranslate nohighlight">\(A\)</span>. <span class="math notranslate nohighlight">\(D\)</span> es el porcentaje de hogares que habría que mover de estrato para que las dos distribuciones fueran iguales.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-coherencia-estratos">
-<caption><span class="caption-number">Tabla 16 </span><span class="caption-text">Distribución por estrato según la fuente (%) e índice de disimilitud frente al SUI del mismo año.</span><a class="headerlink" href="#tab-coherencia-estratos" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 23 </span><span class="caption-text">Distribución por estrato según la fuente (%) e índice de disimilitud frente al SUI del mismo año.</span><a class="headerlink" href="#tab-coherencia-estratos" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Fuente</p></th>
 <th class="head"><p>Unidad</p></th>
@@ -514,12 +518,12 @@ D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
 </tbody>
 </table>
 </div>
-<p>El catastro y el SUI, que son fuentes independientes (un registro predial y un registro de facturación), coinciden: <span class="math notranslate nohighlight">\(D = 2{,}4\)</span> %. La mayor diferencia está en el estrato 2, con 2,5 puntos. La ECV, expandida con sus propios factores, sobrerrepresenta el estrato 1 entre 5 y 6 puntos (<span class="math notranslate nohighlight">\(D\)</span> de 6,7 % y 9,1 %). Como el estrato 1 es el de menor tenencia de A/C, la ECV sin corregir subestima la tenencia de la ciudad: 30,9 % frente a 33,3 % en 2019 y 37,1 % frente a 41,4 % en 2024. Por eso la tasa de la ciudad se calcula con las tasas de la ECV por estrato y los pesos del SUI <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id30" title="D. Holt y T. M. F. Smith. Post stratification. Journal of the Royal Statistical Society, Series A, 142(1):33–46, 1979.">Holt y Smith, 1979</a>)</span>. La GEIH cubre el área metropolitana, que incluye municipios con más hogares de estratos bajos. Por eso se usa solo para el trabajo en casa por estrato y no para la composición de la ciudad.</p>
+<p>El catastro y el SUI, que son fuentes independientes (un registro predial y un registro de facturación), coinciden: <span class="math notranslate nohighlight">\(D = 2{,}4\)</span> %. La mayor diferencia está en el estrato 2, con 2,5 puntos. La ECV, expandida con sus propios factores, sobrerrepresenta el estrato 1 entre 5 y 6 puntos (<span class="math notranslate nohighlight">\(D\)</span> de 6,7 % y 9,1 %). Como el estrato 1 es el de menor tenencia de A/C, la ECV sin corregir subestima la tenencia de la ciudad: 30,9 % frente a 33,3 % en 2019 y 37,1 % frente a 41,4 % en 2024. Por eso la tasa de la ciudad se calcula con las tasas de la ECV por estrato y los pesos del SUI <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id33" title="D. Holt y T. M. F. Smith. Post stratification. Journal of the Royal Statistical Society, Series A, 142(1):33–46, 1979.">Holt y Smith, 1979</a>)</span>. La GEIH cubre el área metropolitana, que incluye municipios con más hogares de estratos bajos. Por eso se usa solo para el trabajo en casa por estrato y no para la composición de la ciudad.</p>
 </section>
 <section id="numero-de-hogares">
 <h2>Número de hogares<a class="headerlink" href="#numero-de-hogares" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-coherencia-hogares">
-<caption><span class="caption-number">Tabla 17 </span><span class="caption-text">Número de hogares o unidades residenciales de Barranquilla según la fuente.</span><a class="headerlink" href="#tab-coherencia-hogares" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 24 </span><span class="caption-text">Número de hogares o unidades residenciales de Barranquilla según la fuente.</span><a class="headerlink" href="#tab-coherencia-hogares" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Fuente</p></th>
 <th class="head"><p>Cifra</p></th>
@@ -551,7 +555,7 @@ D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
 <section id="tenencia-de-equipos-medida-por-fuentes-distintas">
 <h2>Tenencia de equipos medida por fuentes distintas<a class="headerlink" href="#tenencia-de-equipos-medida-por-fuentes-distintas" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-coherencia-nevera">
-<caption><span class="caption-number">Tabla 18 </span><span class="caption-text">Tenencia de nevera según la fuente (% de hogares).</span><a class="headerlink" href="#tab-coherencia-nevera" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 25 </span><span class="caption-text">Tenencia de nevera según la fuente (% de hogares).</span><a class="headerlink" href="#tab-coherencia-nevera" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Fuente</p></th>
 <th class="head"><p>Dominio</p></th>
@@ -588,7 +592,7 @@ D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
 <a class="reference internal image-reference" href="_images/coherencia_alza_ac.png"><img alt="_images/coherencia_alza_ac.png" src="_images/coherencia_alza_ac.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 22 </span><span class="caption-text">Tenencia de A/C de 2019 (ECV, variante C) frente al alza del consumo facturado de agosto y septiembre respecto a febrero y marzo (SUI, 2015–2025), por estrato.</span><a class="headerlink" href="#fig-coherencia-alza" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 23 </span><span class="caption-text">Tenencia de A/C de 2019 (ECV, variante C) frente al alza del consumo facturado de agosto y septiembre respecto a febrero y marzo (SUI, 2015–2025), por estrato.</span><a class="headerlink" href="#fig-coherencia-alza" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>La correlación entre las dos magnitudes es alta: <span class="math notranslate nohighlight">\(r = 0{,}93\)</span> de Pearson (<span class="math notranslate nohighlight">\(p = 0{,}007\)</span>, seis estratos), y la relación es creciente hasta el estrato 4. En los estratos 4 a 6 el alza se estabiliza entre 28 % y 29 % aunque la tenencia sigue subiendo, de 72 % a 97 %. Esto es coherente con un uso por hogar que no crece en proporción a la tenencia, y con el número de equipos y la fracción climatizada como factores que la tenencia no captura. La comparación tiene dos limitaciones. Es ecológica, con seis puntos agregados, así que no mide el efecto del A/C en un hogar. Y la nevera también consume más con el calor, de modo que una parte del alza no es del A/C. Por eso la propuesta reporta el reparto entre A/C y nevera con su capa de incertidumbre (Fase 3, paso 7).</p>
@@ -600,13 +604,13 @@ D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
 <a class="reference internal image-reference" href="_images/catastro_e1_edificios.png"><img alt="_images/catastro_e1_edificios.png" src="_images/catastro_e1_edificios.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 23 </span><span class="caption-text">Izquierda: lotes del catastro con viviendas de estrato 1 en edificios de 4 o más pisos, sobre el resto de viviendas del estrato. Derecha: viviendas de estrato 1 con otra vivienda encima según el catastro y hogares con techo de plancha según la ECV.</span><a class="headerlink" href="#fig-e1-edificios" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 24 </span><span class="caption-text">Izquierda: lotes del catastro con viviendas de estrato 1 en edificios de 4 o más pisos, sobre el resto de viviendas del estrato. Derecha: viviendas de estrato 1 con otra vivienda encima según el catastro y hogares con techo de plancha según la ECV.</span><a class="headerlink" href="#fig-e1-edificios" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p><strong>El catastro es coherente.</strong> La altura de los edificios no tiene errores apreciables. Solo 20 de las 32.178 unidades están en lotes cuyo piso más alto es menor de 4, y solo 10 viviendas de hasta 3 pisos registran más de 3 plantas. Las unidades se reparten casi por igual entre los pisos 1 a 5 (unas 5.790 por piso), lo que corresponde a bloques de 5 pisos sin ascensor; unas pocas torres llegan a 12. Las 32.178 viviendas están en solo 74 lotes matriz, con una mediana de 43 m² y 2 habitaciones, concentrados en pocas zonas del occidente y el suroccidente de la ciudad (<a class="reference internal" href="#fig-e1-edificios"><span class="std std-numref">Figura 23</span></a>). Son rasgos propios de los proyectos de vivienda de interés prioritario. El 29,5 % es, por tanto, un dato real. Sí aparece un problema en el año de construcción. 14.610 apartamentos de estrato 1 y 766 de estrato 2, en 24 de esos lotes, registran años entre 1932 y 1972, con un solo año por lote, aunque su tipología es la de proyectos recientes. Así vienen en la descarga original. El problema parece general: de 332.589 viviendas con año registrado, solo 1.442 casas son anteriores a 1975, lo que no es compatible con barrios antiguos como El Prado, Barrio Abajo o el Centro. Lo más probable es que <code class="docutils literal notranslate"><span class="pre">anio_construccion</span></code> registre el año de la última incorporación o actualización de la construcción en el catastro, y no su fecha original. La variable se conservará para la Fase 1 como «año de registro catastral», porque aporta información útil sobre los materiales para el juicio de expertos (Fase 1, paso 6), con dos precauciones: los años de los 24 lotes se tratarán como faltantes y no se interpretará como antigüedad física del edificio. Confirmar su significado con la Gerencia de Gestión Catastral queda como pendiente (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>).</p>
-<p><strong>La muestra de la ECV casi no capta esos edificios.</strong> La pregunta de la ECV es «¿Cuál es el material predominante del techo o cubierta?», sin instrucción para los apartamentos <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id23" title="DANE. Encuesta Nacional de Calidad de Vida (ECV), microdatos 2015–2025 (catálogos 419, 456, 544, 607, 678, 718, 734, 793, 827, 861 y 905). 2026. URL: https://microdatos.dane.gov.co/index.php/catalog/861.">DANE, 2026</a>)</span>. Un hogar con otra vivienda encima tiene una placa de concreto sobre su techo, de modo que, si responde por su propio techo, la proporción de plancha en el estrato 1 debería ser de al menos 31,2 %. La ECV registra 17,1 %, y solo 11,7 % de los hogares de estrato 1 vive en un apartamento con plancha, frente a 24,8 % de las viviendas en edificios con otra vivienda encima según el catastro. La ECV 2024 tiene 26 segmentos con hogares de estrato 1, y solo 2 tienen el perfil de un bloque de apartamentos, con todos sus hogares en apartamento y bajo plancha. Si los segmentos se seleccionaran en proporción a las viviendas, se esperarían 7,7 (<span class="math notranslate nohighlight">\(p = 0{,}01\)</span> de observar 2 o menos con una binomial). La muestra no permite separar las causas posibles: el azar en una muestra por conglomerados, un marco muestral que incorpora con rezago los edificios construidos después del censo de 2018 (5.683 de estas viviendas tienen año 2019 o posterior), o hogares de estos edificios que declaran otro estrato.</p>
+<p><strong>El catastro es coherente.</strong> La altura de los edificios no tiene errores apreciables. Solo 20 de las 32.178 unidades están en lotes cuyo piso más alto es menor de 4, y solo 10 viviendas de hasta 3 pisos registran más de 3 plantas. Las unidades se reparten casi por igual entre los pisos 1 a 5 (unas 5.790 por piso), lo que corresponde a bloques de 5 pisos sin ascensor; unas pocas torres llegan a 12. Las 32.178 viviendas están en solo 74 lotes matriz, con una mediana de 43 m² y 2 habitaciones, concentrados en pocas zonas del occidente y el suroccidente de la ciudad (<a class="reference internal" href="#fig-e1-edificios"><span class="std std-numref">Figura 24</span></a>). Son rasgos propios de los proyectos de vivienda de interés prioritario. El 29,5 % es, por tanto, un dato real. Sí aparece un problema en el año de construcción. 14.610 apartamentos de estrato 1 y 766 de estrato 2, en 24 de esos lotes, registran años entre 1932 y 1972, con un solo año por lote, aunque su tipología es la de proyectos recientes. Así vienen en la descarga original. El problema parece general: de 332.589 viviendas con año registrado, solo 1.442 casas son anteriores a 1975, lo que no es compatible con barrios antiguos como El Prado, Barrio Abajo o el Centro. Lo más probable es que <code class="docutils literal notranslate"><span class="pre">anio_construccion</span></code> registre el año de la última incorporación o actualización de la construcción en el catastro, y no su fecha original. La variable se conservará para la Fase 1 como «año de registro catastral», porque aporta información útil sobre los materiales para el juicio de expertos (Fase 1, paso 6), con dos precauciones: los años de los 24 lotes se tratarán como faltantes y no se interpretará como antigüedad física del edificio. Confirmar su significado con la Gerencia de Gestión Catastral queda como pendiente (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>).</p>
+<p><strong>La muestra de la ECV casi no capta esos edificios.</strong> La pregunta de la ECV es «¿Cuál es el material predominante del techo o cubierta?», sin instrucción para los apartamentos <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id26" title="DANE. Encuesta Nacional de Calidad de Vida (ECV), microdatos 2015–2025 (catálogos 419, 456, 544, 607, 678, 718, 734, 793, 827, 861 y 905). 2026. URL: https://microdatos.dane.gov.co/index.php/catalog/861.">DANE, 2026</a>)</span>. Un hogar con otra vivienda encima tiene una placa de concreto sobre su techo, de modo que, si responde por su propio techo, la proporción de plancha en el estrato 1 debería ser de al menos 31,2 %. La ECV registra 17,1 %, y solo 11,7 % de los hogares de estrato 1 vive en un apartamento con plancha, frente a 24,8 % de las viviendas en edificios con otra vivienda encima según el catastro. La ECV 2024 tiene 26 segmentos con hogares de estrato 1, y solo 2 tienen el perfil de un bloque de apartamentos, con todos sus hogares en apartamento y bajo plancha. Si los segmentos se seleccionaran en proporción a las viviendas, se esperarían 7,7 (<span class="math notranslate nohighlight">\(p = 0{,}01\)</span> de observar 2 o menos con una binomial). La muestra no permite separar las causas posibles: el azar en una muestra por conglomerados, un marco muestral que incorpora con rezago los edificios construidos después del censo de 2018 (5.683 de estas viviendas tienen año 2019 o posterior), o hogares de estos edificios que declaran otro estrato.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-e1-edificios">
-<caption><span class="caption-number">Tabla 19 </span><span class="caption-text">Consecuencias de la subrepresentación de los edificios de estrato 1 en la ECV 2024.</span><a class="headerlink" href="#tab-e1-edificios" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 26 </span><span class="caption-text">Consecuencias de la subrepresentación de los edificios de estrato 1 en la ECV 2024.</span><a class="headerlink" href="#tab-e1-edificios" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepto</p></th>
 <th class="head"><p>Valor</p></th>
@@ -634,15 +638,61 @@ D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
 </tbody>
 </table>
 </div>
-<p>La reponderación y la imputación al catastro sin igualar el estrato 1 a la ECV (14,4 %, supuesto S7) apuntan en la misma dirección: la tenencia de A/C del estrato 1 en 2024 estaría entre 1 y 3 puntos por encima de la que da la ECV. La P(A/C) que la imputación asigna a los edificios de estrato 1 (23,9 %) coincide con la observada en los hogares de la ECV en apartamento con plancha (26,2 %). La evidencia es limitada: son 30 hogares, y en la ECV 2019 no hay diferencia entre los dos grupos (7,6 % y 7,7 %). Por eso la serie adoptada conserva la tasa de la ECV y la diferencia queda como sensibilidad (<a class="reference internal" href="12_supuestos.html#tab-sensibilidad"><span class="std std-numref">Tabla 21</span></a>).</p>
+<p>La reponderación y la imputación al catastro sin igualar el estrato 1 a la ECV (14,4 %, supuesto S7) apuntan en la misma dirección: la tenencia de A/C del estrato 1 en 2024 estaría entre 1 y 3 puntos por encima de la que da la ECV. La P(A/C) que la imputación asigna a los edificios de estrato 1 (23,9 %) coincide con la observada en los hogares de la ECV en apartamento con plancha (26,2 %). La evidencia es limitada: son 30 hogares, y en la ECV 2019 no hay diferencia entre los dos grupos (7,6 % y 7,7 %). Por eso la serie adoptada conserva la tasa de la ECV y la diferencia queda como sensibilidad (<a class="reference internal" href="12_supuestos.html#tab-sensibilidad"><span class="std std-numref">Tabla 29</span></a>).</p>
 <p>Para la Fase 1 se desprenden dos consecuencias. La distribución de techos de la ECV en el estrato 1 describe sobre todo casas (12,8 % de plancha en las casas en 2024), por lo que debe aplicarse a las casas y no a todas las viviendas del estrato. En los edificios, el techo solo es superficie exterior en el último piso, que reúne 16 % de sus unidades (4,7 % de las viviendas del estrato), y su material no se conoce (supuesto S6).</p>
+</section>
+<section id="clima-era5-land-frente-a-la-estacion-del-ideam">
+<h2>Clima: ERA5-Land frente a la estación del IDEAM<a class="headerlink" href="#clima-era5-land-frente-a-la-estacion-del-ideam" title="Link to this heading">#</a></h2>
+<p>La serie horaria de ERA5-Land en la celda de Barranquilla (copia de Open-Meteo) se contrastó con la estación del aeropuerto Ernesto Cortissoz del IDEAM, hora a hora, con el sesgo (ERA5-Land menos IDEAM) y la raíz del error cuadrático medio (RMSE). La serie del IDEAM ya está en hora local: el RMSE de la temperatura es mínimo sin desfase.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-coherencia-clima">
+<caption><span class="caption-number">Tabla 27 </span><span class="caption-text">ERA5-Land frente a la estación 0029045190 del IDEAM, 2015–2026 (75.531 horas con ambas fuentes).</span><a class="headerlink" href="#tab-coherencia-clima" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Sesgo</p></th>
+<th class="head"><p>RMSE</p></th>
+<th class="head"><p>Sesgo de 22 a 5 h (media)</p></th>
+<th class="head"><p>Sesgo más negativo, por hora</p></th>
+<th class="head"><p>Correlación de las medias diarias</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Temperatura (°C)</p></td>
+<td><p>−0,70</p></td>
+<td><p>1,96</p></td>
+<td><p>+0,17</p></td>
+<td><p>−2,23 (13 h)</p></td>
+<td><p>0,82</p></td>
+</tr>
+<tr class="row-odd"><td><p>Humedad relativa (puntos)</p></td>
+<td><p>−2,8</p></td>
+<td><p>11,1</p></td>
+<td><p>−4,4</p></td>
+<td><p>−7,0 (7 h)</p></td>
+<td><p>0,38</p></td>
+</tr>
+<tr class="row-even"><td><p>Índice de calor (°C)</p></td>
+<td><p>−2,4</p></td>
+<td><p>5,0</p></td>
+<td><p>−0,28</p></td>
+<td><p>−5,9 (13 h)</p></td>
+<td><p>0,84</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>ERA5-Land reproduce bien la noche y subestima el calor del mediodía (<a class="reference internal" href="#tab-coherencia-clima"><span class="std std-numref">Tabla 27</span></a>). De 22 a 5 h el sesgo de la temperatura es casi nulo (+0,17 °C) y el RMSE es de 1,0 °C. De 11 a 17 h la temperatura queda entre 1,5 y 2,2 °C por debajo de la de la estación y el índice de calor hasta 5,9 °C por debajo. Por mes, el sesgo de la temperatura va de −1,0 °C (abril) a −0,3 °C (octubre), sin un patrón estacional marcado. Una diferencia de mediodía de este tipo es común en los reanálisis: la celda de ERA5-Land (0,1°, unos 11 km) promedia superficies distintas de la del aeropuerto donde está la estación. Las medias diarias del índice de calor de las dos fuentes correlacionan 0,85 en los 2.882 días en que la estación tiene al menos 20 horas. Para la compuerta horaria se usa ERA5-Land, porque cubre todos los días y no tiene huecos; con el índice de calor del IDEAM la respuesta nocturna de la demanda baja de 1,92 a 0,94 %/°C (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>). Ese cambio de nivel indica que <span class="math notranslate nohighlight">\(b\)</span> depende de la fuente de clima y no debe usarse como valor absoluto.</p>
+</section>
+<section id="demanda-horaria-de-xm">
+<h2>Demanda horaria de XM<a class="headerlink" href="#demanda-horaria-de-xm" title="Link to this heading">#</a></h2>
+<p>Las series de XM son coherentes entre sí. La respuesta nocturna de la demanda al índice de calor es de 1,92 %/°C con el mercado regulado de Air-e en 2021–2025, de 1,94 %/°C con la demanda real más pérdidas del agente Air-e, de 1,92 %/°C con los agentes de Electricaribe en 2015–2019 y de 1,97 %/°C con el mercado de Electricaribe en sus siete departamentos («COSTA CARIBE») en 2017–2019. La forma del perfil de respuesta de 2015–2019 correlaciona 0,74 con la de 2021–2025. El nivel nocturno es, por tanto, estable entre periodos y entre definiciones de la demanda, pero la forma hora a hora cambia entre años, y por eso la forma horaria del A/C queda en capa C.</p>
+<p>La comparación con las encuestas y el SUI es indirecta. El mercado de Air-e incluye Atlántico, Magdalena y La Guajira, y usuarios no residenciales, así que su respuesta al calor no se puede atribuir al A/C de los hogares de Barranquilla. Lo que sí es coherente es el signo y el orden de magnitud: la demanda sube con el calor en todas las horas, como el consumo facturado sube en los meses calurosos en todos los estratos (<a class="reference internal" href="#fig-coherencia-alza"><span class="std std-numref">Figura 23</span></a>).</p>
 </section>
 <section id="validacion-pendiente">
 <h2>Validación pendiente<a class="headerlink" href="#validacion-pendiente" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Clima.</strong> Las series de ERA5-Land se contrastarán con la estación del aeropuerto Ernesto Cortissoz del IDEAM, por hora del día y mes, con el sesgo y la raíz del error cuadrático medio (Fase 2, paso 1).</p></li>
-<li><p><strong>Demanda horaria.</strong> La suma del consumo facturado del SUI y las pérdidas debe acercarse a la demanda regulada de XM del mercado de Air-e (Fase 3, paso 1).</p></li>
-<li><p><strong>Consumo del estrato 1.</strong> El consumo por suscriptor del estrato 1 es mayor que el de los estratos 2 y 3, lo que no es coherente con su menor tenencia de A/C. Queda pendiente confirmarlo con Air-e.</p></li>
+<li><p><strong>Clima.</strong> Repetir el contraste con IDEAM cuando se descargue ERA5-Land del Climate Data Store, por hora del día y mes, y agregar la radiación (Fase 2, paso 1).</p></li>
+<li><p><strong>Demanda horaria.</strong> La suma del consumo facturado del SUI y las pérdidas debe acercarse a la demanda regulada de XM del mercado de Air-e (Fase 3, paso 1). Para esa comparación hace falta el SUI de los tres departamentos del mercado, no solo el de Barranquilla.</p></li>
+<li><p><strong>Consumo del estrato 1.</strong> El consumo por suscriptor del estrato 1 es mayor que el de los estratos 2 y 3, lo que no es coherente con su menor tenencia de A/C. Con solo lecturas reales, CEELA da 36 % menos para el estrato 1 en 2021–2024 (<a class="reference internal" href="16_ceela.html#tab-ceela-sui"><span class="std std-numref">Tabla 22</span></a>). Queda pendiente descargar el SUI con el filtro de tipo de lectura y confirmarlo con Air-e.</p></li>
 </ul>
 </section>
 </section>
@@ -678,12 +728,12 @@ D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="05_ajustes_v3.html"
+       href="16_ceela.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Serie de tenencia, error de la encuesta e imputación</p>
+        <p class="prev-next-title">Línea base de CEELA para Barranquilla</p>
       </div>
     </a>
     <a class="right-next"
@@ -718,6 +768,8 @@ D_{AB} = \frac{1}{2}\sum_{e=1}^{6} \left| \pi_{A,e} - \pi_{B,e} \right|
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tenencia-de-equipos-medida-por-fuentes-distintas">Tenencia de equipos medida por fuentes distintas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-frente-a-facturacion">Encuesta frente a facturación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edificios-del-estrato-1-frente-al-techo-declarado-en-la-ecv">Edificios del estrato 1 frente al techo declarado en la ECV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clima-era5-land-frente-a-la-estacion-del-ideam">Clima: ERA5-Land frente a la estación del IDEAM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demanda-horaria-de-xm">Demanda horaria de XM</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-pendiente">Validación pendiente</a></li>
 </ul>
   </nav></div>

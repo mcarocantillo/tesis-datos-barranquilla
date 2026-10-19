@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
@@ -68,7 +68,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Coherencia entre fuentes y validación" href="11_coherencia.html" />
+    <link rel="next" title="Respuesta horaria al calor (compuerta horaria)" href="15_compuerta_horaria.html" />
     <link rel="prev" title="Metodología" href="04_metodologia.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -230,6 +230,8 @@
 <li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Serie de tenencia, error de la encuesta e imputación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
 <ul class="nav bd-sidenav">
@@ -764,7 +766,7 @@
 </div>
 <p><strong>ECV 2015</strong> (catálogo 419 del DANE). Trae departamento pero no municipio, así que no sirve para Barranquilla. Sí tiene el módulo de uso de energéticos con el tipo y las horas de A/C y ventilador (P5523–P5526), igual que la de 2019, pero solo a nivel del Atlántico.</p>
 <p><strong>SUI, estrato 3, diciembre de 2024.</strong> El consumo es normal (265 kWh por suscriptor), pero el valor facturado equivale a 449 COP/kWh, frente a 676–858 en los meses vecinos. Lo más probable es un crédito o una refacturación después de octubre de 2024, mes en que no se reportó consumo. Ese mes se usa para consumo y no para tarifa. Noviembre de 2024 (todos los estratos) puede incluir consumo atrasado de octubre. Ambos quedan marcados en la columna nueva <code class="docutils literal notranslate"><span class="pre">bandera_revision</span></code> del archivo del SUI.</p>
-<p><strong>Referencias de los métodos:</strong> efecto de diseño <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id29" title="Leslie Kish. Survey Sampling. Wiley, New York, 1965.">Kish, 1965</a>)</span> y linealización de Taylor <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id31" title="Kirk M. Wolter. Introduction to Variance Estimation. Springer, New York, 2007.">Wolter, 2007</a>)</span>; postestratificación <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id30" title="D. Holt y T. M. F. Smith. Post stratification. Journal of the Royal Statistical Society, Series A, 142(1):33–46, 1979.">Holt y Smith, 1979</a>)</span>; modelo binomial y sobredispersión <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id34" title="P. McCullagh y J. A. Nelder. Generalized Linear Models. Chapman &amp; Hall, London, 1989.">McCullagh y Nelder, 1989</a>)</span>; método delta <span class="bibtex-citation" id="id5">(<a class="reference internal" href="09_referencias.html#id40" title="Gary W. Oehlert. A note on the delta method. The American Statistician, 46(1):27–29, 1992.">Oehlert, 1992</a>)</span>; promedio de especificaciones <span class="bibtex-citation" id="id6">(<a class="reference internal" href="09_referencias.html#id41" title="Jennifer A. Hoeting, David Madigan, Adrian E. Raftery y Chris T. Volinsky. Bayesian model averaging: a tutorial. Statistical Science, 14(4):382–401, 1999.">Hoeting et al., 1999</a>)</span>; búsqueda de raíces <span class="bibtex-citation" id="id7">(<a class="reference internal" href="09_referencias.html#id43" title="Richard P. Brent. Algorithms for Minimization without Derivatives. Prentice-Hall, Englewood Cliffs, 1973.">Brent, 1973</a>)</span>. Ver <a class="reference internal" href="09_referencias.html"><span class="std std-doc">Referencias</span></a>.</p>
+<p><strong>Referencias de los métodos:</strong> efecto de diseño <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id32" title="Leslie Kish. Survey Sampling. Wiley, New York, 1965.">Kish, 1965</a>)</span> y linealización de Taylor <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id34" title="Kirk M. Wolter. Introduction to Variance Estimation. Springer, New York, 2007.">Wolter, 2007</a>)</span>; postestratificación <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id33" title="D. Holt y T. M. F. Smith. Post stratification. Journal of the Royal Statistical Society, Series A, 142(1):33–46, 1979.">Holt y Smith, 1979</a>)</span>; modelo binomial y sobredispersión <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id37" title="P. McCullagh y J. A. Nelder. Generalized Linear Models. Chapman &amp; Hall, London, 1989.">McCullagh y Nelder, 1989</a>)</span>; método delta <span class="bibtex-citation" id="id5">(<a class="reference internal" href="09_referencias.html#id43" title="Gary W. Oehlert. A note on the delta method. The American Statistician, 46(1):27–29, 1992.">Oehlert, 1992</a>)</span>; promedio de especificaciones <span class="bibtex-citation" id="id6">(<a class="reference internal" href="09_referencias.html#id44" title="Jennifer A. Hoeting, David Madigan, Adrian E. Raftery y Chris T. Volinsky. Bayesian model averaging: a tutorial. Statistical Science, 14(4):382–401, 1999.">Hoeting et al., 1999</a>)</span>; búsqueda de raíces <span class="bibtex-citation" id="id7">(<a class="reference internal" href="09_referencias.html#id46" title="Richard P. Brent. Algorithms for Minimization without Derivatives. Prentice-Hall, Englewood Cliffs, 1973.">Brent, 1973</a>)</span>. Ver <a class="reference internal" href="09_referencias.html"><span class="std std-doc">Referencias</span></a>.</p>
 </section>
 </section>
 
@@ -808,11 +810,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="11_coherencia.html"
+       href="15_compuerta_horaria.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Coherencia entre fuentes y validación</p>
+        <p class="prev-next-title">Respuesta horaria al calor (compuerta horaria)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -24,7 +24,7 @@ Si una proporción observada es de 100 % (por ejemplo, la tenencia de nevera en 
 | Tenencia de ventilador y nevera | Beta por estrato ({numref}`tab-vent-nevera`) | IC 95 % con efecto de diseño | ECV 2024 | Fase 2, pasos 2, 6 y 7 |
 | Tipo de A/C | 82–97 % minisplit; central 0–18 % ({numref}`tab-uso-ac`) | Muestras de 33 a 66 hogares con A/C | ECV 2019 | Fase 2, paso 2 |
 | Horas diarias de A/C del hogar | Mediana 6–8 h por estrato ({numref}`tab-uso-ac`) | P25–P75 | ECV 2019 | Fase 2, paso 5; Fase 3, paso 5 |
-| Número de equipos de A/C | Prior ligado a la fracción de hogares con más de 12 h de uso ({numref}`tab-uso-ac`) | Fracción climatizada pendiente (CEELA) | ECV 2019 | Fase 2, paso 2 |
+| Número de equipos de A/C | Prior ligado a la fracción de hogares con más de 12 h de uso ({numref}`tab-uso-ac`) y a la zona climatizada de CEELA | Rango del prior por estrato | ECV 2019; CEELA | Fase 2, paso 2 |
 | Relación ventilador–A/C ($p_c$) | ≈ 0,95 ({numref}`tab-pc`) | Rango 0,8–1,0 | ECV 2019 | Fase 2, paso 6 |
 | Tamaño y antigüedad de la nevera | Distribución por estrato ({numref}`tab-nevera`) | Muestra por estrato | ECV 2019 | Fase 2, paso 7 |
 | Personas y cuartos por hogar | Media por estrato ({numref}`tab-hogar`) | Muestra por estrato | ECV 2024 | Fase 1, paso 7 |
@@ -33,9 +33,12 @@ Si una proporción observada es de 100 % (por ejemplo, la tenencia de nevera en 
 | Hogares por estrato | Suscriptores residenciales de diciembre ({numref}`tab-calibracion`) | Diferencia con el catastro menor de 2,5 puntos | SUI; catastro | Fase 2, paso 9; Fase 3, paso 1 |
 | Consumo facturado por suscriptor | kWh/mes por estrato, 2015–2019 ({numref}`tab-calibracion`) | Rango interanual | SUI | Fase 3, paso 4 |
 | Alza estacional del consumo | 10,9 % (E1) a 29,1 % (E5) ({numref}`tab-calibracion`) | Variación entre años | SUI 2015–2025 | Fase 3, pasos 2 y 5 |
-| Clima horario | Temperatura, humedad, viento y radiación | Contraste con estación | ERA5-Land; IDEAM | Fase 2, paso 1 (pendiente) |
-| Fracción climatizada | Prior por estrato | — | CEELA | Fase 1, paso 6 (pendiente) |
-| Demanda horaria regulada | Curva horaria del mercado de Air-e | — | XM | Fase 3, pasos 1 y 4 (pendiente) |
+| Clima horario | Temperatura, humedad e índice de calor en hora local, 2015–2026 | Sesgo frente al IDEAM: −0,7 °C en temperatura (≈ 0 de noche, −2,2 °C a mediodía) ({numref}`tab-coherencia-clima`) | ERA5-Land (copia de Open-Meteo, provisional); IDEAM | Fase 2, paso 1 |
+| Fracción climatizada | Una habitación en E1–E2 (VIS) y en casas de E3–E4; las habitaciones en apartamentos de E3–E4; toda la vivienda en E5–E6 ({numref}`tab-ceela-insumos`) | Sin medición en hogares | CEELA | Fase 1, paso 6; Fase 2, paso 2 |
+| Envolvente de los arquetipos | Relación ventana-muro, U de vidrio, muros y cubierta, SRI y sombreamiento por tipología ({numref}`tab-ceela-insumos`) | Centro de los rangos (S15); un edificio por tipología | CEELA | Fase 1, paso 6; Fase 2, paso 4 |
+| Consigna de refrigeración | Rango de 22 a 26,5 °C ({numref}`tab-ceela-insumos`) | 26,5 °C de CEELA; 22 °C supuesto propio (S14) | CEELA | Fase 2, paso 5 |
+| Rendimiento del A/C | COP de 3,0 | Valor central | CEELA | Fase 2, paso 5 |
+| Respuesta horaria de la demanda al calor | Noche 1,92 %/°C (1,79–2,05); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 ({numref}`tab-compuerta-franjas`) | Forma hora a hora inestable entre años: capa C (S16) | XM; ERA5-Land | Fase 3, pasos 1 y 4 (blanco de validación) |
 ```
 
 ## Tenencia de aire acondicionado
@@ -97,6 +100,25 @@ Las razones de momios provienen del modelo M2 (techo y estrato), que es el que s
 
 Según la propuesta (Fase 2, paso 4), el techo es superficie exterior solo en las viviendas bajo cubierta. En los estratos 4 a 6 eso ocurre en una de cada tres viviendas o menos, de modo que el material del techo pesa sobre todo en los estratos 1 a 3.
 
+## Envolvente, climatización y consigna (CEELA)
+
+```{table} Insumos de la línea base de CEELA para los arquetipos de Barranquilla.
+:name: tab-ceela-insumos
+
+| Insumo | E1–E2 (VIS) | E3–E4 | E5–E6 | Fuente en CEELA |
+| --- | --- | --- | --- | --- |
+| Relación ventana-muro | 20–40 % | 20–40 % (casas); menos de 20 % (apartamentos) | 20–40 % | Características comunes, Tabla 9 |
+| Vidrio | Simple de 4–6 mm, U = 5,88 W/m²K | Igual | Igual | Características comunes, 2.3 |
+| Sombreamiento | Ninguno en casas; balcones en apartamentos | Balcones | Balcones | Características comunes, Tabla 9 |
+| U del muro (W/m²K) | 2,3 (casas); 3,6–4,1 (apartamentos) | 2,7 (casas); 1,9–4,1 (apartamentos) | Igual que E3–E4 | Caracterización, Tablas 33–37 |
+| Cubierta: U (W/m²K) y SRI | Fibrocemento 6,6 y 0,4 (casas); losa 3,6 y 0,15 (apartamentos) | Sándwich 4,4 y 0,4 (casas); losa 3,6 y 0,15 (apartamentos) | Igual que E3–E4 | Caracterización, Tablas 38–40 |
+| Zona climatizada | Una habitación (habitación principal en apartamentos) | Una habitación (casas); las habitaciones (apartamentos) | Toda la vivienda | Características comunes, Tabla 37 |
+| Consigna de refrigeración | 22–26,5 °C | 22–26,5 °C | 22–26,5 °C | Informe, Tabla 2 (26,5 °C operativa); 22 °C supuesto propio |
+| COP de refrigeración | 3,0 | 3,0 | 3,0 | Informe, texto que sigue a la Tabla 2 |
+```
+
+La {numref}`tab-ceela-insumos` traduce las tipologías de CEELA a estratos con la correspondencia VIS = E1–E2 y no VIS = E3–E6 (supuesto S15), y separa casas y apartamentos con la posición frente a la cubierta del catastro ({numref}`tab-posicion`). En CEELA la vivienda unifamiliar no VIS es de estratos 5 y 6 en la tabla de ventanas y de estratos 3 a 6 en la de climatización; aquí se usa para las casas de E3 a E6. Los valores son el centro de los rangos de cada arquetipo; el detalle por tipología y las limitaciones están en [Línea base de CEELA](16_ceela.md).
+
 ## Equipos y uso
 
 ```{table} Tenencia de ventilador y nevera por estrato, ECV 2024 (% de hogares; entre paréntesis, semiancho del IC 95 % con efecto de diseño).
@@ -121,7 +143,7 @@ Según la propuesta (Fase 2, paso 4), el techo es superficie exterior solo en la
 | Central, % | 0,0 | 0,0 | 2,2 | 2,3 | 5,9 | 17,7 |
 ```
 
-La ECV 2019 no pregunta el número de equipos de A/C. Las horas declaradas son la suma de los equipos del hogar, así que más de 12 h al día indica, con probabilidad alta, más de un equipo. Esa fracción es de 0 % a 2,7 % en los estratos 1 a 4 y de 8 % a 9 % en los estratos 5 y 6. El prior del número de equipos se construirá con esa fracción y con la fracción climatizada de CEELA (Fase 1, paso 6), aún pendiente.
+La ECV 2019 no pregunta el número de equipos de A/C. Las horas declaradas son la suma de los equipos del hogar, así que más de 12 h al día indica, con probabilidad alta, más de un equipo. Esa fracción es de 0 % a 2,7 % en los estratos 1 a 4 y de 8 % a 9 % en los estratos 5 y 6. El prior del número de equipos se construirá con esa fracción y con la zona climatizada de CEELA (Fase 1, paso 6; {numref}`tab-ceela-insumos`).
 
 ```{table} Horas diarias de ventilador en hogares con y sin A/C (ECV 2019) y valor implícito de $p_c$.
 :name: tab-pc

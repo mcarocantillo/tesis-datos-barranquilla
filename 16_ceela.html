@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Línea base de CEELA para Barranquilla &#8212; Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '16_ceela';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Coherencia entre fuentes y validación" href="11_coherencia.html" />
+    <link rel="prev" title="Respuesta horaria al calor (compuerta horaria)" href="15_compuerta_horaria.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="14_encuestas.html">Encuestas usadas y representatividad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_fuentes.html">Fuentes, decisiones y glosario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Línea base de CEELA para Barranquilla</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="11_coherencia.html">Coherencia entre fuentes y validación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_supuestos.html">Supuestos, sensibilidad y limitaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_referencias.html">Referencias</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/mcarocantillo/tesis-datos-barranquilla" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/16_ceela.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Línea base de CEELA para Barranquilla</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edificios-representativos">Edificios representativos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#envolvente">Envolvente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#climatizacion">Climatización</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consumo-facturado-ceela-frente-al-repositorio">Consumo facturado: CEELA frente al repositorio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-de-ceela-para-este-trabajo">Limitaciones de CEELA para este trabajo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-en-la-tesis">Uso en la tesis</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linea-base-de-ceela-para-barranquilla">
+<h1>Línea base de CEELA para Barranquilla<a class="headerlink" href="#linea-base-de-ceela-para-barranquilla" title="Link to this heading">#</a></h1>
+<p>En 2025 el proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), financiado por la Cooperación Suiza (COSUDE) y ejecutado por el consorcio de EBP, Carbon Trust y Colbún para la UPME, publicó la línea base de desempeño energético de las edificaciones residenciales y de oficinas de Colombia. La línea base tiene tres informes: las características comunes de las edificaciones <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id53" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: características comunes. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025a. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Caracteristicas-comunes_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025a</a>)</span>, la caracterización energética de los edificios seleccionados <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id54" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe de caracterización energética. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025b. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe-de-caracterizacion-energetica_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025b</a>)</span> y el informe de resultados <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id55" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025c. 21 de agosto de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025c</a>)</span>. CEELA simula un edificio real representativo por tipología en cuatro climas, y Barranquilla representa el clima cálido húmedo. Este capítulo resume lo que la tesis toma de CEELA para Barranquilla, compara sus consumos con el SUI del repositorio y señala sus límites.</p>
+<p>CEELA trabaja con cuatro tipologías residenciales: unifamiliar y multifamiliar, cada una de vivienda de interés social (VIS) y no VIS. En su análisis del SUI, la VIS corresponde a los estratos 1 y 2 y la no VIS a los estratos 3 a 6 <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id54" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe de caracterización energética. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025b. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe-de-caracterizacion-energetica_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025b</a>)</span>.</p>
+<section id="edificios-representativos">
+<h2>Edificios representativos<a class="headerlink" href="#edificios-representativos" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-ceela-edificios">
+<caption><span class="caption-number">Tabla 19 </span><span class="caption-text">Edificios representativos de Barranquilla y consumo de refrigeración simulado climatizando toda la vivienda <span class="bibtex-citation" id="id5">(<a class="reference internal" href="09_referencias.html#id55" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025c. 21 de agosto de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025c</a>)</span>.</span><a class="headerlink" href="#tab-ceela-edificios" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipología</p></th>
+<th class="head"><p>Edificio</p></th>
+<th class="head"><p>Características</p></th>
+<th class="head"><p>Consumo de refrigeración (kWh/m²·año)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Unifamiliar VIS</p></td>
+<td><p>Adelita Char</p></td>
+<td><p>Vivienda de dos plantas, adosada</p></td>
+<td><p>107</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multifamiliar VIS</p></td>
+<td><p>Palmanova</p></td>
+<td><p>Edificio de más de 12 pisos, adosado</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-even"><td><p>Unifamiliar no VIS</p></td>
+<td><p>Casas de Portobelo</p></td>
+<td><p>Vivienda de dos plantas, adosada</p></td>
+<td><p>77</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multifamiliar no VIS</p></td>
+<td><p>Riverside</p></td>
+<td><p>Edificio de más de 12 pisos, adosado</p></td>
+<td><p>64</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>El consumo de la <a class="reference internal" href="#tab-ceela-edificios"><span class="std std-numref">Tabla 19</span></a> es el de refrigeración en el escenario de «energía virtual para confort»: un sistema estándar de bomba de calor compacta (PTHP, según el apéndice G de ASHRAE 90.1) climatiza todos los espacios de la vivienda y garantiza el confort cuando hay ocupantes <span class="bibtex-citation" id="id6">(<a class="reference internal" href="09_referencias.html#id55" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025c. 21 de agosto de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025c</a>)</span>. Es, por tanto, la energía necesaria para mantener el confort en toda la vivienda, no el consumo observado de los hogares, que en su mayoría no tienen A/C o climatizan una sola habitación (<a class="reference internal" href="#tab-ceela-climatizacion"><span class="std std-numref">Tabla 21</span></a>). El consumo por metro cuadrado es mayor en la vivienda unifamiliar VIS, la de cubierta más liviana, y menor en la multifamiliar no VIS; CEELA atribuye la diferencia entre las dos multifamiliares a la mayor área de la no VIS <span class="bibtex-citation" id="id7">(<a class="reference internal" href="09_referencias.html#id55" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025c. 21 de agosto de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025c</a>)</span>.</p>
+</section>
+<section id="envolvente">
+<h2>Envolvente<a class="headerlink" href="#envolvente" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-ceela-envolvente">
+<caption><span class="caption-number">Tabla 20 </span><span class="caption-text">Parámetros de la envolvente de los edificios representativos de Barranquilla <span class="bibtex-citation" id="id8">(<a class="reference internal" href="09_referencias.html#id53" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: características comunes. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025a. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Caracteristicas-comunes_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025a</a>, <a class="reference internal" href="09_referencias.html#id54" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe de caracterización energética. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025b. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe-de-caracterizacion-energetica_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025b</a>)</span>.</span><a class="headerlink" href="#tab-ceela-envolvente" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetro</p></th>
+<th class="head"><p>Unifamiliar VIS</p></th>
+<th class="head"><p>Unifamiliar no VIS</p></th>
+<th class="head"><p>Multifamiliar VIS</p></th>
+<th class="head"><p>Multifamiliar no VIS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Relación ventana-muro</p></td>
+<td><p>20–40 %</p></td>
+<td><p>20–40 %</p></td>
+<td><p>20–40 %</p></td>
+<td><p>20–40 % (E5–E6); menos de 20 % (E3–E4)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vidrio</p></td>
+<td><p>Simple, 4–6 mm, marco de aluminio, U = 5,88 W/m²K</p></td>
+<td><p>Igual</p></td>
+<td><p>Igual</p></td>
+<td><p>Igual</p></td>
+</tr>
+<tr class="row-even"><td><p>Sombreamiento</p></td>
+<td><p>Ninguno</p></td>
+<td><p>Balcones</p></td>
+<td><p>Balcones</p></td>
+<td><p>Balcones</p></td>
+</tr>
+<tr class="row-odd"><td><p>Muro exterior (U, W/m²K)</p></td>
+<td><p>Mampostería estructural de bloque de concreto, 2,3</p></td>
+<td><p>Mampostería estructural de arcilla, 2,7</p></td>
+<td><p>Ladrillo en fachada, 3,6, o sistema industrializado con pantalla de concreto, 4,1</p></td>
+<td><p>Ladrillo en fachada, 1,9, o sistema industrializado, 4,1</p></td>
+</tr>
+<tr class="row-even"><td><p>Cubierta (U, W/m²K)</p></td>
+<td><p>Teja de fibrocemento de 6 mm, 6,6</p></td>
+<td><p>Panel sándwich revestido en aluminio de 40 mm, 4,4</p></td>
+<td><p>Losa de concreto vaciada con impermeabilización, 3,6</p></td>
+<td><p>Igual que la multifamiliar VIS, 3,6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Índice de reflectancia solar de la cubierta (SRI)</p></td>
+<td><p>0,4</p></td>
+<td><p>0,4</p></td>
+<td><p>0,15</p></td>
+<td><p>0,15</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los valores de SRI se transcriben en la escala en que los reporta CEELA <span class="bibtex-citation" id="id9">(<a class="reference internal" href="09_referencias.html#id54" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe de caracterización energética. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025b. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe-de-caracterizacion-energetica_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025b</a>)</span>. El vidrio simple de 4 a 6 mm con marco de aluminio predomina en todas las tipologías de vivienda <span class="bibtex-citation" id="id10">(<a class="reference internal" href="09_referencias.html#id53" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: características comunes. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025a. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Caracteristicas-comunes_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025a</a>)</span>. La U de los muros va de 1,9 a 4,1 W/m²K y la de las cubiertas de 3,6 (losa) a 6,6 W/m²K (fibrocemento). La teja de fibrocemento de la vivienda unifamiliar VIS coincide con la cubierta de asbesto-cemento que declara 60 % de los hogares de los estratos 1 y 2 en la ECV 2024 (<a class="reference internal" href="10_insumos.html#tab-techo"><span class="std std-numref">Tabla 4</span></a>).</p>
+</section>
+<section id="climatizacion">
+<h2>Climatización<a class="headerlink" href="#climatizacion" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-ceela-climatizacion">
+<caption><span class="caption-number">Tabla 21 </span><span class="caption-text">Zonas climatizadas típicas por tipología en Barranquilla <span class="bibtex-citation" id="id11">(<a class="reference internal" href="09_referencias.html#id53" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: características comunes. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025a. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Caracteristicas-comunes_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025a</a>)</span>.</span><a class="headerlink" href="#tab-ceela-climatizacion" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipología</p></th>
+<th class="head"><p>Segmento</p></th>
+<th class="head"><p>Zona con A/C</p></th>
+<th class="head"><p>Equipo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Unifamiliar VIS</p></td>
+<td><p>VIS</p></td>
+<td><p>Una habitación</p></td>
+<td><p>Minisplit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unifamiliar no VIS</p></td>
+<td><p>E3–E4</p></td>
+<td><p>Una habitación</p></td>
+<td><p>Minisplit</p></td>
+</tr>
+<tr class="row-even"><td><p>Unifamiliar no VIS</p></td>
+<td><p>E5–E6</p></td>
+<td><p>Toda la vivienda</p></td>
+<td><p>Minisplit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multifamiliar VIS</p></td>
+<td><p>VIS</p></td>
+<td><p>Habitación principal; las demás habitaciones y áreas comunes con ventilación forzada</p></td>
+<td><p>Minisplit</p></td>
+</tr>
+<tr class="row-even"><td><p>Multifamiliar no VIS</p></td>
+<td><p>E3–E4</p></td>
+<td><p>Solo las habitaciones; áreas comunes con ventilación forzada</p></td>
+<td><p>Minisplit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multifamiliar no VIS</p></td>
+<td><p>E5–E6</p></td>
+<td><p>Toda la vivienda</p></td>
+<td><p>Minisplit, multitubería o VRF</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>CEELA no da una fracción climatizada numérica. Da la zona climatizada típica por tipología y segmento (<a class="reference internal" href="#tab-ceela-climatizacion"><span class="std std-numref">Tabla 21</span></a>): una habitación en la vivienda VIS, las habitaciones en los estratos 3 y 4, y toda la vivienda en los estratos 5 y 6. Es el insumo que faltaba para el prior del número de equipos (<a class="reference internal" href="10_insumos.html"><span class="std std-doc">Insumos del modelo</span></a>), y es coherente con la ECV 2019: la fracción de hogares con A/C que lo usa más de 12 h al día, un indicio de más de un equipo, es de 0 % a 2,7 % en los estratos 1 a 4 y de 8 % a 9 % en los estratos 5 y 6 (<a class="reference internal" href="10_insumos.html#tab-uso-ac"><span class="std std-numref">Tabla 8</span></a>).</p>
+<p>En las simulaciones, la consigna de refrigeración de Barranquilla es de <strong>26,5 °C de temperatura operativa</strong>, la temperatura operativa óptima del modelo de confort adaptativo de ASHRAE 55 para la ciudad, y no la temperatura del aire. El COP de refrigeración de las viviendas es <strong>3,0</strong>, y el sistema solo funciona cuando hay personas en la vivienda <span class="bibtex-citation" id="id12">(<a class="reference internal" href="09_referencias.html#id55" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025c. 21 de agosto de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025c</a>)</span>.</p>
+</section>
+<section id="consumo-facturado-ceela-frente-al-repositorio">
+<h2>Consumo facturado: CEELA frente al repositorio<a class="headerlink" href="#consumo-facturado-ceela-frente-al-repositorio" title="Link to this heading">#</a></h2>
+<p>CEELA validó sus modelos con el consumo promedio mensual del SUI de 2021–2024 por estrato, y logró diferencias menores de 8 % entre el consumo simulado sin asegurar confort y el facturado <span class="bibtex-citation" id="id13">(<a class="reference internal" href="09_referencias.html#id54" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe de caracterización energética. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025b. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe-de-caracterizacion-energetica_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025b</a>)</span>. Para extraer ese consumo usó la herramienta O3 del SUI con el filtro «tipo de lectura/medición» en datos reales, y eliminó las muestras con desviaciones marcadas de la media <span class="bibtex-citation" id="id14">(<a class="reference internal" href="09_referencias.html#id53" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: características comunes. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025a. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Caracteristicas-comunes_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025a</a>)</span>. El repositorio usa el reporte consolidado ele_com_096, que no separa el tipo de lectura <span class="bibtex-citation" id="id15">(<a class="reference internal" href="09_referencias.html#id29" title="Superintendencia de Servicios Públicos Domiciliarios. SUI, reporte ele_com_096: consolidado de energía por empresa, departamento y municipio. 2026. Consultado: oct. 2026. URL: https://reportes.sui.gov.co/fabricaReportes/frameSet.jsp?idreporte=ele_com_096.">Superintendencia de Servicios Públicos Domiciliarios, 2026</a>)</span>. La <a class="reference internal" href="#tab-ceela-sui"><span class="std std-numref">Tabla 22</span></a> compara los dos promedios para los mismos años.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-ceela-sui">
+<caption><span class="caption-number">Tabla 22 </span><span class="caption-text">Consumo residencial por suscriptor, promedio mensual 2021–2024 (kWh/mes): CEELA (Tabla 42, solo lecturas reales) frente al SUI del repositorio (meses sin bandera y con consumo positivo).</span><a class="headerlink" href="#tab-ceela-sui" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Estrato</p></th>
+<th class="head"><p>Segmento en CEELA</p></th>
+<th class="head"><p>CEELA</p></th>
+<th class="head"><p>Repositorio</p></th>
+<th class="head"><p>Diferencia del repositorio</p></th>
+<th class="head"><p>Meses válidos del repositorio</p></th>
+<th class="head"><p>Medias anuales del repositorio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>E1</p></td>
+<td><p>VIS</p></td>
+<td><p>228,9</p></td>
+<td><p>311,2</p></td>
+<td><p>+35,9 %</p></td>
+<td><p>42</p></td>
+<td><p>292,8–325,4</p></td>
+</tr>
+<tr class="row-odd"><td><p>E2</p></td>
+<td><p>VIS</p></td>
+<td><p>214,6</p></td>
+<td><p>208,2</p></td>
+<td><p>−3,0 %</p></td>
+<td><p>44</p></td>
+<td><p>200,9–213,2</p></td>
+</tr>
+<tr class="row-even"><td><p>E3</p></td>
+<td><p>No VIS</p></td>
+<td><p>253,8</p></td>
+<td><p>242,5</p></td>
+<td><p>−4,5 %</p></td>
+<td><p>44</p></td>
+<td><p>228,0–250,3</p></td>
+</tr>
+<tr class="row-odd"><td><p>E4</p></td>
+<td><p>No VIS</p></td>
+<td><p>334,0</p></td>
+<td><p>321,2</p></td>
+<td><p>−3,8 %</p></td>
+<td><p>45</p></td>
+<td><p>311,9–340,3</p></td>
+</tr>
+<tr class="row-even"><td><p>E5</p></td>
+<td><p>No VIS</p></td>
+<td><p>407,8</p></td>
+<td><p>386,1</p></td>
+<td><p>−5,3 %</p></td>
+<td><p>45</p></td>
+<td><p>360,3–418,7</p></td>
+</tr>
+<tr class="row-odd"><td><p>E6</p></td>
+<td><p>No VIS</p></td>
+<td><p>706,3</p></td>
+<td><p>657,5</p></td>
+<td><p>−6,9 %</p></td>
+<td><p>45</p></td>
+<td><p>599,0–727,2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En los estratos 2 a 6 los dos promedios difieren entre 3 % y 7 %, y el de CEELA es siempre algo mayor. En el estrato 1 el repositorio da 36 % más. Con solo lecturas reales, el estrato 1 consume algo más que el 2 (229 frente a 215 kWh/mes), como señala CEELA, pero menos que el 3 (254), lo que sí es coherente con su menor tenencia de A/C. La diferencia sugiere que buena parte del exceso de consumo del estrato 1 en el repositorio (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>) proviene de consumos que no son lecturas reales, como los estimados o promediados. Para confirmarlo hay que descargar el SUI con el filtro de tipo de lectura. El CSV de la comparación es <code class="docutils literal notranslate"><span class="pre">tablas/CEELA_SUI_2021_2024_comparacion.csv</span></code> y el script, <code class="docutils literal notranslate"><span class="pre">scripts/ceela_sui.py</span></code>.</p>
+</section>
+<section id="limitaciones-de-ceela-para-este-trabajo">
+<h2>Limitaciones de CEELA para este trabajo<a class="headerlink" href="#limitaciones-de-ceela-para-este-trabajo" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Edificios nuevos del mercado formal.</strong> Las características comunes salen de 80 edificaciones postuladas por constructoras, la mayoría con menos de 5 años desde su entrega <span class="bibtex-citation" id="id16">(<a class="reference internal" href="09_referencias.html#id53" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: características comunes. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025a. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Caracteristicas-comunes_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025a</a>)</span>. No representan la vivienda antigua ni la informal, que pesan en los estratos 1 a 3 de Barranquilla.</p></li>
+<li><p><strong>Un edificio por tipología.</strong> Cada tipología y ciudad se representa con un solo edificio real <span class="bibtex-citation" id="id17">(<a class="reference internal" href="09_referencias.html#id54" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe de caracterización energética. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025b. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe-de-caracterizacion-energetica_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025b</a>, <a class="reference internal" href="09_referencias.html#id55" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025c. 21 de agosto de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025c</a>)</span>; no hay dispersión entre edificios.</p></li>
+<li><p><strong>Ocupación de Bucaramanga.</strong> Todas las tipologías de vivienda usan los perfiles de ocupación de Bucaramanga, obtenidos con encuestas de un proyecto anterior, por falta de información de otras ciudades <span class="bibtex-citation" id="id18">(<a class="reference internal" href="09_referencias.html#id54" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: informe de caracterización energética. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025b. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Informe-de-caracterizacion-energetica_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025b</a>)</span>. El repositorio tiene la presencia en la vivienda de la ENUT para el Atlántico (<a class="reference internal" href="10_insumos.html#tab-presencia"><span class="std std-numref">Tabla 12</span></a>).</p></li>
+<li><p><strong>Cargas de 2018.</strong> Los equipos de las viviendas de Barranquilla se toman de las encuestas de <span class="bibtex-citation" id="id19">Estrada et al. (<a class="reference internal" href="09_referencias.html#id56" title="M. C. Estrada, D. E. Medrano y V. P. Quintero. Análisis del perfil de carga eléctrica por estrato en la ciudad de Barranquilla. 2018. Citado en UPME et al. (2025a, 2025b).">2018</a>)</span>, y CEELA reconoce que falta información para algunas tipologías de la ciudad <span class="bibtex-citation" id="id20">(<a class="reference internal" href="09_referencias.html#id53" title="UPME, EBP, Carbon Trust y Colbún. Línea base de desempeño energético de edificaciones residenciales y de oficinas de Colombia: características comunes. Informe, Proyecto CEELA (Fortalecimiento de capacidades para la eficiencia energética en edificios de América Latina), Cooperación Suiza COSUDE, 2025a. Julio de 2025. Consultado: 18 oct. 2026. URL: https://proyectoceela.com/documentos/Caracteristicas-comunes_Linea-base-de-desempe%C3%B1o-energetico-de-edificaciones-residenciales-y-de-oficinas-de-Colombia.pdf.">UPME et al., 2025a</a>)</span>.</p></li>
+</ol>
+</section>
+<section id="uso-en-la-tesis">
+<h2>Uso en la tesis<a class="headerlink" href="#uso-en-la-tesis" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Los parámetros de la <a class="reference internal" href="#tab-ceela-envolvente"><span class="std std-numref">Tabla 20</span></a> son el <strong>centro de los rangos</strong> de la envolvente de cada arquetipo en la Fase 1, con la correspondencia VIS para los estratos 1 y 2 y no VIS para los estratos 3 a 6 (supuesto S15).</p></li>
+<li><p>La consigna de 26,5 °C es el <strong>límite superior</strong> del rango de consigna del A/C; el límite inferior, 22 °C, es un supuesto propio (S14).</p></li>
+<li><p>El COP de 3,0 es el valor central del rendimiento del A/C en la Fase 2.</p></li>
+<li><p>La zona climatizada de la <a class="reference internal" href="#tab-ceela-climatizacion"><span class="std std-numref">Tabla 21</span></a> es el prior del número de equipos y de la fracción climatizada por estrato.</p></li>
+<li><p>El consumo de 64 a 107 kWh/m²·año es una <strong>cota superior</strong> de referencia: corresponde a climatizar toda la vivienda siempre que hay ocupantes.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="15_compuerta_horaria.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Respuesta horaria al calor (compuerta horaria)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="11_coherencia.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Coherencia entre fuentes y validación</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edificios-representativos">Edificios representativos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#envolvente">Envolvente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#climatizacion">Climatización</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consumo-facturado-ceela-frente-al-repositorio">Consumo facturado: CEELA frente al repositorio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-de-ceela-para-este-trabajo">Limitaciones de CEELA para este trabajo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-en-la-tesis">Uso en la tesis</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por María Carolina Cantillo Orozco
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
