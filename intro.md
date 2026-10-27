@@ -4,7 +4,7 @@
 
 ## Resumen
 
-**Objetivo.** Construir, documentar y validar los datos de entrada del modelo *bottom-up* horario de climatización (aire acondicionado y ventiladores) y refrigeración residencial por estrato socioeconómico en Barranquilla, que se desarrolla en la tesis «Perfiles horarios de demanda eléctrica de climatización y refrigeración residencial por estrato socioeconómico en Barranquilla».
+**Objetivo.** Construir, documentar y validar los datos de entrada del modelo *bottom-up* horario de climatización (aire acondicionado y ventiladores) y refrigeración residencial por estrato socioeconómico en Barranquilla, que se desarrolla en la tesis «Desarrollo de una metodología para estimar perfiles horarios de demanda eléctrica de climatización y refrigeración residencial mediante modelado bottom-up estocástico: caso de estudio Barranquilla».
 
 **Datos.** Encuesta Nacional de Calidad de Vida (ECV) 2018–2025 {cite:p}`dane_ecv`, Encuesta Nacional de Uso del Tiempo (ENUT) 2024–2025 {cite:p}`dane_enut`, Gran Encuesta Integrada de Hogares (GEIH) 2024 {cite:p}`dane_geih`, consumo facturado del Sistema Único de Información (SUI) 2015–2026 {cite:p}`sui2026` y catastro de Barranquilla con 332.718 viviendas {cite:p}`catastro2026`.
 
@@ -13,6 +13,8 @@
 **Resultados.** La tenencia de aire acondicionado (A/C) aumenta con el estrato, de 13 % en el estrato 1 a 98 % en el 6 (2024). En la ciudad pasa de 35,6 % de los hogares en 2019 a 41,2 % en 2024, con un intervalo de confianza del 95 % de ± 2,9 puntos porcentuales. A igual estrato e ingreso, los techos livianos reducen la probabilidad de tener A/C (razón de momios de 0,37 para asbesto-cemento y 0,15 para zinc). El ventilador (98 %) y la nevera (más de 90 %) son casi universales. En 82–86 % de los hogares alguien permanece en la vivienda durante todo el día hábil. El consumo facturado aumenta entre agosto y septiembre respecto a febrero y marzo en 11 % (estrato 1) a 29 % (estrato 5), en concordancia con la tenencia de A/C.
 
 **Implicaciones para el modelo.** La tenencia de A/C se incorpora como distribución por estrato y año, la envolvente se asigna antes que el equipo para conservar su relación con la tenencia, y la presencia diurna elevada descarta el supuesto de vivienda vacía de día propio de los modelos europeos. Cada parámetro, con su fuente e incertidumbre, se resume en el capítulo [Insumos del modelo](10_insumos.md).
+
+**Palabras clave:** demanda de enfriamiento residencial; perfiles horarios de carga; modelado bottom-up; estratificación socioeconómica; calibración con datos agregados; Barranquilla.
 
 ## Abstract
 
@@ -23,6 +25,8 @@
 **Methods.** Weighted estimation accounting for the survey design effect, post-stratification to utility subscribers, binomial generalized linear models with overdispersion combined by averaging two specifications and summarized as Beta distributions, weighted logistic regression with robust standard errors, and imputation of ownership probabilities to every dwelling in the cadastre.
 
 **Results.** Air-conditioner ownership rises from 13 % in stratum 1 to 98 % in stratum 6 (2024); city-wide it grows from 35.6 % of households in 2019 to 41.2 % in 2024 (95 % CI ± 2.9 percentage points). At equal stratum and income, lightweight roofs lower the odds of owning an air conditioner (odds ratios of 0.37 for asbestos-cement and 0.15 for zinc, relative to concrete). Fans (98 %) and refrigerators (over 90 %) are nearly universal, and in 82–86 % of households someone stays home all weekday. Billed consumption rises 11–29 % from February–March to August–September, increasing with air-conditioner ownership.
+
+**Keywords:** residential cooling demand; hourly load profiles; bottom-up modelling; socioeconomic stratification; calibration with aggregate data; Barranquilla.
 
 ## Flujo de los datos
 

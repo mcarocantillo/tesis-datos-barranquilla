@@ -14,10 +14,10 @@ license:
   - MIT
   - CC-BY-4.0
 keywords:
-  - demanda de enfriamiento
-  - aire acondicionado
-  - modelo bottom-up
-  - estrato socioeconómico
+  - demanda de enfriamiento residencial
+  - perfiles horarios de carga
+  - modelado bottom-up
+  - estratificación socioeconómica
+  - calibración con datos agregados
   - Barranquilla
-  - encuestas de hogares
-abstract: "Procesamiento, documentación y validación de los datos de entrada (ECV, ENUT, GEIH, SUI y catastro) de un modelo bottom-up horario de climatización y refrigeración residencial por estrato socioeconómico en Barranquilla, Colombia."
+abstract: "Procesamiento, documentación y validación de los datos de entrada (ECV, ENUT, GEIH, SUI y catastro) de un modelo bottom-up horario de climatización y refrigeración residencial por estrato socioeconómico en Barranquilla, Colombia, para la tesis «Desarrollo de una metodología para estimar perfiles horarios de demanda eléctrica de climatización y refrigeración residencial mediante modelado bottom-up estocástico: caso de estudio Barranquilla»."

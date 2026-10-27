@@ -1,6 +1,6 @@
 # tesis-datos-barranquilla
 
-Datos de entrada de la tesis de maestría «Perfiles horarios de demanda eléctrica de climatización y refrigeración residencial por estrato socioeconómico en Barranquilla» (María Carolina Cantillo Orozco, Maestría en Ingeniería Mecánica, Universidad del Norte).
+Datos de entrada de la tesis de maestría «Desarrollo de una metodología para estimar perfiles horarios de demanda eléctrica de climatización y refrigeración residencial mediante modelado bottom-up estocástico: caso de estudio Barranquilla» (María Carolina Cantillo Orozco, Maestría en Ingeniería Mecánica, Universidad del Norte).
 
 **Sitio:** https://mcarocantillo.github.io/tesis-datos-barranquilla/
 
