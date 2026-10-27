@@ -1,30 +1,52 @@
 # Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla
 
-**María Carolina Cantillo Orozco** · Maestría en Ingeniería Mecánica, Universidad del Norte · Actualizado: 19 de octubre de 2026
+**María Carolina Cantillo Orozco** · Maestría en Ingeniería Mecánica, Universidad del Norte · Actualizado: 27 de octubre de 2026
 
 ## Resumen
 
-**Objetivo.** Construir, documentar y validar los datos de entrada del modelo *bottom-up* horario de climatización (aire acondicionado y ventiladores) y refrigeración residencial por estrato socioeconómico en Barranquilla, que se desarrolla en la tesis «Desarrollo de una metodología para estimar perfiles horarios de demanda eléctrica de climatización y refrigeración residencial mediante modelado bottom-up estocástico: caso de estudio Barranquilla».
+La demanda eléctrica por climatización crece en las ciudades de clima cálido húmedo a medida que más hogares adquieren aire acondicionado (A/C), y su distribución horaria condiciona la planeación de la red y el diseño de medidas de eficiencia energética. Los modelos *bottom-up* estiman esos perfiles a partir de las características y el comportamiento de cada hogar {cite:p}`paatero2006,thorve2023`. Sin embargo, suelen desarrollarse en países que cuentan con mediciones por equipo, encuestas de uso horario y bases detalladas de edificaciones. En la mayoría de las ciudades latinoamericanas no hay mediciones de consumo por uso final, las encuestas de hogares tienen muestras pequeñas por grupo socioeconómico y ninguna fuente registra a qué hora se usa el A/C.
 
-**Datos.** Encuesta Nacional de Calidad de Vida (ECV) 2018–2025 {cite:p}`dane_ecv`, Encuesta Nacional de Uso del Tiempo (ENUT) 2024–2025 {cite:p}`dane_enut`, Gran Encuesta Integrada de Hogares (GEIH) 2024 {cite:p}`dane_geih`, consumo facturado del Sistema Único de Información (SUI) 2015–2026 {cite:p}`sui2026` y catastro de Barranquilla con 332.718 viviendas {cite:p}`catastro2026`.
+Este trabajo plantea una metodología para construir los insumos de un modelo *bottom-up* horario en ese contexto de escasez de datos, a partir solo de fuentes públicas, y la aplica a Barranquilla, Colombia, por estrato socioeconómico. La metodología combina fuentes que por separado son insuficientes:
 
-**Métodos.** Estimación ponderada con los factores de expansión y el efecto del diseño muestral {cite:p}`kish1965,wolter2007`; postestratificación con los suscriptores del SUI {cite:p}`holt1979`; serie anual de tenencia por estrato mediante modelos lineales generalizados binomiales con sobredispersión {cite:p}`mccullagh1989`, combinados por promedio de especificaciones {cite:p}`hoeting1999` y expresados como distribuciones Beta; regresión logística ponderada con errores robustos {cite:p}`hosmer2013,mackinnon1985`, e imputación de la probabilidad de tenencia a cada vivienda del catastro.
+- tres encuestas de hogares del DANE: Calidad de Vida 2018–2025 {cite:p}`dane_ecv`, Uso del Tiempo 2024–2025 y Gran Encuesta Integrada de Hogares 2024 {cite:p}`dane_enut,dane_geih`;
+- el consumo facturado del Sistema Único de Información, SUI {cite:p}`sui2026`;
+- el catastro municipal {cite:p}`catastro2026`;
+- la línea base de edificaciones de CEELA {cite:p}`ceela2025a`;
+- la demanda horaria del mercado regulado que publica XM {cite:p}`xm_api`.
 
-**Resultados.** La tenencia de aire acondicionado (A/C) aumenta con el estrato, de 13 % en el estrato 1 a 98 % en el 6 (2024). En la ciudad pasa de 35,6 % de los hogares en 2019 a 41,2 % en 2024, con un intervalo de confianza del 95 % de ± 2,9 puntos porcentuales. A igual estrato e ingreso, los techos livianos reducen la probabilidad de tener A/C (razón de momios de 0,37 para asbesto-cemento y 0,15 para zinc). El ventilador (98 %) y la nevera (más de 90 %) son casi universales. En 82–86 % de los hogares alguien permanece en la vivienda durante todo el día hábil. El consumo facturado aumenta entre agosto y septiembre respecto a febrero y marzo en 11 % (estrato 1) a 29 % (estrato 5), en concordancia con la tenencia de A/C.
+Para compensar el tamaño reducido de las muestras, las estimaciones se ponderan considerando el efecto del diseño muestral {cite:p}`kish1965,wolter2007` y se postestratifican con los suscriptores del SUI {cite:p}`holt1979`. La serie anual de tenencia de A/C se obtiene con modelos lineales generalizados binomiales con sobredispersión {cite:p}`mccullagh1989`. Se promedian dos especificaciones {cite:p}`hoeting1999` y la incertidumbre se expresa como distribuciones Beta. Una regresión logística ponderada con errores robustos {cite:p}`hosmer2013,mackinnon1985` relaciona la tenencia con el ingreso y el tipo de techo. Con ella se imputa la probabilidad de tenencia a cada una de las 332.718 viviendas del catastro. Cada parámetro se clasifica según la evidencia que lo respalda:
 
-**Implicaciones para el modelo.** La tenencia de A/C se incorpora como distribución por estrato y año, la envolvente se asigna antes que el equipo para conservar su relación con la tenencia, y la presencia diurna elevada descarta el supuesto de vivienda vacía de día propio de los modelos europeos. Cada parámetro, con su fuente e incertidumbre, se resume en el capítulo [Insumos del modelo](10_insumos.md).
+- estimado directamente;
+- calibrado con datos agregados;
+- supuesto declarado, con rango y análisis de sensibilidad.
+
+Una prueba previa decide si la forma horaria del uso del A/C puede calibrarse. Consiste en regresiones horarias de la demanda de XM sobre el índice de calor diario, con errores robustos a la autocorrelación {cite:p}`newey1987`.
+
+La tenencia de A/C crece de 13 % en el estrato 1 a 98 % en el 6, y en la ciudad pasa de 35,6 % en 2019 a 41,2 % en 2024. A igual estrato e ingreso, los techos livianos la reducen (razón de momios de 0,15 para zinc frente a concreto). En 82–86 % de los hogares alguien permanece en la vivienda todo el día hábil, lo que descarta el supuesto de vivienda vacía de día, habitual en los modelos europeos. La demanda regulada aumenta entre 1,8 % y 2,1 % por grado de índice de calor en todas las horas, pero la forma de su respuesta nocturna cambia entre años, así que la hora de uso del A/C queda como supuesto declarado. Los resultados muestran qué parámetros pueden estimarse con datos públicos y cuáles exigen supuestos explícitos, lo que hace la metodología transferible a otras ciudades con información similar.
 
 **Palabras clave:** demanda de enfriamiento residencial; perfiles horarios de carga; modelado bottom-up; estratificación socioeconómica; calibración con datos agregados; Barranquilla.
 
 ## Abstract
 
-**Purpose.** To build, document and validate the input data of an hourly bottom-up model of residential space cooling (air conditioning and fans) and refrigeration by socioeconomic stratum in Barranquilla, Colombia.
+Electricity demand for space cooling is growing in hot and humid cities as more households acquire air conditioners, and its hourly distribution shapes grid planning and the design of energy-efficiency measures. Bottom-up models estimate these profiles from the characteristics and behaviour of each household {cite:p}`paatero2006,thorve2023`. However, they are usually developed in countries with appliance-level metering, time-use surveys of appliance operation and detailed building stock databases. Most Latin American cities have no end-use consumption measurements, household surveys have small samples per socioeconomic group, and no source records when air conditioners are used.
 
-**Data.** Quality of Life Survey (ECV) 2018–2025, Time Use Survey (ENUT) 2024–2025, Integrated Household Survey (GEIH) 2024, billed electricity consumption from the national utility information system (SUI) 2015–2026, and the city cadastre (332,718 dwellings).
+This work proposes a methodology to build the inputs of an hourly bottom-up model in this data-scarce context, using only public sources, and applies it to Barranquilla, Colombia, by socioeconomic stratum. The methodology combines sources that are insufficient on their own:
 
-**Methods.** Weighted estimation accounting for the survey design effect, post-stratification to utility subscribers, binomial generalized linear models with overdispersion combined by averaging two specifications and summarized as Beta distributions, weighted logistic regression with robust standard errors, and imputation of ownership probabilities to every dwelling in the cadastre.
+- three household surveys by DANE, the national statistics office: the Quality of Life Survey 2018–2025 {cite:p}`dane_ecv`, the Time Use Survey 2024–2025 and the Integrated Household Survey 2024 {cite:p}`dane_enut,dane_geih`;
+- billed electricity consumption from the national utility information system, SUI {cite:p}`sui2026`;
+- the municipal cadastre {cite:p}`catastro2026`;
+- the CEELA building energy baseline {cite:p}`ceela2025a`;
+- hourly demand of the regulated market published by XM, the system operator {cite:p}`xm_api`.
 
-**Results.** Air-conditioner ownership rises from 13 % in stratum 1 to 98 % in stratum 6 (2024); city-wide it grows from 35.6 % of households in 2019 to 41.2 % in 2024 (95 % CI ± 2.9 percentage points). At equal stratum and income, lightweight roofs lower the odds of owning an air conditioner (odds ratios of 0.37 for asbestos-cement and 0.15 for zinc, relative to concrete). Fans (98 %) and refrigerators (over 90 %) are nearly universal, and in 82–86 % of households someone stays home all weekday. Billed consumption rises 11–29 % from February–March to August–September, increasing with air-conditioner ownership.
+To compensate for small samples, estimates are weighted accounting for the survey design effect {cite:p}`kish1965,wolter2007` and post-stratified to SUI subscribers {cite:p}`holt1979`. The annual series of air-conditioner ownership is obtained with binomial generalized linear models with overdispersion {cite:p}`mccullagh1989`. Two specifications are averaged {cite:p}`hoeting1999` and the uncertainty is expressed as Beta distributions. A weighted logistic regression with robust standard errors {cite:p}`hosmer2013,mackinnon1985` relates ownership to income and roof type. It is then used to impute the ownership probability to each of the 332,718 dwellings in the cadastre. Each parameter is classified by the evidence that supports it:
+
+- estimated directly;
+- calibrated against aggregate data;
+- declared assumption, with a range and sensitivity analysis.
+
+A preliminary test decides whether the hourly shape of air-conditioner use can be calibrated. It consists of hourly regressions of XM demand on the daily heat index, with autocorrelation-robust standard errors {cite:p}`newey1987`.
+
+Air-conditioner ownership rises from 13 % in stratum 1 to 98 % in stratum 6, and city-wide it grows from 35.6 % in 2019 to 41.2 % in 2024. At equal stratum and income, lightweight roofs lower ownership (odds ratio of 0.15 for zinc relative to concrete). In 82–86 % of households someone stays home all weekday, which rules out the empty-home-by-day assumption common in European models. Regulated demand rises by 1.8 % to 2.1 % per degree of heat index at every hour, but the shape of its night-time response changes between years, so the timing of air-conditioner use remains a declared assumption. The results show which parameters can be estimated from public data and which require explicit assumptions, making the methodology transferable to other cities with similar information.
 
 **Keywords:** residential cooling demand; hourly load profiles; bottom-up modelling; socioeconomic stratification; calibration with aggregate data; Barranquilla.
 
