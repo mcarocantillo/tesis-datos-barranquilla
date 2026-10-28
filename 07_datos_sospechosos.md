@@ -4,10 +4,10 @@
 | --- | --- | --- |
 | E4 2019 | 53 % con AC vs 75 % (2018) y 73–92 % después | Resuelto con la serie suavizada (70,4 %) |
 | E4 2020–2021 | 91,5 % (n = 58) y 89,2 %; 2020 en parte telefónica | 2020 fuera del ajuste |
-| E1 en el SUI | Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6). En 2021–2024, con solo lecturas reales, CEELA da 229 kWh/mes frente a 311 en el repositorio (+36 %); en E2–E6 la diferencia es de 3–7 % ({numref}`tab-ceela-sui`) | Parte del exceso vendría de consumos que no son lecturas reales. Descargar el SUI con el filtro de tipo de lectura; confirmar con Air-e; calibrar con E2–E6 mientras tanto |
+| E1 en el SUI | Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6). En 2021–2024, con solo lecturas reales, CEELA da 229 kWh/mes frente a 311 en el repositorio (+36 %); en E2–E6 la diferencia es de 3–7 % ({numref}`tab-ceela-sui`) | **Resuelto** con el SUI por tipo de lectura: 50–80 % del consumo facturado de E1 es estimado o de usuarios sin medidor; con lecturas reales E1 consume 209 kWh/mes (2023–2025), como E2. Calibrar E1 solo con lecturas reales ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)) |
 | Catastro vs ECV en E1 | 29,5 % de viviendas de E1 en edificios 4+, pero solo 17 % con techo de concreto en la ECV | Revisado: la altura del catastro es coherente (74 lotes de bloques de 5 pisos, 43 m² de mediana); la ECV casi no capta esos edificios (2 de 26 segmentos con hogares de E1, 7,7 esperados). Usar los techos de la ECV solo para casas; A/C de E1 2024 reponderado 14,5–15,2 % como sensibilidad. Script `catastro_e1_edificios.py` |
 | Año de construcción en edificios de E1–E2 | 15.376 apartamentos en edificios de 4+ pisos con años 1932–1972 (ninguno en E3–E6 antes de 1975) | Muy probablemente erróneos (un solo año por lote, vienen así en la descarga original); confirmar con Catastro o imágenes históricas y, mientras tanto, tratar como faltantes en la Fase 1 |
-| SUI dic-2021 | 356.575 suscriptores (E1 120.329), vuelve a 317.080 en 2022 | No usar para totales |
+| SUI dic-2021 | 356.575 suscriptores (E1 120.329), vuelve a 317.080 en 2022 | **Explicado**: desde jun-2021, 4–12 % de las cuentas de cada mes tienen lectura «n/a» y 0 kWh. Calcular el kWh por suscriptor sin ellas ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)) |
 | Rurales ECV 2024 | 24,8 % con AC (n = 60) vs 6 % en 2019 y 2025 | Quedan fuera (estrato 0) |
 | Quintiles 2024 | Q1 > Q2 por 13 hogares con ingreso 0 | Excluirlos |
 | E5–E6 | 7–72 hogares por ola; E6 en 100 % | Agresti–Coull / serie suavizada |
@@ -27,7 +27,7 @@
 **Datos por conseguir:**
 
 1. **ERA5-Land del Climate Data Store.** El clima horario ya se procesó con la copia de ERA5-Land de Open-Meteo ([Respuesta horaria al calor](15_compuerta_horaria.md)). Falta descargar la serie oficial con `scripts/compuerta/01a_descargar_era5land_cds.py`, que usa el conjunto «reanalysis-era5-land-timeseries» (serie en el punto lat 10,96, lon −74,80, 2015 a la fecha, en una sola solicitud) y requiere la cuenta personal del CDS (`~/.cdsapirc`) y aceptar la licencia de ERA5-Land. Después hay que repetir `01_clima.py procesar` y `03_estimar.py`. La alternativa por área sigue siendo NCAR GDEX, dataset d633008.
-2. **SUI con el filtro de tipo de lectura.** Descargar de la herramienta O3 del SUI el consumo residencial de Barranquilla urbano por estrato con el filtro «tipo de lectura/medición» en datos reales, como hizo CEELA, para separar los consumos estimados y confirmar el consumo del estrato 1 ({numref}`tab-ceela-sui`).
+2. ~~**SUI con el filtro de tipo de lectura.**~~ Hecho el 27-oct-2026 con la herramienta O3 ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)).
 3. Confirmar con Air-e el consumo/tarifa de E1 y pedir curva horaria.
 4. **Año de construcción del catastro.** Preguntar a la Gerencia de Gestión Catastral qué registra `anio_construccion` (¿fecha original o última incorporación/actualización?). Solo 1.442 casas de la ciudad son anteriores a 1975 y 15.376 apartamentos de E1–E2 en bloques recientes tienen años 1932–1972. Mientras tanto se usa como «año de registro catastral» (supuesto S13); revisar también la variable `antiguedad` del entregable de ML.
 

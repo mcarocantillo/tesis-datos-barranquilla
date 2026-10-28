@@ -76,6 +76,7 @@ Tenencia de A/C por estrato y año (variante C) con su intervalo de confianza de
 - **Encuestas usadas y representatividad**: qué encuestas y años se usaron y qué parte de la población representa cada muestra.
 - **Fuentes**, **Resultados**, **Metodología** y **Serie de tenencia, error de la encuesta e imputación**: cifras y cálculos detallados.
 - **Respuesta horaria al calor** y **Línea base de CEELA**: la demanda horaria de XM frente al clima (compuerta horaria) y la envolvente, la climatización y los consumos de los edificios representativos de CEELA.
+- **Consumo del SUI por tipo de lectura**: el consumo medido y el estimado por estrato, la caída del consumo por suscriptor y la comparación con otras ciudades.
 - **Coherencia entre fuentes** y **Supuestos, sensibilidad y limitaciones**: la validación de los datos y el registro de supuestos.
 - **Reproducibilidad** y **Referencias**: scripts, tablas y bibliografía.
 
