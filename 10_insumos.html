@@ -232,6 +232,7 @@
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
 <ul class="nav bd-sidenav">
@@ -424,12 +425,12 @@
   <section class="tex2jax_ignore mathjax_ignore" id="insumos-del-modelo">
 <h1>Insumos del modelo<a class="headerlink" href="#insumos-del-modelo" title="Link to this heading">#</a></h1>
 <p>Este capítulo resume los insumos que el procesamiento entrega al modelo. Para cada parámetro se indica el valor o la distribución adoptada, su incertidumbre, la fuente y el paso de la propuesta donde se usa. La <a class="reference internal" href="#tab-insumos-resumen"><span class="std std-numref">Tabla 1</span></a> es el índice. Las tablas siguientes dan el detalle por estrato. E1 a E6 son los estratos socioeconómicos; los porcentajes se refieren a hogares, salvo que se indique otra unidad.</p>
-<p>Las proporciones (tenencia de equipos, material del techo) entran al modelo como distribuciones Beta <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id45" title="Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari y Donald B. Rubin. Bayesian Data Analysis. CRC Press, Boca Raton, 2013.">Gelman et al., 2013</a>)</span>. Sus parámetros se obtienen por el método de momentos a partir de la media <span class="math notranslate nohighlight">\(\bar p\)</span> y la desviación estándar <span class="math notranslate nohighlight">\(s\)</span> de cada estimación:</p>
+<p>Las proporciones (tenencia de equipos, material del techo) entran al modelo como distribuciones Beta <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id47" title="Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari y Donald B. Rubin. Bayesian Data Analysis. CRC Press, Boca Raton, 2013.">Gelman et al., 2013</a>)</span>. Sus parámetros se obtienen por el método de momentos a partir de la media <span class="math notranslate nohighlight">\(\bar p\)</span> y la desviación estándar <span class="math notranslate nohighlight">\(s\)</span> de cada estimación:</p>
 <div class="math notranslate nohighlight" id="equation-eq-beta-momentos">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eq-beta-momentos" title="Link to this equation">#</a></span>\[
 \alpha = \bar p\,\kappa, \qquad \beta = (1-\bar p)\,\kappa, \qquad \kappa = \frac{\bar p\,(1-\bar p)}{s^{2}} - 1
 \]</div>
-<p>Si una proporción observada es de 100 % (por ejemplo, la tenencia de nevera en los estratos 4 a 6), el método de momentos no aplica. En ese caso se propone una Beta<span class="math notranslate nohighlight">\((n + 0{,}5;\ 0{,}5)\)</span>, que equivale al prior de Jeffreys actualizado con los <span class="math notranslate nohighlight">\(n\)</span> hogares de la muestra <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id45" title="Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari y Donald B. Rubin. Bayesian Data Analysis. CRC Press, Boca Raton, 2013.">Gelman et al., 2013</a>)</span>.</p>
+<p>Si una proporción observada es de 100 % (por ejemplo, la tenencia de nevera en los estratos 4 a 6), el método de momentos no aplica. En ese caso se propone una Beta<span class="math notranslate nohighlight">\((n + 0{,}5;\ 0{,}5)\)</span>, que equivale al prior de Jeffreys actualizado con los <span class="math notranslate nohighlight">\(n\)</span> hogares de la muestra <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id47" title="Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari y Donald B. Rubin. Bayesian Data Analysis. CRC Press, Boca Raton, 2013.">Gelman et al., 2013</a>)</span>.</p>
 <section id="indice-de-insumos">
 <h2>Índice de insumos<a class="headerlink" href="#indice-de-insumos" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-insumos-resumen">
@@ -534,14 +535,14 @@
 <td><p>Fase 3, paso 4</p></td>
 </tr>
 <tr class="row-odd"><td><p>Alza estacional del consumo</p></td>
-<td><p>10,9 % (E1) a 29,1 % (E5) (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 13</span></a>)</p></td>
+<td><p>Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) (<a class="reference internal" href="17_lecturas_reales.html#tab-o3-cambio"><span class="std std-numref">Tabla 24</span></a>); con el consolidado, 10,9 % a 29,1 % (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 13</span></a>)</p></td>
 <td><p>Variación entre años</p></td>
 <td><p>SUI 2015–2025</p></td>
 <td><p>Fase 3, pasos 2 y 5</p></td>
 </tr>
 <tr class="row-even"><td><p>Clima horario</p></td>
 <td><p>Temperatura, humedad e índice de calor en hora local, 2015–2026</p></td>
-<td><p>Sesgo frente al IDEAM: −0,7 °C en temperatura (≈ 0 de noche, −2,2 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 27</span></a>)</p></td>
+<td><p>Sesgo frente al IDEAM: −0,7 °C en temperatura (≈ 0 de noche, −2,2 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 30</span></a>)</p></td>
 <td><p>ERA5-Land (copia de Open-Meteo, provisional); IDEAM</p></td>
 <td><p>Fase 2, paso 1</p></td>
 </tr>
@@ -718,7 +719,7 @@
 </tbody>
 </table>
 </div>
-<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id38" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id40" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 26</span></a>).</p>
+<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 29</span></a>).</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-posicion">
 <caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Viviendas del catastro por estrato y posición frente a la cubierta (% de las viviendas de cada estrato).</span><a class="headerlink" href="#tab-posicion" title="Link to this table">#</a></caption>
 <thead>
@@ -1227,7 +1228,7 @@
 </tbody>
 </table>
 </div>
-<p>Los años 2015 a 2019 son el periodo de calibración de la propuesta (Fase 3, paso 4). El consumo de 2021 a 2025 se reserva para la validación. El año 2020 se excluye por el cambio en la ocupación de las viviendas durante la pandemia. El consumo del estrato 1 es mayor que el de los estratos 2 y 3 pese a su menor tenencia de A/C. Este dato está señalado en <a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a> y se revisará con Air-e antes de la calibración.</p>
+<p>Las cifras de esta tabla vienen del consolidado, que mezcla lecturas reales, estimadas y cuentas sin consumo; la calibración usará solo lecturas reales (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>). En la propuesta se calibra con 2015 a 2025, salvo 2020, y se reservan 2023 y 2025 para la validación, porque el consumo por suscriptor bajó cuando subió la tarifa. El año 2020 se excluye por el cambio en la ocupación de las viviendas durante la pandemia. El consumo del estrato 1 es mayor que el de los estratos 2 y 3 pese a su menor tenencia de A/C. Con lecturas reales esa diferencia desaparece: el exceso viene de lecturas estimadas y de usuarios sin medidor (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>).</p>
 </section>
 </section>
 

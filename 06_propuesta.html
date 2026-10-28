@@ -226,6 +226,7 @@
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
 <ul class="nav bd-sidenav">
@@ -401,7 +402,16 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cambios-a-la-propuesta">
 <h1>Cambios a la propuesta<a class="headerlink" href="#cambios-a-la-propuesta" title="Link to this heading">#</a></h1>
-<p>Son seis cambios sobre la versión v3 de la propuesta. Los textos propuestos están listos para pegar; los números salen del capítulo «Serie de tenencia, error de la encuesta e imputación».</p>
+<p><strong>Estado (27 de octubre de 2026).</strong> Los seis cambios de la tabla se incorporaron a la propuesta, con dos ajustes: el alza estacional de la Tabla 10 se calcula ahora con lecturas reales (+16 / +19 / +27 / +31 / +31 / +29 %), y la tenencia de la ciudad sin suavizar se reporta como 33 % (2019) y 41 % (2024).</p>
+<p>Con la consulta del SUI por tipo de lectura (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>) se agregaron estos cambios:</p>
+<ul class="simple">
+<li><p>La calibración usa el consumo por suscriptor con lectura real y excluye las cuentas «n/a» sin consumo; el estrato 1 se calibra solo con sus lecturas reales.</p></li>
+<li><p>La Ecuación (5) incluye un factor de precio con una elasticidad por grupo de estratos (supuesto S17).</p></li>
+<li><p>Se calibra con 2015 a 2025, salvo 2020, y se reservan 2023 y 2025 para la validación; la Tabla 6 se ajustó a esos años.</p></li>
+<li><p>La Ecuación (10) es la que se estimó en la compuerta horaria (logaritmo de la demanda y efectos fijos de cada hora en cada mes), y en la Ecuación (9) el efecto de mes es el del mes calendario.</p></li>
+<li><p>La Tabla 10 usa el consumo con lecturas reales de 2024 y la sección de avances describe el estrato 1 y la caída del consumo por suscriptor.</p></li>
+</ul>
+<p>La tabla siguiente conserva los seis cambios originales sobre la versión v3; los números salen del capítulo «Serie de tenencia, error de la encuesta e imputación».</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>#</p></th>

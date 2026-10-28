@@ -230,6 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
 <ul class="current nav bd-sidenav">
@@ -433,7 +434,7 @@
 </tr>
 <tr class="row-even"><td><p>E1 en el SUI</p></td>
 <td><p>Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6). En 2021–2024, con solo lecturas reales, CEELA da 229 kWh/mes frente a 311 en el repositorio (+36 %); en E2–E6 la diferencia es de 3–7 % (<a class="reference internal" href="16_ceela.html#tab-ceela-sui"><span class="std std-numref">Tabla 22</span></a>)</p></td>
-<td><p>Parte del exceso vendría de consumos que no son lecturas reales. Descargar el SUI con el filtro de tipo de lectura; confirmar con Air-e; calibrar con E2–E6 mientras tanto</p></td>
+<td><p><strong>Resuelto</strong> con el SUI por tipo de lectura: 50–80 % del consumo facturado de E1 es estimado o de usuarios sin medidor; con lecturas reales E1 consume 209 kWh/mes (2023–2025), como E2. Calibrar E1 solo con lecturas reales (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Catastro vs ECV en E1</p></td>
 <td><p>29,5 % de viviendas de E1 en edificios 4+, pero solo 17 % con techo de concreto en la ECV</p></td>
@@ -445,7 +446,7 @@
 </tr>
 <tr class="row-odd"><td><p>SUI dic-2021</p></td>
 <td><p>356.575 suscriptores (E1 120.329), vuelve a 317.080 en 2022</p></td>
-<td><p>No usar para totales</p></td>
+<td><p><strong>Explicado</strong>: desde jun-2021, 4–12 % de las cuentas de cada mes tienen lectura «n/a» y 0 kWh. Calcular el kWh por suscriptor sin ellas (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p>Rurales ECV 2024</p></td>
 <td><p>24,8 % con AC (n = 60) vs 6 % en 2019 y 2025</p></td>
@@ -496,13 +497,13 @@
 <p><strong>Datos por conseguir:</strong></p>
 <ol class="arabic simple">
 <li><p><strong>ERA5-Land del Climate Data Store.</strong> El clima horario ya se procesó con la copia de ERA5-Land de Open-Meteo (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>). Falta descargar la serie oficial con <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/01a_descargar_era5land_cds.py</span></code>, que usa el conjunto «reanalysis-era5-land-timeseries» (serie en el punto lat 10,96, lon −74,80, 2015 a la fecha, en una sola solicitud) y requiere la cuenta personal del CDS (<code class="docutils literal notranslate"><span class="pre">~/.cdsapirc</span></code>) y aceptar la licencia de ERA5-Land. Después hay que repetir <code class="docutils literal notranslate"><span class="pre">01_clima.py</span> <span class="pre">procesar</span></code> y <code class="docutils literal notranslate"><span class="pre">03_estimar.py</span></code>. La alternativa por área sigue siendo NCAR GDEX, dataset d633008.</p></li>
-<li><p><strong>SUI con el filtro de tipo de lectura.</strong> Descargar de la herramienta O3 del SUI el consumo residencial de Barranquilla urbano por estrato con el filtro «tipo de lectura/medición» en datos reales, como hizo CEELA, para separar los consumos estimados y confirmar el consumo del estrato 1 (<a class="reference internal" href="16_ceela.html#tab-ceela-sui"><span class="std std-numref">Tabla 22</span></a>).</p></li>
+<li><p>~~<strong>SUI con el filtro de tipo de lectura.</strong>~~ Hecho el 27-oct-2026 con la herramienta O3 (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>).</p></li>
 <li><p>Confirmar con Air-e el consumo/tarifa de E1 y pedir curva horaria.</p></li>
 <li><p><strong>Año de construcción del catastro.</strong> Preguntar a la Gerencia de Gestión Catastral qué registra <code class="docutils literal notranslate"><span class="pre">anio_construccion</span></code> (¿fecha original o última incorporación/actualización?). Solo 1.442 casas de la ciudad son anteriores a 1975 y 15.376 apartamentos de E1–E2 en bloques recientes tienen años 1932–1972. Mientras tanto se usa como «año de registro catastral» (supuesto S13); revisar también la variable <code class="docutils literal notranslate"><span class="pre">antiguedad</span></code> del entregable de ML.</p></li>
 </ol>
 <p><strong>Ya procesado:</strong></p>
 <ul class="simple">
-<li><p><strong>IDEAM</strong>, estación 0029045190 «APTO ERNESTO CORTISSOZ» (temperatura sbwg-7ju4 y humedad relativa uext-mhny de datos.gov.co), agregada a horario y contrastada con ERA5-Land (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 27</span></a>).</p></li>
+<li><p><strong>IDEAM</strong>, estación 0029045190 «APTO ERNESTO CORTISSOZ» (temperatura sbwg-7ju4 y humedad relativa uext-mhny de datos.gov.co), agregada a horario y contrastada con ERA5-Land (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 30</span></a>).</p></li>
 <li><p><strong>Clima horario</strong> de ERA5-Land (copia de Open-Meteo) en hora local, con humedad relativa e índice de calor.</p></li>
 <li><p><strong>Demanda horaria de XM</strong> del mercado de Air-e (2021–2025) y de Electricaribe (2015–2019), con la compuerta horaria: la forma horaria del A/C queda en capa C (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>).</p></li>
 <li><p><strong>Línea base de CEELA</strong>: envolvente, zona climatizada, consigna y COP de los edificios representativos de Barranquilla (<a class="reference internal" href="16_ceela.html"><span class="std std-doc">Línea base de CEELA</span></a>).</p></li>
