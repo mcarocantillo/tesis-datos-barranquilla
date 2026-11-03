@@ -65,6 +65,16 @@
     "medidas_de_carga": {"aplica_si_director_no_aprueba": "por_vivienda", "aplica_si_director_aprueba": "por_m2"},
     "jaccard": {"submuestras": 100, "fraccion": 0.8, "reemplazo": false, "peso": "fraccion de viviendas"},
     "eleccion_algoritmo": "reemplazada por la nota 4",
+    "nota8": {
+      "fecha": "2026-11-02",
+      "variables_ampliadas": {"log_habitaciones": "log1p(total_habitaciones)", "log_banios": "log1p(total_banios)",
+                              "log_terreno": "log1p(area_catastral_terreno)", "vis_vip": "tipo_vivienda VIS o VIP"},
+      "faltantes": "mediana de su posicion",
+      "excluidas": {"destinacion_economica": "constante", "tipo_planta": "constante", "altura": "99,7 % en 3,0 m",
+                    "ubicacion": "decision de la usuaria (AJ10)"},
+      "eleccion": "Nota 4 en cada conjunto; entre finalistas: estable, mayor R2, empate < 0.02 -> menos grupos -> seis variables -> mayor silueta",
+      "si_gana_ampliada": "se repiten los Pasos 5 a 7 para esa medida"
+    },
     "nota4": {
       "fecha": "2026-11-02",
       "filtro": "jaccard_ponderado >= 0.75 y ningun grupo con > 5 % de viviendas con jaccard < 0.6",
@@ -167,5 +177,5 @@
     "representatividad": ["viviendas por estrato", "fraccion de casas por bloque (y variante con primeros pisos de baja altura)", "habitaciones"],
     "sensibilidad": {"variables": ["log_area", "log_plantas", "log_piso", "epoca_ord", "tipo_bin", "ph"], "mismo_k": true, "atipicos": "recalculados sin la variable", "rand_min": 0.8, "caida_R2": 0.02}
   },
-  "complementarios": ["A1 silueta, CH, DB", "A2 arbol de regresion con k hojas", "A3 R2 con carga por m2", "A4 sensibilidad f_v y n", "A5 sin excluir atipicos de DBSCAN", "A6 resultado con la regla 7.7 y Rand ajustado frente a la nota 4", "A7 priors de materiales con la otra opcion de olas", "A8 techo con las reglas originales de la seccion 9.3"]
+  "complementarios": ["A1 silueta, CH, DB", "A2 arbol de regresion con k hojas", "A3 R2 con carga por m2", "A4 sensibilidad f_v y n", "A5 sin excluir atipicos de DBSCAN", "A6 resultado con la regla 7.7 y Rand ajustado frente a la nota 4", "A7 priors de materiales con la otra opcion de olas", "A8 techo con las reglas originales de la seccion 9.3", "A9 variante ampliada del agrupamiento si no gana"]
 }

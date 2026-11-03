@@ -1,5 +1,9 @@
-﻿diseno,medida,algoritmo,k,R2,jaccard_ponderado,silueta_gower,estable,criterio,algoritmo_regla_7_7
-plano,por_m2,kprototypes,4,0.9446,1.0,0.487,True,"empate de R2: menos grupos, silueta",kmeans
-plano,por_vivienda,kmeans,13,0.6278,0.884,0.492,True,mayor R2 entre las estables,jerarquico
-anidado,por_m2,kmeans,10,0.9275,1.0,0.552,True,"empate de R2: menos grupos, silueta",kmeans
-anidado,por_vivienda,kprototypes,17,0.6611,0.97,0.18,True,mayor R2 entre las estables,jerarquico
+﻿variables,diseno,medida,algoritmo,k,R2,jaccard_ponderado,silueta_gower,estable,criterio,algoritmo_regla_7_7
+base,plano,por_m2,kprototypes,4,0.9446,1.0,0.487,True,"empate de R2: menos grupos, silueta",kmeans
+base,plano,por_vivienda,kmeans,13,0.6278,0.884,0.492,True,mayor R2 entre las estables,jerarquico
+base,anidado,por_m2,kmeans,10,0.9275,1.0,0.552,True,"empate de R2: menos grupos, silueta",kmeans
+base,anidado,por_vivienda,kprototypes,17,0.6611,0.97,0.18,True,mayor R2 entre las estables,jerarquico
+ampliada,plano,por_m2,kprototypes,6,0.9489,0.998,0.32,True,"empate de R2: menos grupos, silueta",kmeans
+ampliada,plano,por_vivienda,kprototypes,12,0.6067,0.975,0.172,True,mayor R2 entre las estables,kmeans
+ampliada,anidado,por_m2,kmeans,9,0.9051,1.0,,True,"empate de R2: menos grupos, silueta",kmeans
+ampliada,anidado,por_vivienda,kmeans,12,0.5341,0.976,0.239,True,"empate de R2: menos grupos, silueta",jerarquico

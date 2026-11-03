@@ -36,11 +36,14 @@ from src.comun import DECISION, EPOCAS, INTERNOS, ML, SEMILLA, TABLAS, asignar_e
 
 P = DECISION["clasificador_v3"]
 MODELOS = RAIZ / "salidas" / "modelos"
-LEGIBLE = {"log_area": "área", "log_plantas": "pisos de la unidad", "log_piso": "piso de la unidad"}
+LEGIBLE = {"log_area": "área", "log_plantas": "pisos de la unidad", "log_piso": "piso de la unidad",
+           "log_habitaciones": "habitaciones", "log_banios": "baños", "log_terreno": "área del terreno"}
+COLUMNAS = {"base": ["log_area", "log_plantas", "log_piso", "epoca_ord", "tipo_bin", "ph"]}
+COLUMNAS["ampliada"] = COLUMNAS["base"] + ["log_habitaciones", "log_banios", "log_terreno", "vis_vip"]  # Nota 8
 
 
-def matriz(v):
-    x = preparar(v)[["log_area", "log_plantas", "log_piso", "epoca_ord", "tipo_bin", "ph"]]
+def matriz(v, variables="base"):
+    x = preparar(v)[COLUMNAS[variables]]
     x = x.join(pd.get_dummies(v["posicion"].astype(str), prefix="pos").astype(float))
     return x.join(pd.get_dummies(v["bloque"], prefix="bloque").astype(float)).astype(float)
 
@@ -90,20 +93,23 @@ def reglas_legibles(arbol, nombres):
     def texto(c):
         partes = []
         for n, (lo, hi) in c["num"].items():
-            if n == "log_area":
-                lo_t, hi_t = (None if b is None else f"{np.exp(b):.1f}".replace(".", ",") for b in (lo, hi))
+            inv = np.expm1 if n in ("log_habitaciones", "log_banios", "log_terreno") else np.exp  # log(1 + x) o log
+            if n in ("log_area", "log_terreno"):
+                lo_t, hi_t = (None if b is None else f"{inv(b):.1f}".replace(".", ",") for b in (lo, hi))
                 rango = (f"entre {lo_t} y {hi_t} m²" if lo_t and hi_t else f"> {lo_t} m²" if lo_t else f"≤ {hi_t} m²")
-            else:  # pisos: números enteros
-                a = None if lo is None else int(np.floor(np.exp(lo))) + 1
-                b = None if hi is None else int(np.floor(np.exp(hi)))
-                rango = (f"de {a} a {b}" if a and b and a < b else f"= {a}" if a and b else f"≥ {a}" if a else f"≤ {b}")
+            else:  # pisos, habitaciones y baños: números enteros
+                a = None if lo is None else int(np.floor(inv(lo))) + 1
+                b = None if hi is None else int(np.floor(inv(hi)))
+                rango = (f"de {a} a {b}" if a is not None and b is not None and a < b else
+                         f"= {a}" if a is not None and b is not None else f"≥ {a}" if a is not None else f"≤ {b}")
             partes.append(f"{LEGIBLE[n]} {rango}")
         for nombre, valores, todos, txt in [("posición", c["pos"], posiciones, POSICIONES_TXT),
                                             ("bloque de estratos", c["bloque"], bloques, {}),
                                             ("época", c["epoca"], list(range(3)), dict(enumerate(EPOCAS_TXT)))]:
             if len(valores) < len(todos):
                 partes.append(f"{nombre}: " + " o ".join(txt.get(x, x) for x in todos if x in valores))
-        for n, si, no in [("tipo_bin", "multifamiliar", "baja altura"), ("ph", "en propiedad horizontal", "sin PH")]:
+        for n, si, no in [("tipo_bin", "multifamiliar", "baja altura"), ("ph", "en propiedad horizontal", "sin PH"),
+                          ("vis_vip", "VIS o VIP", "no VIS ni VIP")]:
             if c["bin"].get(n) is not None:
                 partes.append(si if c["bin"][n] else no)
         return " · ".join(partes) or "todas"
@@ -144,8 +150,8 @@ def main():
 
     v = cargar_viviendas()
     asignar_epoca_faltante(v)
-    x = matriz(v)
     etiquetas = pd.read_parquet(INTERNOS / "arquetipos_final.parquet")
+    final = json.loads((TABLAS / "agr_resultado_final.json").read_text(encoding="utf-8"))
     part = v["particion"].astype(str).to_numpy()
     n_con = int((part != "sin coordenadas").sum())
     entrenamiento, prueba, sin = part == "train", part == "test", part == "sin coordenadas"
@@ -163,6 +169,7 @@ def main():
     bloque_prueba = bloques.to_numpy()[prueba[:n_con]]
 
     for sol in P["soluciones"]:
+        x = matriz(v, final[sol].get("variables", "base"))  # Nota 8: las variables del agrupamiento ganador
         y = etiquetas[sol].to_numpy().astype(str)
         clases = np.unique(y)
         xtr, ytr = x.iloc[i_tr], y[i_tr]

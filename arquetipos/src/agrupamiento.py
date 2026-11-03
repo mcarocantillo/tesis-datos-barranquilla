@@ -17,11 +17,24 @@ A = DECISION["agrupamiento_v2"]
 NUM = ["log_area", "log_plantas", "log_piso"]
 ORD = ["epoca_ord"]
 NOM = ["tipo_bin", "ph"]
+# variante ampliada (Nota 8): variables del catastro del trabajo previo de predicción del estrato
+NUM_AMPLIADA = ["log_habitaciones", "log_banios", "log_terreno"]
+NOM_AMPLIADA = ["vis_vip"]
+NUMERICAS = NUM + NUM_AMPLIADA
+NOMINALES = NOM + NOM_AMPLIADA
+VARIABLES = {"base": NUM + ORD + NOM, "ampliada": NUM + NUM_AMPLIADA + ORD + NOM + NOM_AMPLIADA}
 ALGORITMOS = ["kmeans", "kprototypes", "jerarquico"]
+_candidatas = VARIABLES["base"]
+
+
+def fijar_variables(conjunto):
+    """Conjunto de variables con que se arman los estratos: «base» (Sección 7.3) o «ampliada» (Nota 8)."""
+    global _candidatas
+    _candidatas = VARIABLES[conjunto]
 
 
 def preparar(v):
-    """Variables de agrupamiento de todas las viviendas (Sección 7.3)."""
+    """Variables de agrupamiento de todas las viviendas (Sección 7.3 y, para la variante ampliada, Nota 8)."""
     x = pd.DataFrame(index=v.index)
     x["log_area"] = np.log(v["area_construida"])
     for col, nombre in [("total_plantas", "log_plantas"), ("planta_ubicacion", "log_piso")]:
@@ -30,6 +43,12 @@ def preparar(v):
     x["epoca_ord"] = v["epoca"].map({e: i for i, e in enumerate(EPOCAS)}).astype(int)
     x["tipo_bin"] = (v["tipo"] == "multifamiliar").astype(int)
     x["ph"] = v["condicion_predio"].astype(str).str.startswith("PH").astype(int)
+    for col, nombre in [("total_habitaciones", "log_habitaciones"), ("total_banios", "log_banios"),
+                        ("area_catastral_terreno", "log_terreno")]:
+        s = v[col].fillna(v.groupby("posicion", observed=True)[col].transform("median"))
+        x[nombre] = np.log1p(s.clip(lower=0))
+    # «Vivienda de Interés Social» o «... Prioritario»; «Vivienda que no es de interés social» y «No Aplica» son 0
+    x["vis_vip"] = v["tipo_vivienda"].astype(str).str.startswith("Vivienda de Inter").astype(int)
     return x
 
 
@@ -51,7 +70,7 @@ def gower(a, b, variables, rango):
     d = np.zeros((len(a), len(b)), dtype=np.float32)
     for c in variables:
         x, y = a[c].to_numpy(np.float32), b[c].to_numpy(np.float32)
-        if c in NOM:
+        if c in NOMINALES:
             d += x[:, None] != y[None, :]
         else:
             d += np.minimum(np.abs(x[:, None] - y[None, :]) / rango[c], 1.0)
@@ -64,8 +83,8 @@ class Estrato:
     def __init__(self, nombre, x_muestra):
         self.nombre = nombre
         moda = x_muestra.apply(lambda s: s.value_counts(normalize=True).iloc[0])
-        self.vars = [c for c in NUM + ORD + NOM if moda[c] < A["descartar_si_moda_cubre"]]
-        self.num = [c for c in self.vars if c in NUM]
+        self.vars = [c for c in _candidatas if moda[c] < A["descartar_si_moda_cubre"]]
+        self.num = [c for c in self.vars if c in NUMERICAS]
         self.cat = [c for c in self.vars if c not in NUM]
         self.x = x_muestra
         self.mu = x_muestra[self.vars].mean()

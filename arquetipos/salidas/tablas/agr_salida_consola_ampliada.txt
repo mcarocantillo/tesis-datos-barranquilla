@@ -1,0 +1,183 @@
+submuestra: 10294 edificios
+posicion
+casa            4074
+ultimo_piso     3140
+sin_cubierta    3080
+DBSCAN casa: min_samples=14, eps=0.0320, atípicos=321 (7.9 %)
+DBSCAN ultimo_piso: min_samples=18, eps=0.0500, atípicos=175 (5.6 %)
+DBSCAN sin_cubierta: min_samples=18, eps=0.0461, atípicos=135 (4.4 %)
+
+=== diseño plano ===
+  plano · casa: 4074 edificios (3753 sin atípicos); variables ['log_area', 'log_plantas', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'ph']
+  plano · sin_cubierta: 3080 edificios (2945 sin atípicos); variables ['log_area', 'log_plantas', 'log_piso', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'tipo_bin', 'ph']
+  plano · ultimo_piso: 3140 edificios (2965 sin atípicos); variables ['log_area', 'log_plantas', 'log_piso', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'tipo_bin', 'ph']
+  plano · kmeans: barrido de k en 10 s
+  plano · kprototypes: máximo de casa ampliado de 8 a 12
+  plano · kprototypes: barrido de k en 707 s
+  plano · jerarquico: barrido de k en 11 s
+  plano · Jaccard kmeans casa k=2: 14 s
+  plano · Jaccard kmeans sin_cubierta k=1: 0 s
+  plano · Jaccard kmeans ultimo_piso k=1: 0 s
+  plano · Jaccard kprototypes casa k=9: 906 s
+  plano · Jaccard kprototypes sin_cubierta k=1: 0 s
+  plano · Jaccard kprototypes ultimo_piso k=2: 632 s
+  plano · Jaccard jerarquico casa k=4: 14 s
+  plano · Jaccard jerarquico sin_cubierta k=1: 0 s
+  plano · Jaccard jerarquico ultimo_piso k=1: 0 s
+  plano · Jaccard kmeans casa k=4: 3 s
+  plano · Jaccard kprototypes casa k=4: 850 s
+  plano · Jaccard kprototypes ultimo_piso k=1: 0 s
+  plano · Jaccard jerarquico casa k=1: 0 s
+      medida   algoritmo  k    R2  jaccard_ponderado  jaccard_min_grupos_grandes  silueta_gower elegido criterio  pasa_estabilidad
+por_vivienda      kmeans  4 0.455              0.989                       0.977          0.229    True  silueta              True
+por_vivienda kprototypes 12 0.607              0.975                       0.817          0.172   False      NaN              True
+por_vivienda  jerarquico  6 0.381              0.942                       0.376          0.351   False      NaN             False
+      por_m2      kmeans  6 0.949              0.991                       0.968          0.314    True       R2              True
+      por_m2 kprototypes  6 0.949              0.998                       0.990          0.320   False      NaN              True
+      por_m2  jerarquico  3 0.893              1.000                       1.000            NaN   False      NaN              True
+
+=== diseño anidado ===
+  anidado · casa|1-2: 2855 edificios (2685 sin atípicos); variables ['log_area', 'log_plantas', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'ph']
+  anidado · casa|3-4: 1069 edificios (960 sin atípicos); variables ['log_area', 'log_plantas', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'ph']
+  anidado · casa|5-6: 150 edificios (108 sin atípicos); variables ['log_area', 'log_plantas', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'ph']
+  anidado · sin_cubierta|1-2: 884 edificios (865 sin atípicos); variables ['log_area', 'log_plantas', 'log_piso', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'tipo_bin', 'ph', 'vis_vip']
+  anidado · sin_cubierta|3-4: 1709 edificios (1641 sin atípicos); variables ['log_area', 'log_plantas', 'log_piso', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'tipo_bin', 'ph']
+  anidado · sin_cubierta|5-6: 487 edificios (439 sin atípicos); variables ['log_area', 'log_plantas', 'log_piso', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'tipo_bin', 'ph']
+  anidado · ultimo_piso|1-2: 1344 edificios (1292 sin atípicos); variables ['log_area', 'log_plantas', 'log_piso', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'tipo_bin', 'ph', 'vis_vip']
+  anidado · ultimo_piso|3-4: 1417 edificios (1333 sin atípicos); variables ['log_area', 'log_plantas', 'log_piso', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'tipo_bin', 'ph']
+  anidado · ultimo_piso|5-6: 379 edificios (340 sin atípicos); variables ['log_area', 'log_plantas', 'log_piso', 'log_habitaciones', 'log_banios', 'log_terreno', 'epoca_ord', 'tipo_bin', 'ph']
+  anidado · kmeans: barrido de k en 6 s
+  anidado · kprototypes: barrido de k en 321 s
+  anidado · jerarquico: barrido de k en 4 s
+  anidado · Jaccard kmeans casa|1-2 k=2: 17 s
+  anidado · Jaccard kmeans casa|3-4 k=2: 1 s
+  anidado · Jaccard kmeans casa|5-6 k=2: 1 s
+  anidado · Jaccard kmeans sin_cubierta|1-2 k=1: 0 s
+  anidado · Jaccard kmeans sin_cubierta|3-4 k=1: 0 s
+  anidado · Jaccard kmeans sin_cubierta|5-6 k=1: 0 s
+  anidado · Jaccard kmeans ultimo_piso|1-2 k=1: 0 s
+  anidado · Jaccard kmeans ultimo_piso|3-4 k=1: 0 s
+  anidado · Jaccard kmeans ultimo_piso|5-6 k=1: 0 s
+  anidado · Jaccard kprototypes casa|1-2 k=2: 449 s
+  anidado · Jaccard kprototypes casa|3-4 k=2: 128 s
+  anidado · Jaccard kprototypes casa|5-6 k=2: 12 s
+  anidado · Jaccard kprototypes sin_cubierta|1-2 k=1: 0 s
+  anidado · Jaccard kprototypes sin_cubierta|3-4 k=1: 0 s
+  anidado · Jaccard kprototypes sin_cubierta|5-6 k=1: 0 s
+  anidado · Jaccard kprototypes ultimo_piso|1-2 k=1: 0 s
+  anidado · Jaccard kprototypes ultimo_piso|3-4 k=1: 0 s
+  anidado · Jaccard kprototypes ultimo_piso|5-6 k=1: 0 s
+  anidado · Jaccard jerarquico casa|1-2 k=3: 7 s
+  anidado · Jaccard jerarquico casa|3-4 k=1: 0 s
+  anidado · Jaccard jerarquico casa|5-6 k=1: 0 s
+  anidado · Jaccard jerarquico sin_cubierta|1-2 k=1: 0 s
+  anidado · Jaccard jerarquico sin_cubierta|3-4 k=1: 0 s
+  anidado · Jaccard jerarquico sin_cubierta|5-6 k=1: 0 s
+  anidado · Jaccard jerarquico ultimo_piso|1-2 k=1: 0 s
+  anidado · Jaccard jerarquico ultimo_piso|3-4 k=1: 0 s
+  anidado · Jaccard jerarquico ultimo_piso|5-6 k=1: 0 s
+  anidado · Jaccard kmeans casa|1-2 k=1: 0 s
+  anidado · Jaccard kmeans casa|3-4 k=1: 0 s
+  anidado · Jaccard kmeans casa|5-6 k=1: 0 s
+  anidado · Jaccard kprototypes casa|1-2 k=1: 0 s
+  anidado · Jaccard kprototypes casa|3-4 k=1: 0 s
+  anidado · Jaccard kprototypes casa|5-6 k=1: 0 s
+  anidado · Jaccard jerarquico casa|1-2 k=1: 0 s
+      medida   algoritmo  k    R2  jaccard_ponderado  jaccard_min_grupos_grandes  silueta_gower elegido criterio  pasa_estabilidad
+por_vivienda      kmeans 12 0.534              0.976                       0.954          0.239   False      NaN              True
+por_vivienda kprototypes 12 0.533              0.994                       0.990          0.217   False      NaN              True
+por_vivienda  jerarquico 11 0.442              0.997                       0.997          0.370    True  silueta              True
+      por_m2      kmeans  9 0.905              1.000                       1.000            NaN    True  silueta              True
+      por_m2 kprototypes  9 0.905              1.000                       1.000            NaN   False      NaN              True
+      por_m2  jerarquico  9 0.905              1.000                       1.000            NaN   False      NaN              True
+
+Paso 4:
+{
+  "medida_que_aplica": "por_vivienda",
+  "por_vivienda": {
+    "kmeans": {
+      "elegido_regla_7_7": true,
+      "k_plano": 4,
+      "R2_plano": 0.4549,
+      "jaccard_ponderado": 0.989,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.1377,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 12,
+      "R2_anidado": 0.5341
+    },
+    "kprototypes": {
+      "elegido_regla_7_7": false,
+      "k_plano": 12,
+      "R2_plano": 0.6067,
+      "jaccard_ponderado": 0.975,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.1301,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 12,
+      "R2_anidado": 0.5334
+    },
+    "jerarquico": {
+      "elegido_regla_7_7": false,
+      "k_plano": 6,
+      "R2_plano": 0.381,
+      "jaccard_ponderado": 0.942,
+      "grupos_grandes_con_jaccard_bajo": [
+        "C-4"
+      ],
+      "plano_inestable": true,
+      "eta2_estrato": 0.1948,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 11,
+      "R2_anidado": 0.4423
+    }
+  },
+  "por_m2": {
+    "kmeans": {
+      "elegido_regla_7_7": true,
+      "k_plano": 6,
+      "R2_plano": 0.9495,
+      "jaccard_ponderado": 0.991,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.0963,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 9,
+      "R2_anidado": 0.9051
+    },
+    "kprototypes": {
+      "elegido_regla_7_7": false,
+      "k_plano": 6,
+      "R2_plano": 0.9489,
+      "jaccard_ponderado": 0.998,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.0963,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 9,
+      "R2_anidado": 0.9051
+    },
+    "jerarquico": {
+      "elegido_regla_7_7": false,
+      "k_plano": 3,
+      "R2_plano": 0.8929,
+      "jaccard_ponderado": 1.0,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.1507,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 9,
+      "R2_anidado": 0.9051
+    }
+  },
+  "A5_sin_excluir_atipicos": {
+    "algoritmo": "kmeans",
+    "k": 6,
+    "R2": 0.5048
+  },
+  "tiempo_s": 4115
+}
+
+tiempo total: 4116 s

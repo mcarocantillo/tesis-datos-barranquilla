@@ -18,13 +18,18 @@ sin cubierta) y bloque de estratos (1-2, 3-4, 5-6). El criterio definitivo está
 `ajustes_frente_a_la_propuesta.md`); mientras tanto aplica lo escrito en la propuesta, la carga por vivienda. Todos
 los productos existen para las dos soluciones.
 
+Se corrió además una variante del agrupamiento con cuatro variables más del catastro (habitaciones, baños, área del
+terreno y VIS o VIP; preregistro, Nota 8, y ajuste AJ19). Es estable, pero explica menos varianza de la carga (0,53
+por vivienda y 0,91 por m²), así que los arquetipos no cambian y la variante queda como análisis complementario A9.
+Sus salidas llevan el sufijo `_ampliada`.
+
 ## Contenido
 
 | Ruta | Qué tiene |
 | --- | --- |
-| `preregistro/preregistro_fase1.md` | Reglas de cada paso, fijadas antes de calcular (versiones 1 a 5 y notas 1 a 7, con fecha y motivo) |
+| `preregistro/preregistro_fase1.md` | Reglas de cada paso, fijadas antes de calcular (versiones 1 a 5 y notas 1 a 8, con fecha y motivo) |
 | `preregistro/decision_fase1.json` | Las mismas reglas en formato máquina; los scripts las leen de aquí |
-| `ajustes_frente_a_la_propuesta.md` | Registro de cada punto en que la ejecución precisa o ajusta la propuesta radicada (AJ1 a AJ18) |
+| `ajustes_frente_a_la_propuesta.md` | Registro de cada punto en que la ejecución precisa o ajusta la propuesta radicada (AJ1 a AJ19) |
 | `referencias_revisadas.md` | Referencias de arquetipos, agrupamiento e infiltración, con metadatos verificados en Crossref |
 | `src/` | Módulos comunes: rutas y variables (`comun.py`), carga simplificada (`carga.py`), agrupamiento (`agrupamiento.py`), lectura de la ECV (`ecv.py`) y estilo de figuras (`estilo.py`) |
 | `scripts/` | Scripts 01 a 09, en el orden en que se corren |
@@ -43,8 +48,8 @@ envolvente con su fuente (`salidas/tablas/env_priors_*.csv` y `.json`, y `env_pr
 | --- | --- | --- | --- |
 | `01_tipologia_reglas.py` | 4 (referencia) | Tipología por reglas: tipo × posición × época × bloque | segundos |
 | `02_carga_simplificada.py` | 3 | Carga anual simplificada de cada vivienda con envolvente común | 30 s |
-| `03_agrupamiento.py` | 2 a 4 | K-Means, k-prototypes y jerárquico con Gower; número de grupos y estabilidad | 1,5 h |
-| `04_eleccion.py` | 2 y 3 | Elección del algoritmo (Nota 4) y base final de arquetipos | segundos |
+| `03_agrupamiento.py` | 2 a 4 | K-Means, k-prototypes y jerárquico con Gower; número de grupos y estabilidad. Con `--ampliada`, la variante de la Nota 8 | 1,5 h; 1,2 h la variante |
+| `04_eleccion.py` | 2 y 3 | Elección del algoritmo (Nota 4), elección entre las dos variantes si existe la ampliada (Nota 8) y base final de arquetipos | segundos |
 | `05_sensibilidad_atipicos.py` | complementario | Agrupamiento sin excluir los atípicos de DBSCAN (A5) | minutos |
 | `06_clasificador.py` | 5 | Árbol de decisión y Random Forest; validación espacial | 11 min |
 | `07_priors_envolvente.py` | 6 | Materiales de la ECV, prueba de Rao-Scott, priors de envolvente e infiltración | segundos |

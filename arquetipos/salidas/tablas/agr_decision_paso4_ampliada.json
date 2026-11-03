@@ -1,0 +1,87 @@
+{
+  "medida_que_aplica": "por_vivienda",
+  "por_vivienda": {
+    "kmeans": {
+      "elegido_regla_7_7": true,
+      "k_plano": 4,
+      "R2_plano": 0.4549,
+      "jaccard_ponderado": 0.989,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.1377,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 12,
+      "R2_anidado": 0.5341
+    },
+    "kprototypes": {
+      "elegido_regla_7_7": false,
+      "k_plano": 12,
+      "R2_plano": 0.6067,
+      "jaccard_ponderado": 0.975,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.1301,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 12,
+      "R2_anidado": 0.5334
+    },
+    "jerarquico": {
+      "elegido_regla_7_7": false,
+      "k_plano": 6,
+      "R2_plano": 0.381,
+      "jaccard_ponderado": 0.942,
+      "grupos_grandes_con_jaccard_bajo": [
+        "C-4"
+      ],
+      "plano_inestable": true,
+      "eta2_estrato": 0.1948,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 11,
+      "R2_anidado": 0.4423
+    }
+  },
+  "por_m2": {
+    "kmeans": {
+      "elegido_regla_7_7": true,
+      "k_plano": 6,
+      "R2_plano": 0.9495,
+      "jaccard_ponderado": 0.991,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.0963,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 9,
+      "R2_anidado": 0.9051
+    },
+    "kprototypes": {
+      "elegido_regla_7_7": false,
+      "k_plano": 6,
+      "R2_plano": 0.9489,
+      "jaccard_ponderado": 0.998,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.0963,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 9,
+      "R2_anidado": 0.9051
+    },
+    "jerarquico": {
+      "elegido_regla_7_7": false,
+      "k_plano": 3,
+      "R2_plano": 0.8929,
+      "jaccard_ponderado": 1.0,
+      "grupos_grandes_con_jaccard_bajo": [],
+      "plano_inestable": false,
+      "eta2_estrato": 0.1507,
+      "diseno_adoptado": "anidado",
+      "k_anidado": 9,
+      "R2_anidado": 0.9051
+    }
+  },
+  "A5_sin_excluir_atipicos": {
+    "algoritmo": "kmeans",
+    "k": 6,
+    "R2": 0.5048
+  },
+  "tiempo_s": 4115
+}

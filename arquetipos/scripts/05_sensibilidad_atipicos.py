@@ -13,7 +13,7 @@ import pandas as pd
 from sklearn.metrics import adjusted_rand_score
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from src.agrupamiento import A, Estrato, Modelo, elegir_k, frontera, preparar, submuestra, suma_cuadrados
+from src.agrupamiento import A, Estrato, Modelo, elegir_k, fijar_variables, frontera, preparar, submuestra, suma_cuadrados
 from src.comun import DECISION, INTERNOS, SEMILLA, TABLAS, asignar_epoca_faltante, cargar_viviendas
 
 UMBRAL = DECISION["carga"]["criterio"]["delta_R2_min"]
@@ -34,6 +34,7 @@ def main():
     for m in ["por_vivienda", "por_m2"]:
         f = final[m]
         diseno, alg = f["diseno_adoptado"], f["algoritmo_final"]
+        fijar_variables(f.get("variables", "base"))  # Nota 8
         estrato = v["posicion"].astype(str) if diseno == "plano" else v["posicion"].astype(str) + "|" + v["bloque"]
         kmax = A["k_por_estrato"][diseno][1]
         ssw, etiquetas, tope = {}, {}, {}

@@ -300,6 +300,10 @@ plana elegida con esta regla.
   regla original de la Sección 7.7 (decide el mayor Jaccard), en cada diseño y medida de carga. Se reportan su
   algoritmo, k, R², Jaccard, silueta y la decisión del Paso 4 con esa solución, y la concordancia con la solución de la
   Nota 4, medida con el índice de Rand ajustado sobre todas las viviendas.
+- **A9** (agregado el 2-nov-2026 con la Nota 8, antes de correr la variante): si gana la solución de seis variables,
+  la variante ampliada del agrupamiento. Se reportan, por medida de carga, su algoritmo, diseño, k por estrato, R²,
+  Jaccard y silueta, y la concordancia con la solución de seis variables (índice de Rand ajustado sobre todas las
+  viviendas).
 
 Ninguno interviene en las decisiones.
 
@@ -655,3 +659,38 @@ de las mediciones residenciales (Nazaroff, 2021), definido por sus percentiles 5
 La mediana es la media geométrica de los dos percentiles y σ = ln(p95/p5) / (2 × 1,645). Cada sorteo usa la
 construcción que ya define la capacidad (Sección 9.4): muro de otro material o techo liviano, abierta; losa encima,
 cerrada. Que el techo liviano sea más permeable es un supuesto propio; no hay mediciones en Colombia.
+
+## Nota 8 (2-nov-2026): variante ampliada del agrupamiento
+
+**Cuándo y por qué.** Escrita a pedido de la usuaria y antes de correr la variante. La usuaria pidió tener en cuenta
+en el agrupamiento las demás variables del catastro analizadas en el trabajo previo de predicción del estrato. La
+propuesta fija seis variables (Paso 2), así que la variante se corre junto a la solución de seis variables y la
+elección entre las dos sigue una regla fijada aquí (ajuste AJ19).
+
+**Variables que se agregan** (a las seis de la Sección 7.3):
+
+| Variable | Codificación |
+| --- | --- |
+| Habitaciones (`total_habitaciones`) | log(1 + x); los faltantes (0,11 %) toman la mediana de su posición |
+| Baños (`total_banios`) | log(1 + x); los faltantes (0,01 %) toman la mediana de su posición |
+| Área del terreno (`area_catastral_terreno`) | log(1 + x); en propiedad horizontal es la parte del lote |
+| VIS o VIP (`tipo_vivienda`) | binaria: 1 si es vivienda de interés social o prioritario; 0 si no es VIS o dice «No aplica» (79 %) |
+
+**Variables que no se agregan.** La destinación económica (100 % habitacional) y el tipo de planta (100 % «Piso»)
+son constantes; la altura de piso vale 3,0 m en el 99,7 % de las viviendas y la regla del 99 % la quitaría; la
+ubicación (coordenadas y distancia al centro) queda fuera por decisión de la usuaria, porque el arquetipo describe la
+vivienda y no su lugar (AJ10).
+
+**Procedimiento.** Idéntico al de la versión 2 con las Notas 3 y 4: la misma submuestra (semilla 42), DBSCAN
+recalculado con las nuevas variables, los dos diseños, la frontera óptima, la estabilidad de Jaccard en 100
+submuestras y la regla del 99 % para descartar variables casi constantes en cada estrato. La regla del Paso 4 (plano o
+anidado) se aplica a cada conjunto de variables por separado.
+
+**Elección entre las dos soluciones.** Para cada medida de carga se aplica la Nota 4 dentro de cada conjunto de
+variables y luego la misma regla entre los dos finalistas: si solo uno es estable, ese; si los dos lo son, el de mayor
+R² de la carga; si quedan a menos de 0,02, el de menos grupos; si tienen los mismos, el de seis variables (el de la
+propuesta); y si aún empatan, el de mayor silueta.
+
+**Consecuencias.** Si gana la variante ampliada en alguna medida, para esa medida se repiten los Pasos 5 a 7
+(clasificador, priors, sensibilidad, validación y fichas) y el clasificador usa también las variables agregadas. Si
+gana la de seis variables, los resultados no cambian y la variante se reporta como análisis complementario A9.

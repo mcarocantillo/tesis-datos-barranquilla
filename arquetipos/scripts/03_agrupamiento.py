@@ -1,7 +1,8 @@
 """Pasos 2 a 4: agrupamiento, número de arquetipos, estabilidad y diseño plano frente a anidado.
 
 Sigue la versión 2 del preregistro (Sección 7). Con --prueba corre una submuestra del 10 % y 5 submuestras de
-Jaccard, solo para revisar que el código funciona; sus salidas llevan el sufijo «_prueba».
+Jaccard, solo para revisar que el código funciona; sus salidas llevan el sufijo «_prueba». Con --ampliada usa las
+variables de la Nota 8 (habitaciones, baños, área del terreno y VIS o VIP) y sus salidas llevan el sufijo «_ampliada».
 
 Salidas (salidas/tablas, prefijo «agr_»):
   agr_muestra.csv              edificios de la submuestra por posición, tipo y bloque
@@ -27,7 +28,7 @@ from matplotlib.ticker import FuncFormatter
 from sklearn.metrics import calinski_harabasz_score, davies_bouldin_score, silhouette_score
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from src.agrupamiento import (A, ALGORITMOS, Estrato, Modelo, atipicos, elegir_k, frontera, jaccard, preparar,
+from src.agrupamiento import (A, ALGORITMOS, Estrato, Modelo, atipicos, elegir_k, fijar_variables, frontera, jaccard, preparar,
                               submuestra, suma_cuadrados)
 from src.carga import eta2_estrato
 from src.comun import DECISION, EPOCAS, FIGURAS, INTERNOS, SEMILLA, TABLAS, asignar_epoca_faltante, cargar_viviendas
@@ -188,8 +189,10 @@ def perfil(diseno, m, alg, k_sel, jac, v, estrato, etiquetas, cargas):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prueba", action="store_true")
+    ap.add_argument("--ampliada", action="store_true", help="variante con las variables de la Nota 8")
     args = ap.parse_args()
-    suf = "_prueba" if args.prueba else ""
+    suf = ("_ampliada" if args.ampliada else "") + ("_prueba" if args.prueba else "")
+    fijar_variables("ampliada" if args.ampliada else "base")
     n_jaccard = 5 if args.prueba else A["jaccard"]["submuestras"]
     if args.prueba:
         A["submuestra"]["tamano"] = {p: n // 10 for p, n in A["submuestra"]["tamano"].items()}
