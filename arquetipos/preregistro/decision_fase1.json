@@ -177,5 +177,10 @@
     "representatividad": ["viviendas por estrato", "fraccion de casas por bloque (y variante con primeros pisos de baja altura)", "habitaciones"],
     "sensibilidad": {"variables": ["log_area", "log_plantas", "log_piso", "epoca_ord", "tipo_bin", "ph"], "mismo_k": true, "atipicos": "recalculados sin la variable", "rand_min": 0.8, "caida_R2": 0.02}
   },
+  "nota9": {"fecha": "2026-11-03", "aprobada": "por la usuaria el 3-nov-2026 (ajustes AJ20 a AJ23)",
+    "referencia_R2": "particion por posicion y bloque de estratos (un grupo por estrato del diseno anidado)",
+    "incertidumbre_asignacion": {"submuestras": "las del analisis de estabilidad (agrupamiento_v2.jaccard, semilla 42 + b)", "estratos": "los de mas de un grupo en la solucion final", "emparejamiento": "metodo hungaro sobre los puntos de ajuste en comun", "probabilidad": "fraccion de submuestras en que la vivienda cae en cada arquetipo", "umbral_reporte": 0.8, "reemplaza": "las probabilidades del clasificador del Paso 5"},
+    "morris_fase2": {"puente_casas_max": {"1-2": 0.44, "3-4": 0.31, "5-6": 0.0}, "puente_casas": "fraccion de casas del catastro con los materiales de los apartamentos de la ECV, uniforme entre 0 y el maximo", "olas_ecv": ["solo_2024", "2019_y_2024 (A7)"]}
+  },
   "complementarios": ["A1 silueta, CH, DB", "A2 arbol de regresion con k hojas", "A3 R2 con carga por m2", "A4 sensibilidad f_v y n", "A5 sin excluir atipicos de DBSCAN", "A6 resultado con la regla 7.7 y Rand ajustado frente a la nota 4", "A7 priors de materiales con la otra opcion de olas", "A8 techo con las reglas originales de la seccion 9.3", "A9 variante ampliada del agrupamiento si no gana"]
 }

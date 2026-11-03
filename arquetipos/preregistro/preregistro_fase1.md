@@ -694,3 +694,42 @@ propuesta); y si aún empatan, el de mayor silueta.
 **Consecuencias.** Si gana la variante ampliada en alguna medida, para esa medida se repiten los Pasos 5 a 7
 (clasificador, priors, sensibilidad, validación y fichas) y el clasificador usa también las variables agregadas. Si
 gana la de seis variables, los resultados no cambian y la variante se reporta como análisis complementario A9.
+
+## Nota 9 (3-nov-2026): referencia del R², incertidumbre de la asignación y dos factores de sensibilidad
+
+**Estado.** Aprobada por la usuaria el 3-nov-2026, antes de correr nada con estas reglas (ajustes AJ20 a AJ23).
+
+**Cuándo y por qué.** Escrita después de una revisión metodológica de la Fase 1 completa, con todos sus resultados a la
+vista. No cambia ninguna elección ya hecha (algoritmo, número de grupos, diseño ni priors principales): agrega una
+referencia al reporte del R², reemplaza la incertidumbre de la asignación y define dos factores para la sensibilidad de
+la Fase 2.
+
+**1. Referencia del R² (AJ20).** Cada R² de una solución se reporta junto al de la partición por posición y bloque de
+estratos (un solo grupo por estrato del diseño anidado), y la ganancia del agrupamiento se describe como la diferencia
+entre los dos. La carga del Paso 3 depende solo del área, los pisos de la unidad, la altura y la posición, de modo que
+los arquetipos se describen como clases geométricas.
+
+**2. Incertidumbre de la asignación (AJ21).** Para cada solución final y cada estrato con más de un grupo:
+
+- se usan las mismas 100 submuestras del 80 % de los puntos de ajuste del análisis de estabilidad (semilla 42 + b);
+- en cada una se reajusta el algoritmo final con el mismo número de grupos y se asignan todas las viviendas del estrato
+  con la misma regla (centroide, prototipo o medoide más cercano);
+- los grupos de cada reajuste se emparejan con los arquetipos finales por el método húngaro, sobre la tabla de
+  coincidencias de los puntos de ajuste que comparten;
+- la probabilidad de que una vivienda pertenezca a un arquetipo es la fracción de las 100 submuestras en que cae en él.
+
+En los estratos con un solo grupo la probabilidad es 1. Se reportan, por arquetipo, la probabilidad media de pertenecer
+a su propio arquetipo y la fracción de viviendas con menos de 0,8. Las probabilidades de cada vivienda quedan en
+`datos_internos/` y no se publican. Las probabilidades del clasificador del Paso 5 dejan de usarse como incertidumbre, y
+el árbol se reporta con su fidelidad a la regla de asignación.
+
+**3. Factores de la sensibilidad de Morris de la Fase 2 (AJ22 y AJ23).**
+
+- **Puente de las casas:** fracción f de las casas del catastro que toma los materiales de los apartamentos de la ECV de
+  su bloque, uniforme entre 0 y 1 − (fracción de casas en la ECV) / (fracción de casas en el catastro): 0,44 en los
+  estratos 1-2, 0,31 en los 3-4 y 0 en los 5-6.
+- **Olas de la ECV:** dos niveles, solo la ola 2024 (prior principal) o 2019 y 2024 juntas (análisis A7).
+
+**Consecuencias.** El script `10_incertidumbre_asignacion.py` calcula la incertidumbre de la asignación (punto 2), y
+con ella se actualizan las fichas, la página del libro y la copia resaltada de la propuesta. Los factores del punto 3 se
+usan cuando exista el modelo de la Fase 2.

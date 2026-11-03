@@ -1,0 +1,23 @@
+{
+  "por_vivienda casa|1-2": {
+    "algoritmo": "kprototypes",
+    "k": 4,
+    "submuestras": 100,
+    "reproduce_solucion_final": 1.0,
+    "segundos": 818
+  },
+  "por_vivienda casa|3-4": {
+    "algoritmo": "kprototypes",
+    "k": 6,
+    "submuestras": 100,
+    "reproduce_solucion_final": 1.0,
+    "segundos": 348
+  },
+  "por_m2 casa|1-2": {
+    "algoritmo": "kmeans",
+    "k": 2,
+    "submuestras": 100,
+    "reproduce_solucion_final": 1.0,
+    "segundos": 11
+  }
+}

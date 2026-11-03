@@ -1,6 +1,6 @@
 """Paso 7: atributos del hogar, representatividad frente a la ECV y fichas de los arquetipos (preregistro, v5).
 
-Necesita las salidas de los scripts 02 a 08. Solo escribe agregados.
+Necesita las salidas de los scripts 02 a 08 y 10 (incertidumbre de la asignación, Nota 9). Solo escribe agregados.
 
 Salidas (salidas/tablas, salvo las fichas):
   hog_ecv_por_estrato.csv          cuartos, dormitorios, personas y tenencia de equipos por estrato (ECV 2024)
@@ -222,7 +222,7 @@ def fichas(sol, v, arq_v, hog_arq, hab_val, rep, sens):
     final = json.loads((TABLAS / "agr_resultado_final.json").read_text(encoding="utf-8"))[sol]
     reglas = reglas_arbol(sol)
     recall = pd.read_csv(TABLAS / f"clf_recall_{sol}.csv", index_col=0)
-    prob = pd.read_csv(TABLAS / f"clf_probabilidades_{sol}.csv").set_index("arquetipo")
+    prob = pd.read_csv(TABLAS / f"asg_incertidumbre_{sol}.csv").set_index("arquetipo")  # Nota 9, script 10
     env = pd.read_csv(TABLAS / f"env_priors_{sol}.csv")
     diri = pd.read_csv(TABLAS / "env_dirichlet_celdas.csv")
     diri = diri[(diri["alternativa"] == "usada") & (diri["variable"] == "techo")].drop_duplicates(["tipo", "bloque"])
@@ -295,10 +295,13 @@ def fichas(sol, v, arq_v, hog_arq, hab_val, rep, sens):
         md += [f"| Hogares con {ETIQUETA_EQUIPO[eq]} | {pct(hg.loc[eq, 'valor'], 0)} (± {f(100 * Z * hg.loc[eq, 'ee'], 0)} puntos) |"
                for eq in EQUIPOS]
         rec = recall.loc[nombre] if nombre in recall.index else None
-        md += ["", f"**Calidad.** Estabilidad (Jaccard): {f(a['jaccard'], 2)}. Recall en la prueba: árbol "
-                   f"{f(rec['arbol'], 3) if rec is not None else '–'}, Random Forest {f(rec['bosque'], 3) if rec is not None else '–'}. "
-                   f"Probabilidad media de asignación: {f(prob.loc[nombre, 'probabilidad_media'], 3)} "
-                   f"({pct(prob.loc[nombre, 'frac_menor_0_8'], 1)} de las viviendas por debajo de 0,8).", ""]
+        otro = prob.loc[nombre, "se_confunde_con"]
+        md += ["", f"**Calidad.** Estabilidad (Jaccard): {f(a['jaccard'], 2)}. Fidelidad a la regla de asignación "
+                   f"(recall en la prueba): árbol {f(rec['arbol'], 3) if rec is not None else '–'}, Random Forest "
+                   f"{f(rec['bosque'], 3) if rec is not None else '–'}. Probabilidad media de pertenecer a este arquetipo "
+                   f"al repetir el agrupamiento en las submuestras de estabilidad: {f(prob.loc[nombre, 'probabilidad_media'], 3)} "
+                   f"({pct(prob.loc[nombre, 'frac_menor_0_8'], 1)} de las viviendas por debajo de 0,8"
+                   + (f"; se confunde sobre todo con {otro}" if isinstance(otro, str) and otro else "") + ").", ""]
 
         lim = []
         if hermanos:
@@ -320,7 +323,12 @@ def fichas(sol, v, arq_v, hog_arq, hab_val, rep, sens):
                        "los apartamentos de la ECV (Nota 5).")
         if bloque in casas_fuera:
             lim.append(f"La fracción de casas del catastro en los estratos {bloque} queda fuera del intervalo de la "
-                       "ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.")
+                       "ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la "
+                       "sensibilidad de la Fase 2 lo trata como un factor (AJ22).")
+        if prob.loc[nombre, "probabilidad_media"] < DECISION["nota9"]["incertidumbre_asignacion"]["umbral_reporte"]:
+            lim.append(f"Es inestable: al repetir el agrupamiento en las submuestras, sus viviendas caen en él en promedio "
+                       f"el {pct(prob.loc[nombre, 'probabilidad_media'], 0)} de las veces y si no, sobre todo en "
+                       f"{otro}. La Fase 2 sortea el arquetipo de cada vivienda con esas probabilidades.")
         fuera = [e for e in e_pct if e in fuera_hab and e_pct[e] >= 5]
         if fuera:
             lim.append("Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos "

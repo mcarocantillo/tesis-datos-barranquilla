@@ -65,13 +65,13 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 73 % (± 6 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 1 % (± 1 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 0,98. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,98. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,996 (0,0 % de las viviendas por debajo de 0,8; se confunde sobre todo con C12-2).
 
 **Limitaciones.**
 
 - Comparte con C12-2, C12-3, C12-4 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
 - Alguna regla del árbol admite el bloque 5-6, donde el arquetipo no tiene viviendas; el árbol los junta porque casi no hay viviendas así en esos estratos. El arquetipo se define por su bloque.
-- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 1, 2 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -138,13 +138,13 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 75 % (± 6 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 1 % (± 1 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 0,97. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,97. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,985 (2,3 % de las viviendas por debajo de 0,8; se confunde sobre todo con C12-1).
 
 **Limitaciones.**
 
 - Comparte con C12-1, C12-3, C12-4 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
 - Alguna regla del árbol admite el bloque 5-6, donde el arquetipo no tiene viviendas; el árbol los junta porque casi no hay viviendas así en esos estratos. El arquetipo se define por su bloque.
-- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 1, 2 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -211,13 +211,13 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 76 % (± 5 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 1 % (± 1 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 0,999 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 
 **Limitaciones.**
 
 - Comparte con C12-1, C12-2, C12-4 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
 - Alguna regla del árbol admite el bloque 5-6, donde el arquetipo no tiene viviendas; el árbol los junta porque casi no hay viviendas así en esos estratos. El arquetipo se define por su bloque.
-- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 1, 2 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -284,12 +284,12 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 75 % (± 5 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 1 % (± 1 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 0,98. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,98. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,981 (2,4 % de las viviendas por debajo de 0,8; se confunde sobre todo con C12-2).
 
 **Limitaciones.**
 
 - Comparte con C12-1, C12-2, C12-3 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
-- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 1, 2 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -356,13 +356,13 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 93 % (± 5 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 4 % (± 4 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 0,91. Recall en la prueba: árbol 0,939, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,1 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,91. Fidelidad a la regla de asignación (recall en la prueba): árbol 0,939, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,939 (8,3 % de las viviendas por debajo de 0,8; se confunde sobre todo con C34-2).
 
 **Limitaciones.**
 
 - Comparte con C34-2, C34-3, C34-4, C34-5, C34-6 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
 - Alguna regla del árbol admite el bloque 5-6, donde el arquetipo no tiene viviendas; el árbol los junta porque casi no hay viviendas así en esos estratos. El arquetipo se define por su bloque.
-- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 3, 4 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -429,13 +429,13 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 93 % (± 5 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 4 % (± 4 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 0,82. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,1 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,82. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,857 (25,4 % de las viviendas por debajo de 0,8; se confunde sobre todo con C34-6).
 
 **Limitaciones.**
 
 - Comparte con C34-1, C34-3, C34-4, C34-5, C34-6 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
 - Alguna regla del árbol admite el bloque 5-6, donde el arquetipo no tiene viviendas; el árbol los junta porque casi no hay viviendas así en esos estratos. El arquetipo se define por su bloque.
-- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 3, 4 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -502,13 +502,13 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 94 % (± 4 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 4 % (± 3 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 0,84. Recall en la prueba: árbol 0,988, Random Forest 0,999. Probabilidad media de asignación: 0,998 (0,2 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,84. Fidelidad a la regla de asignación (recall en la prueba): árbol 0,988, Random Forest 0,999. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,989 (2,8 % de las viviendas por debajo de 0,8; se confunde sobre todo con C34-6).
 
 **Limitaciones.**
 
 - Comparte con C34-1, C34-2, C34-4, C34-5, C34-6 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
 - Alguna regla del árbol admite el bloque 5-6, donde el arquetipo no tiene viviendas; el árbol los junta porque casi no hay viviendas así en esos estratos. El arquetipo se define por su bloque.
-- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 3, 4 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -574,13 +574,13 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 93 % (± 4 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 4 % (± 3 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 0,83. Recall en la prueba: árbol 0,999, Random Forest 0,999. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,83. Fidelidad a la regla de asignación (recall en la prueba): árbol 0,999, Random Forest 0,999. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,849 (41,5 % de las viviendas por debajo de 0,8; se confunde sobre todo con C34-6).
 
 **Limitaciones.**
 
 - Comparte con C34-1, C34-2, C34-3, C34-5, C34-6 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
 - Alguna regla del árbol admite el bloque 5-6, donde el arquetipo no tiene viviendas; el árbol los junta porque casi no hay viviendas así en esos estratos. El arquetipo se define por su bloque.
-- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 3, 4 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -644,12 +644,12 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 94 % (± 4 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 4 % (± 3 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 0,91. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,91. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,958 (7,2 % de las viviendas por debajo de 0,8; se confunde sobre todo con C34-6).
 
 **Limitaciones.**
 
 - Comparte con C34-1, C34-2, C34-3, C34-4, C34-6 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
-- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 3, 4 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -716,12 +716,13 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 94 % (± 4 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 4 % (± 3 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 0,76. Recall en la prueba: árbol 0,991, Random Forest 0,996. Probabilidad media de asignación: 0,995 (0,5 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,76. Fidelidad a la regla de asignación (recall en la prueba): árbol 0,991, Random Forest 0,996. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,643 (100,0 % de las viviendas por debajo de 0,8; se confunde sobre todo con C34-3).
 
 **Limitaciones.**
 
 - Comparte con C34-1, C34-2, C34-3, C34-4, C34-5 el prior de materiales de la ECV, que no distingue tamaño ni época dentro de la misma posición y bloque; los atributos del hogar solo cambian por la composición de estratos.
-- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
+- Es inestable: al repetir el agrupamiento en las submuestras, sus viviendas caen en él en promedio el 64 % de las veces y si no, sobre todo en C34-3. La Fase 2 sortea el arquetipo de cada vivienda con esas probabilidades.
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 3, 4 (fuera del intervalo del 95 %).
 - Su frontera con los demás grupos del estrato depende de: área (Sección 10.4).
 
@@ -787,7 +788,7 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 96 % (± 6 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 27 % (± 11 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Recall en la prueba: árbol 0,900, Random Forest 1,000. Probabilidad media de asignación: 0,998 (0,2 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 0,900, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 
 **Limitaciones.**
 
@@ -850,11 +851,11 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 72 % (± 7 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 0 % (± 1 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 
 **Limitaciones.**
 
-- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 1, 2 (fuera del intervalo del 95 %).
 - Lo definen la posición y el bloque de estratos; no depende de las variables de agrupamiento.
 
@@ -913,11 +914,11 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 95 % (± 4 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 4 % (± 3 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 
 **Limitaciones.**
 
-- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 3, 4 (fuera del intervalo del 95 %).
 - Lo definen la posición y el bloque de estratos; no depende de las variables de agrupamiento.
 
@@ -976,7 +977,7 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 97 % (± 4 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 35 % (± 13 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 
 **Limitaciones.**
 
@@ -1046,12 +1047,12 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 74 % (± 6 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 1 % (± 1 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Recall en la prueba: árbol 0,997, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 0,997, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 
 **Limitaciones.**
 
 - Techo: concreto en los multifamiliares (supuesto S6) y, en los de baja altura, el reparto de los apartamentos de la ECV (Nota 5).
-- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 1-2 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 1, 2 (fuera del intervalo del 95 %).
 - Lo definen la posición y el bloque de estratos; no depende de las variables de agrupamiento.
 
@@ -1117,12 +1118,12 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 94 % (± 4 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 4 % (± 3 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 
 **Limitaciones.**
 
 - Techo: concreto en los multifamiliares (supuesto S6) y, en los de baja altura, el reparto de los apartamentos de la ECV (Nota 5).
-- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado.
+- La fracción de casas del catastro en los estratos 3-4 queda fuera del intervalo de la ECV, así que el puente entre la posición y el tipo de vivienda de la ECV es aproximado; la sensibilidad de la Fase 2 lo trata como un factor (AJ22).
 - Las habitaciones del catastro difieren de los dormitorios de la ECV en los estratos 3, 4 (fuera del intervalo del 95 %).
 - Lo definen la posición y el bloque de estratos; no depende de las variables de agrupamiento.
 
@@ -1188,7 +1189,7 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 96 % (± 5 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 30 % (± 12 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Recall en la prueba: árbol 1,000, Random Forest 1,000. Probabilidad media de asignación: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 
 **Limitaciones.**
 
