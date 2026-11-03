@@ -451,7 +451,7 @@
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-compuerta-franjas">
-<caption><span class="caption-number">Tabla 22 </span><span class="caption-text">Respuesta de la demanda al índice de calor diario por franja horaria, 2021–2025 (% de la demanda por °C).</span><a class="headerlink" href="#tab-compuerta-franjas" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 23 </span><span class="caption-text">Respuesta de la demanda al índice de calor diario por franja horaria, 2021–2025 (% de la demanda por °C).</span><a class="headerlink" href="#tab-compuerta-franjas" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Franja</p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(b\)</span></p></th>
@@ -488,9 +488,9 @@
 </tbody>
 </table>
 </div>
-<p>Un grado más de HI diario sube la demanda entre 1,8 % y 2,1 % en todas las franjas (<a class="reference internal" href="#tab-compuerta-franjas"><span class="std std-numref">Tabla 22</span></a>). La respuesta nocturna es distinta de cero: las 8 horas de 22 a 5 h tienen el intervalo por encima de cero, y la franja también en cada año. El perfil es casi plano. <span class="math notranslate nohighlight">\(b_h\)</span> va de 1,65 a las 6 h a 2,22 a las 14 h. Expresada en MWh/°C, la noche recibe entre 31 % y 34 % de la respuesta diaria según el año, casi lo mismo que un reparto uniforme de 8 de 24 horas (33 %). En domingos y festivos aumenta la respuesta diurna, no la nocturna.</p>
+<p>Un grado más de HI diario sube la demanda entre 1,8 % y 2,1 % en todas las franjas (<a class="reference internal" href="#tab-compuerta-franjas"><span class="std std-numref">Tabla 23</span></a>). La respuesta nocturna es distinta de cero: las 8 horas de 22 a 5 h tienen el intervalo por encima de cero, y la franja también en cada año. El perfil es casi plano. <span class="math notranslate nohighlight">\(b_h\)</span> va de 1,65 a las 6 h a 2,22 a las 14 h. Expresada en MWh/°C, la noche recibe entre 31 % y 34 % de la respuesta diaria según el año, casi lo mismo que un reparto uniforme de 8 de 24 horas (33 %). En domingos y festivos aumenta la respuesta diurna, no la nocturna.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-compuerta-anios">
-<caption><span class="caption-number">Tabla 23 </span><span class="caption-text">Respuesta nocturna por año, 2021–2025.</span><a class="headerlink" href="#tab-compuerta-anios" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 24 </span><span class="caption-text">Respuesta nocturna por año, 2021–2025.</span><a class="headerlink" href="#tab-compuerta-anios" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Año</p></th>
 <th class="head"><p>Días</p></th>
@@ -544,7 +544,7 @@
 <h2>Estabilidad entre años y decisión<a class="headerlink" href="#estabilidad-entre-anos-y-decision" title="Link to this heading">#</a></h2>
 <p>La regla de la compuerta tiene dos criterios:</p>
 <ol class="arabic simple">
-<li><p><strong>La respuesta nocturna es distinta de cero.</strong> La franja de 22 a 5 h tiene <span class="math notranslate nohighlight">\(b &gt; 0\)</span> con el IC 95 % sobre cero, y al menos 6 de las 8 horas nocturnas también. Se cumple: las 8 horas y los 5 años (<a class="reference internal" href="#tab-compuerta-anios"><span class="std std-numref">Tabla 23</span></a>).</p></li>
+<li><p><strong>La respuesta nocturna es distinta de cero.</strong> La franja de 22 a 5 h tiene <span class="math notranslate nohighlight">\(b &gt; 0\)</span> con el IC 95 % sobre cero, y al menos 6 de las 8 horas nocturnas también. Se cumple: las 8 horas y los 5 años (<a class="reference internal" href="#tab-compuerta-anios"><span class="std std-numref">Tabla 24</span></a>).</p></li>
 <li><p><strong>La respuesta nocturna es estable entre años</strong>, en nivel y en forma. El <em>nivel</em> nocturno es significativo en al menos 4 de los 5 años y no difiere entre años (prueba de Wald con errores HAC). Se cumple: <span class="math notranslate nohighlight">\(p = 0{,}35\)</span>. La <em>forma</em> nocturna centrada (<span class="math notranslate nohighlight">\(b_h\)</span> menos la media nocturna del año) no difiere entre años (prueba de Wald conjunta con errores agrupados por semana). <strong>No se cumple.</strong></p></li>
 </ol>
 <p>La forma nocturna existe (<span class="math notranslate nohighlight">\(p &lt; 10^{-17}\)</span>, con una amplitud de 0,39 puntos entre la hora de mayor y la de menor respuesta), pero cambia entre años (<span class="math notranslate nohighlight">\(p = 0{,}008\)</span>; 28 grados de libertad, 262 semanas). La señal del encendido nocturno, el exceso de las 22 y 23 h sobre la media de la noche, va de −0,13 puntos en 2023 a +0,45 puntos en 2022: la forma cambia entre años tanto como su propia amplitud. La inestabilidad se mantiene al tomar la noche contigua, de 22 h a 5 h del día siguiente (<span class="math notranslate nohighlight">\(p = 0{,}0001\)</span>), y con la demanda de Electricaribe de 2015–2019 (<span class="math notranslate nohighlight">\(p = 0{,}0001\)</span>). Una primera versión de la regla, basada en la correlación entre el perfil de cada año y el conjunto, resultó inestable con perfiles tan planos (mínima de −0,04 en 2023) y también daba capa C.</p>
@@ -563,7 +563,7 @@
 <h2>Cautelas<a class="headerlink" href="#cautelas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>XM no es demanda residencial.</strong> El mercado de Air-e mezcla usuarios residenciales, comerciales y oficiales de tres departamentos, y se usa el clima de Barranquilla como referencia de todos. Una respuesta nocturna positiva es compatible con el uso residencial del A/C, pero no lo prueba.</p></li>
-<li><p><strong>El nivel de <span class="math notranslate nohighlight">\(b\)</span> depende de la fuente del HI.</strong> Con el HI de IDEAM (654 días con datos suficientes) la respuesta nocturna baja a 0,94 %/°C. ERA5-Land subestima el HI de mediodía (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 35</span></a>), y el HI de IDEAM tiene más ruido de medida y menos días.</p></li>
+<li><p><strong>El nivel de <span class="math notranslate nohighlight">\(b\)</span> depende de la fuente del HI.</strong> Con el HI de IDEAM (654 días con datos suficientes) la respuesta nocturna baja a 0,94 %/°C. ERA5-Land subestima el HI de mediodía (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 36</span></a>), y el HI de IDEAM tiene más ruido de medida y menos días.</p></li>
 <li><p><strong>Clima provisional.</strong> ERA5-Land viene de la copia de Open-Meteo. Cuando se descargue el archivo del Climate Data Store hay que repetir el procesamiento del clima y la estimación (<code class="docutils literal notranslate"><span class="pre">01_clima.py</span> <span class="pre">procesar</span></code> y <code class="docutils literal notranslate"><span class="pre">03_estimar.py</span></code>).</p></li>
 <li><p><strong>La regla es de este ejercicio.</strong> Los umbrales (6 de 8 horas, 4 de 5 años, <span class="math notranslate nohighlight">\(p &gt; 0{,}05\)</span>) se fijaron para esta prueba; no provienen de una norma.</p></li>
 </ul>

@@ -9,7 +9,9 @@ el método y los resultados; el código, el preregistro, las tablas completas y 
 :::{note}
 **Estado (2 de noviembre de 2026).** Los siete pasos están hechos con las dos medidas de carga del Paso 3: por
 vivienda, como está escrito en la propuesta (17 arquetipos), y por m² (10 arquetipos). La elección entre las dos está
-pendiente; mientras tanto aplica la carga por vivienda. Todos los productos existen para las dos soluciones.
+pendiente; mientras tanto aplica la carga por vivienda. Todos los productos existen para las dos soluciones. Una
+variante del agrupamiento con cuatro variables más del catastro explica menos varianza de la carga en las dos medidas
+y queda como análisis complementario ({numref}`tab-arq-ampliada`).
 :::
 
 ## Datos y variables
@@ -151,6 +153,35 @@ tienen más del doble de carga por m² que las que tienen otra vivienda encima.
 | U34-1 | Último piso | 3-4 | 14.105 (4,2 %) | 81 (62–112) | 1 | 39,9 |
 | U56-1 | Último piso | 5-6 | 3.800 (1,1 %) | 126 (94–194) | 1 | 59,2 |
 :::
+
+### Variante con más variables del catastro
+
+Además de las seis variables de la propuesta, el catastro trae el número de habitaciones y de baños, el área del
+terreno y la condición de vivienda de interés social o prioritario. Se repitió el agrupamiento completo con esas cuatro
+variables agregadas (las tres primeras en logaritmo), con la misma submuestra y las mismas reglas. La regla que
+descarta las variables casi constantes deja la condición de VIS o VIP solo en las viviendas sin cubierta y de último
+piso de los estratos 1 y 2: en los demás estratos, menos del 1 % de los edificios de la submuestra son VIS o VIP. La destinación y el
+tipo de planta son constantes, la altura de piso vale 3,0 m en el 99,7 % de las viviendas, y la ubicación queda fuera
+porque el arquetipo describe la vivienda y no su lugar. La regla para elegir entre las dos variantes se fijó antes de
+correr la nueva: entre las soluciones estables, la de mayor R² de la carga; con un empate de menos de 0,02, la de menos
+grupos.
+
+:::{table} Soluciones con seis variables (las finales) y con diez, en el diseño anidado. Grupos de casas: número de arquetipos de casa en los bloques 1-2, 3-4 y 5-6. La silueta no está definida cuando cada posición y bloque queda en un solo grupo. Concordancia: índice de Rand ajustado entre las dos asignaciones, sobre todas las viviendas.
+:name: tab-arq-ampliada
+
+| Carga | Variables | Algoritmo | Arquetipos | Grupos de casas | R² | Jaccard ponderado | Silueta | Concordancia |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Por vivienda | Seis (final) | k-prototypes | 17 | 4, 6 y 1 | 0,66 | 0,97 | 0,18 | |
+| Por vivienda | Diez | K-Means | 12 | 2, 2 y 2 | 0,53 | 0,98 | 0,24 | 0,67 |
+| Por m² | Seis (final) | K-Means | 10 | 2, 1 y 1 | 0,93 | 1,00 | 0,55 | |
+| Por m² | Diez | K-Means | 9 | 1, 1 y 1 | 0,91 | 1,00 | no definida | 0,94 |
+:::
+
+Las dos variantes son estables y la de seis variables explica más varianza en las dos medidas, así que sigue siendo
+la solución final y los arquetipos no cambian. La carga del Paso 3 depende solo de la geometría (área y pisos) y de la
+posición, y las variables agregadas no entran en ella. Con diez variables la distancia reparte su peso entre ellas:
+por vivienda, las casas de cada bloque se dividen solo en pequeñas y grandes, y ningún grupo adicional sube el R² en
+0,02; por m², las casas de los estratos 1 y 2 de dos pisos o más ya no se separan de las de un piso.
 
 ## Priors de envolvente
 

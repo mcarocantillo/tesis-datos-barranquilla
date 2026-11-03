@@ -408,6 +408,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-dos-soluciones">Las dos soluciones</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquetipos-con-la-carga-por-m2">Arquetipos con la carga por m²</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquetipos-con-la-carga-por-vivienda">Arquetipos con la carga por vivienda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variante-con-mas-variables-del-catastro">Variante con más variables del catastro</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priors-de-envolvente">Priors de envolvente</a></li>
@@ -436,7 +437,9 @@ el método y los resultados; el código, el preregistro, las tablas completas y 
 <p class="admonition-title">Nota</p>
 <p><strong>Estado (2 de noviembre de 2026).</strong> Los siete pasos están hechos con las dos medidas de carga del Paso 3: por
 vivienda, como está escrito en la propuesta (17 arquetipos), y por m² (10 arquetipos). La elección entre las dos está
-pendiente; mientras tanto aplica la carga por vivienda. Todos los productos existen para las dos soluciones.</p>
+pendiente; mientras tanto aplica la carga por vivienda. Todos los productos existen para las dos soluciones. Una
+variante del agrupamiento con cuatro variables más del catastro explica menos varianza de la carga en las dos medidas
+y queda como análisis complementario (<a class="reference internal" href="#tab-arq-ampliada"><span class="std std-numref">Tabla 18</span></a>).</p>
 </div>
 <section id="datos-y-variables">
 <h2>Datos y variables<a class="headerlink" href="#datos-y-variables" title="Link to this heading">#</a></h2>
@@ -867,6 +870,81 @@ tienen más del doble de carga por m² que las que tienen otra vivienda encima.<
 </table>
 </div>
 </section>
+<section id="variante-con-mas-variables-del-catastro">
+<h3>Variante con más variables del catastro<a class="headerlink" href="#variante-con-mas-variables-del-catastro" title="Link to this heading">#</a></h3>
+<p>Además de las seis variables de la propuesta, el catastro trae el número de habitaciones y de baños, el área del
+terreno y la condición de vivienda de interés social o prioritario. Se repitió el agrupamiento completo con esas cuatro
+variables agregadas (las tres primeras en logaritmo), con la misma submuestra y las mismas reglas. La regla que
+descarta las variables casi constantes deja la condición de VIS o VIP solo en las viviendas sin cubierta y de último
+piso de los estratos 1 y 2: en los demás estratos, menos del 1 % de los edificios de la submuestra son VIS o VIP. La destinación y el
+tipo de planta son constantes, la altura de piso vale 3,0 m en el 99,7 % de las viviendas, y la ubicación queda fuera
+porque el arquetipo describe la vivienda y no su lugar. La regla para elegir entre las dos variantes se fijó antes de
+correr la nueva: entre las soluciones estables, la de mayor R² de la carga; con un empate de menos de 0,02, la de menos
+grupos.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-arq-ampliada">
+<caption><span class="caption-number">Tabla 18 </span><span class="caption-text">Soluciones con seis variables (las finales) y con diez, en el diseño anidado. Grupos de casas: número de arquetipos de casa en los bloques 1-2, 3-4 y 5-6. La silueta no está definida cuando cada posición y bloque queda en un solo grupo. Concordancia: índice de Rand ajustado entre las dos asignaciones, sobre todas las viviendas.</span><a class="headerlink" href="#tab-arq-ampliada" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Carga</p></th>
+<th class="head"><p>Variables</p></th>
+<th class="head"><p>Algoritmo</p></th>
+<th class="head"><p>Arquetipos</p></th>
+<th class="head"><p>Grupos de casas</p></th>
+<th class="head"><p>R²</p></th>
+<th class="head"><p>Jaccard ponderado</p></th>
+<th class="head"><p>Silueta</p></th>
+<th class="head"><p>Concordancia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Por vivienda</p></td>
+<td><p>Seis (final)</p></td>
+<td><p>k-prototypes</p></td>
+<td><p>17</p></td>
+<td><p>4, 6 y 1</p></td>
+<td><p>0,66</p></td>
+<td><p>0,97</p></td>
+<td><p>0,18</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Por vivienda</p></td>
+<td><p>Diez</p></td>
+<td><p>K-Means</p></td>
+<td><p>12</p></td>
+<td><p>2, 2 y 2</p></td>
+<td><p>0,53</p></td>
+<td><p>0,98</p></td>
+<td><p>0,24</p></td>
+<td><p>0,67</p></td>
+</tr>
+<tr class="row-even"><td><p>Por m²</p></td>
+<td><p>Seis (final)</p></td>
+<td><p>K-Means</p></td>
+<td><p>10</p></td>
+<td><p>2, 1 y 1</p></td>
+<td><p>0,93</p></td>
+<td><p>1,00</p></td>
+<td><p>0,55</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Por m²</p></td>
+<td><p>Diez</p></td>
+<td><p>K-Means</p></td>
+<td><p>9</p></td>
+<td><p>1, 1 y 1</p></td>
+<td><p>0,91</p></td>
+<td><p>1,00</p></td>
+<td><p>no definida</p></td>
+<td><p>0,94</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Las dos variantes son estables y la de seis variables explica más varianza en las dos medidas, así que sigue siendo
+la solución final y los arquetipos no cambian. La carga del Paso 3 depende solo de la geometría (área y pisos) y de la
+posición, y las variables agregadas no entran en ella. Con diez variables la distancia reparte su peso entre ellas:
+por vivienda, las casas de cada bloque se dividen solo en pequeñas y grandes, y ningún grupo adicional sube el R² en
+0,02; por m², las casas de los estratos 1 y 2 de dos pisos o más ya no se separan de las de un piso.</p>
+</section>
 </section>
 <section id="priors-de-envolvente">
 <h2>Priors de envolvente<a class="headerlink" href="#priors-de-envolvente" title="Link to this heading">#</a></h2>
@@ -881,7 +959,7 @@ de baja altura, con el reparto de los apartamentos de la ECV.</p>
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-arq-u-techo">
-<caption><span class="caption-number">Tabla 18 </span><span class="caption-text">Transmitancia del techo por material (W/m²K), según la ISO 6946. Moda: flujo de calor hacia abajo y sin cielo raso; mínimo: con cielo raso (techos livianos) o losa gruesa; máximo: flujo hacia arriba.</span><a class="headerlink" href="#tab-arq-u-techo" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 19 </span><span class="caption-text">Transmitancia del techo por material (W/m²K), según la ISO 6946. Moda: flujo de calor hacia abajo y sin cielo raso; mínimo: con cielo raso (techos livianos) o losa gruesa; máximo: flujo hacia arriba.</span><a class="headerlink" href="#tab-arq-u-techo" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Techo</p></th>
 <th class="head"><p>Mínimo</p></th>
@@ -1043,6 +1121,7 @@ asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publ
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-dos-soluciones">Las dos soluciones</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquetipos-con-la-carga-por-m2">Arquetipos con la carga por m²</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquetipos-con-la-carga-por-vivienda">Arquetipos con la carga por vivienda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variante-con-mas-variables-del-catastro">Variante con más variables del catastro</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priors-de-envolvente">Priors de envolvente</a></li>
