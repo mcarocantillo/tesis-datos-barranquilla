@@ -429,8 +429,9 @@
   <section class="tex2jax_ignore mathjax_ignore" id="arquetipos-de-vivienda-fase-1">
 <h1>Arquetipos de vivienda (Fase 1)<a class="headerlink" href="#arquetipos-de-vivienda-fase-1" title="Link to this heading">#</a></h1>
 <p>La Fase 1 de la tesis caracteriza los arquetipos de vivienda de Barranquilla a partir del catastro y asigna cada una de
-las 332.718 viviendas a un arquetipo <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id24" title="Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 305, 315, 500, 505, 601 y 602). ArcGIS REST, 2026. Consultado: 15 sep. 2026. URL: https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer.">Alcaldía de Barranquilla, Gerencia de Gestión Catastral, 2026</a>)</span>. Cada arquetipo reúne viviendas con rasgos físicos y carga
-de enfriamiento parecidos, y lleva sus priors de envolvente, sus atributos del hogar y su ficha. Este capítulo resume
+las 332.718 viviendas a un arquetipo <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id24" title="Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 305, 315, 500, 505, 601 y 602). ArcGIS REST, 2026. Consultado: 15 sep. 2026. URL: https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer.">Alcaldía de Barranquilla, Gerencia de Gestión Catastral, 2026</a>)</span>. Cada arquetipo reúne viviendas de geometría y posición
+parecidas, y por eso con un índice de carga parecido, y lleva sus priors de envolvente, sus atributos del hogar y su
+ficha. Este capítulo resume
 el método y los resultados; el código, el preregistro, las tablas completas y las fichas están en la carpeta
 <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos"><code class="docutils literal notranslate"><span class="pre">arquetipos/</span></code></a> del repositorio.</p>
 <div class="admonition note">
@@ -478,8 +479,8 @@ carga, porque el techo es la principal ganancia de calor.</p></li>
 <td><p>Anidado si el estrato explica al menos el 6 % de la varianza que queda dentro de los grupos</p></td>
 </tr>
 <tr class="row-odd"><td><p>5. Asignación</p></td>
-<td><p>Árbol de decisión y Random Forest</p></td>
-<td><p>Validación con pliegues espaciales kNNDM y 7 bloques de prueba de 2 km</p></td>
+<td><p>Árbol de decisión y Random Forest que resumen la regla de asignación</p></td>
+<td><p>Fidelidad medida en 7 bloques de prueba de 2 km; la incertidumbre sale de repetir el agrupamiento en 100 submuestras</p></td>
 </tr>
 <tr class="row-even"><td><p>6. Envolvente</p></td>
 <td><p>Materiales de la ECV, transmitancias de la ISO 6946 y valores de CEELA</p></td>
@@ -548,9 +549,9 @@ ventanas cerradas es lognormal <span class="bibtex-citation" id="id12">(<a class
 <td><p>0,18</p></td>
 <td><p>0,55</p></td>
 </tr>
-<tr class="row-odd"><td><p>Árbol de asignación</p></td>
-<td><p>79 reglas; F1 de 0,99 en la prueba</p></td>
-<td><p>10 reglas; F1 de 1,00</p></td>
+<tr class="row-odd"><td><p>Árbol que resume la asignación</p></td>
+<td><p>79 reglas; reproduce el 99,7 % de las asignaciones</p></td>
+<td><p>10 reglas; reproduce el 100 %</p></td>
 </tr>
 <tr class="row-even"><td><p>Qué separa, además de la posición y el bloque</p></td>
 <td><p>las casas de los estratos 1 a 4 por tamaño</p></td>
@@ -559,9 +560,16 @@ ventanas cerradas es lognormal <span class="bibtex-citation" id="id12">(<a class
 </tbody>
 </table>
 </div>
-<p>Como referencia, la tipología por reglas (tipo × posición × época × bloque, 16 tipos) explica 0,41 de la varianza por
-vivienda y 0,91 por m². El estrato explica entre el 12 y el 17 % de la varianza que queda dentro de los grupos del
-diseño plano, por encima del umbral de 6 %, así que en las dos medidas se adoptó el diseño anidado.</p>
+<p>Como referencia, la sola partición por posición y bloque de estratos (9 grupos) explica 0,40 de la varianza por
+vivienda y 0,91 por m², y la tipología por reglas (tipo × posición × época × bloque, 16 tipos), 0,41 y 0,91. El
+agrupamiento suma, entonces, 0,26 por vivienda y 0,02 por m². El estrato explica entre el 12 y el 17 % de la varianza
+que queda dentro de los grupos del diseño plano, por encima del umbral de 6 %, así que en las dos medidas se adoptó el
+diseño anidado.</p>
+<p>La carga del Paso 3 usa la misma envolvente para todas las viviendas, así que solo depende del área, los pisos de la
+unidad, la altura y la posición; la época, el tipo, la propiedad horizontal y el estrato no entran en ella. Por eso el
+R² solo premia las divisiones por tamaño y pisos, y los arquetipos son clases geométricas: la diversidad de la
+envolvente entra por los priors del Paso 6, no por los arquetipos. Del mismo modo, lo que mide el estrato dentro de los
+grupos son diferencias de geometría entre estratos.</p>
 <p>La diferencia entre las dos medidas tiene una causa clara: la varianza de la carga por vivienda la dominan muy pocas
 viviendas grandes (las de 300 m² o más son el 1,8 % de la ciudad y aportan el 37 % de la varianza), y por eso esa
 solución separa sobre todo tamaños. Con la carga por m², los arquetipos quedan definidos por la posición y el bloque.
@@ -921,7 +929,9 @@ grupos.</p>
 la solución final y los arquetipos no cambian. La carga del Paso 3 depende solo de la geometría (área y pisos) y de la
 posición, y las variables agregadas no entran en ella. Con diez variables la distancia reparte su peso entre ellas:
 por vivienda, las casas de cada bloque se dividen solo en pequeñas y grandes, y ningún grupo adicional sube el R² en
-0,02; por m², las casas de los estratos 1 y 2 de dos pisos o más ya no se separan de las de un piso.</p>
+0,02; por m², las casas de los estratos 1 y 2 de dos pisos o más ya no se separan de las de un piso. Con este
+criterio, una variable que no entra en la carga no puede subir el R², así que el resultado no dice si las habitaciones
+o los baños importan para la ocupación o los equipos de la Fase 2.</p>
 </section>
 </section>
 <section id="priors-de-envolvente">
@@ -995,7 +1005,8 @@ y <a class="reference external" href="https://github.com/mcarocantillo/tesis-dat
 <li><p><strong>Viviendas por estrato:</strong> las seis cifras del catastro caen dentro del intervalo de la ECV.</p></li>
 <li><p><strong>Fracción de casas:</strong> el catastro tiene 71 % de casas en los estratos 1 y 2 y la ECV, 40 %; en 3 y 4, 40 % frente a
 27 %. Muchas viviendas que el catastro registra como casa se declaran apartamento en la ECV, así que el puente entre
-la posición y el tipo de vivienda de la ECV es aproximado.</p></li>
+la posición y el tipo de vivienda de la ECV es aproximado. La sensibilidad de la Fase 2 lo trata como un factor: hasta
+el 44 % de las casas de los estratos 1-2 y el 31 % de las de 3-4 pueden tomar los materiales de los apartamentos.</p></li>
 <li><p><strong>Habitaciones:</strong> el catastro da entre 0,5 y 1,1 habitaciones más que los dormitorios de la ECV en todos los estratos.
 Por eso, la fracción climatizada de los apartamentos de 3-4, que según CEELA climatizan «las habitaciones», usa el
 número del catastro llevado a los dormitorios de la ECV.</p></li>
@@ -1003,8 +1014,12 @@ número del catastro llevado a los dormitorios de la ECV.</p></li>
 solución por vivienda (sin ella no se forman los grupos de casas de 3-4), y el número de pisos de la unidad define
 la solución por m². Los arquetipos con un solo grupo en su posición y bloque no dependen de las variables de
 agrupamiento.</p></li>
-<li><p><strong>Asignación:</strong> la probabilidad media de pertenencia a su propio arquetipo es casi 1 en todos, así que la
-incertidumbre de la asignación es despreciable frente a la de los priors.</p></li>
+<li><p><strong>Asignación:</strong> el árbol reproduce la regla de asignación en el 99,7 % de las viviendas en la solución por vivienda y
+en el 100 % en la de por m². No es una prueba de generalización, porque el arquetipo es función de los mismos atributos. La incertidumbre que pasa a
+la Fase 2 sale de repetir el agrupamiento en las 100 submuestras de la prueba de estabilidad. En la solución por m²,
+cada vivienda cae siempre en su arquetipo. En la solución por vivienda, los arquetipos de casas de los estratos 1-2
+quedan por encima de 0,98 y la incertidumbre se concentra en las casas de 3-4: las de C34-6 (casas grandes de dos
+pisos) caen en él el 64 % de las veces y si no, en C34-3, y las de C34-2 y C34-4, el 86 % y el 85 %.</p></li>
 </ul>
 </section>
 <section id="limitaciones">
@@ -1017,12 +1032,18 @@ bloque comparten esos priors.</p></li>
 incierto.</p></li>
 <li><p>No hay mediciones de infiltración ni del color de los techos en Barranquilla; los dos son supuestos con rango.</p></li>
 <li><p>El año de construcción del catastro se usa como época, aunque su significado no está documentado.</p></li>
+<li><p>Usar solo la ola 2024 de la ECV depende de suponer para 2019 un efecto de diseño de 1,5; con el de cada material la
+prueba del techo no rechaza. Con las dos olas, el techo de concreto de las casas de los estratos 1 y 2 baja de 18 % a
+10 %, así que la elección de olas entra como factor en la sensibilidad de la Fase 2.</p></li>
+<li><p>Algunas reglas cambiaron después de ver resultados de prueba o completos (preregistro, Notas 3 a 6). Cada cambio
+está registrado con su motivo, y el resultado con la regla original se reporta aparte: con la regla original de
+elección del algoritmo habría 9 arquetipos por vivienda, con un R² de 0,40.</p></li>
 </ol>
 </section>
 <section id="archivos">
 <h2>Archivos<a class="headerlink" href="#archivos" title="Link to this heading">#</a></h2>
 <p>Todo está en la carpeta <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos"><code class="docutils literal notranslate"><span class="pre">arquetipos/</span></code></a>:
-el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 09, las tablas agregadas, las figuras,
+el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 10, las tablas agregadas, las figuras,
 las fichas de los arquetipos de cada solución (<code class="docutils literal notranslate"><span class="pre">salidas/fichas/</span></code>) y los árboles de asignación (<code class="docutils literal notranslate"><span class="pre">salidas/modelos/</span></code>). La
 asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publican.</p>
 </section>
