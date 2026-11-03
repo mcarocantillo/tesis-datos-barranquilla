@@ -18,3 +18,8 @@ figure img{border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.08);}
 /* leyendas de figuras y tablas */
 .bd-article figcaption, .bd-article table caption{font-size:.92em;color:var(--pst-color-text-muted);}
 .bd-article figcaption .caption-number, .bd-article table caption .caption-number{font-weight:700;font-style:normal;color:var(--pst-color-primary);}
+/* tablas con muchas columnas: letra menor y cifras sin partir */
+.bd-article table.tabla-compacta{font-size:.85em;}
+.bd-article table.tabla-compacta th, .bd-article table.tabla-compacta td{padding:.3em .45em;}
+.bd-article table.tabla-compacta td{white-space:nowrap;}
+.bd-article table.tabla-compacta caption{font-size:1.05em;}
