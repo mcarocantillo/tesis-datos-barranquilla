@@ -1,0 +1,28 @@
+{
+  "arbol": {
+    "profundidad": 9,
+    "hojas": 79,
+    "f1_macro": 0.9909848944302722,
+    "exactitud": 0.996822472944969,
+    "log_loss": 0.014129835128466797,
+    "brier": 0.00453123021527976,
+    "f1_macro_bloques_min": 0.8521754956383653,
+    "f1_macro_bloques_max": 1.0,
+    "concordancia_sin_coordenadas": 0.9992233009708738
+  },
+  "bosque": {
+    "config": "bosque_mf0.5_hoja1",
+    "f1_macro": 0.9997444055871947,
+    "exactitud": 0.9999232481387673,
+    "log_loss": 0.0003010146889415021,
+    "brier": 0.00011117490043578002,
+    "f1_macro_bloques_min": 0.9994601920123696,
+    "f1_macro_bloques_max": 1.0,
+    "concordancia_sin_coordenadas": 1.0
+  },
+  "n": {
+    "entrenamiento": 257273,
+    "prueba": 65145,
+    "sin_coordenadas": 10300
+  }
+}

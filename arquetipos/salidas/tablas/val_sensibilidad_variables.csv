@@ -1,0 +1,15 @@
+﻿solucion,algoritmo,variable_quitada,aplica,atipicos_originales_en,sin_k_grupos_en,estratos_con_varios_grupos,viviendas_en_esos_estratos,R2_final,rand_ajustado,rand_ajustado_en_esos_estratos,R2,delta_R2,influyente
+por_vivienda,kprototypes,ninguna (control),True,,,casa|1-2 (k=4); casa|3-4 (k=6),176836,0.6611,1.0,1.0,0.6611,0.0,False
+por_m2,kmeans,ninguna (control),True,,,casa|1-2 (k=2),128597,0.9275,1.0,1.0,0.9275,0.0,False
+por_vivienda,kprototypes,área,True,"casa, ultimo_piso, sin_cubierta",casa|3-4,casa|1-2 (k=4); casa|3-4 (k=6),176836,0.6611,,,,,True
+por_m2,kmeans,área,True,"casa, ultimo_piso, sin_cubierta",,casa|1-2 (k=2),128597,0.9275,1.0,1.0,0.9275,0.0,False
+por_vivienda,kprototypes,pisos de la unidad,True,,,casa|1-2 (k=4); casa|3-4 (k=6),176836,0.6611,0.8133,0.5659,0.6944,0.0333,False
+por_m2,kmeans,pisos de la unidad,True,,,casa|1-2 (k=2),128597,0.9275,0.7454,-0.0018,0.9055,-0.022,True
+por_vivienda,kprototypes,piso de la unidad,False,,,casa|1-2 (k=4); casa|3-4 (k=6),176836,0.6611,1.0,1.0,0.6611,0.0,False
+por_m2,kmeans,piso de la unidad,False,,,casa|1-2 (k=2),128597,0.9275,1.0,1.0,0.9275,0.0,False
+por_vivienda,kprototypes,época,True,,,casa|1-2 (k=4); casa|3-4 (k=6),176836,0.6611,0.8775,0.7261,0.6757,0.0146,False
+por_m2,kmeans,época,True,,,casa|1-2 (k=2),128597,0.9275,1.0,1.0,0.9275,0.0,False
+por_vivienda,kprototypes,tipo (multifamiliar),False,,,casa|1-2 (k=4); casa|3-4 (k=6),176836,0.6611,1.0,1.0,0.6611,0.0,False
+por_m2,kmeans,tipo (multifamiliar),False,,,casa|1-2 (k=2),128597,0.9275,1.0,1.0,0.9275,0.0,False
+por_vivienda,kprototypes,propiedad horizontal,True,,,casa|1-2 (k=4); casa|3-4 (k=6),176836,0.6611,0.9604,0.9104,0.6663,0.0052,False
+por_m2,kmeans,propiedad horizontal,True,,,casa|1-2 (k=2),128597,0.9275,1.0,1.0,0.9275,0.0,False

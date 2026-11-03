@@ -1,0 +1,22 @@
+﻿elemento,material,parametro,minimo,moda,maximo,comparacion_ceela,fuente
+techo,concreto,U (W/m²K),3.3333333333333335,3.5087719298245617,4.878048780487805,3.6,"ISO 6946:2017 (R_si, R_se y cámaras de aire) y λ de la ISO 10456; cielo raso solo en el mínimo (supuesto)"
+techo,concreto,absortancia solar,0.3,0.85,0.95,,"moda: 1 − reflectancia de CEELA (concreto, asbesto-cemento) o valor del Paso 3; rango: color como supuesto"
+techo,concreto,capacidad (kJ/K por m² de piso),165.0,260.0,370.0,,"ISO 13790, Tabla 12: clase pesada (media a muy pesada); asignación supuesta"
+techo,asbesto_cemento,U (W/m²K),2.074688796680498,4.504504504504504,6.578947368421053,6.6,"ISO 6946:2017 (R_si, R_se y cámaras de aire) y λ de la ISO 10456; cielo raso solo en el mínimo (supuesto)"
+techo,asbesto_cemento,absortancia solar,0.3,0.6,0.95,,"moda: 1 − reflectancia de CEELA (concreto, asbesto-cemento) o valor del Paso 3; rango: color como supuesto"
+techo,asbesto_cemento,capacidad (kJ/K por m² de piso),110.0,165.0,260.0,,"ISO 13790, Tabla 12: clase media (ligera a pesada); asignación supuesta"
+techo,metalica_zinc,U (W/m²K),2.127659574468085,4.761904761904762,7.142857142857142,,"ISO 6946:2017 (R_si, R_se y cámaras de aire) y λ de la ISO 10456; cielo raso solo en el mínimo (supuesto)"
+techo,metalica_zinc,absortancia solar,0.3,0.7,0.95,,"moda: 1 − reflectancia de CEELA (concreto, asbesto-cemento) o valor del Paso 3; rango: color como supuesto"
+techo,metalica_zinc,capacidad (kJ/K por m² de piso),110.0,165.0,260.0,,"ISO 13790, Tabla 12: clase media (ligera a pesada); asignación supuesta"
+techo,otro,U (W/m²K),2.061855670103093,4.444444444444445,6.451612903225807,,"ISO 6946:2017 (R_si, R_se y cámaras de aire) y λ de la ISO 10456; cielo raso solo en el mínimo (supuesto)"
+techo,otro,absortancia solar,0.3,0.7,0.95,,"moda: 1 − reflectancia de CEELA (concreto, asbesto-cemento) o valor del Paso 3; rango: color como supuesto"
+techo,otro,capacidad (kJ/K por m² de piso),110.0,165.0,260.0,,"ISO 13790, Tabla 12: clase media (ligera a pesada); asignación supuesta"
+muro,mamposteria (casa|1-2),U (W/m²K),1.9,2.3,4.1,,"CEELA, edificios representativos de Barranquilla (Caracterización, Tablas 33–37)"
+muro,mamposteria (casa|3-4),U (W/m²K),1.9,2.7,4.1,,"CEELA, edificios representativos de Barranquilla (Caracterización, Tablas 33–37)"
+muro,mamposteria (casa|5-6),U (W/m²K),1.9,2.7,4.1,,"CEELA, edificios representativos de Barranquilla (Caracterización, Tablas 33–37)"
+muro,mamposteria (apartamento|1-2),U (W/m²K),1.9,3.85,4.1,,"CEELA, edificios representativos de Barranquilla (Caracterización, Tablas 33–37)"
+muro,mamposteria (apartamento|3-4),U (W/m²K),1.9,3.0,4.1,,"CEELA, edificios representativos de Barranquilla (Caracterización, Tablas 33–37)"
+muro,mamposteria (apartamento|5-6),U (W/m²K),1.9,3.0,4.1,,"CEELA, edificios representativos de Barranquilla (Caracterización, Tablas 33–37)"
+muro,otro,U (W/m²K),1.5,3.5,5.9,,supuesto; máximo = lámina con R_si horizontal
+muro,todos,absortancia solar,0.44,0.7,0.88,,extremos: superficies claras y oscuras de ASHRAE; moda: valor del Paso 3
+muro,otro,capacidad (kJ/K por m² de piso),80.0,110.0,165.0,,"ISO 13790, Tabla 12: clase ligera (muy ligera a media); asignación supuesta"

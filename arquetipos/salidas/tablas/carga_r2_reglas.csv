@@ -1,0 +1,10 @@
+﻿,base,tamano
+k,16.0,29.0
+R2 carga por vivienda,0.4061,0.6145
+eta2 estrato dentro de los arquetipos,0.0573,0.0567
+A3: R2 carga por m2,0.9115,0.9304
+"A4: R2 con f_v=0,3",0.4093,0.6142
+"A4: R2 con f_v=0,7",0.4028,0.6145
+"A4: R2 con n=0,5",0.4453,0.6415
+"A4: R2 con n=2,0",0.3553,0.5775
+A2: R2 del árbol con el mismo k,0.9447,0.9797

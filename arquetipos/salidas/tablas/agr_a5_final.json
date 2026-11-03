@@ -1,0 +1,20 @@
+{
+  "por_vivienda": {
+    "diseno": "anidado",
+    "algoritmo": "kprototypes",
+    "k_final": 17,
+    "R2_final": 0.6611,
+    "k_sin_excluir": 16,
+    "R2_sin_excluir": 0.6504,
+    "rand_ajustado_frente_a_final": 0.973
+  },
+  "por_m2": {
+    "diseno": "anidado",
+    "algoritmo": "kmeans",
+    "k_final": 10,
+    "R2_final": 0.9275,
+    "k_sin_excluir": 10,
+    "R2_sin_excluir": 0.9275,
+    "rand_ajustado_frente_a_final": 1.0
+  }
+}

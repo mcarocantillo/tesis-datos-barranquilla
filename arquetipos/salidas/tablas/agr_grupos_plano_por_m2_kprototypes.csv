@@ -1,0 +1,5 @@
+﻿arquetipo,estrato_algoritmo,viviendas,pct_viviendas,edificios,jaccard,area_p25,area_mediana,area_p75,plantas_mediana,piso_mediana,pct_ph,pct_multifamiliar,carga_mediana_kWh,carga_m2_mediana_kWh,pct_antes_1990,pct_1990_2009,pct_2010_o_despues,pct_E1,pct_E2,pct_E3,pct_E4,pct_E5,pct_E6
+C-1,casa,161320,48.49,140312,1.0,55.0,78.0,115.0,1.0,1.0,4.2,0.0,40357.0,517.4,22.7,29.1,48.2,39.7,34.3,20.1,4.6,0.9,0.4
+C-2,casa,19732,5.93,14750,1.0,84.0,119.0,172.0,2.0,1.0,33.3,0.0,44419.0,375.7,29.1,31.0,39.9,18.2,28.1,27.3,15.5,7.3,3.6
+S-1,sin_cubierta,121769,36.6,8775,1.0,47.0,62.0,90.0,1.0,3.0,92.6,84.7,13896.0,222.2,6.9,21.2,72.0,27.9,5.6,21.8,26.5,9.5,8.6
+U-1,ultimo_piso,29897,8.99,13268,1.0,52.0,78.0,121.0,1.0,4.0,76.2,54.8,37684.0,513.6,17.2,26.8,55.9,24.3,15.8,25.5,21.7,8.1,4.7

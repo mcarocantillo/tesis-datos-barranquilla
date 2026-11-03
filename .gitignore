@@ -5,3 +5,5 @@ __pycache__/
 datos/
 scripts/compuerta/datos/
 scripts/compuerta/salidas/
+arquetipos/datos_internos/
+arquetipos/consultas/

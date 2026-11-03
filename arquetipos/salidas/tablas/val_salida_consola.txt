@@ -1,0 +1,56 @@
+ECV 2024: 698 viviendas y 709 hogares de Barranquilla; 646 hogares con estrato 1-6
+estrato                1     2     3     4     5     6  ciudad
+variable                                                      
+aire_acondicionado  0.12  0.34  0.46  0.78  0.81  1.00    0.37
+calentador_agua     0.00  0.01  0.04  0.04  0.13  0.59    0.04
+cuartos             3.32  3.76  3.83  3.93  3.91  4.98    3.67
+dormitorios         2.04  2.26  2.10  2.13  1.89  2.48    2.12
+lavadora            0.48  0.71  0.91  0.92  0.89  1.00    0.70
+nevera              0.88  0.90  0.96  1.00  1.00  1.00    0.92
+personas            3.91  3.67  2.95  2.87  2.49  3.49    3.47
+televisor_plano     0.70  0.80  0.93  0.96  0.94  1.00    0.82
+ventilador          1.00  0.98  0.97  1.00  0.97  1.00    0.99
+
+Habitaciones:
+     estrato         tipo  hogares_ecv  media_catastro  media_ecv  ic_inf  ic_sup  dentro_ic
+0         1        todos          250            2.52       2.04    1.94    2.15      False
+1         1         casa          118            2.54       2.25    2.08    2.42      False
+2         1  apartamento          132            2.50       1.88    1.75    2.01      False
+3         2        todos          161            2.84       2.26    2.13    2.39      False
+4         2         casa           59            2.84       2.55    2.30    2.79      False
+5         2  apartamento          102            2.86       2.12    1.93    2.32      False
+6         3        todos          125            3.02       2.10    1.94    2.27      False
+7         3         casa           41            3.29       2.45    2.20    2.70      False
+8         3  apartamento           84            2.72       1.94    1.73    2.14      False
+9         4        todos           52            2.98       2.13    1.67    2.59      False
+10        4         casa            6            3.52       2.81    1.26    4.37       True
+11        4  apartamento           46            2.84       2.01    1.58    2.45      False
+12        5        todos           38            3.02       1.89    1.43    2.35      False
+13        5         casa            8            3.62       2.72    2.32    3.13      False
+14        5  apartamento           30            2.90       1.60    1.31    1.88      False
+15        6        todos           20            3.25       2.48    1.93    3.03      False
+16        6         casa            7            3.79       3.01    3.01    3.01      False
+17        6  apartamento           13            3.19       2.14    1.65    2.63      False
+
+Representatividad:
+                          comparacion                                             grupo  catastro    ecv  ic_inf  ic_sup  dentro_ic  diferencia  muestra_ecv
+0   viviendas por estrato (fracción)                                                E1     0.328  0.379   0.263   0.494       True      -0.051          635
+1   viviendas por estrato (fracción)                                                E2     0.218  0.228   0.136   0.320       True      -0.010          635
+2   viviendas por estrato (fracción)                                                E3     0.216  0.207   0.118   0.295       True       0.010          635
+3   viviendas por estrato (fracción)                                                E4     0.148  0.092   0.033   0.151       True       0.056          635
+4   viviendas por estrato (fracción)                                                E5     0.051  0.061   0.011   0.110       True      -0.010          635
+5   viviendas por estrato (fracción)                                                E6     0.040  0.034  -0.002   0.070       True       0.006          635
+6                  fracción de casas                      1-2: catastro, posición casa     0.709  0.398   0.320   0.475      False       0.311          401
+7                  fracción de casas  1-2: catastro, casa y primer piso de baja altura     0.759  0.398   0.320   0.475      False       0.361          401
+8                  fracción de casas                      3-4: catastro, posición casa     0.398  0.274   0.156   0.391      False       0.124          176
+9                  fracción de casas  3-4: catastro, casa y primer piso de baja altura     0.445  0.274   0.156   0.391      False       0.171          176
+10                 fracción de casas                      5-6: catastro, posición casa     0.140  0.309   0.022   0.596       True      -0.168           58
+11                 fracción de casas  5-6: catastro, casa y primer piso de baja altura     0.182  0.309   0.022   0.596       True      -0.127           58
+12              habitaciones (media)                                                E1     2.522  2.043   1.935   2.151      False       0.479          250
+13              habitaciones (media)                                                E2     2.843  2.260   2.126   2.394      False       0.583          161
+14              habitaciones (media)                                                E3     3.020  2.105   1.937   2.273      False       0.915          125
+15              habitaciones (media)                                                E4     2.984  2.128   1.666   2.589      False       0.857           52
+16              habitaciones (media)                                                E5     3.025  1.890   1.431   2.349      False       1.135           38
+17              habitaciones (media)                                                E6     3.253  2.482   1.934   3.031      False       0.770           20
+Fichas por_vivienda: 17
+Fichas por_m2: 10

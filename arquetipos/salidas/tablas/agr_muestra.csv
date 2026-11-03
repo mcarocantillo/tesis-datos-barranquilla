@@ -1,0 +1,16 @@
+﻿posicion,tipo,bloque,edificios
+casa,baja_altura,1-2,2855
+casa,baja_altura,3-4,1069
+casa,baja_altura,5-6,150
+ultimo_piso,baja_altura,1-2,1194
+ultimo_piso,baja_altura,3-4,1125
+ultimo_piso,baja_altura,5-6,150
+ultimo_piso,multifamiliar,1-2,150
+ultimo_piso,multifamiliar,3-4,292
+ultimo_piso,multifamiliar,5-6,229
+sin_cubierta,baja_altura,1-2,771
+sin_cubierta,baja_altura,3-4,1317
+sin_cubierta,baja_altura,5-6,150
+sin_cubierta,multifamiliar,1-2,113
+sin_cubierta,multifamiliar,3-4,392
+sin_cubierta,multifamiliar,5-6,337

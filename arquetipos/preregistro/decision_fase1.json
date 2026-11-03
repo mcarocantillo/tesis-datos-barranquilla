@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "fecha": "2026-10-29",
+  "nota": "Escrito antes de calcular cargas o correr agrupamientos. Ver preregistro_fase1.md.",
+  "propuesta": "Propuesta_de_Tesis_Maria_Cantillo_Orozco.pdf (28-oct-2026), seccion 7.2",
+  "semilla": 42,
+  "variables": {
+    "posicion": ["casa", "ultimo_piso", "sin_cubierta"],
+    "tipo": {"multifamiliar": "uso contiene 'Apartamentos 4'", "baja_altura": "el resto"},
+    "epocas": {"cortes": [1990, 2010], "etiquetas": ["antes_1990", "1990_2009", "2010_o_despues"]},
+    "s13_sin_epoca": "lotes de uso 'Apartamentos 4' en estratos 1-2 con mediana de anio < 1975",
+    "bloques_estrato": {"1-2": [1, 2], "3-4": [3, 4], "5-6": [5, 6]}
+  },
+  "reglas": {
+    "min_frac_viviendas": 0.01,
+    "min_edificios": 30,
+    "orden_fusion": ["juntar_epocas", "bloque_vecino", "juntar_tipos"],
+    "sin_epoca": "epoca con mas viviendas de su tipo x posicion x bloque"
+  },
+  "variante_tamano": {
+    "nota": "Nota 2 del preregistro (2-nov-2026): sensibilidad, no decide",
+    "cortes_m2": [59, 95],
+    "etiquetas": ["pequena", "mediana", "grande"],
+    "orden_fusion": ["juntar_epocas", "tamano_vecino", "bloque_vecino", "juntar_tipos"]
+  },
+  "carga": {
+    "U_cubierta": 4.0, "U_muro": 2.7, "U_vidrio": 5.88,
+    "absortancia": 0.7, "h_o": 17.0, "dT_onda_larga_horizontal_K": 3.9,
+    "f_v_muros": 0.5, "frac_perimetro_expuesto": 0.5, "relacion_ventana_muro": 0.25,
+    "altura_piso_limites_m": [2.4, 4.0], "renovaciones_h": 1.0,
+    "consigna_C": 26.5, "humedad_relativa_consigna": 0.60,
+    "clima": "ERA5-Land Open-Meteo 2015-2025, promedio anual",
+    "criterio": {"delta_R2_min": 0.02, "k_max": null}
+  },
+  "paso4": {
+    "jaccard_grupo_min": 0.6, "frac_grupo_relevante": 0.05, "jaccard_ponderado_min": 0.75,
+    "eta2_umbral": 0.06, "eta2_definicion": "conjunto: (SC_dentro_grupo - SC_dentro_grupo_x_estrato) / SC_dentro_grupo",
+    "cramer_v": "solo se reporta"
+  },
+  "agrupamiento_v2": {
+    "fecha": "2026-11-02",
+    "estratos_algoritmo": "posicion (plano); posicion x bloque (anidado)",
+    "submuestra": {
+      "unidad": "una vivienda al azar por edificio dentro de cada posicion",
+      "tamano": {"casa": 4000, "ultimo_piso": 3000, "sin_cubierta": 3000},
+      "estratificar_por": ["tipo", "bloque"],
+      "asignacion": "proporcional a edificios", "minimo_por_estrato": 150
+    },
+    "variables": ["area_construida", "total_plantas", "planta_ubicacion", "epoca", "tipo", "ph"],
+    "descartar_si_moda_cubre": 0.99,
+    "log": ["area_construida", "total_plantas", "planta_ubicacion"],
+    "kmeans": {"init": "k-means++", "n_init": 20},
+    "kprototypes": {"categoricas": ["epoca", "tipo", "ph"], "gamma": "0.5 x desviacion media de las numericas", "n_init": 10},
+    "jerarquico": {"distancia": "Gower, pesos iguales, epoca ordinal", "enlace": "promedio"},
+    "dbscan": {"min_samples": "2 x numero de variables", "eps": "codo de la curva de k-distancias", "ruido": "fuera del ajuste, asignado despues"},
+    "asignacion_para_R2": "centroide, prototipo o medoide Gower mas cercano dentro de la posicion",
+    "k_por_estrato": {"plano": [1, 8], "anidado": [1, 6]},
+    "busqueda_k": "reemplazada por la nota 3",
+    "nota3": {
+      "fecha": "2026-11-02",
+      "frontera": "para cada K total, la combinacion de k por estrato con mayor R2 (programacion dinamica)",
+      "regla": "menor K a partir del cual todas las ganancias de la frontera son < 0.02",
+      "ampliar_tope": 4, "tope_seguridad": 40
+    },
+    "medidas_de_carga": {"aplica_si_director_no_aprueba": "por_vivienda", "aplica_si_director_aprueba": "por_m2"},
+    "jaccard": {"submuestras": 100, "fraccion": 0.8, "reemplazo": false, "peso": "fraccion de viviendas"},
+    "eleccion_algoritmo": "reemplazada por la nota 4",
+    "nota4": {
+      "fecha": "2026-11-02",
+      "filtro": "jaccard_ponderado >= 0.75 y ningun grupo con > 5 % de viviendas con jaccard < 0.6",
+      "decide": "mayor R2 entre las estables",
+      "empate_R2": 0.02, "desempate": ["menos grupos", "mayor silueta"],
+      "si_ninguna_estable": "mayor jaccard ponderado, y se reporta"
+    }
+  },
+  "clasificador_v3": {
+    "fecha": "2026-11-02",
+    "soluciones": ["por_vivienda", "por_m2"],
+    "variables": ["log_area", "log_plantas", "log_piso", "epoca_ord", "tipo_bin", "ph", "posicion", "bloque"],
+    "coordenadas_como_variable": false,
+    "prueba": "7 bloques de 2 km del trabajo previo",
+    "cv": "5 pliegues kNNDM, escenario zonas nuevas, semilla 42",
+    "arbol": {"max_depth": [2, 12], "min_samples_leaf": 50, "eleccion": "menor profundidad a menos de 0.01 del mejor F1 macro"},
+    "bosque": {"n_estimators": 300, "max_features": ["sqrt", 0.5], "min_samples_leaf": [1, 20], "eleccion": "mayor F1 macro"},
+    "class_weight": null,
+    "metricas": ["f1_macro", "exactitud", "recall_por_clase", "log_loss", "brier", "rango_entre_bloques"],
+    "probabilidades": "fuera de muestra (kNNDM) en entrenamiento; modelo completo en prueba y sin coordenadas",
+    "umbral_probabilidad_baja": 0.8
+  },
+  "envolvente_v4": {
+    "fecha": "2026-11-02",
+    "ecv": {
+      "olas": [2019, 2024],
+      "estratos_validos": [1, 2, 3, 4, 5, 6],
+      "tipo": {"casa": [1, 3, 4, 5], "apartamento": [2]},
+      "paredes_2024_a_2019": {"7": 7, "8": 7, "9": 8, "10": 9},
+      "categorias": {
+        "techo": {"concreto": [1], "asbesto_cemento": [3], "metalica_zinc": [4], "otro": [2, 5, 6, 7]},
+        "paredes": {"mamposteria": [1], "otro": [2, 3, 4, 5, 6, 7, 8, 9]},
+        "pisos": {"acabado": [1, 2, 3, 4], "cemento": [6], "tierra_madera_burda": [5, 7]}
+      }
+    },
+    "rao_scott": {"deff_2019": 1.5, "alfa": 0.05, "correccion": "Holm entre las celdas de cada variable", "min_viviendas_por_ola": 10, "orden": 2},
+    "dirichlet": {"deff": 1.5, "m": 1, "padre": "mismo tipo ECV, toda la ciudad", "sorteos": 10000},
+    "techo_ultimo_piso": "S6: concreto en multifamiliares; baja altura = apartamentos ECV sin la parte de concreto de los multifamiliares",
+    "iso6946": {
+      "R_se": 0.04, "R_si_arriba": 0.10, "R_si_abajo": 0.17, "R_aire_arriba": 0.16, "R_aire_abajo": 0.22,
+      "cielo_raso_placa": [0.010, 0.25],
+      "techos": {
+        "concreto": {"capas": [[[0.15, 0.12, 0.10], 2.0], [0.015, 1.0]], "cielo_raso": false},
+        "asbesto_cemento": {"capas": [[0.006, 0.5]], "cielo_raso": true},
+        "metalica_zinc": {"capas": [], "cielo_raso": true},
+        "otro": {"capas": [[0.015, 1.0]], "cielo_raso": true}
+      },
+      "ceela_comparacion": {"concreto": 3.6, "asbesto_cemento": 6.6}
+    },
+    "muros": {
+      "mamposteria": {"min": 1.9, "max": 4.1, "moda": {"casa|1-2": 2.3, "casa|3-4": 2.7, "casa|5-6": 2.7, "apartamento|1-2": 3.85, "apartamento|3-4": 3.0, "apartamento|5-6": 3.0}},
+      "otro": [1.5, 3.5, 5.9]
+    },
+    "masa_iso13790": {
+      "clases": {"muy_ligera": [80, 2.5], "ligera": [110, 2.5], "media": [165, 2.5], "pesada": [260, 3.0], "muy_pesada": [370, 3.5]},
+      "techo_liviano": ["ligera", "media", "pesada"], "losa_encima": ["media", "pesada", "muy_pesada"], "muro_otro": ["muy_ligera", "ligera", "media"]
+    },
+    "absortancia": {
+      "techo": {"min": 0.30, "max": 0.95, "moda": {"concreto": 0.85, "asbesto_cemento": 0.60, "metalica_zinc": 0.70, "otro": 0.70}},
+      "muro": [0.44, 0.70, 0.88]
+    },
+    "ventanas": {
+      "wwr": {"amplio": [0.10, 0.30, 0.50], "apartamento|3-4": [0.05, 0.15, 0.30], "5-6": [0.20, 0.30, 0.40]},
+      "U": [5.3, 5.88, 6.5], "g": [0.75, 0.85, 0.87],
+      "sombra": {"ninguno": [0.70, 1.0, 1.0], "balcones": [0.50, 0.75, 0.95]}
+    },
+    "climatizada": {"A_hab_m2": [8, 10, 14], "toda": [0.7, 1.0, 1.0], "zona": {"1-2": "una", "casa|3-4": "una", "apartamento|3-4": "habitaciones", "5-6": "toda"}},
+    "nota5": {
+      "fecha": "2026-11-02",
+      "techo_ultimo_piso": "mezcla: concreto en multifamiliares; baja altura = Dirichlet de los apartamentos ECV del bloque, sin restar",
+      "deff": "max(1.5, deff 2024 de la variable dentro del tipo ECV, toda la ciudad)",
+      "deff_minimo": 1.5,
+      "rao_scott": "sin cambios (seccion 7.5 de la propuesta); se reporta la sensibilidad con la varianza de 2019 multiplicada por el deff de la variable",
+      "a8": "techo con las reglas de la seccion 9.3 (resta de S6 y deff 1.5)"
+    },
+    "nota6": {
+      "fecha": "2026-11-02",
+      "zona": "habitaciones",
+      "n_hab": "habitaciones del catastro x (dormitorios medios ECV 2024 / habitaciones medias del catastro) en los apartamentos de su estrato, minimo 1"
+    },
+    "nota7": {
+      "fecha": "2026-11-02",
+      "infiltracion_ach_ventanas_cerradas": {
+        "distribucion": "lognormal por percentiles 5 y 95",
+        "cerrada": {"p5": 0.5, "p95": 1.6, "construccion": "losa_encima"},
+        "abierta": {"p5": 0.8, "p95": 5.0, "construccion": ["techo_liviano", "muro_otro"]}
+      }
+    }
+  },
+  "paso7_v5": {
+    "fecha": "2026-11-02",
+    "hogar": {
+      "ola": 2024,
+      "variables": {"cuartos": "P5000", "dormitorios": "P5010", "personas": "CANT_PERSONAS_HOGAR"},
+      "equipos": {"aire_acondicionado": "P1077S11", "ventilador": "P1077S12", "nevera": "P1077S2", "lavadora": "P1077S1", "televisor_plano": "P1077S8", "calentador_agua": "P1077S6"},
+      "codigo_si": "1",
+      "al_arquetipo": "promedio por estrato ponderado por la composicion de estratos del arquetipo en el catastro"
+    },
+    "habitaciones": {"catastro": "total_habitaciones (0 cuenta como 1)", "ecv": "P5010", "clases": [1, 2, 3, 4], "nivel_ic": 0.95},
+    "representatividad": ["viviendas por estrato", "fraccion de casas por bloque (y variante con primeros pisos de baja altura)", "habitaciones"],
+    "sensibilidad": {"variables": ["log_area", "log_plantas", "log_piso", "epoca_ord", "tipo_bin", "ph"], "mismo_k": true, "atipicos": "recalculados sin la variable", "rand_min": 0.8, "caida_R2": 0.02}
+  },
+  "complementarios": ["A1 silueta, CH, DB", "A2 arbol de regresion con k hojas", "A3 R2 con carga por m2", "A4 sensibilidad f_v y n", "A5 sin excluir atipicos de DBSCAN", "A6 resultado con la regla 7.7 y Rand ajustado frente a la nota 4", "A7 priors de materiales con la otra opcion de olas", "A8 techo con las reglas originales de la seccion 9.3"]
+}

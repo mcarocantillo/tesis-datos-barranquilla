@@ -1,0 +1,17 @@
+﻿etapa,celda,destino,viviendas
+juntar_epocas,baja_altura|casa|1990_2009|5-6,todas las épocas,4216
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|3-4,todas las épocas,7483
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|5-6,todas las épocas,1526
+juntar_epocas,baja_altura|sin_cubierta|antes_1990|1-2,todas las épocas,9619
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|1-2,todas las épocas,5799
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|3-4,todas las épocas,6942
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|5-6,todas las épocas,760
+juntar_epocas,multifamiliar|sin_cubierta|1990_2009|1-2,todas las épocas,31270
+juntar_epocas,multifamiliar|sin_cubierta|antes_1990|3-4,todas las épocas,51363
+juntar_epocas,multifamiliar|sin_cubierta|antes_1990|5-6,todas las épocas,20508
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|1-2,todas las épocas,6193
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|3-4,todas las épocas,7163
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|5-6,todas las épocas,3040
+bloque_vecino,baja_altura|ultimo_piso|todas|5-6,baja_altura|ultimo_piso|3-4,760
+bloque_vecino,baja_altura|sin_cubierta|todas|5-6,baja_altura|sin_cubierta|3-4,1526
+bloque_vecino,multifamiliar|ultimo_piso|todas|5-6,multifamiliar|ultimo_piso|3-4,3040

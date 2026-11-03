@@ -1,0 +1,16 @@
+﻿modelo,f1_macro_cv,f1_macro_cv_de,elegido
+arbol_profundidad_2,0.34120322374687995,0.021651048756538043,False
+arbol_profundidad_3,0.7291779373681742,0.06758239375368816,False
+arbol_profundidad_4,1.0,0.0,True
+arbol_profundidad_5,1.0,0.0,False
+arbol_profundidad_6,1.0,0.0,False
+arbol_profundidad_7,1.0,0.0,False
+arbol_profundidad_8,1.0,0.0,False
+arbol_profundidad_9,1.0,0.0,False
+arbol_profundidad_10,1.0,0.0,False
+arbol_profundidad_11,1.0,0.0,False
+arbol_profundidad_12,1.0,0.0,False
+bosque_mfsqrt_hoja1,1.0,0.0,True
+bosque_mfsqrt_hoja20,1.0,0.0,False
+bosque_mf0.5_hoja1,1.0,0.0,False
+bosque_mf0.5_hoja20,1.0,0.0,False

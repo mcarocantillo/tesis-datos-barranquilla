@@ -10,6 +10,7 @@ Datos de entrada de la tesis de maestría «Desarrollo de una metodología para 
 - `figuras/`: figuras del sitio.
 - `tablas/`: tablas resumen (CSV con separador «;» y Excel).
 - `scripts/`: procesamiento en Python; `scripts/compuerta/` tiene la descarga y la estimación de la respuesta horaria de la demanda de XM al calor; `scripts/sui_o3/`, la consulta del SUI por tipo de lectura.
+- `arquetipos/`: Fase 1 de la tesis (Objetivo 1), arquetipos de vivienda desde el catastro: preregistro, registro de ajustes frente a la propuesta, código, tablas agregadas, figuras, fichas de arquetipos y clasificador. Ver `arquetipos/README.md`.
 
 Las bases por hogar y por vivienda no se publican; los microdatos son públicos en el catálogo del DANE y en el SUI. Las descargas crudas de XM, Open-Meteo e IDEAM tampoco se versionan: los scripts de `scripts/compuerta/` las reconstruyen desde las fuentes públicas.
 
@@ -29,6 +30,6 @@ Los metadatos de cita están en `CITATION.cff`.
 
 ## Licencia
 
-- Código (`scripts/`, `_ext/`): MIT (ver `LICENSE`).
+- Código (`scripts/`, `_ext/`, `arquetipos/src/`, `arquetipos/scripts/`): MIT (ver `LICENSE`).
 - Textos, figuras y tablas resumen: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es).
 - Los microdatos originales conservan las condiciones de uso del DANE, la Superintendencia de Servicios Públicos Domiciliarios y la Alcaldía de Barranquilla.

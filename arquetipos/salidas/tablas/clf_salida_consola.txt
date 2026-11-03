@@ -1,0 +1,114 @@
+pliegues kNNDM: [49981, 54612, 49832, 49376, 53472] viviendas de validación (4 s)
+  por_vivienda · arbol_profundidad_2: F1 macro CV 0.1555 (6 s)
+  por_vivienda · arbol_profundidad_3: F1 macro CV 0.3325 (9 s)
+  por_vivienda · arbol_profundidad_4: F1 macro CV 0.4932 (12 s)
+  por_vivienda · arbol_profundidad_5: F1 macro CV 0.6829 (15 s)
+  por_vivienda · arbol_profundidad_6: F1 macro CV 0.8242 (18 s)
+  por_vivienda · arbol_profundidad_7: F1 macro CV 0.9441 (22 s)
+  por_vivienda · arbol_profundidad_8: F1 macro CV 0.9678 (25 s)
+  por_vivienda · arbol_profundidad_9: F1 macro CV 0.9904 (28 s)
+  por_vivienda · arbol_profundidad_10: F1 macro CV 0.9951 (31 s)
+  por_vivienda · arbol_profundidad_11: F1 macro CV 0.9951 (35 s)
+  por_vivienda · arbol_profundidad_12: F1 macro CV 0.9951 (38 s)
+  por_vivienda · bosque_mfsqrt_hoja1: F1 macro CV 0.9998 (104 s)
+  por_vivienda · bosque_mfsqrt_hoja20: F1 macro CV 0.9993 (170 s)
+  por_vivienda · bosque_mf0.5_hoja1: F1 macro CV 0.9998 (251 s)
+  por_vivienda · bosque_mf0.5_hoja20: F1 macro CV 0.9991 (333 s)
+
+=== por_vivienda: árbol profundidad 9 (79 hojas), bosque bosque_mf0.5_hoja1
+{
+ "arbol": {
+  "profundidad": 9,
+  "hojas": 79,
+  "f1_macro": 0.9909848944302722,
+  "exactitud": 0.996822472944969,
+  "log_loss": 0.014129835128466797,
+  "brier": 0.00453123021527976,
+  "f1_macro_bloques_min": 0.8521754956383653,
+  "f1_macro_bloques_max": 1.0,
+  "concordancia_sin_coordenadas": 0.9992233009708738
+ },
+ "bosque": {
+  "config": "bosque_mf0.5_hoja1",
+  "f1_macro": 0.9997444055871947,
+  "exactitud": 0.9999232481387673,
+  "log_loss": 0.0003010146889415021,
+  "brier": 0.00011117490043578002,
+  "f1_macro_bloques_min": 0.9994601920123696,
+  "f1_macro_bloques_max": 1.0,
+  "concordancia_sin_coordenadas": 1.0
+ }
+}
+           probabilidad_media  frac_menor_0_8  viviendas
+arquetipo                                               
+C12-1                   1.000           0.000      31446
+C12-2                   1.000           0.000      52772
+C12-3                   0.999           0.000       9132
+C12-4                   1.000           0.000      35247
+C34-1                   1.000           0.001       7859
+C34-2                   1.000           0.001      10725
+C34-3                   0.998           0.002       6419
+C34-4                   1.000           0.000      14936
+C34-5                   1.000           0.000       6288
+C34-6                   0.995           0.005       2012
+C56-1                   0.998           0.002       4216
+S12-1                   1.000           0.000      40889
+S34-1                   1.000           0.000      58846
+S56-1                   1.000           0.000      22034
+U12-1                   1.000           0.000      11992
+U34-1                   1.000           0.000      14105
+U56-1                   1.000           0.000       3800
+  por_m2 · arbol_profundidad_2: F1 macro CV 0.3412 (363 s)
+  por_m2 · arbol_profundidad_3: F1 macro CV 0.7292 (366 s)
+  por_m2 · arbol_profundidad_4: F1 macro CV 1.0000 (368 s)
+  por_m2 · arbol_profundidad_5: F1 macro CV 1.0000 (371 s)
+  por_m2 · arbol_profundidad_6: F1 macro CV 1.0000 (373 s)
+  por_m2 · arbol_profundidad_7: F1 macro CV 1.0000 (376 s)
+  por_m2 · arbol_profundidad_8: F1 macro CV 1.0000 (379 s)
+  por_m2 · arbol_profundidad_9: F1 macro CV 1.0000 (381 s)
+  por_m2 · arbol_profundidad_10: F1 macro CV 1.0000 (384 s)
+  por_m2 · arbol_profundidad_11: F1 macro CV 1.0000 (386 s)
+  por_m2 · arbol_profundidad_12: F1 macro CV 1.0000 (389 s)
+  por_m2 · bosque_mfsqrt_hoja1: F1 macro CV 1.0000 (451 s)
+  por_m2 · bosque_mfsqrt_hoja20: F1 macro CV 1.0000 (511 s)
+  por_m2 · bosque_mf0.5_hoja1: F1 macro CV 1.0000 (576 s)
+  por_m2 · bosque_mf0.5_hoja20: F1 macro CV 1.0000 (642 s)
+
+=== por_m2: árbol profundidad 4 (10 hojas), bosque bosque_mfsqrt_hoja1
+{
+ "arbol": {
+  "profundidad": 4,
+  "hojas": 10,
+  "f1_macro": 1.0,
+  "exactitud": 1.0,
+  "log_loss": 2.220446049250313e-16,
+  "brier": 0.0,
+  "f1_macro_bloques_min": 1.0,
+  "f1_macro_bloques_max": 1.0,
+  "concordancia_sin_coordenadas": 1.0
+ },
+ "bosque": {
+  "config": "bosque_mfsqrt_hoja1",
+  "f1_macro": 1.0,
+  "exactitud": 1.0,
+  "log_loss": 0.0002844387473351797,
+  "brier": 7.31769300961105e-06,
+  "f1_macro_bloques_min": 1.0,
+  "f1_macro_bloques_max": 1.0,
+  "concordancia_sin_coordenadas": 1.0
+ }
+}
+           probabilidad_media  frac_menor_0_8  viviendas
+arquetipo                                               
+C12-1                   1.000             0.0     119465
+C12-2                   0.999             0.0       9132
+C34-1                   1.000             0.0      48239
+C56-1                   1.000             0.0       4216
+S12-1                   0.999             0.0      40889
+S34-1                   1.000             0.0      58846
+S56-1                   1.000             0.0      22034
+U12-1                   0.998             0.0      11992
+U34-1                   1.000             0.0      14105
+U56-1                   0.999             0.0       3800
+
+tiempo total: 661 s

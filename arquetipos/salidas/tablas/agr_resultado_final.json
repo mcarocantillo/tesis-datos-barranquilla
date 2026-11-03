@@ -1,0 +1,49 @@
+{
+  "medida_que_aplica": "por_vivienda",
+  "por_vivienda": {
+    "algoritmo_plano": "kmeans",
+    "plano_inestable": false,
+    "eta2_estrato": 0.1678,
+    "diseno_adoptado": "anidado",
+    "algoritmo_final": "kprototypes",
+    "k_final": 17,
+    "R2_final": 0.6611,
+    "estable": true
+  },
+  "por_m2": {
+    "algoritmo_plano": "kprototypes",
+    "plano_inestable": false,
+    "eta2_estrato": 0.1225,
+    "diseno_adoptado": "anidado",
+    "algoritmo_final": "kmeans",
+    "k_final": 10,
+    "R2_final": 0.9275,
+    "estable": true
+  },
+  "A6_regla_7_7": {
+    "por_vivienda": {
+      "algoritmo_plano": "jerarquico",
+      "plano_inestable": false,
+      "eta2_estrato": 0.2261,
+      "diseno_adoptado": "anidado",
+      "algoritmo_final": "jerarquico",
+      "k_final": 9,
+      "R2_final": 0.4039,
+      "jaccard_ponderado": 1.0,
+      "silueta_gower": NaN,
+      "rand_ajustado_frente_a_nota4": 0.575
+    },
+    "por_m2": {
+      "algoritmo_plano": "kmeans",
+      "plano_inestable": false,
+      "eta2_estrato": 0.1226,
+      "diseno_adoptado": "anidado",
+      "algoritmo_final": "kmeans",
+      "k_final": 10,
+      "R2_final": 0.9275,
+      "jaccard_ponderado": 1.0,
+      "silueta_gower": 0.552,
+      "rand_ajustado_frente_a_nota4": 1.0
+    }
+  }
+}
