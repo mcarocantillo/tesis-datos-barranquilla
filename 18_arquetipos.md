@@ -108,21 +108,22 @@ Cota de referencia: varianza explicada por un árbol de regresión con k hojas, 
 
 ### Arquetipos con la carga por m²
 
-:::{table} Arquetipos de la solución por m². Carga: índice del Paso 3. Techo, fracción climatizada e infiltración: media del prior del Paso 6. A/C: hogares con aire acondicionado en la ECV 2024, por la composición de estratos del arquetipo.
+:::{table} Arquetipos de la solución por m². En el código, la letra es la posición (C casa, U último piso, S sin cubierta) y el número, el bloque de estratos. Carga: índice del Paso 3. Techo, fracción climatizada e infiltración: media del prior del Paso 6. A/C: hogares con aire acondicionado en la ECV 2024, por la composición de estratos del arquetipo.
 :name: tab-arq-m2
+:class: tabla-compacta
 
-| Arquetipo | Posición | Estratos | Viviendas (% de la ciudad) | Área mediana, m² (P25–P75) | Carga mediana, kWh/m²·año | Techo de concreto | Fracción climatizada | Infiltración, ren/h | Hogares con A/C |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| C12-1 | Casa | 1-2 | 119.465 (35,9 %) | 69 (51–96) | 522 | 18 % | 0,18 | 2,06 | 22 % |
-| C12-2 | Casa | 1-2 | 9.132 (2,7 %) | 104 (65–140) | 382 | 18 % | 0,14 | 2,08 | 26 % |
-| C34-1 | Casa | 3-4 | 48.239 (14,5 %) | 116 (85–160) | 499 | 26 % | 0,11 | 1,98 | 53 % |
-| C56-1 | Casa | 5-6 | 4.216 (1,3 %) | 213 (153–304) | 389 | 72 % | 0,90 | 1,33 | 87 % |
-| S12-1 | Sin cubierta | 1-2 | 40.889 (12,3 %) | 46 (42–56) | 236 | no expuesto | 0,22 | 0,97 | 16 % |
-| S34-1 | Sin cubierta | 3-4 | 58.846 (17,7 %) | 68 (53–86) | 219 | no expuesto | 0,31 | 0,96 | 64 % |
-| S56-1 | Sin cubierta | 5-6 | 22.034 (6,6 %) | 117 (84–161) | 199 | no expuesto | 0,90 | 0,96 | 90 % |
-| U12-1 | Último piso | 1-2 | 11.992 (3,6 %) | 55 (43–106) | 529 | 69 % | 0,18 | 1,40 | 21 % |
-| U34-1 | Último piso | 3-4 | 14.105 (4,2 %) | 81 (62–112) | 514 | 86 % | 0,26 | 1,15 | 61 % |
-| U56-1 | Último piso | 5-6 | 3.800 (1,1 %) | 126 (94–194) | 496 | 98 % | 0,90 | 0,98 | 88 % |
+| Arquetipo | Viviendas (% de la ciudad) | Área mediana, m² (P25–P75) | Carga mediana, kWh/m²·año | Techo de concreto | Fracción climatizada | Infiltración, ren/h | Hogares con A/C |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| C12-1 | 119.465 (35,9 %) | 69 (51–96) | 522 | 18 % | 0,18 | 2,06 | 22 % |
+| C12-2 | 9.132 (2,7 %) | 104 (65–140) | 382 | 18 % | 0,14 | 2,08 | 26 % |
+| C34-1 | 48.239 (14,5 %) | 116 (85–160) | 499 | 26 % | 0,11 | 1,98 | 53 % |
+| C56-1 | 4.216 (1,3 %) | 213 (153–304) | 389 | 72 % | 0,90 | 1,33 | 87 % |
+| S12-1 | 40.889 (12,3 %) | 46 (42–56) | 236 | no expuesto | 0,22 | 0,97 | 16 % |
+| S34-1 | 58.846 (17,7 %) | 68 (53–86) | 219 | no expuesto | 0,31 | 0,96 | 64 % |
+| S56-1 | 22.034 (6,6 %) | 117 (84–161) | 199 | no expuesto | 0,90 | 0,96 | 90 % |
+| U12-1 | 11.992 (3,6 %) | 55 (43–106) | 529 | 69 % | 0,18 | 1,40 | 21 % |
+| U34-1 | 14.105 (4,2 %) | 81 (62–112) | 514 | 86 % | 0,26 | 1,15 | 61 % |
+| U56-1 | 3.800 (1,1 %) | 126 (94–194) | 496 | 98 % | 0,90 | 0,98 | 88 % |
 :::
 
 C12-2 agrupa las casas de estratos 1 y 2 de dos pisos o más. Las viviendas con techo expuesto (casa y último piso)
@@ -132,6 +133,7 @@ tienen más del doble de carga por m² que las que tienen otra vivienda encima.
 
 :::{table} Arquetipos de la solución por vivienda. Carga: índice del Paso 3 por vivienda. Los priors de envolvente y los atributos del hogar están en las fichas.
 :name: tab-arq-vivienda
+:class: tabla-compacta
 
 | Arquetipo | Posición | Estratos | Viviendas (% de la ciudad) | Área mediana, m² (P25–P75) | Pisos de la unidad | Carga mediana, MWh/año |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -168,6 +170,7 @@ grupos.
 
 :::{table} Soluciones con seis variables (las finales) y con diez, en el diseño anidado. Grupos de casas: número de arquetipos de casa en los bloques 1-2, 3-4 y 5-6. La silueta no está definida cuando cada posición y bloque queda en un solo grupo. Concordancia: índice de Rand ajustado entre las dos asignaciones, sobre todas las viviendas.
 :name: tab-arq-ampliada
+:class: tabla-compacta
 
 | Carga | Variables | Algoritmo | Arquetipos | Grupos de casas | R² | Jaccard ponderado | Silueta | Concordancia |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
