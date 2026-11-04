@@ -1,0 +1,44 @@
+{
+  "huecos": {
+    "punto_rocio_rellenado_h": 608,
+    "desfase_openmeteo_K": 0.1750000000000007,
+    "punto_rocio_sin_dato_h": 0,
+    "presion_interpolada_h": 8
+  },
+  "radiacion": {
+    "cierre_max_abs_Wm2_sol_alto": 1.1368683772161603e-13,
+    "frac_horas_GHI_sobre_1.1_cielo_despejado_cs300": 0.00214297052754114,
+    "razon_GHI_cielo_despejado_p99_cs300": 1.0687524404965885,
+    "hora_local_de_mayor_GHI_media": 12,
+    "simetria_GHI_media_horas_12_13_y_7_18": [
+      834.9,
+      831.0,
+      66.2,
+      64.8
+    ],
+    "GHI_media_Wm2": 244.62008311388178,
+    "irradiancia_media_muros_Wm2": {
+      "N": 85.12409242933964,
+      "E": 123.36502598145997,
+      "S": 116.15725398474088,
+      "O": 119.94750283983758
+    },
+    "frac_difusa_diurna": 0.4005682541048978,
+    "horas_GHI_positiva_con_sol_bajo_horizonte": 773
+  },
+  "cielo": {
+    "T_cielo_media": 20.204130655039013,
+    "dT_cielo_media": 7.287245019823101,
+    "dT_cielo_noche_media": 6.80567403442597,
+    "dT_cielo_p5_p95": [
+      3.5639462938942192,
+      11.577710276252965
+    ]
+  },
+  "periodo": [
+    "2014-12-31 20:00:00",
+    "2026-09-30 19:00:00",
+    102984
+  ],
+  "horas_completas": true
+}

@@ -9,7 +9,7 @@ anterior, salvo a la 01 UTC, que es la primera hora acumulada. Las horas quedan 
 
 Uso:  python 01b_extraer_era5land_gdex.py [CARPETA_DE_DESCARGAS]   (por defecto, ~/Downloads)
 Salida: datos/crudos/era5land_gdex/era5land_horario_11.0N_74.8W.csv.gz
-        T y Td (°C), p_kPa, I y L (W/m², onda corta y larga), viento (m/s) y lluvia_mm, por hora UTC.
+        T y Td (°C), p_kPa, I y L (W/m², onda corta y larga), viento, u10 y v10 (m/s) y lluvia_mm, por hora UTC.
 """
 import sys
 from pathlib import Path
@@ -46,7 +46,8 @@ def extraer(raiz):
     s = s.iloc[1:]  # la primera hora (00 UTC del 1-ene-2015) no tiene la anterior para desacumular
     return pd.DataFrame({"T": s["t2m"] - 273.15, "Td": s["d2m"] - 273.15, "p_kPa": s["sp"] / 1000,
                          "I": (s["ssrd"] / 3600).clip(lower=0), "L": s["strd"] / 3600,
-                         "viento": np.hypot(s["u10"], s["v10"]), "lluvia_mm": (s["tp"] * 1000).clip(lower=0)})
+                         "viento": np.hypot(s["u10"], s["v10"]), "u10": s["u10"], "v10": s["v10"],
+                         "lluvia_mm": (s["tp"] * 1000).clip(lower=0)})
 
 
 if __name__ == "__main__":
