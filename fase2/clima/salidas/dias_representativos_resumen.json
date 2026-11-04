@@ -1,0 +1,41 @@
+{
+  "meses": 141,
+  "dias_representativos": 423,
+  "T": {
+    "err_abs_medio_kmedoides": 0.06389161455967828,
+    "err_abs_max_kmedoides": 0.2606696428571418,
+    "err_abs_mediano_azar": 0.22323218371716072
+  },
+  "HI": {
+    "err_abs_medio_kmedoides": 0.15440004068602886,
+    "err_abs_max_kmedoides": 0.5313322040836113,
+    "err_abs_mediano_azar": 0.5235440573765839
+  },
+  "GHI": {
+    "err_abs_medio_kmedoides": 3.2331496189089806,
+    "err_abs_max_kmedoides": 14.124313362068989,
+    "err_abs_mediano_azar": 11.621440930618931
+  },
+  "CDH": {
+    "err_abs_medio_%_kmedoides": 3.7099169202325415,
+    "err_abs_max_%_kmedoides": 16.317642780031004,
+    "sesgo_%_kmedoides": 0.6239740954784383,
+    "err_abs_mediano_%_azar": 12.159811772469931,
+    "err_anual_%_rango": [
+      -2.7270047294524202,
+      4.496657615181543
+    ]
+  },
+  "carga": {
+    "err_abs_medio_%_kmedoides": 1.154652709411019,
+    "err_abs_max_%_kmedoides": 5.004300342447632,
+    "sesgo_%_kmedoides": 0.693866301523435,
+    "err_abs_mediano_%_azar": 4.74927305146765,
+    "err_anual_%_rango": [
+      -0.06695232845540522,
+      1.3847680402635065
+    ]
+  },
+  "correlacion_anomalias_HI": 0.9845949893133795,
+  "correlacion_anomalias_carga": 0.9795931585904959
+}

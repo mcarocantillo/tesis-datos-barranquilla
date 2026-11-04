@@ -16,6 +16,8 @@ esta carpeta:
 | 3 | `scripts/03_enso.py` | Fase ENSO de cada mes (ONI de la NOAA) y anomalías de clima y carga por fase; usa las tablas del script 11 de arquetipos |
 | 4 | `scripts/04_cdh_sui.py` | Grados-hora por base, temperatura base por punto de quiebre y Ecuación 9 por estrato con el SUI de lecturas reales |
 | 5 | `scripts/05_celdas_vecinas.py [carpeta]` | Clima y carga del Paso 3 en las celdas vecinas (relee los NetCDF de GDEX, unos 10 min) |
+| 6 | `scripts/06_onda_larga_paso3.py` | Corrección de onda larga del sol-aire de la cubierta con ERA5-Land y su efecto en la carga y el R² del Paso 3 (necesita el catastro, que no se publica) |
+| 7 | `scripts/07_dias_representativos.py` | Tres días representativos por mes de cada año (k-medoides) con su peso y validación frente al mes completo |
 
 ## Salidas (`salidas/`)
 
@@ -51,7 +53,8 @@ esta carpeta:
 - **Muros:** irradiancia media de 85 W/m² al norte y de 116 a 123 W/m² al sur, este y oeste. La difusa es 40 % de la
   global diurna.
 - **Cielo:** el aire está en promedio 7,3 K por encima de la temperatura del cielo (6,8 K de noche; percentiles 5 y
-  95: 3,6 y 11,6 K). El Paso 3 de la Fase 1 usó 3,9 K y la ISO 13790 propone 11 K por defecto.
+  95: 3,6 y 11,6 K), frente a los 11 K por defecto de la ISO 13790 para el 5R1C. Esta diferencia no se compara con los
+  3,9 K del sol-aire del Paso 3, que son otra magnitud (ε·ΔR/h_o; ver la sección de onda larga).
 - **EPW:** al leerlo con pvlib, la temperatura media (27,90 °C) y la irradiancia media (235,5 W/m²) coinciden con las
   de la serie.
 
@@ -129,6 +132,50 @@ calor medio cambia hasta 1,4 °C y los grados-hora hasta 30 puntos porcentuales,
 −2,7 % y +3,4 %, porque la cubierta (la mitad de la carga) depende sobre todo de la radiación, que casi no cambia. Es una
 cota de la elección de celda, no de la isla de calor: ERA5-Land no representa la ciudad como superficie urbana.
 
+## Onda larga del sol-aire de la cubierta (`scripts/06_onda_larga_paso3.py`)
+
+El Paso 3 de la Fase 1 resta 3,9 K al sol-aire de la cubierta: la corrección de ASHRAE ε·ΔR/h_o para superficies
+horizontales, con ΔR ≈ 63–66 W/m² en un cielo templado. Con la onda larga de ERA5-Land, ΔR = σ·T_aire⁴ − L vale en
+Barranquilla 43 W/m² en promedio (46 de día y 40 de noche), porque el cielo húmedo del trópico emite más. Con ε = 0,9
+y h_o = 17 W/m²K la corrección es de 2,3 K (2,0 a 2,4 K con ε entre 0,8 y 0,95), no 3,9 K.
+
+| Variante | Corrección media (K) | Carga de la cubierta | Carga total | R² por vivienda | R² por m² |
+| --- | --- | --- | --- | --- | --- |
+| Constante, 3,9 K (Paso 3) | 3,90 | 18.033 kWh/año | 37.932 kWh/año | 0,661 | 0,927 |
+| Horaria, ε = 0,8 | 2,03 | +8,8 % | +4,2 % | 0,667 | 0,931 |
+| Horaria, ε = 0,9 | 2,28 | +7,3 % | +3,5 % | 0,666 | 0,930 |
+| Horaria, ε = 0,95 | 2,41 | +6,6 % | +3,1 % | 0,665 | 0,930 |
+
+Los 3,9 K sobrestiman el enfriamiento de la cubierta hacia el cielo en Barranquilla: con la corrección horaria, la
+carga de la cubierta sube 7 % y la total 3,5 %. Como en AJ24, el R² de los arquetipos casi no cambia (sube 0,005), así
+que la corrección mueve el nivel de la carga, no los arquetipos. Para la Fase 2, el 5R1C debe usar la onda larga
+horaria y no la constante.
+
+## Días representativos (`scripts/07_dias_representativos.py`)
+
+La propuesta (sección 7.6) prevé simular con 36 días representativos por año (tres por mes) cuando el cómputo lo
+exija. Como la validación usa la respuesta mensual al calor, que sale de las anomalías interanuales, los días se eligen
+dentro de cada mes de cada año: k-medoides exacto con k = 3 (todas las ternas de días del mes) sobre la temperatura
+media y máxima, el índice de calor máximo, la irradiancia diaria y la humedad específica media, estandarizados. Cada
+día pesa el número de días de su grupo. Resultado: 423 días para los 141 meses de 2015 a septiembre de 2026
+(`dias_representativos.csv`).
+
+| Medida reconstruida por mes | Error medio | Error máximo | Tres días al azar (mediana) |
+| --- | --- | --- | --- |
+| Temperatura media | 0,06 °C | 0,26 °C | 0,22 °C |
+| Índice de calor medio | 0,15 °C | 0,53 °C | 0,52 °C |
+| Irradiancia media | 3,2 W/m² | 14 W/m² | 11,6 W/m² |
+| Grados-hora (26,5 °C) | 3,7 % | 16 % | 12 % |
+| Carga del Paso 3 | 1,2 % | 5,0 % | 4,7 % |
+
+- **Por año**, la carga reconstruida queda entre −0,1 % y +1,4 % de la del año completo (sesgo medio +0,7 %).
+- **Las anomalías mensuales**, que identifican la Ecuación 9, se conservan: correlación de 0,98 con las del mes
+  completo, tanto en el índice de calor como en la carga.
+- **Para la Fase 2:** los días se eligen solo por el clima. El tipo de día (laboral, sábado, domingo o festivo) cambia
+  la ocupación, así que cada día representativo deberá simularse con los tipos de día de su mes en proporción. Además,
+  el 5R1C tiene inercia térmica: cada día necesita un precalentamiento (por ejemplo, repetirlo dos o tres veces o
+  simular los días anteriores) antes de registrar su resultado.
+
 ## Supuestos
 
 - **Vacaciones escolares aproximadas.** Las 12 semanas de receso del calendario A de Colombia se ubican así: del 1 de
@@ -144,4 +191,6 @@ cota de la elección de celda, no de la isla de calor: ERA5-Land no representa l
 
 - Contrastar la radiación con una medición en Barranquilla.
 - Pedir a GDEX los meses desde octubre de 2026 a medida que se publiquen.
-- Días representativos (tres por mes) cuando se conozca el costo de cómputo de la simulación.
+- Días representativos: ya elegidos (script 07). Falta decidir, con el costo real de la simulación, si se usan, y
+  fijar el precalentamiento del 5R1C.
+- Usar en el 5R1C la onda larga horaria en lugar de la corrección constante de 3,9 K (script 06).
