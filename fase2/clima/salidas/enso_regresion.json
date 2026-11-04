@@ -1,0 +1,17 @@
+{
+  "anom_HI":{
+    "por_unidad_de_oni":0.619,
+    "tendencia_por_decada":0.973,
+    "correlacion_con_oni":0.504
+  },
+  "anom_%_carga_total":{
+    "por_unidad_de_oni":4.402,
+    "tendencia_por_decada":4.737,
+    "correlacion_con_oni":0.577
+  },
+  "anom_%_CDH_26.5":{
+    "por_unidad_de_oni":14.107,
+    "tendencia_por_decada":24.769,
+    "correlacion_con_oni":0.444
+  }
+}

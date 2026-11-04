@@ -5,14 +5,15 @@ módulo térmico contra EnergyPlus (hito del mes 7, enero de 2027).
 
 ## Orden de ejecución
 
-Con un entorno que tenga pvlib 0.16.1, holidays y pyarrow (en la carpeta de trabajo, `compuerta_horaria/.venv`), desde
+Con el entorno de la compuerta horaria (`compuerta_horaria/.venv`, que tiene pvlib 0.16.1, holidays y pyarrow), desde
 esta carpeta:
 
 | Paso | Script | Qué hace |
 | --- | --- | --- |
-| 0 | `compuerta_horaria/scripts/01b_extraer_era5land_gdex.py` | Extrae la celda de Barranquilla de los pedidos de GDEX 953933 y 953943 (en el repositorio, `scripts/compuerta/01b_extraer_era5land_gdex.py`) |
+| 0 | `compuerta_horaria/scripts/01b_extraer_era5land_gdex.py` | Extrae la celda de Barranquilla de los pedidos de GDEX 953933 y 953943 |
 | 1 | `scripts/01_serie_clima.py` | Serie horaria con humedad, radiación en muros y cubierta, cielo, viento y calendario |
 | 2 | `scripts/02_epw.py [AÑO]` | EPW de un año (por defecto, 2024) y lectura de control con pvlib |
+| 3 | `scripts/03_enso.py` | Fase ENSO de cada mes (ONI de la NOAA) y anomalías de clima y carga por fase; usa las tablas del script 11 de arquetipos |
 
 ## Salidas (`salidas/`)
 
@@ -51,6 +52,33 @@ esta carpeta:
   95: 3,6 y 11,6 K). El Paso 3 de la Fase 1 usó 3,9 K y la ISO 13790 propone 11 K por defecto.
 - **EPW:** al leerlo con pvlib, la temperatura media (27,90 °C) y la irradiancia media (235,5 W/m²) coinciden con las
   de la serie.
+
+## El Niño y La Niña (`scripts/03_enso.py`)
+
+Clasifica cada mes con el índice ONI de la NOAA (`datos/noaa/oni.ascii.txt`, descargado el 3-nov-2026 del Climate
+Prediction Center) y la regla de la NOAA: episodio cuando el ONI es ≥ +0,5 (≤ −0,5) en al menos cinco trimestres
+móviles seguidos. De enero de 2015 a septiembre de 2026 hay 49 meses de El Niño (cinco episodios), 30 de La Niña (tres)
+y 62 neutros. Se compara la anomalía de cada mes frente a la media de su mes calendario en 2015–2025.
+
+| Fase | Meses | Temperatura (°C) | Índice de calor (°C) | Lluvia | Grados-hora (base 26,5 °C) | Carga del Paso 3 |
+| --- | --- | --- | --- | --- | --- | --- |
+| El Niño | 49 | +0,23 | +0,56 | −29 % | +13 % | +4,4 % (± 0,9) |
+| La Niña | 30 | −0,25 | −0,68 | +20 % | −17 % | −4,5 % (± 0,9) |
+| Neutro | 62 | 0,00 | +0,03 | +8 % | +1 % | −0,4 % (± 0,7) |
+
+- **Por unidad de ONI**, el índice de calor sube 0,62 °C y la carga 4,4 %, con una tendencia aparte de +1,0 °C y
+  +4,7 % por década (`enso_regresion.json`). La década empezó con La Niña (2020–2023) y terminó con El Niño, así que
+  sin la tendencia el ONI absorbería parte del calentamiento. Con 141 meses y ocho episodios, las dos cosas no se
+  separan bien; los errores estándar suponen meses independientes y son optimistas.
+- **No todos los episodios pesan igual.** El de 2023–2024 (fuerte, ONI 1,99) subió el índice de calor 1,7 °C y la
+  carga 10,6 %; el de 2015–2016 (muy fuerte, ONI 2,59) solo 0,5 °C y 3,9 % en promedio, y el moderado de 2018–2019 la
+  bajó (−1,3 %).
+- **Por año ENSO** (julio a junio, `enso_anios.csv`), la carga va de −5,8 % (2021–2022, La Niña) a +8,7 %
+  (2023–2024, El Niño) frente a la media. Para el escenario «año de El Niño» de la Fase 3, 2023–2024 es el caso más
+  exigente observado; para La Niña, 2021–2022.
+- **Para la Fase 3:** el criterio N6 usa los errores de 2023, cuyo segundo semestre es El Niño fuerte. Además, el
+  ONI llegó a 2,46 en agosto–octubre de 2026, así que la prueba con datos de 2027 caerá probablemente en un episodio
+  de El Niño fuerte o muy fuerte, como ya anticipa la propuesta con el pronóstico del IDEAM.
 
 ## Supuestos
 
