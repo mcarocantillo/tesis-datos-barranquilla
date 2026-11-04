@@ -1,0 +1,15 @@
+﻿anio;pregunta;estrato;hogares_muestra;hogares_no_pagan;no_pagan_pct;no_pagan_ic95;AC_no_pagan_pct;AC_no_pagan_ic95;AC_pagan_pct;AC_pagan_ic95;AC_dif_puntos;AC_dif_ic95
+2024;P791 = 3 (no pagan, pero tienen el servicio);1;250;75;30.82;13.28;6.09;3.4;15.24;6.72;9.15;7.4
+2024;P791 = 3 (no pagan, pero tienen el servicio);2;161;4;1.59;2.15;0.0;0.0;34.73;9.48;34.73;9.48
+2024;P791 = 3 (no pagan, pero tienen el servicio);3;125;2;2.3;2.83;0.0;0.0;46.89;10.58;46.89;10.58
+2024;P791 = 3 (no pagan, pero tienen el servicio);4;52;0;0.0;0.0;;;78.16;10.21;;
+2024;P791 = 3 (no pagan, pero tienen el servicio);5;38;0;0.0;0.0;;;81.31;13.88;;
+2024;P791 = 3 (no pagan, pero tienen el servicio);6;20;0;0.0;0.0;;;100.0;0.0;;
+2024;P791 = 3 (no pagan, pero tienen el servicio);ciudad;646;81;12.73;6.32;5.69;3.25;41.74;7.58;36.04;7.92
+2019;P5018 = 0 (pagaron 0 pesos el mes pasado);1;382;56;14.39;;2.02;;8.65;;6.63;
+2019;P5018 = 0 (pagaron 0 pesos el mes pasado);2;153;1;0.82;;0.0;;25.33;;25.33;
+2019;P5018 = 0 (pagaron 0 pesos el mes pasado);3;144;2;1.51;;32.48;;42.82;;10.35;
+2019;P5018 = 0 (pagaron 0 pesos el mes pasado);4;112;0;0.0;;;;53.77;;;
+2019;P5018 = 0 (pagaron 0 pesos el mes pasado);5;47;0;0.0;;;;86.74;;;
+2019;P5018 = 0 (pagaron 0 pesos el mes pasado);6;58;0;0.0;;;;98.31;;;
+2019;P5018 = 0 (pagaron 0 pesos el mes pasado);ciudad;896;59;6.15;;3.33;;33.01;;29.68;
