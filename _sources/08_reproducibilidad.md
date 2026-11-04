@@ -94,6 +94,8 @@ Orden: `build_ecv2019.py` y `ecv24.py` → `ecv24_tablas.py`, `enut*.py`, `geih*
 | 3 | `scripts/03_enso.py` | Fase de El Niño o La Niña de cada mes con el ONI de la NOAA (`datos/noaa/oni.ascii.txt`, descargado el 3-nov-2026) y anomalías del clima y de la carga del Paso 3 por fase; usa las tablas `clima_gdex_*` de `arquetipos/` |
 | 4 | `scripts/04_cdh_sui.py` | Grados-hora por temperatura base, base por punto de quiebre y Ecuación 9 por estrato con `tablas/SUI_O3_Barranquilla_residencial_lectura_2015_2025.csv` |
 | 5 | `scripts/05_celdas_vecinas.py [carpeta]` | Clima y carga del Paso 3 en las celdas de tierra vecinas; relee los NetCDF de GDEX |
+| 6 | `scripts/06_onda_larga_paso3.py` | Corrección de onda larga del sol-aire de la cubierta con la radiación de ERA5-Land y su efecto en la carga y el R² del Paso 3; necesita el catastro y la asignación de arquetipos, que no se publican |
+| 7 | `scripts/07_dias_representativos.py` | Tres días representativos por mes de cada año (k-medoides exacto) con su peso, y su validación frente al mes completo |
 
 Usa pvlib 0.16 {cite:p}`holmgren2018`. La serie publicada es `fase2/clima/salidas/clima_horario_barranquilla.csv.gz`; el script 02 lee la versión parquet que genera el 01. Detalle de columnas y comprobaciones en `fase2/clima/README.md`.
 
