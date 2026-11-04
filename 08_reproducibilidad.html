@@ -408,6 +408,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tablas-resumen-carpeta-tablas-del-repositorio">Tablas resumen (carpeta <code class="docutils literal notranslate"><span class="pre">tablas/</span></code> del repositorio)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-carpeta-scripts">Scripts (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compuerta-horaria-carpeta-scripts-compuerta">Compuerta horaria (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clima-de-la-fase-2-carpeta-fase2-clima">Clima de la Fase 2 (carpeta <code class="docutils literal notranslate"><span class="pre">fase2/clima/</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entorno">Entorno</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-el-sitio">Construir el sitio</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licencia-y-cita">Licencia y cita</a></li>
@@ -534,6 +535,33 @@
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">comun.py</span></code> reúne las rutas y funciones compartidas. Los scripts se corren desde <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/</span></code> y guardan las descargas en <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/datos/</span></code> (unos 150 MB) y las salidas en <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/salidas/</span></code>; ninguna de las dos carpetas se versiona.</p>
 </section>
+<section id="clima-de-la-fase-2-carpeta-fase2-clima">
+<h2>Clima de la Fase 2 (carpeta <code class="docutils literal notranslate"><span class="pre">fase2/clima/</span></code>)<a class="headerlink" href="#clima-de-la-fase-2-carpeta-fase2-clima" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Paso</p></th>
+<th class="head"><p>Script</p></th>
+<th class="head"><p>Qué hace</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">scripts/compuerta/01b_extraer_era5land_gdex.py</span></code></p></td>
+<td><p>Extrae la celda de Barranquilla de ERA5-Land de GDEX (con las componentes del viento)</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">scripts/01_serie_clima.py</span></code></p></td>
+<td><p>Serie horaria en hora local de 2015 a septiembre de 2026: humedad con la presión horaria, índice de calor, radiación directa y difusa (Erbs <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id82" title="D. G. Erbs, S. A. Klein y J. A. Duffie. Estimation of the diffuse radiation fraction for hourly, daily and monthly-average global radiation. Solar Energy, 28(4):293–302, 1982. doi:10.1016/0038-092X(82)90302-4.">Erbs et al., 1982</a>)</span>) y en muros N, E, S y O y cubierta (cielo isótropo, albedo 0,2), temperatura del cielo desde la onda larga, viento y calendario con vacaciones escolares (S19)</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">scripts/02_epw.py</span> <span class="pre">[AÑO]</span></code></p></td>
+<td><p>Archivo EPW de un año (por defecto 2024) para la verificación contra EnergyPlus</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Usa pvlib 0.16 <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id81" title="William F. Holmgren, Clifford W. Hansen y Mark A. Mikofski. pvlib python: a python package for modeling solar energy systems. Journal of Open Source Software, 3(29):884, 2018. doi:10.21105/joss.00884.">Holmgren et al., 2018</a>)</span>. La serie publicada es <code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/clima_horario_barranquilla.csv.gz</span></code>; el script 02 lee la versión parquet que genera el 01. Detalle de columnas y comprobaciones en <code class="docutils literal notranslate"><span class="pre">fase2/clima/README.md</span></code>.</p>
+</section>
 <section id="entorno">
 <h2>Entorno<a class="headerlink" href="#entorno" title="Link to this heading">#</a></h2>
 <p>Python 3.13 con las versiones fijadas en <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> (pandas 3.0, numpy 2.5, scipy 1.18, statsmodels 0.15 y matplotlib 3.11). La compuerta horaria usa además requests, holidays, xarray y netCDF4, y se corrió con Python 3.14.</p>
@@ -622,6 +650,7 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tablas-resumen-carpeta-tablas-del-repositorio">Tablas resumen (carpeta <code class="docutils literal notranslate"><span class="pre">tablas/</span></code> del repositorio)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-carpeta-scripts">Scripts (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compuerta-horaria-carpeta-scripts-compuerta">Compuerta horaria (carpeta <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clima-de-la-fase-2-carpeta-fase2-clima">Clima de la Fase 2 (carpeta <code class="docutils literal notranslate"><span class="pre">fase2/clima/</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entorno">Entorno</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-el-sitio">Construir el sitio</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licencia-y-cita">Licencia y cita</a></li>
