@@ -547,31 +547,37 @@
 <td><p>ERA5-Land de GDEX (NCAR); copia de Open-Meteo como contraste; IDEAM. Serie de la Fase 2 con radiación en muros y cubierta, temperatura del cielo (aire 7,3 K por encima en promedio) y calendario, y EPW de 2024 en <code class="docutils literal notranslate"><span class="pre">fase2/clima/</span></code></p></td>
 <td><p>Fase 2, paso 1</p></td>
 </tr>
-<tr class="row-odd"><td><p>Fracción climatizada</p></td>
+<tr class="row-odd"><td><p>Fase de El Niño y La Niña</p></td>
+<td><p>Fase de cada mes de 2015 a septiembre de 2026 (49 meses de El Niño, 30 de La Niña); frente a su mes calendario, la carga del Paso 3 sube 4,4 % en El Niño y baja 4,5 % en La Niña; año ENSO más exigente: julio de 2023 a junio de 2024 (+8,7 %)</p></td>
+<td><p>Ocho episodios; el efecto no crece con la intensidad del episodio y se confunde con la tendencia de la década</p></td>
+<td><p>ONI de la NOAA <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id83" title="NOAA Climate Prediction Center. Oceanic Niño Index (ONI), oni.ascii.txt. https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt, 2026. Consultado el 3 de noviembre de 2026.">NOAA Climate Prediction Center, 2026</a>)</span>, regla de cinco trimestres; <code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/enso_*</span></code></p></td>
+<td><p>Fase 3, pasos 6 a 8 (N6, temporadas y escenario de El Niño)</p></td>
+</tr>
+<tr class="row-even"><td><p>Fracción climatizada</p></td>
 <td><p>Una habitación en E1–E2 (VIS) y en casas de E3–E4; las habitaciones en apartamentos de E3–E4; toda la vivienda en E5–E6 (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 6</span></a>)</p></td>
 <td><p>Sin medición en hogares</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 1, paso 6; Fase 2, paso 2</p></td>
 </tr>
-<tr class="row-even"><td><p>Envolvente de los arquetipos</p></td>
+<tr class="row-odd"><td><p>Envolvente de los arquetipos</p></td>
 <td><p>Relación ventana-muro, U de vidrio, muros y cubierta, SRI y sombreamiento por tipología (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 6</span></a>)</p></td>
 <td><p>Centro de los rangos (S15); un edificio por tipología</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 1, paso 6; Fase 2, paso 4</p></td>
 </tr>
-<tr class="row-odd"><td><p>Consigna de refrigeración</p></td>
+<tr class="row-even"><td><p>Consigna de refrigeración</p></td>
 <td><p>Rango de 22 a 26,5 °C (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 6</span></a>)</p></td>
 <td><p>26,5 °C de CEELA; 22 °C supuesto propio (S14)</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 2, paso 5</p></td>
 </tr>
-<tr class="row-even"><td><p>Rendimiento del A/C</p></td>
+<tr class="row-odd"><td><p>Rendimiento del A/C</p></td>
 <td><p>COP de 3,0</p></td>
 <td><p>Valor central</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 2, paso 5</p></td>
 </tr>
-<tr class="row-odd"><td><p>Respuesta horaria de la demanda al calor</p></td>
+<tr class="row-even"><td><p>Respuesta horaria de la demanda al calor</p></td>
 <td><p>Noche 1,92 %/°C (1,79–2,05) con Open-Meteo y 1,90 (1,78–2,02) con GDEX (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-fuentes"><span class="std std-numref">Tabla 25</span></a>); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-franjas"><span class="std std-numref">Tabla 23</span></a>)</p></td>
 <td><p>Forma hora a hora inestable entre años: capa C (S16)</p></td>
 <td><p>XM; ERA5-Land</p></td>
@@ -720,7 +726,7 @@
 </tbody>
 </table>
 </div>
-<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 36</span></a>).</p>
+<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 36</span></a>).</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-posicion">
 <caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Viviendas del catastro por estrato y posición frente a la cubierta (% de las viviendas de cada estrato).</span><a class="headerlink" href="#tab-posicion" title="Link to this table">#</a></caption>
 <thead>
