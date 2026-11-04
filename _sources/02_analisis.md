@@ -90,4 +90,4 @@ Patrón estacional del consumo.
 - Los estratos 5 y 6 tienen 20 a 72 hogares por ola; sus tasas son inciertas aunque cercanas a 100 %.
 - El estrato 1 consume en el SUI más que el 2 y el 3 con poco A/C. Con solo lecturas reales, CEELA da 36 % menos para 2021–2024; falta descargar el SUI con ese filtro y la respuesta de Air-e.
 - El 16,2 % de las viviendas del catastro no tiene coordenadas (sobre todo estratos 1–2) y la ciudad informal no está.
-- El clima horario se procesó con la copia de ERA5-Land de Open-Meteo; falta repetir el procesamiento con el archivo del Climate Data Store.
+- El clima horario se procesó con la copia de ERA5-Land de Open-Meteo y se repitió con ERA5-Land completo de GDEX (NCAR), con el mismo resultado en la compuerta horaria ([Respuesta horaria al calor](15_compuerta_horaria.md)). ERA5-Land sigue subestimando el calor del mediodía frente al IDEAM (HI −1,9 °C en promedio).

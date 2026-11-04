@@ -120,7 +120,13 @@ La serie horaria de ERA5-Land en la celda de Barranquilla (copia de Open-Meteo) 
 | Temperatura (°C) | −0,70 | 1,96 | +0,17 | −2,23 (13 h) | 0,82 |
 | Humedad relativa (puntos) | −2,8 | 11,1 | −4,4 | −7,0 (7 h) | 0,38 |
 | Índice de calor (°C) | −2,4 | 5,0 | −0,28 | −5,9 (13 h) | 0,84 |
+| *Con ERA5-Land de GDEX (75.268 horas):* | | | | | |
+| Temperatura (°C) | −0,52 | 1,91 | +0,34 | −2,05 (13 h) | 0,82 |
+| Humedad relativa (puntos) | −2,8 | 11,1 | −4,4 | −7,0 (7 h) | 0,38 |
+| Índice de calor (°C) | −1,9 | 4,8 | +0,18 | −5,5 (13 h) | 0,84 |
 ```
+
+Con ERA5-Land de GDEX, la descarga completa del NCAR, la temperatura y el punto de rocío son los de Open-Meteo más 0,175 K, así que el sesgo de la temperatura y del índice de calor se reduce algo y el de la humedad no cambia. El patrón es el mismo: buena noche y mediodía subestimado ([Respuesta horaria al calor](15_compuerta_horaria.md)).
 
 ERA5-Land reproduce bien la noche y subestima el calor del mediodía ({numref}`tab-coherencia-clima`). De 22 a 5 h el sesgo de la temperatura es casi nulo (+0,17 °C) y el RMSE es de 1,0 °C. De 11 a 17 h la temperatura queda entre 1,5 y 2,2 °C por debajo de la de la estación y el índice de calor hasta 5,9 °C por debajo. Por mes, el sesgo de la temperatura va de −1,0 °C (abril) a −0,3 °C (octubre), sin un patrón estacional marcado. Una diferencia de mediodía de este tipo es común en los reanálisis: la celda de ERA5-Land (0,1°, unos 11 km) promedia superficies distintas de la del aeropuerto donde está la estación. Las medias diarias del índice de calor de las dos fuentes correlacionan 0,85 en los 2.882 días en que la estación tiene al menos 20 horas. Para la compuerta horaria se usa ERA5-Land, porque cubre todos los días y no tiene huecos; con el índice de calor del IDEAM la respuesta nocturna de la demanda baja de 1,92 a 0,94 %/°C ([Respuesta horaria al calor](15_compuerta_horaria.md)). Ese cambio de nivel indica que $b$ depende de la fuente de clima y no debe usarse como valor absoluto.
 
@@ -132,6 +138,6 @@ La comparación con las encuestas y el SUI es indirecta. El mercado de Air-e inc
 
 ## Validación pendiente
 
-- **Clima.** Repetir el contraste con IDEAM cuando se descargue ERA5-Land del Climate Data Store, por hora del día y mes, y agregar la radiación (Fase 2, paso 1).
+- **Clima.** El contraste con IDEAM ya se repitió con ERA5-Land de GDEX ({numref}`tab-coherencia-clima`). Falta contrastar la radiación con una medición (Fase 2, paso 1).
 - **Demanda horaria.** La suma del consumo facturado del SUI y las pérdidas debe acercarse a la demanda regulada de XM del mercado de Air-e (Fase 3, paso 1). Para esa comparación hace falta el SUI de los tres departamentos del mercado, no solo el de Barranquilla.
 - **Consumo del estrato 1.** El consumo por suscriptor del estrato 1 es mayor que el de los estratos 2 y 3, lo que no es coherente con su menor tenencia de A/C. Con solo lecturas reales, CEELA da 36 % menos para el estrato 1 en 2021–2024 ({numref}`tab-ceela-sui`). Queda pendiente descargar el SUI con el filtro de tipo de lectura y confirmarlo con Air-e.

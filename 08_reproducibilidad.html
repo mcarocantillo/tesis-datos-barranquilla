@@ -34,10 +34,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -513,13 +513,21 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">01a_descargar_era5land_cds.py</span></code></p></td>
 <td><p>Descarga ERA5-Land del Climate Data Store con la cuenta personal del CDS (<code class="docutils literal notranslate"><span class="pre">~/.cdsapirc</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cdsapi</span></code>); después se repite <code class="docutils literal notranslate"><span class="pre">01_clima.py</span> <span class="pre">procesar</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>2</p></td>
+<tr class="row-even"><td><p>1c</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">01b_extraer_era5land_gdex.py</span> <span class="pre">[carpeta]</span></code></p></td>
+<td><p>Extrae la celda de Barranquilla de ERA5-Land de NCAR GDEX (pedidos descargados con los scripts que genera GDEX, carpetas <code class="docutils literal notranslate"><span class="pre">era5land_met</span></code> y <code class="docutils literal notranslate"><span class="pre">era5land_rad_tp</span></code>) y desacumula la radiación y la lluvia. <code class="docutils literal notranslate"><span class="pre">01_clima.py</span> <span class="pre">procesar</span></code> la usa si no hay archivo del CDS; <code class="docutils literal notranslate"><span class="pre">--fuente=openmeteo</span></code> fuerza la copia de Open-Meteo</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">02_descargar_xm.py</span></code></p></td>
 <td><p>API pública de XM: mercados CARIBE SOL y COSTA CARIBE, agentes de Air-e y Electricaribe, demanda no atendida por subárea</p></td>
 </tr>
-<tr class="row-odd"><td><p>3</p></td>
+<tr class="row-even"><td><p>3</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">03_estimar.py</span></code></p></td>
 <td><p><span class="math notranslate nohighlight">\(b_h\)</span>, franjas, estabilidad entre años, decisión de la compuerta y figura</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">04_comparar_fuentes.py</span></code></p></td>
+<td><p>Compara las salidas con Open-Meteo (copiadas en <code class="docutils literal notranslate"><span class="pre">salidas/fuente_openmeteo/</span></code>) y con GDEX</p></td>
 </tr>
 </tbody>
 </table>

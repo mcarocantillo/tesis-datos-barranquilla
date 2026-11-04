@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
@@ -1035,6 +1035,9 @@ incierto.</p></li>
 <li><p>Usar solo la ola 2024 de la ECV depende de suponer para 2019 un efecto de diseño de 1,5; con el de cada material la
 prueba del techo no rechaza. Con las dos olas, el techo de concreto de las casas de los estratos 1 y 2 baja de 18 % a
 10 %, así que la elección de olas entra como factor en la sensibilidad de la Fase 2.</p></li>
+<li><p>La carga usa la irradiancia de ERA5 (0,25°) porque la copia de Open-Meteo no trae la de ERA5-Land (supuesto S17).
+Con ERA5-Land completo de GDEX, la carga media sube 4,4 %, pero el R² de los arquetipos no cambia (0,660 por
+vivienda y 0,927 por m²; AJ24, script 11): el clima mueve el nivel de la carga, no las diferencias entre viviendas.</p></li>
 <li><p>Algunas reglas cambiaron después de ver resultados de prueba o completos (preregistro, Notas 3 a 6). Cada cambio
 está registrado con su motivo, y el resultado con la regla original se reporta aparte: con la regla original de
 elección del algoritmo habría 9 arquetipos por vivienda, con un R² de 0,40.</p></li>
@@ -1043,7 +1046,7 @@ elección del algoritmo habría 9 arquetipos por vivienda, con un R² de 0,40.</
 <section id="archivos">
 <h2>Archivos<a class="headerlink" href="#archivos" title="Link to this heading">#</a></h2>
 <p>Todo está en la carpeta <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos"><code class="docutils literal notranslate"><span class="pre">arquetipos/</span></code></a>:
-el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 10, las tablas agregadas, las figuras,
+el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 11, las tablas agregadas, las figuras,
 las fichas de los arquetipos de cada solución (<code class="docutils literal notranslate"><span class="pre">salidas/fichas/</span></code>) y los árboles de asignación (<code class="docutils literal notranslate"><span class="pre">salidas/modelos/</span></code>). La
 asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publican.</p>
 </section>

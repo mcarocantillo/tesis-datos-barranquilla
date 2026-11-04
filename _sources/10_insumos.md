@@ -33,12 +33,12 @@ Si una proporción observada es de 100 % (por ejemplo, la tenencia de nevera en 
 | Hogares por estrato | Suscriptores residenciales de diciembre ({numref}`tab-calibracion`) | Diferencia con el catastro menor de 2,5 puntos | SUI; catastro | Fase 2, paso 9; Fase 3, paso 1 |
 | Consumo facturado por suscriptor | kWh/mes por estrato, 2015–2019 ({numref}`tab-calibracion`) | Rango interanual | SUI | Fase 3, paso 4 |
 | Alza estacional del consumo | Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) ({numref}`tab-o3-cambio`); con el consolidado, 10,9 % a 29,1 % ({numref}`tab-calibracion`) | Variación entre años | SUI 2015–2025 | Fase 3, pasos 2 y 5 |
-| Clima horario | Temperatura, humedad e índice de calor en hora local, 2015–2026 | Sesgo frente al IDEAM: −0,7 °C en temperatura (≈ 0 de noche, −2,2 °C a mediodía) ({numref}`tab-coherencia-clima`) | ERA5-Land (copia de Open-Meteo, provisional); IDEAM | Fase 2, paso 1 |
+| Clima horario | Temperatura, humedad, presión, radiación de onda corta y larga, viento, lluvia e índice de calor en hora local, 2015 a septiembre de 2026 | Sesgo frente al IDEAM: −0,5 °C en temperatura (+0,3 de noche, −2,1 °C a mediodía) ({numref}`tab-coherencia-clima`) | ERA5-Land de GDEX (NCAR); copia de Open-Meteo como contraste; IDEAM | Fase 2, paso 1 |
 | Fracción climatizada | Una habitación en E1–E2 (VIS) y en casas de E3–E4; las habitaciones en apartamentos de E3–E4; toda la vivienda en E5–E6 ({numref}`tab-ceela-insumos`) | Sin medición en hogares | CEELA | Fase 1, paso 6; Fase 2, paso 2 |
 | Envolvente de los arquetipos | Relación ventana-muro, U de vidrio, muros y cubierta, SRI y sombreamiento por tipología ({numref}`tab-ceela-insumos`) | Centro de los rangos (S15); un edificio por tipología | CEELA | Fase 1, paso 6; Fase 2, paso 4 |
 | Consigna de refrigeración | Rango de 22 a 26,5 °C ({numref}`tab-ceela-insumos`) | 26,5 °C de CEELA; 22 °C supuesto propio (S14) | CEELA | Fase 2, paso 5 |
 | Rendimiento del A/C | COP de 3,0 | Valor central | CEELA | Fase 2, paso 5 |
-| Respuesta horaria de la demanda al calor | Noche 1,92 %/°C (1,79–2,05); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 ({numref}`tab-compuerta-franjas`) | Forma hora a hora inestable entre años: capa C (S16) | XM; ERA5-Land | Fase 3, pasos 1 y 4 (blanco de validación) |
+| Respuesta horaria de la demanda al calor | Noche 1,92 %/°C (1,79–2,05) con Open-Meteo y 1,90 (1,78–2,02) con GDEX ({numref}`tab-compuerta-fuentes`); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 ({numref}`tab-compuerta-franjas`) | Forma hora a hora inestable entre años: capa C (S16) | XM; ERA5-Land | Fase 3, pasos 1 y 4 (blanco de validación) |
 ```
 
 ## Tenencia de aire acondicionado

@@ -34,10 +34,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d5fa56a8" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -536,15 +536,15 @@
 <td><p>Fase 3, paso 4</p></td>
 </tr>
 <tr class="row-odd"><td><p>Alza estacional del consumo</p></td>
-<td><p>Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) (<a class="reference internal" href="17_lecturas_reales.html#tab-o3-cambio"><span class="std std-numref">Tabla 29</span></a>); con el consolidado, 10,9 % a 29,1 % (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 13</span></a>)</p></td>
+<td><p>Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) (<a class="reference internal" href="17_lecturas_reales.html#tab-o3-cambio"><span class="std std-numref">Tabla 31</span></a>); con el consolidado, 10,9 % a 29,1 % (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 13</span></a>)</p></td>
 <td><p>Variación entre años</p></td>
 <td><p>SUI 2015–2025</p></td>
 <td><p>Fase 3, pasos 2 y 5</p></td>
 </tr>
 <tr class="row-even"><td><p>Clima horario</p></td>
-<td><p>Temperatura, humedad e índice de calor en hora local, 2015–2026</p></td>
-<td><p>Sesgo frente al IDEAM: −0,7 °C en temperatura (≈ 0 de noche, −2,2 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 35</span></a>)</p></td>
-<td><p>ERA5-Land (copia de Open-Meteo, provisional); IDEAM</p></td>
+<td><p>Temperatura, humedad, presión, radiación de onda corta y larga, viento, lluvia e índice de calor en hora local, 2015 a septiembre de 2026</p></td>
+<td><p>Sesgo frente al IDEAM: −0,5 °C en temperatura (+0,3 de noche, −2,1 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 37</span></a>)</p></td>
+<td><p>ERA5-Land de GDEX (NCAR); copia de Open-Meteo como contraste; IDEAM</p></td>
 <td><p>Fase 2, paso 1</p></td>
 </tr>
 <tr class="row-odd"><td><p>Fracción climatizada</p></td>
@@ -572,7 +572,7 @@
 <td><p>Fase 2, paso 5</p></td>
 </tr>
 <tr class="row-odd"><td><p>Respuesta horaria de la demanda al calor</p></td>
-<td><p>Noche 1,92 %/°C (1,79–2,05); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-franjas"><span class="std std-numref">Tabla 22</span></a>)</p></td>
+<td><p>Noche 1,92 %/°C (1,79–2,05) con Open-Meteo y 1,90 (1,78–2,02) con GDEX (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-fuentes"><span class="std std-numref">Tabla 25</span></a>); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-franjas"><span class="std std-numref">Tabla 23</span></a>)</p></td>
 <td><p>Forma hora a hora inestable entre años: capa C (S16)</p></td>
 <td><p>XM; ERA5-Land</p></td>
 <td><p>Fase 3, pasos 1 y 4 (blanco de validación)</p></td>
@@ -720,7 +720,7 @@
 </tbody>
 </table>
 </div>
-<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 34</span></a>).</p>
+<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 36</span></a>).</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-posicion">
 <caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Viviendas del catastro por estrato y posición frente a la cubierta (% de las viviendas de cada estrato).</span><a class="headerlink" href="#tab-posicion" title="Link to this table">#</a></caption>
 <thead>

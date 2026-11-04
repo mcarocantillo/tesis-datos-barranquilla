@@ -6,7 +6,7 @@ Ninguna encuesta registra a qué hora se usa el A/C ([Supuestos, sensibilidad y 
 
 **Demanda.** Demanda comercial horaria del mercado de comercialización «CARIBE SOL», mercado regulado, de la API pública de XM {cite:p}`xm_api`. Es el mercado de Air-e desde octubre de 2020 (Atlántico, Magdalena y La Guajira) e incluye las pérdidas asignadas al mercado. Para 2015–2019, cuando ese mercado no existía, se usó como contraste la demanda de los agentes de Electricaribe (EDCC y EDIC). También se descargó la demanda no atendida diaria de las subáreas Atlántico y GCM (Guajira, Cesar y Magdalena), que sirve para marcar los días con cortes. Son series agregadas del mercado; no hay datos por usuario.
 
-**Clima.** Serie horaria de ERA5-Land {cite:p}`munozsabater2021` en la celda de Barranquilla (10,96° N; 74,80° O), convertida a hora local (UTC−5). Por ahora proviene de la copia de ERA5-Land que sirve Open-Meteo {cite:p}`openmeteo`, que no requiere credenciales; la descarga directa del Climate Data Store queda pendiente ([Datos sospechosos y pendientes](07_datos_sospechosos.md)). Como contraste se usó la estación 0029045190 del aeropuerto Ernesto Cortissoz del IDEAM {cite:p}`ideam_cortissoz`, con los registros de cada hora en punto. La humedad relativa se calcula con la fórmula de Magnus {cite:p}`alduchov1996` y el índice de calor (HI) con la regresión de Rothfusz que usa la NOAA {cite:p}`rothfusz1990`. La variable explicativa es el HI medio de cada día, $HI_d$.
+**Clima.** Serie horaria de ERA5-Land {cite:p}`munozsabater2021` en la celda de Barranquilla (10,96° N; 74,80° O), convertida a hora local (UTC−5). La estimación de esta página se hizo con la copia de ERA5-Land que sirve Open-Meteo {cite:p}`openmeteo`, que no requiere credenciales, y se repitió con ERA5-Land completo descargado de GDEX, el archivo de datos del NCAR (sección {ref}`repeticion-gdex`). Como contraste se usó la estación 0029045190 del aeropuerto Ernesto Cortissoz del IDEAM {cite:p}`ideam_cortissoz`, con los registros de cada hora en punto. La humedad relativa se calcula con la fórmula de Magnus {cite:p}`alduchov1996` y el índice de calor (HI) con la regresión de Rothfusz que usa la NOAA {cite:p}`rothfusz1990`. La variable explicativa es el HI medio de cada día, $HI_d$.
 
 ## Método
 
@@ -72,13 +72,38 @@ Aunque la forma hora a hora no es estable, la demanda sí restringe la respuesta
 - La noche aporta entre 31 % y 34 % de la respuesta diaria en MWh/°C.
 - La respuesta nocturna equivale a entre 0,77 y 0,98 veces la de la tarde, según el año.
 
+(repeticion-gdex)=
+## Repetición con ERA5-Land de GDEX
+
+La propuesta prevé repetir la estimación con la descarga oficial de ERA5-Land y reportar las dos fuentes. ERA5-Land completo se descargó de GDEX (gdex.ucar.edu), que distribuye el mismo reanálisis del ECMWF que el Climate Data Store: pedidos 953933 (temperatura, punto de rocío, presión y viento) y 953943 (radiación de onda corta y larga y lluvia), de enero de 2015 a septiembre de 2026, en una malla de 0,1° sobre 10,0–11,9° N y 74,0–74,9° O. Se usa la celda más cercana al punto de la compuerta (11,0° N; 74,8° O), la misma que usa Open-Meteo.
+
+Hora a hora, la temperatura y el punto de rocío de GDEX son los de Open-Meteo más una constante de 0,175 K (desviación estándar de 0,03 K; correlación 1,000), probablemente por la corrección de altura que aplica Open-Meteo. GDEX no trae el punto de rocío en 608 horas sueltas de 2019, 2022 y 2023 (el campo está vacío en toda la malla, en huecos de 1 a 9 h); se rellenaron con el de Open-Meteo más esa constante. Sin el relleno se pierden 38 días de la regresión y los resultados apenas cambian (noche: 1,89 %/°C).
+
+```{table} Respuesta de la demanda al índice de calor diario con las dos fuentes de ERA5-Land, 2021–2025 (1.399 días, % de la demanda por °C).
+:name: tab-compuerta-fuentes
+
+| Medida | Open-Meteo | GDEX | IC 95 % con GDEX |
+| --- | --- | --- | --- |
+| $b$ noche (22 a 5 h) | 1,92 | 1,90 | 1,78 – 2,02 |
+| $b$ mañana (6 a 11 h) | 1,79 | 1,77 | 1,65 – 1,88 |
+| $b$ tarde (12 a 17 h) | 2,13 | 2,09 | 1,97 – 2,21 |
+| $b$ pico (18 a 21 h) | 1,97 | 1,93 | 1,83 – 2,04 |
+| $b$ noche, Electricaribe 2015–2019 | 1,92 | 1,89 | 1,78 – 2,00 |
+| Nivel nocturno igual entre años ($p$) | 0,35 | 0,40 | |
+| Forma nocturna igual entre años ($p$) | 0,008 | 0,012 | |
+| Sesgo del HI frente al IDEAM (°C) | −2,4 | −1,9 | |
+| Decisión | capa C | capa C | |
+```
+
+Con GDEX, el HI diario es 0,45 °C mayor que con Open-Meteo y las dos series correlacionan 0,999, así que la respuesta casi no cambia: baja entre 0,02 y 0,05 puntos en todas las franjas ({numref}`tab-compuerta-fuentes`). Por año, la respuesta nocturna va de 1,65 %/°C (2025) a 2,08 %/°C (2021), y la noche aporta entre 31 % y 34 % de la respuesta diaria en MWh/°C, como con Open-Meteo. Los dos criterios dan el mismo resultado: el nivel nocturno es distinto de cero y estable, y la forma nocturna cambia entre años ($p = 0{,}012$; con la noche contigua, $p = 0{,}0001$). **La decisión no cambia: capa C.** El contraste con el IDEAM mejora un poco, porque el sesgo de la temperatura pasa de −0,70 a −0,52 °C y el del HI de −2,4 a −1,9 °C, pero ERA5-Land sigue subestimando el calor del mediodía. Con el HI de IDEAM, la respuesta nocturna sigue en 0,94 %/°C.
+
 ## Cautelas
 
 - **XM no es demanda residencial.** El mercado de Air-e mezcla usuarios residenciales, comerciales y oficiales de tres departamentos, y se usa el clima de Barranquilla como referencia de todos. Una respuesta nocturna positiva es compatible con el uso residencial del A/C, pero no lo prueba.
 - **El nivel de $b$ depende de la fuente del HI.** Con el HI de IDEAM (654 días con datos suficientes) la respuesta nocturna baja a 0,94 %/°C. ERA5-Land subestima el HI de mediodía ({numref}`tab-coherencia-clima`), y el HI de IDEAM tiene más ruido de medida y menos días.
-- **Clima provisional.** ERA5-Land viene de la copia de Open-Meteo. Cuando se descargue el archivo del Climate Data Store hay que repetir el procesamiento del clima y la estimación (`01_clima.py procesar` y `03_estimar.py`).
+- **Fuente del clima.** La estimación se repitió con ERA5-Land de GDEX y da lo mismo que con la copia de Open-Meteo ({numref}`tab-compuerta-fuentes`). Las dos son el mismo reanálisis, así que la repetición confirma la copia, no la calidad de ERA5-Land; la diferencia que importa sigue siendo frente al IDEAM.
 - **La regla es de este ejercicio.** Los umbrales (6 de 8 horas, 4 de 5 años, $p > 0{,}05$) se fijaron para esta prueba; no provienen de una norma.
 
 ## Archivos
 
-Tablas en `tablas/`: `franjas.csv` (respuesta por franja, conjunta y por año, y diferencia de domingos y festivos), `b_h_por_hora.csv` ($b_h$ de todas las especificaciones, incluidas las de robustez), `estabilidad.csv` (criterios por año), `b_h_niveles_reparto.csv` (ecuación {eq}`eq-compuerta` en niveles y reparto horario), `contraste_era5land_ideam.csv` (sesgo y RMSE por hora y por mes) y `decision.json` (regla y resultado de la compuerta). Scripts en `scripts/compuerta/` ([Reproducibilidad](08_reproducibilidad.md)). Las descargas crudas de XM, Open-Meteo e IDEAM no se publican; los scripts las reconstruyen desde las fuentes públicas.
+Tablas en `tablas/`: `franjas.csv` (respuesta por franja, conjunta y por año, y diferencia de domingos y festivos), `b_h_por_hora.csv` ($b_h$ de todas las especificaciones, incluidas las de robustez), `estabilidad.csv` (criterios por año), `b_h_niveles_reparto.csv` (ecuación {eq}`eq-compuerta` en niveles y reparto horario), `contraste_era5land_ideam.csv` (sesgo y RMSE por hora y por mes) y `decision.json` (regla y resultado de la compuerta), todas con Open-Meteo. Las mismas tablas con GDEX están en `tablas/compuerta_gdex/` (figura en `figuras/b_h_compuerta_gdex.png`), y la comparación de las dos fuentes en `tablas/comparacion_fuentes_clima.csv`. Scripts en `scripts/compuerta/` ([Reproducibilidad](08_reproducibilidad.md)). Las descargas crudas de XM, Open-Meteo, GDEX e IDEAM no se publican; los scripts las reconstruyen desde las fuentes públicas, salvo GDEX, que requiere una cuenta gratuita y un pedido en gdex.ucar.edu.
