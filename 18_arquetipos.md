@@ -267,13 +267,16 @@ Catastro frente a la ECV 2024: viviendas por estrato, fracción de casas por blo
 5. Usar solo la ola 2024 de la ECV depende de suponer para 2019 un efecto de diseño de 1,5; con el de cada material la
    prueba del techo no rechaza. Con las dos olas, el techo de concreto de las casas de los estratos 1 y 2 baja de 18 % a
    10 %, así que la elección de olas entra como factor en la sensibilidad de la Fase 2.
-6. Algunas reglas cambiaron después de ver resultados de prueba o completos (preregistro, Notas 3 a 6). Cada cambio
+6. La carga usa la irradiancia de ERA5 (0,25°) porque la copia de Open-Meteo no trae la de ERA5-Land (supuesto S17).
+   Con ERA5-Land completo de GDEX, la carga media sube 4,4 %, pero el R² de los arquetipos no cambia (0,660 por
+   vivienda y 0,927 por m²; AJ24, script 11): el clima mueve el nivel de la carga, no las diferencias entre viviendas.
+7. Algunas reglas cambiaron después de ver resultados de prueba o completos (preregistro, Notas 3 a 6). Cada cambio
    está registrado con su motivo, y el resultado con la regla original se reporta aparte: con la regla original de
    elección del algoritmo habría 9 arquetipos por vivienda, con un R² de 0,40.
 
 ## Archivos
 
 Todo está en la carpeta [`arquetipos/`](https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos):
-el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 10, las tablas agregadas, las figuras,
+el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 11, las tablas agregadas, las figuras,
 las fichas de los arquetipos de cada solución (`salidas/fichas/`) y los árboles de asignación (`salidas/modelos/`). La
 asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publican.

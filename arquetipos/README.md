@@ -35,7 +35,7 @@ elección de olas de la ECV entran como factores en la sensibilidad de la Fase 2
 | --- | --- |
 | `preregistro/preregistro_fase1.md` | Reglas de cada paso, fijadas antes de calcular (versiones 1 a 5 y notas 1 a 9, con fecha y motivo) |
 | `preregistro/decision_fase1.json` | Las mismas reglas en formato máquina; los scripts las leen de aquí |
-| `ajustes_frente_a_la_propuesta.md` | Registro de cada punto en que la ejecución precisa o ajusta la propuesta radicada (AJ1 a AJ23) |
+| `ajustes_frente_a_la_propuesta.md` | Registro de cada punto en que la ejecución precisa o ajusta la propuesta radicada (AJ1 a AJ24) |
 | `referencias_revisadas.md` | Referencias de arquetipos, agrupamiento e infiltración, con metadatos verificados en Crossref |
 | `src/` | Módulos comunes: rutas y variables (`comun.py`), carga simplificada (`carga.py`), agrupamiento (`agrupamiento.py`), lectura de la ECV (`ecv.py`) y estilo de figuras (`estilo.py`) |
 | `scripts/` | Scripts 01 a 10; el 10 se corre antes del 09 |
@@ -62,6 +62,7 @@ envolvente con su fuente (`salidas/tablas/env_priors_*.csv` y `.json`, y `env_pr
 | `08_sensibilidad_variables.py` | 7 | Sensibilidad de las soluciones a cada variable de agrupamiento | 3 min |
 | `10_incertidumbre_asignacion.py` | 5 | Incertidumbre de la asignación: repite el agrupamiento en las 100 submuestras de estabilidad (Nota 9) | 20 min |
 | `09_hogar_validacion_fichas.py` | 7 | Atributos del hogar, representatividad frente a la ECV y fichas; usa la salida del 10 | segundos |
+| `11_contraste_clima_gdex.py` | 3 (robustez) | Carga del Paso 3 y R² de los arquetipos con ERA5-Land de GDEX en lugar de la copia de Open-Meteo (AJ24) | 1 min con la serie extraída |
 
 Desde la carpeta `arquetipos/`:
 
@@ -84,6 +85,7 @@ del repositorio):
 | Catastro procesado, una fila por vivienda | `e2_git/datos/viviendas.pkl.gz` | Catastro de Barranquilla, depurado en el trabajo previo de predicción del estrato |
 | Particiones espaciales del trabajo previo | `e1_git/datos/procesados/dataset_modelado.parquet` y el módulo kNNDM en `e4/` | Trabajo previo de predicción del estrato (solo para el script 06) |
 | Clima horario 2015–2025 | `compuerta_horaria/datos/crudos/openmeteo/` | ERA5-Land y ERA5 en Open-Meteo; la descarga se reconstruye con los scripts de `scripts/compuerta/` |
+| Clima horario de GDEX (robustez, script 11) | `compuerta_horaria/datos/crudos/era5land_gdex/` | ERA5-Land de NCAR GDEX en la celda de Barranquilla, extraído con `scripts/compuerta/01b_extraer_era5land_gdex.py` |
 | ECV 2019 y 2024 de Barranquilla | `../DANE/ECV/` (una carpeta más arriba), con los ZIP tal como se descargan | Catálogo de microdatos del DANE |
 
 ## Privacidad

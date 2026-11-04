@@ -77,8 +77,10 @@ Orden: `build_ecv2019.py` y `ecv24.py` → `ecv24_tablas.py`, `enut*.py`, `geih*
 | --- | --- | --- |
 | 1 | `01_clima.py descargar procesar` | Descarga ERA5-Land (copia de Open-Meteo) e IDEAM 0029045190; humedad relativa, índice de calor y contraste por hora y mes |
 | 1b | `01a_descargar_era5land_cds.py` | Descarga ERA5-Land del Climate Data Store con la cuenta personal del CDS (`~/.cdsapirc`, `pip install cdsapi`); después se repite `01_clima.py procesar` |
+| 1c | `01b_extraer_era5land_gdex.py [carpeta]` | Extrae la celda de Barranquilla de ERA5-Land de NCAR GDEX (pedidos descargados con los scripts que genera GDEX, carpetas `era5land_met` y `era5land_rad_tp`) y desacumula la radiación y la lluvia. `01_clima.py procesar` la usa si no hay archivo del CDS; `--fuente=openmeteo` fuerza la copia de Open-Meteo |
 | 2 | `02_descargar_xm.py` | API pública de XM: mercados CARIBE SOL y COSTA CARIBE, agentes de Air-e y Electricaribe, demanda no atendida por subárea |
 | 3 | `03_estimar.py` | $b_h$, franjas, estabilidad entre años, decisión de la compuerta y figura |
+| 4 | `04_comparar_fuentes.py` | Compara las salidas con Open-Meteo (copiadas en `salidas/fuente_openmeteo/`) y con GDEX |
 
 `comun.py` reúne las rutas y funciones compartidas. Los scripts se corren desde `scripts/compuerta/` y guardan las descargas en `scripts/compuerta/datos/` (unos 150 MB) y las salidas en `scripts/compuerta/salidas/`; ninguna de las dos carpetas se versiona.
 

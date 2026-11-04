@@ -2,7 +2,8 @@
 
 Fuentes de ERA5-Land, en este orden de preferencia:
   1. Archivo descargado por la usuaria del CDS con 01a_descargar_era5land_cds.py (datos/crudos/era5land_cds/).
-  2. Copia provisional de ERA5-Land servida por Open-Meteo (archive-api.open-meteo.com, models=era5_land), sin
+  2. ERA5-Land de GDEX (NCAR), extraído con 01b_extraer_era5land_gdex.py (datos/crudos/era5land_gdex/).
+  3. Copia provisional de ERA5-Land servida por Open-Meteo (archive-api.open-meteo.com, models=era5_land), sin
      credenciales. Open-Meteo no sirve viento ni radiación de ERA5-Land; esas dos variables se toman de ERA5
      (0,25°) y se marcan así en la columna 'fuente_viento_rad'.
 
@@ -12,6 +13,7 @@ humedad relativa (Magnus) e índice de calor (NOAA/Rothfusz); sesgo y RMSE frent
 Uso:
   python 01_clima.py descargar      # Open-Meteo e IDEAM (datos.gov.co)
   python 01_clima.py procesar       # serie horaria y diaria + contraste con IDEAM
+  python 01_clima.py procesar --fuente=openmeteo   # fuerza una fuente (cds, gdex u openmeteo)
 """
 import json
 import sys
@@ -26,8 +28,9 @@ from comun import (CRUDOS, ESTACION_IDEAM, INICIO, LAT, LON, PROC, SALIDAS, TZ_L
 
 DIR_OM = CRUDOS / "openmeteo"
 DIR_CDS = CRUDOS / "era5land_cds"
+DIR_GDEX = CRUDOS / "era5land_gdex"
 DIR_IDEAM = CRUDOS / "ideam"
-for _d in (DIR_OM, DIR_CDS, DIR_IDEAM):
+for _d in (DIR_OM, DIR_CDS, DIR_GDEX, DIR_IDEAM):
     _d.mkdir(parents=True, exist_ok=True)
 
 IDEAM = {"temperatura": "sbwg-7ju4", "humedad": "uext-mhny"}
@@ -138,11 +141,43 @@ def leer_cds():
     return out
 
 
-def clima_horario():
-    df = leer_cds()
+def leer_gdex():
+    """ERA5-Land de GDEX ya extraído en la celda de Barranquilla por 01b_extraer_era5land_gdex.py."""
+    archivos = sorted(DIR_GDEX.glob("era5land_horario_*.csv.gz"))
+    if not archivos:
+        return None
+    g = pd.read_csv(archivos[0], index_col="tiempo_utc", parse_dates=True)
+    out = pd.DataFrame({"t2m": g["T"], "td2m": g["Td"], "viento": g["viento"], "rad": g["I"]},
+                       index=pd.DatetimeIndex(g.index, name="utc"))
+    # GDEX no trae el punto de rocío en 608 horas sueltas de 2019, 2022 y 2023 (campo vacío en toda la malla, huecos
+    # de 1 a 9 h). Se rellenan con el de la copia de Open-Meteo, que es el mismo ERA5-Land desplazado por una
+    # constante (diferencia media +0,175 K, desviación estándar ≈ 0,03 K), más esa diferencia.
+    hueco = out["td2m"].isna()
+    out["td_relleno"] = False
+    if hueco.any() and any(DIR_OM.glob("om_*.json")):
+        om = leer_openmeteo()["td2m"].reindex(out.index)
+        dif = (out["td2m"] - om).median()
+        out.loc[hueco, "td2m"] = om[hueco] + dif
+        out["td_relleno"] = hueco & out["td2m"].notna()
+        print(f"  GDEX: {int(out['td_relleno'].sum())} horas de punto de rocío rellenadas con Open-Meteo "
+              f"{dif:+.3f} K")
+    out["fuente"] = "ERA5-Land (GDEX, NCAR)"
+    out["fuente_viento_rad"] = "ERA5-Land (GDEX, NCAR)"
+    return out
+
+
+def clima_horario(fuente="auto"):
+    """fuente: auto (CDS, luego GDEX, luego Open-Meteo), cds, gdex u openmeteo."""
+    lectores = {"cds": leer_cds, "gdex": leer_gdex, "openmeteo": leer_openmeteo}
+    orden = ["cds", "gdex", "openmeteo"] if fuente == "auto" else [fuente]
+    df = None
+    for f in orden:
+        df = lectores[f]()
+        if df is not None:
+            break
     if df is None:
-        print("  No hay archivo del CDS: se usa la copia provisional de Open-Meteo.")
-        df = leer_openmeteo()
+        raise FileNotFoundError(f"No hay datos de clima para la fuente '{fuente}'")
+    print(f"  Fuente del clima: {df['fuente'].iloc[0]}")
     df.index = df.index.tz_localize("UTC").tz_convert(TZ_LOCAL).tz_localize(None)
     df.index.name = "hora_local"
     df["hr"] = humedad_relativa(df["t2m"], df["td2m"])
@@ -192,7 +227,8 @@ def main():
         descargar_openmeteo()
         descargar_ideam()
     if "procesar" in sys.argv:
-        era = clima_horario()
+        fuente = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--fuente=")), "auto")
+        era = clima_horario(fuente)
         era.to_parquet(PROC / "clima_horario.parquet")
         dia = pd.DataFrame({
             "hi_media": era["hi"].resample("D").mean(),

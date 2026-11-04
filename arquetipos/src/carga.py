@@ -33,12 +33,15 @@ def clima():
     return pd.concat(filas, ignore_index=True)
 
 
-def coeficientes(f_v=None, n=None, par=None):
-    """Coeficientes anuales medios (kWh/año por m² de cubierta, muro y ventana, y por m³ de volumen)."""
+def coeficientes(f_v=None, n=None, par=None, c=None):
+    """Coeficientes anuales medios (kWh/año por m² de cubierta, muro y ventana, y por m³ de volumen).
+
+    c: clima horario con columnas anio, T, Td, I (por defecto, el de la Fase 1).
+    """
     p = dict(DECISION["carga"] if par is None else par)
     f_v = p["f_v_muros"] if f_v is None else f_v
     n = p["renovaciones_h"] if n is None else n
-    c = clima()
+    c = clima() if c is None else c
     tc = p["consigna_C"]
     wc = _w(p["humedad_relativa_consigna"] * _pv(tc))
     sa_t = c["T"] + p["absortancia"] * c["I"] / p["h_o"] - p["dT_onda_larga_horizontal_K"]
