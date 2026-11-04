@@ -92,6 +92,8 @@ Orden: `build_ecv2019.py` y `ecv24.py` → `ecv24_tablas.py`, `enut*.py`, `geih*
 | 1 | `scripts/01_serie_clima.py` | Serie horaria en hora local de 2015 a septiembre de 2026: humedad con la presión horaria, índice de calor, radiación directa y difusa (Erbs {cite:p}`erbs1982`) y en muros N, E, S y O y cubierta (cielo isótropo, albedo 0,2), temperatura del cielo desde la onda larga, viento y calendario con vacaciones escolares (S19) |
 | 2 | `scripts/02_epw.py [AÑO]` | Archivo EPW de un año (por defecto 2024) para la verificación contra EnergyPlus |
 | 3 | `scripts/03_enso.py` | Fase de El Niño o La Niña de cada mes con el ONI de la NOAA (`datos/noaa/oni.ascii.txt`, descargado el 3-nov-2026) y anomalías del clima y de la carga del Paso 3 por fase; usa las tablas `clima_gdex_*` de `arquetipos/` |
+| 4 | `scripts/04_cdh_sui.py` | Grados-hora por temperatura base, base por punto de quiebre y Ecuación 9 por estrato con `tablas/SUI_O3_Barranquilla_residencial_lectura_2015_2025.csv` |
+| 5 | `scripts/05_celdas_vecinas.py [carpeta]` | Clima y carga del Paso 3 en las celdas de tierra vecinas; relee los NetCDF de GDEX |
 
 Usa pvlib 0.16 {cite:p}`holmgren2018`. La serie publicada es `fase2/clima/salidas/clima_horario_barranquilla.csv.gz`; el script 02 lee la versión parquet que genera el 01. Detalle de columnas y comprobaciones en `fase2/clima/README.md`.
 

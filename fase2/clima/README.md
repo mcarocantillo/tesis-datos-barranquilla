@@ -14,6 +14,8 @@ esta carpeta:
 | 1 | `scripts/01_serie_clima.py` | Serie horaria con humedad, radiación en muros y cubierta, cielo, viento y calendario |
 | 2 | `scripts/02_epw.py [AÑO]` | EPW de un año (por defecto, 2024) y lectura de control con pvlib |
 | 3 | `scripts/03_enso.py` | Fase ENSO de cada mes (ONI de la NOAA) y anomalías de clima y carga por fase; usa las tablas del script 11 de arquetipos |
+| 4 | `scripts/04_cdh_sui.py` | Grados-hora por base, temperatura base por punto de quiebre y Ecuación 9 por estrato con el SUI de lecturas reales |
+| 5 | `scripts/05_celdas_vecinas.py [carpeta]` | Clima y carga del Paso 3 en las celdas vecinas (relee los NetCDF de GDEX, unos 10 min) |
 
 ## Salidas (`salidas/`)
 
@@ -79,6 +81,53 @@ y 62 neutros. Se compara la anomalía de cada mes frente a la media de su mes ca
 - **Para la Fase 3:** el criterio N6 usa los errores de 2023, cuyo segundo semestre es El Niño fuerte. Además, el
   ONI llegó a 2,46 en agosto–octubre de 2026, así que la prueba con datos de 2027 caerá probablemente en un episodio
   de El Niño fuerte o muy fuerte, como ya anticipa la propuesta con el pronóstico del IDEAM.
+
+## Grados-hora y consumo del SUI (`scripts/04_cdh_sui.py`)
+
+Avance de la Ecuación 9 con el consumo por suscriptor con lectura real del SUI (cubo O3, Barranquilla, 2015–2025 sin
+2020, unos 118 meses por estrato). El clima de cada mes de facturación se prueba como el del mismo mes, el del mes
+anterior o la mitad de cada uno; la mitad de cada uno ajusta mejor, como se espera de lecturas repartidas en el mes.
+
+**Temperatura base (punto de quiebre).** Con ln C = β·CDH + efecto del año, el R² dentro del año cambia poco con la
+base: de 0,143 a 0,157 entre 24 y 32 °C (máximo en 30,5 °C). En los estratos 4 a 6, donde el ajuste es bueno (R² de
+0,54 a 0,74), el máximo está en 28,5–29 °C, pero el R² varía menos de 0,03 entre 24 y 30 °C. Con datos mensuales la
+base queda mal identificada, así que conviene tratarla como parámetro con rango (por ejemplo, 26,5 a 30 °C) y no fijarla
+con esta prueba.
+
+**Respuesta mensual al calor (Ecuación 9, con efectos fijos de año y de mes; HAC):**
+
+| Estrato | β (% por °C de HI medio del mes) | IC 95 % |
+| --- | --- | --- |
+| 1 | −6,0 | −12,6 – 0,6 |
+| 2 | 2,3 | 0,1 – 4,5 |
+| 3 | 1,4 | −1,4 – 4,2 |
+| 4 | 3,3 | 2,5 – 4,1 |
+| 5 | 4,2 | 2,9 – 5,5 |
+| 6 | 4,7 | 3,5 – 5,9 |
+
+La respuesta crece con el estrato, como la tenencia de A/C (13 % en el estrato 1 y 98 % en el 6), y es clara en los
+estratos 4 a 6. En los estratos 1 a 3 los intervalos son anchos: con los efectos fijos de mes, β sale solo de las
+anomalías interanuales, y en el estrato 1 la fracción de suscriptores con lectura real cambia mucho entre años. Es lo
+que la propuesta anticipa: si el intervalo es muy amplio, extender la estimación a otros municipios del Caribe.
+
+## Sensibilidad a la celda (`scripts/05_celdas_vecinas.py`)
+
+Repite el clima y la carga del Paso 3 de la vivienda media en las seis celdas de tierra de la ventana de 3 × 3
+alrededor de la celda de referencia, en 2015–2025 (la fila de 11,1° N es mar).
+
+| Celda | T (°C) | HI (°C) | Grados-hora (26,5 °C) | Carga del Paso 3 |
+| --- | --- | --- | --- | --- |
+| 11,0 N; 74,9 O | −0,12 | −0,26 | −5,6 % | −1,4 % |
+| **11,0 N; 74,8 O (referencia)** | 27,46 | 30,92 | 38.839 K·h/año | 37.702 kWh/año |
+| 11,0 N; 74,7 O | +0,25 | +0,50 | +10,7 % | +1,7 % |
+| 10,9 N; 74,9 O | −0,27 | −0,77 | −16,1 % | −2,7 % |
+| 10,9 N; 74,8 O | 0,00 | −0,09 | −1,6 % | +0,9 % |
+| 10,9 N; 74,7 O | +0,32 | +0,66 | +14,4 % | +3,4 % |
+
+Las celdas del este, hacia el río Magdalena y Soledad, son más calurosas que las del oeste. Entre celdas, el índice de
+calor medio cambia hasta 1,4 °C y los grados-hora hasta 30 puntos porcentuales, pero la carga del Paso 3 solo entre
+−2,7 % y +3,4 %, porque la cubierta (la mitad de la carga) depende sobre todo de la radiación, que casi no cambia. Es una
+cota de la elección de celda, no de la isla de calor: ERA5-Land no representa la ciudad como superficie urbana.
 
 ## Supuestos
 
