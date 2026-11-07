@@ -1,6 +1,6 @@
 # Consumo del SUI por tipo de lectura
 
-El reporte consolidado del SUI (ele_com_096) que usa el repositorio no separa el consumo medido del estimado. Para resolver el pendiente del estrato 1 ([Datos sospechosos y pendientes](07_datos_sospechosos.md)) se consultó el cubo de facturación de la herramienta O3 del SUI, que sí trae el tipo de lectura {cite:p}`sui_o3`. Este capítulo resume lo que muestra esa consulta para Barranquilla y otras cuatro ciudades, y lo que cambia en la propuesta.
+El reporte consolidado del SUI (ele_com_096) que usa el repositorio no separa el consumo medido del estimado. Para resolver el pendiente del estrato 1 ([Datos sospechosos y pendientes](07_datos_sospechosos.md)) se consultó el cubo de facturación de la herramienta O3 del SUI, que sí trae el tipo de lectura {cite:p}`sui_o3`. Este capítulo resume lo que muestra esa consulta para Barranquilla y otras cuatro ciudades, quiénes no pagan la electricidad según la ECV y lo que cambia en la propuesta.
 
 ## Datos
 
@@ -82,6 +82,28 @@ Consumo por suscriptor con lectura real en los estratos 1–3 (A) y 4–6 (B), y
 
 La caída en los estratos bajos no es propia de Barranquilla: aparece en las ciudades del Caribe, con mercados de Air-e y de Afinia, y es menor en Medellín, donde la tarifa subió menos. Las pérdidas del mercado de Air-e, que según la prensa rondan 24–31 % entre 2019 y 2024, no muestran una tendencia que explique la caída.
 
+## Hogares que no pagan la electricidad
+
+El SUI solo registra lo facturado, así que no muestra el consumo de quien no paga. La ECV 2024 sí lo pregunta: «¿Pagan en este hogar por la electricidad que consumen?» (P791), con las opciones sí, sí con el arriendo, no pagan pero tienen el servicio y no tienen el servicio {cite:p}`dane_ecv`. La {numref}`tab-ecv-no-pagan` resume las respuestas en la cabecera de Barranquilla, con intervalos de confianza del 95 % que usan el diseño muestral (conglomerados por segmento, como en [Serie de tenencia, error de la encuesta e imputación](05_ajustes_v3.md)).
+
+:::{table} Hogares que no pagan la electricidad aunque tienen el servicio y tenencia de A/C, cabecera de Barranquilla, ECV 2024 (%, con intervalo de confianza del 95 %).
+:name: tab-ecv-no-pagan
+
+| Estrato | Hogares encuestados | No pagan | A/C de los que no pagan | A/C de los que pagan | Diferencia de A/C (puntos) |
+| --- | --- | --- | --- | --- | --- |
+| E1 | 250 | 30,8 ± 13,3 | 6,1 ± 3,4 | 15,2 ± 6,7 | 9,2 ± 7,4 |
+| E2 | 161 | 1,6 ± 2,1 | 0 (4 hogares) | 34,7 ± 9,5 | — |
+| E3 | 125 | 2,3 ± 2,8 | 0 (2 hogares) | 46,9 ± 10,6 | — |
+| E4 a E6 | 110 | 0 | — | 78,2 a 100 | — |
+| Ciudad | 646 | 12,7 ± 6,3 | 5,7 ± 3,3 | 41,7 ± 7,6 | — |
+:::
+
+El 31 % de los hogares del estrato 1 declara que no paga la electricidad aunque tiene el servicio, frente a menos de 3 % en los estratos 2 y 3 y ninguno en los estratos 4 a 6. El intervalo es ancho porque esos hogares se concentran en pocos segmentos de la muestra, como cabe esperar si viven en los mismos barrios. En el estrato 1, los que no pagan tienen 9 puntos menos de tenencia de A/C que los que pagan, una diferencia que se mantiene con el diseño muestral (de 2 a 17 puntos). La ECV 2019 no tiene esa pregunta, pero el 14 % de los hogares del estrato 1 declaró un pago de 0 pesos el mes pasado, y esos hogares tenían 2,0 % de A/C frente a 8,6 % de los demás, en la misma dirección.
+
+No pagar no equivale a tener una conexión ilegal, porque incluye también a los usuarios sin medidor, a los barrios que se facturan con un medidor comunitario y a quienes no pagan la factura. La encuesta tampoco sirve para medir las conexiones ilegales de forma directa, pues la categoría «recibos sin estrato o el servicio es pirata» de la pregunta por el estrato reunió menos de 1 % de los hogares de la ciudad en 2019, y no permite ver los medidores alterados de los hogares que sí pagan.
+
+Para la calibración esto tiene dos consecuencias. El consumo que no se factura en el estrato 1 corresponde sobre todo a hogares con poco A/C, y la tenencia de A/C de los hogares calibrados, que tienen lectura real, debe tomarse de los hogares que pagan y no de todos (15 % frente a 12 % en el estrato 1). Los medidores alterados, que ninguna fuente pública mide, se tratan con un subregistro de las lecturas reales de 0 % a 20 % en el análisis de sensibilidad. La tabla es `tablas/ECV_pago_electricidad_Barranquilla.csv` y el script, `scripts/ecv_pago_electricidad.py`.
+
 ## Qué cambia en la propuesta
 
 - La calibración usa el consumo por suscriptor con lectura real y excluye las cuentas «n/a».
@@ -89,6 +111,8 @@ La caída en los estratos bajos no es propia de Barranquilla: aparece en las ciu
 - La Ecuación (5) incluye un factor de precio, (p_a/p_0)^η, con una elasticidad por grupo de estratos (1 a 3 y 4 a 6).
 - Se calibra con 2015 a 2025, salvo 2020 y los años 2023 y 2025, que se reservan para la validación junto con la prueba de 2027.
 - La Tabla 10 de la propuesta usa el consumo y el alza con lecturas reales.
+- La tenencia de A/C de los hogares calibrados sale de los hogares de la ECV que pagan la electricidad.
+- El análisis de sensibilidad incluye un subregistro de las lecturas reales de 0 % a 20 % por medidores alterados, y la demanda de toda la ciudad, con los hogares que no pagan, se reporta aparte y en la capa C.
 
 ## Cómo repetir la consulta
 

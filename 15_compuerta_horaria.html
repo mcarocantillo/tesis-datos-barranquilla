@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
@@ -223,6 +223,18 @@
 <li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_arquetipos.html">Arquetipos de vivienda (Fase 1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_datos.html">Bases de datos de la tesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_ecv.html">Encuesta de Calidad de Vida (ECV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_enut.html">Encuesta Nacional de Uso del Tiempo (ENUT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_geih.html">Gran Encuesta Integrada de Hogares (GEIH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_sui.html">Sistema Único de Información (SUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_catastro.html">Catastro de Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_xm.html">Demanda horaria de XM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27_clima.html">Clima horario (ERA5-Land, Open-Meteo e IDEAM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28_enso.html">El Niño y La Niña (ONI de la NOAA)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
 <ul class="current nav bd-sidenav">
@@ -448,11 +460,11 @@
 <a class="reference internal image-reference" href="_images/b_h_compuerta.png"><img alt="_images/b_h_compuerta.png" src="_images/b_h_compuerta.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 25 </span><span class="caption-text">Respuesta de la demanda regulada del mercado de Air-e al índice de calor diario. (a) <span class="math notranslate nohighlight">\(b_h\)</span> de 2021–2025 con su IC 95 %, todos los días y domingos y festivos; (b) <span class="math notranslate nohighlight">\(b_h\)</span> por año; (c) respuesta por franja, conjunta y por año; (d) reparto horario de la respuesta en niveles (MWh/°C). El sombreado marca las horas nocturnas (22 a 5 h).</span><a class="headerlink" href="#fig-compuerta" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 76 </span><span class="caption-text">Respuesta de la demanda regulada del mercado de Air-e al índice de calor diario. (a) <span class="math notranslate nohighlight">\(b_h\)</span> de 2021–2025 con su IC 95 %, todos los días y domingos y festivos; (b) <span class="math notranslate nohighlight">\(b_h\)</span> por año; (c) respuesta por franja, conjunta y por año; (d) reparto horario de la respuesta en niveles (MWh/°C). El sombreado marca las horas nocturnas (22 a 5 h).</span><a class="headerlink" href="#fig-compuerta" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-compuerta-franjas">
-<caption><span class="caption-number">Tabla 23 </span><span class="caption-text">Respuesta de la demanda al índice de calor diario por franja horaria, 2021–2025 (% de la demanda por °C).</span><a class="headerlink" href="#tab-compuerta-franjas" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 57 </span><span class="caption-text">Respuesta de la demanda al índice de calor diario por franja horaria, 2021–2025 (% de la demanda por °C).</span><a class="headerlink" href="#tab-compuerta-franjas" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Franja</p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(b\)</span></p></th>
@@ -489,9 +501,9 @@
 </tbody>
 </table>
 </div>
-<p>Un grado más de HI diario sube la demanda entre 1,8 % y 2,1 % en todas las franjas (<a class="reference internal" href="#tab-compuerta-franjas"><span class="std std-numref">Tabla 23</span></a>). La respuesta nocturna es distinta de cero: las 8 horas de 22 a 5 h tienen el intervalo por encima de cero, y la franja también en cada año. El perfil es casi plano. <span class="math notranslate nohighlight">\(b_h\)</span> va de 1,65 a las 6 h a 2,22 a las 14 h. Expresada en MWh/°C, la noche recibe entre 31 % y 34 % de la respuesta diaria según el año, casi lo mismo que un reparto uniforme de 8 de 24 horas (33 %). En domingos y festivos aumenta la respuesta diurna, no la nocturna.</p>
+<p>Un grado más de HI diario sube la demanda entre 1,8 % y 2,1 % en todas las franjas (<a class="reference internal" href="#tab-compuerta-franjas"><span class="std std-numref">Tabla 57</span></a>). La respuesta nocturna es distinta de cero: las 8 horas de 22 a 5 h tienen el intervalo por encima de cero, y la franja también en cada año. El perfil es casi plano. <span class="math notranslate nohighlight">\(b_h\)</span> va de 1,65 a las 6 h a 2,22 a las 14 h. Expresada en MWh/°C, la noche recibe entre 31 % y 34 % de la respuesta diaria según el año, casi lo mismo que un reparto uniforme de 8 de 24 horas (33 %). En domingos y festivos aumenta la respuesta diurna, no la nocturna.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-compuerta-anios">
-<caption><span class="caption-number">Tabla 24 </span><span class="caption-text">Respuesta nocturna por año, 2021–2025.</span><a class="headerlink" href="#tab-compuerta-anios" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 58 </span><span class="caption-text">Respuesta nocturna por año, 2021–2025.</span><a class="headerlink" href="#tab-compuerta-anios" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Año</p></th>
 <th class="head"><p>Días</p></th>
@@ -545,7 +557,7 @@
 <h2>Estabilidad entre años y decisión<a class="headerlink" href="#estabilidad-entre-anos-y-decision" title="Link to this heading">#</a></h2>
 <p>La regla de la compuerta tiene dos criterios:</p>
 <ol class="arabic simple">
-<li><p><strong>La respuesta nocturna es distinta de cero.</strong> La franja de 22 a 5 h tiene <span class="math notranslate nohighlight">\(b &gt; 0\)</span> con el IC 95 % sobre cero, y al menos 6 de las 8 horas nocturnas también. Se cumple: las 8 horas y los 5 años (<a class="reference internal" href="#tab-compuerta-anios"><span class="std std-numref">Tabla 24</span></a>).</p></li>
+<li><p><strong>La respuesta nocturna es distinta de cero.</strong> La franja de 22 a 5 h tiene <span class="math notranslate nohighlight">\(b &gt; 0\)</span> con el IC 95 % sobre cero, y al menos 6 de las 8 horas nocturnas también. Se cumple: las 8 horas y los 5 años (<a class="reference internal" href="#tab-compuerta-anios"><span class="std std-numref">Tabla 58</span></a>).</p></li>
 <li><p><strong>La respuesta nocturna es estable entre años</strong>, en nivel y en forma. El <em>nivel</em> nocturno es significativo en al menos 4 de los 5 años y no difiere entre años (prueba de Wald con errores HAC). Se cumple: <span class="math notranslate nohighlight">\(p = 0{,}35\)</span>. La <em>forma</em> nocturna centrada (<span class="math notranslate nohighlight">\(b_h\)</span> menos la media nocturna del año) no difiere entre años (prueba de Wald conjunta con errores agrupados por semana). <strong>No se cumple.</strong></p></li>
 </ol>
 <p>La forma nocturna existe (<span class="math notranslate nohighlight">\(p &lt; 10^{-17}\)</span>, con una amplitud de 0,39 puntos entre la hora de mayor y la de menor respuesta), pero cambia entre años (<span class="math notranslate nohighlight">\(p = 0{,}008\)</span>; 28 grados de libertad, 262 semanas). La señal del encendido nocturno, el exceso de las 22 y 23 h sobre la media de la noche, va de −0,13 puntos en 2023 a +0,45 puntos en 2022: la forma cambia entre años tanto como su propia amplitud. La inestabilidad se mantiene al tomar la noche contigua, de 22 h a 5 h del día siguiente (<span class="math notranslate nohighlight">\(p = 0{,}0001\)</span>), y con la demanda de Electricaribe de 2015–2019 (<span class="math notranslate nohighlight">\(p = 0{,}0001\)</span>). Una primera versión de la regla, basada en la correlación entre el perfil de cada año y el conjunto, resultó inestable con perfiles tan planos (mínima de −0,04 en 2023) y también daba capa C.</p>
@@ -565,7 +577,7 @@
 <p>La propuesta prevé repetir la estimación con la descarga oficial de ERA5-Land y reportar las dos fuentes. ERA5-Land completo se descargó de GDEX (gdex.ucar.edu), que distribuye el mismo reanálisis del ECMWF que el Climate Data Store: pedidos 953933 (temperatura, punto de rocío, presión y viento) y 953943 (radiación de onda corta y larga y lluvia), de enero de 2015 a septiembre de 2026, en una malla de 0,1° sobre 10,0–11,9° N y 74,0–74,9° O. Se usa la celda más cercana al punto de la compuerta (11,0° N; 74,8° O), la misma que usa Open-Meteo.</p>
 <p>Hora a hora, la temperatura y el punto de rocío de GDEX son los de Open-Meteo más una constante de 0,175 K (desviación estándar de 0,03 K; correlación 1,000), probablemente por la corrección de altura que aplica Open-Meteo. GDEX no trae el punto de rocío en 608 horas sueltas de 2019, 2022 y 2023 (el campo está vacío en toda la malla, en huecos de 1 a 9 h); se rellenaron con el de Open-Meteo más esa constante. Sin el relleno se pierden 38 días de la regresión y los resultados apenas cambian (noche: 1,89 %/°C).</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-compuerta-fuentes">
-<caption><span class="caption-number">Tabla 25 </span><span class="caption-text">Respuesta de la demanda al índice de calor diario con las dos fuentes de ERA5-Land, 2021–2025 (1.399 días, % de la demanda por °C).</span><a class="headerlink" href="#tab-compuerta-fuentes" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 59 </span><span class="caption-text">Respuesta de la demanda al índice de calor diario con las dos fuentes de ERA5-Land, 2021–2025 (1.399 días, % de la demanda por °C).</span><a class="headerlink" href="#tab-compuerta-fuentes" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Medida</p></th>
 <th class="head"><p>Open-Meteo</p></th>
@@ -622,14 +634,14 @@
 </tbody>
 </table>
 </div>
-<p>Con GDEX, el HI diario es 0,45 °C mayor que con Open-Meteo y las dos series correlacionan 0,999, así que la respuesta casi no cambia: baja entre 0,02 y 0,05 puntos en todas las franjas (<a class="reference internal" href="#tab-compuerta-fuentes"><span class="std std-numref">Tabla 25</span></a>). Por año, la respuesta nocturna va de 1,65 %/°C (2025) a 2,08 %/°C (2021), y la noche aporta entre 31 % y 34 % de la respuesta diaria en MWh/°C, como con Open-Meteo. Los dos criterios dan el mismo resultado: el nivel nocturno es distinto de cero y estable, y la forma nocturna cambia entre años (<span class="math notranslate nohighlight">\(p = 0{,}012\)</span>; con la noche contigua, <span class="math notranslate nohighlight">\(p = 0{,}0001\)</span>). <strong>La decisión no cambia: capa C.</strong> El contraste con el IDEAM mejora un poco, porque el sesgo de la temperatura pasa de −0,70 a −0,52 °C y el del HI de −2,4 a −1,9 °C, pero ERA5-Land sigue subestimando el calor del mediodía. Con el HI de IDEAM, la respuesta nocturna sigue en 0,94 %/°C.</p>
+<p>Con GDEX, el HI diario es 0,45 °C mayor que con Open-Meteo y las dos series correlacionan 0,999, así que la respuesta casi no cambia: baja entre 0,02 y 0,05 puntos en todas las franjas (<a class="reference internal" href="#tab-compuerta-fuentes"><span class="std std-numref">Tabla 59</span></a>). Por año, la respuesta nocturna va de 1,65 %/°C (2025) a 2,08 %/°C (2021), y la noche aporta entre 31 % y 34 % de la respuesta diaria en MWh/°C, como con Open-Meteo. Los dos criterios dan el mismo resultado: el nivel nocturno es distinto de cero y estable, y la forma nocturna cambia entre años (<span class="math notranslate nohighlight">\(p = 0{,}012\)</span>; con la noche contigua, <span class="math notranslate nohighlight">\(p = 0{,}0001\)</span>). <strong>La decisión no cambia: capa C.</strong> El contraste con el IDEAM mejora un poco, porque el sesgo de la temperatura pasa de −0,70 a −0,52 °C y el del HI de −2,4 a −1,9 °C, pero ERA5-Land sigue subestimando el calor del mediodía. Con el HI de IDEAM, la respuesta nocturna sigue en 0,94 %/°C.</p>
 </section>
 <section id="cautelas">
 <h2>Cautelas<a class="headerlink" href="#cautelas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>XM no es demanda residencial.</strong> El mercado de Air-e mezcla usuarios residenciales, comerciales y oficiales de tres departamentos, y se usa el clima de Barranquilla como referencia de todos. Una respuesta nocturna positiva es compatible con el uso residencial del A/C, pero no lo prueba.</p></li>
-<li><p><strong>El nivel de <span class="math notranslate nohighlight">\(b\)</span> depende de la fuente del HI.</strong> Con el HI de IDEAM (654 días con datos suficientes) la respuesta nocturna baja a 0,94 %/°C. ERA5-Land subestima el HI de mediodía (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 37</span></a>), y el HI de IDEAM tiene más ruido de medida y menos días.</p></li>
-<li><p><strong>Fuente del clima.</strong> La estimación se repitió con ERA5-Land de GDEX y da lo mismo que con la copia de Open-Meteo (<a class="reference internal" href="#tab-compuerta-fuentes"><span class="std std-numref">Tabla 25</span></a>). Las dos son el mismo reanálisis, así que la repetición confirma la copia, no la calidad de ERA5-Land; la diferencia que importa sigue siendo frente al IDEAM.</p></li>
+<li><p><strong>El nivel de <span class="math notranslate nohighlight">\(b\)</span> depende de la fuente del HI.</strong> Con el HI de IDEAM (654 días con datos suficientes) la respuesta nocturna baja a 0,94 %/°C. ERA5-Land subestima el HI de mediodía (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 72</span></a>), y el HI de IDEAM tiene más ruido de medida y menos días.</p></li>
+<li><p><strong>Fuente del clima.</strong> La estimación se repitió con ERA5-Land de GDEX y da lo mismo que con la copia de Open-Meteo (<a class="reference internal" href="#tab-compuerta-fuentes"><span class="std std-numref">Tabla 59</span></a>). Las dos son el mismo reanálisis, así que la repetición confirma la copia, no la calidad de ERA5-Land; la diferencia que importa sigue siendo frente al IDEAM.</p></li>
 <li><p><strong>La regla es de este ejercicio.</strong> Los umbrales (6 de 8 horas, 4 de 5 años, <span class="math notranslate nohighlight">\(p &gt; 0{,}05\)</span>) se fijaron para esta prueba; no provienen de una norma.</p></li>
 </ul>
 </section>

@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
@@ -222,6 +222,18 @@
 <li class="toctree-l1"><a class="reference internal" href="18_arquetipos.html">Arquetipos de vivienda (Fase 1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_datos.html">Bases de datos de la tesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_ecv.html">Encuesta de Calidad de Vida (ECV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_enut.html">Encuesta Nacional de Uso del Tiempo (ENUT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_geih.html">Gran Encuesta Integrada de Hogares (GEIH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_sui.html">Sistema Único de Información (SUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_catastro.html">Catastro de Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_xm.html">Demanda horaria de XM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27_clima.html">Clima horario (ERA5-Land, Open-Meteo e IDEAM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28_enso.html">El Niño y La Niña (ONI de la NOAA)</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="14_encuestas.html">Encuestas usadas y representatividad</a></li>
@@ -408,6 +420,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-estrato-1-no-esta-medido">El estrato 1 no está medido</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tendencia-con-lecturas-reales">Tendencia con lecturas reales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-ciudades">Otras ciudades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hogares-que-no-pagan-la-electricidad">Hogares que no pagan la electricidad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-cambia-en-la-propuesta">Qué cambia en la propuesta</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-repetir-la-consulta">Cómo repetir la consulta</a></li>
 </ul>
@@ -423,7 +436,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="consumo-del-sui-por-tipo-de-lectura">
 <h1>Consumo del SUI por tipo de lectura<a class="headerlink" href="#consumo-del-sui-por-tipo-de-lectura" title="Link to this heading">#</a></h1>
-<p>El reporte consolidado del SUI (ele_com_096) que usa el repositorio no separa el consumo medido del estimado. Para resolver el pendiente del estrato 1 (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>) se consultó el cubo de facturación de la herramienta O3 del SUI, que sí trae el tipo de lectura <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id30" title="Superintendencia de Servicios Públicos Domiciliarios. SUI, herramienta de análisis O3: vista de facturación de energía (SUI_COMERCIAL_ENERGIA/VISTA_FACTURACION_ENERGIA). 2026. Consultado: 27 oct. 2026. URL: http://bi.superservicios.gov.co/o3web/VistaInicialPWSUI2.jsp.">Superintendencia de Servicios Públicos Domiciliarios, 2026</a>)</span>. Este capítulo resume lo que muestra esa consulta para Barranquilla y otras cuatro ciudades, y lo que cambia en la propuesta.</p>
+<p>El reporte consolidado del SUI (ele_com_096) que usa el repositorio no separa el consumo medido del estimado. Para resolver el pendiente del estrato 1 (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>) se consultó el cubo de facturación de la herramienta O3 del SUI, que sí trae el tipo de lectura <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id30" title="Superintendencia de Servicios Públicos Domiciliarios. SUI, herramienta de análisis O3: vista de facturación de energía (SUI_COMERCIAL_ENERGIA/VISTA_FACTURACION_ENERGIA). 2026. Consultado: 27 oct. 2026. URL: http://bi.superservicios.gov.co/o3web/VistaInicialPWSUI2.jsp.">Superintendencia de Servicios Públicos Domiciliarios, 2026</a>)</span>. Este capítulo resume lo que muestra esa consulta para Barranquilla y otras cuatro ciudades, quiénes no pagan la electricidad según la ECV y lo que cambia en la propuesta.</p>
 <section id="datos">
 <h2>Datos<a class="headerlink" href="#datos" title="Link to this heading">#</a></h2>
 <p>La consulta se hizo el 27 de octubre de 2026 en la vista <code class="docutils literal notranslate"><span class="pre">SUI_COMERCIAL_ENERGIA/VISTA_FACTURACION_ENERGIA</span></code> con estos filtros:</p>
@@ -443,7 +456,7 @@
 <section id="el-estrato-1-no-esta-medido">
 <h2>El estrato 1 no está medido<a class="headerlink" href="#el-estrato-1-no-esta-medido" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-o3-no-real">
-<caption><span class="caption-number">Tabla 30 </span><span class="caption-text">Parte del consumo facturado que no proviene de una lectura real (lecturas estimadas y usuarios sin medidor), promedio de cada periodo, %.</span><a class="headerlink" href="#tab-o3-no-real" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 64 </span><span class="caption-text">Parte del consumo facturado que no proviene de una lectura real (lecturas estimadas y usuarios sin medidor), promedio de cada periodo, %.</span><a class="headerlink" href="#tab-o3-no-real" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Periodo</p></th>
 <th class="head"><p>E1</p></th>
@@ -475,7 +488,7 @@
 </table>
 </div>
 <p>En el estrato 1, entre 50 % y 80 % del consumo facturado de cada año no viene de un medidor leído. En 2025, 22 % de sus suscriptores no tiene medidor y 16 % tiene lectura estimada. A los usuarios sin medidor se les facturaron en 2023–2025 unos 671 kWh/mes, frente a 211 kWh/mes de los hogares con lectura real. Las lecturas estimadas del estrato 1 varían mucho de un año a otro (de 210 a más de 3.000 kWh/mes en promedio anual).</p>
-<p>Con solo lecturas reales, el estrato 1 consume lo mismo que el 2 y menos que el 3: 209, 205 y 253 kWh/mes en 2023–2025. La cifra coincide con la de CEELA, que también usó lecturas reales (229 kWh/mes en 2021–2024, <a class="reference internal" href="16_ceela.html#tab-ceela-sui"><span class="std std-numref">Tabla 29</span></a>), y con la baja tenencia de A/C del estrato. El exceso del estrato 1 en el consolidado es, por tanto, un efecto de la facturación sin medición.</p>
+<p>Con solo lecturas reales, el estrato 1 consume lo mismo que el 2 y menos que el 3: 209, 205 y 253 kWh/mes en 2023–2025. La cifra coincide con la de CEELA, que también usó lecturas reales (229 kWh/mes en 2021–2024, <a class="reference internal" href="16_ceela.html#tab-ceela-sui"><span class="std std-numref">Tabla 63</span></a>), y con la baja tenencia de A/C del estrato. El exceso del estrato 1 en el consolidado es, por tanto, un efecto de la facturación sin medición.</p>
 </section>
 <section id="tendencia-con-lecturas-reales">
 <h2>Tendencia con lecturas reales<a class="headerlink" href="#tendencia-con-lecturas-reales" title="Link to this heading">#</a></h2>
@@ -483,12 +496,12 @@
 <a class="reference internal image-reference" href="_images/sui_lecturas_reales.png"><img alt="_images/sui_lecturas_reales.png" src="_images/sui_lecturas_reales.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 26 </span><span class="caption-text">(A) Parte del consumo facturado sin lectura real por estrato. (B) Cambio del consumo por suscriptor a clima constante, de 2015–2019 a 2023–2025, con todas las lecturas (sin cuentas «n/a») y con solo lecturas reales.</span><a class="headerlink" href="#fig-o3-lecturas" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 77 </span><span class="caption-text">(A) Parte del consumo facturado sin lectura real por estrato. (B) Cambio del consumo por suscriptor a clima constante, de 2015–2019 a 2023–2025, con todas las lecturas (sin cuentas «n/a») y con solo lecturas reales.</span><a class="headerlink" href="#fig-o3-lecturas" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>El cambio se estimó por estrato con ln(kWh por suscriptor) = efecto de año + efecto de mes + β · índice de calor del mes anterior (ERA5-Land), sin las cuentas «n/a» y sin los meses que se alejan más de 25–30 % de la mediana móvil de siete meses.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-o3-cambio">
-<caption><span class="caption-number">Tabla 31 </span><span class="caption-text">Consumo por suscriptor con lectura real y cambio a clima constante.</span><a class="headerlink" href="#tab-o3-cambio" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 65 </span><span class="caption-text">Consumo por suscriptor con lectura real y cambio a clima constante.</span><a class="headerlink" href="#tab-o3-cambio" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p>E1</p></th>
@@ -552,11 +565,11 @@
 <a class="reference internal image-reference" href="_images/sui_comparacion_municipios.png"><img alt="_images/sui_comparacion_municipios.png" src="_images/sui_comparacion_municipios.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 27 </span><span class="caption-text">Consumo por suscriptor con lectura real en los estratos 1–3 (A) y 4–6 (B), y precio real del kWh del estrato 4 (C), 2015 = 100. Sin ajuste por clima. Soledad no tiene suficientes suscriptores de los estratos 4 a 6.</span><a class="headerlink" href="#fig-o3-municipios" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 78 </span><span class="caption-text">Consumo por suscriptor con lectura real en los estratos 1–3 (A) y 4–6 (B), y precio real del kWh del estrato 4 (C), 2015 = 100. Sin ajuste por clima. Soledad no tiene suficientes suscriptores de los estratos 4 a 6.</span><a class="headerlink" href="#fig-o3-municipios" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-o3-municipios">
-<caption><span class="caption-number">Tabla 32 </span><span class="caption-text">Cambio del consumo por suscriptor con lectura real, de 2015–2019 a 2023–2025, %, y precio real del kWh del estrato 4 en 2024 (2015 = 100).</span><a class="headerlink" href="#tab-o3-municipios" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 66 </span><span class="caption-text">Cambio del consumo por suscriptor con lectura real, de 2015–2019 a 2023–2025, %, y precio real del kWh del estrato 4 en 2024 (2015 = 100).</span><a class="headerlink" href="#tab-o3-municipios" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Ciudad</p></th>
 <th class="head"><p>E1–E3</p></th>
@@ -595,6 +608,63 @@
 </div>
 <p>La caída en los estratos bajos no es propia de Barranquilla: aparece en las ciudades del Caribe, con mercados de Air-e y de Afinia, y es menor en Medellín, donde la tarifa subió menos. Las pérdidas del mercado de Air-e, que según la prensa rondan 24–31 % entre 2019 y 2024, no muestran una tendencia que explique la caída.</p>
 </section>
+<section id="hogares-que-no-pagan-la-electricidad">
+<h2>Hogares que no pagan la electricidad<a class="headerlink" href="#hogares-que-no-pagan-la-electricidad" title="Link to this heading">#</a></h2>
+<p>El SUI solo registra lo facturado, así que no muestra el consumo de quien no paga. La ECV 2024 sí lo pregunta: «¿Pagan en este hogar por la electricidad que consumen?» (P791), con las opciones sí, sí con el arriendo, no pagan pero tienen el servicio y no tienen el servicio <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id26" title="DANE. Encuesta Nacional de Calidad de Vida (ECV), microdatos 2015–2025 (catálogos 419, 456, 544, 607, 678, 718, 734, 793, 827, 861 y 905). 2026. URL: https://microdatos.dane.gov.co/index.php/catalog/861.">DANE, 2026</a>)</span>. La <a class="reference internal" href="#tab-ecv-no-pagan"><span class="std std-numref">Tabla 67</span></a> resume las respuestas en la cabecera de Barranquilla, con intervalos de confianza del 95 % que usan el diseño muestral (conglomerados por segmento, como en <a class="reference internal" href="05_ajustes_v3.html"><span class="std std-doc">Serie de tenencia, error de la encuesta e imputación</span></a>).</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-ecv-no-pagan">
+<caption><span class="caption-number">Tabla 67 </span><span class="caption-text">Hogares que no pagan la electricidad aunque tienen el servicio y tenencia de A/C, cabecera de Barranquilla, ECV 2024 (%, con intervalo de confianza del 95 %).</span><a class="headerlink" href="#tab-ecv-no-pagan" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Estrato</p></th>
+<th class="head"><p>Hogares encuestados</p></th>
+<th class="head"><p>No pagan</p></th>
+<th class="head"><p>A/C de los que no pagan</p></th>
+<th class="head"><p>A/C de los que pagan</p></th>
+<th class="head"><p>Diferencia de A/C (puntos)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>E1</p></td>
+<td><p>250</p></td>
+<td><p>30,8 ± 13,3</p></td>
+<td><p>6,1 ± 3,4</p></td>
+<td><p>15,2 ± 6,7</p></td>
+<td><p>9,2 ± 7,4</p></td>
+</tr>
+<tr class="row-odd"><td><p>E2</p></td>
+<td><p>161</p></td>
+<td><p>1,6 ± 2,1</p></td>
+<td><p>0 (4 hogares)</p></td>
+<td><p>34,7 ± 9,5</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>E3</p></td>
+<td><p>125</p></td>
+<td><p>2,3 ± 2,8</p></td>
+<td><p>0 (2 hogares)</p></td>
+<td><p>46,9 ± 10,6</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>E4 a E6</p></td>
+<td><p>110</p></td>
+<td><p>0</p></td>
+<td><p>—</p></td>
+<td><p>78,2 a 100</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>Ciudad</p></td>
+<td><p>646</p></td>
+<td><p>12,7 ± 6,3</p></td>
+<td><p>5,7 ± 3,3</p></td>
+<td><p>41,7 ± 7,6</p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>El 31 % de los hogares del estrato 1 declara que no paga la electricidad aunque tiene el servicio, frente a menos de 3 % en los estratos 2 y 3 y ninguno en los estratos 4 a 6. El intervalo es ancho porque esos hogares se concentran en pocos segmentos de la muestra, como cabe esperar si viven en los mismos barrios. En el estrato 1, los que no pagan tienen 9 puntos menos de tenencia de A/C que los que pagan, una diferencia que se mantiene con el diseño muestral (de 2 a 17 puntos). La ECV 2019 no tiene esa pregunta, pero el 14 % de los hogares del estrato 1 declaró un pago de 0 pesos el mes pasado, y esos hogares tenían 2,0 % de A/C frente a 8,6 % de los demás, en la misma dirección.</p>
+<p>No pagar no equivale a tener una conexión ilegal, porque incluye también a los usuarios sin medidor, a los barrios que se facturan con un medidor comunitario y a quienes no pagan la factura. La encuesta tampoco sirve para medir las conexiones ilegales de forma directa, pues la categoría «recibos sin estrato o el servicio es pirata» de la pregunta por el estrato reunió menos de 1 % de los hogares de la ciudad en 2019, y no permite ver los medidores alterados de los hogares que sí pagan.</p>
+<p>Para la calibración esto tiene dos consecuencias. El consumo que no se factura en el estrato 1 corresponde sobre todo a hogares con poco A/C, y la tenencia de A/C de los hogares calibrados, que tienen lectura real, debe tomarse de los hogares que pagan y no de todos (15 % frente a 12 % en el estrato 1). Los medidores alterados, que ninguna fuente pública mide, se tratan con un subregistro de las lecturas reales de 0 % a 20 % en el análisis de sensibilidad. La tabla es <code class="docutils literal notranslate"><span class="pre">tablas/ECV_pago_electricidad_Barranquilla.csv</span></code> y el script, <code class="docutils literal notranslate"><span class="pre">scripts/ecv_pago_electricidad.py</span></code>.</p>
+</section>
 <section id="que-cambia-en-la-propuesta">
 <h2>Qué cambia en la propuesta<a class="headerlink" href="#que-cambia-en-la-propuesta" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -603,6 +673,8 @@
 <li><p>La Ecuación (5) incluye un factor de precio, (p_a/p_0)^η, con una elasticidad por grupo de estratos (1 a 3 y 4 a 6).</p></li>
 <li><p>Se calibra con 2015 a 2025, salvo 2020 y los años 2023 y 2025, que se reservan para la validación junto con la prueba de 2027.</p></li>
 <li><p>La Tabla 10 de la propuesta usa el consumo y el alza con lecturas reales.</p></li>
+<li><p>La tenencia de A/C de los hogares calibrados sale de los hogares de la ECV que pagan la electricidad.</p></li>
+<li><p>El análisis de sensibilidad incluye un subregistro de las lecturas reales de 0 % a 20 % por medidores alterados, y la demanda de toda la ciudad, con los hogares que no pagan, se reporta aparte y en la capa C.</p></li>
 </ul>
 </section>
 <section id="como-repetir-la-consulta">
@@ -682,6 +754,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-estrato-1-no-esta-medido">El estrato 1 no está medido</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tendencia-con-lecturas-reales">Tendencia con lecturas reales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-ciudades">Otras ciudades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hogares-que-no-pagan-la-electricidad">Hogares que no pagan la electricidad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-cambia-en-la-propuesta">Qué cambia en la propuesta</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-repetir-la-consulta">Cómo repetir la consulta</a></li>
 </ul>

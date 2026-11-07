@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
@@ -223,6 +223,18 @@
 <li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_arquetipos.html">Arquetipos de vivienda (Fase 1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_datos.html">Bases de datos de la tesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_ecv.html">Encuesta de Calidad de Vida (ECV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_enut.html">Encuesta Nacional de Uso del Tiempo (ENUT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_geih.html">Gran Encuesta Integrada de Hogares (GEIH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_sui.html">Sistema Único de Información (SUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_catastro.html">Catastro de Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_xm.html">Demanda horaria de XM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27_clima.html">Clima horario (ERA5-Land, Open-Meteo e IDEAM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28_enso.html">El Niño y La Niña (ONI de la NOAA)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
 <ul class="nav bd-sidenav">
@@ -441,6 +453,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">ECV2024_efecto_diseno.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ECV_2018_2025_AC_postestratificado_SUI.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ECV_2018_2025_Barranquilla_tenencia_por_estrato.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ECV_pago_electricidad_Barranquilla.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ENUT2024_25_Atlantico_horas_por_tipo.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">estabilidad.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">franjas.csv</span></code></p></li>
@@ -470,6 +483,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">ecv19_extra.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ecv24.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ecv_pago_electricidad.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enut.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enut_out.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enut_stats.py</span></code></p></li>
@@ -493,7 +507,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">sui3.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">xlsx.py</span></code></p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">ceela_sui.py</span></code> se corre desde la raíz del repositorio y compara el SUI con la Tabla 42 de CEELA.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ceela_sui.py</span></code> se corre desde la raíz del repositorio y compara el SUI con la Tabla 42 de CEELA. <code class="docutils literal notranslate"><span class="pre">ecv_pago_electricidad.py</span></code> también se corre desde la raíz: lee los archivos de la ECV 2024 tal como los publica el DANE, en <code class="docutils literal notranslate"><span class="pre">Downloads/DANE/ECV</span></code>, y el consolidado de la ECV 2019 que arma <code class="docutils literal notranslate"><span class="pre">build_ecv2019.py</span></code>.</p>
 <p>Orden: <code class="docutils literal notranslate"><span class="pre">build_ecv2019.py</span></code> y <code class="docutils literal notranslate"><span class="pre">ecv24.py</span></code> → <code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code>, <code class="docutils literal notranslate"><span class="pre">enut*.py</span></code>, <code class="docutils literal notranslate"><span class="pre">geih*.py</span></code>, <code class="docutils literal notranslate"><span class="pre">sui*.py</span></code> → <code class="docutils literal notranslate"><span class="pre">postestrat_anual.py</span></code> → <code class="docutils literal notranslate"><span class="pre">logit_ecv24.py</span></code> → <code class="docutils literal notranslate"><span class="pre">serie_suavizada.py</span></code> → <code class="docutils literal notranslate"><span class="pre">deff_ecv24.py</span></code> → <code class="docutils literal notranslate"><span class="pre">sensibilidad_serie.py</span></code> → <code class="docutils literal notranslate"><span class="pre">imputacion_catastro_anual_C.py</span></code> → <code class="docutils literal notranslate"><span class="pre">pac_posicion_estrato_C.py</span></code>, <code class="docutils literal notranslate"><span class="pre">estacionalidad_sui.py</span></code>, <code class="docutils literal notranslate"><span class="pre">catastro_e1_edificios.py</span></code> → <code class="docutils literal notranslate"><span class="pre">figuras.py</span></code>.</p>
 </section>
 <section id="compuerta-horaria-carpeta-scripts-compuerta">

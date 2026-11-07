@@ -16,6 +16,7 @@ Los cálculos se hicieron en Python (pandas, numpy, scipy, statsmodels) a partir
 - `ECV2024_efecto_diseno.csv`
 - `ECV_2018_2025_AC_postestratificado_SUI.csv`
 - `ECV_2018_2025_Barranquilla_tenencia_por_estrato.csv`
+- `ECV_pago_electricidad_Barranquilla.csv`
 - `ENUT2024_25_Atlantico_horas_por_tipo.csv`
 - `estabilidad.csv`
 - `franjas.csv`
@@ -44,6 +45,7 @@ Separador «;», codificación UTF-8 con BOM. No se publican las bases por hogar
 - `ecv19_extra.py`
 - `ecv24.py`
 - `ecv24_tablas.py`
+- `ecv_pago_electricidad.py`
 - `enut.py`
 - `enut_out.py`
 - `enut_stats.py`
@@ -67,7 +69,7 @@ Separador «;», codificación UTF-8 con BOM. No se publican las bases por hogar
 - `sui3.py`
 - `xlsx.py`
 
-`ceela_sui.py` se corre desde la raíz del repositorio y compara el SUI con la Tabla 42 de CEELA.
+`ceela_sui.py` se corre desde la raíz del repositorio y compara el SUI con la Tabla 42 de CEELA. `ecv_pago_electricidad.py` también se corre desde la raíz: lee los archivos de la ECV 2024 tal como los publica el DANE, en `Downloads/DANE/ECV`, y el consolidado de la ECV 2019 que arma `build_ecv2019.py`.
 
 Orden: `build_ecv2019.py` y `ecv24.py` → `ecv24_tablas.py`, `enut*.py`, `geih*.py`, `sui*.py` → `postestrat_anual.py` → `logit_ecv24.py` → `serie_suavizada.py` → `deff_ecv24.py` → `sensibilidad_serie.py` → `imputacion_catastro_anual_C.py` → `pac_posicion_estrato_C.py`, `estacionalidad_sui.py`, `catastro_e1_edificios.py` → `figuras.py`.
 

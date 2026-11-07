@@ -1,0 +1,990 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Clima horario (ERA5-Land, Open-Meteo e IDEAM) &#8212; Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '27_clima';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="El Niño y La Niña (ONI de la NOAA)" href="28_enso.html" />
+    <link rel="prev" title="Demanda horaria de XM" href="26_xm.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_arquetipos.html">Arquetipos de vivienda (Fase 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_datos.html">Bases de datos de la tesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_ecv.html">Encuesta de Calidad de Vida (ECV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_enut.html">Encuesta Nacional de Uso del Tiempo (ENUT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_geih.html">Gran Encuesta Integrada de Hogares (GEIH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_sui.html">Sistema Único de Información (SUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_catastro.html">Catastro de Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_xm.html">Demanda horaria de XM</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clima horario (ERA5-Land, Open-Meteo e IDEAM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28_enso.html">El Niño y La Niña (ONI de la NOAA)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="14_encuestas.html">Encuestas usadas y representatividad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_fuentes.html">Fuentes, decisiones y glosario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="11_coherencia.html">Coherencia entre fuentes y validación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_supuestos.html">Supuestos, sensibilidad y limitaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_referencias.html">Referencias</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/mcarocantillo/tesis-datos-barranquilla" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/27_clima.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Clima horario (ERA5-Land, Open-Meteo e IDEAM)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es">Qué es</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cobertura-y-estructura">Cobertura y estructura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-usa-la-tesis">Variables que usa la tesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio">Análisis exploratorio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-anual">Ciclo anual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-diario">Ciclo diario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-del-indice-de-calor">Distribución del índice de calor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variacion-entre-anos">Variación entre años</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdex-open-meteo-e-ideam">GDEX, Open-Meteo e IDEAM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viento-y-lluvia">Viento y lluvia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radiacion-en-muros-y-cubierta">Radiación en muros y cubierta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperatura-del-cielo">Temperatura del cielo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-paso-a-paso">Procesamiento paso a paso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-entrega-al-modelo">Qué entrega al modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-encontrados-y-como-se-trataron">Problemas encontrados y cómo se trataron</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="clima-horario-era5-land-open-meteo-e-ideam">
+<h1>Clima horario (ERA5-Land, Open-Meteo e IDEAM)<a class="headerlink" href="#clima-horario-era5-land-open-meteo-e-ideam" title="Link to this heading">#</a></h1>
+<p>El clima entra en casi todos los pasos de la tesis: la carga de enfriamiento del Paso 3 que agrupa los arquetipos, la compuerta horaria con la demanda de XM, la Ecuación 9 con el consumo del SUI y, en la Fase 2, el modelo térmico 5R1C hora a hora. Este capítulo describe las tres fuentes que se usan (ERA5-Land de NCAR GDEX como fuente principal, la copia de ERA5-Land que sirve Open-Meteo como contraste y la estación 0029045190 del IDEAM como referencia medida), muestra su análisis exploratorio y explica cómo se arma la serie horaria de la Fase 2. Las cifras salen de <code class="docutils literal notranslate"><span class="pre">scripts/eda/clima.py</span></code>, que escribe las figuras <code class="docutils literal notranslate"><span class="pre">figuras/eda/clima_*.png</span></code> y las tablas <code class="docutils literal notranslate"><span class="pre">tablas/eda/clima_*.csv</span></code>.</p>
+<section id="que-es">
+<h2>Qué es<a class="headerlink" href="#que-es" title="Link to this heading">#</a></h2>
+<p>ERA5-Land es un reanálisis del ECMWF que reconstruye las variables de superficie hora a hora en una malla de 0,1° (unos 11 km en Barranquilla), forzado por la atmósfera de ERA5 <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id60" title="Joaquín Muñoz-Sabater, Emanuel Dutra, Anna Agustí-Panareda, Clément Albergel, Gabriele Arduini, Gianpaolo Balsamo, Souhail Boussetta, Margarita Choulga, Shaun Harrigan, Hans Hersbach, Brecht Martens, Diego G. Miralles, María Piles, Nemesio J. Rodríguez-Fernández, Ervin Zsoter, Carlo Buontempo y Jean-Noël Thépaut. ERA5-Land: a state-of-the-art global reanalysis dataset for land applications. Earth System Science Data, 13(9):4349–4383, 2021. doi:10.5194/essd-13-4349-2021.">Muñoz-Sabater et al., 2021</a>)</span>. No es una medición: es la salida de un modelo de superficie que asimila indirectamente las observaciones a través de ERA5, así que no tiene huecos, pero representa la celda completa y no un punto de la ciudad. La tesis lo toma de dos distribuidores. GDEX, el archivo de datos del NCAR, entrega los campos originales en NetCDF (pedidos 953933 y 953943, de enero de 2015 a septiembre de 2026, en la ventana de 10,0–11,9° N y 74,0–74,9° O). Open-Meteo <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id61" title="Patrick Zippenfeld. Open-Meteo.com Weather API: Historical Weather API (modelo era5_land). 2023. Consultado: 18 oct. 2026. URL: https://archive-api.open-meteo.com/v1/archive, doi:10.5281/zenodo.7970649.">Zippenfeld, 2023</a>)</span> sirve una copia sin credenciales en un punto, que fue la primera fuente de la compuerta horaria y que ahora se usa como contraste y para rellenar el punto de rocío que falta en GDEX.</p>
+<p>La estación 0029045190 «APTO ERNESTO CORTISSOZ» del IDEAM <span class="bibtex-citation" id="id3">(<a class="reference internal" href="09_referencias.html#id62" title="IDEAM. Datos hidrometeorológicos de las estaciones del IDEAM: temperatura del aire (sbwg-7ju4) y humedad relativa (uext-mhny), estación 0029045190 Aeropuerto Ernesto Cortissoz. Portal de datos abiertos datos.gov.co, 2026. Consultado: 18 oct. 2026. URL: https://www.datos.gov.co/resource/sbwg-7ju4.">IDEAM, 2026</a>)</span> mide la temperatura y la humedad relativa en el aeropuerto, al sur de la ciudad. Se descarga de datos.gov.co (recursos sbwg-7ju4 y uext-mhny) y sirve para medir el sesgo del reanálisis, no para alimentar el modelo, porque tiene huecos largos (<a class="reference internal" href="#fig-eda-clima-cobertura"><span class="std std-numref">Figura 54</span></a>).</p>
+</section>
+<section id="cobertura-y-estructura">
+<h2>Cobertura y estructura<a class="headerlink" href="#cobertura-y-estructura" title="Link to this heading">#</a></h2>
+<p>La serie horaria de la Fase 2 (<code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/clima_horario_barranquilla.parquet</span></code>) tiene 102.984 horas seguidas, sin horas repetidas ni saltos, desde la hora que termina a las 20:00 del 31 de diciembre de 2014 hasta la que termina a las 19:00 del 30 de septiembre de 2026, en hora local (UTC−5). Ese desfase de cinco horas con el calendario se debe a que la serie de GDEX empieza a la 01 UTC del 1 de enero de 2015. Cada fila es la hora que termina en <code class="docutils literal notranslate"><span class="pre">hora_local</span></code>: las variables instantáneas (temperatura, punto de rocío, presión y viento) son las del final de la hora, y las acumuladas (radiación de onda corta y larga y lluvia) son la media o el total de la hora que termina ahí. Se usa la celda de 11,0° N y 74,8° O, la más cercana al punto de la compuerta (10,96° N; 74,80° O) y la misma que usa Open-Meteo.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-eda-clima-cobertura">
+<caption><span class="caption-number">Tabla 46 </span><span class="caption-text">Cobertura de las variables de clima. Horas del periodo de la serie (102.984).</span><a class="headerlink" href="#tab-eda-clima-cobertura" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Fuente</p></th>
+<th class="head"><p>Variable</p></th>
+<th class="head"><p>Horas con dato</p></th>
+<th class="head"><p>Faltantes en el crudo</p></th>
+<th class="head"><p>Tratamiento</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ERA5-Land (GDEX)</p></td>
+<td><p>Temperatura, onda corta, onda larga, viento</p></td>
+<td><p>102.984</p></td>
+<td><p>0</p></td>
+<td><p>Ninguno</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERA5-Land (GDEX)</p></td>
+<td><p>Punto de rocío</p></td>
+<td><p>102.376</p></td>
+<td><p>608</p></td>
+<td><p>Open-Meteo más 0,175 K</p></td>
+</tr>
+<tr class="row-even"><td><p>ERA5-Land (GDEX)</p></td>
+<td><p>Presión</p></td>
+<td><p>102.976</p></td>
+<td><p>8</p></td>
+<td><p>Interpolación en el tiempo</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERA5-Land (GDEX)</p></td>
+<td><p>Lluvia</p></td>
+<td><p>102.455</p></td>
+<td><p>529</p></td>
+<td><p>Ninguno (quedan vacías)</p></td>
+</tr>
+<tr class="row-even"><td><p>IDEAM 0029045190</p></td>
+<td><p>Temperatura</p></td>
+<td><p>80.556</p></td>
+<td><p>22.428</p></td>
+<td><p>203 registros fuera de 15–45 °C descartados</p></td>
+</tr>
+<tr class="row-odd"><td><p>IDEAM 0029045190</p></td>
+<td><p>Humedad relativa</p></td>
+<td><p>77.165</p></td>
+<td><p>25.819</p></td>
+<td><p>4.410 registros fuera de 5–100 % descartados</p></td>
+</tr>
+<tr class="row-even"><td><p>IDEAM 0029045190</p></td>
+<td><p>Temperatura y humedad a la vez</p></td>
+<td><p>75.268</p></td>
+<td><p>27.716</p></td>
+<td><p>Base del contraste</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>ERA5-Land está completo salvo en tres variables, y solo el punto de rocío y la presión se rellenan (<a class="reference internal" href="#tab-eda-clima-cobertura"><span class="std std-numref">Tabla 46</span></a>). Los 608 huecos del punto de rocío son 311 tramos de 1 a 9 horas (la mitad de una sola hora) en 2019, 2022 y 2023, donde el campo viene vacío en toda la malla. La lluvia tiene 529 horas vacías concentradas en mayo de 2019 y entre febrero y junio de 2022 (<a class="reference internal" href="#fig-eda-clima-cobertura"><span class="std std-numref">Figura 54</span></a>), que la documentación de la Fase 2 no registra (ver la última sección). La estación del IDEAM tiene temperatura y humedad a la vez en 73 % de las horas, con dos años casi vacíos: en 2021 y 2022 registra unas 2.000 horas de temperatura de las 8.760 del año.</p>
+<figure class="align-default" id="fig-eda-clima-cobertura">
+<a class="reference internal image-reference" href="_images/clima_cobertura.png"><img alt="_images/clima_cobertura.png" src="_images/clima_cobertura.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 54 </span><span class="caption-text">Horas con dato por año en la estación del IDEAM (a) y horas rellenadas o vacías de ERA5-Land de GDEX (b), 2015–2025.</span><a class="headerlink" href="#fig-eda-clima-cobertura" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="variables-que-usa-la-tesis">
+<h2>Variables que usa la tesis<a class="headerlink" href="#variables-que-usa-la-tesis" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-eda-clima-variables">
+<caption><span class="caption-number">Tabla 47 </span><span class="caption-text">Variables de la serie horaria de clima de la Fase 2.</span><a class="headerlink" href="#tab-eda-clima-variables" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Unidad</p></th>
+<th class="head"><p>Definición</p></th>
+<th class="head"><p>Uso</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">T</span></code></p></td>
+<td><p>°C</p></td>
+<td><p>Temperatura del aire a 2 m (ERA5-Land, <code class="docutils literal notranslate"><span class="pre">t2m</span></code>)</p></td>
+<td><p>Carga del Paso 3, 5R1C, grados-hora, EPW</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Td</span></code></p></td>
+<td><p>°C</p></td>
+<td><p>Punto de rocío a 2 m (<code class="docutils literal notranslate"><span class="pre">d2m</span></code>), y <code class="docutils literal notranslate"><span class="pre">td_relleno</span></code> marca las 608 h rellenadas</p></td>
+<td><p>Humedad y carga latente</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HR</span></code></p></td>
+<td><p>%</p></td>
+<td><p>Humedad relativa con la fórmula de Magnus <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id63" title="Oleg A. Alduchov y Robert E. Eskridge. Improved Magnus form approximation of saturation vapor pressure. Journal of Applied Meteorology, 35(4):601–609, 1996.">Alduchov y Eskridge, 1996</a>)</span></p></td>
+<td><p>Índice de calor, contraste con el IDEAM</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w_kgkg</span></code></p></td>
+<td><p>kg/kg</p></td>
+<td><p>Humedad específica con la presión horaria</p></td>
+<td><p>Carga latente de la infiltración (5R1C)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">p_kPa</span></code></p></td>
+<td><p>kPa</p></td>
+<td><p>Presión en superficie (<code class="docutils literal notranslate"><span class="pre">sp</span></code>), y <code class="docutils literal notranslate"><span class="pre">p_interpolada</span></code> marca 8 h</p></td>
+<td><p>Humedad específica, EPW</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HI</span></code></p></td>
+<td><p>°C</p></td>
+<td><p>Índice de calor de la NOAA (regresión de Rothfusz con sus ajustes) <span class="bibtex-citation" id="id5">(<a class="reference internal" href="09_referencias.html#id64" title="Lans P. Rothfusz. The heat index “equation” (or, more than you ever wanted to know about heat index). Technical Attachment SR 90-23, National Weather Service, Southern Region Headquarters, Fort Worth, 1990.">Rothfusz, 1990</a>)</span></p></td>
+<td><p>Compuerta horaria (HI diario), Ecuación 9, grados-hora, ENSO</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GHI</span></code> (= <code class="docutils literal notranslate"><span class="pre">I_cubierta</span></code>)</p></td>
+<td><p>W/m²</p></td>
+<td><p>Irradiancia global horizontal, onda corta descendente (<code class="docutils literal notranslate"><span class="pre">ssrd</span></code>) desacumulada</p></td>
+<td><p>Sol-aire de la cubierta, carga del Paso 3</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DNI</span></code>, <code class="docutils literal notranslate"><span class="pre">DHI</span></code></p></td>
+<td><p>W/m²</p></td>
+<td><p>Directa normal y difusa horizontal con el modelo de Erbs <span class="bibtex-citation" id="id6">(<a class="reference internal" href="09_referencias.html#id82" title="D. G. Erbs, S. A. Klein y J. A. Duffie. Estimation of the diffuse radiation fraction for hourly, daily and monthly-average global radiation. Solar Energy, 28(4):293–302, 1982. doi:10.1016/0038-092X(82)90302-4.">Erbs et al., 1982</a>)</span></p></td>
+<td><p>Proyección en los muros, EPW</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">I_muro_N/E/S/O</span></code></p></td>
+<td><p>W/m²</p></td>
+<td><p>Irradiancia en muros verticales, cielo isótropo y albedo 0,2 (pvlib <span class="bibtex-citation" id="id7">(<a class="reference internal" href="09_referencias.html#id81" title="William F. Holmgren, Clifford W. Hansen y Mark A. Mikofski. pvlib python: a python package for modeling solar energy systems. Journal of Open Source Software, 3(29):884, 2018. doi:10.21105/joss.00884.">Holmgren et al., 2018</a>)</span>)</p></td>
+<td><p>Ganancias por muros y ventanas (5R1C)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">L_onda_larga</span></code></p></td>
+<td><p>W/m²</p></td>
+<td><p>Onda larga descendente (<code class="docutils literal notranslate"><span class="pre">strd</span></code>) desacumulada</p></td>
+<td><p>Corrección de onda larga de la cubierta</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">T_cielo</span></code>, <code class="docutils literal notranslate"><span class="pre">dT_cielo</span></code></p></td>
+<td><p>°C, K</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_{cielo} = (L/\sigma)^{1/4}\)</span> y su diferencia con el aire</p></td>
+<td><p>Intercambio radiativo con el cielo (5R1C)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">viento</span></code>, <code class="docutils literal notranslate"><span class="pre">dir_viento</span></code></p></td>
+<td><p>m/s, °</p></td>
+<td><p>Viento a 10 m (<code class="docutils literal notranslate"><span class="pre">u10</span></code>, <code class="docutils literal notranslate"><span class="pre">v10</span></code>) y dirección de donde viene</p></td>
+<td><p>EPW</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lluvia_mm</span></code></p></td>
+<td><p>mm</p></td>
+<td><p>Precipitación de la hora (<code class="docutils literal notranslate"><span class="pre">tp</span></code>) desacumulada</p></td>
+<td><p>Contexto de las fases ENSO, EPW</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tipo_dia</span></code>, <code class="docutils literal notranslate"><span class="pre">festivo</span></code>, <code class="docutils literal notranslate"><span class="pre">carnaval</span></code>, <code class="docutils literal notranslate"><span class="pre">semana_santa</span></code>, <code class="docutils literal notranslate"><span class="pre">fin_anio</span></code>, <code class="docutils literal notranslate"><span class="pre">vacaciones_escolares</span></code>, <code class="docutils literal notranslate"><span class="pre">anio_pandemia</span></code></p></td>
+<td><p></p></td>
+<td><p>Calendario de la compuerta horaria y vacaciones aproximadas (S19)</p></td>
+<td><p>Ocupación en la Fase 2, exclusión de 2020</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La serie trae además la posición del sol (<code class="docutils literal notranslate"><span class="pre">cenit_sol</span></code>, <code class="docutils literal notranslate"><span class="pre">azimut_sol</span></code>) y la irradiancia extraterrestre (<code class="docutils literal notranslate"><span class="pre">ETR_horizontal</span></code>, <code class="docutils literal notranslate"><span class="pre">ETR_normal</span></code>), calculadas con pvlib a mitad de cada hora. El detalle de las columnas y las comprobaciones de la radiación están en <code class="docutils literal notranslate"><span class="pre">fase2/clima/README.md</span></code>.</p>
+</section>
+<section id="analisis-exploratorio">
+<h2>Análisis exploratorio<a class="headerlink" href="#analisis-exploratorio" title="Link to this heading">#</a></h2>
+<section id="ciclo-anual">
+<h3>Ciclo anual<a class="headerlink" href="#ciclo-anual" title="Link to this heading">#</a></h3>
+<p>Barranquilla tiene un clima cálido con poca variación de la temperatura en el año y una estación seca marcada (<a class="reference internal" href="#fig-eda-clima-climatologia"><span class="std std-numref">Figura 55</span></a>). La temperatura media mensual va de 26,7 °C en febrero a 28,0 °C en agosto, apenas 1,3 °C, pero el índice de calor sube de 28,6 °C a 32,6 °C porque la humedad relativa pasa de 78 % en la temporada seca a 84 % en la lluviosa. Con la carga del A/C ligada al índice de calor más que a la temperatura, la estación cálida es la lluviosa, de mayo a noviembre. La irradiancia horizontal tiene el ciclo contrario: es máxima en marzo (282 W/m²) y mínima en noviembre (205 W/m²), con más nubes en la temporada de lluvias.</p>
+<figure class="align-default" id="fig-eda-clima-climatologia">
+<a class="reference internal image-reference" href="_images/clima_climatologia.png"><img alt="_images/clima_climatologia.png" src="_images/clima_climatologia.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 55 </span><span class="caption-text">Media mensual de la temperatura, la humedad relativa, el índice de calor y la irradiancia global horizontal, con los percentiles 10 y 90 de las horas de cada mes, 2015–2025.</span><a class="headerlink" href="#fig-eda-clima-climatologia" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ciclo-diario">
+<h3>Ciclo diario<a class="headerlink" href="#ciclo-diario" title="Link to this heading">#</a></h3>
+<p>El ciclo diario pesa más que el anual, como muestra la <a class="reference internal" href="#fig-eda-clima-perfil"><span class="std std-numref">Figura 56</span></a>: en promedio, la temperatura va de 26,4 °C a las 6 h a 29,0 °C a las 13 h y el índice de calor de 28,8 °C a 33,8 °C, mientras la humedad relativa baja de 86 % de noche a 74,5 % al mediodía. Las noches de la temporada lluviosa son tan calurosas como las tardes de la seca: el índice de calor de 22 a 5 h está entre 29,8 °C y 30,9 °C de mayo a noviembre, frente a 32,3 °C a las 13 h de diciembre a abril. La irradiancia media alcanza 833 W/m² en la hora que termina a las 12 y es casi simétrica alrededor del mediodía, lo que confirma que la desacumulación y el paso a hora local están alineados (<code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/comprobaciones_clima.json</span></code>).</p>
+<figure class="align-default" id="fig-eda-clima-perfil">
+<a class="reference internal image-reference" href="_images/clima_perfil_horario.png"><img alt="_images/clima_perfil_horario.png" src="_images/clima_perfil_horario.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 56 </span><span class="caption-text">Perfil horario medio de la temperatura, la humedad relativa, el índice de calor y la irradiancia en las temporadas seca (diciembre a abril) y lluviosa (mayo a noviembre), 2015–2025.</span><a class="headerlink" href="#fig-eda-clima-perfil" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="distribucion-del-indice-de-calor">
+<h3>Distribución del índice de calor<a class="headerlink" href="#distribucion-del-indice-de-calor" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-eda-clima-hi">
+<caption><span class="caption-number">Tabla 48 </span><span class="caption-text">Horas por categoría del índice de calor de la NOAA, 2015–2025 (% de las horas).</span><a class="headerlink" href="#tab-eda-clima-hi" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Horas</p></th>
+<th class="head"><p>Menos de 27 °C</p></th>
+<th class="head"><p>27–32 °C (precaución)</p></th>
+<th class="head"><p>32–41 °C (precaución extrema)</p></th>
+<th class="head"><p>41 °C o más (peligro)</p></th>
+<th class="head"><p>HI medio (°C)</p></th>
+<th class="head"><p>Percentil 95 (°C)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Todas</p></td>
+<td><p>16,4</p></td>
+<td><p>47,3</p></td>
+<td><p>36,3</p></td>
+<td><p>0,01</p></td>
+<td><p>30,9</p></td>
+<td><p>35,8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Noche (22 a 5 h)</p></td>
+<td><p>29,6</p></td>
+<td><p>53,3</p></td>
+<td><p>17,1</p></td>
+<td><p>0,00</p></td>
+<td><p>29,4</p></td>
+<td><p>33,6</p></td>
+</tr>
+<tr class="row-even"><td><p>Tarde (12 a 17 h)</p></td>
+<td><p>0,9</p></td>
+<td><p>33,6</p></td>
+<td><p>65,5</p></td>
+<td><p>0,04</p></td>
+<td><p>33,1</p></td>
+<td><p>37,1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>El índice de calor pasa de 32 °C en un tercio de las horas y en dos de cada tres horas de la tarde, pero casi nunca llega a 41 °C (<a class="reference internal" href="#tab-eda-clima-hi"><span class="std std-numref">Tabla 48</span></a>). El máximo horario de la serie es 42,1 °C, y la media diaria, que es la que usa la compuerta horaria, está entre 27,6 °C y 34,7 °C en 90 % de los días. Como ERA5-Land subestima el calor del mediodía (más abajo), estas proporciones son un piso para la tarde.</p>
+<p>La distribución horaria tiene un pico entre 26 °C y 27 °C y un hueco entre 27,5 °C y 28,3 °C, donde cae solo 0,5 % de las horas (<a class="reference internal" href="#fig-eda-clima-hi"><span class="std std-numref">Figura 57</span></a>). El hueco no es del clima sino del algoritmo de la NOAA, que usa la fórmula simple de Steadman mientras su promedio con la temperatura no llega a 80 °F (26,7 °C) y la regresión de Rothfusz por encima. En aire tan húmedo las dos fórmulas no empalman: con 85 % de humedad, el HI pasa de 27,1 °C con 26,2 °C de aire a 28,5 °C con 26,3 °C. El salto cae justo en las temperaturas de la noche, así que una décima de grado puede mover una hora nocturna 1,4 °C en el HI.</p>
+<figure class="align-default" id="fig-eda-clima-hi">
+<a class="reference internal image-reference" href="_images/clima_hi_distribucion.png"><img alt="_images/clima_hi_distribucion.png" src="_images/clima_hi_distribucion.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 57 </span><span class="caption-text">Distribución del índice de calor horario con los umbrales de la NOAA (a) y de su media y máxima diarias (b), 2015–2025.</span><a class="headerlink" href="#fig-eda-clima-hi" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="variacion-entre-anos">
+<h3>Variación entre años<a class="headerlink" href="#variacion-entre-anos" title="Link to this heading">#</a></h3>
+<p>Entre 2015 y 2025 la temperatura media sube 0,19 °C por década y el índice de calor 0,47 °C por década, pero la recta resume mal una serie dominada por El Niño y La Niña (<a class="reference internal" href="#fig-eda-clima-tendencia"><span class="std std-numref">Figura 58</span></a>). El año más fresco es 2022 (índice de calor medio de 29,7 °C), en plena La Niña, y el más caluroso 2024 (32,1 °C), después de El Niño de 2023–2024. Los grados-hora con el índice de calor y base de 26,5 °C pasan de 28.900 K·h en 2022 a 49.506 K·h en 2024, un 71 % más (<code class="docutils literal notranslate"><span class="pre">tablas/eda/clima_tendencia_anual.csv</span></code>). Con once años y dos fases extremas al final, la pendiente no se debe leer como calentamiento de largo plazo. El capítulo <a class="reference internal" href="28_enso.html"><span class="std std-doc">El Niño y La Niña</span></a> separa las dos cosas. La lluvia anual va de 796 mm (2015) a 1.965 mm (2024). El total de 2022 (1.948 mm) está subestimado por las 436 horas vacías de ese año, y la lluvia de ERA5-Land no se ha contrastado con una medición.</p>
+<figure class="align-default" id="fig-eda-clima-tendencia">
+<a class="reference internal image-reference" href="_images/clima_tendencia.png"><img alt="_images/clima_tendencia.png" src="_images/clima_tendencia.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 58 </span><span class="caption-text">Temperatura e índice de calor medios de cada año con su recta de mínimos cuadrados (a) y lluvia anual (b), 2015–2025.</span><a class="headerlink" href="#fig-eda-clima-tendencia" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="gdex-open-meteo-e-ideam">
+<h3>GDEX, Open-Meteo e IDEAM<a class="headerlink" href="#gdex-open-meteo-e-ideam" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-eda-clima-fuentes">
+<caption><span class="caption-number">Tabla 49 </span><span class="caption-text">ERA5-Land de GDEX frente a la copia de Open-Meteo, hora a hora, 2015 a septiembre de 2026.</span><a class="headerlink" href="#tab-eda-clima-fuentes" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Horas</p></th>
+<th class="head"><p>Media GDEX</p></th>
+<th class="head"><p>Media Open-Meteo</p></th>
+<th class="head"><p>Diferencia media</p></th>
+<th class="head"><p>Desv. est. de la diferencia</p></th>
+<th class="head"><p>Correlación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Temperatura (°C), ERA5-Land en las dos</p></td>
+<td><p>102.984</p></td>
+<td><p>27,49</p></td>
+<td><p>27,32</p></td>
+<td><p>+0,175</p></td>
+<td><p>0,029</p></td>
+<td><p>1,000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Punto de rocío (°C), ERA5-Land en las dos</p></td>
+<td><p>102.376</p></td>
+<td><p>24,05</p></td>
+<td><p>23,87</p></td>
+<td><p>+0,175</p></td>
+<td><p>0,029</p></td>
+<td><p>1,000</p></td>
+</tr>
+<tr class="row-even"><td><p>Irradiancia (W/m²), ERA5-Land frente a ERA5</p></td>
+<td><p>102.984</p></td>
+<td><p>244,6</p></td>
+<td><p>238,8</p></td>
+<td><p>+5,8</p></td>
+<td><p>19,0</p></td>
+<td><p>0,998</p></td>
+</tr>
+<tr class="row-odd"><td><p>Viento a 10 m (m/s), ERA5-Land frente a ERA5</p></td>
+<td><p>102.984</p></td>
+<td><p>5,46</p></td>
+<td><p>2,86</p></td>
+<td><p>+2,59</p></td>
+<td><p>1,90</p></td>
+<td><p>0,806</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La temperatura y el punto de rocío de GDEX son los de Open-Meteo más una constante de 0,175 K, sin dispersión apreciable (<a class="reference internal" href="#tab-eda-clima-fuentes"><span class="std std-numref">Tabla 49</span></a> y panel c de <a class="reference internal" href="#fig-eda-clima-contraste"><span class="std std-numref">Figura 59</span></a>). Open-Meteo no trae la radiación ni el viento de ERA5-Land en el punto (los campos vienen vacíos) y entrega los de ERA5, de 0,25°. La irradiancia de ERA5-Land es 2,4 % mayor, con la misma forma. El viento, en cambio, casi se duplica: 5,5 m/s en ERA5-Land frente a 2,9 m/s en ERA5, con una correlación de solo 0,81. Ninguna de las dos fuentes de viento se ha contrastado con una medición.</p>
+<p>Frente al IDEAM, GDEX reproduce bien la noche y subestima el mediodía, con un sesgo de la temperatura de −0,52 °C en promedio, +0,35 °C de 22 a 5 h y −2,05 °C a las 13 h, y el del índice de calor llega a −5,5 °C a esa hora (<a class="reference internal" href="#fig-eda-clima-contraste"><span class="std std-numref">Figura 59</span></a>). Estas cifras reproducen la <a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 72</span></a> de <a class="reference internal" href="11_coherencia.html"><span class="std std-doc">Coherencia de los datos</span></a>, donde se discuten sus causas. Por mes, el sesgo de la temperatura va de −0,85 °C en abril a −0,12 °C en octubre, y el de la humedad relativa es más negativo en junio y julio (−3,8 y −4,1 puntos). Las dos copias de ERA5-Land tienen la misma forma del sesgo, desplazada 0,175 K.</p>
+<figure class="align-default" id="fig-eda-clima-contraste">
+<a class="reference internal image-reference" href="_images/clima_contraste.png"><img alt="_images/clima_contraste.png" src="_images/clima_contraste.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 59 </span><span class="caption-text">Sesgo de ERA5-Land frente al IDEAM por hora con las dos copias (a) y por mes con GDEX (b), y diferencia horaria de la temperatura entre GDEX y Open-Meteo (c).</span><a class="headerlink" href="#fig-eda-clima-contraste" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="viento-y-lluvia">
+<h3>Viento y lluvia<a class="headerlink" href="#viento-y-lluvia" title="Link to this heading">#</a></h3>
+<p>El viento de ERA5-Land viene del nordeste en 63 % de las horas, con 7,0 m/s de media en ese sector, y es el alisio del Caribe: 7,7 m/s en la temporada seca y 3,8 m/s en la lluviosa, con un máximo de 9,0 m/s en febrero y un repunte en julio, el veranillo de San Juan (<a class="reference internal" href="#fig-eda-clima-viento"><span class="std std-numref">Figura 60</span></a>). La lluvia sigue el patrón bimodal de la costa: menos de 6 mm al mes de enero a marzo, un primer pico en mayo y junio, una baja en julio y el máximo en octubre (274 mm). Las horas con al menos 0,1 mm pasan de menos de 1 % en enero a 44 % en octubre (<code class="docutils literal notranslate"><span class="pre">tablas/eda/clima_viento_lluvia_mensual.csv</span></code>).</p>
+<figure class="align-default" id="fig-eda-clima-viento">
+<a class="reference internal image-reference" href="_images/clima_viento_lluvia.png"><img alt="_images/clima_viento_lluvia.png" src="_images/clima_viento_lluvia.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 60 </span><span class="caption-text">Dirección de origen del viento (a), viento medio mensual a 10 m (b) y lluvia media mensual (c) de ERA5-Land, 2015–2025.</span><a class="headerlink" href="#fig-eda-clima-viento" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="radiacion-en-muros-y-cubierta">
+<h3>Radiación en muros y cubierta<a class="headerlink" href="#radiacion-en-muros-y-cubierta" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-eda-clima-muros">
+<caption><span class="caption-number">Tabla 50 </span><span class="caption-text">Irradiancia media por superficie, 2015–2025.</span><a class="headerlink" href="#tab-eda-clima-muros" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Superficie</p></th>
+<th class="head"><p>W/m² (media de 24 h)</p></th>
+<th class="head"><p>kWh/m² por día</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cubierta (horizontal)</p></td>
+<td><p>243,7</p></td>
+<td><p>5,85</p></td>
+</tr>
+<tr class="row-odd"><td><p>Muro norte</p></td>
+<td><p>84,6</p></td>
+<td><p>2,03</p></td>
+</tr>
+<tr class="row-even"><td><p>Muro este</p></td>
+<td><p>123,0</p></td>
+<td><p>2,95</p></td>
+</tr>
+<tr class="row-odd"><td><p>Muro sur</p></td>
+<td><p>117,2</p></td>
+<td><p>2,81</p></td>
+</tr>
+<tr class="row-even"><td><p>Muro oeste</p></td>
+<td><p>119,4</p></td>
+<td><p>2,87</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La cubierta recibe el doble de radiación que cualquier muro, lo que explica que pese cerca de la mitad de la carga del Paso 3 (<a class="reference internal" href="#tab-eda-clima-muros"><span class="std std-numref">Tabla 50</span></a>). Los muros este, sur y oeste reciben casi lo mismo en el año, y el norte un 30 % menos. A 11° N el sol pasa al norte del cenit de finales de abril a mediados de agosto, así que la orientación que más recibe cambia con la estación: el muro sur llega a 184 W/m² en diciembre y enero y baja a 80 W/m² de mayo a agosto, mientras el norte sube de 62 W/m² en diciembre a 121 W/m² en junio (<a class="reference internal" href="#fig-eda-clima-muros"><span class="std std-numref">Figura 61</span></a>). La difusa es 40 % de la irradiancia global diurna. Ninguna de estas proyecciones se ha contrastado con una medición de radiación en Barranquilla.</p>
+<figure class="align-default" id="fig-eda-clima-muros">
+<a class="reference internal image-reference" href="_images/clima_muros.png"><img alt="_images/clima_muros.png" src="_images/clima_muros.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 61 </span><span class="caption-text">Irradiancia media por hora en la cubierta y en los muros de cada orientación (a) y su media mensual en los muros (b), 2015–2025.</span><a class="headerlink" href="#fig-eda-clima-muros" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="temperatura-del-cielo">
+<h3>Temperatura del cielo<a class="headerlink" href="#temperatura-del-cielo" title="Link to this heading">#</a></h3>
+<p>La temperatura del cielo, calculada con la onda larga descendente de ERA5-Land, es de 20,2 °C en promedio, 7,3 K por debajo del aire (<a class="reference internal" href="#fig-eda-clima-cielo"><span class="std std-numref">Figura 62</span></a>). La diferencia es mayor al mediodía (8,3 K) que de madrugada (6,5 K) y mucho mayor en la temporada seca (9,1 K) que en la lluviosa (6,0 K), cuando el cielo es más húmedo y nublado y emite más. Está lejos de los 11 K que la ISO 13790 propone por defecto para el 5R1C <span class="bibtex-citation" id="id8">(<a class="reference internal" href="09_referencias.html#id73" title="ISO. ISO 13790:2008 Energy performance of buildings: Calculation of energy use for space heating and cooling. 2008.">ISO, 2008</a>)</span>, que supone un cielo más frío y seco que el del Caribe. Solo 6 horas de toda la serie tienen el cielo más caliente que el aire.</p>
+<figure class="align-default" id="fig-eda-clima-cielo">
+<a class="reference internal image-reference" href="_images/clima_cielo.png"><img alt="_images/clima_cielo.png" src="_images/clima_cielo.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 62 </span><span class="caption-text">Temperatura media del aire y del cielo por hora (a) y distribución horaria de su diferencia frente al valor por defecto de la ISO 13790 (b), 2015–2025.</span><a class="headerlink" href="#fig-eda-clima-cielo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="procesamiento-paso-a-paso">
+<h2>Procesamiento paso a paso<a class="headerlink" href="#procesamiento-paso-a-paso" title="Link to this heading">#</a></h2>
+<p>Los scripts de la compuerta horaria están en <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/</span></code> del repositorio y los de la Fase 2 en <code class="docutils literal notranslate"><span class="pre">fase2/clima/scripts/</span></code> (<a class="reference internal" href="08_reproducibilidad.html"><span class="std std-doc">Reproducibilidad</span></a>).</p>
+<ol class="arabic simple">
+<li><p><strong>Pedido a GDEX.</strong> Entrada: el dataset d633008 de gdex.ucar.edu, con una cuenta gratuita. Operación: dos pedidos, 953933 (<code class="docutils literal notranslate"><span class="pre">t2m</span></code>, <code class="docutils literal notranslate"><span class="pre">d2m</span></code>, <code class="docutils literal notranslate"><span class="pre">sp</span></code>, <code class="docutils literal notranslate"><span class="pre">u10</span></code>, <code class="docutils literal notranslate"><span class="pre">v10</span></code>) y 953943 (<code class="docutils literal notranslate"><span class="pre">ssrd</span></code>, <code class="docutils literal notranslate"><span class="pre">strd</span></code>, <code class="docutils literal notranslate"><span class="pre">tp</span></code>), de enero de 2015 a septiembre de 2026, recortados a 10,0–11,9° N y 74,0–74,9° O. Salida: 6.776 archivos NetCDF de cinco días (847 por variable) en las carpetas <code class="docutils literal notranslate"><span class="pre">era5land_met</span></code> y <code class="docutils literal notranslate"><span class="pre">era5land_rad_tp</span></code>, descargados con los scripts que genera GDEX. Decisión: pedir una ventana y no un punto, para poder probar las celdas vecinas (paso 10).</p></li>
+<li><p><strong>Extracción de la celda.</strong> Script: <code class="docutils literal notranslate"><span class="pre">01b_extraer_era5land_gdex.py</span></code>. Entrada: los NetCDF. Operación: para cada variable se toma la celda más cercana a 11,0° N y 74,8° O, se concatenan los archivos y se quitan las horas repetidas en los bordes. Salida: una serie por variable en UTC.</p></li>
+<li><p><strong>Desacumulación.</strong> Mismo script. ERA5-Land acumula <code class="docutils literal notranslate"><span class="pre">ssrd</span></code>, <code class="docutils literal notranslate"><span class="pre">strd</span></code> y <code class="docutils literal notranslate"><span class="pre">tp</span></code> desde las 00 UTC, así que el valor de una hora es la diferencia con la hora anterior, salvo a la 01 UTC, que es la primera hora acumulada. Luego la radiación se divide entre 3.600 s para pasar de J/m² a W/m², la lluvia se multiplica por 1.000 para pasar a mm, y los valores negativos de la onda corta y la lluvia, que deja la resta, se llevan a cero. La primera hora (00 UTC del 1 de enero de 2015) se descarta porque no tiene la anterior. Salida: <code class="docutils literal notranslate"><span class="pre">datos/crudos/era5land_gdex/era5land_horario_11.0N_74.8W.csv.gz</span></code>, con 102.984 horas de T, Td (°C), presión (kPa), onda corta y larga (W/m²), viento, sus componentes y lluvia. Decisión: desacumular en UTC, antes del cambio de hora, para no partir el día de acumulación del ECMWF.</p></li>
+<li><p><strong>Descarga de Open-Meteo e IDEAM.</strong> Script: <code class="docutils literal notranslate"><span class="pre">01_clima.py</span> <span class="pre">descargar</span></code>. Operación: un archivo JSON por año de Open-Meteo (<code class="docutils literal notranslate"><span class="pre">om_2015.json</span></code> a <code class="docutils literal notranslate"><span class="pre">om_2026.json</span></code>, en UTC) con la temperatura y el rocío de ERA5-Land y la radiación y el viento de ERA5, y las tablas de temperatura y humedad de la estación 0029045190 desde la API de datos.gov.co. Salida: <code class="docutils literal notranslate"><span class="pre">datos/crudos/openmeteo/</span></code> y <code class="docutils literal notranslate"><span class="pre">datos/crudos/ideam/</span></code>.</p></li>
+<li><p><strong>Relleno de huecos.</strong> Script: <code class="docutils literal notranslate"><span class="pre">fase2/clima/scripts/01_serie_clima.py</span></code>. Operación: las 608 horas sin punto de rocío toman el de Open-Meteo más la mediana de la diferencia entre las dos fuentes (0,175 K), y las 8 horas sin presión de 2026 se interpolan en el tiempo. Las banderas <code class="docutils literal notranslate"><span class="pre">td_relleno</span></code> y <code class="docutils literal notranslate"><span class="pre">p_interpolada</span></code> marcan esas horas. Decisión: Open-Meteo es el mismo ERA5-Land desplazado por una constante (<a class="reference internal" href="#tab-eda-clima-fuentes"><span class="std std-numref">Tabla 49</span></a>), así que el relleno no introduce un salto. La lluvia vacía no se rellena (ver la última sección).</p></li>
+<li><p><strong>Humedad e índice de calor.</strong> Mismo script. La humedad relativa sale de la temperatura y el rocío con Magnus <span class="bibtex-citation" id="id9">(<a class="reference internal" href="09_referencias.html#id63" title="Oleg A. Alduchov y Robert E. Eskridge. Improved Magnus form approximation of saturation vapor pressure. Journal of Applied Meteorology, 35(4):601–609, 1996.">Alduchov y Eskridge, 1996</a>)</span>, la humedad específica de la presión de vapor y la presión horaria, y el índice de calor con la regresión de Rothfusz y los ajustes de la NOAA para humedad baja y alta <span class="bibtex-citation" id="id10">(<a class="reference internal" href="09_referencias.html#id64" title="Lans P. Rothfusz. The heat index “equation” (or, more than you ever wanted to know about heat index). Technical Attachment SR 90-23, National Weather Service, Southern Region Headquarters, Fort Worth, 1990.">Rothfusz, 1990</a>)</span>. Decisión: usar las mismas funciones que la compuerta horaria (<code class="docutils literal notranslate"><span class="pre">comun.py</span></code>), para que el HI de la Fase 2 sea idéntico al de la compuerta.</p></li>
+<li><p><strong>Radiación en superficies.</strong> Mismo script. La posición del sol se calcula a mitad de la hora que termina en cada fila con el algoritmo SPA de pvlib <span class="bibtex-citation" id="id11">(<a class="reference internal" href="09_referencias.html#id81" title="William F. Holmgren, Clifford W. Hansen y Mark A. Mikofski. pvlib python: a python package for modeling solar energy systems. Journal of Open Source Software, 3(29):884, 2018. doi:10.21105/joss.00884.">Holmgren et al., 2018</a>)</span>, porque la irradiancia es la media de esa hora. La global se separa en directa normal y difusa con el modelo de Erbs <span class="bibtex-citation" id="id12">(<a class="reference internal" href="09_referencias.html#id82" title="D. G. Erbs, S. A. Klein y J. A. Duffie. Estimation of the diffuse radiation fraction for hourly, daily and monthly-average global radiation. Solar Energy, 28(4):293–302, 1982. doi:10.1016/0038-092X(82)90302-4.">Erbs et al., 1982</a>)</span> y se proyecta en cuatro muros verticales (N, E, S, O) con cielo isótropo y albedo de 0,2. La comprobación de cierre (directa por coseno del cenit más difusa igual a la global) da un error máximo de 10⁻¹³ W/m², y solo 0,2 % de las horas supera en 10 % el cielo despejado de Ineichen. Decisión: el cielo isótropo es el modelo más simple y conservador para muros, y la ciudad no tiene una medición de radiación para elegir otro.</p></li>
+<li><p><strong>Cielo, viento y hora local.</strong> Mismo script. La temperatura del cielo es <span class="math notranslate nohighlight">\((L/\sigma)^{1/4}\)</span> con la onda larga descendente, la dirección del viento sale de <code class="docutils literal notranslate"><span class="pre">u10</span></code> y <code class="docutils literal notranslate"><span class="pre">v10</span></code> como dirección de origen, y el índice pasa de UTC a hora local restando cinco horas. El calendario (tipo de día, festivos, Carnaval, Semana Santa, fin de año, vacaciones escolares aproximadas y 2020) se asigna por la fecha local de la hora, de modo que la hora que termina a las 00:00 pertenece al día anterior. Salida: <code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/clima_horario_barranquilla.parquet</span></code> y <code class="docutils literal notranslate"><span class="pre">.csv.gz</span></code>, y <code class="docutils literal notranslate"><span class="pre">comprobaciones_clima.json</span></code>. Decisión: las vacaciones escolares son una aproximación del calendario A (supuesto S19 en <a class="reference internal" href="12_supuestos.html"><span class="std std-doc">Supuestos</span></a>).</p></li>
+<li><p><strong>Contraste con el IDEAM.</strong> Script: <code class="docutils literal notranslate"><span class="pre">01_clima.py</span> <span class="pre">procesar</span></code> (y <code class="docutils literal notranslate"><span class="pre">scripts/eda/clima.py</span></code> para las figuras de este capítulo). Operación: cada registro del IDEAM se lleva a su hora en punto, se descartan las temperaturas fuera de 15–45 °C y las humedades fuera de 5–100 %, se promedian los registros de cada hora y se calcula el índice de calor con las mismas funciones. Se cruza con ERA5-Land por hora local y se calculan el sesgo y el RMSE por hora y por mes. El RMSE de la temperatura es mínimo sin desfase, lo que confirma que la serie del IDEAM ya está en hora local. Salida: <code class="docutils literal notranslate"><span class="pre">tablas/contraste_era5land_ideam.csv</span></code> y <code class="docutils literal notranslate"><span class="pre">tablas/eda/clima_contraste_*.csv</span></code>.</p></li>
+<li><p><strong>Productos derivados.</strong> Con la serie se generan el EPW de 2024 (<code class="docutils literal notranslate"><span class="pre">02_epw.py</span></code>), las fases ENSO (<code class="docutils literal notranslate"><span class="pre">03_enso.py</span></code>, capítulo <a class="reference internal" href="28_enso.html"><span class="std std-doc">El Niño y La Niña</span></a>), los grados-hora para la Ecuación 9 (<code class="docutils literal notranslate"><span class="pre">04_cdh_sui.py</span></code>), la sensibilidad a la celda (<code class="docutils literal notranslate"><span class="pre">05_celdas_vecinas.py</span></code>, que relee los NetCDF), la corrección de onda larga de la cubierta (<code class="docutils literal notranslate"><span class="pre">06_onda_larga_paso3.py</span></code>) y los días representativos (<code class="docutils literal notranslate"><span class="pre">07_dias_representativos.py</span></code>). Sus resultados están en <code class="docutils literal notranslate"><span class="pre">fase2/clima/README.md</span></code> y en <a class="reference internal" href="10_insumos.html"><span class="std std-doc">Insumos del modelo</span></a>.</p></li>
+</ol>
+</section>
+<section id="que-entrega-al-modelo">
+<h2>Qué entrega al modelo<a class="headerlink" href="#que-entrega-al-modelo" title="Link to this heading">#</a></h2>
+<p>La base entrega la serie horaria de clima de 2015 a septiembre de 2026 en hora local, sin horas faltantes en las variables que usa la carga, con la radiación en cada orientación, la temperatura del cielo y el calendario, más el EPW de 2024 para verificar el 5R1C contra EnergyPlus. Las filas de clima, onda larga, elección de celda y días representativos de <a class="reference internal" href="10_insumos.html"><span class="std std-doc">Insumos del modelo</span></a> dan el valor, la incertidumbre y el paso de la propuesta de cada producto. La incertidumbre principal es el sesgo frente al IDEAM: −0,5 °C en la temperatura, casi nulo de noche y de −2 °C al mediodía, que se traslada al índice de calor y, por tanto, a la carga diurna.</p>
+</section>
+<section id="problemas-encontrados-y-como-se-trataron">
+<h2>Problemas encontrados y cómo se trataron<a class="headerlink" href="#problemas-encontrados-y-como-se-trataron" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Punto de rocío vacío en GDEX.</strong> 608 horas de 2019, 2022 y 2023 vienen vacías en toda la malla. Se rellenaron con Open-Meteo más 0,175 K. Sin el relleno la compuerta pierde 38 días y la respuesta nocturna apenas cambia (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>).</p></li>
+<li><p><strong>Lluvia vacía en GDEX.</strong> El campo acumulado <code class="docutils literal notranslate"><span class="pre">tp</span></code> viene vacío en toda la malla en algunas horas de mayo de 2019 y de febrero a junio de 2022. Al desacumular, cada hora vacía deja también vacía la siguiente, y quedan 529 horas sin lluvia (93 en 2019 y 436 en 2022). La serie no las rellena, y los totales mensuales y anuales de esos meses están subestimados, lo que afecta a la anomalía de lluvia por fase ENSO. Como la variable es acumulada desde las 00 UTC, se podría recuperar el total diario restando las horas válidas que rodean cada hueco. Queda pendiente, porque la lluvia no entra en la carga.</p></li>
+<li><p><strong>Radiación y viento de Open-Meteo.</strong> La copia de Open-Meteo no trae la onda corta ni el viento de ERA5-Land en el punto, sino los de ERA5. La radiación cambia poco (2,4 %), pero el viento de ERA5-Land es casi el doble que el de ERA5. La tesis usa el de ERA5-Land de GDEX en el EPW. Falta contrastarlo con el viento medido en el aeropuerto, que no se ha descargado.</p></li>
+<li><p><strong>Mediodía subestimado.</strong> ERA5-Land queda unos 2 °C por debajo del IDEAM al mediodía y el índice de calor hasta 5,5 °C. No se corrige, porque la estación no es representativa de toda la ciudad y tiene años casi vacíos, pero se declara como incertidumbre de la carga diurna (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 72</span></a>). La respuesta de la compuerta depende de la fuente del HI y no debe usarse como valor absoluto (<a class="reference internal" href="11_coherencia.html"><span class="std std-doc">Coherencia de los datos</span></a>).</p></li>
+<li><p><strong>Salto del índice de calor.</strong> El algoritmo de la NOAA cambia de fórmula cerca de 26,7 °C y el HI salta entre 1,2 y 1,4 °C en aire húmedo, lo que deja casi vacía la franja de 27,5 a 28,3 °C. El salto está en el algoritmo publicado <span class="bibtex-citation" id="id13">(<a class="reference internal" href="09_referencias.html#id64" title="Lans P. Rothfusz. The heat index “equation” (or, more than you ever wanted to know about heat index). Technical Attachment SR 90-23, National Weather Service, Southern Region Headquarters, Fort Worth, 1990.">Rothfusz, 1990</a>)</span> y no se corrige, porque la compuerta, la Ecuación 9 y las fases ENSO ya usan este HI y cambiarlo rompería la comparación. Afecta sobre todo a las horas nocturnas y a los grados-hora con base cercana a 26,5 °C. Queda como limitación declarada y como punto por revisar si el HI horario entra al modelo como umbral.</p></li>
+<li><p><strong>Huecos del IDEAM.</strong> La estación tiene temperatura y humedad a la vez en 73 % de las horas y apenas unas 2.000 horas por año en 2021 y 2022. Por eso se usa solo como referencia del sesgo y no como fuente del modelo.</p></li>
+<li><p><strong>Una sola celda para la ciudad.</strong> ERA5-Land no representa la superficie urbana. Entre las seis celdas de tierra vecinas, el índice de calor cambia entre −0,8 y +0,7 °C y la carga del Paso 3 entre −2,7 % y +3,4 %, que es una cota de la elección de celda y no de la isla de calor (<a class="reference internal" href="10_insumos.html"><span class="std std-doc">Insumos del modelo</span></a>).</p></li>
+<li><p><strong>Radiación sin medición.</strong> La separación de Erbs y la proyección en muros no se han contrastado con una medición en Barranquilla (<a class="reference internal" href="11_coherencia.html"><span class="std std-doc">Coherencia de los datos</span></a>, validación pendiente).</p></li>
+<li><p><strong>Meses nuevos.</strong> GDEX publica los meses nuevos de ERA5-Land con rezago. Para la prueba con datos de 2027 habrá que pedir los meses desde octubre de 2026 y repetir los pasos 2 a 8 (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>).</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="26_xm.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Demanda horaria de XM</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="28_enso.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">El Niño y La Niña (ONI de la NOAA)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es">Qué es</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cobertura-y-estructura">Cobertura y estructura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-usa-la-tesis">Variables que usa la tesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio">Análisis exploratorio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-anual">Ciclo anual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-diario">Ciclo diario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-del-indice-de-calor">Distribución del índice de calor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variacion-entre-anos">Variación entre años</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdex-open-meteo-e-ideam">GDEX, Open-Meteo e IDEAM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viento-y-lluvia">Viento y lluvia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radiacion-en-muros-y-cubierta">Radiación en muros y cubierta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperatura-del-cielo">Temperatura del cielo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-paso-a-paso">Procesamiento paso a paso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-entrega-al-modelo">Qué entrega al modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-encontrados-y-como-se-trataron">Problemas encontrados y cómo se trataron</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por María Carolina Cantillo Orozco
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
