@@ -1,0 +1,21 @@
+﻿endpoint;serie;frecuencia;inicio;fin;dias;dias_faltantes;dias_incompletos;valores_nulos;valores_cero_o_negativos;unidad
+DemaCome / MercadoComercializacion;CARIBE SOL (regulado);horaria;2020-10-01;2026-10-13;2204;0;0;0;0;kWh por hora
+DemaCome / MercadoComercializacion;CARIBE SOL (no regulado);horaria;2020-10-01;2026-10-13;2204;0;0;0;0;kWh por hora
+DemaCome / MercadoComercializacion;COSTA CARIBE (regulado);horaria;2017-01-14;2020-09-30;1356;0;0;0;0;kWh por hora
+DemaCome / MercadoComercializacion;COSTA CARIBE (no regulado);horaria;2017-01-14;2020-09-30;1356;0;0;0;0;kWh por hora
+DemaRealReg / Agente;EDCC;horaria;2015-01-01;2016-11-14;684;0;0;0;0;kWh por hora
+DemaRealReg / Agente;EDIC;horaria;2016-11-15;2020-09-30;1416;0;0;0;0;kWh por hora
+DemaRealReg / Agente;CSSC;horaria;2020-10-01;2024-09-12;1443;0;0;0;0;kWh por hora
+DemaRealReg / Agente;CSIC;horaria;2024-09-13;2026-10-13;761;0;0;0;0;kWh por hora
+PerdidasEnerReg / Agente;EDCC;horaria;2015-01-01;2016-11-14;684;0;0;0;110;kWh por hora
+PerdidasEnerReg / Agente;EDIC;horaria;2016-11-15;2020-09-30;1416;0;0;0;156;kWh por hora
+PerdidasEnerReg / Agente;CSSC;horaria;2020-10-01;2024-09-12;1443;0;0;0;3;kWh por hora
+PerdidasEnerReg / Agente;CSIC;horaria;2024-09-13;2026-10-13;761;0;0;0;1;kWh por hora
+DemaComeReg / Agente;EDCC;horaria;2015-01-01;2016-11-14;684;0;0;0;0;kWh por hora
+DemaComeReg / Agente;EDIC;horaria;2016-11-15;2020-09-30;1416;0;0;0;0;kWh por hora
+DemaComeReg / Agente;CSSC;horaria;2020-10-01;2024-09-12;1443;0;0;0;0;kWh por hora
+DemaComeReg / Agente;CSIC;horaria;2024-09-13;2026-10-13;761;0;0;0;0;kWh por hora
+DemaNoAtenNoProg / Subarea;Subárea ATLANTICO;diaria;2015-01-07;2026-10-02;369;;;0;0;kWh por día (solo días con evento)
+DemaNoAtenNoProg / Subarea;Subárea GCM;diaria;2015-01-10;2026-10-13;1229;;;0;0;kWh por día (solo días con evento)
+DemaNoAtenProg / Subarea;Subárea ATLANTICO;diaria;2015-01-02;2026-05-27;277;;;0;0;kWh por día (solo días con evento)
+DemaNoAtenProg / Subarea;Subárea GCM;diaria;2015-01-18;2026-05-29;456;;;0;0;kWh por día (solo días con evento)

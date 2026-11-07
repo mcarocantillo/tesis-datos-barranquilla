@@ -1,0 +1,9 @@
+﻿tabla;contenido;llave;empalme;pct_empalme;filas_descarga_v2;filas_descarga_base;columnas_descargadas
+505;Características de la unidad (solo residenciales);objectid;con enlace a 305;99.66;383724.0;383845.0;8
+505–305;Enlace características → unidad de construcción (queryRelatedRecords);carac_objectid, uc_globalid;unidades del enlace que están en 305;100.0;434019.0;434167.0;2
+305;Unidades de construcción;globalid;unidades residenciales con predio en 602;99.51;591370.0;591633.0;5
+602;Relación unidad de construcción ↔ predio;cr_unidadconstruccion_guid, cr_predio_guid;predios de 602 que están en 500;100.0;584710.0;584924.0;2
+500;Predios (estrato, condición, área del terreno);"globalid; numero_predial_nacional";predios con vivienda que tienen dirección en 105;99.97;478309.0;478361.0;9
+105;Dirección del predio;cr_predio_guid;registros marcados como dirección principal;96.4;496203.0;;14
+315;"Terreno (polígono; se guarda su centroide)";globalid;terrenos con predio en 601;99.91;;204095.0;4
+601;Relación terreno ↔ predio;cr_terreno_guid, cr_predio_guid;predios con vivienda con terreno propio;34.41;;203922.0;2

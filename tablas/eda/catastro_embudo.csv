@@ -1,0 +1,10 @@
+﻿paso;filas;cambio;% del total inicial;motivo
+0. CSV cargado (una fila por unidad residencial física);382597;0;100.0;
+1. Excluir usos no habitables (garajes, depósitos);346100;-36497;90.46;no son vivienda: fuera del alcance del problema
+2. Exigir area_construida > 0;346089;-11;90.46;sin área construida no hay unidad de vivienda que describir
+2b. Excluir unidades con área < 10 m2;345045;-1044;90.18;no son vivienda: probables parqueaderos o depósitos con uso residencial
+2c. Excluir registros agregados (edificio completo en una fila);344811;-234;90.12;habitaciones > 20, baños > 15 o área > 2000 m2: describen un edificio, no una vivienda
+3. Excluir estrato no residencial/nulo (variable objetivo);332718;-12093;86.96;No_Aplica/Otro/nulo: imputar el objetivo inventaría la respuesta
+4. Valores imposibles -> NaN (se imputan luego, dentro del Pipeline);332718;0;86.96;"484 filas tenían al menos un valor imposible; no se elimina ninguna fila"
+5. Incoherencias dentro de la fila -> NaN;332718;0;86.96;"396 filas con baños o habitaciones incoherentes con el resto de la fila; no se elimina ninguna fila"
+6. Sin coordenadas -> centroide de su manzana;332718;0;86.96;"43594 de 53894 filas sin coordenadas reciben el centroide de su manzana; no se elimina ninguna fila"

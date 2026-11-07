@@ -1,0 +1,13 @@
+﻿grupo;dia;n;pct_alguien_en_casa;pct_alguien_en_casa_con_clases;n_menor_10
+E1–2;día hábil;1036;86,0;85,9;
+E1–2;fin de semana;423;92,4;92,4;
+E3–4;día hábil;258;81,7;81,1;
+E3–4;fin de semana;97;94,3;94,3;
+E5–6;día hábil;54;84,5;84,5;
+E5–6;fin de semana;25;96,2;96,2;
+Total;día hábil;1349;85,2;85,0;
+Total;fin de semana;545;92,9;92,9;
+E1–2;día hábil sin festivos;981;85,7;85,6;
+E3–4;día hábil sin festivos;236;80,3;79,6;
+E5–6;día hábil sin festivos;48;85,0;85,0;
+Total;día hábil sin festivos;1266;84,8;84,5;

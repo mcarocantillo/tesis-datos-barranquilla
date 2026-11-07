@@ -1,0 +1,11 @@
+﻿variable;universo;n_universo;n_faltante;pct
+Estrato (P4030S1A1) sin dato o 9;viviendas;1869;1;0,1
+Actividad principal (P1152) vacía;personas de 10+;5533;0;0,0
+Sin registro en el módulo C8;personas de 10+;5533;0;0,0
+Dormir (P1144S1) no reportado;personas de 10+ en C8;5533;2;0,0
+Sueño menor de 4 h (reportado);personas de 10+ en C8;5533;12;0,2
+Sueño mayor de 14 h;personas de 10+ en C8;5533;6;0,1
+Lugar de trabajo (P6880) vacío;ocupados de 10+;2312;0;0,0
+Horas normales de trabajo (P1151) vacías;ocupados de 10+;2312;0;0,0
+Jornada de estudio (P1101) vacía;personas que estudian;1564;0;0,0
+Día hábil que es festivo nacional;personas de 10+ en día hábil;3935;230;5,8

@@ -1,0 +1,30 @@
+﻿anio;codigo;pregunta;hogares_universo;vacios;pct_vacios;otros_codigos;nota
+2019;P8520S1A1;Estrato de la tarifa de energía;1022;24;2.35;41;0 sin estrato, 8 planta propia, 9 no sabe
+2019;P4567;Material del techo;1022;0;0.0;0;
+2019;P1070;Tipo de vivienda;1022;0;0.0;0;
+2019;P5000;Cuartos del hogar;1022;0;0.0;0;
+2019;P5010;Cuartos para dormir;1022;0;0.0;0;
+2019;CANT_PERSONAS_HOGAR;Personas del hogar;1022;0;0.0;0;
+2019;PERCAPITA;Ingreso per cápita (imputado por el DANE);1022;0;0.0;9;ingreso 0
+2019;P5095;Tenencia de la vivienda;1022;0;0.0;0;
+2019;P5018;Último pago de electricidad;1022;24;2.35;107;pago 0
+2019;P5018S1;Meses que cubre el pago;998;130;13.03;0;
+2019;P5523;Tipo de A/C (vacío = no tiene);1022;728;71.23;0;salto: vacío se lee como sin A/C
+2019;P5524;Horas diarias de A/C;294;0;0.0;1;"solo hogares con A/C; otros = más de 24 h (suma de equipos, se conserva)"
+2019;P5526;Horas diarias de ventilador;1022;59;5.77;9;"vacío o 0 = sin uso; otros = más de 24 h (se excluye)"
+2019;P5514;Tamaño de la nevera (vacío = no tiene);1022;165;16.14;0;salto
+2019;P5515;Antigüedad de la nevera;857;0;0.0;5;99 no sabe
+2024;P8520S1A1;Estrato de la tarifa de energía;709;1;0.14;62;0 sin estrato, 8 planta propia, 9 no sabe
+2024;P4567;Material del techo;709;0;0.0;0;
+2024;P1070;Tipo de vivienda;709;0;0.0;0;
+2024;P5000;Cuartos del hogar;709;0;0.0;0;
+2024;P5010;Cuartos para dormir;709;0;0.0;0;
+2024;CANT_PERSONAS_HOGAR;Personas del hogar;709;0;0.0;0;
+2024;PERCAPITA;Ingreso per cápita (imputado por el DANE);709;0;0.0;13;ingreso 0
+2024;P5095;Tenencia de la vivienda;709;0;0.0;0;
+2024;P5018;Último pago de electricidad;709;170;23.98;1;pago 0
+2024;P5018S1;Meses que cubre el pago;539;8;1.48;0;
+2024;P1077S11;Tiene A/C;709;0;0.0;0;
+2024;P1077S12;Tiene ventilador;709;0;0.0;0;
+2024;P1077S2;Tiene nevera;709;0;0.0;0;
+2024;P791;¿Pagan la electricidad?;709;0;0.0;1;4 sin servicio

@@ -1,0 +1,21 @@
+﻿grupo_o_tipo;dia;n;h_media;p10;p50;p90;n_menor_10
+Busca trabajo;día hábil;188;8,52;7,0;8,0;10,0;
+Busca trabajo;fin de semana;71;8,64;7,0;8,0;10,0;
+Estudiante;día hábil;655;8,43;7,0;8,0;10,0;
+Estudiante;fin de semana;286;9,27;8,0;9,0;11,0;
+Mayor 65+ no ocupado;día hábil;464;8,44;7,0;8,0;10,0;
+Mayor 65+ no ocupado;fin de semana;194;8,57;7,0;8,0;10,0;
+Ocupado;día hábil;1668;7,42;6,0;7,5;9,0;
+Ocupado;fin de semana;644;7,74;6,0;8,0;9,0;
+Oficios del hogar;día hábil;767;8,08;6,5;8,0;10,0;
+Oficios del hogar;fin de semana;317;8,17;6,0;8,0;10,0;
+Otro / incapacitado;día hábil;193;8,86;7,0;8,0;12,0;
+Otro / incapacitado;fin de semana;86;9,02;8,0;9,0;11,0;
+E1–2;día hábil;3062;8,01;6,0;8,0;10,0;
+E1–2;fin de semana;1264;8,34;6,0;8,0;10,0;
+E3–4;día hábil;723;7,8;6,0;8,0;10,0;
+E3–4;fin de semana;260;8,09;7,0;8,0;10,0;
+E5–6;día hábil;148;7,57;6,0;8,0;9,0;
+E5–6;fin de semana;74;8,21;7,0;8,0;10,0;
+Todos;día hábil;3935;7,95;6,0;8,0;10,0;
+Todos;fin de semana;1598;8,29;6,5;8,0;10,0;

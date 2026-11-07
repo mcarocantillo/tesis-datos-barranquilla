@@ -1,0 +1,10 @@
+﻿variable;universo;n_universo;n_faltante;pct
+Estrato (P4030S1A1) sin dato, 0 u otro código;hogares;5860;25;0,4
+Personas por hogar (P6008) vacía;hogares;5860;0;0,0
+Cuartos (P5000) vacío;hogares;5860;0;0,0
+Valor de la vivienda (P5110) vacío;hogares;5860;3585;61,2
+Valor de la vivienda (P5110) vacío;hogares propietarios (P5090 = 1–2);2275;0;0,0
+Lugar de trabajo (P6880) vacío;ocupados;9082;0;0,0
+Horas normales (P6800) vacías;ocupados;9082;0;0,0
+Actividad principal (P6240) vacía;personas de 15+;16445;0;0,0
+Hogar repetido entre meses (DIRECTORIO + SECUENCIA_P);hogares;5860;0;0,0

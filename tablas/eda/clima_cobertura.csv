@@ -1,0 +1,11 @@
+﻿fuente;variable;unidad;horas;faltantes_crudo;faltantes_serie;tratamiento
+ERA5-Land GDEX;T;°C;102984;0;0;
+ERA5-Land GDEX;Td;°C;102984;608;0;relleno con Open-Meteo + 0,175 K
+ERA5-Land GDEX;p_kPa;kPa;102984;8;0;interpolada en el tiempo
+ERA5-Land GDEX;GHI;W/m²;102984;0;0;
+ERA5-Land GDEX;L_onda_larga;W/m²;102984;0;0;
+ERA5-Land GDEX;viento;m/s;102984;0;0;
+ERA5-Land GDEX;lluvia_mm;mm;102984;529;529;sin tratar (quedan vacías)
+IDEAM 0029045190;T IDEAM;;80556;22428;22428;registros fuera de rango descartados: 203
+IDEAM 0029045190;HR IDEAM;;77165;25819;25819;registros fuera de rango descartados: 4410
+IDEAM 0029045190;HI IDEAM;;75268;27716;27716;registros fuera de rango descartados: -

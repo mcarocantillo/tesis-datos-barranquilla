@@ -7,6 +7,17 @@ parts:
       - file: 10_insumos
       - file: 18_arquetipos
       - file: 06_propuesta
+  - caption: Datos
+    chapters:
+      - file: 20_datos
+      - file: 21_ecv
+      - file: 22_enut
+      - file: 23_geih
+      - file: 24_sui
+      - file: 25_catastro
+      - file: 26_xm
+      - file: 27_clima
+      - file: 28_enso
   - caption: Detalle
     chapters:
       - file: 14_encuestas

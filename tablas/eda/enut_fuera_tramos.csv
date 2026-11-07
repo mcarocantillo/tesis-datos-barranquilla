@@ -1,0 +1,13 @@
+﻿tipo;dia;n;h_fuera_media;h_fuera_media_con_clases;pct_0 h;pct_hasta 4 h;pct_4–8 h;pct_8–10 h;pct_más de 10 h;n_menor_10
+Busca trabajo;día hábil;188;0,31;0,33;94,6;1,5;2,6;1,2;0,0;
+Busca trabajo;fin de semana;71;0,0;0,0;100,0;0,0;0,0;0,0;0,0;
+Estudiante;día hábil;655;0,81;4,66;34,2;65,2;0,1;0,3;0,1;
+Estudiante;fin de semana;286;0,06;0,39;94,3;5,7;0,0;0,0;0,0;
+Mayor 65+ no ocupado;día hábil;464;0,07;0,07;99,1;0,2;0,2;0,2;0,2;
+Mayor 65+ no ocupado;fin de semana;194;0,0;0,0;100,0;0,0;0,0;0,0;0,0;
+Ocupado;día hábil;1668;7,71;7,74;20,3;2,0;13,0;39,8;25,0;
+Ocupado;fin de semana;644;4,87;4,89;46,6;2,4;13,1;23,6;14,3;
+Oficios del hogar;día hábil;767;0,3;0,33;94,9;1,5;1,8;1,8;0,0;
+Oficios del hogar;fin de semana;317;0,27;0,32;94,2;3,1;1,2;1,3;0,2;
+Otro / incapacitado;día hábil;193;0,38;0,6;93,4;3,4;0,4;1,7;1,1;
+Otro / incapacitado;fin de semana;86;0,08;0,08;98,8;0,0;1,2;0,0;0,0;

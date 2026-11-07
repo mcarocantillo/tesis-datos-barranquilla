@@ -1,0 +1,25 @@
+﻿grupo;lugar;n;pct;n_menor_10
+E1–2;En esta vivienda;992;15,2;
+E1–2;En otras viviendas;1084;15,3;
+E1–2;Local fijo, oficina o fábrica;2788;45,1;
+E1–2;En un vehículo;631;10,3;
+E1–2;Calle, kiosco o puerta a puerta;698;10,6;
+E1–2;Obra, campo u otro;232;3,6;
+E3–4;En esta vivienda;408;17,6;
+E3–4;En otras viviendas;150;6,4;
+E3–4;Local fijo, oficina o fábrica;1359;62,2;
+E3–4;En un vehículo;134;6,1;
+E3–4;Calle, kiosco o puerta a puerta;130;5,9;
+E3–4;Obra, campo u otro;40;1,8;
+E5–6;En esta vivienda;115;29,1;
+E5–6;En otras viviendas;7;1,5;sí
+E5–6;Local fijo, oficina o fábrica;252;65,0;
+E5–6;En un vehículo;5;1,5;sí
+E5–6;Calle, kiosco o puerta a puerta;4;1,1;sí
+E5–6;Obra, campo u otro;8;1,9;sí
+Total;En esta vivienda;1515;16,2;
+Total;En otras viviendas;1241;13,0;
+Total;Local fijo, oficina o fábrica;4399;49,3;
+Total;En un vehículo;770;9,1;
+Total;Calle, kiosco o puerta a puerta;832;9,3;
+Total;Obra, campo u otro;280;3,2;

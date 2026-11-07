@@ -1,0 +1,9 @@
+﻿episodio;fase;inicio;fin;meses_episodio;meses_en_serie;oni_pico;intensidad;anom_T;anom_HI;anom_%_carga
+el_nino_2014-10;el_nino;2014-10;2016-05;20;17;2.59;muy_fuerte;0.11;0.244;1.907
+la_nina_2017-11;la_nina;2017-11;2018-03;5;5;-0.76;debil;-0.079;-0.129;-0.163
+el_nino_2018-09;el_nino;2018-09;2019-06;10;10;1.05;moderado;-0.156;-0.391;-1.292
+el_nino_2019-10;el_nino;2019-10;2020-03;6;6;0.75;debil;0.174;0.387;4.191
+la_nina_2020-09;la_nina;2020-09;2021-04;8;8;-1.11;moderado;-0.134;-0.412;-2.702
+la_nina_2021-09;la_nina;2021-09;2023-01;17;17;-0.91;debil;-0.363;-0.976;-6.31
+el_nino_2023-06;el_nino;2023-06;2024-04;11;11;1.99;fuerte;0.661;1.704;10.568
+el_nino_2026-05;el_nino;2026-05;2026-09;5;5;2.46;muy_fuerte;0.565;1.273;10.089

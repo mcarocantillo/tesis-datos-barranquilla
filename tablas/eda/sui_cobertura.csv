@@ -1,0 +1,10 @@
+﻿producto;desde;hasta;meses;faltantes;meses_bandera_consumo;meses_bandera_tarifa;filas;unidad
+ele_com_096 residencial;2015-01;2026-08;139;2022-06;6.0;9.0;973;mes x estrato (1-6 y total)
+ele_com_096 no residencial;2019-01;2026-08;92;2022-06 casi vacío (16 suscriptores);11.0;0.0;92;mes (industrial, comercial, oficial, otros)
+O3 Barranquilla;2015-01;2025-12;131;2022-06;6.0;0.0;2640;mes x estrato x tipo de lectura
+O3 cinco municipios: Barranquilla;2015-01;2025-12;131;;;;2640;mes x estrato (6 estratos) x tipo de lectura
+O3 cinco municipios: Cartagena De Indias;2015-01;2025-12;132;;;;2623;mes x estrato (6 estratos) x tipo de lectura
+O3 cinco municipios: Medellin;2015-01;2025-12;132;;;;2359;mes x estrato (6 estratos) x tipo de lectura
+O3 cinco municipios: Santa Marta;2015-01;2025-12;131;;;;2638;mes x estrato (6 estratos) x tipo de lectura
+O3 cinco municipios: Soledad;2015-01;2025-12;131;;;;1696;mes x estrato (6 estratos) x tipo de lectura
+Reportes crudos locales por empresa;2019-01;2019-08;8;;;;4932;mes x empresa x columna (3 variables)
