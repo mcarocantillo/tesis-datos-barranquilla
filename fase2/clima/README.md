@@ -21,7 +21,11 @@ esta carpeta:
 
 ## Salidas (`salidas/`)
 
-- `clima_horario_barranquilla.parquet` y `.csv.gz`: 102.984 horas, del 1-ene-2015 al 30-sep-2026, sin horas faltantes.
+- `clima_horario_barranquilla.parquet` y `.csv.gz`: 102.984 horas, del 1-ene-2015 al 30-sep-2026 (en hora local, de las 20:00 del 31-dic-2014 a las 19:00 del
+  30-sep-2026, porque GDEX empieza a la 01 UTC). Ninguna hora falta en la serie, pero la lluvia está vacía en 529 horas
+  (93 en mayo de 2019 y 436 entre febrero y junio de 2022): `tp` viene vacío en toda la malla en algunas horas y la
+  desacumulación deja vacía también la hora siguiente. Eso subestima la lluvia de 2022. El viento de ERA5-Land de
+  GDEX (5,5 m/s de media) es 91 % mayor que el de ERA5 de Open-Meteo (2,9 m/s) y no se ha contrastado con una medición.
   Cada fila es la hora que termina en `hora_local` (UTC−5).
 - `comprobaciones_clima.json`: huecos, cierre de la radiación, cielo despejado, simetría del mediodía y cielo.
 - `BAQ_ERA5Land_GDEX_2024.epw`: 8.784 horas de 2024 (año bisiesto).
@@ -76,7 +80,8 @@ y 62 neutros. Se compara la anomalía de cada mes frente a la media de su mes ca
   sin la tendencia el ONI absorbería parte del calentamiento. Con 141 meses y ocho episodios, las dos cosas no se
   separan bien; los errores estándar suponen meses independientes y son optimistas.
 - **No todos los episodios pesan igual.** El de 2023–2024 (fuerte, ONI 1,99) subió el índice de calor 1,7 °C y la
-  carga 10,6 %; el de 2015–2016 (muy fuerte, ONI 2,59) solo 0,5 °C y 3,9 % en promedio, y el moderado de 2018–2019 la
+  carga 10,6 %; el de 2015–2016 (muy fuerte, ONI 2,59) solo 0,24 °C y 1,9 % (el 0,5 °C y 3,9 % del grupo «muy fuerte» suma
+  ese episodio y el de 2026), y el moderado de 2018–2019 la
   bajó (−1,3 %).
 - **Por año ENSO** (julio a junio, `enso_anios.csv`), la carga va de −5,8 % (2021–2022, La Niña) a +8,7 %
   (2023–2024, El Niño) frente a la media. Para el escenario «año de El Niño» de la Fase 3, 2023–2024 es el caso más

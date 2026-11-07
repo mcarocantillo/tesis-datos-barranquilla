@@ -17,20 +17,20 @@ Sumadas sobre el tipo de lectura, las cifras de O3 coinciden exactamente, mes a 
 
 ## Cuentas sin consumo
 
-Desde junio de 2021, todos los meses incluyen entre 4 % y 12 % de suscriptores con tipo de lectura «n/a» y 0 kWh. En septiembre y octubre de 2024 y en agosto de 2025 casi todas las cuentas aparecen así, que son los meses sin consumo del consolidado. Estas cuentas explican el aumento aparente de suscriptores de junio de 2021 a julio de 2022 y bajan cerca de 5 % el consumo por suscriptor del consolidado desde 2021. En adelante, el consumo por suscriptor se calcula sin ellas.
+Desde junio de 2021, todos los meses incluyen entre 3 % y 12 % de suscriptores con tipo de lectura «n/a» y 0 kWh. En septiembre y octubre de 2024 y en agosto de 2025 casi todas las cuentas aparecen así, que son los meses sin consumo del consolidado. Estas cuentas explican el aumento aparente de suscriptores de junio de 2021 a julio de 2022 y bajan cerca de 5 % el consumo por suscriptor del consolidado desde 2021. En adelante, el consumo por suscriptor se calcula sin ellas.
 
 ## El estrato 1 no está medido
 
-:::{table} Parte del consumo facturado que no proviene de una lectura real (lecturas estimadas y usuarios sin medidor), promedio de cada periodo, %.
+:::{table} Parte del consumo facturado que no proviene de una lectura real (lecturas estimadas y usuarios sin medidor), promedio de cada periodo, sin los meses atípicos, %.
 :name: tab-o3-no-real
 
 | Periodo | E1 | E2 | E3 | E4 | E5 | E6 |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2015–2019 | 55 | 10 | 5 | 3 | 4 | 4 |
-| 2023–2025 | 67 | 13 | 9 | 7 | 6 | 6 |
+| 2023–2025 | 60 | 13 | 8 | 6 | 6 | 6 |
 :::
 
-En el estrato 1, entre 50 % y 80 % del consumo facturado de cada año no viene de un medidor leído. En 2025, 22 % de sus suscriptores no tiene medidor y 16 % tiene lectura estimada. A los usuarios sin medidor se les facturaron en 2023–2025 unos 671 kWh/mes, frente a 211 kWh/mes de los hogares con lectura real. Las lecturas estimadas del estrato 1 varían mucho de un año a otro (de 210 a más de 3.000 kWh/mes en promedio anual).
+En el estrato 1, entre 50 % y 62 % del consumo facturado de cada año no viene de un medidor leído. Para esta cifra se descartan los meses cuyo consumo por suscriptor queda fuera de 0,5 a 2 veces la mediana móvil de siete meses de su tipo de lectura, como las lecturas estimadas de enero y marzo de 2023, de 30.566 y 7.836 kWh por suscriptor ([SUI](24_sui.md)). Con esos meses, 2023 llegaría a 80 % y el promedio de 2023–2025 a 67 %. El panel A de la {numref}`fig-o3-lecturas` incluye todos los meses. En 2025, 22 % de sus suscriptores no tiene medidor y 16 % tiene lectura estimada. A los usuarios sin medidor se les facturaron en 2023–2025 unos 671 kWh/mes, frente a 211 kWh/mes de los hogares con lectura real. Las lecturas estimadas del estrato 1 varían mucho de un año a otro (de 210 a más de 3.000 kWh/mes en promedio anual).
 
 Con solo lecturas reales, el estrato 1 consume lo mismo que el 2 y menos que el 3: 209, 205 y 253 kWh/mes en 2023–2025. La cifra coincide con la de CEELA, que también usó lecturas reales (229 kWh/mes en 2021–2024, {numref}`tab-ceela-sui`), y con la baja tenencia de A/C del estrato. El exceso del estrato 1 en el consolidado es, por tanto, un efecto de la facturación sin medición.
 

@@ -19,7 +19,7 @@ Si una proporción observada es de 100 % (por ejemplo, la tenencia de nevera en 
 | --- | --- | --- | --- | --- |
 | Tenencia de A/C por estrato y año | Beta por estrato y año, 2015–2027 ({numref}`tab-ac-beta`) | DE de 1,5 a 6,6 puntos por estrato en 2024; ciudad ± 2,9 puntos (IC 95 %) | ECV 2018–2025 sin 2020; SUI | Fase 2, paso 2 |
 | Efecto del techo sobre la tenencia de A/C | Razón de momios frente a concreto: 0,35 asbesto-cemento, 0,14 zinc ({numref}`tab-techo`) | IC 95 % de cada razón | ECV 2024 | Fase 1, paso 6; Fase 2, paso 2 |
-| Material del techo por estrato | Proporciones por grupo de estrato ({numref}`tab-techo`) | Tamaño de muestra de cada celda | ECV 2024 | Fase 1, paso 6 |
+| Material del techo por estrato | Proporciones por grupo de estrato ({numref}`tab-techo`) | Tamaño de muestra de cada celda, dividido por el efecto de diseño del techo (3,4 a 4,2 en la ECV 2024), que deja cerca de un cuarto de la muestra efectiva ([ECV](21_ecv.md)) | ECV 2024 | Fase 1, paso 6 |
 | Posición frente a la cubierta | Casa, último piso, intermedio, primer piso por estrato ({numref}`tab-posicion`) | Censal (catastro) | Catastro | Fase 1, paso 2; Fase 2, paso 4 |
 | Tenencia de ventilador y nevera | Beta por estrato ({numref}`tab-vent-nevera`) | IC 95 % con efecto de diseño | ECV 2024 | Fase 2, pasos 2, 6 y 7 |
 | Tipo de A/C | 82–97 % minisplit; central 0–18 % ({numref}`tab-uso-ac`) | Muestras de 33 a 66 hogares con A/C | ECV 2019 | Fase 2, paso 2 |
@@ -203,7 +203,7 @@ La antigüedad de la nevera no se desagrega por estrato por el tamaño de la mue
 | Dedicados a oficios del hogar, % | 22,0 | 13,7 | 6,9 |
 | Estudiantes, % | 17,9 | 15,9 | 10,7 |
 | Mayores de 65 años no ocupados, % | 8,6 | 14,2 | 15,7 |
-| Horas de sueño por día | 8,1 | 7,9 | 7,8 |
+| Horas de sueño por día, promedio de todos los días de la semana | 8,1 | 7,9 | 7,8 |
 | Hogares con alguien en casa todo el día hábil, % | 86,0 | 81,7 | 84,5 |
 | Hogares con alguien en casa todo el día de fin de semana, % | 92,4 | 94,3 | 96,2 |
 ```
