@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
@@ -62,6 +62,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '07_datos_sospechosos';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Índice" href="genindex.html" />
@@ -221,6 +223,18 @@
 <li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_arquetipos.html">Arquetipos de vivienda (Fase 1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_datos.html">Bases de datos de la tesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_ecv.html">Encuesta de Calidad de Vida (ECV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_enut.html">Encuesta Nacional de Uso del Tiempo (ENUT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_geih.html">Gran Encuesta Integrada de Hogares (GEIH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_sui.html">Sistema Único de Información (SUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_catastro.html">Catastro de Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_xm.html">Demanda horaria de XM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27_clima.html">Clima horario (ERA5-Land, Open-Meteo e IDEAM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28_enso.html">El Niño y La Niña (ONI de la NOAA)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
 <ul class="nav bd-sidenav">
@@ -434,8 +448,8 @@
 <td><p>2020 fuera del ajuste</p></td>
 </tr>
 <tr class="row-even"><td><p>E1 en el SUI</p></td>
-<td><p>Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6). En 2021–2024, con solo lecturas reales, CEELA da 229 kWh/mes frente a 311 en el repositorio (+36 %); en E2–E6 la diferencia es de 3–7 % (<a class="reference internal" href="16_ceela.html#tab-ceela-sui"><span class="std std-numref">Tabla 29</span></a>)</p></td>
-<td><p><strong>Resuelto</strong> con el SUI por tipo de lectura: 50–80 % del consumo facturado de E1 es estimado o de usuarios sin medidor; con lecturas reales E1 consume 209 kWh/mes (2023–2025), como E2. Calibrar E1 solo con lecturas reales (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>)</p></td>
+<td><p>Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6). En 2021–2024, con solo lecturas reales, CEELA da 229 kWh/mes frente a 311 en el repositorio (+36 %); en E2–E6 la diferencia es de 3–7 % (<a class="reference internal" href="16_ceela.html#tab-ceela-sui"><span class="std std-numref">Tabla 63</span></a>)</p></td>
+<td><p><strong>Resuelto el consumo</strong> con el SUI por tipo de lectura: 50–62 % del consumo facturado de E1 es estimado o de usuarios sin medidor (sin meses atípicos); con lecturas reales E1 consume 209 kWh/mes (2023–2025), como E2. Calibrar E1 solo con lecturas reales (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>). <strong>Sin explicar el precio:</strong> con solo lecturas reales, el kWh de E1 en 2018–2020 sigue siendo el más caro (614–779 COP frente a 441–509 en E6) (<a class="reference internal" href="24_sui.html"><span class="std std-doc">SUI</span></a>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Catastro vs ECV en E1</p></td>
 <td><p>29,5 % de viviendas de E1 en edificios 4+, pero solo 17 % con techo de concreto en la ECV</p></td>
@@ -447,7 +461,7 @@
 </tr>
 <tr class="row-odd"><td><p>SUI dic-2021</p></td>
 <td><p>356.575 suscriptores (E1 120.329), vuelve a 317.080 en 2022</p></td>
-<td><p><strong>Explicado</strong>: desde jun-2021, 4–12 % de las cuentas de cada mes tienen lectura «n/a» y 0 kWh. Calcular el kWh por suscriptor sin ellas (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>)</p></td>
+<td><p><strong>Explicado</strong>: desde jun-2021, 3–12 % de las cuentas de cada mes tienen lectura «n/a» y 0 kWh. Calcular el kWh por suscriptor sin ellas (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p>Rurales ECV 2024</p></td>
 <td><p>24,8 % con AC (n = 60) vs 6 % en 2019 y 2025</p></td>
@@ -462,7 +476,7 @@
 <td><p>Agresti–Coull / serie suavizada</p></td>
 </tr>
 <tr class="row-odd"><td><p>Meses SUI</p></td>
-<td><p>Falta jun-2022; sep–oct 2024 y ago-2025 sin consumo; sep-2022, ene y mar 2023 negativos; mar–ago 2026 tarifa 10–20× en E5–E6</p></td>
+<td><p>Falta jun-2022; sep–oct 2024 y ago-2025 sin consumo; sep-2022 con valor facturado negativo; ene y mar 2023 con consumo atípico en E1; mar–ago 2026 tarifa 10–20× en E5–E6</p></td>
 <td><p>Excluidos con banderas</p></td>
 </tr>
 <tr class="row-even"><td><p>SUI E3 dic-2024</p></td>
@@ -489,6 +503,42 @@
 <td><p>48 % de E1 vive en «apartamento», 68 % bajo asbesto</p></td>
 <td><p>No usar como proxy de altura</p></td>
 </tr>
+<tr class="row-even"><td><p>Índice de calor (NOAA)</p></td>
+<td><p>El algoritmo cambia de fórmula cerca de 26,7 °C de HI: con humedad alta, el HI salta 1,2–1,4 °C cuando el aire pasa de 26,2 a 26,3 °C, en las temperaturas de la noche. Entre 27,5 y 28,3 °C de HI cae solo 0,5 % de las horas (<a class="reference internal" href="27_clima.html"><span class="std std-doc">Clima</span></a>)</p></td>
+<td><p>Pendiente (punto 9). Afecta la compuerta, la Ecuación 9 y los grados-hora con base de 26,5 °C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lluvia de ERA5-Land (GDEX)</p></td>
+<td><p>529 horas vacías (93 en may-2019 y 436 entre feb y jun-2022): <code class="docutils literal notranslate"><span class="pre">tp</span></code> viene vacío en toda la malla y la desacumulación deja vacía también la hora siguiente</p></td>
+<td><p>Documentado en <code class="docutils literal notranslate"><span class="pre">fase2/clima/README.md</span></code>. Subestima la lluvia de 2022 y la anomalía de lluvia de La Niña. La lluvia no entra en la carga</p></td>
+</tr>
+<tr class="row-even"><td><p>Viento de ERA5-Land (GDEX)</p></td>
+<td><p>5,5 m/s de media, 91 % más que el de ERA5 que sirve Open-Meteo (2,9 m/s), con correlación 0,81</p></td>
+<td><p>Sin medición para contrastar. Es el viento del EPW de 2024: revisar su efecto en la convección exterior del 5R1C y de EnergyPlus</p></td>
+</tr>
+<tr class="row-odd"><td><p>Consolidado ECV 2019</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">build_ecv2019.py</span></code> une los módulos con la llave de la vivienda y guarda 1.009 de los 1.022 hogares</p></td>
+<td><p>Pendiente (punto 10). Las tablas de uso de 2019 cambian en décimas</p></td>
+</tr>
+<tr class="row-even"><td><p>GEIH 2024 en disco</p></td>
+<td><p>Solo 9 de los 12 zips mensuales (faltan jul, sep y oct)</p></td>
+<td><p>El trabajo en casa por estrato con 9 meses queda dentro del IC 95 % de la cifra con 12</p></td>
+</tr>
+<tr class="row-odd"><td><p>Atípicos del cubo O3</p></td>
+<td><p>Dos bandas en uso: 0,75–1,3 veces la mediana móvil (cambio a clima constante y alza estacional) y 0,5–2 (parte sin lectura real). Con la segunda más los meses con bandera, el alza de E1 baja de 16 % a 13 %</p></td>
+<td><p>Pendiente (punto 11)</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda no atendida en la compuerta</p></td>
+<td><p>La DNA de GCM incluye el Cesar, que desde oct-2020 no está en el mercado de Air-e, y se divide por la demanda de CARIBE SOL</p></td>
+<td><p>El filtro excluye días de más. No cambia la decisión de capa C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Festivos en la ENUT</p></td>
+<td><p>Los festivos se cuentan como días hábiles (5,8 % de las personas en día hábil)</p></td>
+<td><p>Sin ellos, la presencia en día hábil baja de 85,2 % a 84,8 %. Sin efecto práctico</p></td>
+</tr>
+<tr class="row-even"><td><p>Materiales del catastro (capa 535)</p></td>
+<td><p>61 % sin valor de cubierta, categorías que mezclan materiales y ningún registro de cielo raso. Tiene 389.442 filas, más que los 383.724 registros residenciales de la 505</p></td>
+<td><p>Pendiente (punto 12)</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -500,11 +550,11 @@
 <li><p>~~<strong>ERA5-Land del Climate Data Store.</strong>~~ Hecho el 3-nov-2026 con ERA5-Land completo de NCAR GDEX (dataset d633008, pedidos 953933 y 953943, 2015 a septiembre de 2026, malla de 0,1°), extraído con <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/01b_extraer_era5land_gdex.py</span></code>. Se repitieron el contraste con el IDEAM y la compuerta, con la misma decisión (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>). GDEX no trae el punto de rocío en 608 horas sueltas de 2019, 2022 y 2023; se rellenan con Open-Meteo más 0,175 K. Para 2026–2027 hará falta pedir los meses nuevos a medida que GDEX los publique. Texto anterior: el clima horario ya se procesó con la copia de ERA5-Land de Open-Meteo (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>). Falta descargar la serie oficial con <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/01a_descargar_era5land_cds.py</span></code>, que usa el conjunto «reanalysis-era5-land-timeseries» (serie en el punto lat 10,96, lon −74,80, 2015 a la fecha, en una sola solicitud) y requiere la cuenta personal del CDS (<code class="docutils literal notranslate"><span class="pre">~/.cdsapirc</span></code>) y aceptar la licencia de ERA5-Land. Después hay que repetir <code class="docutils literal notranslate"><span class="pre">01_clima.py</span> <span class="pre">procesar</span></code> y <code class="docutils literal notranslate"><span class="pre">03_estimar.py</span></code>. La alternativa por área sigue siendo NCAR GDEX, dataset d633008.</p></li>
 <li><p>~~<strong>SUI con el filtro de tipo de lectura.</strong>~~ Hecho el 27-oct-2026 con la herramienta O3 (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>).</p></li>
 <li><p>Confirmar con Air-e el consumo/tarifa de E1 y pedir curva horaria.</p></li>
-<li><p><strong>Año de construcción del catastro.</strong> Preguntar a la Gerencia de Gestión Catastral qué registra <code class="docutils literal notranslate"><span class="pre">anio_construccion</span></code> (¿fecha original o última incorporación/actualización?). Solo 1.442 casas de la ciudad son anteriores a 1975 y 15.376 apartamentos de E1–E2 en bloques recientes tienen años 1932–1972. Mientras tanto se usa como «año de registro catastral» (supuesto S13); revisar también la variable <code class="docutils literal notranslate"><span class="pre">antiguedad</span></code> del entregable de ML.</p></li>
+<li><p><strong>Año de construcción del catastro.</strong> Preguntar a la Gerencia de Gestión Catastral qué registra <code class="docutils literal notranslate"><span class="pre">anio_construccion</span></code> (¿fecha original o última incorporación/actualización?). Solo 1.442 viviendas de baja altura (1.417 casas) de la ciudad son anteriores a 1975 y 15.376 apartamentos de E1–E2 en bloques recientes tienen años 1932–1972. Mientras tanto se usa como «año de registro catastral» (supuesto S13); revisar también la variable <code class="docutils literal notranslate"><span class="pre">antiguedad</span></code> del entregable de ML.</p></li>
 </ol>
 <p><strong>Ya procesado:</strong></p>
 <ul class="simple">
-<li><p><strong>IDEAM</strong>, estación 0029045190 «APTO ERNESTO CORTISSOZ» (temperatura sbwg-7ju4 y humedad relativa uext-mhny de datos.gov.co), agregada a horario y contrastada con ERA5-Land (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 37</span></a>).</p></li>
+<li><p><strong>IDEAM</strong>, estación 0029045190 «APTO ERNESTO CORTISSOZ» (temperatura sbwg-7ju4 y humedad relativa uext-mhny de datos.gov.co), agregada a horario y contrastada con ERA5-Land (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 72</span></a>).</p></li>
 <li><p><strong>Clima horario</strong> de ERA5-Land (copia de Open-Meteo) en hora local, con humedad relativa e índice de calor.</p></li>
 <li><p><strong>Demanda horaria de XM</strong> del mercado de Air-e (2021–2025) y de Electricaribe (2015–2019), con la compuerta horaria: la forma horaria del A/C queda en capa C (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>).</p></li>
 <li><p><strong>Línea base de CEELA</strong>: envolvente, zona climatizada, consigna y COP de los edificios representativos de Barranquilla (<a class="reference internal" href="16_ceela.html"><span class="std std-doc">Línea base de CEELA</span></a>).</p></li>
@@ -515,6 +565,10 @@
 <li><p>Aplicar en la propuesta los seis cambios del documento «Ajustes metodológicos…».</p></li>
 <li><p>Fase 1: arquetipos con catastro + GEIH (k-prototypes; ejes estrato y tipo; diseño plano vs anidado según la propuesta), asignación de techos por estrato y tipo antes del AC, con la envolvente de CEELA como centro de los rangos (S15).</p></li>
 <li><p>Fase 2–3: cadena de presencia con ENUT, módulo térmico 5R1C, calibración ABC-SMC con SUI y XM; de XM se usa la respuesta por franjas como blanco de validación, no la forma hora a hora (S16).</p></li>
+<li><p>Evaluar el salto del índice de calor: repetir la compuerta, la Ecuación 9 y los grados-hora con un HI sin discontinuidad (por ejemplo, suavizando el paso entre las dos fórmulas) y ver si cambian <span class="math notranslate nohighlight">\(b_h\)</span>, β y la temperatura base.</p></li>
+<li><p>Rehacer el consolidado de la ECV 2019 con la llave del hogar (DIRECTORIO + SECUENCIA_ENCUESTA) y regenerar las tablas de horas de uso, tipo de A/C, ventilador, nevera y pago de 2019.</p></li>
+<li><p>Elegir una sola regla de atípicos del cubo O3 para la calibración y llevar la otra a la sensibilidad (<a class="reference internal" href="24_sui.html"><span class="std std-doc">SUI</span></a>).</p></li>
+<li><p>Terminar el empalme de la capa 535 con las viviendas (script 12 de <code class="docutils literal notranslate"><span class="pre">arquetipos/</span></code>) y aclarar qué registros cubre.</p></li>
 </ol>
 </section>
 </section>

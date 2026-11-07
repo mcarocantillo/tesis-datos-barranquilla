@@ -40,7 +40,7 @@ Toda cifra de encuesta del informe es **ponderada** con el factor de expansión 
 - Personas → hogar = DIRECTORIO + SECUENCIA\_P. En los archivos de personas SECUENCIA\_ENCUESTA numera a la persona, no al hogar; usar la llave de tres campos perdía casi todas las personas.
 - Municipio = archivo «Municipio de aplicación», unido por DIRECTORIO.
 
-**Filtro de Barranquilla:** P1\_DEPARTAMENTO = 08 y P1\_MUNICIPIO = 001 → 1.009 hogares (901 en cabecera y 108 en centros poblados o rural). Las tablas incluyen todo el municipio.
+**Filtro de Barranquilla:** P1\_DEPARTAMENTO = 08 y P1\_MUNICIPIO = 001 → 1.022 hogares en 1.009 viviendas (913 hogares en cabecera y 109 en centros poblados o rural). Las tablas incluyen todo el municipio. El consolidado que arma `build_ecv2019.py` une los módulos con la llave de la vivienda y conserva solo el primer hogar de cada una, así que tiene 1.009 filas y no 1.022. Las tablas que salen de él (horas de uso, tipo de A/C, ventilador, nevera y pago de 2019) cambian en décimas de punto, y sus medianas no cambian ([ECV](21_ecv.md)). Rehacer el consolidado con la llave del hogar está pendiente ([Datos sospechosos y pendientes](07_datos_sospechosos.md)).
 
 **Variables derivadas:**
 
@@ -71,7 +71,7 @@ Toda cifra de encuesta del informe es **ponderada** con el factor de expansión 
 
 ### 3. ECV 2024 (DANE, catálogo 861)
 
-**Archivos usados:** Datos de la vivienda, Condiciones de vida del hogar y tenencia de bienes, Servicios del hogar, Tenencia y financiación de la vivienda y Características y composición del hogar. Se descargaron pero no se usaron: Variables de diseño muestral, factores PDET, programas, beneficiarios y escritura.
+**Archivos usados:** Datos de la vivienda, Condiciones de vida del hogar y tenencia de bienes, Servicios del hogar, Tenencia y financiación de la vivienda y Características y composición del hogar. Las variables de diseño muestral se usan para el efecto de diseño ([Serie de tenencia, error de la encuesta e imputación](05_ajustes_v3.md)). Se descargaron pero no se usaron: factores PDET, programas, beneficiarios y escritura.
 
 **Filtro y llaves:** en 2024 el municipio viene en «Datos de la vivienda» (P1\_DEPARTAMENTO = 08 y P1\_MUNICIPIO = 001 → 698 viviendas). Los hogares de esas viviendas se toman del archivo de bienes (por DIRECTORIO) y se unen a los demás archivos por DIRECTORIO + SECUENCIA\_ENCUESTA (en los archivos de hogar SECUENCIA\_P vale siempre 1) → 709 hogares: 649 en cabecera y 60 rurales, todos con estrato 0, que por eso no entran en las tablas por estrato. El factor de expansión viene con punto decimal.
 
@@ -114,7 +114,7 @@ Toda cifra de encuesta del informe es **ponderada** con el factor de expansión 
 | Viajes al estudio | 2 × P1159S1/S2 (C6) |
 | Trabaja en su vivienda | P6880 = 2 (C7\_1) |
 | Fuera por trabajo | trabajo del día (si no trabaja en su vivienda) + viajes al trabajo |
-| Fuera por trabajo o estudio | lo anterior + viajes al estudio. **No incluye las horas de clase**, que la ENUT no mide; para estudiantes es una subestimación |
+| Fuera por trabajo o estudio | lo anterior + viajes al estudio. **No incluye las horas de clase**, por lo que para estudiantes es una subestimación. El módulo C6 trae `P1160` y `P1160S1A1/A2`, que parecen ser la duración de la clase (media de 5,6 h), pero el zip no trae diccionario para confirmarlo. Con esas horas, el tiempo fuera de los estudiantes sube de 0,8 a 4,7 h y los hogares con alguien en casa todo el día hábil solo bajan de 85,2 % a 85,0 % ([ENUT](22_enut.md)) |
 
 **Tipo de persona** (en este orden): ocupado si P1152 = 1; mayor de 65 no ocupado si edad ≥ 65 y P1152 ≠ 1; estudiante si P1152 = 3; oficios del hogar si P1152 = 4; busca trabajo si P1152 = 2; el resto, otro o incapacitado.
 
@@ -127,7 +127,7 @@ Toda cifra de encuesta del informe es **ponderada** con el factor de expansión 
 
 **Archivos usados:** de cada uno de los 12 zips mensuales, los módulos «Datos del hogar y la vivienda», «Características generales, seguridad social en salud y educación» y «Ocupados» (en marzo y abril los CSV venían en un zip anidado).
 
-**Filtro y llaves:** AREA = 08, que corresponde al área metropolitana de Barranquilla (todos los registros son cabecera). Hogar = MES + DIRECTORIO + SECUENCIA\_P; persona = hogar + ORDEN. Ningún hogar se repite entre meses (verificado), así que los 12 meses se apilan: 7.772 hogares. Factor anual = FEX\_C18 / 12.
+**Filtro y llaves:** AREA = 08, que corresponde al área metropolitana de Barranquilla (todos los registros son cabecera). Hogar = MES + DIRECTORIO + SECUENCIA\_P; persona = hogar + ORDEN. Ningún hogar se repite entre meses (verificado), así que los 12 meses se apilan: 7.772 hogares. Factor anual = FEX\_C18 / 12. En la carpeta local de descargas solo quedan 9 de los 12 zips (faltan julio, septiembre y octubre). Con esos 9 meses el trabajo en la propia vivienda por estrato queda dentro del IC 95 % de las cifras con 12 meses en todos los estratos ([GEIH](23_geih.md)).
 
 | Variable del informe | Cómo se construyó |
 | --- | --- |
@@ -146,7 +146,7 @@ Toda cifra de encuesta del informe es **ponderada** con el factor de expansión 
 
 ### 6. SUI (Superservicios)
 
-**Extracción:** reporte ele\_com\_096 «Consolidado Energía por Empresa, Departamento y Municipio» de reportes.sui.gov.co, en formato HTML, consultado mes a mes (ene-2019 a ago-2026) con los filtros: ubicación = Urbano, departamento = Atlántico, municipio = Barranquilla, y variable = suscriptores, consumo (kWh) o valor del consumo (COP). Son 92 meses × 3 variables; el reporte no trae datos residenciales de junio de 2022.
+**Extracción:** reporte ele\_com\_096 «Consolidado Energía por Empresa, Departamento y Municipio» de reportes.sui.gov.co, en formato HTML, consultado mes a mes con los filtros: ubicación = Urbano, departamento = Atlántico, municipio = Barranquilla, y variable = suscriptores, consumo (kWh) o valor del consumo (COP). Primero se descargó el tramo de enero de 2019 a agosto de 2026 (92 meses × 3 variables) y después el de enero de 2015 a diciembre de 2018, que `scripts/sui3.py` une al primero. La serie residencial cubre así 139 meses, de enero de 2015 a agosto de 2026, y coincide exactamente con el cubo O3 en 2015–2018 ([SUI](24_sui.md)). El reporte no trae datos residenciales de junio de 2022.
 
 **Suma de comercializadoras:** cada consulta devuelve una fila por empresa (Electricaribe hasta sep-2020, luego Air-e, más Vatia, Qi Energy, Enertotal y otras menores). Se conservaron las filas con dato en «Total residencial», «ND» se tomó como 0 y se sumaron las empresas para cada estrato (1–6) y para el total residencial.
 

@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
@@ -223,6 +223,18 @@
 <li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_arquetipos.html">Arquetipos de vivienda (Fase 1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_datos.html">Bases de datos de la tesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_ecv.html">Encuesta de Calidad de Vida (ECV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_enut.html">Encuesta Nacional de Uso del Tiempo (ENUT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_geih.html">Gran Encuesta Integrada de Hogares (GEIH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_sui.html">Sistema Único de Información (SUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_catastro.html">Catastro de Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_xm.html">Demanda horaria de XM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27_clima.html">Clima horario (ERA5-Land, Open-Meteo e IDEAM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28_enso.html">El Niño y La Niña (ONI de la NOAA)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
 <ul class="current nav bd-sidenav">
@@ -474,7 +486,7 @@
 <li><p>Personas → hogar = DIRECTORIO + SECUENCIA_P. En los archivos de personas SECUENCIA_ENCUESTA numera a la persona, no al hogar; usar la llave de tres campos perdía casi todas las personas.</p></li>
 <li><p>Municipio = archivo «Municipio de aplicación», unido por DIRECTORIO.</p></li>
 </ul>
-<p><strong>Filtro de Barranquilla:</strong> P1_DEPARTAMENTO = 08 y P1_MUNICIPIO = 001 → 1.009 hogares (901 en cabecera y 108 en centros poblados o rural). Las tablas incluyen todo el municipio.</p>
+<p><strong>Filtro de Barranquilla:</strong> P1_DEPARTAMENTO = 08 y P1_MUNICIPIO = 001 → 1.022 hogares en 1.009 viviendas (913 hogares en cabecera y 109 en centros poblados o rural). Las tablas incluyen todo el municipio. El consolidado que arma <code class="docutils literal notranslate"><span class="pre">build_ecv2019.py</span></code> une los módulos con la llave de la vivienda y conserva solo el primer hogar de cada una, así que tiene 1.009 filas y no 1.022. Las tablas que salen de él (horas de uso, tipo de A/C, ventilador, nevera y pago de 2019) cambian en décimas de punto, y sus medianas no cambian (<a class="reference internal" href="21_ecv.html"><span class="std std-doc">ECV</span></a>). Rehacer el consolidado con la llave del hogar está pendiente (<a class="reference internal" href="07_datos_sospechosos.html"><span class="std std-doc">Datos sospechosos y pendientes</span></a>).</p>
 <p><strong>Variables derivadas:</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -552,7 +564,7 @@
 </section>
 <section id="ecv-2024-dane-catalogo-861">
 <h3>3. ECV 2024 (DANE, catálogo 861)<a class="headerlink" href="#ecv-2024-dane-catalogo-861" title="Link to this heading">#</a></h3>
-<p><strong>Archivos usados:</strong> Datos de la vivienda, Condiciones de vida del hogar y tenencia de bienes, Servicios del hogar, Tenencia y financiación de la vivienda y Características y composición del hogar. Se descargaron pero no se usaron: Variables de diseño muestral, factores PDET, programas, beneficiarios y escritura.</p>
+<p><strong>Archivos usados:</strong> Datos de la vivienda, Condiciones de vida del hogar y tenencia de bienes, Servicios del hogar, Tenencia y financiación de la vivienda y Características y composición del hogar. Las variables de diseño muestral se usan para el efecto de diseño (<a class="reference internal" href="05_ajustes_v3.html"><span class="std std-doc">Serie de tenencia, error de la encuesta e imputación</span></a>). Se descargaron pero no se usaron: factores PDET, programas, beneficiarios y escritura.</p>
 <p><strong>Filtro y llaves:</strong> en 2024 el municipio viene en «Datos de la vivienda» (P1_DEPARTAMENTO = 08 y P1_MUNICIPIO = 001 → 698 viviendas). Los hogares de esas viviendas se toman del archivo de bienes (por DIRECTORIO) y se unen a los demás archivos por DIRECTORIO + SECUENCIA_ENCUESTA (en los archivos de hogar SECUENCIA_P vale siempre 1) → 709 hogares: 649 en cabecera y 60 rurales, todos con estrato 0, que por eso no entran en las tablas por estrato. El factor de expansión viene con punto decimal.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -649,7 +661,7 @@
 <td><p>trabajo del día (si no trabaja en su vivienda) + viajes al trabajo</p></td>
 </tr>
 <tr class="row-odd"><td><p>Fuera por trabajo o estudio</p></td>
-<td><p>lo anterior + viajes al estudio. <strong>No incluye las horas de clase</strong>, que la ENUT no mide; para estudiantes es una subestimación</p></td>
+<td><p>lo anterior + viajes al estudio. <strong>No incluye las horas de clase</strong>, por lo que para estudiantes es una subestimación. El módulo C6 trae <code class="docutils literal notranslate"><span class="pre">P1160</span></code> y <code class="docutils literal notranslate"><span class="pre">P1160S1A1/A2</span></code>, que parecen ser la duración de la clase (media de 5,6 h), pero el zip no trae diccionario para confirmarlo. Con esas horas, el tiempo fuera de los estudiantes sube de 0,8 a 4,7 h y los hogares con alguien en casa todo el día hábil solo bajan de 85,2 % a 85,0 % (<a class="reference internal" href="22_enut.html"><span class="std std-doc">ENUT</span></a>)</p></td>
 </tr>
 </tbody>
 </table>
@@ -665,7 +677,7 @@
 <section id="geih-2024-dane-catalogo-819">
 <h3>5. GEIH 2024 (DANE, catálogo 819)<a class="headerlink" href="#geih-2024-dane-catalogo-819" title="Link to this heading">#</a></h3>
 <p><strong>Archivos usados:</strong> de cada uno de los 12 zips mensuales, los módulos «Datos del hogar y la vivienda», «Características generales, seguridad social en salud y educación» y «Ocupados» (en marzo y abril los CSV venían en un zip anidado).</p>
-<p><strong>Filtro y llaves:</strong> AREA = 08, que corresponde al área metropolitana de Barranquilla (todos los registros son cabecera). Hogar = MES + DIRECTORIO + SECUENCIA_P; persona = hogar + ORDEN. Ningún hogar se repite entre meses (verificado), así que los 12 meses se apilan: 7.772 hogares. Factor anual = FEX_C18 / 12.</p>
+<p><strong>Filtro y llaves:</strong> AREA = 08, que corresponde al área metropolitana de Barranquilla (todos los registros son cabecera). Hogar = MES + DIRECTORIO + SECUENCIA_P; persona = hogar + ORDEN. Ningún hogar se repite entre meses (verificado), así que los 12 meses se apilan: 7.772 hogares. Factor anual = FEX_C18 / 12. En la carpeta local de descargas solo quedan 9 de los 12 zips (faltan julio, septiembre y octubre). Con esos 9 meses el trabajo en la propia vivienda por estrato queda dentro del IC 95 % de las cifras con 12 meses en todos los estratos (<a class="reference internal" href="23_geih.html"><span class="std std-doc">GEIH</span></a>).</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable del informe</p></th>
@@ -715,7 +727,7 @@
 </section>
 <section id="sui-superservicios">
 <h3>6. SUI (Superservicios)<a class="headerlink" href="#sui-superservicios" title="Link to this heading">#</a></h3>
-<p><strong>Extracción:</strong> reporte ele_com_096 «Consolidado Energía por Empresa, Departamento y Municipio» de reportes.sui.gov.co, en formato HTML, consultado mes a mes (ene-2019 a ago-2026) con los filtros: ubicación = Urbano, departamento = Atlántico, municipio = Barranquilla, y variable = suscriptores, consumo (kWh) o valor del consumo (COP). Son 92 meses × 3 variables; el reporte no trae datos residenciales de junio de 2022.</p>
+<p><strong>Extracción:</strong> reporte ele_com_096 «Consolidado Energía por Empresa, Departamento y Municipio» de reportes.sui.gov.co, en formato HTML, consultado mes a mes con los filtros: ubicación = Urbano, departamento = Atlántico, municipio = Barranquilla, y variable = suscriptores, consumo (kWh) o valor del consumo (COP). Primero se descargó el tramo de enero de 2019 a agosto de 2026 (92 meses × 3 variables) y después el de enero de 2015 a diciembre de 2018, que <code class="docutils literal notranslate"><span class="pre">scripts/sui3.py</span></code> une al primero. La serie residencial cubre así 139 meses, de enero de 2015 a agosto de 2026, y coincide exactamente con el cubo O3 en 2015–2018 (<a class="reference internal" href="24_sui.html"><span class="std std-doc">SUI</span></a>). El reporte no trae datos residenciales de junio de 2022.</p>
 <p><strong>Suma de comercializadoras:</strong> cada consulta devuelve una fila por empresa (Electricaribe hasta sep-2020, luego Air-e, más Vatia, Qi Energy, Enertotal y otras menores). Se conservaron las filas con dato en «Total residencial», «ND» se tomó como 0 y se sumaron las empresas para cada estrato (1–6) y para el total residencial.</p>
 <p><strong>Indicadores derivados por mes y estrato:</strong></p>
 <ul class="simple">

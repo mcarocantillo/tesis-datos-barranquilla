@@ -4,20 +4,29 @@
 | --- | --- | --- |
 | E4 2019 | 53 % con AC vs 75 % (2018) y 73–92 % después | Resuelto con la serie suavizada (70,4 %) |
 | E4 2020–2021 | 91,5 % (n = 58) y 89,2 %; 2020 en parte telefónica | 2020 fuera del ajuste |
-| E1 en el SUI | Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6). En 2021–2024, con solo lecturas reales, CEELA da 229 kWh/mes frente a 311 en el repositorio (+36 %); en E2–E6 la diferencia es de 3–7 % ({numref}`tab-ceela-sui`) | **Resuelto** con el SUI por tipo de lectura: 50–80 % del consumo facturado de E1 es estimado o de usuarios sin medidor; con lecturas reales E1 consume 209 kWh/mes (2023–2025), como E2. Calibrar E1 solo con lecturas reales ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)) |
+| E1 en el SUI | Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6). En 2021–2024, con solo lecturas reales, CEELA da 229 kWh/mes frente a 311 en el repositorio (+36 %); en E2–E6 la diferencia es de 3–7 % ({numref}`tab-ceela-sui`) | **Resuelto el consumo** con el SUI por tipo de lectura: 50–62 % del consumo facturado de E1 es estimado o de usuarios sin medidor (sin meses atípicos); con lecturas reales E1 consume 209 kWh/mes (2023–2025), como E2. Calibrar E1 solo con lecturas reales ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)). **Sin explicar el precio:** con solo lecturas reales, el kWh de E1 en 2018–2020 sigue siendo el más caro (614–779 COP frente a 441–509 en E6) ([SUI](24_sui.md)) |
 | Catastro vs ECV en E1 | 29,5 % de viviendas de E1 en edificios 4+, pero solo 17 % con techo de concreto en la ECV | Revisado: la altura del catastro es coherente (74 lotes de bloques de 5 pisos, 43 m² de mediana); la ECV casi no capta esos edificios (2 de 26 segmentos con hogares de E1, 7,7 esperados). Usar los techos de la ECV solo para casas; A/C de E1 2024 reponderado 14,5–15,2 % como sensibilidad. Script `catastro_e1_edificios.py` |
 | Año de construcción en edificios de E1–E2 | 15.376 apartamentos en edificios de 4+ pisos con años 1932–1972 (ninguno en E3–E6 antes de 1975) | Muy probablemente erróneos (un solo año por lote, vienen así en la descarga original); confirmar con Catastro o imágenes históricas y, mientras tanto, tratar como faltantes en la Fase 1 |
-| SUI dic-2021 | 356.575 suscriptores (E1 120.329), vuelve a 317.080 en 2022 | **Explicado**: desde jun-2021, 4–12 % de las cuentas de cada mes tienen lectura «n/a» y 0 kWh. Calcular el kWh por suscriptor sin ellas ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)) |
+| SUI dic-2021 | 356.575 suscriptores (E1 120.329), vuelve a 317.080 en 2022 | **Explicado**: desde jun-2021, 3–12 % de las cuentas de cada mes tienen lectura «n/a» y 0 kWh. Calcular el kWh por suscriptor sin ellas ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)) |
 | Rurales ECV 2024 | 24,8 % con AC (n = 60) vs 6 % en 2019 y 2025 | Quedan fuera (estrato 0) |
 | Quintiles 2024 | Q1 > Q2 por 13 hogares con ingreso 0 | Excluirlos |
 | E5–E6 | 7–72 hogares por ola; E6 en 100 % | Agresti–Coull / serie suavizada |
-| Meses SUI | Falta jun-2022; sep–oct 2024 y ago-2025 sin consumo; sep-2022, ene y mar 2023 negativos; mar–ago 2026 tarifa 10–20× en E5–E6 | Excluidos con banderas |
+| Meses SUI | Falta jun-2022; sep–oct 2024 y ago-2025 sin consumo; sep-2022 con valor facturado negativo; ene y mar 2023 con consumo atípico en E1; mar–ago 2026 tarifa 10–20× en E5–E6 | Excluidos con banderas |
 | SUI E3 dic-2024 | 449 COP/kWh vs 676–858 en meses vecinos | Usar para kWh, no para tarifa (columna bandera_revision) |
 | Techo concreto E1–2 | 15,5 % (2019) → 28,6 % (2024) | Posible ruido; promediar olas |
 | Lavadora E1 | 62 % → 48 % | Cambio de pregunta |
 | Hogares expandidos ECV | 329.000 (2019) → 399.000 (2025) | Expandir con SUI |
 | Alcaldía | 13 % de viviendas en E5–6 vs 9 % catastro/SUI | Diferencia de universo |
 | «Apartamento» ECV | 48 % de E1 vive en «apartamento», 68 % bajo asbesto | No usar como proxy de altura |
+| Índice de calor (NOAA) | El algoritmo cambia de fórmula cerca de 26,7 °C de HI: con humedad alta, el HI salta 1,2–1,4 °C cuando el aire pasa de 26,2 a 26,3 °C, en las temperaturas de la noche. Entre 27,5 y 28,3 °C de HI cae solo 0,5 % de las horas ([Clima](27_clima.md)) | Pendiente (punto 9). Afecta la compuerta, la Ecuación 9 y los grados-hora con base de 26,5 °C |
+| Lluvia de ERA5-Land (GDEX) | 529 horas vacías (93 en may-2019 y 436 entre feb y jun-2022): `tp` viene vacío en toda la malla y la desacumulación deja vacía también la hora siguiente | Documentado en `fase2/clima/README.md`. Subestima la lluvia de 2022 y la anomalía de lluvia de La Niña. La lluvia no entra en la carga |
+| Viento de ERA5-Land (GDEX) | 5,5 m/s de media, 91 % más que el de ERA5 que sirve Open-Meteo (2,9 m/s), con correlación 0,81 | Sin medición para contrastar. Es el viento del EPW de 2024: revisar su efecto en la convección exterior del 5R1C y de EnergyPlus |
+| Consolidado ECV 2019 | `build_ecv2019.py` une los módulos con la llave de la vivienda y guarda 1.009 de los 1.022 hogares | Pendiente (punto 10). Las tablas de uso de 2019 cambian en décimas |
+| GEIH 2024 en disco | Solo 9 de los 12 zips mensuales (faltan jul, sep y oct) | El trabajo en casa por estrato con 9 meses queda dentro del IC 95 % de la cifra con 12 |
+| Atípicos del cubo O3 | Dos bandas en uso: 0,75–1,3 veces la mediana móvil (cambio a clima constante y alza estacional) y 0,5–2 (parte sin lectura real). Con la segunda más los meses con bandera, el alza de E1 baja de 16 % a 13 % | Pendiente (punto 11) |
+| Demanda no atendida en la compuerta | La DNA de GCM incluye el Cesar, que desde oct-2020 no está en el mercado de Air-e, y se divide por la demanda de CARIBE SOL | El filtro excluye días de más. No cambia la decisión de capa C |
+| Festivos en la ENUT | Los festivos se cuentan como días hábiles (5,8 % de las personas en día hábil) | Sin ellos, la presencia en día hábil baja de 85,2 % a 84,8 %. Sin efecto práctico |
+| Materiales del catastro (capa 535) | 61 % sin valor de cubierta, categorías que mezclan materiales y ningún registro de cielo raso. Tiene 389.442 filas, más que los 383.724 registros residenciales de la 505 | Pendiente (punto 12) |
 
 ---
 
@@ -29,7 +38,7 @@
 1. ~~**ERA5-Land del Climate Data Store.**~~ Hecho el 3-nov-2026 con ERA5-Land completo de NCAR GDEX (dataset d633008, pedidos 953933 y 953943, 2015 a septiembre de 2026, malla de 0,1°), extraído con `scripts/compuerta/01b_extraer_era5land_gdex.py`. Se repitieron el contraste con el IDEAM y la compuerta, con la misma decisión ([Respuesta horaria al calor](15_compuerta_horaria.md)). GDEX no trae el punto de rocío en 608 horas sueltas de 2019, 2022 y 2023; se rellenan con Open-Meteo más 0,175 K. Para 2026–2027 hará falta pedir los meses nuevos a medida que GDEX los publique. Texto anterior: el clima horario ya se procesó con la copia de ERA5-Land de Open-Meteo ([Respuesta horaria al calor](15_compuerta_horaria.md)). Falta descargar la serie oficial con `scripts/compuerta/01a_descargar_era5land_cds.py`, que usa el conjunto «reanalysis-era5-land-timeseries» (serie en el punto lat 10,96, lon −74,80, 2015 a la fecha, en una sola solicitud) y requiere la cuenta personal del CDS (`~/.cdsapirc`) y aceptar la licencia de ERA5-Land. Después hay que repetir `01_clima.py procesar` y `03_estimar.py`. La alternativa por área sigue siendo NCAR GDEX, dataset d633008.
 2. ~~**SUI con el filtro de tipo de lectura.**~~ Hecho el 27-oct-2026 con la herramienta O3 ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)).
 3. Confirmar con Air-e el consumo/tarifa de E1 y pedir curva horaria.
-4. **Año de construcción del catastro.** Preguntar a la Gerencia de Gestión Catastral qué registra `anio_construccion` (¿fecha original o última incorporación/actualización?). Solo 1.442 casas de la ciudad son anteriores a 1975 y 15.376 apartamentos de E1–E2 en bloques recientes tienen años 1932–1972. Mientras tanto se usa como «año de registro catastral» (supuesto S13); revisar también la variable `antiguedad` del entregable de ML.
+4. **Año de construcción del catastro.** Preguntar a la Gerencia de Gestión Catastral qué registra `anio_construccion` (¿fecha original o última incorporación/actualización?). Solo 1.442 viviendas de baja altura (1.417 casas) de la ciudad son anteriores a 1975 y 15.376 apartamentos de E1–E2 en bloques recientes tienen años 1932–1972. Mientras tanto se usa como «año de registro catastral» (supuesto S13); revisar también la variable `antiguedad` del entregable de ML.
 
 **Ya procesado:**
 
@@ -44,3 +53,7 @@
 6. Aplicar en la propuesta los seis cambios del documento «Ajustes metodológicos…».
 7. Fase 1: arquetipos con catastro + GEIH (k-prototypes; ejes estrato y tipo; diseño plano vs anidado según la propuesta), asignación de techos por estrato y tipo antes del AC, con la envolvente de CEELA como centro de los rangos (S15).
 8. Fase 2–3: cadena de presencia con ENUT, módulo térmico 5R1C, calibración ABC-SMC con SUI y XM; de XM se usa la respuesta por franjas como blanco de validación, no la forma hora a hora (S16).
+9. Evaluar el salto del índice de calor: repetir la compuerta, la Ecuación 9 y los grados-hora con un HI sin discontinuidad (por ejemplo, suavizando el paso entre las dos fórmulas) y ver si cambian $b_h$, β y la temperatura base.
+10. Rehacer el consolidado de la ECV 2019 con la llave del hogar (DIRECTORIO + SECUENCIA_ENCUESTA) y regenerar las tablas de horas de uso, tipo de A/C, ventilador, nevera y pago de 2019.
+11. Elegir una sola regla de atípicos del cubo O3 para la calibración y llevar la otra a la sensibilidad ([SUI](24_sui.md)).
+12. Terminar el empalme de la capa 535 con las viviendas (script 12 de `arquetipos/`) y aclarar qué registros cubre.

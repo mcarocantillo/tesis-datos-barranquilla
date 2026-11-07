@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
@@ -223,6 +223,18 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Insumos del modelo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_arquetipos.html">Arquetipos de vivienda (Fase 1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_datos.html">Bases de datos de la tesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_ecv.html">Encuesta de Calidad de Vida (ECV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_enut.html">Encuesta Nacional de Uso del Tiempo (ENUT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_geih.html">Gran Encuesta Integrada de Hogares (GEIH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_sui.html">Sistema Único de Información (SUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_catastro.html">Catastro de Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_xm.html">Demanda horaria de XM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27_clima.html">Clima horario (ERA5-Land, Open-Meteo e IDEAM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28_enso.html">El Niño y La Niña (ONI de la NOAA)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
 <ul class="nav bd-sidenav">
@@ -459,7 +471,7 @@
 </tr>
 <tr class="row-even"><td><p>Material del techo por estrato</p></td>
 <td><p>Proporciones por grupo de estrato (<a class="reference internal" href="#tab-techo"><span class="std std-numref">Tabla 4</span></a>)</p></td>
-<td><p>Tamaño de muestra de cada celda</p></td>
+<td><p>Tamaño de muestra de cada celda, dividido por el efecto de diseño del techo (3,4 a 4,2 en la ECV 2024), que deja cerca de un cuarto de la muestra efectiva (<a class="reference internal" href="21_ecv.html"><span class="std std-doc">ECV</span></a>)</p></td>
 <td><p>ECV 2024</p></td>
 <td><p>Fase 1, paso 6</p></td>
 </tr>
@@ -536,14 +548,14 @@
 <td><p>Fase 3, paso 4</p></td>
 </tr>
 <tr class="row-odd"><td><p>Alza estacional del consumo</p></td>
-<td><p>Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) (<a class="reference internal" href="17_lecturas_reales.html#tab-o3-cambio"><span class="std std-numref">Tabla 31</span></a>); con el consolidado, 10,9 % a 29,1 % (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 13</span></a>)</p></td>
+<td><p>Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) (<a class="reference internal" href="17_lecturas_reales.html#tab-o3-cambio"><span class="std std-numref">Tabla 65</span></a>); con el consolidado, 10,9 % a 29,1 % (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 13</span></a>)</p></td>
 <td><p>Variación entre años</p></td>
 <td><p>SUI 2015–2025</p></td>
 <td><p>Fase 3, pasos 2 y 5</p></td>
 </tr>
 <tr class="row-even"><td><p>Clima horario</p></td>
 <td><p>Temperatura, humedad, presión, radiación de onda corta y larga, viento, lluvia e índice de calor en hora local, 2015 a septiembre de 2026</p></td>
-<td><p>Sesgo frente al IDEAM: −0,5 °C en temperatura (+0,3 de noche, −2,1 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 37</span></a>)</p></td>
+<td><p>Sesgo frente al IDEAM: −0,5 °C en temperatura (+0,3 de noche, −2,1 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 72</span></a>)</p></td>
 <td><p>ERA5-Land de GDEX (NCAR); copia de Open-Meteo como contraste; IDEAM. Serie de la Fase 2 con radiación en muros y cubierta, temperatura del cielo (aire 7,3 K por encima en promedio) y calendario, y EPW de 2024 en <code class="docutils literal notranslate"><span class="pre">fase2/clima/</span></code></p></td>
 <td><p>Fase 2, paso 1</p></td>
 </tr>
@@ -602,7 +614,7 @@
 <td><p>Fase 2, paso 5</p></td>
 </tr>
 <tr class="row-even"><td><p>Respuesta horaria de la demanda al calor</p></td>
-<td><p>Noche 1,92 %/°C (1,79–2,05) con Open-Meteo y 1,90 (1,78–2,02) con GDEX (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-fuentes"><span class="std std-numref">Tabla 25</span></a>); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-franjas"><span class="std std-numref">Tabla 23</span></a>)</p></td>
+<td><p>Noche 1,92 %/°C (1,79–2,05) con Open-Meteo y 1,90 (1,78–2,02) con GDEX (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-fuentes"><span class="std std-numref">Tabla 59</span></a>); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-franjas"><span class="std std-numref">Tabla 57</span></a>)</p></td>
 <td><p>Forma hora a hora inestable entre años: capa C (S16)</p></td>
 <td><p>XM; ERA5-Land</p></td>
 <td><p>Fase 3, pasos 1 y 4 (blanco de validación)</p></td>
@@ -750,7 +762,7 @@
 </tbody>
 </table>
 </div>
-<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 36</span></a>).</p>
+<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 71</span></a>).</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-posicion">
 <caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Viviendas del catastro por estrato y posición frente a la cubierta (% de las viviendas de cada estrato).</span><a class="headerlink" href="#tab-posicion" title="Link to this table">#</a></caption>
 <thead>
@@ -1166,7 +1178,7 @@
 <td><p>14,2</p></td>
 <td><p>15,7</p></td>
 </tr>
-<tr class="row-even"><td><p>Horas de sueño por día</p></td>
+<tr class="row-even"><td><p>Horas de sueño por día, promedio de todos los días de la semana</p></td>
 <td><p>8,1</p></td>
 <td><p>7,9</p></td>
 <td><p>7,8</p></td>
