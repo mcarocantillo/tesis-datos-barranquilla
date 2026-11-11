@@ -1,0 +1,19 @@
+﻿solucion,estrato,edificios_submuestra,edificios_todos,variables,k_final,k_todos,ari,concordancia
+por_vivienda,casa|1-2,2853,110672,log_area log_plantas epoca_ord ph,4,4,0.6796,0.8871
+por_vivienda,casa|3-4,1071,41527,log_area log_plantas epoca_ord ph,4,5,0.8445,0.944
+por_vivienda,casa|5-6,150,2959,log_area log_plantas epoca_ord ph,1,1,,
+por_vivienda,sin_cubierta|1-2,890,2363,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_vivienda,sin_cubierta|3-4,1703,4917,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_vivienda,sin_cubierta|5-6,487,1386,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_vivienda,ultimo_piso|1-2,1344,5431,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_vivienda,ultimo_piso|3-4,1414,6251,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_vivienda,ultimo_piso|5-6,381,1587,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_m2,casa|1-2,2853,110672,log_area log_plantas epoca_ord ph,2,2,1.0,1.0
+por_m2,casa|3-4,1071,41527,log_area log_plantas epoca_ord ph,1,1,,
+por_m2,casa|5-6,150,2959,log_area log_plantas epoca_ord ph,1,1,,
+por_m2,sin_cubierta|1-2,890,2363,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_m2,sin_cubierta|3-4,1703,4917,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_m2,sin_cubierta|5-6,487,1386,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_m2,ultimo_piso|1-2,1344,5431,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_m2,ultimo_piso|3-4,1414,6251,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,
+por_m2,ultimo_piso|5-6,381,1587,log_area log_plantas log_piso epoca_ord tipo_bin ph,1,1,,

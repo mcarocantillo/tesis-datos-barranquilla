@@ -1390,350 +1390,6 @@
     ]
    }
   },
-  "C34-5": {
-   "posicion": "casa",
-   "bloque": "3-4",
-   "celda_ecv": "casa|3-4",
-   "paredes": {
-    "alfa": {
-     "mamposteria": 20.2652,
-     "otro": 0.0107
-    }
-   },
-   "pisos": {
-    "alfa": {
-     "acabado": 22.1272,
-     "cemento": 0.7501,
-     "tierra_madera_burda": 0.0058
-    }
-   },
-   "techo": {
-    "alfa": {
-     "concreto": 4.9681,
-     "asbesto_cemento": 14.4125,
-     "metalica_zinc": 0.099,
-     "otro": 0.0
-    }
-   },
-   "U_muro": {
-    "mamposteria": [
-     1.9,
-     2.7,
-     4.1
-    ],
-    "otro": [
-     1.5,
-     3.5,
-     5.9
-    ]
-   },
-   "absortancia_muro": [
-    0.44,
-    0.7,
-    0.88
-   ],
-   "capacidad": {
-    "muro_otro": {
-     "clases": [
-      "muy_ligera",
-      "ligera",
-      "media"
-     ],
-     "kJ_K_m2": [
-      80,
-      110,
-      165
-     ],
-     "A_m_por_A_piso": 2.5
-    },
-    "techo_liviano": {
-     "clases": [
-      "ligera",
-      "media",
-      "pesada"
-     ],
-     "kJ_K_m2": [
-      110,
-      165,
-      260
-     ],
-     "A_m_por_A_piso": 2.5
-    },
-    "losa_encima": {
-     "clases": [
-      "media",
-      "pesada",
-      "muy_pesada"
-     ],
-     "kJ_K_m2": [
-      165,
-      260,
-      370
-     ],
-     "A_m_por_A_piso": 3.0
-    }
-   },
-   "infiltracion_ventanas_cerradas": {
-    "regla": "abierta si el techo es liviano o el muro es de otro material; cerrada si hay losa encima",
-    "cerrada": {
-     "mediana": 0.8944,
-     "sigma_log": 0.3536
-    },
-    "abierta": {
-     "mediana": 2.0,
-     "sigma_log": 0.5571
-    }
-   },
-   "U_techo": {
-    "concreto": [
-     3.333,
-     3.509,
-     4.878
-    ],
-    "asbesto_cemento": [
-     2.075,
-     4.505,
-     6.579
-    ],
-    "metalica_zinc": [
-     2.128,
-     4.762,
-     7.143
-    ],
-    "otro": [
-     2.062,
-     4.444,
-     6.452
-    ]
-   },
-   "absortancia_techo": {
-    "concreto": [
-     0.3,
-     0.85,
-     0.95
-    ],
-    "asbesto_cemento": [
-     0.3,
-     0.6,
-     0.95
-    ],
-    "metalica_zinc": [
-     0.3,
-     0.7,
-     0.95
-    ],
-    "otro": [
-     0.3,
-     0.7,
-     0.95
-    ]
-   },
-   "relacion_ventana_muro": [
-    0.1,
-    0.3,
-    0.5
-   ],
-   "U_ventana": [
-    5.3,
-    5.88,
-    6.5
-   ],
-   "factor_solar": [
-    0.75,
-    0.85,
-    0.87
-   ],
-   "factor_sombra": [
-    0.5,
-    0.75,
-    0.95
-   ],
-   "climatizada": {
-    "zona": "una",
-    "A_hab_m2": [
-     8,
-     10,
-     14
-    ],
-    "toda": [
-     0.7,
-     1.0,
-     1.0
-    ]
-   }
-  },
-  "C34-6": {
-   "posicion": "casa",
-   "bloque": "3-4",
-   "celda_ecv": "casa|3-4",
-   "paredes": {
-    "alfa": {
-     "mamposteria": 20.2652,
-     "otro": 0.0107
-    }
-   },
-   "pisos": {
-    "alfa": {
-     "acabado": 22.1272,
-     "cemento": 0.7501,
-     "tierra_madera_burda": 0.0058
-    }
-   },
-   "techo": {
-    "alfa": {
-     "concreto": 4.9681,
-     "asbesto_cemento": 14.4125,
-     "metalica_zinc": 0.099,
-     "otro": 0.0
-    }
-   },
-   "U_muro": {
-    "mamposteria": [
-     1.9,
-     2.7,
-     4.1
-    ],
-    "otro": [
-     1.5,
-     3.5,
-     5.9
-    ]
-   },
-   "absortancia_muro": [
-    0.44,
-    0.7,
-    0.88
-   ],
-   "capacidad": {
-    "muro_otro": {
-     "clases": [
-      "muy_ligera",
-      "ligera",
-      "media"
-     ],
-     "kJ_K_m2": [
-      80,
-      110,
-      165
-     ],
-     "A_m_por_A_piso": 2.5
-    },
-    "techo_liviano": {
-     "clases": [
-      "ligera",
-      "media",
-      "pesada"
-     ],
-     "kJ_K_m2": [
-      110,
-      165,
-      260
-     ],
-     "A_m_por_A_piso": 2.5
-    },
-    "losa_encima": {
-     "clases": [
-      "media",
-      "pesada",
-      "muy_pesada"
-     ],
-     "kJ_K_m2": [
-      165,
-      260,
-      370
-     ],
-     "A_m_por_A_piso": 3.0
-    }
-   },
-   "infiltracion_ventanas_cerradas": {
-    "regla": "abierta si el techo es liviano o el muro es de otro material; cerrada si hay losa encima",
-    "cerrada": {
-     "mediana": 0.8944,
-     "sigma_log": 0.3536
-    },
-    "abierta": {
-     "mediana": 2.0,
-     "sigma_log": 0.5571
-    }
-   },
-   "U_techo": {
-    "concreto": [
-     3.333,
-     3.509,
-     4.878
-    ],
-    "asbesto_cemento": [
-     2.075,
-     4.505,
-     6.579
-    ],
-    "metalica_zinc": [
-     2.128,
-     4.762,
-     7.143
-    ],
-    "otro": [
-     2.062,
-     4.444,
-     6.452
-    ]
-   },
-   "absortancia_techo": {
-    "concreto": [
-     0.3,
-     0.85,
-     0.95
-    ],
-    "asbesto_cemento": [
-     0.3,
-     0.6,
-     0.95
-    ],
-    "metalica_zinc": [
-     0.3,
-     0.7,
-     0.95
-    ],
-    "otro": [
-     0.3,
-     0.7,
-     0.95
-    ]
-   },
-   "relacion_ventana_muro": [
-    0.1,
-    0.3,
-    0.5
-   ],
-   "U_ventana": [
-    5.3,
-    5.88,
-    6.5
-   ],
-   "factor_solar": [
-    0.75,
-    0.85,
-    0.87
-   ],
-   "factor_sombra": [
-    0.5,
-    0.75,
-    0.95
-   ],
-   "climatizada": {
-    "zona": "una",
-    "A_hab_m2": [
-     8,
-     10,
-     14
-    ],
-    "toda": [
-     0.7,
-     1.0,
-     1.0
-    ]
-   }
-  },
   "C56-1": {
    "posicion": "casa",
    "bloque": "5-6",
@@ -2147,10 +1803,10 @@
     "factor_habitaciones_por_estrato": {
      "1": 0.752,
      "2": 0.7426,
-     "3": 0.7113,
-     "4": 0.7091,
-     "5": 0.5498,
-     "6": 0.6697
+     "3": 0.7121,
+     "4": 0.7092,
+     "5": 0.5497,
+     "6": 0.6696
     }
    }
   },
@@ -2300,7 +1956,7 @@
     },
     "s6": {
      "regla": "mezcla: concreto en multifamiliares; baja altura = Dirichlet de los apartamentos ECV del bloque, sin restar",
-     "frac_multifamiliar_arquetipo": 0.5164
+     "frac_multifamiliar_arquetipo": 0.5487
     }
    },
    "U_muro": {
@@ -2476,7 +2132,7 @@
     },
     "s6": {
      "regla": "mezcla: concreto en multifamiliares; baja altura = Dirichlet de los apartamentos ECV del bloque, sin restar",
-     "frac_multifamiliar_arquetipo": 0.5078
+     "frac_multifamiliar_arquetipo": 0.5371
     }
    },
    "U_muro": {
@@ -2627,10 +2283,10 @@
     "factor_habitaciones_por_estrato": {
      "1": 0.752,
      "2": 0.7426,
-     "3": 0.7113,
-     "4": 0.7091,
-     "5": 0.5498,
-     "6": 0.6697
+     "3": 0.7121,
+     "4": 0.7092,
+     "5": 0.5497,
+     "6": 0.6696
     }
    }
   },
@@ -2660,7 +2316,7 @@
     },
     "s6": {
      "regla": "mezcla: concreto en multifamiliares; baja altura = Dirichlet de los apartamentos ECV del bloque, sin restar",
-     "frac_multifamiliar_arquetipo": 0.8
+     "frac_multifamiliar_arquetipo": 0.813
     }
    },
    "U_muro": {

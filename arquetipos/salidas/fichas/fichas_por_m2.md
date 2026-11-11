@@ -4,13 +4,13 @@ Preregistro de la Fase 1, versión 5, Sección 10.5. Solo agregados. La carga es
 
 ## C12-1 · Casa, estratos 1-2
 
-**Identificación.** 119.465 viviendas (35,9 % de la ciudad) en 102.682 edificios. Posición: casa. Agrupamiento: K-Means en el estrato «casa · 1-2», con 2 grupo(s).
+**Identificación.** 119.477 viviendas (35,9 % de la ciudad) en 102.690 edificios. Posición: casa. Agrupamiento: K-Means en el estrato «casa · 1-2», con 2 grupo(s).
 
 **Definición.** Rasgos típicos (percentiles 25 a 75): área de 51 a 96 m² (mediana 69 m²); 1 piso(s) en la unidad; piso 1 del edificio (mediana).
 
 Reglas principales del árbol de asignación (Paso 5):
 
-- pisos de la unidad ≤ 1 · posición: casa · bloque de estratos: 1-2 (93.944 viviendas de entrenamiento)
+- pisos de la unidad ≤ 1 · posición: casa · bloque de estratos: 1-2 (93.945 viviendas de entrenamiento)
 
 **Rasgos físicos.**
 
@@ -30,23 +30,23 @@ Reglas principales del árbol de asignación (Paso 5):
 
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
-| Techo de concreto | 18 % | 11 %–27 % |
+| Techo de concreto | 18 % | 11 %–26 % |
 | Techo de asbesto-cemento | 67 % | 58 %–76 % |
 | Techo metálico o de zinc | 14 % | 8 %–22 % |
 | Techo de otro material | 0 % | 0 %–0 % |
-| U del techo (W/m²K) | 4,34 | 2,92–5,91 |
-| Absortancia del techo | 0,64 | 0,40–0,86 |
+| U del techo (W/m²K) | 4,34 | 2,94–5,91 |
+| Absortancia del techo | 0,64 | 0,41–0,86 |
 | Muros de mampostería | 98 % | 96 %–100 % |
-| U del muro (W/m²K) | 2,78 | 2,11–3,69 |
-| Absortancia del muro | 0,67 | 0,52–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 193 | 130–290 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 2,06 | 0,65–4,59 |
+| U del muro (W/m²K) | 2,77 | 2,11–3,65 |
+| Absortancia del muro | 0,67 | 0,51–0,82 |
+| Capacidad C_m (kJ/K por m² de piso) | 194 | 130–292 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 2,07 | 0,65–4,71 |
 | Pisos con acabado | 77 % | 69 %–85 % |
 | Relación ventana-muro | 0,30 | 0,16–0,44 |
-| U de la ventana (W/m²K) | 5,89 | 5,48–6,31 |
-| Factor solar del vidrio | 0,82 | 0,77–0,86 |
+| U de la ventana (W/m²K) | 5,89 | 5,48–6,30 |
+| Factor solar del vidrio | 0,82 | 0,78–0,86 |
 | Factor de sombra | 0,90 | 0,77–0,99 |
-| Fracción climatizada (una) | 0,18 | 0,07–0,39 |
+| Fracción climatizada (una) | 0,18 | 0,07–0,38 |
 
 **Hogar.**
 
@@ -62,7 +62,7 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 75 % (± 6 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 1 % (± 1 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,99. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 
 **Limitaciones.**
 
@@ -73,7 +73,7 @@ Reglas principales del árbol de asignación (Paso 5):
 
 ## C12-2 · Casa, estratos 1-2
 
-**Identificación.** 9.132 viviendas (2,7 % de la ciudad) en 8.018 edificios. Posición: casa. Agrupamiento: K-Means en el estrato «casa · 1-2», con 2 grupo(s).
+**Identificación.** 9.168 viviendas (2,8 % de la ciudad) en 8.019 edificios. Posición: casa. Agrupamiento: K-Means en el estrato «casa · 1-2», con 2 grupo(s).
 
 **Definición.** Rasgos típicos (percentiles 25 a 75): área de 65 a 140 m² (mediana 104 m²); 2 piso(s) en la unidad; piso 1 del edificio (mediana).
 
@@ -88,10 +88,10 @@ Reglas principales del árbol de asignación (Paso 5):
 | Área (m²), mediana (P25–P75) | 104 (65–140) |
 | Pisos de la unidad, mediana | 2 |
 | Piso de la unidad, mediana | 1 |
-| En propiedad horizontal | 15,7 % |
+| En propiedad horizontal | 16,1 % |
 | En multifamiliar (4 pisos o más) | 0,0 % |
-| Época: antes de 1990 / 1990–2009 / 2010 o después | 40,9 / 25,5 / 33,6 % |
-| Estratos | E1 39,3 %, E2 60,7 % |
+| Época: antes de 1990 / 1990–2009 / 2010 o después | 40,7 / 25,8 / 33,5 % |
+| Estratos | E1 39,1 %, E2 60,9 % |
 
 **Carga simplificada (índice del Paso 3).** Mediana de 39.770 kWh térmicos al año por vivienda y 382 kWh por m².
 
@@ -100,22 +100,22 @@ Reglas principales del árbol de asignación (Paso 5):
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
 | Techo de concreto | 18 % | 11 %–26 % |
-| Techo de asbesto-cemento | 67 % | 58 %–76 % |
+| Techo de asbesto-cemento | 67 % | 57 %–76 % |
 | Techo metálico o de zinc | 14 % | 8 %–22 % |
 | Techo de otro material | 0 % | 0 %–0 % |
-| U del techo (W/m²K) | 4,33 | 2,94–5,91 |
-| Absortancia del techo | 0,64 | 0,41–0,86 |
+| U del techo (W/m²K) | 4,35 | 2,91–5,92 |
+| Absortancia del techo | 0,64 | 0,41–0,87 |
 | Muros de mampostería | 98 % | 95 %–100 % |
-| U del muro (W/m²K) | 2,79 | 2,11–3,70 |
+| U del muro (W/m²K) | 2,79 | 2,11–3,69 |
 | Absortancia del muro | 0,67 | 0,52–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 193 | 130–290 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 2,08 | 0,66–4,66 |
-| Pisos con acabado | 78 % | 69 %–85 % |
-| Relación ventana-muro | 0,30 | 0,16–0,43 |
-| U de la ventana (W/m²K) | 5,90 | 5,48–6,31 |
+| Capacidad C_m (kJ/K por m² de piso) | 193 | 129–291 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 2,11 | 0,63–4,83 |
+| Pisos con acabado | 77 % | 69 %–85 % |
+| Relación ventana-muro | 0,30 | 0,16–0,44 |
+| U de la ventana (W/m²K) | 5,89 | 5,49–6,31 |
 | Factor solar del vidrio | 0,82 | 0,77–0,86 |
 | Factor de sombra | 0,90 | 0,77–0,99 |
-| Fracción climatizada (una) | 0,14 | 0,04–0,45 |
+| Fracción climatizada (una) | 0,14 | 0,04–0,46 |
 
 **Hogar.**
 
@@ -131,7 +131,7 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con televisor plano | 76 % (± 5 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 1 % (± 1 puntos) |
 
-**Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
+**Calidad.** Estabilidad (Jaccard): 0,99. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 0,990 (0,0 % de las viviendas por debajo de 0,8; se confunde sobre todo con C12-1).
 
 **Limitaciones.**
 
@@ -142,13 +142,13 @@ Reglas principales del árbol de asignación (Paso 5):
 
 ## C34-1 · Casa, estratos 3-4
 
-**Identificación.** 48.239 viviendas (14,5 % de la ciudad) en 41.491 edificios. Posición: casa. Agrupamiento: K-Means en el estrato «casa · 3-4», con 1 grupo(s).
+**Identificación.** 48.436 viviendas (14,6 % de la ciudad) en 41.576 edificios. Posición: casa. Agrupamiento: K-Means en el estrato «casa · 3-4», con 1 grupo(s).
 
 **Definición.** Rasgos típicos (percentiles 25 a 75): área de 85 a 160 m² (mediana 116 m²); 1 piso(s) en la unidad; piso 1 del edificio (mediana).
 
 Reglas principales del árbol de asignación (Paso 5):
 
-- posición: casa · bloque de estratos: 3-4 (36.350 viviendas de entrenamiento)
+- posición: casa · bloque de estratos: 3-4 (36.477 viviendas de entrenamiento)
 
 **Rasgos físicos.**
 
@@ -157,9 +157,9 @@ Reglas principales del árbol de asignación (Paso 5):
 | Área (m²), mediana (P25–P75) | 116 (85–160) |
 | Pisos de la unidad, mediana | 1 |
 | Piso de la unidad, mediana | 1 |
-| En propiedad horizontal | 15,1 % |
+| En propiedad horizontal | 15,5 % |
 | En multifamiliar (4 pisos o más) | 0,0 % |
-| Época: antes de 1990 / 1990–2009 / 2010 o después | 27,6 / 26,0 / 46,4 % |
+| Época: antes de 1990 / 1990–2009 / 2010 o después | 27,5 / 26,0 / 46,5 % |
 | Estratos | E3 78,4 %, E4 21,6 % |
 
 **Carga simplificada (índice del Paso 3).** Mediana de 56.000 kWh térmicos al año por vivienda y 499 kWh por m².
@@ -169,21 +169,21 @@ Reglas principales del árbol de asignación (Paso 5):
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
 | Techo de concreto | 26 % | 11 %–43 % |
-| Techo de asbesto-cemento | 74 % | 56 %–89 % |
-| Techo metálico o de zinc | 1 % | 0 %–3 % |
+| Techo de asbesto-cemento | 74 % | 57 %–89 % |
+| Techo metálico o de zinc | 0 % | 0 %–3 % |
 | Techo de otro material | 0 % | 0 %–0 % |
-| U del techo (W/m²K) | 4,28 | 2,94–5,81 |
-| Absortancia del techo | 0,64 | 0,41–0,86 |
+| U del techo (W/m²K) | 4,28 | 2,95–5,80 |
+| Absortancia del techo | 0,64 | 0,40–0,87 |
 | Muros de mampostería | 100 % | 100 %–100 % |
-| U del muro (W/m²K) | 2,90 | 2,20–3,69 |
-| Absortancia del muro | 0,67 | 0,51–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 201 | 134–305 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 1,98 | 0,61–4,65 |
+| U del muro (W/m²K) | 2,89 | 2,19–3,69 |
+| Absortancia del muro | 0,67 | 0,52–0,82 |
+| Capacidad C_m (kJ/K por m² de piso) | 200 | 133–303 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 1,98 | 0,61–4,54 |
 | Pisos con acabado | 97 % | 89 %–100 % |
-| Relación ventana-muro | 0,30 | 0,16–0,43 |
-| U de la ventana (W/m²K) | 5,90 | 5,48–6,31 |
-| Factor solar del vidrio | 0,82 | 0,78–0,86 |
-| Factor de sombra | 0,73 | 0,58–0,88 |
+| Relación ventana-muro | 0,30 | 0,16–0,44 |
+| U de la ventana (W/m²K) | 5,89 | 5,49–6,31 |
+| Factor solar del vidrio | 0,82 | 0,77–0,86 |
+| Factor de sombra | 0,73 | 0,57–0,88 |
 | Fracción climatizada (una) | 0,11 | 0,04–0,24 |
 
 **Hogar.**
@@ -210,13 +210,13 @@ Reglas principales del árbol de asignación (Paso 5):
 
 ## C56-1 · Casa, estratos 5-6
 
-**Identificación.** 4.216 viviendas (1,3 % de la ciudad) en 2.973 edificios. Posición: casa. Agrupamiento: K-Means en el estrato «casa · 5-6», con 1 grupo(s).
+**Identificación.** 4.223 viviendas (1,3 % de la ciudad) en 2.977 edificios. Posición: casa. Agrupamiento: K-Means en el estrato «casa · 5-6», con 1 grupo(s).
 
 **Definición.** Rasgos típicos (percentiles 25 a 75): área de 153 a 304 m² (mediana 213 m²); 2 piso(s) en la unidad; piso 1 del edificio (mediana).
 
 Reglas principales del árbol de asignación (Paso 5):
 
-- posición: casa · bloque de estratos: 5-6 (3.616 viviendas de entrenamiento)
+- posición: casa · bloque de estratos: 5-6 (3.619 viviendas de entrenamiento)
 
 **Rasgos físicos.**
 
@@ -225,33 +225,33 @@ Reglas principales del árbol de asignación (Paso 5):
 | Área (m²), mediana (P25–P75) | 213 (153–304) |
 | Pisos de la unidad, mediana | 2 |
 | Piso de la unidad, mediana | 1 |
-| En propiedad horizontal | 35,6 % |
+| En propiedad horizontal | 35,7 % |
 | En multifamiliar (4 pisos o más) | 0,0 % |
-| Época: antes de 1990 / 1990–2009 / 2010 o después | 11,0 / 39,4 / 49,6 % |
+| Época: antes de 1990 / 1990–2009 / 2010 o después | 11,0 / 39,3 / 49,7 % |
 | Estratos | E5 68,8 %, E6 31,2 % |
 
-**Carga simplificada (índice del Paso 3).** Mediana de 91.026 kWh térmicos al año por vivienda y 389 kWh por m².
+**Carga simplificada (índice del Paso 3).** Mediana de 91.010 kWh térmicos al año por vivienda y 389 kWh por m².
 
 **Envolvente (priors del Paso 6).**
 
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
-| Techo de concreto | 72 % | 43 %–94 % |
-| Techo de asbesto-cemento | 27 % | 5 %–55 % |
+| Techo de concreto | 72 % | 42 %–94 % |
+| Techo de asbesto-cemento | 27 % | 5 %–56 % |
 | Techo metálico o de zinc | 1 % | 0 %–9 % |
 | Techo de otro material | 0 % | 0 %–0 % |
 | U del techo (W/m²K) | 4,04 | 3,39–5,29 |
-| Absortancia del techo | 0,68 | 0,42–0,88 |
+| Absortancia del techo | 0,68 | 0,42–0,89 |
 | Muros de mampostería | 100 % | 100 %–100 % |
-| U del muro (W/m²K) | 2,90 | 2,18–3,71 |
+| U del muro (W/m²K) | 2,90 | 2,20–3,71 |
 | Absortancia del muro | 0,67 | 0,52–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 241 | 147–330 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 1,33 | 0,52–3,33 |
+| Capacidad C_m (kJ/K por m² de piso) | 241 | 148–331 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 1,34 | 0,52–3,40 |
 | Pisos con acabado | 98 % | 89 %–100 % |
 | Relación ventana-muro | 0,30 | 0,23–0,37 |
-| U de la ventana (W/m²K) | 5,89 | 5,48–6,30 |
-| Factor solar del vidrio | 0,82 | 0,77–0,86 |
-| Factor de sombra | 0,73 | 0,57–0,88 |
+| U de la ventana (W/m²K) | 5,89 | 5,49–6,31 |
+| Factor solar del vidrio | 0,82 | 0,78–0,86 |
+| Factor de sombra | 0,73 | 0,58–0,88 |
 | Fracción climatizada (toda) | 0,90 | 0,77–0,99 |
 
 **Hogar.**
@@ -278,13 +278,13 @@ Reglas principales del árbol de asignación (Paso 5):
 
 ## S12-1 · Sin cubierta, estratos 1-2
 
-**Identificación.** 40.889 viviendas (12,3 % de la ciudad) en 2.403 edificios. Posición: sin cubierta (apartamento intermedio o primer piso con vivienda encima). Agrupamiento: K-Means en el estrato «sin cubierta · 1-2», con 1 grupo(s).
+**Identificación.** 39.976 viviendas (12,0 % de la ciudad) en 2.395 edificios. Posición: sin cubierta (apartamento intermedio o primer piso con vivienda encima). Agrupamiento: K-Means en el estrato «sin cubierta · 1-2», con 1 grupo(s).
 
 **Definición.** Rasgos típicos (percentiles 25 a 75): área de 42 a 56 m² (mediana 46 m²); 1 piso(s) en la unidad; piso 2 del edificio (mediana).
 
 Reglas principales del árbol de asignación (Paso 5):
 
-- posición: sin cubierta · bloque de estratos: 1-2 (24.772 viviendas de entrenamiento)
+- posición: sin cubierta · bloque de estratos: 1-2 (24.412 viviendas de entrenamiento)
 
 **Rasgos físicos.**
 
@@ -293,10 +293,10 @@ Reglas principales del árbol de asignación (Paso 5):
 | Área (m²), mediana (P25–P75) | 46 (42–56) |
 | Pisos de la unidad, mediana | 1 |
 | Piso de la unidad, mediana | 2 |
-| En propiedad horizontal | 81,1 % |
-| En multifamiliar (4 pisos o más) | 76,5 % |
-| Época: antes de 1990 / 1990–2009 / 2010 o después | 6,7 / 12,4 / 80,9 % |
-| Estratos | E1 83,2 %, E2 16,8 % |
+| En propiedad horizontal | 80,7 % |
+| En multifamiliar (4 pisos o más) | 76,1 % |
+| Época: antes de 1990 / 1990–2009 / 2010 o después | 6,6 / 12,5 / 80,9 % |
+| Estratos | E1 83,4 %, E2 16,6 % |
 
 **Carga simplificada (índice del Paso 3).** Mediana de 10.841 kWh térmicos al año por vivienda y 236 kWh por m².
 
@@ -305,16 +305,16 @@ Reglas principales del árbol de asignación (Paso 5):
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
 | Muros de mampostería | 99 % | 98 %–100 % |
-| U del muro (W/m²K) | 3,29 | 2,38–3,93 |
-| Absortancia del muro | 0,67 | 0,51–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 263 | 193–337 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 0,97 | 0,50–1,64 |
-| Pisos con acabado | 80 % | 74 %–86 % |
+| U del muro (W/m²K) | 3,30 | 2,38–3,94 |
+| Absortancia del muro | 0,67 | 0,52–0,82 |
+| Capacidad C_m (kJ/K por m² de piso) | 264 | 194–336 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 0,96 | 0,51–1,61 |
+| Pisos con acabado | 80 % | 74 %–85 % |
 | Relación ventana-muro | 0,30 | 0,16–0,44 |
-| U de la ventana (W/m²K) | 5,90 | 5,49–6,31 |
+| U de la ventana (W/m²K) | 5,89 | 5,48–6,30 |
 | Factor solar del vidrio | 0,82 | 0,78–0,86 |
 | Factor de sombra | 0,73 | 0,57–0,88 |
-| Fracción climatizada (una) | 0,22 | 0,12–0,31 |
+| Fracción climatizada (una) | 0,23 | 0,11–0,32 |
 | Techo | no expuesto (hay otra vivienda encima) | |
 
 **Hogar.**
@@ -341,13 +341,13 @@ Reglas principales del árbol de asignación (Paso 5):
 
 ## S34-1 · Sin cubierta, estratos 3-4
 
-**Identificación.** 58.846 viviendas (17,7 % de la ciudad) en 5.114 edificios. Posición: sin cubierta (apartamento intermedio o primer piso con vivienda encima). Agrupamiento: K-Means en el estrato «sin cubierta · 3-4», con 1 grupo(s).
+**Identificación.** 57.711 viviendas (17,4 % de la ciudad) en 5.019 edificios. Posición: sin cubierta (apartamento intermedio o primer piso con vivienda encima). Agrupamiento: K-Means en el estrato «sin cubierta · 3-4», con 1 grupo(s).
 
 **Definición.** Rasgos típicos (percentiles 25 a 75): área de 53 a 86 m² (mediana 68 m²); 1 piso(s) en la unidad; piso 4 del edificio (mediana).
 
 Reglas principales del árbol de asignación (Paso 5):
 
-- posición: sin cubierta · bloque de estratos: 3-4 (48.933 viviendas de entrenamiento)
+- posición: sin cubierta · bloque de estratos: 3-4 (48.032 viviendas de entrenamiento)
 
 **Rasgos físicos.**
 
@@ -357,9 +357,9 @@ Reglas principales del árbol de asignación (Paso 5):
 | Pisos de la unidad, mediana | 1 |
 | Piso de la unidad, mediana | 4 |
 | En propiedad horizontal | 98,4 % |
-| En multifamiliar (4 pisos o más) | 87,3 % |
-| Época: antes de 1990 / 1990–2009 / 2010 o después | 8,0 / 22,6 / 69,3 % |
-| Estratos | E3 45,1 %, E4 54,9 % |
+| En multifamiliar (4 pisos o más) | 87,4 % |
+| Época: antes de 1990 / 1990–2009 / 2010 o después | 8,0 / 22,7 / 69,4 % |
+| Estratos | E3 44,9 %, E4 55,1 % |
 
 **Carga simplificada (índice del Paso 3).** Mediana de 14.947 kWh térmicos al año por vivienda y 219 kWh por m².
 
@@ -368,16 +368,16 @@ Reglas principales del árbol de asignación (Paso 5):
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
 | Muros de mampostería | 99 % | 97 %–100 % |
-| U del muro (W/m²K) | 3,00 | 2,25–3,77 |
-| Absortancia del muro | 0,67 | 0,52–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 264 | 193–336 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 0,96 | 0,50–1,64 |
+| U del muro (W/m²K) | 3,01 | 2,25–3,77 |
+| Absortancia del muro | 0,67 | 0,51–0,82 |
+| Capacidad C_m (kJ/K por m² de piso) | 263 | 193–337 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 0,97 | 0,50–1,63 |
 | Pisos con acabado | 100 % | 99 %–100 % |
 | Relación ventana-muro | 0,17 | 0,09–0,26 |
-| U de la ventana (W/m²K) | 5,90 | 5,48–6,32 |
+| U de la ventana (W/m²K) | 5,90 | 5,49–6,31 |
 | Factor solar del vidrio | 0,82 | 0,77–0,86 |
 | Factor de sombra | 0,73 | 0,57–0,88 |
-| Fracción climatizada (habitaciones) | 0,31 | 0,15–0,49 |
+| Fracción climatizada (habitaciones) | 0,31 | 0,15–0,50 |
 | Techo | no expuesto (hay otra vivienda encima) | |
 
 **Hogar.**
@@ -404,25 +404,25 @@ Reglas principales del árbol de asignación (Paso 5):
 
 ## S56-1 · Sin cubierta, estratos 5-6
 
-**Identificación.** 22.034 viviendas (6,6 % de la ciudad) en 1.549 edificios. Posición: sin cubierta (apartamento intermedio o primer piso con vivienda encima). Agrupamiento: K-Means en el estrato «sin cubierta · 5-6», con 1 grupo(s).
+**Identificación.** 21.742 viviendas (6,5 % de la ciudad) en 1.536 edificios. Posición: sin cubierta (apartamento intermedio o primer piso con vivienda encima). Agrupamiento: K-Means en el estrato «sin cubierta · 5-6», con 1 grupo(s).
 
-**Definición.** Rasgos típicos (percentiles 25 a 75): área de 84 a 161 m² (mediana 117 m²); 1 piso(s) en la unidad; piso 4 del edificio (mediana).
+**Definición.** Rasgos típicos (percentiles 25 a 75): área de 85 a 161 m² (mediana 117 m²); 1 piso(s) en la unidad; piso 4 del edificio (mediana).
 
 Reglas principales del árbol de asignación (Paso 5):
 
-- posición: sin cubierta · bloque de estratos: 5-6 (18.966 viviendas de entrenamiento)
+- posición: sin cubierta · bloque de estratos: 5-6 (18.696 viviendas de entrenamiento)
 
 **Rasgos físicos.**
 
 | Rasgo | Valor |
 | --- | --- |
-| Área (m²), mediana (P25–P75) | 117 (84–161) |
+| Área (m²), mediana (P25–P75) | 117 (85–161) |
 | Pisos de la unidad, mediana | 1 |
 | Piso de la unidad, mediana | 4 |
 | En propiedad horizontal | 98,7 % |
-| En multifamiliar (4 pisos o más) | 93,1 % |
-| Época: antes de 1990 / 1990–2009 / 2010 o después | 4,1 / 33,6 / 62,3 % |
-| Estratos | E5 52,3 %, E6 47,7 % |
+| En multifamiliar (4 pisos o más) | 93,0 % |
+| Época: antes de 1990 / 1990–2009 / 2010 o después | 4,0 / 33,7 / 62,3 % |
+| Estratos | E5 51,9 %, E6 48,1 % |
 
 **Carga simplificada (índice del Paso 3).** Mediana de 23.372 kWh térmicos al año por vivienda y 199 kWh por m².
 
@@ -431,15 +431,15 @@ Reglas principales del árbol de asignación (Paso 5):
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
 | Muros de mampostería | 100 % | 100 %–100 % |
-| U del muro (W/m²K) | 3,00 | 2,24–3,75 |
-| Absortancia del muro | 0,67 | 0,51–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 265 | 196–336 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 0,96 | 0,50–1,63 |
+| U del muro (W/m²K) | 3,00 | 2,26–3,75 |
+| Absortancia del muro | 0,67 | 0,52–0,82 |
+| Capacidad C_m (kJ/K por m² de piso) | 266 | 196–337 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 0,95 | 0,50–1,61 |
 | Pisos con acabado | 100 % | 97 %–100 % |
 | Relación ventana-muro | 0,30 | 0,23–0,37 |
-| U de la ventana (W/m²K) | 5,89 | 5,49–6,31 |
+| U de la ventana (W/m²K) | 5,89 | 5,48–6,30 |
 | Factor solar del vidrio | 0,82 | 0,77–0,86 |
-| Factor de sombra | 0,73 | 0,57–0,88 |
+| Factor de sombra | 0,73 | 0,58–0,88 |
 | Fracción climatizada (toda) | 0,90 | 0,77–0,99 |
 | Techo | no expuesto (hay otra vivienda encima) | |
 
@@ -453,7 +453,7 @@ Reglas principales del árbol de asignación (Paso 5):
 | Hogares con aire acondicionado | 90 % (± 7 puntos) |
 | Hogares con ventilador | 98 % (± 3 puntos) |
 | Hogares con nevera | 100 % (± 0 puntos) |
-| Hogares con lavadora | 94 % (± 6 puntos) |
+| Hogares con lavadora | 95 % (± 6 puntos) |
 | Hogares con televisor plano | 97 % (± 4 puntos) |
 | Hogares con calentador de agua o ducha eléctrica | 35 % (± 13 puntos) |
 
@@ -466,46 +466,46 @@ Reglas principales del árbol de asignación (Paso 5):
 
 ## U12-1 · Último piso, estratos 1-2
 
-**Identificación.** 11.992 viviendas (3,6 % de la ciudad) en 5.443 edificios. Posición: último piso. Agrupamiento: K-Means en el estrato «último piso · 1-2», con 1 grupo(s).
+**Identificación.** 12.857 viviendas (3,9 % de la ciudad) en 5.443 edificios. Posición: último piso. Agrupamiento: K-Means en el estrato «último piso · 1-2», con 1 grupo(s).
 
-**Definición.** Rasgos típicos (percentiles 25 a 75): área de 43 a 106 m² (mediana 55 m²); 1 piso(s) en la unidad; piso 4 del edificio (mediana).
+**Definición.** Rasgos típicos (percentiles 25 a 75): área de 42 a 100 m² (mediana 53 m²); 1 piso(s) en la unidad; piso 4 del edificio (mediana).
 
 Reglas principales del árbol de asignación (Paso 5):
 
-- posición: último piso · bloque de estratos: 1-2 (9.417 viviendas de entrenamiento)
+- posición: último piso · bloque de estratos: 1-2 (9.776 viviendas de entrenamiento)
 
 **Rasgos físicos.**
 
 | Rasgo | Valor |
 | --- | --- |
-| Área (m²), mediana (P25–P75) | 55 (43–106) |
+| Área (m²), mediana (P25–P75) | 53 (42–100) |
 | Pisos de la unidad, mediana | 1 |
 | Piso de la unidad, mediana | 4 |
-| En propiedad horizontal | 61,7 % |
-| En multifamiliar (4 pisos o más) | 51,6 % |
-| Época: antes de 1990 / 1990–2009 / 2010 o después | 20,2 / 19,5 / 60,3 % |
-| Estratos | E1 60,5 %, E2 39,5 % |
+| En propiedad horizontal | 64,3 % |
+| En multifamiliar (4 pisos o más) | 54,9 % |
+| Época: antes de 1990 / 1990–2009 / 2010 o después | 19,5 / 18,3 / 62,1 % |
+| Estratos | E1 61,6 %, E2 38,4 % |
 
-**Carga simplificada (índice del Paso 3).** Mediana de 28.808 kWh térmicos al año por vivienda y 529 kWh por m².
+**Carga simplificada (índice del Paso 3).** Mediana de 27.836 kWh térmicos al año por vivienda y 533 kWh por m².
 
 **Envolvente (priors del Paso 6).**
 
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
-| Techo de concreto | 69 % | 65 %–73 % |
-| Techo de asbesto-cemento | 28 % | 23 %–32 % |
-| Techo metálico o de zinc | 3 % | 2 %–6 % |
+| Techo de concreto | 71 % | 67 %–75 % |
+| Techo de asbesto-cemento | 26 % | 22 %–30 % |
+| Techo metálico o de zinc | 3 % | 1 %–6 % |
 | Techo de otro material | 0 % | 0 %–0 % |
-| U del techo (W/m²K) | 4,07 | 3,37–5,43 |
-| Absortancia del techo | 0,68 | 0,42–0,88 |
+| U del techo (W/m²K) | 4,05 | 3,38–5,30 |
+| Absortancia del techo | 0,68 | 0,42–0,89 |
 | Muros de mampostería | 99 % | 98 %–100 % |
-| U del muro (W/m²K) | 3,28 | 2,35–3,94 |
+| U del muro (W/m²K) | 3,29 | 2,37–3,94 |
 | Absortancia del muro | 0,67 | 0,52–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 237 | 143–329 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 1,40 | 0,53–3,50 |
+| Capacidad C_m (kJ/K por m² de piso) | 239 | 146–329 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 1,36 | 0,52–3,39 |
 | Pisos con acabado | 80 % | 74 %–86 % |
-| Relación ventana-muro | 0,30 | 0,17–0,44 |
-| U de la ventana (W/m²K) | 5,90 | 5,49–6,31 |
+| Relación ventana-muro | 0,30 | 0,16–0,44 |
+| U de la ventana (W/m²K) | 5,89 | 5,49–6,31 |
 | Factor solar del vidrio | 0,82 | 0,77–0,86 |
 | Factor de sombra | 0,73 | 0,57–0,88 |
 | Fracción climatizada (una) | 0,18 | 0,05–0,30 |
@@ -535,49 +535,49 @@ Reglas principales del árbol de asignación (Paso 5):
 
 ## U34-1 · Último piso, estratos 3-4
 
-**Identificación.** 14.105 viviendas (4,2 % de la ciudad) en 6.325 edificios. Posición: último piso. Agrupamiento: K-Means en el estrato «último piso · 3-4», con 1 grupo(s).
+**Identificación.** 15.043 viviendas (4,5 % de la ciudad) en 6.328 edificios. Posición: último piso. Agrupamiento: K-Means en el estrato «último piso · 3-4», con 1 grupo(s).
 
-**Definición.** Rasgos típicos (percentiles 25 a 75): área de 62 a 112 m² (mediana 81 m²); 1 piso(s) en la unidad; piso 3 del edificio (mediana).
+**Definición.** Rasgos típicos (percentiles 25 a 75): área de 61 a 110 m² (mediana 80 m²); 1 piso(s) en la unidad; piso 3 del edificio (mediana).
 
 Reglas principales del árbol de asignación (Paso 5):
 
-- posición: último piso · bloque de estratos: 3-4 (10.611 viviendas de entrenamiento)
+- posición: último piso · bloque de estratos: 3-4 (11.385 viviendas de entrenamiento)
 
 **Rasgos físicos.**
 
 | Rasgo | Valor |
 | --- | --- |
-| Área (m²), mediana (P25–P75) | 81 (62–112) |
+| Área (m²), mediana (P25–P75) | 80 (61–110) |
 | Pisos de la unidad, mediana | 1 |
 | Piso de la unidad, mediana | 3 |
-| En propiedad horizontal | 84,7 % |
-| En multifamiliar (4 pisos o más) | 50,8 % |
-| Época: antes de 1990 / 1990–2009 / 2010 o después | 17,0 / 29,4 / 53,6 % |
-| Estratos | E3 54,1 %, E4 45,9 % |
+| En propiedad horizontal | 85,6 % |
+| En multifamiliar (4 pisos o más) | 53,7 % |
+| Época: antes de 1990 / 1990–2009 / 2010 o después | 16,8 / 28,9 / 54,3 % |
+| Estratos | E3 53,8 %, E4 46,2 % |
 
-**Carga simplificada (índice del Paso 3).** Mediana de 39.903 kWh térmicos al año por vivienda y 514 kWh por m².
+**Carga simplificada (índice del Paso 3).** Mediana de 39.401 kWh térmicos al año por vivienda y 514 kWh por m².
 
 **Envolvente (priors del Paso 6).**
 
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
-| Techo de concreto | 86 % | 80 %–91 % |
-| Techo de asbesto-cemento | 13 % | 8 %–19 % |
+| Techo de concreto | 86 % | 81 %–91 % |
+| Techo de asbesto-cemento | 12 % | 8 %–17 % |
 | Techo metálico o de zinc | 0 % | 0 %–0 % |
-| Techo de otro material | 1 % | 0 %–4 % |
-| U del techo (W/m²K) | 3,97 | 3,42–4,82 |
+| Techo de otro material | 1 % | 0 %–3 % |
+| U del techo (W/m²K) | 3,97 | 3,43–4,80 |
 | Absortancia del techo | 0,69 | 0,43–0,89 |
 | Muros de mampostería | 99 % | 97 %–100 % |
-| U del muro (W/m²K) | 3,01 | 2,25–3,77 |
-| Absortancia del muro | 0,67 | 0,51–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 251 | 158–332 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 1,15 | 0,52–2,51 |
+| U del muro (W/m²K) | 3,01 | 2,25–3,76 |
+| Absortancia del muro | 0,67 | 0,51–0,81 |
+| Capacidad C_m (kJ/K por m² de piso) | 253 | 162–333 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 1,15 | 0,50–2,54 |
 | Pisos con acabado | 100 % | 99 %–100 % |
-| Relación ventana-muro | 0,17 | 0,08–0,26 |
-| U de la ventana (W/m²K) | 5,89 | 5,48–6,30 |
+| Relación ventana-muro | 0,17 | 0,09–0,26 |
+| U de la ventana (W/m²K) | 5,90 | 5,49–6,32 |
 | Factor solar del vidrio | 0,82 | 0,77–0,86 |
 | Factor de sombra | 0,73 | 0,57–0,88 |
-| Fracción climatizada (habitaciones) | 0,26 | 0,10–0,45 |
+| Fracción climatizada (habitaciones) | 0,26 | 0,11–0,46 |
 
 **Hogar.**
 
@@ -604,48 +604,48 @@ Reglas principales del árbol de asignación (Paso 5):
 
 ## U56-1 · Último piso, estratos 5-6
 
-**Identificación.** 3.800 viviendas (1,1 % de la ciudad) en 1.643 edificios. Posición: último piso. Agrupamiento: K-Means en el estrato «último piso · 5-6», con 1 grupo(s).
+**Identificación.** 4.085 viviendas (1,2 % de la ciudad) en 1.648 edificios. Posición: último piso. Agrupamiento: K-Means en el estrato «último piso · 5-6», con 1 grupo(s).
 
-**Definición.** Rasgos típicos (percentiles 25 a 75): área de 94 a 194 m² (mediana 126 m²); 1 piso(s) en la unidad; piso 5 del edificio (mediana).
+**Definición.** Rasgos típicos (percentiles 25 a 75): área de 92 a 190 m² (mediana 122 m²); 1 piso(s) en la unidad; piso 5 del edificio (mediana).
 
 Reglas principales del árbol de asignación (Paso 5):
 
-- posición: último piso · bloque de estratos: 5-6 (3.192 viviendas de entrenamiento)
+- posición: último piso · bloque de estratos: 5-6 (3.459 viviendas de entrenamiento)
 
 **Rasgos físicos.**
 
 | Rasgo | Valor |
 | --- | --- |
-| Área (m²), mediana (P25–P75) | 126 (94–194) |
+| Área (m²), mediana (P25–P75) | 122 (92–190) |
 | Pisos de la unidad, mediana | 1 |
 | Piso de la unidad, mediana | 5 |
-| En propiedad horizontal | 90,6 % |
-| En multifamiliar (4 pisos o más) | 80,0 % |
-| Época: antes de 1990 / 1990–2009 / 2010 o después | 8,7 / 40,7 / 50,6 % |
-| Estratos | E5 63,4 %, E6 36,6 % |
+| En propiedad horizontal | 91,3 % |
+| En multifamiliar (4 pisos o más) | 81,3 % |
+| Época: antes de 1990 / 1990–2009 / 2010 o después | 8,6 / 39,8 / 51,6 % |
+| Estratos | E5 64,9 %, E6 35,1 % |
 
-**Carga simplificada (índice del Paso 3).** Mediana de 59.190 kWh térmicos al año por vivienda y 496 kWh por m².
+**Carga simplificada (índice del Paso 3).** Mediana de 57.412 kWh térmicos al año por vivienda y 497 kWh por m².
 
 **Envolvente (priors del Paso 6).**
 
 | Parámetro | Media | Intervalo del 90 % |
 | --- | --- | --- |
-| Techo de concreto | 98 % | 95 %–100 % |
-| Techo de asbesto-cemento | 2 % | 0 %–5 % |
+| Techo de concreto | 98 % | 96 %–100 % |
+| Techo de asbesto-cemento | 2 % | 0 %–4 % |
 | Techo metálico o de zinc | 0 % | 0 %–0 % |
 | Techo de otro material | 0 % | 0 %–0 % |
-| U del techo (W/m²K) | 3,92 | 3,45–4,58 |
+| U del techo (W/m²K) | 3,91 | 3,45–4,56 |
 | Absortancia del techo | 0,70 | 0,43–0,89 |
 | Muros de mampostería | 100 % | 100 %–100 % |
-| U del muro (W/m²K) | 3,00 | 2,25–3,76 |
-| Absortancia del muro | 0,67 | 0,52–0,82 |
-| Capacidad C_m (kJ/K por m² de piso) | 263 | 191–335 |
-| Infiltración con ventanas cerradas (renovaciones por hora) | 0,98 | 0,50–1,69 |
-| Pisos con acabado | 100 % | 98 %–100 % |
+| U del muro (W/m²K) | 3,00 | 2,25–3,75 |
+| Absortancia del muro | 0,67 | 0,51–0,82 |
+| Capacidad C_m (kJ/K por m² de piso) | 264 | 192–337 |
+| Infiltración con ventanas cerradas (renovaciones por hora) | 0,97 | 0,50–1,63 |
+| Pisos con acabado | 100 % | 97 %–100 % |
 | Relación ventana-muro | 0,30 | 0,23–0,37 |
 | U de la ventana (W/m²K) | 5,89 | 5,48–6,31 |
-| Factor solar del vidrio | 0,82 | 0,78–0,86 |
-| Factor de sombra | 0,73 | 0,57–0,88 |
+| Factor solar del vidrio | 0,82 | 0,77–0,86 |
+| Factor de sombra | 0,73 | 0,58–0,88 |
 | Fracción climatizada (toda) | 0,90 | 0,77–0,99 |
 
 **Hogar.**
@@ -654,13 +654,13 @@ Reglas principales del árbol de asignación (Paso 5):
 | --- | --- |
 | Habitaciones según el catastro, mediana (media) | 3 (3,1) |
 | Dormitorios según la ECV, media | 2,1 (± 0,4) |
-| Personas por hogar según la ECV | 2,9 (± 0,5) |
+| Personas por hogar según la ECV | 2,8 (± 0,5) |
 | Hogares con aire acondicionado | 88 % (± 9 puntos) |
 | Hogares con ventilador | 98 % (± 4 puntos) |
 | Hogares con nevera | 100 % (± 0 puntos) |
 | Hogares con lavadora | 93 % (± 8 puntos) |
 | Hogares con televisor plano | 96 % (± 5 puntos) |
-| Hogares con calentador de agua o ducha eléctrica | 30 % (± 12 puntos) |
+| Hogares con calentador de agua o ducha eléctrica | 29 % (± 11 puntos) |
 
 **Calidad.** Estabilidad (Jaccard): 1,00. Fidelidad a la regla de asignación (recall en la prueba): árbol 1,000, Random Forest 1,000. Probabilidad media de pertenecer a este arquetipo al repetir el agrupamiento en las submuestras de estabilidad: 1,000 (0,0 % de las viviendas por debajo de 0,8).
 

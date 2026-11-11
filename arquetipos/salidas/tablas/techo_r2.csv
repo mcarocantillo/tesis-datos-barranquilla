@@ -1,0 +1,7 @@
+﻿solucion,medida,escenario,R2_posicion_bloque,R2_posicion_bloque_techo,R2_arquetipos,R2_arquetipos_techo,ganancia_techo,techo_entraria
+por_vivienda,total,comun,0.4,0.4,0.6299,0.63,0.0001,False
+por_vivienda,total,moda,0.3983,0.4019,0.622,0.6261,0.0042,False
+por_vivienda,total,cielo_raso,0.3584,0.4152,0.5259,0.593,0.0671,True
+por_m2,por_m2,comun,0.9039,0.9039,0.9264,0.9264,0.0,False
+por_m2,por_m2,moda,0.8881,0.9041,0.9101,0.9264,0.0163,False
+por_m2,por_m2,cielo_raso,0.6235,0.8896,0.6325,0.9017,0.2691,True

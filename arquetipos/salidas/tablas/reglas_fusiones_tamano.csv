@@ -1,66 +1,66 @@
 ﻿etapa,celda,destino,viviendas
-juntar_epocas,baja_altura|casa|1990_2009|grande|5-6,todas las épocas,4032
-juntar_epocas,baja_altura|casa|1990_2009|mediana|3-4,todas las épocas,10810
+juntar_epocas,baja_altura|casa|1990_2009|grande|5-6,todas las épocas,4038
+juntar_epocas,baja_altura|casa|1990_2009|mediana|3-4,todas las épocas,10845
 juntar_epocas,baja_altura|casa|1990_2009|mediana|5-6,todas las épocas,100
-juntar_epocas,baja_altura|casa|1990_2009|pequena|3-4,todas las épocas,4567
-juntar_epocas,baja_altura|casa|1990_2009|pequena|5-6,todas las épocas,84
-juntar_epocas,baja_altura|sin_cubierta|1990_2009|grande|1-2,todas las épocas,1711
-juntar_epocas,baja_altura|sin_cubierta|1990_2009|grande|3-4,todas las épocas,3170
-juntar_epocas,baja_altura|sin_cubierta|1990_2009|grande|5-6,todas las épocas,1170
-juntar_epocas,baja_altura|sin_cubierta|1990_2009|mediana|1-2,todas las épocas,3319
-juntar_epocas,baja_altura|sin_cubierta|1990_2009|mediana|3-4,todas las épocas,2662
+juntar_epocas,baja_altura|casa|1990_2009|pequena|3-4,todas las épocas,4581
+juntar_epocas,baja_altura|casa|1990_2009|pequena|5-6,todas las épocas,85
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|grande|1-2,todas las épocas,1704
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|grande|3-4,todas las épocas,3018
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|grande|5-6,todas las épocas,1160
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|mediana|1-2,todas las épocas,3279
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|mediana|3-4,todas las épocas,2614
 juntar_epocas,baja_altura|sin_cubierta|1990_2009|mediana|5-6,todas las épocas,176
-juntar_epocas,baja_altura|sin_cubierta|1990_2009|pequena|1-2,todas las épocas,4589
-juntar_epocas,baja_altura|sin_cubierta|1990_2009|pequena|3-4,todas las épocas,1651
-juntar_epocas,baja_altura|sin_cubierta|1990_2009|pequena|5-6,todas las épocas,180
-juntar_epocas,baja_altura|ultimo_piso|1990_2009|grande|1-2,todas las épocas,3404
-juntar_epocas,baja_altura|ultimo_piso|1990_2009|grande|3-4,todas las épocas,3283
-juntar_epocas,baja_altura|ultimo_piso|1990_2009|grande|5-6,todas las épocas,600
-juntar_epocas,baja_altura|ultimo_piso|1990_2009|mediana|1-2,todas las épocas,1440
-juntar_epocas,baja_altura|ultimo_piso|1990_2009|mediana|3-4,todas las épocas,2532
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|pequena|1-2,todas las épocas,4584
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|pequena|3-4,todas las épocas,1632
+juntar_epocas,baja_altura|sin_cubierta|1990_2009|pequena|5-6,todas las épocas,179
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|grande|1-2,todas las épocas,3406
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|grande|3-4,todas las épocas,3287
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|grande|5-6,todas las épocas,604
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|mediana|1-2,todas las épocas,1441
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|mediana|3-4,todas las épocas,2545
 juntar_epocas,baja_altura|ultimo_piso|1990_2009|mediana|5-6,todas las épocas,116
-juntar_epocas,baja_altura|ultimo_piso|1990_2009|pequena|1-2,todas las épocas,955
-juntar_epocas,baja_altura|ultimo_piso|1990_2009|pequena|3-4,todas las épocas,1127
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|pequena|1-2,todas las épocas,956
+juntar_epocas,baja_altura|ultimo_piso|1990_2009|pequena|3-4,todas las épocas,1132
 juntar_epocas,baja_altura|ultimo_piso|1990_2009|pequena|5-6,todas las épocas,44
 juntar_epocas,multifamiliar|sin_cubierta|1990_2009|grande|1-2,todas las épocas,83
-juntar_epocas,multifamiliar|sin_cubierta|1990_2009|grande|3-4,todas las épocas,7179
-juntar_epocas,multifamiliar|sin_cubierta|1990_2009|mediana|1-2,todas las épocas,4521
-juntar_epocas,multifamiliar|sin_cubierta|1990_2009|mediana|5-6,todas las épocas,4631
-juntar_epocas,multifamiliar|sin_cubierta|1990_2009|pequena|1-2,todas las épocas,26666
-juntar_epocas,multifamiliar|sin_cubierta|1990_2009|pequena|3-4,todas las épocas,17980
-juntar_epocas,multifamiliar|sin_cubierta|1990_2009|pequena|5-6,todas las épocas,2328
-juntar_epocas,multifamiliar|sin_cubierta|antes_1990|grande|5-6,todas las épocas,13549
-juntar_epocas,multifamiliar|sin_cubierta|antes_1990|mediana|3-4,todas las épocas,26204
+juntar_epocas,multifamiliar|sin_cubierta|1990_2009|grande|3-4,todas las épocas,6994
+juntar_epocas,multifamiliar|sin_cubierta|1990_2009|mediana|1-2,todas las épocas,4475
+juntar_epocas,multifamiliar|sin_cubierta|1990_2009|mediana|5-6,todas las épocas,4490
+juntar_epocas,multifamiliar|sin_cubierta|1990_2009|pequena|1-2,todas las épocas,25851
+juntar_epocas,multifamiliar|sin_cubierta|1990_2009|pequena|3-4,todas las épocas,17554
+juntar_epocas,multifamiliar|sin_cubierta|1990_2009|pequena|5-6,todas las épocas,2294
+juntar_epocas,multifamiliar|sin_cubierta|antes_1990|grande|5-6,todas las épocas,13443
+juntar_epocas,multifamiliar|sin_cubierta|antes_1990|mediana|3-4,todas las épocas,25899
 juntar_epocas,multifamiliar|ultimo_piso|1990_2009|grande|1-2,todas las épocas,56
-juntar_epocas,multifamiliar|ultimo_piso|1990_2009|grande|3-4,todas las épocas,1830
-juntar_epocas,multifamiliar|ultimo_piso|1990_2009|grande|5-6,todas las épocas,2213
-juntar_epocas,multifamiliar|ultimo_piso|1990_2009|mediana|1-2,todas las épocas,898
-juntar_epocas,multifamiliar|ultimo_piso|1990_2009|mediana|3-4,todas las épocas,3612
-juntar_epocas,multifamiliar|ultimo_piso|1990_2009|mediana|5-6,todas las épocas,569
-juntar_epocas,multifamiliar|ultimo_piso|1990_2009|pequena|1-2,todas las épocas,5239
-juntar_epocas,multifamiliar|ultimo_piso|1990_2009|pequena|3-4,todas las épocas,1721
-juntar_epocas,multifamiliar|ultimo_piso|1990_2009|pequena|5-6,todas las épocas,258
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|grande|3-4,todas las épocas,2015
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|grande|5-6,todas las épocas,2319
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|mediana|1-2,todas las épocas,944
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|mediana|3-4,todas las épocas,3917
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|mediana|5-6,todas las épocas,710
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|pequena|1-2,todas las épocas,6054
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|pequena|3-4,todas las épocas,2147
+juntar_epocas,multifamiliar|ultimo_piso|1990_2009|pequena|5-6,todas las épocas,292
 tamano_vecino,baja_altura|ultimo_piso|todas|pequena|5-6,baja_altura|ultimo_piso|5-6|mediana,44
 tamano_vecino,multifamiliar|ultimo_piso|todas|grande|1-2,multifamiliar|ultimo_piso|1-2|mediana,56
 tamano_vecino,multifamiliar|sin_cubierta|todas|grande|1-2,multifamiliar|sin_cubierta|1-2|mediana,83
-tamano_vecino,baja_altura|casa|todas|pequena|5-6,baja_altura|casa|5-6|mediana,84
+tamano_vecino,baja_altura|casa|todas|pequena|5-6,baja_altura|casa|5-6|mediana,85
 tamano_vecino,baja_altura|ultimo_piso|todas|pequena+mediana|5-6,baja_altura|ultimo_piso|5-6|grande,160
 tamano_vecino,baja_altura|sin_cubierta|todas|mediana|5-6,baja_altura|sin_cubierta|5-6|grande,176
-tamano_vecino,baja_altura|sin_cubierta|todas|pequena|5-6,baja_altura|sin_cubierta|5-6|mediana+grande,180
-tamano_vecino,baja_altura|casa|todas|pequena+mediana|5-6,baja_altura|casa|5-6|grande,184
-tamano_vecino,multifamiliar|ultimo_piso|todas|pequena|5-6,multifamiliar|ultimo_piso|5-6|mediana,258
-tamano_vecino,multifamiliar|ultimo_piso|todas|pequena+mediana|5-6,multifamiliar|ultimo_piso|5-6|grande,827
-tamano_vecino,multifamiliar|ultimo_piso|todas|mediana+grande|1-2,multifamiliar|ultimo_piso|1-2|pequena,954
-tamano_vecino,baja_altura|ultimo_piso|todas|pequena|1-2,baja_altura|ultimo_piso|1-2|mediana,955
-tamano_vecino,baja_altura|ultimo_piso|todas|pequena|3-4,baja_altura|ultimo_piso|3-4|mediana,1127
-tamano_vecino,baja_altura|sin_cubierta|todas|pequena|3-4,baja_altura|sin_cubierta|3-4|mediana,1651
-tamano_vecino,baja_altura|sin_cubierta|todas|grande|1-2,baja_altura|sin_cubierta|1-2|mediana,1711
-tamano_vecino,multifamiliar|ultimo_piso|todas|pequena|3-4,multifamiliar|ultimo_piso|3-4|mediana,1721
-tamano_vecino,multifamiliar|ultimo_piso|todas|grande|3-4,multifamiliar|ultimo_piso|3-4|pequena+mediana,1830
-tamano_vecino,multifamiliar|sin_cubierta|todas|pequena|5-6,multifamiliar|sin_cubierta|5-6|mediana,2328
-tamano_vecino,baja_altura|ultimo_piso|todas|pequena+mediana|1-2,baja_altura|ultimo_piso|1-2|grande,2395
-tamano_vecino,baja_altura|sin_cubierta|todas|grande|3-4,baja_altura|sin_cubierta|3-4|pequena+mediana,3170
-tamano_vecino,baja_altura|ultimo_piso|todas|grande|3-4,baja_altura|ultimo_piso|3-4|pequena+mediana,3283
-bloque_vecino,baja_altura|ultimo_piso|todas|pequena+mediana+grande|5-6,baja_altura|ultimo_piso|pequena+mediana+grande|3-4,760
-bloque_vecino,baja_altura|sin_cubierta|todas|pequena+mediana+grande|5-6,baja_altura|sin_cubierta|pequena+mediana+grande|3-4,1526
-bloque_vecino,multifamiliar|ultimo_piso|todas|pequena+mediana+grande|5-6,multifamiliar|ultimo_piso|pequena+mediana+grande|3-4,3040
+tamano_vecino,baja_altura|sin_cubierta|todas|pequena|5-6,baja_altura|sin_cubierta|5-6|mediana+grande,179
+tamano_vecino,baja_altura|casa|todas|pequena+mediana|5-6,baja_altura|casa|5-6|grande,185
+tamano_vecino,multifamiliar|ultimo_piso|todas|pequena|5-6,multifamiliar|ultimo_piso|5-6|mediana,292
+tamano_vecino,baja_altura|ultimo_piso|todas|pequena|1-2,baja_altura|ultimo_piso|1-2|mediana,956
+tamano_vecino,multifamiliar|ultimo_piso|todas|mediana+grande|1-2,multifamiliar|ultimo_piso|1-2|pequena,1000
+tamano_vecino,multifamiliar|ultimo_piso|todas|pequena+mediana|5-6,multifamiliar|ultimo_piso|5-6|grande,1002
+tamano_vecino,baja_altura|ultimo_piso|todas|pequena|3-4,baja_altura|ultimo_piso|3-4|mediana,1132
+tamano_vecino,baja_altura|sin_cubierta|todas|pequena|3-4,baja_altura|sin_cubierta|3-4|mediana,1632
+tamano_vecino,baja_altura|sin_cubierta|todas|grande|1-2,baja_altura|sin_cubierta|1-2|mediana,1704
+tamano_vecino,multifamiliar|ultimo_piso|todas|grande|3-4,multifamiliar|ultimo_piso|3-4|mediana,2015
+tamano_vecino,multifamiliar|ultimo_piso|todas|pequena|3-4,multifamiliar|ultimo_piso|3-4|mediana+grande,2147
+tamano_vecino,multifamiliar|sin_cubierta|todas|pequena|5-6,multifamiliar|sin_cubierta|5-6|mediana,2294
+tamano_vecino,baja_altura|ultimo_piso|todas|pequena+mediana|1-2,baja_altura|ultimo_piso|1-2|grande,2397
+tamano_vecino,baja_altura|sin_cubierta|todas|grande|3-4,baja_altura|sin_cubierta|3-4|pequena+mediana,3018
+tamano_vecino,baja_altura|ultimo_piso|todas|grande|3-4,baja_altura|ultimo_piso|3-4|pequena+mediana,3287
+bloque_vecino,baja_altura|ultimo_piso|todas|pequena+mediana+grande|5-6,baja_altura|ultimo_piso|pequena+mediana+grande|3-4,764
+bloque_vecino,baja_altura|sin_cubierta|todas|pequena+mediana+grande|5-6,baja_altura|sin_cubierta|pequena+mediana+grande|3-4,1515
+bloque_vecino,multifamiliar|ultimo_piso|todas|pequena+mediana+grande|5-6,multifamiliar|ultimo_piso|pequena+mediana+grande|3-4,3321

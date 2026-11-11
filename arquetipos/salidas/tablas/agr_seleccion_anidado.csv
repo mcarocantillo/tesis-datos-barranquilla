@@ -1,7 +1,7 @@
 ﻿medida,algoritmo,k,k_casa|1-2,k_casa|3-4,k_casa|5-6,k_sin_cubierta|1-2,k_sin_cubierta|3-4,k_sin_cubierta|5-6,k_ultimo_piso|1-2,k_ultimo_piso|3-4,k_ultimo_piso|5-6,R2,jaccard_ponderado,jaccard_min_grupos_grandes,silueta_gower,elegido,criterio,pasa_estabilidad
-por_vivienda,kmeans,15,4,4,1,1,1,1,1,1,1,0.5417906170641353,0.9690767106747823,0.9058271948225294,0.37484855760801705,False,,True
-por_vivienda,kprototypes,17,4,6,1,1,1,1,1,1,1,0.6610981889646941,0.9695868738860426,0.9732939435941463,0.18028048164797145,False,,True
-por_vivienda,jerarquico,9,1,1,1,1,1,1,1,1,1,0.4039374705471639,1.0,1.0,,True,Jaccard,True
-por_m2,kmeans,10,2,1,1,1,1,1,1,1,1,0.9274718990218069,1.0,1.0,0.5516030192375183,True,R2,True
-por_m2,kprototypes,10,2,1,1,1,1,1,1,1,1,0.9274718990218069,1.0,1.0,0.5516030192375183,False,,True
-por_m2,jerarquico,9,1,1,1,1,1,1,1,1,1,0.9051438872224833,1.0,1.0,,False,,True
+por_vivienda,kmeans,15,4,4,1,1,1,1,1,1,1,0.5340242074376215,0.980054139274477,0.974545242119357,0.3910417034946834,True,silueta,True
+por_vivienda,kprototypes,15,4,4,1,1,1,1,1,1,1,0.6299042988858745,0.9753162676907974,0.9164525316992984,0.16203165020508628,False,,True
+por_vivienda,jerarquico,9,1,1,1,1,1,1,1,1,1,0.3999726668222574,1.0,1.0,,False,,True
+por_m2,kmeans,10,2,1,1,1,1,1,1,1,1,0.9263812096625275,0.9979158702989156,0.9949095127610209,0.5056459307670593,False,,True
+por_m2,kprototypes,10,2,1,1,1,1,1,1,1,1,0.9263812096625275,1.0,1.0,0.5056459307670593,True,R2,True
+por_m2,jerarquico,9,1,1,1,1,1,1,1,1,1,0.9038807815136309,1.0,1.0,,False,,True

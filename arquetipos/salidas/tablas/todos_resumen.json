@@ -1,0 +1,22 @@
+{
+  "por_vivienda": {
+    "algoritmo": "kprototypes",
+    "K_final": 15,
+    "K_todos": 16,
+    "R2_final": 0.6299,
+    "R2_todos_mismo_k": 0.6203,
+    "R2_todos_k_propio": 0.6415,
+    "viviendas_que_conservan_arquetipo": 0.9482
+  },
+  "por_m2": {
+    "algoritmo": "kmeans",
+    "K_final": 10,
+    "K_todos": 10,
+    "R2_final": 0.9264,
+    "R2_todos_mismo_k": 0.9264,
+    "R2_todos_k_propio": 0.9264,
+    "viviendas_que_conservan_arquetipo": 1.0
+  },
+  "edificios_ajuste": 177093,
+  "tiempo_s": 32635
+}

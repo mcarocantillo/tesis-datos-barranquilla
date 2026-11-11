@@ -91,3 +91,26 @@ def eta2_estrato(y, grupos, estrato):
     ge = pd.Series(g) + "|" + pd.Series(np.asarray(estrato)).astype(str)
     sc_ge = ((y - y.groupby(ge.to_numpy()).transform("mean")) ** 2).sum()
     return (sc_g - sc_ge) / sc_g
+
+
+def eta2_por_grupo(y, grupos, estrato):
+    """η² del estrato dentro de cada grupo (Sección 4: se reporta y no decide)."""
+    d = pd.DataFrame({"y": np.asarray(y, float), "g": np.asarray(grupos).astype(str), "e": np.asarray(estrato)})
+    out = {}
+    for g, x in d.groupby("g"):
+        sc_g = ((x["y"] - x["y"].mean()) ** 2).sum()
+        sc_ge = ((x["y"] - x.groupby("e")["y"].transform("mean")) ** 2).sum()
+        out[g] = float((sc_g - sc_ge) / sc_g) if sc_g > 0 else float("nan")
+    return out
+
+
+def v_cramer(a, b):
+    """V de Cramér con la corrección de sesgo de Bergsma (2013) entre dos clasificaciones (Sección 4)."""
+    t = pd.crosstab(np.asarray(a), np.asarray(b)).to_numpy(float)
+    n = t.sum()
+    esperado = t.sum(1, keepdims=True) * t.sum(0, keepdims=True) / n
+    phi2 = ((t - esperado) ** 2 / esperado).sum() / n
+    r, k = t.shape
+    phi2c = max(0.0, phi2 - (k - 1) * (r - 1) / (n - 1))
+    rc, kc = r - (r - 1) ** 2 / (n - 1), k - (k - 1) ** 2 / (n - 1)
+    return float(np.sqrt(phi2c / min(kc - 1, rc - 1)))

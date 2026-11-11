@@ -1,0 +1,44 @@
+﻿comprobacion,valor,esperado,resultado
+viviendas en la base,332718,332718,pasa
+"misma longitud: base, arquetipos y cargas",1,1,pasa
+índice de la base es 0..n-1,1,1,pasa
+carga recalculada = guardada: cubierta,1,1,pasa
+carga recalculada = guardada: muros,1,1,pasa
+carga recalculada = guardada: ventanas,1,1,pasa
+carga recalculada = guardada: infiltracion_sensible,1,1,pasa
+carga recalculada = guardada: latente,1,1,pasa
+carga total = suma de componentes,1,1,pasa
+carga por m² = total / área,1,1,pasa
+por_vivienda: viviendas sin arquetipo,0,0,pasa
+por_vivienda: código = posición y bloque de la vivienda (%),100.0,100.0,pasa
+por_vivienda: arquetipos en la base,15,15,pasa
+por_vivienda: cada arquetipo en un solo estrato del algoritmo,1,1,pasa
+por_vivienda: conteos de la tabla = base,1,1,pasa
+por_vivienda: suma de la tabla,332718,332718,pasa
+por_vivienda: carga mediana de la tabla = base,1,1,pasa
+por_vivienda: R² de los arquetipos,0.6299,0.6299,pasa
+por_vivienda: R² de posición × bloque (referencia),0.4,,información
+por_m2: viviendas sin arquetipo,0,0,pasa
+por_m2: código = posición y bloque de la vivienda (%),100.0,100.0,pasa
+por_m2: arquetipos en la base,10,10,pasa
+por_m2: cada arquetipo en un solo estrato del algoritmo,1,1,pasa
+por_m2: conteos de la tabla = base,1,1,pasa
+por_m2: suma de la tabla,332718,332718,pasa
+por_m2: carga mediana de la tabla = base,1,1,pasa
+por_m2: R² de los arquetipos,0.9264,0.9264,pasa
+por_m2: R² de posición × bloque (referencia),0.9039,,información
+el ajuste con la submuestra reproduce la solución final: por_vivienda casa|1-2,1.0,1.0,pasa
+el ajuste con la submuestra reproduce la solución final: por_vivienda casa|3-4,1.0,1.0,pasa
+el ajuste con la submuestra reproduce la solución final: por_m2 casa|1-2,1.0,1.0,pasa
+por_vivienda: viviendas que conservan el arquetipo con todos los edificios (A10),0.9482,,información
+por_m2: viviendas que conservan el arquetipo con todos los edificios (A10),1.0,,información
+casas con piso de la unidad mayor que 1,0,0,pasa
+viviendas sin año: época asignada por la regla de la Sección 2,15509,,información
+viviendas con época después de la regla,332718,332718,pasa
+viviendas con año 1986 (%),11.6,,información
+año 1986 dentro de «antes de 1990» (%),68.8,,información
+"area_construida: mínimo, mediana y máximo","10, 73, 1971",,información
+"anio_construccion: mínimo, mediana y máximo","1930, 2010, 2026",,información
+"total_plantas: mínimo, mediana y máximo","1, 1, 35",,información
+"planta_ubicacion: mínimo, mediana y máximo","1, 1, 41",,información
+viviendas sin coordenadas (se asignan por sus atributos),10300,,información

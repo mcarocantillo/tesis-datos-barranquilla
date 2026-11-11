@@ -1,22 +1,22 @@
 {
   "arbol": {
-    "profundidad": 9,
-    "hojas": 79,
-    "f1_macro": 0.9909848944302722,
-    "exactitud": 0.996822472944969,
-    "log_loss": 0.014129835128466797,
-    "brier": 0.00453123021527976,
-    "f1_macro_bloques_min": 0.8521754956383653,
+    "profundidad": 8,
+    "hojas": 42,
+    "f1_macro": 0.9943059639759068,
+    "exactitud": 0.9969606262951877,
+    "log_loss": 0.008351246988146602,
+    "brier": 0.004751348459584627,
+    "f1_macro_bloques_min": 0.9800342018014603,
     "f1_macro_bloques_max": 1.0,
-    "concordancia_sin_coordenadas": 0.9992233009708738
+    "concordancia_sin_coordenadas": 0.9997087378640777
   },
   "bosque": {
     "config": "bosque_mf0.5_hoja1",
-    "f1_macro": 0.9997444055871947,
-    "exactitud": 0.9999232481387673,
-    "log_loss": 0.0003010146889415021,
-    "brier": 0.00011117490043578002,
-    "f1_macro_bloques_min": 0.9994601920123696,
+    "f1_macro": 0.9999705127682043,
+    "exactitud": 0.9999846496277535,
+    "log_loss": 0.00014476729157425876,
+    "brier": 3.1533416907582226e-05,
+    "f1_macro_bloques_min": 0.9999379526308079,
     "f1_macro_bloques_max": 1.0,
     "concordancia_sin_coordenadas": 1.0
   },

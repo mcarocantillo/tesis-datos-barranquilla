@@ -11,6 +11,7 @@ import pandas as pd
 RAIZ = Path(__file__).resolve().parents[1]
 ML = RAIZ.parent
 VIVIENDAS = ML / "e2_git" / "datos" / "viviendas.pkl.gz"
+PROCESADOS_E1 = ML / "e1_git" / "datos" / "procesados"  # número predial de cada vivienda, en el mismo orden
 CLIMA = ML / "compuerta_horaria" / "datos" / "crudos" / "openmeteo"
 TABLAS = RAIZ / "salidas" / "tablas"
 FIGURAS = RAIZ / "salidas" / "figuras"
@@ -28,6 +29,7 @@ TIPOS = ["baja_altura", "multifamiliar"]
 def cargar_viviendas():
     """Catastro limpio (332.718 viviendas) con las variables derivadas de la Fase 1."""
     v = pd.read_pickle(VIVIENDAS)
+    v["torre_id"] = _torre(v)
     v["tipo"] = np.where(v["uso"].astype(str).str.contains("Apartamentos 4"), "multifamiliar", "baja_altura")
     v["posicion"] = _posicion(v)
     v["epoca"] = _epoca(v)
@@ -46,10 +48,19 @@ def asignar_epoca_faltante(v):
     return sin_epoca
 
 
+def _torre(v):
+    """Edificio o torre de cada vivienda: los 24 primeros dígitos del número predial, que agregan el número de torre al
+    predio matriz de `edificio_id` (Nota 11). La base sigue el orden de los parquet del trabajo previo."""
+    npn = pd.concat([pd.read_parquet(PROCESADOS_E1 / f, columns=["numero_predial_nacional", "area_construida"])
+                     for f in ["dataset_modelado.parquet", "sin_coordenadas.parquet"]], ignore_index=True)
+    assert len(npn) == len(v) and np.allclose(npn["area_construida"], v["area_construida"], rtol=1e-5)
+    return pd.factorize(npn["numero_predial_nacional"].astype(str).str[:24])[0]
+
+
 def _posicion(v):
     p_ini = v["planta_ubicacion"]
     p_fin = p_ini + v["total_plantas"].fillna(1).clip(lower=1) - 1
-    techo = p_fin.groupby(v["edificio_id"]).transform("max")
+    techo = p_fin.groupby(v["torre_id"]).transform("max")  # el techo de la torre, no del predio matriz (Nota 11)
     arriba = p_fin >= techo
     pos = np.select([arriba & (p_ini <= 1), arriba & (p_ini > 1)], ["casa", "ultimo_piso"], "sin_cubierta")
     # sin dato de piso: casa si es vivienda de baja altura fuera de PH; si no, sin cubierta

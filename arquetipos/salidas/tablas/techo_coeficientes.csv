@@ -1,0 +1,10 @@
+﻿escenario,material,U,alfa,c_t
+moda,concreto,3.509,0.85,332.166
+moda,asbesto_cemento,4.505,0.6,289.871
+moda,metalica_zinc,4.762,0.7,364.061
+moda,otro,4.444,0.7,339.79
+cielo_raso,concreto,3.509,0.85,332.166
+cielo_raso,asbesto_cemento,2.075,0.6,133.509
+cielo_raso,metalica_zinc,2.128,0.7,162.666
+cielo_raso,otro,2.062,0.7,157.635
+comun,todos,4.0,0.7,305.811

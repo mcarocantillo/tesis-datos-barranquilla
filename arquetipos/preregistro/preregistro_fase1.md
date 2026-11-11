@@ -304,6 +304,9 @@ plana elegida con esta regla.
   la variante ampliada del agrupamiento. Se reportan, por medida de carga, su algoritmo, diseño, k por estrato, R²,
   Jaccard y silueta, y la concordancia con la solución de seis variables (índice de Rand ajustado sobre todas las
   viviendas).
+- **A10** (agregado el 9-nov-2026 con la Nota 10, después de correrlo): la solución final ajustada con todos los
+  edificios en lugar de la submuestra. Se reportan, por medida de carga, el k de cada estrato con la regla de la Nota 3,
+  la fracción de viviendas que conserva su arquetipo con el mismo k, el índice de Rand ajustado por estrato y el R².
 
 Ninguno interviene en las decisiones.
 
@@ -733,3 +736,86 @@ el árbol se reporta con su fidelidad a la regla de asignación.
 **Consecuencias.** El script `10_incertidumbre_asignacion.py` calcula la incertidumbre de la asignación (punto 2), y
 con ella se actualizan las fichas, la página del libro y la copia resaltada de la propuesta. Los factores del punto 3 se
 usan cuando exista el modelo de la Fase 2.
+
+## Nota 10 (9-nov-2026): la solución final ajustada con todos los edificios
+
+**Estado.** Aprobada por la usuaria el 9-nov-2026 (ajuste AJ27).
+
+**Cuándo y por qué.** Escrita después de correr la prueba, a pedido de la usuaria, que preguntó si los arquetipos
+cambiarían al usar todos los datos en lugar de la submuestra. No cambia ninguna elección. Es el análisis complementario
+A10 y mide cuánto dependen los arquetipos de la submuestra de la Sección 7.2, que en las casas es el 2,6 % de los
+edificios.
+
+**Procedimiento.**
+
+- La unidad es la de la Sección 7.2 sin cuotas: una vivienda al azar de cada edificio dentro de cada posición (semilla
+  42), en total 177.105 edificios (155.062 casas, 13.268 de último piso y 8.775 sin cubierta).
+- Solo se ajusta el algoritmo final de cada medida en el diseño anidado (k-prototypes para la carga por vivienda y
+  K-Means para la carga por m²), con las variables y la preparación de la Sección 7.3. La regla del 99 %, las medias y
+  las desviaciones se calculan sobre todos los edificios.
+- El barrido de k va de 1 a 6 por estrato, con la frontera y la regla de la Nota 3, incluida la ampliación del máximo.
+- Con el k de la solución final, los grupos se emparejan con los arquetipos finales por el método húngaro sobre el
+  número de viviendas. Se reportan la fracción que conserva su arquetipo, el índice de Rand ajustado por estrato y el R²
+  de la carga.
+- DBSCAN, la silueta y el jerárquico no se repiten porque necesitan la distancia de Gower entre todos los pares de
+  edificios, unos 96 GB solo en las casas. Por eso no se excluyen atípicos.
+- La corrida de prueba con el 10 % de los edificios solo sirvió para medir el tiempo y no se reporta.
+
+**Resultado.** Con la carga por m² la solución es idéntica (10 arquetipos, el 100 % de las viviendas conserva el suyo y
+el R² sigue en 0,927). Con la carga por vivienda la regla da 16 arquetipos en lugar de 17, porque las casas de estratos
+3-4 bajan de 6 a 5 grupos. Con el mismo k conserva su arquetipo el 96,7 % de las viviendas, el 96,3 % de las casas de
+1-2 y el 87,3 % de las de 3-4, y las que cambian pasan a un grupo vecino por tamaño. El R² baja de 0,661 a 0,649 con el
+mismo k y a 0,645 con 16 grupos. Los detalles están en `todos_k.csv`, `todos_arquetipos.csv` y `todos_resumen.json`, y
+la ubicación de los cambios en `mapa_cambios_todos_edificios.png`.
+
+**Consecuencias.** Se mantienen la submuestra y los arquetipos finales. Junto con la incertidumbre de la asignación
+(Nota 9), el resultado indica que la partición de las casas de estratos 3-4 es la parte menos firme de la solución por
+vivienda.
+
+## Nota 11 (9-nov-2026): tres correcciones del código encontradas en la verificación
+
+**Estado.** Aprobada por la usuaria el 9-nov-2026, antes de volver a correr la Fase 1 (ajuste AJ28).
+
+**Cuándo y por qué.** Escrita después de una revisión independiente del código, con todos los resultados a la vista.
+Las tres son errores de implementación, porque el código no hacía lo que dicen la propuesta o este preregistro. Se
+corrigen y se vuelve a correr la Fase 1 completa con las mismas reglas, la misma semilla y la misma unidad de
+submuestra. Si con los datos corregidos cambia el número de arquetipos, vale el nuevo, porque las reglas no cambian.
+Los resultados anteriores se guardan en `datos_internos/antes_nota11/` para reportar qué cambia.
+
+**1. Posición por torre.** La posición frente a la cubierta se calculaba comparando el último piso de cada unidad con
+el más alto de su predio matriz (los 22 primeros dígitos del número predial). En un conjunto con torres de distinta
+altura, el último piso de la torre baja quedaba como «sin cubierta» aunque tiene techo. Ahora la comparación se hace
+dentro de cada torre, con los 24 primeros dígitos, que incluyen el número de edificio o torre. Con los datos actuales,
+2.088 viviendas pasan de sin cubierta a último piso y 252 a casa. La unidad de la submuestra sigue siendo el predio
+matriz, como dice la propuesta.
+
+**2. Emparejamiento en la incertidumbre de la asignación (Nota 9, punto 2).** El método húngaro empareja siempre todos
+los grupos, aun cuando un grupo del reajuste no comparte ningún punto de ajuste con el arquetipo que le toca. Eso daba
+probabilidades falsas, por ejemplo hasta 0,31 de pertenecer a C34-6 (casas de 280 m² y dos pisos) a casas de C34-4 de
+139 m² y un piso. Ahora cada grupo del reajuste toma el arquetipo final con el que comparte más puntos de ajuste, que es
+lo que dice el ajuste AJ21 («el arquetipo final que más se le parece»). Varios grupos pueden quedar con el mismo
+arquetipo, y un arquetipo puede quedar sin grupo en un reajuste.
+
+**3. Variables categóricas de k-prototypes en la variante ampliada (Nota 8).** Las tres variables numéricas agregadas
+(habitaciones, baños y área del terreno) entraban como numéricas y además como categóricas. Ahora entran solo como
+numéricas. No afecta la solución de seis variables.
+
+**Además.** Se calculan la V de Cramér con corrección de sesgo entre los grupos del diseño plano y el estrato, y el η²
+de cada grupo, que la Sección 4 pide reportar y no se calculaban. No deciden nada.
+
+**Lo que no cambia.** Otras 8.753 viviendas sin cubierta no tienen ninguna unidad de su torre que empiece encima de
+ellas, y su techo lo fija una unidad vecina con más pisos. Sin la geometría de las construcciones no se sabe si están
+debajo o al lado, y en algunos multifamiliares `total_plantas` parece ser el número de pisos del edificio y no el de la
+unidad. La regla no se cambia, y el caso se reporta como limitación con su conteo por arquetipo.
+
+**Resultado (10-nov-2026).** La Fase 1 completa se volvió a correr con el código corregido y pasa las 43 comprobaciones
+del script 16. La solución por m² no cambia: 10 arquetipos, K-Means, R² de 0,926. La solución por vivienda queda con
+15 arquetipos y no 17, con k-prototypes y un R² de 0,630 (antes 0,661). Las casas de los estratos 3-4 pasan de 6 grupos
+a 4, y las de 1-2 siguen en 4. La causa es la fragilidad que ya se había señalado: con la submuestra anterior, pasar de
+16 a 17 arquetipos subía el R² en 0,0205, apenas por encima del umbral de 0,02. Las 252 viviendas que pasaron a casa
+cambian el conjunto de edificios de esa posición y con él el sorteo de la submuestra, y con la nueva el paso de 16 a 17
+sube 0,013 y el de 15 a 16, 0,010. Como dice esta nota, vale el nuevo número. Ajustado con todos los edificios
+(análisis A10), el barrido da 16 (5 grupos en las casas de 3-4), el 94,8 % de las viviendas conserva su arquetipo y el
+R² con 15 grupos es 0,620. Con la corrección 2, la mayor probabilidad media de pertenecer a otro arquetipo es 0,06
+(C34-1 con C34-2). El número de arquetipos de casas por vivienda se reporta, entonces, como sensible a la submuestra
+dentro de un rango de 15 a 17.

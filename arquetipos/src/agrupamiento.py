@@ -85,7 +85,7 @@ class Estrato:
         moda = x_muestra.apply(lambda s: s.value_counts(normalize=True).iloc[0])
         self.vars = [c for c in _candidatas if moda[c] < A["descartar_si_moda_cubre"]]
         self.num = [c for c in self.vars if c in NUMERICAS]
-        self.cat = [c for c in self.vars if c not in NUM]
+        self.cat = [c for c in self.vars if c not in NUMERICAS]  # época, tipo, PH y VIS o VIP (Nota 11)
         self.x = x_muestra
         self.mu = x_muestra[self.vars].mean()
         self.sd = x_muestra[self.vars].std(ddof=0)

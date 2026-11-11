@@ -943,10 +943,10 @@
     "factor_habitaciones_por_estrato": {
      "1": 0.752,
      "2": 0.7426,
-     "3": 0.7113,
-     "4": 0.7091,
-     "5": 0.5498,
-     "6": 0.6697
+     "3": 0.7121,
+     "4": 0.7092,
+     "5": 0.5497,
+     "6": 0.6696
     }
    }
   },
@@ -1096,7 +1096,7 @@
     },
     "s6": {
      "regla": "mezcla: concreto en multifamiliares; baja altura = Dirichlet de los apartamentos ECV del bloque, sin restar",
-     "frac_multifamiliar_arquetipo": 0.5164
+     "frac_multifamiliar_arquetipo": 0.5487
     }
    },
    "U_muro": {
@@ -1272,7 +1272,7 @@
     },
     "s6": {
      "regla": "mezcla: concreto en multifamiliares; baja altura = Dirichlet de los apartamentos ECV del bloque, sin restar",
-     "frac_multifamiliar_arquetipo": 0.5078
+     "frac_multifamiliar_arquetipo": 0.5371
     }
    },
    "U_muro": {
@@ -1423,10 +1423,10 @@
     "factor_habitaciones_por_estrato": {
      "1": 0.752,
      "2": 0.7426,
-     "3": 0.7113,
-     "4": 0.7091,
-     "5": 0.5498,
-     "6": 0.6697
+     "3": 0.7121,
+     "4": 0.7092,
+     "5": 0.5497,
+     "6": 0.6696
     }
    }
   },
@@ -1456,7 +1456,7 @@
     },
     "s6": {
      "regla": "mezcla: concreto en multifamiliares; baja altura = Dirichlet de los apartamentos ECV del bloque, sin restar",
-     "frac_multifamiliar_arquetipo": 0.8
+     "frac_multifamiliar_arquetipo": 0.813
     }
    },
    "U_muro": {

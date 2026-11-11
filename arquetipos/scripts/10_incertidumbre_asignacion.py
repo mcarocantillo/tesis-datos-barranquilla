@@ -1,8 +1,8 @@
 """Paso 5 con la Nota 9 (AJ21): incertidumbre de la asignación de las viviendas a los arquetipos.
 
 En cada estrato de la solución final con más de un grupo, repite el ajuste del algoritmo final en las mismas 100
-submuestras del 80 % del análisis de estabilidad, asigna todas las viviendas del estrato y empareja los grupos de cada
-reajuste con los arquetipos finales por el método húngaro, sobre los puntos de ajuste que comparten. La probabilidad de
+submuestras del 80 % del análisis de estabilidad, asigna todas las viviendas del estrato y da a cada grupo del
+reajuste el arquetipo final con el que comparte más puntos de ajuste (Nota 11). La probabilidad de
 que una vivienda pertenezca a un arquetipo es la fracción de submuestras en que cae en él; en los estratos con un solo
 arquetipo vale 1. Reemplaza las probabilidades del clasificador del Paso 5, que valen casi 1 por construcción.
 Con --prueba usa 5 submuestras (solo para revisar el código y medir el tiempo).
@@ -22,7 +22,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from joblib import Parallel, delayed
-from scipy.optimize import linear_sum_assignment
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.agrupamiento import A, Estrato, Modelo, atipicos, fijar_variables, preparar, submuestra  # noqa: E402
@@ -43,15 +42,14 @@ def ruido_por_posicion(v, x, idx):
 
 def un_reajuste(alg, est, k, pos_ajuste, etiquetas, x_estrato, b, frac):
     """Reajuste en la submuestra b del análisis de estabilidad (misma semilla que jaccard) y grupo de cada vivienda
-    del estrato, con los grupos emparejados a los de la solución final por el método húngaro."""
+    del estrato. Cada grupo del reajuste toma el grupo final con el que comparte más puntos de ajuste (Nota 11); el
+    método húngaro emparejaba también grupos sin ningún punto en común."""
     rng = np.random.default_rng(SEMILLA + b)
     sel = np.sort(rng.choice(len(pos_ajuste), size=int(round(frac * len(pos_ajuste))), replace=False))
     mod = Modelo(alg, est, k, pos_ajuste[sel])
     coincidencias = np.zeros((k, k))
     np.add.at(coincidencias, (mod.etiquetas, etiquetas[sel]), 1)
-    fila, col = linear_sum_assignment(-coincidencias)
-    mapa = np.arange(k)
-    mapa[fila] = col
+    mapa = coincidencias.argmax(axis=1)
     return mapa[mod.asignar(x_estrato)].astype(np.int8)
 
 

@@ -1,4 +1,4 @@
 ﻿posicion,edificios,min_samples,eps,atipicos,pct_atipicos,area_mediana_atipicos,area_mediana_resto
-casa,4074,8,0.0059,188,4.6,117.5,85.4
-ultimo_piso,3140,12,0.021,236,7.5,131.0,110.0
-sin_cubierta,3080,12,0.0174,247,8.0,119.0,90.0
+casa,4074,8,0.0063,176,4.3,114.0,85.0
+ultimo_piso,3139,12,0.0231,212,6.8,126.0,109.0
+sin_cubierta,3080,12,0.0199,215,7.0,102.0,92.0

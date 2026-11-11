@@ -30,7 +30,7 @@ from sklearn.metrics import calinski_harabasz_score, davies_bouldin_score, silho
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.agrupamiento import (A, ALGORITMOS, Estrato, Modelo, atipicos, elegir_k, fijar_variables, frontera, jaccard, preparar,
                               submuestra, suma_cuadrados)
-from src.carga import eta2_estrato
+from src.carga import eta2_estrato, eta2_por_grupo, v_cramer
 from src.comun import DECISION, EPOCAS, FIGURAS, INTERNOS, SEMILLA, TABLAS, asignar_epoca_faltante, cargar_viviendas
 from src.estilo import GREY, OCH, PET, INK, guardar, lienzo
 
@@ -269,6 +269,9 @@ def main():
                 "jaccard_ponderado": round(float(fila.jaccard_ponderado), 3),
                 "grupos_grandes_con_jaccard_bajo": grandes.loc[grandes.jaccard < P4["jaccard_grupo_min"], "arquetipo"].tolist(),
                 "plano_inestable": inestable, "eta2_estrato": round(eta2, 4),
+                "v_cramer_estrato": round(v_cramer(arq.to_numpy(), v["estrato_num"]), 3),
+                "eta2_por_grupo": {g: round(e, 4) for g, e in eta2_por_grupo(cargas[m], arq.to_numpy(),
+                                                                               v["estrato_num"]).items()},
                 "diseno_adoptado": "anidado" if (inestable or eta2 >= P4["eta2_umbral"]) else "plano",
                 "k_anidado": int(fa.k), "R2_anidado": round(float(fa.R2), 4)}
 

@@ -6,23 +6,23 @@
       "criterio": "mayor R2",
       "base": {
         "algoritmo_final": "kprototypes",
-        "k_final": 17,
-        "R2_final": 0.6611,
+        "k_final": 15,
+        "R2_final": 0.6299,
         "estable": true,
-        "jaccard_ponderado": 0.97,
-        "silueta_gower": 0.18,
+        "jaccard_ponderado": 0.975,
+        "silueta_gower": 0.162,
         "diseno_adoptado": "anidado"
       },
       "ampliada": {
         "algoritmo_final": "kmeans",
-        "k_final": 12,
-        "R2_final": 0.5341,
+        "k_final": 11,
+        "R2_final": 0.5081,
         "estable": true,
-        "jaccard_ponderado": 0.976,
-        "silueta_gower": 0.239,
+        "jaccard_ponderado": 0.984,
+        "silueta_gower": 0.227,
         "diseno_adoptado": "anidado"
       },
-      "rand_ajustado_base_frente_a_ampliada": 0.665
+      "rand_ajustado_base_frente_a_ampliada": 0.664
     },
     "por_m2": {
       "ganador": "base",
@@ -30,99 +30,99 @@
       "base": {
         "algoritmo_final": "kmeans",
         "k_final": 10,
-        "R2_final": 0.9275,
+        "R2_final": 0.9264,
         "estable": true,
-        "jaccard_ponderado": 1.0,
-        "silueta_gower": 0.552,
+        "jaccard_ponderado": 0.998,
+        "silueta_gower": 0.506,
         "diseno_adoptado": "anidado"
       },
       "ampliada": {
         "algoritmo_final": "kmeans",
         "k_final": 9,
-        "R2_final": 0.9051,
+        "R2_final": 0.9039,
         "estable": true,
         "jaccard_ponderado": 1.0,
         "silueta_gower": NaN,
         "diseno_adoptado": "anidado"
       },
-      "rand_ajustado_base_frente_a_ampliada": 0.942
+      "rand_ajustado_base_frente_a_ampliada": 0.941
     }
   },
   "por_vivienda": {
     "variables": "base",
-    "algoritmo_plano": "kmeans",
+    "algoritmo_plano": "kprototypes",
     "plano_inestable": false,
-    "eta2_estrato": 0.1678,
+    "eta2_estrato": 0.1763,
     "diseno_adoptado": "anidado",
     "algoritmo_final": "kprototypes",
-    "k_final": 17,
-    "R2_final": 0.6611,
+    "k_final": 15,
+    "R2_final": 0.6299,
     "estable": true,
-    "jaccard_ponderado": 0.97,
-    "silueta_gower": 0.18,
+    "jaccard_ponderado": 0.975,
+    "silueta_gower": 0.162,
     "tabla_grupos": "agr_grupos_anidado_por_vivienda_kprototypes.csv"
   },
   "por_m2": {
     "variables": "base",
     "algoritmo_plano": "kprototypes",
     "plano_inestable": false,
-    "eta2_estrato": 0.1225,
+    "eta2_estrato": 0.1226,
     "diseno_adoptado": "anidado",
     "algoritmo_final": "kmeans",
     "k_final": 10,
-    "R2_final": 0.9275,
+    "R2_final": 0.9264,
     "estable": true,
-    "jaccard_ponderado": 1.0,
-    "silueta_gower": 0.552,
+    "jaccard_ponderado": 0.998,
+    "silueta_gower": 0.506,
     "tabla_grupos": "agr_grupos_anidado_por_m2_kmeans.csv"
   },
   "A6_regla_7_7": {
     "por_vivienda": {
       "algoritmo_plano": "jerarquico",
       "plano_inestable": false,
-      "eta2_estrato": 0.2261,
+      "eta2_estrato": 0.2482,
       "diseno_adoptado": "anidado",
-      "algoritmo_final": "jerarquico",
-      "k_final": 9,
-      "R2_final": 0.4039,
-      "jaccard_ponderado": 1.0,
-      "silueta_gower": NaN,
-      "rand_ajustado_frente_a_nota4": 0.575
+      "algoritmo_final": "kmeans",
+      "k_final": 15,
+      "R2_final": 0.534,
+      "jaccard_ponderado": 0.98,
+      "silueta_gower": 0.391,
+      "rand_ajustado_frente_a_nota4": 0.726
     },
     "por_m2": {
       "algoritmo_plano": "kmeans",
       "plano_inestable": false,
-      "eta2_estrato": 0.1226,
+      "eta2_estrato": 0.1227,
       "diseno_adoptado": "anidado",
-      "algoritmo_final": "kmeans",
+      "algoritmo_final": "kprototypes",
       "k_final": 10,
-      "R2_final": 0.9275,
+      "R2_final": 0.9264,
       "jaccard_ponderado": 1.0,
-      "silueta_gower": 0.552,
+      "silueta_gower": 0.506,
       "rand_ajustado_frente_a_nota4": 1.0
     }
   },
   "A6_regla_7_7_ampliada": {
     "por_vivienda": {
-      "algoritmo_plano": "kmeans",
+      "algoritmo_plano": "jerarquico",
       "plano_inestable": false,
-      "eta2_estrato": 0.1377,
+      "eta2_estrato": 0.1957,
       "diseno_adoptado": "anidado",
-      "algoritmo_final": "jerarquico",
+      "algoritmo_final": "kmeans",
       "k_final": 11,
-      "R2_final": 0.4423,
-      "jaccard_ponderado": 0.997,
-      "silueta_gower": 0.37,
-      "rand_ajustado_frente_a_nota4": 0.706
+      "R2_final": 0.5081,
+      "jaccard_ponderado": 0.984,
+      "silueta_gower": 0.227,
+      "rand_ajustado_frente_a_nota4": 1.0
     },
     "por_m2": {
       "algoritmo_plano": "kmeans",
       "plano_inestable": false,
-      "eta2_estrato": 0.0963,
+      "eta2_estrato": 0.0965,
       "diseno_adoptado": "anidado",
       "algoritmo_final": "kmeans",
       "k_final": 9,
-      "R2_final": 0.9051,
+      "R2_final": 0.9039,
       "jaccard_ponderado": 1.0,
       "silueta_gower": NaN,
       "rand_ajustado_frente_a_nota4": 1.0
