@@ -1,0 +1,4 @@
+﻿posicion,edificios,min_samples,eps_gower,eps_manhattan,atipicos_gower,atipicos_manhattan,atipicos_publicados,mismos_edificios
+casa,4074,8,0.00634,0.00634,176,176,176,True
+ultimo_piso,3139,12,0.02307,0.02307,212,212,212,True
+sin_cubierta,3080,12,0.019921,0.019921,215,215,215,True

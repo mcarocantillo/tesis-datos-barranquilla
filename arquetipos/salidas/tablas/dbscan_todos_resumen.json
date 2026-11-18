@@ -1,0 +1,32 @@
+{
+  "por_vivienda": {
+    "algoritmo": "kprototypes",
+    "K": 15,
+    "R2_final": 0.6299,
+    "R2_todos_con_atipicos": 0.6203,
+    "R2_todos_sin_atipicos": 0.6204,
+    "conservan_frente_a_final": 0.949,
+    "conservan_frente_a_todos_con_atipicos": 0.9986,
+    "ari_por_estrato": {
+      "casa|1-2": 0.684,
+      "casa|3-4": 0.8472
+    },
+    "segundos": 729
+  },
+  "por_m2": {
+    "algoritmo": "kmeans",
+    "K": 10,
+    "R2_final": 0.9264,
+    "R2_todos_con_atipicos": 0.9264,
+    "R2_todos_sin_atipicos": 0.9264,
+    "conservan_frente_a_final": 1.0,
+    "conservan_frente_a_todos_con_atipicos": 1.0,
+    "ari_por_estrato": {
+      "casa|1-2": 1.0
+    },
+    "segundos": 3
+  },
+  "edificios_ajuste": 177093,
+  "edificios_sin_atipicos": 174590,
+  "tiempo_s": 740
+}

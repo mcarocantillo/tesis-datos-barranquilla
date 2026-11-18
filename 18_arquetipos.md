@@ -228,8 +228,9 @@ Arquetipos de la solución por m², con la misma construcción.
 El agrupamiento se ajustó con 10.293 edificios, que en las casas son el 2,6 % de los 155.158. Para medir cuánto
 dependen los arquetipos de esa submuestra, la solución final de cada medida se volvió a ajustar con una vivienda al azar
 de cada uno de los 177.093 edificios, con el mismo algoritmo, las mismas variables y la regla de la Nota 3 para el
-número de grupos (script 14, análisis A10, ajuste AJ27). DBSCAN y la silueta no se repiten, porque necesitan la
-distancia de Gower entre todos los pares de edificios, unos 96 GB solo en las casas.
+número de grupos (script 14, análisis A10, ajuste AJ27). Ese ajuste no excluyó atípicos, porque DBSCAN sobre la
+matriz de Gower de todos los pares de edificios necesita unos 96 GB solo en las casas, y la silueta no se repite por la
+misma razón.
 
 :::{table} La solución final ajustada con la submuestra y con todos los edificios. Con el mismo número de grupos, los grupos del ajuste completo se emparejan con los arquetipos finales por el método húngaro.
 :name: tab-arq-todos
@@ -248,6 +249,30 @@ posiciones tienen un arquetipo por bloque, y las que cambian pasan a un grupo ve
 ({numref}`fig-arq-mapa-cambios`). La parte menos firme es el número de grupos de las casas de los estratos 3-4, que con
 todos los edificios se dividen en 5 y no en 4, y que también concentran la incertidumbre de la asignación. La submuestra no empeora
 el criterio del Paso 3, porque con ella el R² es algo mayor.
+
+Para completar la prueba, los atípicos se calcularon después con todos los edificios (script 18, análisis A11, ajuste
+AJ29). Con las variables de agrupamiento, la distancia de Gower es la distancia de Manhattan sobre las variables
+reescaladas (las numéricas y la época divididas por su rango, el tipo y la PH como 0 o 1) dividida por el número de
+variables, de modo que DBSCAN puede buscar los vecinos con un árbol en lugar de calcular todos los pares. Los edificios
+con las mismas variables se reúnen en un punto con peso, que para DBSCAN equivale a repetirlos. En la submuestra, este
+método da los mismos ε y los mismos atípicos que la matriz de Gower, edificio por edificio.
+
+:::{table} Atípicos de DBSCAN en la submuestra y con todos los edificios, con la regla de la Sección 7.4 del preregistro.
+:name: tab-arq-atipicos-todos
+:class: tabla-compacta
+
+| Posición | Edificios (submuestra → todos) | ε (submuestra → todos) | Atípicos (submuestra → todos) | Área mediana de los atípicos y del resto, con todos |
+| --- | --- | --- | --- | --- |
+| Casa | 4.074 → 155.158 | 0,0063 → 0,0014 | 4,3 % → 0,6 % | 186 y 85 m² |
+| Último piso | 3.139 → 13.269 | 0,0231 → 0,0098 | 6,8 % → 7,2 % | 151 y 110 m² |
+| Sin cubierta | 3.080 → 8.666 | 0,0199 → 0,0101 | 7,0 % → 7,3 % | 126 y 92 m² |
+:::
+
+En las casas la proporción de atípicos baja porque, con 38 veces más edificios, la curva de k-distancias es mucho más
+densa y su codo cae en un ε menor. Excluir esos atípicos y volver a ajustar la solución final con el número final de
+grupos no cambia los arquetipos. Con la carga por vivienda, el 99,9 % de las viviendas queda en el mismo arquetipo que
+en el ajuste con todos los edificios sin excluir atípicos, y el R² sigue en 0,620. Con la carga por m², la solución es
+idéntica. Lo que cambia frente a la solución final se debe, por tanto, a la submuestra y no a los atípicos.
 
 ```{figure} arquetipos/salidas/figuras/mapa_cambios_todos_edificios.png
 :name: fig-arq-mapa-cambios

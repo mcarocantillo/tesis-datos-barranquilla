@@ -34,7 +34,8 @@ R² no cambia (AJ24, script 11). Con un techo propio por vivienda, sorteado de l
 entraría al agrupamiento si los techos livianos tienen cielo raso, que ni el catastro ni la ECV registran (AJ25,
 script 13). Y con todos los edificios en lugar de la submuestra, la solución por m² es idéntica y en la de por vivienda
 el 94,8 % de las viviendas conserva su arquetipo, aunque las casas de 3-4 quedan en 5 grupos y no en 4 (AJ27, Nota 10,
-script 14). Los mapas de los arquetipos están en `salidas/figuras/mapa_*.png` (script 15), y el script 16 verifica la
+script 14). Al excluir además los atípicos de DBSCAN calculados con todos los edificios, el 99,9 % de las viviendas
+queda en el mismo arquetipo y el R² no cambia (AJ29, Nota 12, script 18). Los mapas de los arquetipos están en `salidas/figuras/mapa_*.png` (script 15), y el script 16 verifica la
 coherencia de todas las salidas con 43 comprobaciones.
 
 La verificación del 9 de noviembre encontró tres errores de implementación, corregidos antes de volver a correr la
@@ -84,13 +85,14 @@ envolvente con su fuente (`salidas/tablas/env_priors_*.csv` y `.json`, y `env_pr
 | `14_agrupamiento_todos_edificios.py` | 2 a 4 (robustez) | La solución final ajustada con los 177.093 edificios en lugar de la submuestra (AJ27, Nota 10). Con `--prueba`, el 10 % de los edificios | 42 min |
 | `15_mapas_arquetipos.py` | 7 | Mapas de los arquetipos y de las casas que cambian con el script 14, en celdas de unos 275 m | 1 min |
 | `16_verificacion.py` | todos | Comprobaciones automáticas de coherencia y reproducibilidad de las salidas | 1 min |
+| `18_atipicos_todos_edificios.py` | 2 (robustez) | DBSCAN con los 177.093 edificios, sin la matriz de Gower (distancia de Manhattan sobre las variables reescaladas, con los edificios repetidos reunidos por peso), y la solución final ajustada sin esos atípicos (AJ29, Nota 12). Primero verifica que el método reproduce los atípicos de la submuestra | 12 min |
 
 Desde la carpeta `arquetipos/`:
 
 ```bash
 python scripts/01_tipologia_reglas.py
 python scripts/02_carga_simplificada.py
-# ... y así hasta 08, en orden; luego 10 y 09; después 11, 13, 14 y 15
+# ... y así hasta 08, en orden; luego 10 y 09; después 11, 13, 14, 15 y 18
 python scripts/16_verificacion.py
 ```
 

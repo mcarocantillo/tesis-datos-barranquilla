@@ -307,6 +307,9 @@ plana elegida con esta regla.
 - **A10** (agregado el 9-nov-2026 con la Nota 10, después de correrlo): la solución final ajustada con todos los
   edificios en lugar de la submuestra. Se reportan, por medida de carga, el k de cada estrato con la regla de la Nota 3,
   la fracción de viviendas que conserva su arquetipo con el mismo k, el índice de Rand ajustado por estrato y el R².
+- **A11** (agregado el 17-nov-2026 con la Nota 12, después de correrlo): los atípicos de DBSCAN calculados con todos
+  los edificios y la solución final ajustada sin ellos, con el k final de cada estrato. Se reportan, por posición, ε,
+  el número y el porcentaje de atípicos, y por medida de carga la fracción de viviendas que conserva su arquetipo y el R².
 
 Ninguno interviene en las decisiones.
 
@@ -819,3 +822,36 @@ sube 0,013 y el de 15 a 16, 0,010. Como dice esta nota, vale el nuevo número. A
 R² con 15 grupos es 0,620. Con la corrección 2, la mayor probabilidad media de pertenecer a otro arquetipo es 0,06
 (C34-1 con C34-2). El número de arquetipos de casas por vivienda se reporta, entonces, como sensible a la submuestra
 dentro de un rango de 15 a 17.
+
+## Nota 12 (17-nov-2026): atípicos con todos los edificios
+
+**Cuándo y por qué.** Escrita después de correr el análisis, a pedido de la usuaria, para completar la prueba de la
+Nota 10. Esa prueba ajustó la solución final con todos los edificios, pero sin excluir atípicos, porque DBSCAN sobre la
+matriz de Gower de todos los pares no cabe en memoria (unos 96 GB solo en las casas). No cambia ninguna regla ni ningún
+resultado principal: es el análisis complementario A11.
+
+**Método (script 18).** Con las variables de agrupamiento, la distancia de Gower de la Sección 7.4 es la distancia de
+Manhattan sobre las variables reescaladas, dividida por el número de variables: las numéricas y la época se dividen por
+su rango, y el tipo y la PH, que valen 0 o 1, quedan igual. El recorte en 1 de la Gower no actúa, porque el rango se
+calcula con los mismos puntos. Así los vecinos a menos de ε se buscan con un árbol, sin calcular todos los pares. Además,
+los edificios con las mismas variables se reúnen en un punto con peso, y DBSCAN con pesos equivale a repetirlos. La regla
+es la de la Sección 7.4: dentro de cada posición, min_samples = 2 × número de variables y ε en el codo de la curva de
+k-distancias. Después se ajusta la solución final (diseño anidado; k-prototypes por vivienda y K-Means por m²) con todos
+los edificios menos los atípicos, con el k final de cada estrato, y los grupos se emparejan con los arquetipos finales
+por el método húngaro, como en el script 14. El barrido de k y la silueta no se repiten.
+
+**Verificación.** En la submuestra de la Sección 7.2, el método da los mismos ε y los mismos atípicos que la Gower
+completa, edificio por edificio: 176 en las casas, 212 en el último piso y 215 sin cubierta.
+
+**Resultado.**
+- Con todos los edificios, los atípicos son el 0,6 % de las casas (910 de 155.158), el 7,2 % del último piso (960 de
+  13.269) y el 7,3 % de las viviendas sin cubierta (633 de 8.666). En la submuestra eran 4,3 %, 6,8 % y 7,0 %. En las
+  casas la proporción baja porque, con 38 veces más edificios, la curva de k-distancias es mucho más densa y el codo cae
+  en un ε menor (0,0014 frente a 0,0063). Como en la submuestra, los atípicos son viviendas más grandes que el resto
+  (área mediana de 186 m² frente a 85 m² en las casas).
+- Excluirlos no cambia los arquetipos. Por vivienda, el 99,9 % de las viviendas queda en el mismo arquetipo que en el
+  ajuste con todos los edificios sin excluir atípicos (script 14), y el R² con 15 grupos es 0,620 en los dos casos.
+  Frente a la solución final, conserva su arquetipo el 94,9 %, lo mismo que en la Nota 10. Por m², la solución es
+  idéntica (R² de 0,926).
+- La diferencia con la solución final viene, entonces, de pasar de la submuestra a todos los edificios, no de los
+  atípicos.
