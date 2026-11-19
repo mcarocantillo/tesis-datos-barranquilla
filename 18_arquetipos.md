@@ -338,6 +338,57 @@ Morris de la Fase 2 dirá cuáles importan. La tabla completa, con la fuente de 
 [`env_priors_por_vivienda.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/env_priors_por_vivienda.csv)
 y [`env_priors_por_m2.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/env_priors_por_m2.csv).
 
+(sec-arq-materiales-catastro)=
+## Comparación con los materiales del catastro
+
+El catastro registra la cubierta y los muros de cada unidad de construcción en la calificación convencional (tabla
+535), una clasificación pensada para el avalúo. Para unirla con las viviendas hacía falta el identificador global de la
+tabla de características (505), que el servicio de datos abiertos no publica y que la Gerencia de Gestión Catastral
+entregó el 19 de noviembre de 2026 {cite:p}`catastro2026`. Con él, el script 12 enlaza el 90 % de las viviendas con su
+registro, el 81 % por un número predial único y el 9 % por el área, el año, el piso y el uso. Solo el 29,3 % de las
+viviendas tiene la cubierta registrada, y otro 46 % tiene el puntaje de la calificación sin los materiales.
+
+Antes de comparar se escribió la regla en el preregistro (Nota 13, análisis A12, ajuste AJ30). Como las categorías del
+avalúo juntan materiales, el techo se compara en dos clases, concreto y liviano, y la categoría «Azotea, aluminio, placa
+sencilla con eternit», que puede ser una cosa o la otra, se lleva como intervalo. Las casas del catastro se comparan con
+las casas de la ECV 2024 y el último piso con los apartamentos, por bloque de estratos y con el intervalo del 95 % del
+diseño muestral de la ECV. Una celda concuerda si el intervalo del catastro toca el de la ECV.
+
+:::{table} Techo de concreto según el catastro y la ECV 2024. Catastro: proporción entre las viviendas con la cubierta registrada, contando la categoría ambigua como liviana (valor bajo) o como concreto (valor alto). ECV: proporción ponderada e intervalo del 95 %.
+:name: tab-arq-materiales-ecv
+
+| Celda | Con cubierta registrada | Catastro | ECV 2024 | Concuerda |
+| --- | --- | --- | --- | --- |
+| Casas 1-2 | 25 % | 0,3 % a 4,7 % | 18 % (10 a 27) | No |
+| Apartamentos 1-2 | 41 % | 4 % a 33 % | 36 % (22 a 49) | En el borde |
+| Casas 3-4 | 15 % | 2 % a 10 % | 26 % (6 a 45) | Sí |
+| Apartamentos 3-4 | 28 % | 7 % a 57 % | 71 % (56 a 86) | En el borde |
+| Casas 5-6 | 16 % | 15 % a 53 % | 80 % (71 a 89) | No |
+| Apartamentos 5-6 | 17 % | 15 % a 69 % | 93 % (85 a 100) | No |
+:::
+
+El catastro registra mucho menos techo de concreto que la ECV, y las tres celdas que concuerdan lo hacen gracias a la
+categoría ambigua o al ancho del intervalo de la ECV, que en las casas de 3-4 tiene solo 47 hogares. Además, dentro de
+cada celda las viviendas con materiales registrados difieren de las demás en más de 0,2 desviaciones estándar en el
+estrato o en el año de construcción en 10 de las 12 comparaciones, y en los apartamentos son de 4 a 16 años más nuevas.
+Por eso el catastro no se usa para los priors del techo, que siguen saliendo solo de la ECV. Una explicación posible es
+que muchas calificaciones vengan de un levantamiento antiguo que no registra techos de placa construidos después, pero
+la entrega no trae la fecha de la calificación y no se puede comprobar.
+
+En las paredes las dos fuentes coinciden, con entre 94 % y 100 % de bloque o ladrillo en todas las celdas, lo que
+respalda tratar los muros como mampostería. La regla marca desacuerdo en cinco celdas solo porque, cuando la ECV da
+100 %, su intervalo no tiene ancho.
+
+Los materiales del catastro sí entran en la Fase 2 como escenario de sensibilidad (AJ31). En cada arquetipo con techo
+propio, la proporción de concreto del prior se reemplaza por la del catastro, con la categoría ambigua como liviana, y
+lo liviano se reparte como en la ECV. Como deja más techos livianos, ese escenario es un límite alto de la ganancia de
+calor por la cubierta. Si las conclusiones cambian poco frente al escenario de la ECV, el material del techo no pesa en
+ellas. Las proporciones están en
+[`env_escenario_techo_catastro_por_vivienda.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/env_escenario_techo_catastro_por_vivienda.csv)
+y
+[`env_escenario_techo_catastro_por_m2.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/env_escenario_techo_catastro_por_m2.csv),
+y la comparación completa en `materiales_vs_ecv.csv` y `materiales_seleccion.csv` (script 19).
+
 ## Validación
 
 ```{figure} arquetipos/salidas/figuras/val_representatividad.png
@@ -397,10 +448,14 @@ Catastro frente a la ECV 2024: viviendas por estrato, fracción de casas por blo
    pisos, y sin la geometría de las construcciones no se sabe si está encima o al lado. En algunos multifamiliares
    `total_plantas` parece ser el número de pisos del edificio y no el de la unidad. Si alguna de ellas tiene el techo
    expuesto, su carga está subestimada.
+10. Los materiales de la calificación convencional del catastro cubren al 29 % de las viviendas, no representan a las
+    demás y registran mucho menos techo de concreto que la ECV ({ref}`sec-arq-materiales-catastro`). Los priors del
+    techo dependen entonces de una encuesta con pocas viviendas por celda, y el catastro solo entra como escenario de
+    sensibilidad.
 
 ## Archivos
 
 Todo está en la carpeta [`arquetipos/`](https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos):
-el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 16, las tablas agregadas, las figuras,
+el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 16, 18 y 19, las tablas agregadas, las figuras,
 las fichas de los arquetipos de cada solución (`salidas/fichas/`) y los árboles de asignación (`salidas/modelos/`). La
 asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publican.

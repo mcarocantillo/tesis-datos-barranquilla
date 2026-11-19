@@ -1,0 +1,8 @@
+﻿arquetipo,con_dato,concreto_prior,concreto_escenario,fuente,alfa_concreto,alfa_asbesto_cemento,alfa_metalica_zinc,alfa_otro
+C12-1,29535,0.1844,0.0035,catastro,0.2356,55.9993,11.9993,0.0
+C12-2,2484,0.1844,0.0028,catastro,0.1923,56.035,12.007,0.0
+C34-1,7310,0.255,0.0197,catastro,0.3837,18.9656,0.1303,0.0
+C56-1,676,0.7219,0.1524,catastro,1.051,5.545,0.3017,0.0
+U12-1,5311,0.3592,0.0363,catastro,3.0011,70.6591,8.9109,0.0138
+U34-1,4236,0.7079,0.0659,catastro,3.0797,39.4834,0.1302,4.0653
+U56-1,705,0.904,0.1532,catastro,2.4898,13.3229,0.3589,0.0811

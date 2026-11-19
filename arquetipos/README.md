@@ -38,6 +38,14 @@ script 14). Al excluir además los atípicos de DBSCAN calculados con todos los 
 queda en el mismo arquetipo y el R² no cambia (AJ29, Nota 12, script 18). Los mapas de los arquetipos están en `salidas/figuras/mapa_*.png` (script 15), y el script 16 verifica la
 coherencia de todas las salidas con 43 comprobaciones.
 
+Los materiales de la calificación convencional del catastro se compararon con la ECV 2024 cuando la Gerencia de
+Gestión Catastral entregó la llave que los une con las viviendas (19 de noviembre; preregistro, Nota 13, y ajuste
+AJ30; scripts 12 y 19). Solo el 29 % de las viviendas tiene la cubierta registrada, esas viviendas difieren de las
+demás en estrato o año, y el catastro registra mucho menos techo de concreto que la ECV (en las casas de 1-2, menos de
+5 % frente a 18 %). Por eso los priors del techo siguen saliendo de la ECV, y el catastro entra en la Fase 2 solo como
+escenario de sensibilidad del techo (AJ31, tablas `env_escenario_techo_catastro_*.csv`). En las paredes las dos
+fuentes coinciden, con entre 94 % y 100 % de mampostería.
+
 La verificación del 9 de noviembre encontró tres errores de implementación, corregidos antes de volver a correr la
 Fase 1 completa (preregistro, Nota 11, y ajuste AJ28). La posición frente a la cubierta se calcula ahora dentro de
 cada torre (24 dígitos del número predial) y no del predio matriz, lo que pasa 2.088 viviendas de sin cubierta a
@@ -51,13 +59,13 @@ casas. Los resultados anteriores se guardan en `datos_internos/antes_nota11/`, q
 
 | Ruta | Qué tiene |
 | --- | --- |
-| `preregistro/preregistro_fase1.md` | Reglas de cada paso, fijadas antes de calcular (versiones 1 a 5 y notas 1 a 11, con fecha y motivo) |
+| `preregistro/preregistro_fase1.md` | Reglas de cada paso, fijadas antes de calcular (versiones 1 a 5 y notas 1 a 13, con fecha y motivo) |
 | `preregistro/decision_fase1.json` | Las mismas reglas en formato máquina; los scripts las leen de aquí |
-| `ajustes_frente_a_la_propuesta.md` | Registro de cada punto en que la ejecución precisa o ajusta la propuesta radicada (AJ1 a AJ28) |
+| `ajustes_frente_a_la_propuesta.md` | Registro de cada punto en que la ejecución precisa o ajusta la propuesta radicada (AJ1 a AJ31) |
 | `referencias_revisadas.md` | Referencias de arquetipos, agrupamiento e infiltración, con metadatos verificados en Crossref |
 | `src/` | Módulos comunes: rutas y variables (`comun.py`), carga simplificada (`carga.py`), agrupamiento (`agrupamiento.py`), lectura de la ECV (`ecv.py`) y estilo de figuras (`estilo.py`) |
-| `scripts/` | Scripts 01 a 16 (el 10 se corre antes del 09; el 12, que unirá los materiales del catastro, se agregará cuando lleguen los datos) |
-| `salidas/tablas/` | Tablas agregadas de cada paso (prefijos `reglas_`, `carga_`, `agr_`, `clf_`, `asg_`, `env_`, `hog_`, `val_`, `clima_`, `techo_`, `todos_`) y la verificación (`verificacion.csv`) |
+| `scripts/` | Scripts 01 a 16, 18 y 19 (el 10 se corre antes del 09) |
+| `salidas/tablas/` | Tablas agregadas de cada paso (prefijos `reglas_`, `carga_`, `agr_`, `clf_`, `asg_`, `env_`, `hog_`, `val_`, `clima_`, `techo_`, `todos_`, `dbscan_todos_`, `materiales_`) y la verificación (`verificacion.csv`) |
 | `salidas/figuras/` | Figuras con el estilo de la propuesta |
 | `salidas/fichas/` | Una ficha por arquetipo para cada solución, en Markdown y en CSV |
 | `salidas/modelos/` | Árboles de decisión que asignan una vivienda a su arquetipo (hojas de al menos 50 viviendas) |
@@ -81,18 +89,20 @@ envolvente con su fuente (`salidas/tablas/env_priors_*.csv` y `.json`, y `env_pr
 | `10_incertidumbre_asignacion.py` | 5 | Incertidumbre de la asignación: repite el agrupamiento en las 100 submuestras de estabilidad (Nota 9) | 20 min |
 | `09_hogar_validacion_fichas.py` | 7 | Atributos del hogar, representatividad frente a la ECV y fichas; usa la salida del 10 | segundos |
 | `11_contraste_clima_gdex.py` | 3 (robustez) | Carga del Paso 3 y R² de los arquetipos con ERA5-Land de GDEX en lugar de la copia de Open-Meteo (AJ24) | 1 min con la serie extraída |
+| `12_empalme_materiales.py` | 6 (complementario) | Une la calificación convencional del catastro (cubierta, muros y demás) con cada vivienda, por etapas, con la llave que entregó la Gerencia (Nota 13) | 2 min |
 | `13_sensibilidad_techo.py` | 3 (robustez) | Carga del Paso 3 con un techo propio por vivienda, sin y con cielo raso, y cuánto sube el R² si el techo se agrega a los arquetipos (AJ25) | minutos |
 | `14_agrupamiento_todos_edificios.py` | 2 a 4 (robustez) | La solución final ajustada con los 177.093 edificios en lugar de la submuestra (AJ27, Nota 10). Con `--prueba`, el 10 % de los edificios | 42 min |
 | `15_mapas_arquetipos.py` | 7 | Mapas de los arquetipos y de las casas que cambian con el script 14, en celdas de unos 275 m | 1 min |
 | `16_verificacion.py` | todos | Comprobaciones automáticas de coherencia y reproducibilidad de las salidas | 1 min |
 | `18_atipicos_todos_edificios.py` | 2 (robustez) | DBSCAN con los 177.093 edificios, sin la matriz de Gower (distancia de Manhattan sobre las variables reescaladas, con los edificios repetidos reunidos por peso), y la solución final ajustada sin esos atípicos (AJ29, Nota 12). Primero verifica que el método reproduce los atípicos de la submuestra | 12 min |
+| `19_materiales_catastro_ecv.py` | 6 (complementario) | Techo y paredes del catastro frente a la ECV 2024 con la regla de la Nota 13, diferencias entre viviendas con y sin materiales, y el escenario de sensibilidad del techo de la Fase 2 (AJ30, AJ31); usa la salida del 12 | 2 min |
 
 Desde la carpeta `arquetipos/`:
 
 ```bash
 python scripts/01_tipologia_reglas.py
 python scripts/02_carga_simplificada.py
-# ... y así hasta 08, en orden; luego 10 y 09; después 11, 13, 14, 15 y 18
+# ... y así hasta 08, en orden; luego 10 y 09; después 11, 12, 13, 14, 15, 18 y 19
 python scripts/16_verificacion.py
 ```
 
@@ -111,6 +121,8 @@ del repositorio):
 | Particiones espaciales del trabajo previo | `e1_git/datos/procesados/dataset_modelado.parquet` y el módulo kNNDM en `e4/` | Trabajo previo de predicción del estrato (solo para el script 06) |
 | Clima horario 2015–2025 | `compuerta_horaria/datos/crudos/openmeteo/` | ERA5-Land y ERA5 en Open-Meteo; la descarga se reconstruye con los scripts de `scripts/compuerta/` |
 | Clima horario de GDEX (robustez, script 11) | `compuerta_horaria/datos/crudos/era5land_gdex/` | ERA5-Land de NCAR GDEX en la celda de Barranquilla, extraído con `scripts/compuerta/01b_extraer_era5land_gdex.py` |
+| Calificación convencional del catastro y llave de la tabla 505 (scripts 12 y 19) | `arquetipos/datos_internos/catastro_materiales/entrega_2026-11-19/` | Entrega de la Gerencia de Gestión Catastral del 19-nov-2026, convertida a Parquet |
+| Tablas 505, 305, 602 y 500 del catastro (scripts 12 y 19) | `../catastro_arquetipos_v2/catastro_arquetipos_v2/datos_crudos/` (una carpeta más arriba) | Servicio `catastro/datosabiertos` de la Gerencia, descarga del 17-sep-2026 |
 | ECV 2019 y 2024 de Barranquilla | `../DANE/ECV/` (una carpeta más arriba), con los ZIP tal como se descargan | Catálogo de microdatos del DANE |
 
 ## Privacidad

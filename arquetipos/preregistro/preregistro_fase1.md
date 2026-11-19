@@ -855,3 +855,64 @@ completa, edificio por edificio: 176 en las casas, 212 en el último piso y 215 
   idéntica (R² de 0,926).
 - La diferencia con la solución final viene, entonces, de pasar de la submuestra a todos los edificios, no de los
   atípicos.
+
+## Nota 13 (19-nov-2026): materiales del catastro frente a la ECV
+
+**Cuándo y por qué.** Escrita el 19-nov-2026, antes de comparar los materiales del catastro con la ECV. Ese día la
+Gerencia de Gestión Catastral entregó la llave `globalid` de la tabla 505, que permite unir la calificación
+convencional (tabla 535) con cada vivienda. Antes de escribir esta nota solo se contó cuántas viviendas tienen
+cubierta y muros registrados (cerca de un tercio, entre 18 % y 48 % según el arquetipo). No se calculó ninguna
+proporción de materiales del catastro. La pregunta es si las viviendas con materiales registrados representan a las
+demás, y por eso si el catastro puede dar a los priors del Paso 6 un detalle que la ECV no tiene. Es el análisis
+complementario A12 y no cambia los priors vigentes.
+
+**Empalme.** El script 12 se adapta a la entrega de la Gerencia y a las tablas 305, 602 y 500 ya descargadas, con las
+mismas etapas de empalme. La entrega no trae la tabla 545 ni la geometría del terreno, así que no se usan.
+
+**Equivalencias.** Las categorías de la calificación convencional son clases de avalúo que juntan materiales, y por eso
+la comparación del techo se hace en dos clases, concreto y liviano:
+
+- concreto: `Placa_Impermeabilizada_Lujosa_U_Ornamental` y `Placa_Impermeabilizada_Cubierta_Lujosa_U_Ornamental`;
+- liviano: `Zinc_Teja_De_Barro_Eternit_Rustico`, `Eternit_O_Teja_De_Barro_Cubierta_Sencilla`,
+  `Entrepiso_Cubierta_Provisional_Prefabricado` y `Materiales_Desecho_Telas_Asfalticas`;
+- ambigua: `Azotea_Aluminio_Placa_Sencilla_Con_Eternit`, que puede ser placa o cubierta liviana. Se lleva como
+  intervalo: la proporción de concreto del catastro va de tratarla como liviana a tratarla como concreto.
+
+En la ECV, concreto es el código 1 de P4567 y liviano los demás. En las paredes, `Bloque_Ladrillo` equivale a la
+mampostería de la ECV y las demás categorías a «otro».
+
+**Comparación.** Por bloque de estratos (1-2, 3-4 y 5-6) y tipo de vivienda: las casas del catastro frente a las casas
+de la ECV, y el último piso del catastro frente a los apartamentos de la ECV. Las viviendas sin cubierta no tienen
+techo propio y solo entran en las paredes. Del lado de la ECV se usa la ola 2024 con su diseño muestral (linealización
+con el segmento como unidad primaria, como en el script 07) y el intervalo del 95 %. Del lado del catastro, la
+proporción entre las viviendas con el material registrado.
+
+**Regla.** Una celda concuerda si el intervalo del catastro para el concreto toca el intervalo del 95 % de la ECV, y en
+las paredes si la proporción de mampostería del catastro cae en el intervalo de la ECV. Además, dentro de cada celda se
+comparan las viviendas con y sin materiales registrados en área, año de construcción y estrato, con la diferencia de
+medias estandarizada, y se marca la celda si alguna pasa de 0,2 en valor absoluto.
+
+**Decisión.** Si las celdas concuerdan, se propone usar el catastro para la variación dentro de cada celda (por tamaño,
+época o arquetipo de tamaño) calibrado a las proporciones de la ECV, y se registra en un ajuste aparte antes de
+aplicarlo. Las celdas que no concuerdan conservan el prior de la ECV. En ningún caso la proporción del catastro
+reemplaza la de la ECV en el total de una celda, porque la ECV es la única muestra probabilística de la ciudad. El
+resultado se reporta concuerde o no.
+
+**Resultado (19-nov-2026; scripts 12 y 19).**
+- Empalme: el 81,0 % de las viviendas se empalma por número predial único y el 9,0 % por atributos; 8,6 % queda
+  ambiguo y 0,3 % sin predio. Tiene la calificación completa (con cubierta) el 29,3 % de las viviendas. Otro 46,0 %
+  tiene solo el puntaje total de la calificación, sin materiales.
+- Techo: el catastro registra mucho menos concreto que la ECV. En las casas de 1-2 da entre 0,3 % y 4,7 % frente a 18 %
+  en la ECV (intervalo de 10 % a 27 %), y en las casas de 5-6, entre 15 % y 53 % frente a 80 % (71 % a 89 %). Concuerdan
+  tres de seis celdas (apartamentos de 1-2, casas de 3-4 y apartamentos de 3-4), y las tres solo si la categoría ambigua
+  se cuenta como concreto y por el ancho del intervalo de la ECV. No concuerdan las casas de 1-2 ni las dos celdas de
+  5-6.
+- Paredes: las dos fuentes dan entre 94 % y 100 % de mampostería. Por la regla concuerda solo una de seis celdas,
+  porque cuando la ECV da 100 % su intervalo no tiene ancho, y cualquier proporción del catastro menor que 1 queda
+  fuera. En la práctica la diferencia es de 0 a 6 puntos.
+- Selección: en 10 de las 12 celdas, las viviendas con materiales difieren de las que no los tienen en más de 0,2
+  desviaciones estándar en el estrato o en el año de construcción. En los apartamentos son de 4 a 16 años más nuevas.
+- Decisión, según la regla: el catastro no se usa para los priors del techo. Las celdas que no concuerdan conservan el
+  prior de la ECV, y las que concuerdan lo hacen solo en el borde, así que tampoco se usa para la variación dentro de
+  ellas. Los priors vigentes del Paso 6 no cambian. Una explicación posible es que muchas calificaciones sean de una
+  vigencia vieja y no registren techos de placa construidos después, pero con los datos entregados no se puede probar.
