@@ -1,0 +1,20 @@
+﻿variable,columna,rol,tipo,cardinalidad,faltantes_pct,ceros_pct,minimo,p1,p25,mediana,media,p75,p99,maximo,asimetria,asimetria_log,moda,moda_pct
+Área construida (m²),area_construida,base,numérica,8840,0.0,0.0,10.0,19.0,51.0,73.0,92.17,110.0,356.243008728029,1971.0,4.06,0.34,,
+Pisos de la unidad,total_plantas,base,numérica,18,0.0,0.0,1.0,1.0,1.0,1.0,1.15,1.0,4.0,35.0,11.22,5.23,,
+Piso de ubicación,planta_ubicacion,base,numérica,41,0.11,0.0,1.0,1.0,1.0,1.0,2.49,3.0,14.0,41.0,2.65,1.43,,
+Altura de piso (m),altura,solo carga,numérica,6,0.0,0.0,1.0,3.0,3.0,3.0,3.0,3.0,3.0,9.0,-12.15,-18.56,,
+Año de construcción,anio_construccion,base (como época),numérica,84,0.04,0.0,1930.0,1942.0,1996.0,2010.0,2004.65,2017.0,2025.0,2026.0,-1.51,-1.55,,
+Área del terreno (m²),area_catastral_terreno,variante ampliada,numérica,21780,0.0,16.13,0.0,0.0,22.959999084472656,49.20000076293945,97.48,118.0,506.0,36022.0,59.35,-0.95,,
+Habitaciones,total_habitaciones,variante ampliada,numérica,21,0.11,0.92,0.0,1.0,2.0,3.0,2.81,3.0,6.0,20.0,2.16,-0.65,,
+Baños,total_banios,variante ampliada,numérica,16,0.01,5.22,0.0,0.0,1.0,1.0,1.5,2.0,4.0,15.0,1.75,-0.13,,
+Distancia al centro (km),dist_centro_km,no entra,numérica,134875,3.1,0.0,0.029261047020554543,1.2518333864212037,4.018063545227051,5.741398811340332,5.65,7.193045616149902,11.395899009704593,13.442365646362305,0.21,-0.75,,
+Posición frente a la cubierta,posicion,estrato del diseño,categórica,3,0.0,,,,,,,,,,,,casa,54.5
+Tipo de edificio,tipo,base,categórica,2,0.0,,,,,,,,,,,,baja_altura,64.1
+Época,epoca,base,categórica,3,0.0,,,,,,,,,,,,2010_o_despues,57.1
+Propiedad horizontal,ph,base,categórica,2,0.0,,,,,,,,,,,,no PH,55.2
+VIS o VIP,vis,variante ampliada,categórica,2,0.0,,,,,,,,,,,,no,91.7
+Bloque de estratos,bloque,estrato del diseño,categórica,3,0.0,,,,,,,,,,,,1-2,54.5
+Estrato,estrato_num,estrato del diseño (por bloque),categórica,6,0.0,,,,,,,,,,,,1,32.8
+Uso catastral,uso,define el tipo,categórica,6,0.0,,,,,,,,,,,,Residencial Vivienda Hasta 3 Pisos,55.2
+Condición del predio,condicion_predio,define la PH,categórica,5,0.0,,,,,,,,,,,,PH_Unidad_Predial,44.7
+Tipo de vivienda,tipo_vivienda,define VIS o VIP,categórica,4,0.0,,,,,,,,,,,,No Aplica,78.9

@@ -46,6 +46,11 @@ demás en estrato o año, y el catastro registra mucho menos techo de concreto q
 escenario de sensibilidad del techo (AJ31, tablas `env_escenario_techo_catastro_*.csv`). En las paredes las dos
 fuentes coinciden, con entre 94 % y 100 % de mampostería.
 
+El análisis de las variables del catastro (Nota 14, script 20) muestra por qué los arquetipos usan seis variables:
+habitaciones, baños y área del terreno no repiten a las demás, pero lo que traen de propio no es geometría, y
+agregar cualquiera de ellas cambia entre el 7 % y el 19 % de las asignaciones por vivienda y separa peor la carga. En
+la ECV 2024, la tenencia de aire acondicionado sube con el número de sanitarios dentro de cada bloque de estratos.
+
 La verificación del 9 de noviembre encontró tres errores de implementación, corregidos antes de volver a correr la
 Fase 1 completa (preregistro, Nota 11, y ajuste AJ28). La posición frente a la cubierta se calcula ahora dentro de
 cada torre (24 dígitos del número predial) y no del predio matriz, lo que pasa 2.088 viviendas de sin cubierta a
@@ -59,13 +64,13 @@ casas. Los resultados anteriores se guardan en `datos_internos/antes_nota11/`, q
 
 | Ruta | Qué tiene |
 | --- | --- |
-| `preregistro/preregistro_fase1.md` | Reglas de cada paso, fijadas antes de calcular (versiones 1 a 5 y notas 1 a 13, con fecha y motivo) |
+| `preregistro/preregistro_fase1.md` | Reglas de cada paso, fijadas antes de calcular (versiones 1 a 5 y notas 1 a 14, con fecha y motivo) |
 | `preregistro/decision_fase1.json` | Las mismas reglas en formato máquina; los scripts las leen de aquí |
 | `ajustes_frente_a_la_propuesta.md` | Registro de cada punto en que la ejecución precisa o ajusta la propuesta radicada (AJ1 a AJ31) |
 | `referencias_revisadas.md` | Referencias de arquetipos, agrupamiento e infiltración, con metadatos verificados en Crossref |
 | `src/` | Módulos comunes: rutas y variables (`comun.py`), carga simplificada (`carga.py`), agrupamiento (`agrupamiento.py`), lectura de la ECV (`ecv.py`) y estilo de figuras (`estilo.py`) |
-| `scripts/` | Scripts 01 a 16, 18 y 19 (el 10 se corre antes del 09) |
-| `salidas/tablas/` | Tablas agregadas de cada paso (prefijos `reglas_`, `carga_`, `agr_`, `clf_`, `asg_`, `env_`, `hog_`, `val_`, `clima_`, `techo_`, `todos_`, `dbscan_todos_`, `materiales_`) y la verificación (`verificacion.csv`) |
+| `scripts/` | Scripts 01 a 16 y 18 a 20 (el 10 se corre antes del 09) |
+| `salidas/tablas/` | Tablas agregadas de cada paso (prefijos `reglas_`, `carga_`, `agr_`, `clf_`, `asg_`, `env_`, `hog_`, `val_`, `clima_`, `techo_`, `todos_`, `dbscan_todos_`, `materiales_`, `var_`) y la verificación (`verificacion.csv`) |
 | `salidas/figuras/` | Figuras con el estilo de la propuesta |
 | `salidas/fichas/` | Una ficha por arquetipo para cada solución, en Markdown y en CSV |
 | `salidas/modelos/` | Árboles de decisión que asignan una vivienda a su arquetipo (hojas de al menos 50 viviendas) |
@@ -96,13 +101,14 @@ envolvente con su fuente (`salidas/tablas/env_priors_*.csv` y `.json`, y `env_pr
 | `16_verificacion.py` | todos | Comprobaciones automáticas de coherencia y reproducibilidad de las salidas | 1 min |
 | `18_atipicos_todos_edificios.py` | 2 (robustez) | DBSCAN con los 177.093 edificios, sin la matriz de Gower (distancia de Manhattan sobre las variables reescaladas, con los edificios repetidos reunidos por peso), y la solución final ajustada sin esos atípicos (AJ29, Nota 12). Primero verifica que el método reproduce los atípicos de la submuestra | 12 min |
 | `19_materiales_catastro_ecv.py` | 6 (complementario) | Techo y paredes del catastro frente a la ECV 2024 con la regla de la Nota 13, diferencias entre viviendas con y sin materiales, y el escenario de sensibilidad del techo de la Fase 2 (AJ30, AJ31); usa la salida del 12 | 2 min |
+| `20_analisis_variables.py` | 2 (complementario) | Análisis univariado, bivariado y multivariado de las variables del catastro frente a la carga, la solución final con una variable más de la variante ampliada, la ocupación del lote y la tenencia de aire acondicionado según los sanitarios en la ECV (Nota 14, A13) | 4 min |
 
 Desde la carpeta `arquetipos/`:
 
 ```bash
 python scripts/01_tipologia_reglas.py
 python scripts/02_carga_simplificada.py
-# ... y así hasta 08, en orden; luego 10 y 09; después 11, 12, 13, 14, 15, 18 y 19
+# ... y así hasta 08, en orden; luego 10 y 09; después 11, 12, 13, 14, 15, 18, 19 y 20
 python scripts/16_verificacion.py
 ```
 

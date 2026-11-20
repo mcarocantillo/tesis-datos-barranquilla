@@ -1,0 +1,37 @@
+﻿variable,categoria,viviendas,pct
+Posición frente a la cubierta,casa,181304,54.49
+Posición frente a la cubierta,sin_cubierta,119429,35.89
+Posición frente a la cubierta,ultimo_piso,31985,9.61
+Tipo de edificio,baja_altura,213181,64.07
+Tipo de edificio,multifamiliar,119537,35.93
+Época,2010_o_despues,189971,57.1
+Época,1990_2009,86849,26.1
+Época,antes_1990,55898,16.8
+Propiedad horizontal,no PH,183763,55.23
+Propiedad horizontal,PH,148955,44.77
+VIS o VIP,no,305118,91.7
+VIS o VIP,VIS o VIP,27600,8.3
+Bloque de estratos,1-2,181478,54.54
+Bloque de estratos,3-4,121190,36.42
+Bloque de estratos,5-6,30050,9.03
+Estrato,1,108985,32.76
+Estrato,2,72493,21.79
+Estrato,3,72000,21.64
+Estrato,4,49190,14.78
+Estrato,5,16843,5.06
+Estrato,6,13207,3.97
+Uso catastral,Residencial Vivienda Hasta 3 Pisos,183721,55.22
+Uso catastral,Residencial Apartamentos 4 y mas pisos en PH,119081,35.79
+Uso catastral,Residencial Vivienda Hasta 3 Pisos En PH,29447,8.85
+Uso catastral,Residencial Apartamentos 4 y mas pisos,456,0.14
+Uso catastral,Residencial Vivienda Recreacional En PH,10,0.0
+Uso catastral,Residencial Vivienda Recreacional,3,0.0
+Condición del predio,PH_Unidad_Predial,148839,44.73
+Condición del predio,NPH,111546,33.53
+Condición del predio,Informal,72212,21.7
+Condición del predio,PH_Matriz,116,0.03
+Condición del predio,Condominio_Unidad_Predial,5,0.0
+Tipo de vivienda,No Aplica,262430,78.87
+Tipo de vivienda,Vivienda que no es de interés social,42688,12.83
+Tipo de vivienda,Vivienda de Interés Social,17186,5.17
+Tipo de vivienda,Vivienda de Interés Prioritario,10414,3.13

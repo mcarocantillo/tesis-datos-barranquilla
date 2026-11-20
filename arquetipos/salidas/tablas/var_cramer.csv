@@ -1,0 +1,46 @@
+﻿var1,var2,v_cramer
+Posición frente a la cubierta,Tipo de edificio,0.834
+Posición frente a la cubierta,Época,0.179
+Posición frente a la cubierta,Propiedad horizontal,0.824
+Posición frente a la cubierta,VIS o VIP,0.334
+Posición frente a la cubierta,Bloque de estratos,0.276
+Posición frente a la cubierta,Estrato,0.331
+Posición frente a la cubierta,Uso catastral,0.619
+Posición frente a la cubierta,Condición del predio,0.585
+Posición frente a la cubierta,Tipo de vivienda,0.311
+Tipo de edificio,Época,0.283
+Tipo de edificio,Propiedad horizontal,0.83
+Tipo de edificio,VIS o VIP,0.392
+Tipo de edificio,Bloque de estratos,0.388
+Tipo de edificio,Estrato,0.477
+Tipo de edificio,Uso catastral,1.0
+Tipo de edificio,Condición del predio,0.831
+Tipo de edificio,Tipo de vivienda,0.404
+Época,Propiedad horizontal,0.243
+Época,VIS o VIP,0.2
+Época,Bloque de estratos,0.075
+Época,Estrato,0.181
+Época,Uso catastral,0.201
+Época,Condición del predio,0.187
+Época,Tipo de vivienda,0.149
+Propiedad horizontal,VIS o VIP,0.333
+Propiedad horizontal,Bloque de estratos,0.459
+Propiedad horizontal,Estrato,0.51
+Propiedad horizontal,Uso catastral,0.999
+Propiedad horizontal,Condición del predio,1.0
+Propiedad horizontal,Tipo de vivienda,0.571
+VIS o VIP,Bloque de estratos,0.121
+VIS o VIP,Estrato,0.196
+VIS o VIP,Uso catastral,0.393
+VIS o VIP,Condición del predio,0.333
+VIS o VIP,Tipo de vivienda,1.0
+Bloque de estratos,Estrato,1.0
+Bloque de estratos,Uso catastral,0.334
+Bloque de estratos,Condición del predio,0.383
+Bloque de estratos,Tipo de vivienda,0.256
+Estrato,Uso catastral,0.246
+Estrato,Condición del predio,0.317
+Estrato,Tipo de vivienda,0.245
+Uso catastral,Condición del predio,0.5
+Uso catastral,Tipo de vivienda,0.461
+Condición del predio,Tipo de vivienda,0.33

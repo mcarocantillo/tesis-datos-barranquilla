@@ -1,0 +1,24 @@
+﻿posicion,variable,vif
+casa,Área construida (m²),2.02
+casa,Pisos de la unidad,1.14
+casa,Año de construcción,1.02
+casa,Área del terreno (m²),1.2
+casa,Habitaciones,2.04
+casa,Baños,1.83
+casa,Distancia al centro (km),1.09
+ultimo_piso,Área construida (m²),2.23
+ultimo_piso,Pisos de la unidad,1.23
+ultimo_piso,Piso de ubicación,1.43
+ultimo_piso,Año de construcción,1.13
+ultimo_piso,Área del terreno (m²),1.5
+ultimo_piso,Habitaciones,2.09
+ultimo_piso,Baños,2.08
+ultimo_piso,Distancia al centro (km),1.21
+sin_cubierta,Área construida (m²),2.05
+sin_cubierta,Pisos de la unidad,1.03
+sin_cubierta,Piso de ubicación,1.18
+sin_cubierta,Año de construcción,1.2
+sin_cubierta,Área del terreno (m²),1.36
+sin_cubierta,Habitaciones,1.82
+sin_cubierta,Baños,2.19
+sin_cubierta,Distancia al centro (km),1.17

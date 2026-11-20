@@ -1,0 +1,13 @@
+﻿posicion,variable,r2_desde_base,redundante
+casa,habitaciones,0.421,False
+casa,baños,0.364,False
+casa,área del terreno,0.163,False
+casa,VIS o VIP,0.0,False
+ultimo_piso,habitaciones,0.291,False
+ultimo_piso,baños,0.325,False
+ultimo_piso,área del terreno,0.32,False
+ultimo_piso,VIS o VIP,0.206,False
+sin_cubierta,habitaciones,0.258,False
+sin_cubierta,baños,0.416,False
+sin_cubierta,área del terreno,0.48,False
+sin_cubierta,VIS o VIP,0.18,False

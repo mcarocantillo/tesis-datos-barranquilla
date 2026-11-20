@@ -1,0 +1,11 @@
+﻿solucion,variable_agregada,entra_en,atipicos_originales_en,R2_final,R2,delta_R2,rand_ajustado,rand_ajustado_en_esos_estratos,viviendas_que_cambian_pct,cambia_arquetipos
+por_vivienda,ninguna,control,,0.6299,0.6299,0.0,1.0,1.0,0.0,False
+por_vivienda,habitaciones,casa|1-2; casa|3-4,,0.6299,0.5953,-0.0346,0.8833,0.7471,6.73,True
+por_vivienda,baños,casa|1-2; casa|3-4,,0.6299,0.5584,-0.0715,0.7844,0.5405,14.14,True
+por_vivienda,área del terreno,casa|1-2; casa|3-4,,0.6299,0.5358,-0.0941,0.7278,0.4537,19.22,True
+por_vivienda,VIS o VIP,,,0.6299,0.6299,0.0,1.0,1.0,0.0,False
+por_m2,ninguna,control,,0.9264,0.9264,0.0,1.0,1.0,0.0,False
+por_m2,habitaciones,casa|1-2,,0.9264,0.9039,-0.0225,0.9411,0.0,2.76,True
+por_m2,baños,casa|1-2,,0.9264,0.9264,-0.0,1.0,0.9998,0.0,False
+por_m2,área del terreno,casa|1-2,,0.9264,0.9039,-0.0225,0.9411,0.0,2.76,True
+por_m2,VIS o VIP,,,0.9264,0.9264,0.0,1.0,1.0,0.0,False

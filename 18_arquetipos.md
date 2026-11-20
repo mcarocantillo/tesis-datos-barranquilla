@@ -200,6 +200,194 @@ por vivienda, las casas de los estratos 1 a 4 se dividen solo en pequeñas y gra
 criterio, una variable que no entra en la carga no puede subir el R², así que el resultado no dice si las habitaciones
 o los baños importan para la ocupación o los equipos de la Fase 2.
 
+(sec-arq-variables)=
+## Análisis de las variables del catastro
+
+Esta sección explica por qué los arquetipos usan seis variables del catastro y no otras. Sigue el esquema del
+análisis exploratorio del trabajo previo de predicción del estrato {cite:p}`cantillo2026`, con un análisis
+univariado, uno bivariado y uno multivariado, y termina con los usos de las variables que no entran en los arquetipos.
+El análisis se escribió en el preregistro antes de correrlo (Nota 14, análisis complementario A13), usa las 332.718
+viviendas salvo donde se indica y no cambia la solución final (script 20).
+
+Las respuestas son las dos medidas de carga del Paso 3, por vivienda y por m². Como esa carga se calcula con una
+envolvente común y solo depende del área, el número de pisos, la altura de piso y la posición frente a la cubierta,
+el análisis responde a una pregunta precisa: qué variables del catastro describen la geometría que mueve el calor y
+cuáles describen otra cosa.
+
+### Análisis univariado
+
+:::{table} Variables numéricas del catastro. Rol: base (entra en el agrupamiento), variante ampliada (Nota 8), solo carga o no entra. Asimetría: coeficiente de Fisher, antes y después del logaritmo.
+:name: tab-arq-var-univariado
+:class: tabla-compacta
+
+| Variable | Rol | Faltantes | Ceros | Mediana (p25 a p75) | p1 a p99 | Asimetría | Con logaritmo |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Área construida (m²) | Base | 0 % | 0 % | 73 (51 a 110) | 19 a 356 | 4,06 | 0,34 |
+| Pisos de la unidad | Base | 0 % | 0 % | 1 (1 a 1) | 1 a 4 | 11,22 | 5,23 |
+| Piso de ubicación | Base | 0,1 % | 0 % | 1 (1 a 3) | 1 a 14 | 2,65 | 1,43 |
+| Año de construcción | Base, como época | 0 % | 0 % | 2010 (1996 a 2017) | 1942 a 2025 | −1,51 | |
+| Altura de piso (m) | Solo carga | 0 % | 0 % | 3,0 (3,0 a 3,0) | 3,0 a 3,0 | | |
+| Área del terreno (m²) | Variante ampliada | 0 % | 16,1 % | 49 (23 a 118) | 0 a 506 | 59,35 | −0,95 |
+| Habitaciones | Variante ampliada | 0,1 % | 0,9 % | 3 (2 a 3) | 1 a 6 | 2,16 | −0,65 |
+| Baños | Variante ampliada | 0 % | 5,2 % | 1 (1 a 2) | 0 a 4 | 1,75 | −0,13 |
+| Distancia al centro (km) | No entra | 3,1 % | 0 % | 5,7 (4,0 a 7,2) | 1,3 a 11,4 | 0,21 | |
+:::
+
+```{figure} arquetipos/salidas/figuras/var_distribuciones.png
+:name: fig-arq-var-distribuciones
+:width: 100%
+Distribución de las variables numéricas del catastro en las 332.718 viviendas. Las de asimetría mayor que 2 van en escala logarítmica y todas se cortan en el percentil 99,9.
+```
+
+El área construida tiene una cola larga hacia las viviendas grandes, y el logaritmo la deja casi simétrica (asimetría
+de 4,06 a 0,34). Por eso entra en logaritmo, igual que el número de pisos y el piso de ubicación. Estas dos son casi
+discretas y se concentran en 1, porque el 54,5 % de las viviendas son casas. La altura de piso vale 3,0 m en más del
+99 % de las viviendas, así que no puede separar grupos y solo entra en el volumen de la carga. El año de construcción
+tiene picos en 1986, 2014 y 2022, que parecen años de inscripción más que de construcción (limitación 4), y por eso
+entra como época de tres niveles y no como año. Entre las variables de la variante ampliada, el área del terreno vale
+cero en el 16,1 % de las viviendas y tiene una cola de lotes enormes (hasta 36.022 m²), lo que la hace la menos
+confiable. Las habitaciones y los baños son conteos pequeños, con medianas de 3 y 1.
+
+Entre las categóricas, la posición frente a la cubierta es casa en el 54,5 % de las viviendas, el tipo de edificio es
+de baja altura en el 64,1 %, la época 2010 o después en el 57,1 % y el predio no está en propiedad horizontal en el
+55,2 %. Solo el 8,3 % de las viviendas es VIS o VIP. El uso catastral, la condición del predio y el tipo de vivienda
+no entran como tales porque definen el tipo de edificio, la propiedad horizontal y la condición de VIS o VIP, y su V de
+Cramér con ellas es de 1,0 ([`var_cramer.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_cramer.csv)).
+
+### Análisis bivariado
+
+```{figure} arquetipos/salidas/figuras/var_spearman.png
+:name: fig-arq-var-spearman
+:width: 100%
+Correlación de Spearman entre las variables numéricas del catastro y las dos medidas de carga, por posición frente a la cubierta. En las casas el piso de ubicación es siempre 1 y no tiene correlación definida.
+```
+
+En las casas, la carga por vivienda sigue casi exactamente al área (ρ = 0,99), y la carga por m² baja con ella
+(ρ = −0,91), porque las casas grandes reparten la cubierta en más área o en más pisos. Las habitaciones, los baños y el
+área del terreno también se relacionan con la carga (ρ de 0,65, 0,48 y 0,55 en las casas), pero lo hacen a través del
+tamaño: su correlación con el área es de 0,7, 0,5 y 0,5. La distancia al centro tiene una relación débil y negativa
+con la carga por vivienda (ρ = −0,29), porque las viviendas de la periferia son más pequeñas.
+
+:::{table} Asociación de las variables categóricas con la carga en todas las viviendas. η²: fracción de la varianza de la carga explicada por las categorías de la variable.
+:name: tab-arq-var-eta2
+:class: tabla-compacta
+
+| Variable | η² carga por vivienda | η² carga por m² |
+| --- | --- | --- |
+| Posición frente a la cubierta | 0,26 | 0,89 |
+| Uso catastral | 0,20 | 0,54 |
+| Tipo de edificio | 0,18 | 0,50 |
+| Propiedad horizontal | 0,18 | 0,49 |
+| Estrato | 0,04 | 0,22 |
+| Bloque de estratos | 0,01 | 0,18 |
+| VIS o VIP | 0,06 | 0,07 |
+| Época | 0,02 | 0,04 |
+:::
+
+La posición frente a la cubierta explica por sí sola el 89 % de la varianza de la carga por m², y por eso es el primer
+nivel del diseño anidado. El tipo de edificio y la propiedad horizontal explican la mitad, pero en buena parte por su
+relación con la posición (V de Cramér de 0,83 y 0,82). La época casi no se asocia con la carga, lo que es esperable
+porque la envolvente común no cambia con la edad de la vivienda. La información mutua ordena las variables de forma
+parecida ([`var_vs_carga.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_vs_carga.csv)), con una excepción: la de la distancia al centro es alta (1,39)
+aunque su correlación es baja, porque las viviendas de un mismo edificio comparten la ubicación y la carga, y el
+estimador reconoce el edificio, no un efecto de la ubicación.
+
+Ninguna variable numérica tiene un VIF mayor que 2,3 en ninguna posición ([`var_vif.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_vif.csv)), así que
+no hay multicolinealidad que obligue a descartar alguna. Las variables de la variante ampliada no sobran por repetir a
+las demás, sino por lo que muestra el análisis multivariado.
+
+### Análisis multivariado
+
+Las seis variables base explican entre el 26 % y el 42 % de la varianza de las habitaciones, entre el 33 % y el 42 % de
+la de los baños, entre el 16 % y el 48 % de la del área del terreno y hasta el 21 % de la condición de VIS o VIP, según
+la posición ([`var_redundancia.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_redundancia.csv)). Ninguna llega al 50 % fijado como criterio de
+redundancia, así que cada una trae información propia. En el PCA de las casas, el primer componente (43 % de la
+varianza) pesa casi por igual el área, las habitaciones y los baños, y algo menos el área del terreno, y el segundo y el tercero son
+el año y el número de pisos ([`var_pca.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_pca.csv)). Es decir, las habitaciones y los baños forman con el
+área un mismo eje de tamaño, y lo que tienen de propio no es geometría.
+
+Para saber si esa información propia mejora los arquetipos se repitió la solución final agregando una sola variable a
+las seis base, con el mismo algoritmo, submuestra, k y semilla, y se comparó con el efecto de quitar cada variable base
+(script 08).
+
+```{figure} arquetipos/salidas/figuras/var_agregar_quitar.png
+:name: fig-arq-var-agregar
+:width: 100%
+Cambio del R² de la carga al quitar una variable base (coral) o agregar una de la variante ampliada (turquesa), con el mismo algoritmo, submuestra, k y semilla de la solución final. La línea punteada es la caída de 0,02 que la sensibilidad del Paso 7 considera importante. Las variables sin barra no cambian los grupos.
+```
+
+:::{table} La solución final con una variable más. Rand: índice de Rand ajustado frente a la solución final, en todas las viviendas.
+:name: tab-arq-var-agregar
+:class: tabla-compacta
+
+| Carga | Variable agregada | R² | Cambio del R² | Rand | Viviendas que cambian de arquetipo |
+| --- | --- | --- | --- | --- | --- |
+| Por vivienda | Ninguna (control) | 0,630 | | 1,00 | 0 % |
+| Por vivienda | Habitaciones | 0,595 | −0,035 | 0,88 | 6,7 % |
+| Por vivienda | Baños | 0,558 | −0,072 | 0,78 | 14,1 % |
+| Por vivienda | Área del terreno | 0,536 | −0,094 | 0,73 | 19,2 % |
+| Por vivienda | VIS o VIP | 0,630 | 0 | 1,00 | 0 % |
+| Por m² | Ninguna (control) | 0,926 | | 1,00 | 0 % |
+| Por m² | Habitaciones | 0,904 | −0,023 | 0,94 | 2,8 % |
+| Por m² | Baños | 0,926 | 0 | 1,00 | 0 % |
+| Por m² | Área del terreno | 0,904 | −0,023 | 0,94 | 2,8 % |
+| Por m² | VIS o VIP | 0,926 | 0 | 1,00 | 0 % |
+:::
+
+Cada variable que se agrega cambia los arquetipos y empeora la separación de la carga. En la solución por vivienda, el
+área del terreno mueve al 19 % de las viviendas y baja el R² en 0,094, los baños mueven al 14 % y lo bajan en 0,072, y
+las habitaciones mueven al 7 % y lo bajan en 0,035. Las tres pasan el umbral de la sensibilidad del Paso 7. En la de
+por m², las habitaciones y el área del terreno borran la separación entre las casas de uno y de dos pisos de los
+estratos 1 y 2, que es lo que distingue a C12-2, y por eso el 2,8 % que cambia son justamente esas casas. La condición
+de VIS o VIP no cambia nada, porque en las casas, que son las únicas posiciones con más de un grupo, casi no hay VIS o
+VIP y la regla de las variables casi constantes la descarta.
+
+Quitar una variable base es la prueba inversa. Sin el área, la solución por vivienda pierde 0,228 de R². Sin el número
+de pisos, la de por m² pierde 0,022, porque es la variable que separa las casas de dos pisos. Sin la época o la
+propiedad horizontal casi nada cambia, y sin el número de pisos la solución por vivienda incluso sube 0,028 de R²,
+porque libera a k-prototypes para cortar solo por tamaño. La época y la propiedad horizontal quedan porque están en la propuesta y
+porque describen la construcción, no porque separen la carga del Paso 3, y sus efectos sobre la envolvente entran en
+la Fase 2.
+
+### Variables que no entran en los arquetipos
+
+Las variables que no describen la geometría de la envolvente sí tienen un lugar en el modelo, fuera de los arquetipos.
+
+- **Habitaciones.** Definen cuánta área se climatiza. En los apartamentos de 3-4, el número de habitaciones del
+  catastro, llevado a los dormitorios de la ECV, fija la fracción climatizada (Nota 6). El catastro da entre 0,5 y 1,1
+  habitaciones más que los dormitorios de la ECV en todos los estratos ({numref}`fig-arq-representatividad`).
+- **Área del terreno.** En las 103.877 casas que no están en propiedad horizontal, la huella de la casa (área
+  construida entre pisos) ocupa una mediana del 63 % del lote, y una de cada cuatro (24,6 %) ocupa el 80 % o más, lo
+  que sugiere muros compartidos con los vecinos ([`var_ocupacion_lote.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_ocupacion_lote.csv)). En el 8,1 %
+  la huella supera el lote, un dato inconsistente. La ocupación casi no se relaciona con la carga del Paso 3 (ρ =
+  −0,12), porque esa carga supone la misma fracción de muro expuesto para todas, así que la ocupación del lote es un
+  candidato para darle esa fracción a cada casa en la Fase 2.
+- **Baños.** En la ECV 2024, la tenencia de aire acondicionado sube con el número de sanitarios del hogar dentro de
+  cada bloque de estratos.
+
+:::{table} Hogares con aire acondicionado según el número de sanitarios del hogar en la ECV 2024 (P5024), por bloque de estratos, con el error estándar del diseño muestral.
+:name: tab-arq-var-sanitarios
+:class: tabla-compacta
+
+| Bloque | 1 o ninguno | 2 | 3 o más |
+| --- | --- | --- | --- |
+| 1-2 | 18 % ± 3 (377 hogares) | 43 % ± 7 (27) | 3 hogares |
+| 3-4 | 42 % ± 7 (85) | 65 % ± 6 (75) | 78 % ± 12 (17) |
+| 5-6 | 62 % ± 18 (8) | 87 % ± 10 (28) | 100 % (22) |
+:::
+
+La diferencia es grande dentro de cada bloque: en los estratos 1 y 2, los hogares con dos sanitarios tienen aire
+acondicionado más del doble de veces que los de uno. Los baños parecen medir el ingreso del hogar mejor que el bloque
+de estratos, y el catastro los registra para cada vivienda. Hoy la tenencia de la Fase 2 sale de la ECV por estrato,
+así que usar los baños para repartirla entre las viviendas de un mismo estrato sería un ajuste nuevo frente a la
+propuesta, que no se ha hecho. Hay dos cuidados: los sanitarios de la ECV son del hogar y los baños del catastro son
+de la unidad, y algunas celdas tienen muy pocos hogares.
+
+En resumen, las seis variables base son las que describen la geometría que mueve el calor. Las demás no sobran por
+repetir información, porque cada una trae algo propio, sino porque lo que traen no es geometría: al agregarlas los
+grupos se forman también por el tamaño del lote o por el número de baños, y la carga se separa peor. Su lugar está en
+la Fase 2, en la fracción climatizada, los muros compartidos y la tenencia de aire acondicionado.
+
 ## Dónde están los arquetipos
 
 Los mapas agregan las 322.418 viviendas con coordenadas en celdas de unos 275 m y muestran, para cada arquetipo, qué
@@ -456,6 +644,6 @@ Catastro frente a la ECV 2024: viviendas por estrato, fracción de casas por blo
 ## Archivos
 
 Todo está en la carpeta [`arquetipos/`](https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos):
-el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 16, 18 y 19, las tablas agregadas, las figuras,
+el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 16 y 18 a 20, las tablas agregadas, las figuras,
 las fichas de los arquetipos de cada solución (`salidas/fichas/`) y los árboles de asignación (`salidas/modelos/`). La
 asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publican.

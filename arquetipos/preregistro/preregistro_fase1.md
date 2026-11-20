@@ -916,3 +916,51 @@ resultado se reporta concuerde o no.
   prior de la ECV, y las que concuerdan lo hacen solo en el borde, así que tampoco se usa para la variación dentro de
   ellas. Los priors vigentes del Paso 6 no cambian. Una explicación posible es que muchas calificaciones sean de una
   vigencia vieja y no registren techos de placa construidos después, pero con los datos entregados no se puede probar.
+
+## Nota 14 (19-nov-2026): análisis de las variables del catastro
+
+**Cuándo y por qué.** Escrita el 19-nov-2026, antes de correr el análisis, a pedido de la usuaria. Documenta por qué
+los arquetipos usan las seis variables de la Sección 7.3 y no otras del catastro, con un análisis univariado,
+bivariado y multivariado como el del trabajo previo de predicción del estrato. Es el análisis complementario A13. No
+cambia ninguna regla ni la solución final. Antes de escribirla solo se conocían la variante ampliada (Nota 8), la
+sensibilidad a quitar cada variable (script 08) y las correlaciones de Spearman de habitaciones, baños y área del
+terreno con el área en casas y sin cubierta, calculadas el mismo día.
+
+**Variables.** Área construida, número de pisos de la unidad, piso de ubicación, altura de piso, año de construcción
+(y época), área del terreno, habitaciones, baños, tipo de edificio (uso), condición del predio (PH), tipo de vivienda
+(VIS o VIP), estrato, posición frente a la cubierta y distancia al centro. Las respuestas son la carga del Paso 3 por
+vivienda y por m² y el arquetipo de cada solución. Todo con las 332.718 viviendas, salvo donde se diga.
+
+**Análisis.**
+1. Univariado: tipo, cardinalidad, faltantes, ceros y valores imposibles, estadísticos, asimetría antes y después del
+   logaritmo, y frecuencias de las categóricas.
+2. Bivariado: Spearman entre numéricas por posición, Spearman e información mutua de cada variable con la carga, η²
+   de las categóricas sobre la carga, V de Cramér entre categóricas y VIF de las numéricas por posición.
+3. Multivariado: R² de cada variable de la variante ampliada explicada por las seis base (regresión lineal con la
+   época, el tipo y la PH como indicadoras, por posición); PCA de las numéricas por posición; y el agrupamiento de la
+   solución final repetido al agregar una sola variable de la variante ampliada a las seis base, con el mismo
+   algoritmo, submuestra, k y semilla, y los atípicos de DBSCAN recalculados, igual que el script 08 al quitarlas.
+4. Usos fuera de los arquetipos: ocupación del lote de las casas que no están en PH (huella entre área del terreno) como
+   indicio de muros compartidos, y tenencia de aire acondicionado en la ECV 2024 según el número de sanitarios del
+   hogar (P5024) dentro de cada bloque de estratos, con el diseño muestral.
+
+**Criterios para la lectura.** Una variable se lee como redundante con las seis base si estas explican al menos el
+50 % de su varianza o si su VIF es de 5 o más. Agregarla cambia los arquetipos con los mismos umbrales del script 08:
+índice de Rand ajustado menor que el mínimo de la sensibilidad o una caída del R² de la carga mayor que la fijada allí.
+Si la tenencia de aire acondicionado difiere según los sanitarios dentro de un bloque, se reporta, y usar los
+sanitarios en la Fase 2 sería un ajuste aparte.
+
+**Resultado (19-nov-2026; script 20, tablas `var_*`).**
+- Univariado: el logaritmo deja el área casi simétrica (asimetría de 4,06 a 0,34). La altura de piso vale 3,0 m en más
+  del 99 % de las viviendas. El área del terreno vale cero en el 16,1 % y llega a 36.022 m².
+- Bivariado: en las casas la carga por vivienda sigue al área (ρ = 0,99). Habitaciones, baños y terreno se asocian con
+  la carga (ρ de 0,65, 0,48 y 0,55) a través del tamaño. La posición explica el 89 % de la varianza de la carga por m².
+  Ningún VIF pasa de 2,3. La información mutua de la distancia al centro es alta (1,39) porque reconoce el edificio.
+- Multivariado: las seis base explican entre 16 % y 48 % de cada variable de la variante ampliada, ninguna redundante
+  según el criterio. Agregar una sola variable cambia los arquetipos y empeora el R² de la carga: por vivienda,
+  habitaciones −0,035 (Rand 0,88), baños −0,072 (0,78) y terreno −0,094 (0,73); por m², habitaciones y terreno −0,023
+  (borran la separación de las casas de dos pisos de 1-2). VIS o VIP no entra en las casas y no cambia nada.
+- Fuera de los arquetipos: en las casas que no están en PH, la huella ocupa una mediana del 63 % del lote, el 24,6 %
+  ocupa el 80 % o más y el 8,1 % supera el lote. En la ECV 2024, la tenencia de aire acondicionado sube con los
+  sanitarios dentro de cada bloque (1-2: 18 % con uno frente a 43 % con dos; 3-4: 42 %, 65 % y 78 %; 5-6: 62 %, 87 % y
+  100 %). Usar los baños del catastro para repartir la tenencia dentro de un estrato sería un ajuste aparte, no hecho.

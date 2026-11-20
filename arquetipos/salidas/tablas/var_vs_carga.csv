@@ -1,0 +1,77 @@
+﻿posicion,variable,columna,mi_carga,spearman_carga,mi_carga_m2,spearman_carga_m2,eta2_carga,eta2_carga_m2
+todas,Área construida (m²),area_construida,5.2,0.801,5.177,-0.328,,
+todas,Pisos de la unidad,total_plantas,0.277,0.194,0.33,-0.129,,
+todas,Piso de ubicación,planta_ubicacion,0.309,-0.429,0.349,-0.499,,
+todas,Altura de piso (m),altura,0.017,0.069,0.019,0.063,,
+todas,Año de construcción,anio_construccion,0.589,-0.084,0.595,-0.081,,
+todas,Área del terreno (m²),area_catastral_terreno,1.772,0.545,1.797,0.06,,
+todas,Habitaciones,total_habitaciones,0.362,0.446,0.361,-0.3,,
+todas,Baños,total_banios,0.326,0.065,0.345,-0.532,,
+todas,Distancia al centro (km),dist_centro_km,1.391,-0.343,1.456,0.018,,
+todas,Posición frente a la cubierta,posicion,0.625,,0.675,,0.264,0.892
+todas,Tipo de edificio,tipo,0.355,,0.359,,0.183,0.5
+todas,Época,epoca,0.108,,0.108,,0.022,0.041
+todas,Propiedad horizontal,ph,0.324,,0.329,,0.181,0.487
+todas,VIS o VIP,vis,0.192,,0.191,,0.058,0.065
+todas,Bloque de estratos,bloque,0.249,,0.264,,0.011,0.177
+todas,Estrato,estrato_num,0.378,,0.4,,0.04,0.224
+todas,Uso catastral,uso,0.416,,0.421,,0.201,0.539
+todas,Condición del predio,condicion_predio,0.38,,0.386,,0.25,0.488
+todas,Tipo de vivienda,tipo_vivienda,0.302,,0.297,,0.063,0.103
+casa,Área construida (m²),area_construida,5.35,0.985,5.339,-0.914,,
+casa,Pisos de la unidad,total_plantas,0.297,0.059,0.353,-0.532,,
+casa,Piso de ubicación,planta_ubicacion,0.004,,0.004,,,
+casa,Altura de piso (m),altura,0.002,0.001,0.001,0.008,,
+casa,Año de construcción,anio_construccion,0.124,-0.013,0.127,0.04,,
+casa,Área del terreno (m²),area_catastral_terreno,0.611,0.552,0.632,-0.475,,
+casa,Habitaciones,total_habitaciones,0.355,0.653,0.365,-0.65,,
+casa,Baños,total_banios,0.267,0.475,0.281,-0.582,,
+casa,Distancia al centro (km),dist_centro_km,0.237,-0.291,0.26,0.228,,
+casa,Posición frente a la cubierta,posicion,0.0,,0.0,,0.0,0.0
+casa,Tipo de edificio,tipo,0.0,,0.0,,0.0,0.0
+casa,Época,epoca,0.025,,0.026,,0.0,0.004
+casa,Propiedad horizontal,ph,0.062,,0.063,,0.004,0.077
+casa,VIS o VIP,vis,0.0,,0.0,,0.0,0.0
+casa,Bloque de estratos,bloque,0.127,,0.134,,0.196,0.146
+casa,Estrato,estrato_num,0.17,,0.181,,0.227,0.175
+casa,Uso catastral,uso,0.061,,0.063,,0.004,0.077
+casa,Condición del predio,condicion_predio,0.139,,0.143,,0.091,0.148
+casa,Tipo de vivienda,tipo_vivienda,0.033,,0.034,,0.001,0.059
+ultimo_piso,Área construida (m²),area_construida,5.234,0.975,5.214,-0.898,,
+ultimo_piso,Pisos de la unidad,total_plantas,0.517,0.269,0.664,-0.741,,
+ultimo_piso,Piso de ubicación,planta_ubicacion,0.657,-0.276,0.672,0.416,,
+ultimo_piso,Altura de piso (m),altura,0.033,0.112,0.036,0.042,,
+ultimo_piso,Año de construcción,anio_construccion,0.781,0.033,0.796,0.015,,
+ultimo_piso,Área del terreno (m²),area_catastral_terreno,2.08,0.618,2.123,-0.629,,
+ultimo_piso,Habitaciones,total_habitaciones,0.334,0.533,0.348,-0.518,,
+ultimo_piso,Baños,total_banios,0.258,0.425,0.261,-0.349,,
+ultimo_piso,Distancia al centro (km),dist_centro_km,1.811,-0.388,1.879,0.326,,
+ultimo_piso,Posición frente a la cubierta,posicion,0.0,,0.0,,0.0,0.0
+ultimo_piso,Tipo de edificio,tipo,0.215,,0.216,,0.049,0.191
+ultimo_piso,Época,epoca,0.152,,0.156,,0.027,0.078
+ultimo_piso,Propiedad horizontal,ph,0.241,,0.248,,0.135,0.399
+ultimo_piso,VIS o VIP,vis,0.256,,0.256,,0.059,0.085
+ultimo_piso,Bloque de estratos,bloque,0.287,,0.29,,0.108,0.009
+ultimo_piso,Estrato,estrato_num,0.457,,0.462,,0.154,0.076
+ultimo_piso,Uso catastral,uso,0.33,,0.339,,0.171,0.401
+ultimo_piso,Condición del predio,condicion_predio,0.245,,0.254,,0.148,0.402
+ultimo_piso,Tipo de vivienda,tipo_vivienda,0.434,,0.432,,0.065,0.107
+sin_cubierta,Área construida (m²),area_construida,5.126,0.993,5.071,-0.888,,
+sin_cubierta,Pisos de la unidad,total_plantas,0.187,0.266,0.153,0.219,,
+sin_cubierta,Piso de ubicación,planta_ubicacion,0.165,0.115,0.164,-0.141,,
+sin_cubierta,Altura de piso (m),altura,0.039,0.109,0.039,0.109,,
+sin_cubierta,Año de construcción,anio_construccion,1.179,-0.016,1.165,-0.01,,
+sin_cubierta,Área del terreno (m²),area_catastral_terreno,3.449,0.422,3.422,-0.349,,
+sin_cubierta,Habitaciones,total_habitaciones,0.352,0.518,0.339,-0.484,,
+sin_cubierta,Baños,total_banios,0.381,0.52,0.369,-0.472,,
+sin_cubierta,Distancia al centro (km),dist_centro_km,3.261,-0.519,3.242,0.428,,
+sin_cubierta,Posición frente a la cubierta,posicion,0.0,,0.0,,0.0,0.0
+sin_cubierta,Tipo de edificio,tipo,0.084,,0.071,,0.007,0.001
+sin_cubierta,Época,epoca,0.152,,0.148,,0.035,0.015
+sin_cubierta,Propiedad horizontal,ph,0.034,,0.032,,0.001,0.001
+sin_cubierta,VIS o VIP,vis,0.309,,0.306,,0.097,0.047
+sin_cubierta,Bloque de estratos,bloque,0.401,,0.389,,0.298,0.135
+sin_cubierta,Estrato,estrato_num,0.622,,0.606,,0.364,0.157
+sin_cubierta,Uso catastral,uso,0.105,,0.089,,0.018,0.005
+sin_cubierta,Condición del predio,condicion_predio,0.041,,0.038,,0.007,0.004
+sin_cubierta,Tipo de vivienda,tipo_vivienda,0.528,,0.518,,0.152,0.064
