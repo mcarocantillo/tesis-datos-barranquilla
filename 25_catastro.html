@@ -868,9 +868,9 @@ publica. Decisión: con la envolvente común, las diferencias de carga vienen so
 sirven para elegir el número de arquetipos sin mezclar los supuestos de materiales.</p></li>
 <li><p><strong>Agrupamiento y número de arquetipos.</strong> Entrada: las variables del paso 6 y la carga del paso 8. Operación:
 <code class="docutils literal notranslate"><span class="pre">03_agrupamiento.py</span></code> ajusta K-Means, k-prototypes y el jerárquico con distancia de Gower <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id69" title="J. C. Gower. A General Coefficient of Similarity and Some of Its Properties. Biometrics, 27(4):857–871, 1971. doi:10.2307/2528823.">Gower, 1971</a>)</span> en una
-submuestra de 10.294 edificios (una vivienda al azar por edificio en cada posición), aplica los grupos a las
+submuestra de 10.293 edificios (una vivienda al azar por edificio en cada posición), aplica los grupos a las
 332.718 viviendas y mide el R² de la carga con todas. <code class="docutils literal notranslate"><span class="pre">04_eleccion.py</span></code> elige el número de grupos y el algoritmo, y
-<code class="docutils literal notranslate"><span class="pre">05_sensibilidad_atipicos.py</span></code> repite el agrupamiento sin apartar los atípicos. Salida: 17 arquetipos con la carga
+<code class="docutils literal notranslate"><span class="pre">05_sensibilidad_atipicos.py</span></code> repite el agrupamiento sin apartar los atípicos. Salida: 15 arquetipos con la carga
 por vivienda y 10 con la carga por m², en diseño anidado por posición y bloque de estratos. Decisión: la submuestra
 por edificio impide que una torre de cientos de apartamentos pese más que una casa, y la estabilidad se exige con
 los umbrales de <span class="bibtex-citation" id="id3">Hennig (<a class="reference internal" href="09_referencias.html#id70" title="Christian Hennig. Cluster-wise assessment of cluster stability. Computational Statistics &amp; Data Analysis, 52(1):258–271, 2007. doi:10.1016/j.csda.2006.11.025.">2007</a>)</span>.</p></li>
@@ -964,7 +964,7 @@ y <code class="docutils literal notranslate"><span class="pre">pac_posicion_estr
 <p>El catastro entrega la composición física del parque de viviendas, que ninguna otra fuente tiene a escala de ciudad
 (<a class="reference internal" href="10_insumos.html"><span class="std std-doc">Insumos del modelo</span></a>). En concreto entrega cuatro productos:</p>
 <ul class="simple">
-<li><p>La base de 332.718 viviendas asignadas a los 17 arquetipos por vivienda o a los 10 por m², con el número de
+<li><p>La base de 332.718 viviendas asignadas a los 15 arquetipos por vivienda o a los 10 por m², con el número de
 viviendas de cada arquetipo, su área mediana, sus pisos y su incertidumbre de asignación. Es la población que
 simula la Fase 2.</p></li>
 <li><p>La posición frente a la cubierta por estrato (<a class="reference internal" href="10_insumos.html#tab-posicion"><span class="std std-numref">Tabla 5</span></a>), que decide en qué viviendas el techo es

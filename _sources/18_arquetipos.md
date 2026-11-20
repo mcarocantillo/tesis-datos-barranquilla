@@ -7,8 +7,14 @@ ficha. Este capítulo resume
 el método y los resultados; el código, el preregistro, las tablas completas y las fichas están en la carpeta
 [`arquetipos/`](https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos) del repositorio.
 
+La tesis se organiza en tres fases que siguen los objetivos de la propuesta. Esta primera fase define qué tipos de
+vivienda hay en la ciudad, cuántas viviendas tiene cada uno y dónde están, y entrega para cada arquetipo su geometría,
+su posición frente a la cubierta y los priors de su envolvente. La Fase 2 toma esos arquetipos como la población que
+se simula, con el clima, la tenencia y el uso del aire acondicionado, para obtener los perfiles horarios de carga de
+cada tipo de vivienda. La Fase 3 compara el modelo con el consumo y la demanda observados.
+
 :::{note}
-**Estado (10 de noviembre de 2026).** Los siete pasos están hechos con las dos medidas de carga del Paso 3: por
+**Estado (20 de noviembre de 2026).** Los siete pasos están hechos con las dos medidas de carga del Paso 3: por
 vivienda, como está escrito en la propuesta (15 arquetipos), y por m² (10 arquetipos). Las cifras son las de la corrida
 con el código corregido después de la verificación ({ref}`sec-arq-verificacion`). La elección entre las dos está
 pendiente; mientras tanto aplica la carga por vivienda. Todos los productos existen para las dos soluciones. Una
@@ -411,6 +417,22 @@ Arquetipos de la solución por vivienda. Cada panel muestra la fracción de las 
 Arquetipos de la solución por m², con la misma construcción.
 ```
 
+### Composición por barrio
+
+Para trabajar con unidades que reconocen la Alcaldía y el operador de red, cada vivienda con coordenadas se ubicó en
+uno de los barrios de la capa del Plan de Ordenamiento Territorial publicada en datos.gov.co (conjunto `qui6-qeux`,
+licencia CC BY-SA 4.0), con el script `17_barrios_arquetipos.py`. Quedan dentro de algún barrio 278.319 de las 322.418
+viviendas con coordenadas, repartidas en 189 barrios, y las demás caen fuera de los polígonos de la capa. La tabla
+[`barrios_arquetipos.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/barrios_arquetipos.csv) da para cada barrio el número de viviendas, el estrato más frecuente y la fracción
+de viviendas de cada arquetipo en las dos soluciones. Como en los mapas, no se publica la composición de los dos
+barrios con menos de 10 viviendas.
+
+Con la carga por m², en 156 de los 187 barrios restantes un solo arquetipo reúne al menos la mitad de las viviendas, y
+en 97 reúne el 70 % o más. Con la carga por vivienda eso pasa en 54 y 21 barrios, porque los cuatro arquetipos de
+casas de los estratos 1 y 2 conviven dentro de un mismo barrio. Esta tabla es la base para escoger los barrios cuyos
+consumos agregados se pedirán a Air-e: un barrio donde predomina un arquetipo permite leer su consumo como el de ese
+arquetipo, y los barrios elegidos deben cubrir los arquetipos más poblados de cada bloque de estratos.
+
 ## Robustez frente a la submuestra
 
 El agrupamiento se ajustó con 10.293 edificios, que en las casas son el 2,6 % de los 155.158. Para medir cuánto
@@ -644,6 +666,6 @@ Catastro frente a la ECV 2024: viviendas por estrato, fracción de casas por blo
 ## Archivos
 
 Todo está en la carpeta [`arquetipos/`](https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos):
-el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 16 y 18 a 20, las tablas agregadas, las figuras,
+el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 20, las tablas agregadas, las figuras,
 las fichas de los arquetipos de cada solución (`salidas/fichas/`) y los árboles de asignación (`salidas/modelos/`). La
 asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publican.

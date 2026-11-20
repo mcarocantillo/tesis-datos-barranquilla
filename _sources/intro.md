@@ -1,6 +1,6 @@
 # Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla
 
-**María Carolina Cantillo Orozco** · Maestría en Ingeniería Mecánica, Universidad del Norte · Actualizado: 27 de octubre de 2026
+**María Carolina Cantillo Orozco** · Maestría en Ingeniería Mecánica, Universidad del Norte · Actualizado: 20 de noviembre de 2026
 
 ## Resumen
 
@@ -81,6 +81,10 @@ Tenencia de A/C por estrato y año (variante C) con su intervalo de confianza de
 - **Reproducibilidad** y **Referencias**: scripts, tablas y bibliografía.
 
 Las bases por hogar y por vivienda no se publican aquí; los microdatos son públicos en el [catálogo del DANE](https://microdatos.dane.gov.co) y el [SUI](https://reportes.sui.gov.co).
+
+## Uso de herramientas de inteligencia artificial
+
+En la programación y la redacción de este repositorio usé un asistente de inteligencia artificial (Claude, de Anthropic). El diseño metodológico, las decisiones y la interpretación de los resultados son míos. Por eso algunos commits aparecen con Claude como coautor.
 
 ## Cómo citar
 

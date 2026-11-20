@@ -430,7 +430,10 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-no-entran-en-los-arquetipos">Variables que no entran en los arquetipos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-estan-los-arquetipos">Dónde están los arquetipos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-estan-los-arquetipos">Dónde están los arquetipos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-por-barrio">Composición por barrio</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robustez-frente-a-la-submuestra">Robustez frente a la submuestra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-y-correcciones">Verificación y correcciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priors-de-envolvente">Priors de envolvente</a></li>
@@ -457,9 +460,14 @@ parecidas, y por eso con un índice de carga parecido, y lleva sus priors de env
 ficha. Este capítulo resume
 el método y los resultados; el código, el preregistro, las tablas completas y las fichas están en la carpeta
 <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos"><code class="docutils literal notranslate"><span class="pre">arquetipos/</span></code></a> del repositorio.</p>
+<p>La tesis se organiza en tres fases que siguen los objetivos de la propuesta. Esta primera fase define qué tipos de
+vivienda hay en la ciudad, cuántas viviendas tiene cada uno y dónde están, y entrega para cada arquetipo su geometría,
+su posición frente a la cubierta y los priors de su envolvente. La Fase 2 toma esos arquetipos como la población que
+se simula, con el clima, la tenencia y el uso del aire acondicionado, para obtener los perfiles horarios de carga de
+cada tipo de vivienda. La Fase 3 compara el modelo con el consumo y la demanda observados.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p><strong>Estado (10 de noviembre de 2026).</strong> Los siete pasos están hechos con las dos medidas de carga del Paso 3: por
+<p><strong>Estado (20 de noviembre de 2026).</strong> Los siete pasos están hechos con las dos medidas de carga del Paso 3: por
 vivienda, como está escrito en la propuesta (15 arquetipos), y por m² (10 arquetipos). Las cifras son las de la corrida
 con el código corregido después de la verificación (<a class="reference internal" href="#sec-arq-verificacion"><span class="std std-ref">Verificación y correcciones</span></a>). La elección entre las dos está
 pendiente; mientras tanto aplica la carga por vivienda. Todos los productos existen para las dos soluciones. Una
@@ -1360,6 +1368,21 @@ el sur con poca participación en cada celda.</p>
 <p><span class="caption-number">Figura 18 </span><span class="caption-text">Arquetipos de la solución por m², con la misma construcción.</span><a class="headerlink" href="#fig-arq-mapa-m2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<section id="composicion-por-barrio">
+<h3>Composición por barrio<a class="headerlink" href="#composicion-por-barrio" title="Link to this heading">#</a></h3>
+<p>Para trabajar con unidades que reconocen la Alcaldía y el operador de red, cada vivienda con coordenadas se ubicó en
+uno de los barrios de la capa del Plan de Ordenamiento Territorial publicada en datos.gov.co (conjunto <code class="docutils literal notranslate"><span class="pre">qui6-qeux</span></code>,
+licencia CC BY-SA 4.0), con el script <code class="docutils literal notranslate"><span class="pre">17_barrios_arquetipos.py</span></code>. Quedan dentro de algún barrio 278.319 de las 322.418
+viviendas con coordenadas, repartidas en 189 barrios, y las demás caen fuera de los polígonos de la capa. La tabla
+<a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/barrios_arquetipos.csv"><code class="docutils literal notranslate"><span class="pre">barrios_arquetipos.csv</span></code></a> da para cada barrio el número de viviendas, el estrato más frecuente y la fracción
+de viviendas de cada arquetipo en las dos soluciones. Como en los mapas, no se publica la composición de los dos
+barrios con menos de 10 viviendas.</p>
+<p>Con la carga por m², en 156 de los 187 barrios restantes un solo arquetipo reúne al menos la mitad de las viviendas, y
+en 97 reúne el 70 % o más. Con la carga por vivienda eso pasa en 54 y 21 barrios, porque los cuatro arquetipos de
+casas de los estratos 1 y 2 conviven dentro de un mismo barrio. Esta tabla es la base para escoger los barrios cuyos
+consumos agregados se pedirán a Air-e: un barrio donde predomina un arquetipo permite leer su consumo como el de ese
+arquetipo, y los barrios elegidos deben cubrir los arquetipos más poblados de cada bloque de estratos.</p>
+</section>
 </section>
 <section id="robustez-frente-a-la-submuestra">
 <h2>Robustez frente a la submuestra<a class="headerlink" href="#robustez-frente-a-la-submuestra" title="Link to this heading">#</a></h2>
@@ -1692,7 +1715,7 @@ sensibilidad.</p></li>
 <section id="archivos">
 <h2>Archivos<a class="headerlink" href="#archivos" title="Link to this heading">#</a></h2>
 <p>Todo está en la carpeta <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos"><code class="docutils literal notranslate"><span class="pre">arquetipos/</span></code></a>:
-el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 16 y 18 a 20, las tablas agregadas, las figuras,
+el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 20, las tablas agregadas, las figuras,
 las fichas de los arquetipos de cada solución (<code class="docutils literal notranslate"><span class="pre">salidas/fichas/</span></code>) y los árboles de asignación (<code class="docutils literal notranslate"><span class="pre">salidas/modelos/</span></code>). La
 asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publican.</p>
 </section>
@@ -1779,7 +1802,10 @@ asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publ
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-no-entran-en-los-arquetipos">Variables que no entran en los arquetipos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-estan-los-arquetipos">Dónde están los arquetipos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-estan-los-arquetipos">Dónde están los arquetipos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-por-barrio">Composición por barrio</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robustez-frente-a-la-submuestra">Robustez frente a la submuestra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-y-correcciones">Verificación y correcciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priors-de-envolvente">Priors de envolvente</a></li>
