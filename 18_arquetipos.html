@@ -222,6 +222,18 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Arquetipos de vivienda (Fase 1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_datos.html">Bases de datos de la tesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_ecv.html">Encuesta de Calidad de Vida (ECV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_enut.html">Encuesta Nacional de Uso del Tiempo (ENUT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_geih.html">Gran Encuesta Integrada de Hogares (GEIH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_sui.html">Sistema Único de Información (SUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_catastro.html">Catastro de Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_xm.html">Demanda horaria de XM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27_clima.html">Clima horario (ERA5-Land, Open-Meteo e IDEAM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28_enso.html">El Niño y La Niña (ONI de la NOAA)</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="14_encuestas.html">Encuestas usadas y representatividad</a></li>
@@ -411,7 +423,18 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variante-con-mas-variables-del-catastro">Variante con más variables del catastro</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-las-variables-del-catastro">Análisis de las variables del catastro</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-univariado">Análisis univariado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado">Análisis bivariado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-multivariado">Análisis multivariado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-no-entran-en-los-arquetipos">Variables que no entran en los arquetipos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-estan-los-arquetipos">Dónde están los arquetipos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robustez-frente-a-la-submuestra">Robustez frente a la submuestra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-y-correcciones">Verificación y correcciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priors-de-envolvente">Priors de envolvente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-con-los-materiales-del-catastro">Comparación con los materiales del catastro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion">Validación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones">Limitaciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos">Archivos</a></li>
@@ -429,15 +452,16 @@
   <section class="tex2jax_ignore mathjax_ignore" id="arquetipos-de-vivienda-fase-1">
 <h1>Arquetipos de vivienda (Fase 1)<a class="headerlink" href="#arquetipos-de-vivienda-fase-1" title="Link to this heading">#</a></h1>
 <p>La Fase 1 de la tesis caracteriza los arquetipos de vivienda de Barranquilla a partir del catastro y asigna cada una de
-las 332.718 viviendas a un arquetipo <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id24" title="Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 305, 315, 500, 505, 601 y 602). ArcGIS REST, 2026. Consultado: 15 sep. 2026. URL: https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer.">Alcaldía de Barranquilla, Gerencia de Gestión Catastral, 2026</a>)</span>. Cada arquetipo reúne viviendas de geometría y posición
+las 332.718 viviendas a un arquetipo <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id24" title="Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 105, 305, 315, 500, 505, 535, 601 y 602). ArcGIS REST, 2026. Consultado: 17 y 27 sep. 2026; capa 535, 3 nov. 2026. URL: https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer.">Alcaldía de Barranquilla, Gerencia de Gestión Catastral, 2026</a>)</span>. Cada arquetipo reúne viviendas de geometría y posición
 parecidas, y por eso con un índice de carga parecido, y lleva sus priors de envolvente, sus atributos del hogar y su
 ficha. Este capítulo resume
 el método y los resultados; el código, el preregistro, las tablas completas y las fichas están en la carpeta
 <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos"><code class="docutils literal notranslate"><span class="pre">arquetipos/</span></code></a> del repositorio.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p><strong>Estado (2 de noviembre de 2026).</strong> Los siete pasos están hechos con las dos medidas de carga del Paso 3: por
-vivienda, como está escrito en la propuesta (17 arquetipos), y por m² (10 arquetipos). La elección entre las dos está
+<p><strong>Estado (10 de noviembre de 2026).</strong> Los siete pasos están hechos con las dos medidas de carga del Paso 3: por
+vivienda, como está escrito en la propuesta (15 arquetipos), y por m² (10 arquetipos). Las cifras son las de la corrida
+con el código corregido después de la verificación (<a class="reference internal" href="#sec-arq-verificacion"><span class="std std-ref">Verificación y correcciones</span></a>). La elección entre las dos está
 pendiente; mientras tanto aplica la carga por vivienda. Todos los productos existen para las dos soluciones. Una
 variante del agrupamiento con cuatro variables más del catastro explica menos varianza de la carga en las dos medidas
 y queda como análisis complementario (<a class="reference internal" href="#tab-arq-ampliada"><span class="std std-numref">Tabla 18</span></a>).</p>
@@ -449,7 +473,9 @@ construcción, el uso, la condición de propiedad horizontal y el estrato. Con e
 <ul class="simple">
 <li><p><strong>Posición frente a la cubierta:</strong> casa (suelo y techo propios), último piso (techo expuesto en un edificio) o sin
 cubierta (otra vivienda encima, incluido el primer piso con vivienda encima). Es la variable que más pesa en la
-carga, porque el techo es la principal ganancia de calor.</p></li>
+carga, porque el techo es la principal ganancia de calor. Una vivienda tiene el techo expuesto si su último piso es
+el más alto de su torre, identificada con los 24 primeros dígitos del número predial (predio matriz y número de
+torre). Si además empieza en el primer piso es casa, y si no, último piso.</p></li>
 <li><p><strong>Tipo de edificio:</strong> baja altura (hasta 3 pisos) o multifamiliar (4 pisos o más), según el uso catastral.</p></li>
 <li><p><strong>Época:</strong> antes de 1990, de 1990 a 2009, y 2010 o después.</p></li>
 <li><p><strong>Bloque de estratos:</strong> 1-2, 3-4 y 5-6.</p></li>
@@ -463,32 +489,49 @@ carga, porque el techo es la principal ganancia de calor.</p></li>
 <tr class="row-odd"><th class="head"><p>Paso</p></th>
 <th class="head"><p>Qué se hace</p></th>
 <th class="head"><p>Regla principal</p></th>
+<th class="head"><p>Scripts</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>2. Agrupamiento</p></td>
-<td><p>K-Means, k-prototypes y jerárquico con distancia de Gower, ajustados en una submuestra de 10.294 edificios (una vivienda por edificio en cada posición) y aplicados después a las 332.718 viviendas</p></td>
-<td><p>Se agrupa por separado dentro de cada posición frente a la cubierta; DBSCAN aparta los atípicos del ajuste; el R² se calcula con todas las viviendas</p></td>
+<tr class="row-even"><td><p>1. Datos</p></td>
+<td><p>Catastro depurado, una fila por vivienda, con la posición frente a la cubierta, la época y el bloque de estratos</p></td>
+<td><p>Los valores imposibles quedan como faltantes; la época faltante toma la más frecuente de su tipo, posición y bloque</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">src/comun.py</span></code>, <code class="docutils literal notranslate"><span class="pre">01</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>3. Número de arquetipos</p></td>
+<tr class="row-odd"><td><p>2. Agrupamiento</p></td>
+<td><p>K-Means, k-prototypes y jerárquico con distancia de Gower, ajustados en una submuestra de 10.293 edificios (una vivienda por edificio en cada posición) y aplicados después a las 332.718 viviendas</p></td>
+<td><p>Se agrupa por separado dentro de cada posición frente a la cubierta; DBSCAN aparta los atípicos del ajuste; el R² se calcula con todas las viviendas</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">03</span></code>, <code class="docutils literal notranslate"><span class="pre">04</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>3. Número de arquetipos</p></td>
 <td><p>Carga anual simplificada con envolvente común</p></td>
 <td><p>El menor número de grupos a partir del cual ningún grupo adicional sube en 0,02 la varianza de la carga explicada (R²)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">02</span></code>, <code class="docutils literal notranslate"><span class="pre">03</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>4. Papel del estrato</p></td>
+<tr class="row-odd"><td><p>4. Papel del estrato</p></td>
 <td><p>Diseño plano (por posición) frente a anidado (por posición × bloque)</p></td>
 <td><p>Anidado si el estrato explica al menos el 6 % de la varianza que queda dentro de los grupos</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">03</span></code>, <code class="docutils literal notranslate"><span class="pre">04</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>5. Asignación</p></td>
+<tr class="row-even"><td><p>5. Asignación</p></td>
 <td><p>Árbol de decisión y Random Forest que resumen la regla de asignación</p></td>
 <td><p>Fidelidad medida en 7 bloques de prueba de 2 km; la incertidumbre sale de repetir el agrupamiento en 100 submuestras</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">06</span></code>, <code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>6. Envolvente</p></td>
+<tr class="row-odd"><td><p>6. Envolvente</p></td>
 <td><p>Materiales de la ECV, transmitancias de la ISO 6946 y valores de CEELA</p></td>
 <td><p>Priors con su incertidumbre, no valores únicos</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">07</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>7. Hogar y validación</p></td>
+<tr class="row-even"><td><p>7. Hogar y validación</p></td>
 <td><p>Atributos del hogar de la ECV, representatividad y sensibilidad</p></td>
 <td><p>Una ficha por arquetipo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">05</span></code>, <code class="docutils literal notranslate"><span class="pre">08</span></code>, <code class="docutils literal notranslate"><span class="pre">09</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Robustez y verificación</p></td>
+<td><p>Clima de GDEX, techo propio por vivienda, todos los edificios en lugar de la submuestra, mapas y comprobaciones automáticas</p></td>
+<td><p>Ninguna prueba cambia las reglas</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">11</span></code>, <code class="docutils literal notranslate"><span class="pre">13</span></code> a <code class="docutils literal notranslate"><span class="pre">16</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -499,7 +542,7 @@ de humedad relativa, el clima horario de ERA5-Land de 2015 a 2025 <span class="b
 envolvente para todas las viviendas, de modo que las diferencias vengan de la geometría y la posición. No es la carga
 simulada de la Fase 2.</p>
 <p><strong>Agrupamiento.</strong> Los algoritmos se ajustan en una submuestra con una vivienda al azar por edificio dentro de cada
-posición (4.074 casas, 3.140 últimos pisos y 3.080 sin cubierta), estratificada por tipo y bloque con un mínimo de 150
+posición (4.074 casas, 3.139 últimos pisos y 3.080 sin cubierta), estratificada por tipo y bloque con un mínimo de 150
 edificios por estrato. Así un edificio con cientos de apartamentos no pesa más que una casa, y la distancia de Gower,
 que crece con el cuadrado del número de puntos, sigue siendo calculable. Después, cada una de las 332.718 viviendas se
 asigna al centroide, prototipo o medoide más cercano de su posición, y el R² de la carga se mide sobre todas. Las
@@ -530,7 +573,7 @@ ventanas cerradas es lognormal <span class="bibtex-citation" id="id12">(<a class
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Arquetipos</p></td>
-<td><p>17</p></td>
+<td><p>15</p></td>
 <td><p>10</p></td>
 </tr>
 <tr class="row-odd"><td><p>Algoritmo elegido</p></td>
@@ -538,19 +581,19 @@ ventanas cerradas es lognormal <span class="bibtex-citation" id="id12">(<a class
 <td><p>K-Means</p></td>
 </tr>
 <tr class="row-even"><td><p>Varianza de la carga explicada (R²)</p></td>
-<td><p>0,66</p></td>
+<td><p>0,63</p></td>
 <td><p>0,93</p></td>
 </tr>
 <tr class="row-odd"><td><p>Estabilidad (Jaccard ponderado)</p></td>
-<td><p>0,97</p></td>
+<td><p>0,98</p></td>
 <td><p>1,00</p></td>
 </tr>
 <tr class="row-even"><td><p>Silueta</p></td>
-<td><p>0,18</p></td>
-<td><p>0,55</p></td>
+<td><p>0,16</p></td>
+<td><p>0,51</p></td>
 </tr>
 <tr class="row-odd"><td><p>Árbol que resume la asignación</p></td>
-<td><p>79 reglas; reproduce el 99,7 % de las asignaciones</p></td>
+<td><p>42 reglas; reproduce el 99,7 % de las asignaciones</p></td>
 <td><p>10 reglas; reproduce el 100 %</p></td>
 </tr>
 <tr class="row-even"><td><p>Qué separa, además de la posición y el bloque</p></td>
@@ -561,8 +604,8 @@ ventanas cerradas es lognormal <span class="bibtex-citation" id="id12">(<a class
 </table>
 </div>
 <p>Como referencia, la sola partición por posición y bloque de estratos (9 grupos) explica 0,40 de la varianza por
-vivienda y 0,91 por m², y la tipología por reglas (tipo × posición × época × bloque, 16 tipos), 0,41 y 0,91. El
-agrupamiento suma, entonces, 0,26 por vivienda y 0,02 por m². El estrato explica entre el 12 y el 17 % de la varianza
+vivienda y 0,90 por m², y la tipología por reglas (tipo × posición × época × bloque, 16 tipos), 0,40 y 0,91. El
+agrupamiento suma, entonces, 0,23 por vivienda y 0,02 por m². El estrato explica entre el 12 y el 18 % de la varianza
 que queda dentro de los grupos del diseño plano, por encima del umbral de 6 %, así que en las dos medidas se adoptó el
 diseño anidado.</p>
 <p>La carga del Paso 3 usa la misma envolvente para todas las viviendas, así que solo depende del área, los pisos de la
@@ -606,25 +649,25 @@ se les dé <span class="bibtex-citation" id="id15">(<a class="reference internal
 </thead>
 <tbody>
 <tr class="row-even"><td><p>C12-1</p></td>
-<td><p>119.465 (35,9 %)</p></td>
+<td><p>119.477 (35,9 %)</p></td>
 <td><p>69 (51–96)</p></td>
 <td><p>522</p></td>
 <td><p>18 %</p></td>
 <td><p>0,18</p></td>
-<td><p>2,06</p></td>
+<td><p>2,07</p></td>
 <td><p>22 %</p></td>
 </tr>
 <tr class="row-odd"><td><p>C12-2</p></td>
-<td><p>9.132 (2,7 %)</p></td>
+<td><p>9.168 (2,8 %)</p></td>
 <td><p>104 (65–140)</p></td>
 <td><p>382</p></td>
 <td><p>18 %</p></td>
 <td><p>0,14</p></td>
-<td><p>2,08</p></td>
+<td><p>2,11</p></td>
 <td><p>26 %</p></td>
 </tr>
 <tr class="row-even"><td><p>C34-1</p></td>
-<td><p>48.239 (14,5 %)</p></td>
+<td><p>48.436 (14,6 %)</p></td>
 <td><p>116 (85–160)</p></td>
 <td><p>499</p></td>
 <td><p>26 %</p></td>
@@ -633,53 +676,53 @@ se les dé <span class="bibtex-citation" id="id15">(<a class="reference internal
 <td><p>53 %</p></td>
 </tr>
 <tr class="row-odd"><td><p>C56-1</p></td>
-<td><p>4.216 (1,3 %)</p></td>
+<td><p>4.223 (1,3 %)</p></td>
 <td><p>213 (153–304)</p></td>
 <td><p>389</p></td>
 <td><p>72 %</p></td>
 <td><p>0,90</p></td>
-<td><p>1,33</p></td>
+<td><p>1,34</p></td>
 <td><p>87 %</p></td>
 </tr>
 <tr class="row-even"><td><p>S12-1</p></td>
-<td><p>40.889 (12,3 %)</p></td>
+<td><p>39.976 (12,0 %)</p></td>
 <td><p>46 (42–56)</p></td>
 <td><p>236</p></td>
 <td><p>no expuesto</p></td>
-<td><p>0,22</p></td>
-<td><p>0,97</p></td>
+<td><p>0,23</p></td>
+<td><p>0,96</p></td>
 <td><p>16 %</p></td>
 </tr>
 <tr class="row-odd"><td><p>S34-1</p></td>
-<td><p>58.846 (17,7 %)</p></td>
+<td><p>57.711 (17,4 %)</p></td>
 <td><p>68 (53–86)</p></td>
 <td><p>219</p></td>
 <td><p>no expuesto</p></td>
 <td><p>0,31</p></td>
-<td><p>0,96</p></td>
+<td><p>0,97</p></td>
 <td><p>64 %</p></td>
 </tr>
 <tr class="row-even"><td><p>S56-1</p></td>
-<td><p>22.034 (6,6 %)</p></td>
-<td><p>117 (84–161)</p></td>
+<td><p>21.742 (6,5 %)</p></td>
+<td><p>117 (85–161)</p></td>
 <td><p>199</p></td>
 <td><p>no expuesto</p></td>
 <td><p>0,90</p></td>
-<td><p>0,96</p></td>
+<td><p>0,95</p></td>
 <td><p>90 %</p></td>
 </tr>
 <tr class="row-odd"><td><p>U12-1</p></td>
-<td><p>11.992 (3,6 %)</p></td>
-<td><p>55 (43–106)</p></td>
-<td><p>529</p></td>
-<td><p>69 %</p></td>
+<td><p>12.857 (3,9 %)</p></td>
+<td><p>53 (42–100)</p></td>
+<td><p>533</p></td>
+<td><p>71 %</p></td>
 <td><p>0,18</p></td>
-<td><p>1,40</p></td>
+<td><p>1,36</p></td>
 <td><p>21 %</p></td>
 </tr>
 <tr class="row-even"><td><p>U34-1</p></td>
-<td><p>14.105 (4,2 %)</p></td>
-<td><p>81 (62–112)</p></td>
+<td><p>15.043 (4,5 %)</p></td>
+<td><p>80 (61–110)</p></td>
 <td><p>514</p></td>
 <td><p>86 %</p></td>
 <td><p>0,26</p></td>
@@ -687,12 +730,12 @@ se les dé <span class="bibtex-citation" id="id15">(<a class="reference internal
 <td><p>61 %</p></td>
 </tr>
 <tr class="row-odd"><td><p>U56-1</p></td>
-<td><p>3.800 (1,1 %)</p></td>
-<td><p>126 (94–194)</p></td>
-<td><p>496</p></td>
+<td><p>4.085 (1,2 %)</p></td>
+<td><p>122 (92–190)</p></td>
+<td><p>497</p></td>
 <td><p>98 %</p></td>
 <td><p>0,90</p></td>
-<td><p>0,98</p></td>
+<td><p>0,97</p></td>
 <td><p>88 %</p></td>
 </tr>
 </tbody>
@@ -719,23 +762,23 @@ tienen más del doble de carga por m² que las que tienen otra vivienda encima.<
 <tr class="row-even"><td><p>C12-1</p></td>
 <td><p>Casa</p></td>
 <td><p>1-2</p></td>
-<td><p>31.446 (9,4 %)</p></td>
-<td><p>39 (31–46)</p></td>
+<td><p>28.065 (8,4 %)</p></td>
+<td><p>38 (30–44)</p></td>
 <td><p>1</p></td>
-<td><p>21,6</p></td>
+<td><p>21,0</p></td>
 </tr>
 <tr class="row-odd"><td><p>C12-2</p></td>
 <td><p>Casa</p></td>
 <td><p>1-2</p></td>
-<td><p>52.772 (15,9 %)</p></td>
-<td><p>68 (60–77)</p></td>
+<td><p>58.631 (17,6 %)</p></td>
+<td><p>67 (60–78)</p></td>
 <td><p>1</p></td>
-<td><p>35,6</p></td>
+<td><p>35,1</p></td>
 </tr>
 <tr class="row-even"><td><p>C12-3</p></td>
 <td><p>Casa</p></td>
 <td><p>1-2</p></td>
-<td><p>9.132 (2,7 %)</p></td>
+<td><p>9.168 (2,8 %)</p></td>
 <td><p>104 (65–140)</p></td>
 <td><p>2</p></td>
 <td><p>39,8</p></td>
@@ -743,63 +786,47 @@ tienen más del doble de carga por m² que las que tienen otra vivienda encima.<
 <tr class="row-odd"><td><p>C12-4</p></td>
 <td><p>Casa</p></td>
 <td><p>1-2</p></td>
-<td><p>35.247 (10,6 %)</p></td>
-<td><p>116 (100–143)</p></td>
+<td><p>32.781 (9,8 %)</p></td>
+<td><p>119 (104–146)</p></td>
 <td><p>1</p></td>
-<td><p>58,4</p></td>
+<td><p>59,8</p></td>
 </tr>
 <tr class="row-even"><td><p>C34-1</p></td>
 <td><p>Casa</p></td>
 <td><p>3-4</p></td>
-<td><p>7.859 (2,4 %)</p></td>
-<td><p>56 (43–67)</p></td>
+<td><p>10.929 (3,3 %)</p></td>
+<td><p>64 (48–76)</p></td>
 <td><p>1</p></td>
-<td><p>29,8</p></td>
+<td><p>33,6</p></td>
 </tr>
 <tr class="row-odd"><td><p>C34-2</p></td>
 <td><p>Casa</p></td>
 <td><p>3-4</p></td>
-<td><p>10.725 (3,2 %)</p></td>
-<td><p>95 (85–108)</p></td>
+<td><p>18.914 (5,7 %)</p></td>
+<td><p>117 (102–135)</p></td>
 <td><p>1</p></td>
-<td><p>48,4</p></td>
+<td><p>58,8</p></td>
 </tr>
 <tr class="row-even"><td><p>C34-3</p></td>
 <td><p>Casa</p></td>
 <td><p>3-4</p></td>
-<td><p>6.419 (1,9 %)</p></td>
-<td><p>105 (87–131)</p></td>
+<td><p>8.526 (2,6 %)</p></td>
+<td><p>120 (94–185)</p></td>
 <td><p>2</p></td>
-<td><p>39,8</p></td>
+<td><p>44,8</p></td>
 </tr>
 <tr class="row-odd"><td><p>C34-4</p></td>
 <td><p>Casa</p></td>
 <td><p>3-4</p></td>
-<td><p>14.936 (4,5 %)</p></td>
-<td><p>139 (120–157)</p></td>
+<td><p>10.067 (3,0 %)</p></td>
+<td><p>194 (172–240)</p></td>
 <td><p>1</p></td>
-<td><p>69,1</p></td>
-</tr>
-<tr class="row-even"><td><p>C34-5</p></td>
-<td><p>Casa</p></td>
-<td><p>3-4</p></td>
-<td><p>6.288 (1,9 %)</p></td>
-<td><p>224 (198–277)</p></td>
-<td><p>1</p></td>
-<td><p>108,6</p></td>
-</tr>
-<tr class="row-odd"><td><p>C34-6</p></td>
-<td><p>Casa</p></td>
-<td><p>3-4</p></td>
-<td><p>2.012 (0,6 %)</p></td>
-<td><p>280 (231–353)</p></td>
-<td><p>2</p></td>
-<td><p>95,8</p></td>
+<td><p>94,7</p></td>
 </tr>
 <tr class="row-even"><td><p>C56-1</p></td>
 <td><p>Casa</p></td>
 <td><p>5-6</p></td>
-<td><p>4.216 (1,3 %)</p></td>
+<td><p>4.223 (1,3 %)</p></td>
 <td><p>213 (153–304)</p></td>
 <td><p>2</p></td>
 <td><p>91,0</p></td>
@@ -807,7 +834,7 @@ tienen más del doble de carga por m² que las que tienen otra vivienda encima.<
 <tr class="row-odd"><td><p>S12-1</p></td>
 <td><p>Sin cubierta</p></td>
 <td><p>1-2</p></td>
-<td><p>40.889 (12,3 %)</p></td>
+<td><p>39.976 (12,0 %)</p></td>
 <td><p>46 (42–56)</p></td>
 <td><p>1</p></td>
 <td><p>10,8</p></td>
@@ -815,7 +842,7 @@ tienen más del doble de carga por m² que las que tienen otra vivienda encima.<
 <tr class="row-even"><td><p>S34-1</p></td>
 <td><p>Sin cubierta</p></td>
 <td><p>3-4</p></td>
-<td><p>58.846 (17,7 %)</p></td>
+<td><p>57.711 (17,4 %)</p></td>
 <td><p>68 (53–86)</p></td>
 <td><p>1</p></td>
 <td><p>14,9</p></td>
@@ -823,34 +850,34 @@ tienen más del doble de carga por m² que las que tienen otra vivienda encima.<
 <tr class="row-odd"><td><p>S56-1</p></td>
 <td><p>Sin cubierta</p></td>
 <td><p>5-6</p></td>
-<td><p>22.034 (6,6 %)</p></td>
-<td><p>117 (84–161)</p></td>
+<td><p>21.742 (6,5 %)</p></td>
+<td><p>117 (85–161)</p></td>
 <td><p>1</p></td>
 <td><p>23,4</p></td>
 </tr>
 <tr class="row-even"><td><p>U12-1</p></td>
 <td><p>Último piso</p></td>
 <td><p>1-2</p></td>
-<td><p>11.992 (3,6 %)</p></td>
-<td><p>55 (43–106)</p></td>
+<td><p>12.857 (3,9 %)</p></td>
+<td><p>53 (42–100)</p></td>
 <td><p>1</p></td>
-<td><p>28,8</p></td>
+<td><p>27,8</p></td>
 </tr>
 <tr class="row-odd"><td><p>U34-1</p></td>
 <td><p>Último piso</p></td>
 <td><p>3-4</p></td>
-<td><p>14.105 (4,2 %)</p></td>
-<td><p>81 (62–112)</p></td>
+<td><p>15.043 (4,5 %)</p></td>
+<td><p>80 (61–110)</p></td>
 <td><p>1</p></td>
-<td><p>39,9</p></td>
+<td><p>39,4</p></td>
 </tr>
 <tr class="row-even"><td><p>U56-1</p></td>
 <td><p>Último piso</p></td>
 <td><p>5-6</p></td>
-<td><p>3.800 (1,1 %)</p></td>
-<td><p>126 (94–194)</p></td>
+<td><p>4.085 (1,2 %)</p></td>
+<td><p>122 (92–190)</p></td>
 <td><p>1</p></td>
-<td><p>59,2</p></td>
+<td><p>57,4</p></td>
 </tr>
 </tbody>
 </table>
@@ -885,22 +912,22 @@ grupos.</p>
 <tr class="row-even"><td><p>Por vivienda</p></td>
 <td><p>Seis (final)</p></td>
 <td><p>k-prototypes</p></td>
-<td><p>17</p></td>
-<td><p>4, 6 y 1</p></td>
-<td><p>0,66</p></td>
-<td><p>0,97</p></td>
-<td><p>0,18</p></td>
+<td><p>15</p></td>
+<td><p>4, 4 y 1</p></td>
+<td><p>0,63</p></td>
+<td><p>0,98</p></td>
+<td><p>0,16</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>Por vivienda</p></td>
 <td><p>Diez</p></td>
 <td><p>K-Means</p></td>
-<td><p>12</p></td>
-<td><p>2, 2 y 2</p></td>
-<td><p>0,53</p></td>
+<td><p>11</p></td>
+<td><p>2, 2 y 1</p></td>
+<td><p>0,51</p></td>
 <td><p>0,98</p></td>
-<td><p>0,24</p></td>
-<td><p>0,67</p></td>
+<td><p>0,23</p></td>
+<td><p>0,66</p></td>
 </tr>
 <tr class="row-even"><td><p>Por m²</p></td>
 <td><p>Seis (final)</p></td>
@@ -909,7 +936,7 @@ grupos.</p>
 <td><p>2, 1 y 1</p></td>
 <td><p>0,93</p></td>
 <td><p>1,00</p></td>
-<td><p>0,55</p></td>
+<td><p>0,51</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>Por m²</p></td>
@@ -917,7 +944,7 @@ grupos.</p>
 <td><p>K-Means</p></td>
 <td><p>9</p></td>
 <td><p>1, 1 y 1</p></td>
-<td><p>0,91</p></td>
+<td><p>0,90</p></td>
 <td><p>1,00</p></td>
 <td><p>no definida</p></td>
 <td><p>0,94</p></td>
@@ -928,26 +955,544 @@ grupos.</p>
 <p>Las dos variantes son estables y la de seis variables explica más varianza en las dos medidas, así que sigue siendo
 la solución final y los arquetipos no cambian. La carga del Paso 3 depende solo de la geometría (área y pisos) y de la
 posición, y las variables agregadas no entran en ella. Con diez variables la distancia reparte su peso entre ellas:
-por vivienda, las casas de cada bloque se dividen solo en pequeñas y grandes, y ningún grupo adicional sube el R² en
+por vivienda, las casas de los estratos 1 a 4 se dividen solo en pequeñas y grandes, y ningún grupo adicional sube el R² en
 0,02; por m², las casas de los estratos 1 y 2 de dos pisos o más ya no se separan de las de un piso. Con este
 criterio, una variable que no entra en la carga no puede subir el R², así que el resultado no dice si las habitaciones
 o los baños importan para la ocupación o los equipos de la Fase 2.</p>
 </section>
 </section>
+<section id="analisis-de-las-variables-del-catastro">
+<span id="sec-arq-variables"></span><h2>Análisis de las variables del catastro<a class="headerlink" href="#analisis-de-las-variables-del-catastro" title="Link to this heading">#</a></h2>
+<p>Esta sección explica por qué los arquetipos usan seis variables del catastro y no otras. Sigue el esquema del
+análisis exploratorio del trabajo previo de predicción del estrato <span class="bibtex-citation" id="id16">(<a class="reference internal" href="09_referencias.html#id32" title="María Carolina Cantillo Orozco y Juan Camilo Oñoro Araujo. Estrato socioeconómico y características catastrales de la vivienda en Barranquilla. Entregable 1, curso de aprendizaje automático. 2026. URL: https://mcarocantillo.github.io/entregable1-ml-barranquilla/.">Cantillo Orozco y Oñoro Araujo, 2026</a>)</span>, con un análisis
+univariado, uno bivariado y uno multivariado, y termina con los usos de las variables que no entran en los arquetipos.
+El análisis se escribió en el preregistro antes de correrlo (Nota 14, análisis complementario A13), usa las 332.718
+viviendas salvo donde se indica y no cambia la solución final (script 20).</p>
+<p>Las respuestas son las dos medidas de carga del Paso 3, por vivienda y por m². Como esa carga se calcula con una
+envolvente común y solo depende del área, el número de pisos, la altura de piso y la posición frente a la cubierta,
+el análisis responde a una pregunta precisa: qué variables del catastro describen la geometría que mueve el calor y
+cuáles describen otra cosa.</p>
+<section id="analisis-univariado">
+<h3>Análisis univariado<a class="headerlink" href="#analisis-univariado" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="tabla-compacta table" id="tab-arq-var-univariado">
+<caption><span class="caption-number">Tabla 19 </span><span class="caption-text">Variables numéricas del catastro. Rol: base (entra en el agrupamiento), variante ampliada (Nota 8), solo carga o no entra. Asimetría: coeficiente de Fisher, antes y después del logaritmo.</span><a class="headerlink" href="#tab-arq-var-univariado" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Rol</p></th>
+<th class="head"><p>Faltantes</p></th>
+<th class="head"><p>Ceros</p></th>
+<th class="head"><p>Mediana (p25 a p75)</p></th>
+<th class="head"><p>p1 a p99</p></th>
+<th class="head"><p>Asimetría</p></th>
+<th class="head"><p>Con logaritmo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Área construida (m²)</p></td>
+<td><p>Base</p></td>
+<td><p>0 %</p></td>
+<td><p>0 %</p></td>
+<td><p>73 (51 a 110)</p></td>
+<td><p>19 a 356</p></td>
+<td><p>4,06</p></td>
+<td><p>0,34</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pisos de la unidad</p></td>
+<td><p>Base</p></td>
+<td><p>0 %</p></td>
+<td><p>0 %</p></td>
+<td><p>1 (1 a 1)</p></td>
+<td><p>1 a 4</p></td>
+<td><p>11,22</p></td>
+<td><p>5,23</p></td>
+</tr>
+<tr class="row-even"><td><p>Piso de ubicación</p></td>
+<td><p>Base</p></td>
+<td><p>0,1 %</p></td>
+<td><p>0 %</p></td>
+<td><p>1 (1 a 3)</p></td>
+<td><p>1 a 14</p></td>
+<td><p>2,65</p></td>
+<td><p>1,43</p></td>
+</tr>
+<tr class="row-odd"><td><p>Año de construcción</p></td>
+<td><p>Base, como época</p></td>
+<td><p>0 %</p></td>
+<td><p>0 %</p></td>
+<td><p>2010 (1996 a 2017)</p></td>
+<td><p>1942 a 2025</p></td>
+<td><p>−1,51</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Altura de piso (m)</p></td>
+<td><p>Solo carga</p></td>
+<td><p>0 %</p></td>
+<td><p>0 %</p></td>
+<td><p>3,0 (3,0 a 3,0)</p></td>
+<td><p>3,0 a 3,0</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Área del terreno (m²)</p></td>
+<td><p>Variante ampliada</p></td>
+<td><p>0 %</p></td>
+<td><p>16,1 %</p></td>
+<td><p>49 (23 a 118)</p></td>
+<td><p>0 a 506</p></td>
+<td><p>59,35</p></td>
+<td><p>−0,95</p></td>
+</tr>
+<tr class="row-even"><td><p>Habitaciones</p></td>
+<td><p>Variante ampliada</p></td>
+<td><p>0,1 %</p></td>
+<td><p>0,9 %</p></td>
+<td><p>3 (2 a 3)</p></td>
+<td><p>1 a 6</p></td>
+<td><p>2,16</p></td>
+<td><p>−0,65</p></td>
+</tr>
+<tr class="row-odd"><td><p>Baños</p></td>
+<td><p>Variante ampliada</p></td>
+<td><p>0 %</p></td>
+<td><p>5,2 %</p></td>
+<td><p>1 (1 a 2)</p></td>
+<td><p>0 a 4</p></td>
+<td><p>1,75</p></td>
+<td><p>−0,13</p></td>
+</tr>
+<tr class="row-even"><td><p>Distancia al centro (km)</p></td>
+<td><p>No entra</p></td>
+<td><p>3,1 %</p></td>
+<td><p>0 %</p></td>
+<td><p>5,7 (4,0 a 7,2)</p></td>
+<td><p>1,3 a 11,4</p></td>
+<td><p>0,21</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-default" id="fig-arq-var-distribuciones">
+<a class="reference internal image-reference" href="_images/var_distribuciones.png"><img alt="_images/var_distribuciones.png" src="_images/var_distribuciones.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 14 </span><span class="caption-text">Distribución de las variables numéricas del catastro en las 332.718 viviendas. Las de asimetría mayor que 2 van en escala logarítmica y todas se cortan en el percentil 99,9.</span><a class="headerlink" href="#fig-arq-var-distribuciones" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>El área construida tiene una cola larga hacia las viviendas grandes, y el logaritmo la deja casi simétrica (asimetría
+de 4,06 a 0,34). Por eso entra en logaritmo, igual que el número de pisos y el piso de ubicación. Estas dos son casi
+discretas y se concentran en 1, porque el 54,5 % de las viviendas son casas. La altura de piso vale 3,0 m en más del
+99 % de las viviendas, así que no puede separar grupos y solo entra en el volumen de la carga. El año de construcción
+tiene picos en 1986, 2014 y 2022, que parecen años de inscripción más que de construcción (limitación 4), y por eso
+entra como época de tres niveles y no como año. Entre las variables de la variante ampliada, el área del terreno vale
+cero en el 16,1 % de las viviendas y tiene una cola de lotes enormes (hasta 36.022 m²), lo que la hace la menos
+confiable. Las habitaciones y los baños son conteos pequeños, con medianas de 3 y 1.</p>
+<p>Entre las categóricas, la posición frente a la cubierta es casa en el 54,5 % de las viviendas, el tipo de edificio es
+de baja altura en el 64,1 %, la época 2010 o después en el 57,1 % y el predio no está en propiedad horizontal en el
+55,2 %. Solo el 8,3 % de las viviendas es VIS o VIP. El uso catastral, la condición del predio y el tipo de vivienda
+no entran como tales porque definen el tipo de edificio, la propiedad horizontal y la condición de VIS o VIP, y su V de
+Cramér con ellas es de 1,0 (<a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_cramer.csv"><code class="docutils literal notranslate"><span class="pre">var_cramer.csv</span></code></a>).</p>
+</section>
+<section id="analisis-bivariado">
+<h3>Análisis bivariado<a class="headerlink" href="#analisis-bivariado" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="fig-arq-var-spearman">
+<a class="reference internal image-reference" href="_images/var_spearman.png"><img alt="_images/var_spearman.png" src="_images/var_spearman.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 15 </span><span class="caption-text">Correlación de Spearman entre las variables numéricas del catastro y las dos medidas de carga, por posición frente a la cubierta. En las casas el piso de ubicación es siempre 1 y no tiene correlación definida.</span><a class="headerlink" href="#fig-arq-var-spearman" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>En las casas, la carga por vivienda sigue casi exactamente al área (ρ = 0,99), y la carga por m² baja con ella
+(ρ = −0,91), porque las casas grandes reparten la cubierta en más área o en más pisos. Las habitaciones, los baños y el
+área del terreno también se relacionan con la carga (ρ de 0,65, 0,48 y 0,55 en las casas), pero lo hacen a través del
+tamaño: su correlación con el área es de 0,7, 0,5 y 0,5. La distancia al centro tiene una relación débil y negativa
+con la carga por vivienda (ρ = −0,29), porque las viviendas de la periferia son más pequeñas.</p>
+<div class="pst-scrollable-table-container"><table class="tabla-compacta table" id="tab-arq-var-eta2">
+<caption><span class="caption-number">Tabla 20 </span><span class="caption-text">Asociación de las variables categóricas con la carga en todas las viviendas. η²: fracción de la varianza de la carga explicada por las categorías de la variable.</span><a class="headerlink" href="#tab-arq-var-eta2" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>η² carga por vivienda</p></th>
+<th class="head"><p>η² carga por m²</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Posición frente a la cubierta</p></td>
+<td><p>0,26</p></td>
+<td><p>0,89</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uso catastral</p></td>
+<td><p>0,20</p></td>
+<td><p>0,54</p></td>
+</tr>
+<tr class="row-even"><td><p>Tipo de edificio</p></td>
+<td><p>0,18</p></td>
+<td><p>0,50</p></td>
+</tr>
+<tr class="row-odd"><td><p>Propiedad horizontal</p></td>
+<td><p>0,18</p></td>
+<td><p>0,49</p></td>
+</tr>
+<tr class="row-even"><td><p>Estrato</p></td>
+<td><p>0,04</p></td>
+<td><p>0,22</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bloque de estratos</p></td>
+<td><p>0,01</p></td>
+<td><p>0,18</p></td>
+</tr>
+<tr class="row-even"><td><p>VIS o VIP</p></td>
+<td><p>0,06</p></td>
+<td><p>0,07</p></td>
+</tr>
+<tr class="row-odd"><td><p>Época</p></td>
+<td><p>0,02</p></td>
+<td><p>0,04</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La posición frente a la cubierta explica por sí sola el 89 % de la varianza de la carga por m², y por eso es el primer
+nivel del diseño anidado. El tipo de edificio y la propiedad horizontal explican la mitad, pero en buena parte por su
+relación con la posición (V de Cramér de 0,83 y 0,82). La época casi no se asocia con la carga, lo que es esperable
+porque la envolvente común no cambia con la edad de la vivienda. La información mutua ordena las variables de forma
+parecida (<a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_vs_carga.csv"><code class="docutils literal notranslate"><span class="pre">var_vs_carga.csv</span></code></a>), con una excepción: la de la distancia al centro es alta (1,39)
+aunque su correlación es baja, porque las viviendas de un mismo edificio comparten la ubicación y la carga, y el
+estimador reconoce el edificio, no un efecto de la ubicación.</p>
+<p>Ninguna variable numérica tiene un VIF mayor que 2,3 en ninguna posición (<a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_vif.csv"><code class="docutils literal notranslate"><span class="pre">var_vif.csv</span></code></a>), así que
+no hay multicolinealidad que obligue a descartar alguna. Las variables de la variante ampliada no sobran por repetir a
+las demás, sino por lo que muestra el análisis multivariado.</p>
+</section>
+<section id="analisis-multivariado">
+<h3>Análisis multivariado<a class="headerlink" href="#analisis-multivariado" title="Link to this heading">#</a></h3>
+<p>Las seis variables base explican entre el 26 % y el 42 % de la varianza de las habitaciones, entre el 33 % y el 42 % de
+la de los baños, entre el 16 % y el 48 % de la del área del terreno y hasta el 21 % de la condición de VIS o VIP, según
+la posición (<a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_redundancia.csv"><code class="docutils literal notranslate"><span class="pre">var_redundancia.csv</span></code></a>). Ninguna llega al 50 % fijado como criterio de
+redundancia, así que cada una trae información propia. En el PCA de las casas, el primer componente (43 % de la
+varianza) pesa casi por igual el área, las habitaciones y los baños, y algo menos el área del terreno, y el segundo y el tercero son
+el año y el número de pisos (<a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_pca.csv"><code class="docutils literal notranslate"><span class="pre">var_pca.csv</span></code></a>). Es decir, las habitaciones y los baños forman con el
+área un mismo eje de tamaño, y lo que tienen de propio no es geometría.</p>
+<p>Para saber si esa información propia mejora los arquetipos se repitió la solución final agregando una sola variable a
+las seis base, con el mismo algoritmo, submuestra, k y semilla, y se comparó con el efecto de quitar cada variable base
+(script 08).</p>
+<figure class="align-default" id="fig-arq-var-agregar">
+<a class="reference internal image-reference" href="_images/var_agregar_quitar.png"><img alt="_images/var_agregar_quitar.png" src="_images/var_agregar_quitar.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 16 </span><span class="caption-text">Cambio del R² de la carga al quitar una variable base (coral) o agregar una de la variante ampliada (turquesa), con el mismo algoritmo, submuestra, k y semilla de la solución final. La línea punteada es la caída de 0,02 que la sensibilidad del Paso 7 considera importante. Las variables sin barra no cambian los grupos.</span><a class="headerlink" href="#fig-arq-var-agregar" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="pst-scrollable-table-container"><table class="tabla-compacta table" id="tab-arq-var-agregar">
+<caption><span class="caption-number">Tabla 21 </span><span class="caption-text">La solución final con una variable más. Rand: índice de Rand ajustado frente a la solución final, en todas las viviendas.</span><a class="headerlink" href="#tab-arq-var-agregar" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Carga</p></th>
+<th class="head"><p>Variable agregada</p></th>
+<th class="head"><p>R²</p></th>
+<th class="head"><p>Cambio del R²</p></th>
+<th class="head"><p>Rand</p></th>
+<th class="head"><p>Viviendas que cambian de arquetipo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Por vivienda</p></td>
+<td><p>Ninguna (control)</p></td>
+<td><p>0,630</p></td>
+<td><p></p></td>
+<td><p>1,00</p></td>
+<td><p>0 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Por vivienda</p></td>
+<td><p>Habitaciones</p></td>
+<td><p>0,595</p></td>
+<td><p>−0,035</p></td>
+<td><p>0,88</p></td>
+<td><p>6,7 %</p></td>
+</tr>
+<tr class="row-even"><td><p>Por vivienda</p></td>
+<td><p>Baños</p></td>
+<td><p>0,558</p></td>
+<td><p>−0,072</p></td>
+<td><p>0,78</p></td>
+<td><p>14,1 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Por vivienda</p></td>
+<td><p>Área del terreno</p></td>
+<td><p>0,536</p></td>
+<td><p>−0,094</p></td>
+<td><p>0,73</p></td>
+<td><p>19,2 %</p></td>
+</tr>
+<tr class="row-even"><td><p>Por vivienda</p></td>
+<td><p>VIS o VIP</p></td>
+<td><p>0,630</p></td>
+<td><p>0</p></td>
+<td><p>1,00</p></td>
+<td><p>0 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Por m²</p></td>
+<td><p>Ninguna (control)</p></td>
+<td><p>0,926</p></td>
+<td><p></p></td>
+<td><p>1,00</p></td>
+<td><p>0 %</p></td>
+</tr>
+<tr class="row-even"><td><p>Por m²</p></td>
+<td><p>Habitaciones</p></td>
+<td><p>0,904</p></td>
+<td><p>−0,023</p></td>
+<td><p>0,94</p></td>
+<td><p>2,8 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Por m²</p></td>
+<td><p>Baños</p></td>
+<td><p>0,926</p></td>
+<td><p>0</p></td>
+<td><p>1,00</p></td>
+<td><p>0 %</p></td>
+</tr>
+<tr class="row-even"><td><p>Por m²</p></td>
+<td><p>Área del terreno</p></td>
+<td><p>0,904</p></td>
+<td><p>−0,023</p></td>
+<td><p>0,94</p></td>
+<td><p>2,8 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Por m²</p></td>
+<td><p>VIS o VIP</p></td>
+<td><p>0,926</p></td>
+<td><p>0</p></td>
+<td><p>1,00</p></td>
+<td><p>0 %</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Cada variable que se agrega cambia los arquetipos y empeora la separación de la carga. En la solución por vivienda, el
+área del terreno mueve al 19 % de las viviendas y baja el R² en 0,094, los baños mueven al 14 % y lo bajan en 0,072, y
+las habitaciones mueven al 7 % y lo bajan en 0,035. Las tres pasan el umbral de la sensibilidad del Paso 7. En la de
+por m², las habitaciones y el área del terreno borran la separación entre las casas de uno y de dos pisos de los
+estratos 1 y 2, que es lo que distingue a C12-2, y por eso el 2,8 % que cambia son justamente esas casas. La condición
+de VIS o VIP no cambia nada, porque en las casas, que son las únicas posiciones con más de un grupo, casi no hay VIS o
+VIP y la regla de las variables casi constantes la descarta.</p>
+<p>Quitar una variable base es la prueba inversa. Sin el área, la solución por vivienda pierde 0,228 de R². Sin el número
+de pisos, la de por m² pierde 0,022, porque es la variable que separa las casas de dos pisos. Sin la época o la
+propiedad horizontal casi nada cambia, y sin el número de pisos la solución por vivienda incluso sube 0,028 de R²,
+porque libera a k-prototypes para cortar solo por tamaño. La época y la propiedad horizontal quedan porque están en la propuesta y
+porque describen la construcción, no porque separen la carga del Paso 3, y sus efectos sobre la envolvente entran en
+la Fase 2.</p>
+</section>
+<section id="variables-que-no-entran-en-los-arquetipos">
+<h3>Variables que no entran en los arquetipos<a class="headerlink" href="#variables-que-no-entran-en-los-arquetipos" title="Link to this heading">#</a></h3>
+<p>Las variables que no describen la geometría de la envolvente sí tienen un lugar en el modelo, fuera de los arquetipos.</p>
+<ul class="simple">
+<li><p><strong>Habitaciones.</strong> Definen cuánta área se climatiza. En los apartamentos de 3-4, el número de habitaciones del
+catastro, llevado a los dormitorios de la ECV, fija la fracción climatizada (Nota 6). El catastro da entre 0,5 y 1,1
+habitaciones más que los dormitorios de la ECV en todos los estratos (<a class="reference internal" href="#fig-arq-representatividad"><span class="std std-numref">Figura 21</span></a>).</p></li>
+<li><p><strong>Área del terreno.</strong> En las 103.877 casas que no están en propiedad horizontal, la huella de la casa (área
+construida entre pisos) ocupa una mediana del 63 % del lote, y una de cada cuatro (24,6 %) ocupa el 80 % o más, lo
+que sugiere muros compartidos con los vecinos (<a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/var_ocupacion_lote.csv"><code class="docutils literal notranslate"><span class="pre">var_ocupacion_lote.csv</span></code></a>). En el 8,1 %
+la huella supera el lote, un dato inconsistente. La ocupación casi no se relaciona con la carga del Paso 3 (ρ =
+−0,12), porque esa carga supone la misma fracción de muro expuesto para todas, así que la ocupación del lote es un
+candidato para darle esa fracción a cada casa en la Fase 2.</p></li>
+<li><p><strong>Baños.</strong> En la ECV 2024, la tenencia de aire acondicionado sube con el número de sanitarios del hogar dentro de
+cada bloque de estratos.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="tabla-compacta table" id="tab-arq-var-sanitarios">
+<caption><span class="caption-number">Tabla 22 </span><span class="caption-text">Hogares con aire acondicionado según el número de sanitarios del hogar en la ECV 2024 (P5024), por bloque de estratos, con el error estándar del diseño muestral.</span><a class="headerlink" href="#tab-arq-var-sanitarios" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Bloque</p></th>
+<th class="head"><p>1 o ninguno</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3 o más</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1-2</p></td>
+<td><p>18 % ± 3 (377 hogares)</p></td>
+<td><p>43 % ± 7 (27)</p></td>
+<td><p>3 hogares</p></td>
+</tr>
+<tr class="row-odd"><td><p>3-4</p></td>
+<td><p>42 % ± 7 (85)</p></td>
+<td><p>65 % ± 6 (75)</p></td>
+<td><p>78 % ± 12 (17)</p></td>
+</tr>
+<tr class="row-even"><td><p>5-6</p></td>
+<td><p>62 % ± 18 (8)</p></td>
+<td><p>87 % ± 10 (28)</p></td>
+<td><p>100 % (22)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La diferencia es grande dentro de cada bloque: en los estratos 1 y 2, los hogares con dos sanitarios tienen aire
+acondicionado más del doble de veces que los de uno. Los baños parecen medir el ingreso del hogar mejor que el bloque
+de estratos, y el catastro los registra para cada vivienda. Hoy la tenencia de la Fase 2 sale de la ECV por estrato,
+así que usar los baños para repartirla entre las viviendas de un mismo estrato sería un ajuste nuevo frente a la
+propuesta, que no se ha hecho. Hay dos cuidados: los sanitarios de la ECV son del hogar y los baños del catastro son
+de la unidad, y algunas celdas tienen muy pocos hogares.</p>
+<p>En resumen, las seis variables base son las que describen la geometría que mueve el calor. Las demás no sobran por
+repetir información, porque cada una trae algo propio, sino porque lo que traen no es geometría: al agregarlas los
+grupos se forman también por el tamaño del lote o por el número de baños, y la carga se separa peor. Su lugar está en
+la Fase 2, en la fracción climatizada, los muros compartidos y la tenencia de aire acondicionado.</p>
+</section>
+</section>
+<section id="donde-estan-los-arquetipos">
+<h2>Dónde están los arquetipos<a class="headerlink" href="#donde-estan-los-arquetipos" title="Link to this heading">#</a></h2>
+<p>Los mapas agregan las 322.418 viviendas con coordenadas en celdas de unos 275 m y muestran, para cada arquetipo, qué
+parte de las viviendas de cada celda pertenece a él (<a class="reference internal" href="#fig-arq-mapa-vivienda"><span class="std std-numref">Figura 17</span></a> y <a class="reference internal" href="#fig-arq-mapa-m2"><span class="std std-numref">Figura 18</span></a>). Solo
+se dibujan las celdas con 10 viviendas o más, y ninguna vivienda individual. La geografía de los arquetipos sigue sobre
+todo la del estrato, porque el bloque de estratos es parte de cada uno: las casas de los estratos 1 y 2 ocupan el sur,
+las de 3-4 una franja central que sube hacia el norte y los arquetipos de 5-6 el norte. Dentro de cada bloque se ven
+patrones propios de los arquetipos, como los focos al occidente y al sur donde casi todas las viviendas son
+apartamentos sin cubierta de los estratos 1 y 2 (S12-1), o las casas de dos pisos de 1-2 (C12-3), repartidas por todo
+el sur con poca participación en cada celda.</p>
+<figure class="align-default" id="fig-arq-mapa-vivienda">
+<a class="reference internal image-reference" href="_images/mapa_arquetipos_por_vivienda.png"><img alt="_images/mapa_arquetipos_por_vivienda.png" src="_images/mapa_arquetipos_por_vivienda.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 17 </span><span class="caption-text">Arquetipos de la solución por vivienda. Cada panel muestra la fracción de las viviendas de cada celda (0,0025°, unos 275 m) que pertenece al arquetipo. En gris, las celdas sin viviendas del arquetipo. Bajo el código, el área mediana, los pisos de la unidad y la fracción de las viviendas de la ciudad.</span><a class="headerlink" href="#fig-arq-mapa-vivienda" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="fig-arq-mapa-m2">
+<a class="reference internal image-reference" href="_images/mapa_arquetipos_por_m2.png"><img alt="_images/mapa_arquetipos_por_m2.png" src="_images/mapa_arquetipos_por_m2.png" style="width: 85%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 18 </span><span class="caption-text">Arquetipos de la solución por m², con la misma construcción.</span><a class="headerlink" href="#fig-arq-mapa-m2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="robustez-frente-a-la-submuestra">
+<h2>Robustez frente a la submuestra<a class="headerlink" href="#robustez-frente-a-la-submuestra" title="Link to this heading">#</a></h2>
+<p>El agrupamiento se ajustó con 10.293 edificios, que en las casas son el 2,6 % de los 155.158. Para medir cuánto
+dependen los arquetipos de esa submuestra, la solución final de cada medida se volvió a ajustar con una vivienda al azar
+de cada uno de los 177.093 edificios, con el mismo algoritmo, las mismas variables y la regla de la Nota 3 para el
+número de grupos (script 14, análisis A10, ajuste AJ27). Ese ajuste no excluyó atípicos, porque DBSCAN sobre la
+matriz de Gower de todos los pares de edificios necesita unos 96 GB solo en las casas, y la silueta no se repite por la
+misma razón.</p>
+<div class="pst-scrollable-table-container"><table class="tabla-compacta table" id="tab-arq-todos">
+<caption><span class="caption-number">Tabla 23 </span><span class="caption-text">La solución final ajustada con la submuestra y con todos los edificios. Con el mismo número de grupos, los grupos del ajuste completo se emparejan con los arquetipos finales por el método húngaro.</span><a class="headerlink" href="#tab-arq-todos" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Carga por vivienda</p></th>
+<th class="head"><p>Carga por m²</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Arquetipos con la regla de la Nota 3 (submuestra → todos)</p></td>
+<td><p>15 → 16</p></td>
+<td><p>10 → 10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Viviendas que conservan su arquetipo con el mismo número de grupos</p></td>
+<td><p>94,8 %</p></td>
+<td><p>100 %</p></td>
+</tr>
+<tr class="row-even"><td><p>Casas de 1-2 y de 3-4 que lo conservan</p></td>
+<td><p>88,7 % y 94,4 %</p></td>
+<td><p>100 % y 100 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>R² de la carga con el mismo número de grupos (submuestra → todos)</p></td>
+<td><p>0,630 → 0,620</p></td>
+<td><p>0,926 → 0,926</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Con la carga por m² los arquetipos son los mismos. Con la carga por vivienda solo cambian casas, porque las demás
+posiciones tienen un arquetipo por bloque, y las que cambian pasan a un grupo vecino por tamaño
+(<a class="reference internal" href="#fig-arq-mapa-cambios"><span class="std std-numref">Figura 19</span></a>). La parte menos firme es el número de grupos de las casas de los estratos 3-4, que con
+todos los edificios se dividen en 5 y no en 4, y que también concentran la incertidumbre de la asignación. La submuestra no empeora
+el criterio del Paso 3, porque con ella el R² es algo mayor.</p>
+<p>Para completar la prueba, los atípicos se calcularon después con todos los edificios (script 18, análisis A11, ajuste
+AJ29). Con las variables de agrupamiento, la distancia de Gower es la distancia de Manhattan sobre las variables
+reescaladas (las numéricas y la época divididas por su rango, el tipo y la PH como 0 o 1) dividida por el número de
+variables, de modo que DBSCAN puede buscar los vecinos con un árbol en lugar de calcular todos los pares. Los edificios
+con las mismas variables se reúnen en un punto con peso, que para DBSCAN equivale a repetirlos. En la submuestra, este
+método da los mismos ε y los mismos atípicos que la matriz de Gower, edificio por edificio.</p>
+<div class="pst-scrollable-table-container"><table class="tabla-compacta table" id="tab-arq-atipicos-todos">
+<caption><span class="caption-number">Tabla 24 </span><span class="caption-text">Atípicos de DBSCAN en la submuestra y con todos los edificios, con la regla de la Sección 7.4 del preregistro.</span><a class="headerlink" href="#tab-arq-atipicos-todos" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Posición</p></th>
+<th class="head"><p>Edificios (submuestra → todos)</p></th>
+<th class="head"><p>ε (submuestra → todos)</p></th>
+<th class="head"><p>Atípicos (submuestra → todos)</p></th>
+<th class="head"><p>Área mediana de los atípicos y del resto, con todos</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Casa</p></td>
+<td><p>4.074 → 155.158</p></td>
+<td><p>0,0063 → 0,0014</p></td>
+<td><p>4,3 % → 0,6 %</p></td>
+<td><p>186 y 85 m²</p></td>
+</tr>
+<tr class="row-odd"><td><p>Último piso</p></td>
+<td><p>3.139 → 13.269</p></td>
+<td><p>0,0231 → 0,0098</p></td>
+<td><p>6,8 % → 7,2 %</p></td>
+<td><p>151 y 110 m²</p></td>
+</tr>
+<tr class="row-even"><td><p>Sin cubierta</p></td>
+<td><p>3.080 → 8.666</p></td>
+<td><p>0,0199 → 0,0101</p></td>
+<td><p>7,0 % → 7,3 %</p></td>
+<td><p>126 y 92 m²</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En las casas la proporción de atípicos baja porque, con 38 veces más edificios, la curva de k-distancias es mucho más
+densa y su codo cae en un ε menor. Excluir esos atípicos y volver a ajustar la solución final con el número final de
+grupos no cambia los arquetipos. Con la carga por vivienda, el 99,9 % de las viviendas queda en el mismo arquetipo que
+en el ajuste con todos los edificios sin excluir atípicos, y el R² sigue en 0,620. Con la carga por m², la solución es
+idéntica. Lo que cambia frente a la solución final se debe, por tanto, a la submuestra y no a los atípicos.</p>
+<figure class="align-default" id="fig-arq-mapa-cambios">
+<a class="reference internal image-reference" href="_images/mapa_cambios_todos_edificios.png"><img alt="_images/mapa_cambios_todos_edificios.png" src="_images/mapa_cambios_todos_edificios.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 19 </span><span class="caption-text">Casas que cambian de arquetipo en la solución por vivienda al ajustar con todos los edificios. En la solución por m² no cambia ninguna.</span><a class="headerlink" href="#fig-arq-mapa-cambios" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="verificacion-y-correcciones">
+<span id="sec-arq-verificacion"></span><h2>Verificación y correcciones<a class="headerlink" href="#verificacion-y-correcciones" title="Link to this heading">#</a></h2>
+<p>Antes de usar los resultados se revisó el código de forma independiente y se agregó un script de comprobaciones
+automáticas (script 16) que contrasta 43 propiedades de las salidas. Entre ellas están que cada vivienda tenga un
+arquetipo y uno solo, que las tablas sumen las 332.718 viviendas, que los R² publicados se reproduzcan desde las bases,
+que el código de cada arquetipo coincida con la posición y el bloque de sus viviendas y que el ajuste con la submuestra
+reproduzca la solución final. La revisión encontró tres errores de implementación, que se corrigieron antes de volver a
+correr la Fase 1 completa con las mismas reglas y la misma semilla (preregistro, Nota 11; ajuste AJ28):</p>
+<ol class="arabic simple">
+<li><p>La posición frente a la cubierta se calculaba dentro del predio matriz y no dentro de cada torre, así que el último
+piso de una torre más baja que otra del mismo conjunto quedaba como sin cubierta. Con la corrección, 2.088
+viviendas pasan de sin cubierta a último piso y 252 a casa.</p></li>
+<li><p>La incertidumbre de la asignación emparejaba los grupos de cada reajuste con los arquetipos por el método húngaro,
+que asigna todos los grupos aunque no compartan ninguna vivienda, y daba probabilidades falsas de hasta 0,31 entre
+casas de tamaños muy distintos. Ahora cada grupo toma el arquetipo con el que comparte más puntos de ajuste, y la
+mayor probabilidad media de caer en otro arquetipo es 0,06.</p></li>
+<li><p>En la variante con diez variables, las tres numéricas agregadas entraban también como categóricas en
+k-prototypes. No afectaba la solución final.</p></li>
+</ol>
+<p>Además se calculan la V de Cramér entre los grupos del diseño plano y el estrato (0,26 por vivienda y 0,28 por m²) y el
+η² del estrato dentro de cada grupo, que el preregistro pedía reportar. Con la nueva corrida, la solución por m² no
+cambia. La solución por vivienda pasa de 17 a 15 arquetipos y su R² de 0,66 a 0,63, porque las casas de los estratos
+3-4 quedan en 4 grupos y no en 6. El paso de 16 a 17 estaba justo en el umbral (subía el R² en 0,0205), y la nueva
+submuestra, que cambia porque cambió el conjunto de casas, no lo alcanza (limitación 8). Las 43 comprobaciones se
+cumplen.</p>
+</section>
 <section id="priors-de-envolvente">
 <h2>Priors de envolvente<a class="headerlink" href="#priors-de-envolvente" title="Link to this heading">#</a></h2>
 <p>El techo pesa sobre todo en las casas de los estratos 1 a 4, donde predomina el asbesto-cemento
-(<a class="reference internal" href="#fig-arq-techo"><span class="std std-numref">Figura 14</span></a>). En el último piso de los multifamiliares el techo se toma como losa de concreto, y en los
+(<a class="reference internal" href="#fig-arq-techo"><span class="std std-numref">Figura 20</span></a>). En el último piso de los multifamiliares el techo se toma como losa de concreto, y en los
 de baja altura, con el reparto de los apartamentos de la ECV.</p>
 <figure class="align-default" id="fig-arq-techo">
 <a class="reference internal image-reference" href="_images/env_techo_ecv.png"><img alt="_images/env_techo_ecv.png" src="_images/env_techo_ecv.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 14 </span><span class="caption-text">Material del techo según la ECV 2019 y 2024, por tipo de vivienda y bloque de estratos. El prior usa solo la ola 2024.</span><a class="headerlink" href="#fig-arq-techo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 20 </span><span class="caption-text">Material del techo según la ECV 2019 y 2024, por tipo de vivienda y bloque de estratos. El prior usa solo la ola 2024.</span><a class="headerlink" href="#fig-arq-techo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-arq-u-techo">
-<caption><span class="caption-number">Tabla 19 </span><span class="caption-text">Transmitancia del techo por material (W/m²K), según la ISO 6946. Moda: flujo de calor hacia abajo y sin cielo raso; mínimo: con cielo raso (techos livianos) o losa gruesa; máximo: flujo hacia arriba.</span><a class="headerlink" href="#tab-arq-u-techo" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 25 </span><span class="caption-text">Transmitancia del techo por material (W/m²K), según la ISO 6946. Moda: flujo de calor hacia abajo y sin cielo raso; mínimo: con cielo raso (techos livianos) o losa gruesa; máximo: flujo hacia arriba.</span><a class="headerlink" href="#tab-arq-u-techo" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Techo</p></th>
 <th class="head"><p>Mínimo</p></th>
@@ -992,13 +1537,96 @@ Morris de la Fase 2 dirá cuáles importan. La tabla completa, con la fuente de 
 <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/env_priors_por_vivienda.csv"><code class="docutils literal notranslate"><span class="pre">env_priors_por_vivienda.csv</span></code></a>
 y <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/env_priors_por_m2.csv"><code class="docutils literal notranslate"><span class="pre">env_priors_por_m2.csv</span></code></a>.</p>
 </section>
+<section id="comparacion-con-los-materiales-del-catastro">
+<span id="sec-arq-materiales-catastro"></span><h2>Comparación con los materiales del catastro<a class="headerlink" href="#comparacion-con-los-materiales-del-catastro" title="Link to this heading">#</a></h2>
+<p>El catastro registra la cubierta y los muros de cada unidad de construcción en la calificación convencional (tabla
+535), una clasificación pensada para el avalúo. Para unirla con las viviendas hacía falta el identificador global de la
+tabla de características (505), que el servicio de datos abiertos no publica y que la Gerencia de Gestión Catastral
+entregó el 19 de noviembre de 2026 <span class="bibtex-citation" id="id17">(<a class="reference internal" href="09_referencias.html#id24" title="Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 105, 305, 315, 500, 505, 535, 601 y 602). ArcGIS REST, 2026. Consultado: 17 y 27 sep. 2026; capa 535, 3 nov. 2026. URL: https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer.">Alcaldía de Barranquilla, Gerencia de Gestión Catastral, 2026</a>)</span>. Con él, el script 12 enlaza el 90 % de las viviendas con su
+registro, el 81 % por un número predial único y el 9 % por el área, el año, el piso y el uso. Solo el 29,3 % de las
+viviendas tiene la cubierta registrada, y otro 46 % tiene el puntaje de la calificación sin los materiales.</p>
+<p>Antes de comparar se escribió la regla en el preregistro (Nota 13, análisis A12, ajuste AJ30). Como las categorías del
+avalúo juntan materiales, el techo se compara en dos clases, concreto y liviano, y la categoría «Azotea, aluminio, placa
+sencilla con eternit», que puede ser una cosa o la otra, se lleva como intervalo. Las casas del catastro se comparan con
+las casas de la ECV 2024 y el último piso con los apartamentos, por bloque de estratos y con el intervalo del 95 % del
+diseño muestral de la ECV. Una celda concuerda si el intervalo del catastro toca el de la ECV.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-arq-materiales-ecv">
+<caption><span class="caption-number">Tabla 26 </span><span class="caption-text">Techo de concreto según el catastro y la ECV 2024. Catastro: proporción entre las viviendas con la cubierta registrada, contando la categoría ambigua como liviana (valor bajo) o como concreto (valor alto). ECV: proporción ponderada e intervalo del 95 %.</span><a class="headerlink" href="#tab-arq-materiales-ecv" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Celda</p></th>
+<th class="head"><p>Con cubierta registrada</p></th>
+<th class="head"><p>Catastro</p></th>
+<th class="head"><p>ECV 2024</p></th>
+<th class="head"><p>Concuerda</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Casas 1-2</p></td>
+<td><p>25 %</p></td>
+<td><p>0,3 % a 4,7 %</p></td>
+<td><p>18 % (10 a 27)</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apartamentos 1-2</p></td>
+<td><p>41 %</p></td>
+<td><p>4 % a 33 %</p></td>
+<td><p>36 % (22 a 49)</p></td>
+<td><p>En el borde</p></td>
+</tr>
+<tr class="row-even"><td><p>Casas 3-4</p></td>
+<td><p>15 %</p></td>
+<td><p>2 % a 10 %</p></td>
+<td><p>26 % (6 a 45)</p></td>
+<td><p>Sí</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apartamentos 3-4</p></td>
+<td><p>28 %</p></td>
+<td><p>7 % a 57 %</p></td>
+<td><p>71 % (56 a 86)</p></td>
+<td><p>En el borde</p></td>
+</tr>
+<tr class="row-even"><td><p>Casas 5-6</p></td>
+<td><p>16 %</p></td>
+<td><p>15 % a 53 %</p></td>
+<td><p>80 % (71 a 89)</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apartamentos 5-6</p></td>
+<td><p>17 %</p></td>
+<td><p>15 % a 69 %</p></td>
+<td><p>93 % (85 a 100)</p></td>
+<td><p>No</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>El catastro registra mucho menos techo de concreto que la ECV, y las tres celdas que concuerdan lo hacen gracias a la
+categoría ambigua o al ancho del intervalo de la ECV, que en las casas de 3-4 tiene solo 47 hogares. Además, dentro de
+cada celda las viviendas con materiales registrados difieren de las demás en más de 0,2 desviaciones estándar en el
+estrato o en el año de construcción en 10 de las 12 comparaciones, y en los apartamentos son de 4 a 16 años más nuevas.
+Por eso el catastro no se usa para los priors del techo, que siguen saliendo solo de la ECV. Una explicación posible es
+que muchas calificaciones vengan de un levantamiento antiguo que no registra techos de placa construidos después, pero
+la entrega no trae la fecha de la calificación y no se puede comprobar.</p>
+<p>En las paredes las dos fuentes coinciden, con entre 94 % y 100 % de bloque o ladrillo en todas las celdas, lo que
+respalda tratar los muros como mampostería. La regla marca desacuerdo en cinco celdas solo porque, cuando la ECV da
+100 %, su intervalo no tiene ancho.</p>
+<p>Los materiales del catastro sí entran en la Fase 2 como escenario de sensibilidad (AJ31). En cada arquetipo con techo
+propio, la proporción de concreto del prior se reemplaza por la del catastro, con la categoría ambigua como liviana, y
+lo liviano se reparte como en la ECV. Como deja más techos livianos, ese escenario es un límite alto de la ganancia de
+calor por la cubierta. Si las conclusiones cambian poco frente al escenario de la ECV, el material del techo no pesa en
+ellas. Las proporciones están en
+<a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/env_escenario_techo_catastro_por_vivienda.csv"><code class="docutils literal notranslate"><span class="pre">env_escenario_techo_catastro_por_vivienda.csv</span></code></a>
+y
+<a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/env_escenario_techo_catastro_por_m2.csv"><code class="docutils literal notranslate"><span class="pre">env_escenario_techo_catastro_por_m2.csv</span></code></a>,
+y la comparación completa en <code class="docutils literal notranslate"><span class="pre">materiales_vs_ecv.csv</span></code> y <code class="docutils literal notranslate"><span class="pre">materiales_seleccion.csv</span></code> (script 19).</p>
+</section>
 <section id="validacion">
 <h2>Validación<a class="headerlink" href="#validacion" title="Link to this heading">#</a></h2>
 <figure class="align-default" id="fig-arq-representatividad">
 <a class="reference internal image-reference" href="_images/val_representatividad.png"><img alt="_images/val_representatividad.png" src="_images/val_representatividad.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 15 </span><span class="caption-text">Catastro frente a la ECV 2024: viviendas por estrato, fracción de casas por bloque y habitaciones (catastro) frente a dormitorios (ECV), con el intervalo del 95 % de la ECV.</span><a class="headerlink" href="#fig-arq-representatividad" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 21 </span><span class="caption-text">Catastro frente a la ECV 2024: viviendas por estrato, fracción de casas por bloque y habitaciones (catastro) frente a dormitorios (ECV), con el intervalo del 95 % de la ECV.</span><a class="headerlink" href="#fig-arq-representatividad" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -1010,16 +1638,17 @@ el 44 % de las casas de los estratos 1-2 y el 31 % de las de 3-4 pueden tomar lo
 <li><p><strong>Habitaciones:</strong> el catastro da entre 0,5 y 1,1 habitaciones más que los dormitorios de la ECV en todos los estratos.
 Por eso, la fracción climatizada de los apartamentos de 3-4, que según CEELA climatizan «las habitaciones», usa el
 número del catastro llevado a los dormitorios de la ECV.</p></li>
-<li><p><strong>Sensibilidad a las variables:</strong> al repetir el agrupamiento sin cada variable, el área resulta imprescindible en la
-solución por vivienda (sin ella no se forman los grupos de casas de 3-4), y el número de pisos de la unidad define
-la solución por m². Los arquetipos con un solo grupo en su posición y bloque no dependen de las variables de
+<li><p><strong>Sensibilidad a las variables:</strong> al repetir el agrupamiento sin cada variable, la asignación por vivienda cambia
+sobre todo sin el área (índice de Rand ajustado de 0,65 frente a la solución final) y la de por m², sin el número de
+pisos de la unidad (0,74). Los arquetipos con un solo grupo en su posición y bloque no dependen de las variables de
 agrupamiento.</p></li>
 <li><p><strong>Asignación:</strong> el árbol reproduce la regla de asignación en el 99,7 % de las viviendas en la solución por vivienda y
 en el 100 % en la de por m². No es una prueba de generalización, porque el arquetipo es función de los mismos atributos. La incertidumbre que pasa a
 la Fase 2 sale de repetir el agrupamiento en las 100 submuestras de la prueba de estabilidad. En la solución por m²,
-cada vivienda cae siempre en su arquetipo. En la solución por vivienda, los arquetipos de casas de los estratos 1-2
-quedan por encima de 0,98 y la incertidumbre se concentra en las casas de 3-4: las de C34-6 (casas grandes de dos
-pisos) caen en él el 64 % de las veces y si no, en C34-3, y las de C34-2 y C34-4, el 86 % y el 85 %.</p></li>
+cada vivienda cae casi siempre en su arquetipo. En la solución por vivienda, la probabilidad media de caer en el
+propio arquetipo es de 0,96 o más en las casas de los estratos 1-2, y la incertidumbre se concentra en las casas de
+3-4: las de C34-1 (casas pequeñas) caen en su arquetipo con probabilidad media de 0,94 y si no, en C34-2, y el 9 % de
+ellas queda por debajo de 0,8.</p></li>
 </ul>
 </section>
 <section id="limitaciones">
@@ -1031,22 +1660,39 @@ bloque comparten esos priors.</p></li>
 <li><p>Las casas de los estratos 5 y 6 tienen solo 15 viviendas en la ECV 2024, así que su prior de materiales es muy
 incierto.</p></li>
 <li><p>No hay mediciones de infiltración ni del color de los techos en Barranquilla; los dos son supuestos con rango.</p></li>
-<li><p>El año de construcción del catastro se usa como época, aunque su significado no está documentado.</p></li>
+<li><p>El año de construcción del catastro se usa como época, aunque su significado no está documentado. El 11,6 % de las
+viviendas tiene el año 1986, que es el 69 % de la época «antes de 1990», y hay otros picos en 2014 y 2022, así que el
+campo parece registrar el año de inscripción en el catastro más que el de construcción. Si es así, la época indica
+cuándo existía ya la vivienda, y «antes de 1990» sigue siendo correcta para las de 1986.</p></li>
 <li><p>Usar solo la ola 2024 de la ECV depende de suponer para 2019 un efecto de diseño de 1,5; con el de cada material la
 prueba del techo no rechaza. Con las dos olas, el techo de concreto de las casas de los estratos 1 y 2 baja de 18 % a
 10 %, así que la elección de olas entra como factor en la sensibilidad de la Fase 2.</p></li>
 <li><p>La carga usa la irradiancia de ERA5 (0,25°) porque la copia de Open-Meteo no trae la de ERA5-Land (supuesto S17).
-Con ERA5-Land completo de GDEX, la carga media sube 4,4 %, pero el R² de los arquetipos no cambia (0,660 por
-vivienda y 0,927 por m²; AJ24, script 11): el clima mueve el nivel de la carga, no las diferencias entre viviendas.</p></li>
+Con ERA5-Land completo de GDEX, la carga media sube 4,4 %, pero el R² de los arquetipos casi no cambia (0,629 por
+vivienda y 0,926 por m²; AJ24, script 11): el clima mueve el nivel de la carga, no las diferencias entre viviendas.</p></li>
 <li><p>Algunas reglas cambiaron después de ver resultados de prueba o completos (preregistro, Notas 3 a 6). Cada cambio
 está registrado con su motivo, y el resultado con la regla original se reporta aparte: con la regla original de
 elección del algoritmo habría 9 arquetipos por vivienda, con un R² de 0,40.</p></li>
+<li><p>El número de arquetipos de casas por vivienda depende de la submuestra. Con la submuestra anterior a las
+correcciones, el paso de 16 a 17 arquetipos subía el R² en 0,0205 y la regla daba 17. Con la actual sube 0,013 y da
+15, y con todos los edificios da 16. Lo firme es la estructura, con cuatro tamaños de casa en los estratos 1-2 y un
+solo arquetipo por bloque en las demás posiciones, mientras que las casas de 3-4 quedan en 4 a 6 grupos según la
+muestra.</p></li>
+<li><p>Hay 8.753 viviendas sin cubierta sin ninguna unidad de su torre que empiece encima de ellas: 3.364 de S12-1, 3.737 de
+S34-1 y 1.652 de S56-1, entre el 6 y el 8 % de cada arquetipo. Su techo lo fija una unidad de la torre con más
+pisos, y sin la geometría de las construcciones no se sabe si está encima o al lado. En algunos multifamiliares
+<code class="docutils literal notranslate"><span class="pre">total_plantas</span></code> parece ser el número de pisos del edificio y no el de la unidad. Si alguna de ellas tiene el techo
+expuesto, su carga está subestimada.</p></li>
+<li><p>Los materiales de la calificación convencional del catastro cubren al 29 % de las viviendas, no representan a las
+demás y registran mucho menos techo de concreto que la ECV (<a class="reference internal" href="#sec-arq-materiales-catastro"><span class="std std-ref">Comparación con los materiales del catastro</span></a>). Los priors del
+techo dependen entonces de una encuesta con pocas viviendas por celda, y el catastro solo entra como escenario de
+sensibilidad.</p></li>
 </ol>
 </section>
 <section id="archivos">
 <h2>Archivos<a class="headerlink" href="#archivos" title="Link to this heading">#</a></h2>
 <p>Todo está en la carpeta <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/arquetipos"><code class="docutils literal notranslate"><span class="pre">arquetipos/</span></code></a>:
-el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 11, las tablas agregadas, las figuras,
+el preregistro y el registro de ajustes frente a la propuesta, los scripts 01 a 16 y 18 a 20, las tablas agregadas, las figuras,
 las fichas de los arquetipos de cada solución (<code class="docutils literal notranslate"><span class="pre">salidas/fichas/</span></code>) y los árboles de asignación (<code class="docutils literal notranslate"><span class="pre">salidas/modelos/</span></code>). La
 asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publican.</p>
 </section>
@@ -1126,7 +1772,18 @@ asignación de cada vivienda a su arquetipo y las cargas por vivienda no se publ
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variante-con-mas-variables-del-catastro">Variante con más variables del catastro</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-las-variables-del-catastro">Análisis de las variables del catastro</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-univariado">Análisis univariado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado">Análisis bivariado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-multivariado">Análisis multivariado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-no-entran-en-los-arquetipos">Variables que no entran en los arquetipos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-estan-los-arquetipos">Dónde están los arquetipos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robustez-frente-a-la-submuestra">Robustez frente a la submuestra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-y-correcciones">Verificación y correcciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priors-de-envolvente">Priors de envolvente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-con-los-materiales-del-catastro">Comparación con los materiales del catastro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion">Validación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones">Limitaciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos">Archivos</a></li>

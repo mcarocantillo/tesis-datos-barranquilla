@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
@@ -446,7 +446,7 @@
 <h1>Catastro de Barranquilla<a class="headerlink" href="#catastro-de-barranquilla" title="Link to this heading">#</a></h1>
 <p>El catastro multipropósito de Barranquilla es la base física de toda la tesis: de él salen las 332.718 viviendas
 residenciales con estrato, su área, sus pisos y su posición dentro del edificio, y con ellas se construyen los
-arquetipos de la Fase 1 y la composición del parque que la Fase 2 simula <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id24" title="Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 305, 315, 500, 505, 601 y 602). ArcGIS REST, 2026. Consultado: 15 sep. 2026. URL: https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer.">Alcaldía de Barranquilla, Gerencia de Gestión Catastral, 2026</a>)</span>. Este capítulo
+arquetipos de la Fase 1 y la composición del parque que la Fase 2 simula <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id24" title="Alcaldía de Barranquilla, Gerencia de Gestión Catastral. Catastro: servicio de datos abiertos (capas 105, 305, 315, 500, 505, 535, 601 y 602). ArcGIS REST, 2026. Consultado: 17 y 27 sep. 2026; capa 535, 3 nov. 2026. URL: https://miciudad.barranquilla.gov.co/gis/rest/services/catastro/datosabiertos/MapServer.">Alcaldía de Barranquilla, Gerencia de Gestión Catastral, 2026</a>)</span>. Este capítulo
 describe las tablas que se descargaron, cómo se unen, qué muestran los datos por estrato, qué problemas tienen y cómo
 se trataron, y documenta paso a paso el camino desde la descarga hasta la asignación de cada vivienda a un arquetipo.
 Todas las cifras salen de <code class="docutils literal notranslate"><span class="pre">scripts/eda/catastro.py</span></code>, que solo publica agregados.</p>
@@ -466,10 +466,10 @@ que describe una casa o un apartamento. Ese registro se liga a una o varias unid
 unidad a su predio (500) por la tabla intermedia 602, y el predio a su terreno (315, por la tabla 601) y a su
 dirección (105). La calificación convencional de la construcción (535), que trae los materiales, cuelga del registro
 de 505 por su <code class="docutils literal notranslate"><span class="pre">globalid</span></code>. La jerarquía es unidad ⊂ predio (número predial de 30 dígitos) ⊂ edificio o lote (los
-primeros 22 dígitos) ⊂ manzana (los primeros 17). La <a class="reference internal" href="#tab-eda-catastro-tablas"><span class="std std-numref">Tabla 38</span></a> resume el tamaño de cada
+primeros 22 dígitos) ⊂ manzana (los primeros 17). La <a class="reference internal" href="#tab-eda-catastro-tablas"><span class="std std-numref">Tabla 45</span></a> resume el tamaño de cada
 tabla y la tasa de empalme por su llave.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-eda-catastro-tablas">
-<caption><span class="caption-number">Tabla 38 </span><span class="caption-text">Tablas del catastro usadas por la tesis, llave de unión y tasa de empalme. Filas en las dos descargas de septiembre de 2026; la tabla 535 se descargó el 3 de noviembre. Empalme calculado con la descarga que trae la tabla 105.</span><a class="headerlink" href="#tab-eda-catastro-tablas" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 45 </span><span class="caption-text">Tablas del catastro usadas por la tesis, llave de unión y tasa de empalme. Filas en las dos descargas de septiembre de 2026; la tabla 535 se descargó el 3 de noviembre. Empalme calculado con la descarga que trae la tabla 105.</span><a class="headerlink" href="#tab-eda-catastro-tablas" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Tabla</p></th>
 <th class="head"><p>Contenido</p></th>
@@ -554,7 +554,7 @@ predios de condición informal (mejoras en terreno ajeno), concentradas en los e
 <section id="variables-que-usa-la-tesis">
 <h2>Variables que usa la tesis<a class="headerlink" href="#variables-que-usa-la-tesis" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-eda-catastro-variables">
-<caption><span class="caption-number">Tabla 39 </span><span class="caption-text">Variables del catastro que usa la tesis, su definición y su uso en el modelo.</span><a class="headerlink" href="#tab-eda-catastro-variables" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 46 </span><span class="caption-text">Variables del catastro que usa la tesis, su definición y su uso en el modelo.</span><a class="headerlink" href="#tab-eda-catastro-variables" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Tabla y campo</p></th>
 <th class="head"><p>Definición</p></th>
@@ -623,7 +623,7 @@ predios de condición informal (mejoras en terreno ajeno), concentradas en los e
 <section id="viviendas-por-estrato">
 <h3>Viviendas por estrato<a class="headerlink" href="#viviendas-por-estrato" title="Link to this heading">#</a></h3>
 <p>La distribución de las viviendas por estrato coincide con la de los suscriptores residenciales del SUI
-(<a class="reference internal" href="#fig-eda-catastro-estrato-sui"><span class="std std-numref">Figura 43</span></a>). El índice de disimilitud es de 2,5 %, la mayor diferencia está en el
+(<a class="reference internal" href="#fig-eda-catastro-estrato-sui"><span class="std std-numref">Figura 49</span></a>). El índice de disimilitud es de 2,5 %, la mayor diferencia está en el
 estrato 2, con 2,5 puntos más en el catastro, y ninguna otra pasa de 1,3 puntos. En número, el catastro tiene 0,8 % más
 viviendas que suscriptores. Esa coincidencia entre un registro predial y un registro de facturación es lo que respalda
 usar los pesos del SUI para expandir a la ciudad (<a class="reference internal" href="11_coherencia.html"><span class="std std-doc">Coherencia entre fuentes</span></a>).</p>
@@ -631,14 +631,14 @@ usar los pesos del SUI para expandir a la ciudad (<a class="reference internal" 
 <a class="reference internal image-reference" href="_images/catastro_estrato_sui.png"><img alt="_images/catastro_estrato_sui.png" src="_images/catastro_estrato_sui.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 43 </span><span class="caption-text">Distribución por estrato de las viviendas del catastro y de los suscriptores residenciales del SUI en diciembre de 2024.</span><a class="headerlink" href="#fig-eda-catastro-estrato-sui" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 49 </span><span class="caption-text">Distribución por estrato de las viviendas del catastro y de los suscriptores residenciales del SUI en diciembre de 2024.</span><a class="headerlink" href="#fig-eda-catastro-estrato-sui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="atributos-de-la-vivienda">
 <h3>Atributos de la vivienda<a class="headerlink" href="#atributos-de-la-vivienda" title="Link to this heading">#</a></h3>
 <p>El área, la altura del edificio y el número de baños crecen con el estrato, mientras que las habitaciones casi no
-cambian (<a class="reference internal" href="#fig-eda-catastro-distribuciones"><span class="std std-numref">Figura 44</span></a>). El área mediana pasa de 54 m² en el estrato 1 a 150 m² en el 6,
+cambian (<a class="reference internal" href="#fig-eda-catastro-distribuciones"><span class="std std-numref">Figura 50</span></a>). El área mediana pasa de 54 m² en el estrato 1 a 150 m² en el 6,
 y la vivienda mediana de los estratos 1 y 2 está en un edificio de un piso, frente a 7 pisos en el estrato 4 y 10 en
 el 6. Las habitaciones tienen mediana de 3 desde el estrato 2, de modo que el estrato se distingue más por el área y
 los baños que por el número de cuartos. El año de construcción tiene la mediana entre 2004 y 2013 en todos los estratos y
@@ -648,13 +648,13 @@ percentiles de cada variable están en <code class="docutils literal notranslate
 <a class="reference internal image-reference" href="_images/catastro_distribuciones.png"><img alt="_images/catastro_distribuciones.png" src="_images/catastro_distribuciones.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 44 </span><span class="caption-text">Área construida, pisos del edificio, piso de la unidad, año de construcción, habitaciones y baños por estrato en las 332.718 viviendas.</span><a class="headerlink" href="#fig-eda-catastro-distribuciones" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 50 </span><span class="caption-text">Área construida, pisos del edificio, piso de la unidad, año de construcción, habitaciones y baños por estrato en las 332.718 viviendas.</span><a class="headerlink" href="#fig-eda-catastro-distribuciones" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="ano-de-construccion">
 <h3>Año de construcción<a class="headerlink" href="#ano-de-construccion" title="Link to this heading">#</a></h3>
-<p>El año registrado no se comporta como una fecha de construcción (<a class="reference internal" href="#fig-eda-catastro-anio"><span class="std std-numref">Figura 45</span></a>). El año más
+<p>El año registrado no se comporta como una fecha de construcción (<a class="reference internal" href="#fig-eda-catastro-anio"><span class="std std-numref">Figura 51</span></a>). El año más
 frecuente es 1986, con 38.439 viviendas (11,6 % de la ciudad y 23,5 % del estrato 2), y siguen 2014, 2022 y 2010,
 picos que parecen corresponder a procesos de formación o actualización catastral. Solo 1.442 viviendas de baja altura
 registran un año anterior a 1975, lo que no es compatible con barrios antiguos como El Prado o Barrio Abajo. En
@@ -665,13 +665,13 @@ Por eso el año se usa como «año de registro catastral» y esos 24 lotes queda
 <a class="reference internal image-reference" href="_images/catastro_anio.png"><img alt="_images/catastro_anio.png" src="_images/catastro_anio.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 45 </span><span class="caption-text">Viviendas por año de construcción registrado, según el tipo de edificio y el bloque de estratos.</span><a class="headerlink" href="#fig-eda-catastro-anio" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 51 </span><span class="caption-text">Viviendas por año de construcción registrado, según el tipo de edificio y el bloque de estratos.</span><a class="headerlink" href="#fig-eda-catastro-anio" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="posicion-frente-a-la-cubierta">
 <h3>Posición frente a la cubierta<a class="headerlink" href="#posicion-frente-a-la-cubierta" title="Link to this heading">#</a></h3>
-<p>La posición frente a la cubierta separa dos ciudades (<a class="reference internal" href="#fig-eda-catastro-posicion"><span class="std std-numref">Figura 46</span></a>). En los estratos 1 a 3
+<p>La posición frente a la cubierta separa dos ciudades (<a class="reference internal" href="#fig-eda-catastro-posicion"><span class="std std-numref">Figura 52</span></a>). En los estratos 1 a 3
 la mayoría de las viviendas está bajo la cubierta (69 %, 91 % y 63 %), porque son casas, mientras que en los estratos
 4 a 6 entre el 66 % y el 80 % de las viviendas tiene otra vivienda encima, y el estrato 6 llega a 72 % de apartamentos
 intermedios. El estrato 1 se aparta del patrón de los estratos bajos: el 29,5 % de sus viviendas está en edificios de
@@ -683,14 +683,14 @@ tiene 54,4 % de casas, 9,0 % de últimos pisos y 36,6 % de viviendas sin cubiert
 <a class="reference internal image-reference" href="_images/catastro_posicion1.png"><img alt="_images/catastro_posicion1.png" src="_images/catastro_posicion1.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 46 </span><span class="caption-text">Posición de la vivienda frente a la cubierta por estrato (a la derecha de cada barra, el porcentaje bajo cubierta) y porcentaje acumulado de viviendas según los pisos del edificio.</span><a class="headerlink" href="#fig-eda-catastro-posicion" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 52 </span><span class="caption-text">Posición de la vivienda frente a la cubierta por estrato (a la derecha de cada barra, el porcentaje bajo cubierta) y porcentaje acumulado de viviendas según los pisos del edificio.</span><a class="headerlink" href="#fig-eda-catastro-posicion" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="materiales">
 <h3>Materiales<a class="headerlink" href="#materiales" title="Link to this heading">#</a></h3>
 <p>La tabla 535 es el único registro de materiales del catastro, y llega incompleta y con categorías pensadas para el
-avalúo y no para la envolvente térmica (<a class="reference internal" href="#fig-eda-catastro-materiales"><span class="std std-numref">Figura 47</span></a>). El 60,6 % de sus 389.442 registros no
+avalúo y no para la envolvente térmica (<a class="reference internal" href="#fig-eda-catastro-materiales"><span class="std std-numref">Figura 53</span></a>). El 60,6 % de sus 389.442 registros no
 tiene cubierta y el 60,3 % no tiene muros, y en 234.692 registros solo está el puntaje total de la calificación. Entre
 los que tienen dato, el 91,4 % de las cubiertas cae en las tres categorías de zinc, teja de barro, eternit o placa
 sencilla con eternit y el 7,9 % es placa impermeabilizada, y el 96,1 %
@@ -705,18 +705,18 @@ y no por estrato.</p>
 <a class="reference internal image-reference" href="_images/catastro_materiales.png"><img alt="_images/catastro_materiales.png" src="_images/catastro_materiales.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 47 </span><span class="caption-text">Material de la cubierta y de los muros en los registros de la tabla 535 que tienen dato.</span><a class="headerlink" href="#fig-eda-catastro-materiales" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 53 </span><span class="caption-text">Material de la cubierta y de los muros en los registros de la tabla 535 que tienen dato.</span><a class="headerlink" href="#fig-eda-catastro-materiales" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="datos-faltantes-y-valores-imposibles">
 <h3>Datos faltantes y valores imposibles<a class="headerlink" href="#datos-faltantes-y-valores-imposibles" title="Link to this heading">#</a></h3>
-<p>En la base limpia casi no hay faltantes en los atributos físicos (<a class="reference internal" href="#tab-eda-catastro-faltantes"><span class="std std-numref">Tabla 40</span></a>). Las
+<p>En la base limpia casi no hay faltantes en los atributos físicos (<a class="reference internal" href="#tab-eda-catastro-faltantes"><span class="std std-numref">Tabla 47</span></a>). Las
 variables con algún valor anulado por imposible o incoherente no pasan de 0,11 %. Lo que falta de verdad es la
 ubicación: 13,1 % de las viviendas se ubica con el centroide de su manzana y 3,1 % queda sin coordenadas, y las dos
 cosas se concentran en los estratos 1 y 2, donde están los predios informales sin terreno ni edificio matriz.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-eda-catastro-faltantes">
-<caption><span class="caption-number">Tabla 40 </span><span class="caption-text">Datos faltantes en las 332.718 viviendas, después de anular los valores imposibles (% de las viviendas del estrato).</span><a class="headerlink" href="#tab-eda-catastro-faltantes" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 47 </span><span class="caption-text">Datos faltantes en las 332.718 viviendas, después de anular los valores imposibles (% de las viviendas del estrato).</span><a class="headerlink" href="#tab-eda-catastro-faltantes" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable</p></th>
 <th class="head"><p>E1</p></th>
@@ -796,7 +796,7 @@ cosas se concentran en los estratos 1 y 2, donde están los predios informales s
 </section>
 <section id="distribucion-en-la-ciudad">
 <h3>Distribución en la ciudad<a class="headerlink" href="#distribucion-en-la-ciudad" title="Link to this heading">#</a></h3>
-<p>El estrato tiene una geografía muy marcada (<a class="reference internal" href="#fig-eda-catastro-mapa"><span class="std std-numref">Figura 48</span></a>). Los estratos 5 y 6 ocupan el norte, el
+<p>El estrato tiene una geografía muy marcada (<a class="reference internal" href="#fig-eda-catastro-mapa"><span class="std std-numref">Figura 54</span></a>). Los estratos 5 y 6 ocupan el norte, el
 4 una franja central, y los estratos 1 y 2 el sur y el suroccidente, con algunos núcleos de estrato 1 en el
 noroccidente. En las 371 celdas de 500 m con al menos 10 viviendas, que reúnen el 99,97 % de las viviendas ubicadas,
 el estrato modal agrupa en la mediana al 80 % de las viviendas de la celda. La densidad mediana es de 806 viviendas
@@ -805,7 +805,7 @@ por celda y la máxima, de 5.370.</p>
 <a class="reference internal image-reference" href="_images/catastro_mapa.png"><img alt="_images/catastro_mapa.png" src="_images/catastro_mapa.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 48 </span><span class="caption-text">Viviendas por celda de 500 m y estrato más frecuente de cada celda, solo en celdas con al menos 10 viviendas; los ejes están en kilómetros desde el centro histórico.</span><a class="headerlink" href="#fig-eda-catastro-mapa" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 54 </span><span class="caption-text">Viviendas por celda de 500 m y estrato más frecuente de cada celda, solo en celdas con al menos 10 viviendas; los ejes están en kilómetros desde el centro histórico.</span><a class="headerlink" href="#fig-eda-catastro-mapa" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -833,7 +833,7 @@ las filas idénticas. Salida: <code class="docutils literal notranslate"><span c
 versión de la unión tenía cerca de 29 % de filas repetidas por las relaciones muchos a muchos duplicadas, y la
 invariante de una fila por registro de 505 es la que garantiza que cada fila sea una unidad física.</p></li>
 <li><p><strong>Depuración.</strong> Entrada: el CSV del paso 2. Operación: <code class="docutils literal notranslate"><span class="pre">e1_git/src/limpieza.py</span></code> aplica reglas fila a fila con
-umbrales fijados de antemano (<a class="reference internal" href="#tab-eda-catastro-embudo"><span class="std std-numref">Tabla 41</span></a>). Salida: 332.718 viviendas con estrato 1 a 6.
+umbrales fijados de antemano (<a class="reference internal" href="#tab-eda-catastro-embudo"><span class="std std-numref">Tabla 48</span></a>). Salida: 332.718 viviendas con estrato 1 a 6.
 Decisión: los garajes, los depósitos, las unidades de menos de 10 m² y los registros que describen un edificio
 entero no son viviendas y salen de la base. El estrato no se imputa, porque es la variable que ordena todo el
 modelo. Los valores imposibles (año 1512 o 2500, piso 99) pasan a faltante con una bandera en lugar de borrar la
@@ -896,7 +896,7 @@ Decisión: la base de 332.718 viviendas no guarda el <code class="docutils liter
 común. La tasa de empalme no se reporta aquí porque sus tablas aún no están en el repositorio.</p></li>
 </ol>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-eda-catastro-embudo">
-<caption><span class="caption-number">Tabla 41 </span><span class="caption-text">Embudo de depuración del catastro, de las filas descargadas a la base de viviendas.</span><a class="headerlink" href="#tab-eda-catastro-embudo" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 48 </span><span class="caption-text">Embudo de depuración del catastro, de las filas descargadas a la base de viviendas.</span><a class="headerlink" href="#tab-eda-catastro-embudo" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Paso</p></th>
 <th class="head"><p>Viviendas que quedan</p></th>
@@ -980,7 +980,7 @@ nada sobre los hogares, su tenencia de equipos o su uso del A/C.</p>
 <section id="problemas-encontrados-y-como-se-trataron">
 <h2>Problemas encontrados y cómo se trataron<a class="headerlink" href="#problemas-encontrados-y-como-se-trataron" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-eda-catastro-problemas">
-<caption><span class="caption-number">Tabla 42 </span><span class="caption-text">Problemas del catastro y su tratamiento.</span><a class="headerlink" href="#tab-eda-catastro-problemas" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 49 </span><span class="caption-text">Problemas del catastro y su tratamiento.</span><a class="headerlink" href="#tab-eda-catastro-problemas" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Problema</p></th>
 <th class="head"><p>Magnitud</p></th>
