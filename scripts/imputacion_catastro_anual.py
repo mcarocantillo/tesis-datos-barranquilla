@@ -5,9 +5,9 @@ de las viviendas del CATASTRO del estrato sea igual a la tasa objetivo (así E1 
 Edificio de 4+ pisos -> concreto; hasta 3 pisos -> concreto restante + asbesto/zinc en proporción ECV 2024."""
 import pandas as pd, numpy as np, pickle
 from scipy.optimize import brentq
-B='/home/claude/work/Traspaso_tesis_Barranquilla/datos_procesados/'
+B='datos/trabajo/Traspaso_tesis_Barranquilla/datos_procesados/'
 n=lambda s: pd.to_numeric(s.astype(str).str.strip().str.replace(',','.'),errors='coerce')
-L=pickle.load(open('/home/claude/work/logit24.pkl','rb')); S=pickle.load(open('/home/claude/work/suav.pkl','rb'))
+L=pickle.load(open('datos/trabajo/logit24.pkl','rb')); S=pickle.load(open('datos/trabajo/suav.pkl','rb'))
 o=L['M2: techo + estrato'][0]; bt={'Concreto':0.0,'Asbesto':o.loc['T3_Asbesto','coef'],'Zinc/otro':o.loc['T3_Zinc/otro','coef']}
 b=pd.read_csv(B+'ECV2024_Barranquilla_hogares.csv',sep=';',dtype=str,encoding='utf-8-sig')
 b['W']=n(b.FEX_C); b['E']=n(b.ESTRATO); b=b[b.E.between(1,6)]
@@ -44,4 +44,4 @@ for a in (2019,2024):
     m=I[I.anio==a].set_index('estrato'); P=np.where(c.ED4,c.EST.map(m.pAC_edificio4),c.EST.map(m.pAC_hasta3))
     g=pd.Series(P).groupby(c.POSICION.values).mean(); pos.append(g.rename(a))
 pos=pd.concat(pos,axis=1); print(pos.round(3))
-pickle.dump(dict(I=I,pos=pos,bt=bt,city=city),open('/home/claude/work/imput_anual.pkl','wb'))
+pickle.dump(dict(I=I,pos=pos,bt=bt,city=city),open('datos/trabajo/imput_anual.pkl','wb'))

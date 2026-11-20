@@ -1,6 +1,6 @@
 import csv, glob, os, sys, collections
 
-W = "/home/claude/work/"
+W = "datos/trabajo/"
 OUT = "/mnt/user-data/outputs/"
 os.makedirs(OUT, exist_ok=True)
 

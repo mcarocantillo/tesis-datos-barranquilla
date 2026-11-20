@@ -4,7 +4,7 @@ Para cada estrato: GLM binomial logit(p) = b0 + b1*(año-2021), con las tasas po
 telefónica y año excluido de la calibración). La varianza se infla por la sobredispersión entre olas
 (escala de Pearson, mínimo 1). Cada año se resume como Beta(alfa, beta) por momentos."""
 import pandas as pd, numpy as np, statsmodels.api as sm, pickle
-B='/home/claude/work/Traspaso_tesis_Barranquilla/datos_procesados/'
+B='datos/trabajo/Traspaso_tesis_Barranquilla/datos_procesados/'
 s=pd.read_csv(B+'ECV_2018_2025_Barranquilla_tenencia_por_estrato.csv',sep=';',encoding='utf-8-sig',dtype={'grupo':str})
 s=s[s.grupo.isin(list('123456'))].copy(); s['p']=s.w_ac/s.w; s['E']=s.grupo.astype(int)
 anios=np.arange(2015,2028); rows=[]; fits=[]
@@ -38,7 +38,7 @@ for a in (2026,2027): W.loc[a]=W.loc[2025]
 W.columns=['E'+c for c in W.columns]
 P=R.pivot(index='anio',columns='estrato',values='p_suav'); S=R.pivot(index='anio',columns='estrato',values='sd')
 city=pd.DataFrame({'pct_suav':(W*P).sum(1)*100,'sd_pp':np.sqrt((W**2*S**2).sum(1))*100})
-raw=pd.read_pickle('/home/claude/work/post_res.pkl')[['pct_ac','ic95_ac']]
+raw=pd.read_pickle('datos/trabajo/post_res.pkl')[['pct_ac','ic95_ac']]
 city=city.join(raw)
 print(city.round(1))
-pickle.dump(dict(R=R,F=Fz,W=W,city=city),open('/home/claude/work/suav.pkl','wb'))
+pickle.dump(dict(R=R,F=Fz,W=W,city=city),open('datos/trabajo/suav.pkl','wb'))

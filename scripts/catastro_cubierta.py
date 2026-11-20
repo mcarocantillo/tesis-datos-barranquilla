@@ -4,7 +4,7 @@ Una unidad ocupa los pisos [planta_ubicacion, planta_ubicacion + total_plantas -
 Techo del edificio = máximo piso superior entre sus unidades residenciales.
 """
 import pandas as pd, numpy as np, pickle
-d = pd.read_pickle('/home/claude/work/catastro_limpio.pkl')
+d = pd.read_pickle('datos/trabajo/catastro_limpio.pkl')
 d['p_ini'] = d.planta_ubicacion
 d['n_pl'] = d.total_plantas.fillna(1).clip(lower=1)
 d['p_fin'] = d.p_ini + d.n_pl - 1
@@ -32,6 +32,6 @@ T['cat_pos_uso_n'] = pd.crosstab([d.EST, d.TIPO_USO], d.POSICION)[order]
 T['cat_altura'] = d.groupby('EST').techo.describe(percentiles=[.5, .9]).round(1)
 print(ct); print(pc); print(T['cat_pos_uso']); print(T['cat_altura'])
 print('edificios', len(b), 'con >1 unidad', (b.n_unid > 1).sum())
-pickle.dump(T, open('/home/claude/work/extra_catastro.pkl', 'wb'))
+pickle.dump(T, open('datos/trabajo/extra_catastro.pkl', 'wb'))
 d[['numero_predial_nacional', 'npn_edificio', 'estrato_num', 'uso', 'condicion_predio', 'planta_ubicacion', 'total_plantas', 'techo', 'n_unid', 'POSICION']].to_csv(
     '/mnt/user-data/outputs/Catastro_posicion_cubierta.csv', sep=';', index=False, encoding='utf-8-sig')

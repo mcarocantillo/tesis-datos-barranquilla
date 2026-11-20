@@ -1,12 +1,12 @@
 """SUI ele_com_096, Barranquilla urbano, residencial 2015-2026 (une 2015-2018 nuevo con 2019-2026)."""
 import csv, json, statistics as st
 from collections import defaultdict
-rows = list(csv.DictReader(open('/home/claude/work/sui/sui_agg_raw.csv'), delimiter=';'))
+rows = list(csv.DictReader(open('datos/trabajo/sui/sui_agg_raw.csv'), delimiter=';'))
 E = ['e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'res']
 raw = {}
 for r in rows:
     raw[(int(r['anio']), int(r['mes']))] = {e: (float(r['S_' + e]), float(r['kWh_' + e]), float(r['COP_' + e])) for e in E}
-new = json.load(open('/home/claude/work/extra/sui_1518.json'))
+new = json.load(open('datos/trabajo/extra/sui_1518.json'))
 for y in range(2015, 2019):
     for m in range(1, 13):
         a, b, c = new[f'{y}-{m}-1'], new[f'{y}-{m}-2'], new[f'{y}-{m}-3']

@@ -1,5 +1,5 @@
 import pandas as pd, numpy as np
-D='/home/claude/work/ecv24/c/'
+D='datos/trabajo/ecv24/c/'
 rd=lambda f: pd.read_csv(D+f,sep=';',dtype=str,encoding='latin-1',low_memory=False)
 K=['DIRECTORIO','SECUENCIA_ENCUESTA']  # hogar = DIRECTORIO + SECUENCIA_ENCUESTA (SECUENCIA_P siempre 1 en archivos de hogar)
 num=lambda s: pd.to_numeric(s.astype(str).str.strip().str.replace(',','.'),errors='coerce')

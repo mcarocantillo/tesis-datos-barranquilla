@@ -33,7 +33,7 @@ for y in range(2019,2027):
         row.append(round(st.mean(v)) if v else None)
     print(y,row)
 # annual residential GWh (clean months scaled to 12)
-nr=list(csv.DictReader(open('/home/claude/work/sui/sui_noresidencial_raw.csv'),delimiter=';'))
+nr=list(csv.DictReader(open('datos/trabajo/sui/sui_noresidencial_raw.csv'),delimiter=';'))
 for y in range(2019,2027):
     res=[o['consumo_kWh'] for o in L if o['anio']==y and o['estrato']=='total' and (y,o['mes']) not in bad]
     com=[float(r['kWh_com']) for r in nr if int(r['anio'])==y]

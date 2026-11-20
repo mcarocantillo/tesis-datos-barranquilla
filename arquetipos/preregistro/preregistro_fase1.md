@@ -524,7 +524,7 @@ El factor de sombra multiplica la ganancia solar por las ventanas.
 
 ## Nota 5 (2-nov-2026): corrección del techo del último piso y del efecto de diseño
 
-**Cuándo y por qué.** Escrita después de la primera corrida del Paso 6 y aprobada por la usuaria. A diferencia de
+**Cuándo y por qué.** Escrita después de la primera corrida del Paso 6. A diferencia de
 las Notas 3 y 4, se escribió después de ver los resultados. Corrige dos defectos de las reglas de la Sección 9.3, no
 un resultado inconveniente, y las reglas originales se reportan como análisis complementario (A8).
 
@@ -634,7 +634,7 @@ Solo agregados.
 
 ## Nota 6 (2-nov-2026): habitaciones climatizadas en los apartamentos de 3-4
 
-**Cuándo y por qué.** Escrita después del Paso 7 y aprobada por la usuaria. La Sección 9.6 contaba «las habitaciones»
+**Cuándo y por qué.** Escrita después del Paso 7. La Sección 9.6 contaba «las habitaciones»
 con el campo `total_habitaciones` del catastro, suponiendo que eran dormitorios. La validación de la Sección 10.2 lo
 contradice: el catastro da de 0,5 a 1,1 habitaciones más que los dormitorios de la ECV en todos los estratos, y en
 los apartamentos de los estratos 3 y 4, 2,7 a 2,8 frente a 1,9 a 2,0.
@@ -647,8 +647,8 @@ con la ECV.
 
 ## Nota 7 (2-nov-2026): prior de la infiltración
 
-**Cuándo y por qué.** Escrita después de revisar la literatura y antes de calcular cualquier prior de infiltración;
-aprobada por la usuaria. La Sección 9.8 dejaba la infiltración para la Fase 2, pero en la carga del Paso 3 es el 33 %
+**Cuándo y por qué.** Escrita después de revisar la literatura y antes de calcular cualquier prior de infiltración.
+La Sección 9.8 dejaba la infiltración para la Fase 2, pero en la carga del Paso 3 es el 33 %
 de la ciudad y el 62 % de las viviendas sin cubierta, y su valor (1 renovación por hora) era un supuesto sin fuente.
 La propuesta pide que un dato faltante se declare como supuesto con un rango amplio para que la sensibilidad muestre
 si importa.
@@ -668,7 +668,7 @@ cerrada. Que el techo liviano sea más permeable es un supuesto propio; no hay m
 
 ## Nota 8 (2-nov-2026): variante ampliada del agrupamiento
 
-**Cuándo y por qué.** Escrita a pedido de la usuaria y antes de correr la variante. La usuaria pidió tener en cuenta
+**Cuándo y por qué.** Escrita antes de correr la variante, para tener en cuenta
 en el agrupamiento las demás variables del catastro analizadas en el trabajo previo de predicción del estrato. La
 propuesta fija seis variables (Paso 2), así que la variante se corre junto a la solución de seis variables y la
 elección entre las dos sigue una regla fijada aquí (ajuste AJ19).
@@ -684,7 +684,7 @@ elección entre las dos sigue una regla fijada aquí (ajuste AJ19).
 
 **Variables que no se agregan.** La destinación económica (100 % habitacional) y el tipo de planta (100 % «Piso»)
 son constantes; la altura de piso vale 3,0 m en el 99,7 % de las viviendas y la regla del 99 % la quitaría; la
-ubicación (coordenadas y distancia al centro) queda fuera por decisión de la usuaria, porque el arquetipo describe la
+ubicación (coordenadas y distancia al centro) queda fuera, porque el arquetipo describe la
 vivienda y no su lugar (AJ10).
 
 **Procedimiento.** Idéntico al de la versión 2 con las Notas 3 y 4: la misma submuestra (semilla 42), DBSCAN
@@ -703,7 +703,7 @@ gana la de seis variables, los resultados no cambian y la variante se reporta co
 
 ## Nota 9 (3-nov-2026): referencia del R², incertidumbre de la asignación y dos factores de sensibilidad
 
-**Estado.** Aprobada por la usuaria el 3-nov-2026, antes de correr nada con estas reglas (ajustes AJ20 a AJ23).
+**Estado.** Aprobada el 3-nov-2026, antes de correr nada con estas reglas (ajustes AJ20 a AJ23).
 
 **Cuándo y por qué.** Escrita después de una revisión metodológica de la Fase 1 completa, con todos sus resultados a la
 vista. No cambia ninguna elección ya hecha (algoritmo, número de grupos, diseño ni priors principales): agrega una
@@ -742,9 +742,9 @@ usan cuando exista el modelo de la Fase 2.
 
 ## Nota 10 (9-nov-2026): la solución final ajustada con todos los edificios
 
-**Estado.** Aprobada por la usuaria el 9-nov-2026 (ajuste AJ27).
+**Estado.** Aprobada el 9-nov-2026 (ajuste AJ27).
 
-**Cuándo y por qué.** Escrita después de correr la prueba, a pedido de la usuaria, que preguntó si los arquetipos
+**Cuándo y por qué.** Escrita después de correr la prueba, para saber si los arquetipos
 cambiarían al usar todos los datos en lugar de la submuestra. No cambia ninguna elección. Es el análisis complementario
 A10 y mide cuánto dependen los arquetipos de la submuestra de la Sección 7.2, que en las casas es el 2,6 % de los
 edificios.
@@ -777,7 +777,7 @@ vivienda.
 
 ## Nota 11 (9-nov-2026): tres correcciones del código encontradas en la verificación
 
-**Estado.** Aprobada por la usuaria el 9-nov-2026, antes de volver a correr la Fase 1 (ajuste AJ28).
+**Estado.** Aprobada el 9-nov-2026, antes de volver a correr la Fase 1 (ajuste AJ28).
 
 **Cuándo y por qué.** Escrita después de una revisión independiente del código, con todos los resultados a la vista.
 Las tres son errores de implementación, porque el código no hacía lo que dicen la propuesta o este preregistro. Se
@@ -825,7 +825,7 @@ dentro de un rango de 15 a 17.
 
 ## Nota 12 (17-nov-2026): atípicos con todos los edificios
 
-**Cuándo y por qué.** Escrita después de correr el análisis, a pedido de la usuaria, para completar la prueba de la
+**Cuándo y por qué.** Escrita después de correr el análisis, para completar la prueba de la
 Nota 10. Esa prueba ajustó la solución final con todos los edificios, pero sin excluir atípicos, porque DBSCAN sobre la
 matriz de Gower de todos los pares no cabe en memoria (unos 96 GB solo en las casas). No cambia ninguna regla ni ningún
 resultado principal: es el análisis complementario A11.
@@ -919,7 +919,7 @@ resultado se reporta concuerde o no.
 
 ## Nota 14 (19-nov-2026): análisis de las variables del catastro
 
-**Cuándo y por qué.** Escrita el 19-nov-2026, antes de correr el análisis, a pedido de la usuaria. Documenta por qué
+**Cuándo y por qué.** Escrita el 19-nov-2026, antes de correr el análisis. Documenta por qué
 los arquetipos usan las seis variables de la Sección 7.3 y no otras del catastro, con un análisis univariado,
 bivariado y multivariado como el del trabajo previo de predicción del estrato. Es el análisis complementario A13. No
 cambia ninguna regla ni la solución final. Antes de escribirla solo se conocían la variante ampliada (Nota 8), la

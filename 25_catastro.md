@@ -259,9 +259,9 @@ no se publican están en el README de esa carpeta.
    sirven para elegir el número de arquetipos sin mezclar los supuestos de materiales.
 9. **Agrupamiento y número de arquetipos.** Entrada: las variables del paso 6 y la carga del paso 8. Operación:
    `03_agrupamiento.py` ajusta K-Means, k-prototypes y el jerárquico con distancia de Gower {cite:p}`gower1971` en una
-   submuestra de 10.294 edificios (una vivienda al azar por edificio en cada posición), aplica los grupos a las
+   submuestra de 10.293 edificios (una vivienda al azar por edificio en cada posición), aplica los grupos a las
    332.718 viviendas y mide el R² de la carga con todas. `04_eleccion.py` elige el número de grupos y el algoritmo, y
-   `05_sensibilidad_atipicos.py` repite el agrupamiento sin apartar los atípicos. Salida: 17 arquetipos con la carga
+   `05_sensibilidad_atipicos.py` repite el agrupamiento sin apartar los atípicos. Salida: 15 arquetipos con la carga
    por vivienda y 10 con la carga por m², en diseño anidado por posición y bloque de estratos. Decisión: la submuestra
    por edificio impide que una torre de cientos de apartamentos pese más que una casa, y la estabilidad se exige con
    los umbrales de {cite:t}`hennig2007`.
@@ -313,7 +313,7 @@ y `pac_posicion_estrato_C.py` imputan la tenencia de A/C a las viviendas del cat
 El catastro entrega la composición física del parque de viviendas, que ninguna otra fuente tiene a escala de ciudad
 ([Insumos del modelo](10_insumos.md)). En concreto entrega cuatro productos:
 
-- La base de 332.718 viviendas asignadas a los 17 arquetipos por vivienda o a los 10 por m², con el número de
+- La base de 332.718 viviendas asignadas a los 15 arquetipos por vivienda o a los 10 por m², con el número de
   viviendas de cada arquetipo, su área mediana, sus pisos y su incertidumbre de asignación. Es la población que
   simula la Fase 2.
 - La posición frente a la cubierta por estrato ({numref}`tab-posicion`), que decide en qué viviendas el techo es

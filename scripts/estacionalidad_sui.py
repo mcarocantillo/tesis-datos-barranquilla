@@ -21,7 +21,7 @@ pd.set_option('display.width',220)
 print(A.pivot(index='estrato',columns='periodo',values='alza_media').round(1))
 print(I.round(3))
 print('dif max indice 2015-18 vs 2019-25:',(I1-I2).abs().max().round(3).to_dict())
-with pd.ExcelWriter('/home/claude/v3/SUI_estacionalidad_2015_2025.xlsx') as xw:
+with pd.ExcelWriter('tablas/SUI_estacionalidad_2015_2025.xlsx') as xw:
     A.round(2).to_excel(xw,sheet_name='Alza_ago_sep_vs_feb_mar',index=False)
     I.round(4).to_excel(xw,sheet_name='Indice_mensual_2015_2025')
     I1.round(4).to_excel(xw,sheet_name='Indice_2015_2018'); I2.round(4).to_excel(xw,sheet_name='Indice_2019_2025')

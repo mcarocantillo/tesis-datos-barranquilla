@@ -1,5 +1,5 @@
 import pandas as pd, numpy as np, datetime
-D = '/home/claude/work/enut2425/'
+D = 'datos/trabajo/enut2425/'
 K = ['DIRECTORIO', 'SECUENCIA_P', 'ORDEN']
 
 def rd(f, cols=None):
@@ -66,5 +66,5 @@ def tipo(r):
     return 'Otro / incapacitado'
 p['TIPO'] = p.apply(tipo, axis=1)
 p['GRUPO_ESTRATO'] = p.ESTRATO.map({1: 'E1-2', 2: 'E1-2', 3: 'E3-4', 4: 'E3-4', 5: 'E5-6', 6: 'E5-6'})
-p.to_pickle('/home/claude/work/enut_atl.pkl')
+p.to_pickle('datos/trabajo/enut_atl.pkl')
 print(p.groupby('CLASE').size(), p.EN_C8.sum())

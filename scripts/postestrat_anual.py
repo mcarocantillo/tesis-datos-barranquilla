@@ -1,5 +1,5 @@
 import pandas as pd, numpy as np
-B='/home/claude/work/Traspaso_tesis_Barranquilla/datos_procesados/'
+B='datos/trabajo/Traspaso_tesis_Barranquilla/datos_procesados/'
 e=pd.read_csv(B+'ECV_2018_2025_Barranquilla_tenencia_por_estrato.csv',sep=';',encoding='utf-8-sig',dtype={'grupo':str})
 s=pd.read_csv(B+'SUI_Barranquilla_urbano_residencial_2015_2026.csv',sep=';',encoding='utf-8-sig',dtype={'estrato':str})
 s=s[(s.mes==12)&(s.estrato.isin(list('123456')))]
@@ -38,4 +38,4 @@ r['z_vs_2019']=np.where(r.index==2019,np.nan,r.dif_vs_2019_pp/np.sqrt(r.se_ac**2
 pd.set_option('display.width',250)
 print(d[['anio','estrato','n','p_ac','W']].pivot(index='anio',columns='estrato',values='W').round(3))
 print(r.round(2).T)
-d.to_pickle('/home/claude/work/post_det.pkl'); r.to_pickle('/home/claude/work/post_res.pkl')
+d.to_pickle('datos/trabajo/post_det.pkl'); r.to_pickle('datos/trabajo/post_res.pkl')

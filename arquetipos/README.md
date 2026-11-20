@@ -69,8 +69,8 @@ casas. Los resultados anteriores se guardan en `datos_internos/antes_nota11/`, q
 | `ajustes_frente_a_la_propuesta.md` | Registro de cada punto en que la ejecución precisa o ajusta la propuesta radicada (AJ1 a AJ31) |
 | `referencias_revisadas.md` | Referencias de arquetipos, agrupamiento e infiltración, con metadatos verificados en Crossref |
 | `src/` | Módulos comunes: rutas y variables (`comun.py`), carga simplificada (`carga.py`), agrupamiento (`agrupamiento.py`), lectura de la ECV (`ecv.py`) y estilo de figuras (`estilo.py`) |
-| `scripts/` | Scripts 01 a 16 y 18 a 20 (el 10 se corre antes del 09) |
-| `salidas/tablas/` | Tablas agregadas de cada paso (prefijos `reglas_`, `carga_`, `agr_`, `clf_`, `asg_`, `env_`, `hog_`, `val_`, `clima_`, `techo_`, `todos_`, `dbscan_todos_`, `materiales_`, `var_`) y la verificación (`verificacion.csv`) |
+| `scripts/` | Scripts 01 a 20 (el 10 se corre antes del 09) |
+| `salidas/tablas/` | Tablas agregadas de cada paso (prefijos `reglas_`, `carga_`, `agr_`, `clf_`, `asg_`, `env_`, `hog_`, `val_`, `clima_`, `techo_`, `todos_`, `dbscan_todos_`, `materiales_`, `var_`, `barrios_`) y la verificación (`verificacion.csv`) |
 | `salidas/figuras/` | Figuras con el estilo de la propuesta |
 | `salidas/fichas/` | Una ficha por arquetipo para cada solución, en Markdown y en CSV |
 | `salidas/modelos/` | Árboles de decisión que asignan una vivienda a su arquetipo (hojas de al menos 50 viviendas) |
@@ -99,6 +99,7 @@ envolvente con su fuente (`salidas/tablas/env_priors_*.csv` y `.json`, y `env_pr
 | `14_agrupamiento_todos_edificios.py` | 2 a 4 (robustez) | La solución final ajustada con los 177.093 edificios en lugar de la submuestra (AJ27, Nota 10). Con `--prueba`, el 10 % de los edificios | 42 min |
 | `15_mapas_arquetipos.py` | 7 | Mapas de los arquetipos y de las casas que cambian con el script 14, en celdas de unos 275 m | 1 min |
 | `16_verificacion.py` | todos | Comprobaciones automáticas de coherencia y reproducibilidad de las salidas | 1 min |
+| `17_barrios_arquetipos.py` | 7 (complementario) | Ubica cada vivienda en un barrio del POT y da la fracción de viviendas de cada arquetipo por barrio, base para escoger los barrios cuyos consumos se pedirán a Air-e. No publica la composición de barrios con menos de 10 viviendas | 1 min |
 | `18_atipicos_todos_edificios.py` | 2 (robustez) | DBSCAN con los 177.093 edificios, sin la matriz de Gower (distancia de Manhattan sobre las variables reescaladas, con los edificios repetidos reunidos por peso), y la solución final ajustada sin esos atípicos (AJ29, Nota 12). Primero verifica que el método reproduce los atípicos de la submuestra | 12 min |
 | `19_materiales_catastro_ecv.py` | 6 (complementario) | Techo y paredes del catastro frente a la ECV 2024 con la regla de la Nota 13, diferencias entre viviendas con y sin materiales, y el escenario de sensibilidad del techo de la Fase 2 (AJ30, AJ31); usa la salida del 12 | 2 min |
 | `20_analisis_variables.py` | 2 (complementario) | Análisis univariado, bivariado y multivariado de las variables del catastro frente a la carga, la solución final con una variable más de la variante ampliada, la ocupación del lote y la tenencia de aire acondicionado según los sanitarios en la ECV (Nota 14, A13) | 4 min |
@@ -108,7 +109,7 @@ Desde la carpeta `arquetipos/`:
 ```bash
 python scripts/01_tipologia_reglas.py
 python scripts/02_carga_simplificada.py
-# ... y así hasta 08, en orden; luego 10 y 09; después 11, 12, 13, 14, 15, 18, 19 y 20
+# ... y así hasta 08, en orden; luego 10 y 09; después 11, 12, 13, 14, 15, 17, 18, 19 y 20
 python scripts/16_verificacion.py
 ```
 
@@ -129,6 +130,7 @@ del repositorio):
 | Clima horario de GDEX (robustez, script 11) | `compuerta_horaria/datos/crudos/era5land_gdex/` | ERA5-Land de NCAR GDEX en la celda de Barranquilla, extraído con `scripts/compuerta/01b_extraer_era5land_gdex.py` |
 | Calificación convencional del catastro y llave de la tabla 505 (scripts 12 y 19) | `arquetipos/datos_internos/catastro_materiales/entrega_2026-11-19/` | Entrega de la Gerencia de Gestión Catastral del 19-nov-2026, convertida a Parquet |
 | Tablas 505, 305, 602 y 500 del catastro (scripts 12 y 19) | `../catastro_arquetipos_v2/catastro_arquetipos_v2/datos_crudos/` (una carpeta más arriba) | Servicio `catastro/datosabiertos` de la Gerencia, descarga del 17-sep-2026 |
+| Barrios del Plan de Ordenamiento Territorial (script 17) | `arquetipos/datos_externos/barrios_pot/barrios_pot_qui6-qeux.geojson` | datos.gov.co, conjunto `qui6-qeux`, licencia CC BY-SA 4.0, descarga del 17-nov-2026 |
 | ECV 2019 y 2024 de Barranquilla | `../DANE/ECV/` (una carpeta más arriba), con los ZIP tal como se descargan | Catálogo de microdatos del DANE |
 
 ## Privacidad

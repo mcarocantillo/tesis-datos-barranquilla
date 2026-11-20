@@ -1,6 +1,6 @@
 # Recalcula todas las tablas del informe que usan ECV 2024, con la base corregida (709 hogares)
 import pandas as pd, numpy as np
-B='/home/claude/work/Traspaso_tesis_Barranquilla/datos_procesados/'
+B='datos/trabajo/Traspaso_tesis_Barranquilla/datos_procesados/'
 n=lambda s: pd.to_numeric(s.astype(str).str.strip().str.replace(',','.'),errors='coerce')
 def wpct(d,m): return d.W[m].sum()/d.W.sum()*100
 def wmean(d,c):

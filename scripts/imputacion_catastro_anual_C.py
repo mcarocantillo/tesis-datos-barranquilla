@@ -6,10 +6,10 @@ de las viviendas del CATASTRO del estrato sea igual a la tasa objetivo (así E1 
 Edificio de 4+ pisos -> concreto; hasta 3 pisos -> concreto restante + asbesto/zinc en proporción ECV 2024."""
 import pandas as pd, numpy as np, pickle
 from scipy.optimize import brentq
-B='/home/claude/v2/Traspaso_tesis_Barranquilla_v2/datos_procesados/'
+B='datos/v2/Traspaso_tesis_Barranquilla_v2/datos_procesados/'
 n=lambda s: pd.to_numeric(s.astype(str).str.strip().str.replace(',','.'),errors='coerce')
-L=pickle.load(open('/home/claude/v2/Traspaso_tesis_Barranquilla_v2/datos_intermedios/logit24.pkl','rb'))
-R=pd.read_csv('/home/claude/v3/Tenencia_AC_sensibilidad_AB.csv',sep=';',decimal=',',encoding='utf-8-sig'); R=R[R.variante=='C'].rename(columns={'p':'p_suav'}); S={'R':R}
+L=pickle.load(open('datos/v2/Traspaso_tesis_Barranquilla_v2/datos_intermedios/logit24.pkl','rb'))
+R=pd.read_csv('tablas/Tenencia_AC_sensibilidad_AB.csv',sep=';',decimal=',',encoding='utf-8-sig'); R=R[R.variante=='C'].rename(columns={'p':'p_suav'}); S={'R':R}
 o=L['M2: techo + estrato'][0]; bt={'Concreto':0.0,'Asbesto':o.loc['T3_Asbesto','coef'],'Zinc/otro':o.loc['T3_Zinc/otro','coef']}
 b=pd.read_csv(B+'ECV2024_Barranquilla_hogares.csv',sep=';',dtype=str,encoding='utf-8-sig')
 b['W']=n(b.FEX_C); b['E']=n(b.ESTRATO); b=b[b.E.between(1,6)]
@@ -46,5 +46,5 @@ for a in (2019,2024):
     m=I[I.anio==a].set_index('estrato'); P=np.where(c.ED4,c.EST.map(m.pAC_edificio4),c.EST.map(m.pAC_hasta3))
     g=pd.Series(P).groupby(c.POSICION.values).mean(); pos.append(g.rename(a))
 pos=pd.concat(pos,axis=1); print(pos.round(3))
-pickle.dump(dict(I=I,pos=pos,bt=bt,city=city),open('/home/claude/v3/imput_anual_C.pkl','wb'))
-I.to_csv('/home/claude/v3/Catastro_PAC_por_anio_estrato_tipo_C.csv',sep=';',index=False,encoding='utf-8-sig')
+pickle.dump(dict(I=I,pos=pos,bt=bt,city=city),open('tablas/imput_anual_C.pkl','wb'))
+I.to_csv('tablas/Catastro_PAC_por_anio_estrato_tipo_C.csv',sep=';',index=False,encoding='utf-8-sig')

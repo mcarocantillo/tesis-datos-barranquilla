@@ -1,6 +1,6 @@
 # Reproducibilidad
 
-Los cálculos se hicieron en Python (pandas, numpy, scipy, statsmodels) a partir de los microdatos públicos. Las rutas de los scripts apuntan al entorno de trabajo original y deben ajustarse.
+Los cálculos se hicieron en Python (pandas, numpy, scipy, statsmodels) a partir de los microdatos públicos. Los scripts de la carpeta `scripts/` leen los microdatos y los archivos intermedios de una carpeta `datos/` en la raíz del repositorio, que no se publica, y escriben las tablas en `tablas/` y las figuras en `figuras/`.
 
 ## Tablas resumen (carpeta `tablas/` del repositorio)
 

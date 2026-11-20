@@ -1,6 +1,6 @@
 """Descarga ERA5-Land horario en el punto de Barranquilla desde el Climate Data Store (Copernicus).
 
-LO CORRE LA USUARIA con su propia cuenta: requiere el archivo ~/.cdsapirc con su clave personal
+Se corre con una cuenta propia del CDS: requiere el archivo ~/.cdsapirc con su clave personal
 (https://cds.climate.copernicus.eu/how-to-api) y haber aceptado la licencia de ERA5-Land en la web del CDS.
 Este script no pide ni guarda credenciales.
 

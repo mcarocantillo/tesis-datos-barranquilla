@@ -1,7 +1,7 @@
 """Efecto de diseño de la ECV 2024 en Barranquilla: varianza por conglomerados (SEGMENTO = unidad primaria
 de muestreo, linealización de Taylor para una razón, con reemplazo) frente a la de muestreo aleatorio simple."""
 import pandas as pd, numpy as np
-d=pd.read_csv('/home/claude/work/ecv24/c/dis.csv',sep=';',dtype=str,encoding='latin-1')[['DIRECTORIO','SEGMENTO']].drop_duplicates()
+d=pd.read_csv('datos/trabajo/ecv24/c/dis.csv',sep=';',dtype=str,encoding='latin-1')[['DIRECTORIO','SEGMENTO']].drop_duplicates()
 h=pd.read_csv('/mnt/user-data/outputs/ECV2024_Barranquilla_hogares.csv',sep=';',dtype={'DIRECTORIO':str})
 h=h.merge(d,on='DIRECTORIO',how='left'); assert h.SEGMENTO.notna().all()
 h['w']=pd.to_numeric(h.FEX_C.astype(str).str.replace(',','.'))
@@ -26,4 +26,4 @@ for v_name,col in [('AC','TIENE_AC'),('Ventilador','TIENE_VENT'),('Nevera','TIEN
     rows.append(dict(variable=v_name,estrato='Ciudad (postestr.)',n=int(h.ESTRATO.between(1,6).sum()),segmentos=C,p=P,ee_mas=np.sqrt(vs),ee_conglom=np.sqrt(vc),deff=vc/vs))
 R=pd.DataFrame(rows); R['ic95_mas_pp']=1.96*R.ee_mas*100; R['ic95_conglom_pp']=1.96*R.ee_conglom*100
 pd.set_option('display.width',200); print(R.round(3).to_string()); print('segmentos', C)
-R.to_csv('/home/claude/v3/ECV2024_efecto_diseno.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
+R.to_csv('tablas/ECV2024_efecto_diseno.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')

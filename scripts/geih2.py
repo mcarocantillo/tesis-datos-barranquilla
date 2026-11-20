@@ -1,5 +1,5 @@
 import pandas as pd, glob, numpy as np
-D='/home/claude/work/geih24/'
+D='datos/trabajo/geih24/'
 num=lambda s: pd.to_numeric(s.astype(str).str.strip().str.replace(',','.'),errors='coerce')
 def load(pat,cols):
     out=[]

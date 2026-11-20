@@ -1,7 +1,7 @@
 """Extrae la celda de Barranquilla de ERA5-Land descargado de GDEX (NCAR), pedidos 953933 y 953943.
 
 GDEX distribuye el mismo ERA5-Land del ECMWF que el Climate Data Store, en archivos NetCDF de cinco días sobre una
-malla de 0,1° (10,0–11,9° N; 74,0–74,9° O). La usuaria los descarga con los scripts gdex-download que genera
+malla de 0,1° (10,0–11,9° N; 74,0–74,9° O). Se descargan con los scripts gdex-download que genera
 GDEX para cada pedido, en dos carpetas: era5land_met (t2m, d2m, sp, u10, v10) y era5land_rad_tp (ssrd, strd, tp).
 
 Las variables acumuladas (ssrd, strd, tp) se suman desde las 00 UTC; el valor horario es la diferencia con la hora

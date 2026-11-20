@@ -1,7 +1,7 @@
 """Clima horario de referencia (ERA5-Land, celda de Barranquilla) y contraste con la estación IDEAM 0029045190.
 
 Fuentes de ERA5-Land, en este orden de preferencia:
-  1. Archivo descargado por la usuaria del CDS con 01a_descargar_era5land_cds.py (datos/crudos/era5land_cds/).
+  1. Archivo descargado del CDS con 01a_descargar_era5land_cds.py (datos/crudos/era5land_cds/).
   2. ERA5-Land de GDEX (NCAR), extraído con 01b_extraer_era5land_gdex.py (datos/crudos/era5land_gdex/).
   3. Copia provisional de ERA5-Land servida por Open-Meteo (archive-api.open-meteo.com, models=era5_land), sin
      credenciales. Open-Meteo no sirve viento ni radiación de ERA5-Land; esas dos variables se toman de ERA5
@@ -135,7 +135,7 @@ def leer_cds():
     # Detección: si es acumulada, a las 23 UTC (18 h local) vale más que a las 17 UTC (mediodía local)
     acumulada = ssrd[ssrd.index.hour == 23].median() > ssrd[ssrd.index.hour == 17].median()
     out["rad"] = desacumular(ssrd) if acumulada else ssrd / 3600.0
-    out["fuente"] = "ERA5-Land (CDS, descarga de la usuaria)"
+    out["fuente"] = "ERA5-Land (CDS, descarga propia)"
     out["fuente_viento_rad"] = "ERA5-Land (CDS)"
     print(f"  CDS: radiación {'desacumulada' if acumulada else 'ya horaria'}")
     return out

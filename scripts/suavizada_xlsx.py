@@ -1,7 +1,7 @@
 import pandas as pd, numpy as np, pickle
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
-S=pickle.load(open('/home/claude/work/suav.pkl','rb')); I=pickle.load(open('/home/claude/work/imput_anual.pkl','rb'))
+S=pickle.load(open('datos/trabajo/suav.pkl','rb')); I=pickle.load(open('datos/trabajo/imput_anual.pkl','rb'))
 F='Arial'; blue=Font(name=F,color='0000FF'); blk=Font(name=F); bold=Font(name=F,bold=True); it=Font(name=F,italic=True); grn=Font(name=F,color='008000')
 hdr=PatternFill('solid',fgColor='D9E1F2')
 def notes(ws,start,lines):

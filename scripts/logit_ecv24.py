@@ -2,7 +2,7 @@
 y modelo de imputación con variables disponibles en el catastro."""
 import pandas as pd, numpy as np, statsmodels.api as sm, pickle, warnings
 warnings.filterwarnings('ignore')
-B='/home/claude/work/Traspaso_tesis_Barranquilla/datos_procesados/'
+B='datos/trabajo/Traspaso_tesis_Barranquilla/datos_procesados/'
 n=lambda s: pd.to_numeric(s.astype(str).str.strip().str.replace(',','.'),errors='coerce')
 b=pd.read_csv(B+'ECV2024_Barranquilla_hogares.csv',sep=';',dtype=str,encoding='utf-8-sig')
 b['W']=n(b.FEX_C); b['E']=n(b.ESTRATO); b=b[b.E.between(1,6)].copy()
@@ -41,4 +41,4 @@ M['M4: M3 + tenencia + hogar 5+']=logit(d,['T3','EG','TEN'],['APTO','lny','P5'])
 M['I: imputación (estrato + apto)']=logit(b,['EG'],['APTO'])
 for k,(o,s,r,X) in M.items():
     print('\n',k,{a:round(v,3) for a,v in s.items()}); print(o.round(3).to_string())
-pickle.dump({k:(o,s) for k,(o,s,r,X) in M.items()},open('/home/claude/work/logit24.pkl','wb'))
+pickle.dump({k:(o,s) for k,(o,s,r,X) in M.items()},open('datos/trabajo/logit24.pkl','wb'))

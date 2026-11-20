@@ -1,5 +1,5 @@
 import csv, statistics as st
-rows=list(csv.DictReader(open('/home/claude/work/sui/sui_agg_raw.csv'),delimiter=';'))
+rows=list(csv.DictReader(open('datos/trabajo/sui/sui_agg_raw.csv'),delimiter=';'))
 E=['e1','e2','e3','e4','e5','e6','res']
 out=[]
 for r in rows:

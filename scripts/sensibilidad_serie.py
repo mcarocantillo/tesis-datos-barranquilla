@@ -4,7 +4,7 @@ B: tendencia solo donde es significativa (p<0,05: E1 y E3); en E2, E4, E5 y E6 n
    n efectivo = n / 1,5 (efecto de diseño medido en la ECV 2024). Sobredispersión de Pearson (mínimo 1) en ambos."""
 import pandas as pd, numpy as np, statsmodels.api as sm
 from scipy import stats
-s=pd.read_csv('/home/claude/v2/Traspaso_tesis_Barranquilla_v2/datos_intermedios/ecv_series_raw.csv')
+s=pd.read_csv('datos/v2/Traspaso_tesis_Barranquilla_v2/datos_intermedios/ecv_series_raw.csv')
 s=s[s.grupo.isin(list('123456'))&(s.anio!=2020)].copy(); s['p']=s.w_ac/s.w; s['E']='E'+s.grupo.astype(str)
 sui=pd.read_csv('/mnt/user-data/outputs/SUI_Barranquilla_urbano_residencial_2015_2026.csv',sep=';',dtype={'estrato':str})
 sui=sui[(sui.mes==12)&sui.estrato.isin(list('123456'))]; sui['W']=sui.suscriptores/sui.groupby('anio').suscriptores.transform('sum')
@@ -34,9 +34,9 @@ pd.set_option('display.width',220)
 print(F.round(3).to_string())
 print(R.pivot_table(index='anio',columns=['variante','estrato'],values='p').mul(100).round(1).to_string())
 print(C.pivot(index='anio',columns='variante',values=['pct','sd_pp']).round(1))
-R.to_csv('/home/claude/v3/Tenencia_AC_sensibilidad_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
-C.to_csv('/home/claude/v3/Tenencia_AC_ciudad_sensibilidad_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
-F.to_csv('/home/claude/v3/Tenencia_AC_ajustes_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
+R.to_csv('tablas/Tenencia_AC_sensibilidad_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
+C.to_csv('tablas/Tenencia_AC_ciudad_sensibilidad_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
+F.to_csv('tablas/Tenencia_AC_ajustes_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
 # C: mezcla 50/50 de A y B (recoge la incertidumbre de si hay o no tendencia)
 A=R[R.variante=='A'].set_index(['estrato','anio']); Bv=R[R.variante=='B'].set_index(['estrato','anio'])
 m=(A.p+Bv.p)/2; v=(A.sd**2+Bv.sd**2)/2+(A.p-Bv.p)**2/4; sd=np.sqrt(v); k=m*(1-m)/v-1
@@ -44,5 +44,5 @@ M=pd.DataFrame({'variante':'C','p':m,'sd':sd,'alfa':m*k,'beta':(1-m)*k}).reset_i
 P=M.pivot(index='anio',columns='estrato',values='p'); S=M.pivot(index='anio',columns='estrato',values='sd')
 CC=pd.DataFrame({'variante':'C','pct':(W*P).sum(axis=1)*100,'sd_pp':np.sqrt((W**2*S**2).sum(axis=1))*100}).reset_index()
 print(M.pivot(index='anio',columns='estrato',values='p').mul(100).round(1)); print(CC.round(1).to_string())
-pd.concat([R,M]).to_csv('/home/claude/v3/Tenencia_AC_sensibilidad_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
-pd.concat([C,CC]).to_csv('/home/claude/v3/Tenencia_AC_ciudad_sensibilidad_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
+pd.concat([R,M]).to_csv('tablas/Tenencia_AC_sensibilidad_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')
+pd.concat([C,CC]).to_csv('tablas/Tenencia_AC_ciudad_sensibilidad_AB.csv',sep=';',index=False,encoding='utf-8-sig',decimal=',')

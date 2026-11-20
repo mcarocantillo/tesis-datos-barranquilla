@@ -11,7 +11,7 @@ import numpy as np, pandas as pd
 from scipy import stats
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 
-OUT_T = '/home/claude/book/site/tablas/'; OUT_F = '/home/claude/book/site/figuras/'
+OUT_T = 'tablas/'; OUT_F = 'figuras/'
 PAL = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#6250d6', '#e34948']
 TXT = '#0b0b0b'; TXT2 = '#52514e'; GRID = '#e4e3df'
 plt.rcParams.update({'font.size': 11, 'font.family': 'DejaVu Sans', 'axes.spines.top': False, 'axes.spines.right': False,
@@ -22,7 +22,7 @@ plt.rcParams.update({'font.size': 11, 'font.family': 'DejaVu Sans', 'axes.spines
 fmt = lambda v, d=1: f'{v:.{d}f}'.replace('.', ',')
 
 # ---------- 1. catastro ----------
-d = pd.read_pickle('/home/claude/work/catastro_limpio.pkl')
+d = pd.read_pickle('datos/trabajo/catastro_limpio.pkl')
 d['APT4'] = d.uso.str.contains('Apartamentos')
 d['p_fin'] = d.planta_ubicacion + d.total_plantas.fillna(1).clip(lower=1) - 1
 d = d.join(d.groupby('npn_edificio').p_fin.max().rename('techo_lote'), on='npn_edificio')
@@ -57,7 +57,7 @@ lotes.reset_index().to_csv(OUT_T + 'Catastro_E1_edificios_4pisos_por_lote.csv', 
 # ---------- 2. ECV ----------
 TE = {1: 'Concreto', 2: 'Teja de barro', 3: 'Asbesto-cemento', 4: 'Zinc/metálica', 5: 'Teja plástica'}
 h = pd.read_csv('/mnt/user-data/outputs/ECV2024_Barranquilla_hogares.csv', sep=';', dtype={'DIRECTORIO': str})
-seg = pd.read_csv('/home/claude/work/ecv24/c/dis.csv', sep=';', dtype=str, encoding='latin-1')[['DIRECTORIO', 'SEGMENTO']].drop_duplicates()
+seg = pd.read_csv('datos/trabajo/ecv24/c/dis.csv', sep=';', dtype=str, encoding='latin-1')[['DIRECTORIO', 'SEGMENTO']].drop_duplicates()
 h = h.merge(seg, on='DIRECTORIO'); h['W'] = pd.to_numeric(h.FEX_C)
 g = h[h.ESTRATO == 1].copy()
 g['conc'] = g.P4567 == 1; g['apto_conc'] = (g.TIPO_VIVIENDA == 2) & g.conc

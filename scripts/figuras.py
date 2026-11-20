@@ -1,7 +1,7 @@
 """Figuras del sitio. Paleta categórica fija (estrato = misma color en todas las figuras)."""
 import pickle, numpy as np, pandas as pd
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
-S='/home/claude/book/site/figuras/'; V2='/home/claude/v2/Traspaso_tesis_Barranquilla_v2/'; V3='/home/claude/v3/'
+S='figuras/'; V2='datos/v2/Traspaso_tesis_Barranquilla_v2/'; V3='tablas/'
 PAL=['#2a78d6','#eb6834','#1baf7a','#eda100','#e87ba4','#008300','#6250d6','#e34948']
 EST={f'E{i+1}':PAL[i] for i in range(6)}
 TXT='#0b0b0b'; TXT2='#52514e'; GRID='#e4e3df'
@@ -58,7 +58,7 @@ title(ax,'Tenencia de A/C por estrato, ECV 2019 y 2024','Barras de error: IC 95 
 save(fig,'ac_estrato_2019_2024.png','Fuente: DANE, ECV 2019 (n = 957 en E1–E6) y 2024 (n = 646).')
 
 # 4 quintiles de ingreso
-T=pickle.load(open('/home/claude/work/deep_tables.pkl','rb'))
+T=pickle.load(open('datos/trabajo/deep_tables.pkl','rb'))
 q19=T['ecv19_ac_quintil'].ac.values; q24=np.array([12.8,16.5,27.8,43.8,82.9])
 fig,ax=plt.subplots(figsize=(9.5,4.8)); x=np.arange(5)
 ax.bar(x-.2,q19,.38,color=PAL[0],label='2019'); ax.bar(x+.2,q24,.38,color=PAL[1],label='2024')
@@ -99,7 +99,7 @@ title(ax,'El techo liviano reduce la probabilidad de A/C','A igual estrato e ing
 save(fig,'logit_or.png','Fuente: DANE, ECV 2024. Modelo M3; pseudo-R² 0,28; AUC 0,84.')
 
 # 7 horas de AC distribución
-A=pickle.load(open('/home/claude/work/extra_ecv19.pkl','rb')); H=A['horas_ac_hist']
+A=pickle.load(open('datos/trabajo/extra_ecv19.pkl','rb')); H=A['horas_ac_hist']
 gc={'E1-2':PAL[0],'E3':PAL[2],'E4':PAL[3],'E5-6':PAL[5]}
 fig,ax=plt.subplots(figsize=(9.5,4.6)); x=np.arange(H.shape[1]); w=.2
 for j,(g,row) in enumerate(H.iterrows()): ax.bar(x+(j-1.5)*w,row.values,w,color=gc[g],label=g.replace('E','Estrato ').replace('-','–'))
@@ -131,7 +131,7 @@ title(ax,'Las neveras grandes pasan de 6 % en el estrato 1 a 51 % en el 6','Tama
 save(fig,'neveras_tamano.png','Fuente: DANE, ECV 2019 (P5514).')
 
 # 10 catastro posición por estrato
-Cp=pickle.load(open('/home/claude/work/extra_catastro.pkl','rb'))['cat_pos_pct'].drop(index='Total')
+Cp=pickle.load(open('datos/trabajo/extra_catastro.pkl','rb'))['cat_pos_pct'].drop(index='Total')
 pc={'Casa (suelo y cubierta propia)':PAL[1],'Último piso (bajo cubierta)':PAL[3],'Primer piso con vivienda encima':PAL[2],'Piso intermedio':PAL[0]}
 fig,ax=plt.subplots(figsize=(9.5,4.6)); left=np.zeros(6)
 for k,c in pc.items():

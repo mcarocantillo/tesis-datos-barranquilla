@@ -1,5 +1,5 @@
 import pandas as pd, numpy as np
-p=pd.read_pickle('/home/claude/work/enut_atl.pkl')
+p=pd.read_pickle('datos/trabajo/enut_atl.pkl')
 a=p[(p.CLASE.str.strip()=='1')&(p.EDAD>=10)].copy()
 a['MIN_FUERA_TRABAJO']=np.where(a.TRABAJA_EN_CASA,0,a.MIN_TRABAJO)+a.MIN_VIAJE_TRAB
 o=a[(a.TIPO=='Ocupado')]

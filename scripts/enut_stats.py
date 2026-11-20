@@ -1,5 +1,5 @@
 import pandas as pd, numpy as np
-p=pd.read_pickle('/home/claude/work/enut_atl.pkl')
+p=pd.read_pickle('datos/trabajo/enut_atl.pkl')
 cab=p[p.CLASE.str.strip()=='1']
 a=cab[cab.EDAD>=10].copy()
 def wm(df,c): return (df[c]*df.W).sum()/df.W.sum()

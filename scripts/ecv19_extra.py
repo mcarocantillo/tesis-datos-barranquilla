@@ -125,4 +125,4 @@ mods['M3: techo + estrato + tipo + ln(ingreso pc)'] = logit(['T3', 'EG', 'TIPO2'
 for k, (o, res) in mods.items():
     print('\n', k, 'n=', int(res.nobs), 'pseudoR2(McF)=', round(1 - res.llf / res.llnull, 3)); print(o)
 T['logit'] = pd.concat({k: o.assign(n=int(r.nobs), pseudoR2=round(1 - r.llf / r.llnull, 3)) for k, (o, r) in mods.items()}).reset_index().rename(columns={'level_0': 'modelo', 'level_1': 'variable'})
-pickle.dump(T, open('/home/claude/work/extra_ecv19.pkl', 'wb'))
+pickle.dump(T, open('datos/trabajo/extra_ecv19.pkl', 'wb'))

@@ -1,5 +1,5 @@
 import pandas as pd, glob, os
-D='/home/claude/work/geih24/'
+D='datos/trabajo/geih24/'
 hs=[]
 for d in sorted(glob.glob(D+'*/')):
     f=glob.glob(d+'Datos del hogar*')[0]
@@ -13,4 +13,4 @@ b=h[h.AREA.str.strip()=='08']
 print('AREA 08 hogares',len(b),'por mes',b.groupby('MES').size().to_dict(),'clase',b.CLASE.value_counts().to_dict(),'dpto',b.DPTO.value_counts().to_dict())
 print('estrato', b.P4030S1A1.value_counts().sort_index().to_dict())
 print('dup directorio+secuencia across months', b.duplicated(['DIRECTORIO','SECUENCIA_P']).sum())
-b.to_pickle('/home/claude/work/geih_bq_hog.pkl')
+b.to_pickle('datos/trabajo/geih_bq_hog.pkl')

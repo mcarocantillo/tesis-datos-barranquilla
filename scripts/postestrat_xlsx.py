@@ -2,8 +2,8 @@ import pandas as pd
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.comments import Comment
-d=pd.read_pickle('/home/claude/work/post_det.pkl').sort_values(['anio','estrato'])
-r=pd.read_pickle('/home/claude/work/post_res.pkl')
+d=pd.read_pickle('datos/trabajo/post_det.pkl').sort_values(['anio','estrato'])
+r=pd.read_pickle('datos/trabajo/post_res.pkl')
 F='Arial'; blue=Font(name=F,color='0000FF'); blk=Font(name=F); bold=Font(name=F,bold=True); green=Font(name=F,color='008000')
 hdr=PatternFill('solid',fgColor='D9E1F2')
 wb=Workbook()

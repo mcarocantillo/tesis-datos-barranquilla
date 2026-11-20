@@ -21,7 +21,7 @@ def wq(x, w, q):
 a = pd.read_csv(O + 'ECV2019_Barranquilla_consolidado.csv', sep=';', dtype=str, encoding='utf-8-sig')
 a['W'] = n(a.FEX_C); a['E'] = n(a.ESTRATO)
 en = {}
-with open('/home/claude/work/ecv2019_extract/energeticos_ecv2019.csv', encoding='utf-8-sig') as f:
+with open('datos/trabajo/ecv2019_extract/energeticos_ecv2019.csv', encoding='utf-8-sig') as f:
     for r in csv.DictReader(f, delimiter=';'):
         en[(r['DIRECTORIO'], r['SECUENCIA_ENCUESTA'], r['SECUENCIA_P'])] = r
 a['MESES'] = [en.get((r.DIRECTORIO, r.SECUENCIA_ENCUESTA, r.SECUENCIA_P), {}).get('P5018S1', '') for r in a.itertuples()]
@@ -123,7 +123,7 @@ T['ecv24_ac_quintil'] = pd.DataFrame([dict(quintil=int(k), n=len(d), ac=round(wp
 T['ecv24_techo'] = b.groupby('G').apply(lambda d: pd.Series({v: round(wpct(d, d.P4567.str.strip() == k), 1) for k, v in mt['TECHO_P4567'].items()})).reset_index()
 
 # ---------------- ENUT (Atlántico cabecera) ----------------
-p = pd.read_pickle('/home/claude/work/enut_atl.pkl')
+p = pd.read_pickle('datos/trabajo/enut_atl.pkl')
 cab = p[p.CLASE.str.strip() == '1']
 hh = cab.drop_duplicates(['DIRECTORIO', 'SECUENCIA_P']).copy()
 hh['E'] = hh.ESTRATO
@@ -166,4 +166,4 @@ T['sui_kwh_total_anual_GWh'] = (ok.groupby(['anio']).apply(lambda d: d[d.estrato
 for k, v in T.items():
     print('\n###', k)
     print(v if not isinstance(v, dict) else json.dumps({a: (round(b, 2) if isinstance(b, float) else b) for a, b in v.items()}))
-pd.to_pickle(T, '/home/claude/work/deep_tables.pkl')
+pd.to_pickle(T, 'datos/trabajo/deep_tables.pkl')
