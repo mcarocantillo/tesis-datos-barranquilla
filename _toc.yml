@@ -6,6 +6,7 @@ parts:
       - file: 02_analisis
       - file: 10_insumos
       - file: 18_arquetipos
+      - file: 19_techos
       - file: 06_propuesta
   - caption: Datos
     chapters:

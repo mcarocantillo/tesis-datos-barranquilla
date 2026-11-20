@@ -517,6 +517,8 @@ cambia. La solución por vivienda pasa de 17 a 15 arquetipos y su R² de 0,66 a 
 submuestra, que cambia porque cambió el conjunto de casas, no lo alcanza (limitación 8). Las 43 comprobaciones se
 cumplen.
 
+(sec-arq-priors)=
+
 ## Priors de envolvente
 
 El techo pesa sobre todo en las casas de los estratos 1 a 4, donde predomina el asbesto-cemento
