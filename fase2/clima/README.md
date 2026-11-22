@@ -18,6 +18,7 @@ esta carpeta:
 | 5 | `scripts/05_celdas_vecinas.py [carpeta]` | Clima y carga del Paso 3 en las celdas vecinas (relee los NetCDF de GDEX, unos 10 min) |
 | 6 | `scripts/06_onda_larga_paso3.py` | Corrección de onda larga del sol-aire de la cubierta con ERA5-Land y su efecto en la carga y el R² del Paso 3 (necesita el catastro, que no se publica) |
 | 7 | `scripts/07_dias_representativos.py` | Tres días representativos por mes de cada año (k-medoides) con su peso y validación frente al mes completo |
+| 9 | `scripts/09_contraste_ideha.py CARPETA_IDEHA` | Contraste con la estación IDEHA-01 de Uninorte (Davis, 30 min, desde mayo de 2025): desfase diario del reloj con la radiación de cielo despejado, sesgo de ERA5-Land por hora y mes en temperatura, humedad e índice de calor, radiación global, viento y lluvia; excluye el tramo del IDEAM en UTC (29-oct-2024 a jul-2026). Los datos de la estación no se publican |
 
 ## Salidas (`salidas/`)
 

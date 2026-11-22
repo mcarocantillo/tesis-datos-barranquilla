@@ -25,6 +25,10 @@
 | GEIH 2024 en disco | Solo 9 de los 12 zips mensuales (faltan jul, sep y oct) | El trabajo en casa por estrato con 9 meses queda dentro del IC 95 % de la cifra con 12 |
 | Atípicos del cubo O3 | Dos bandas en uso: 0,75–1,3 veces la mediana móvil (cambio a clima constante y alza estacional) y 0,5–2 (parte sin lectura real). Con la segunda más los meses con bandera, el alza de E1 baja de 16 % a 13 % | Pendiente (punto 11) |
 | Demanda no atendida en la compuerta | La DNA de GCM incluye el Cesar, que desde oct-2020 no está en el mercado de Air-e, y se divide por la demanda de CARIBE SOL | El filtro excluye días de más. No cambia la decisión de capa C |
+| Hora del IDEAM en UTC | Del 29-oct-2024 a jul-2026 la serie de datos.gov.co tiene el máximo diario a las 16–19 h, cinco horas después de lo normal: viene en UTC | `09_contraste_ideha.py` excluye el tramo. Pendiente (punto 13) en `01_clima.py`, la {numref}`tab-coherencia-clima` y la compuerta con el HI del IDEAM |
+| Reloj de IDEHA-01 (Uninorte) | Corrido entre 1 y 3 h (algunos días 12 h) hasta may-2026, según la radiación medida frente a la de cielo despejado | Corrección con el desfase diario y resultados también con solo los días de reloj correcto (jun–sep 2026) ([Clima](27_clima.md)) |
+| Radiación de ERA5-Land frente a IDEHA-01 | 22 % mayor que la medida (6,3 frente a 5,2 kWh/m²/día), con la misma forma | Sin corregir. Falta descartar un problema del piranómetro |
+| Lluvia de IDEHA-01 | 732 mm y 49 días de lluvia frente a 1.375 mm y 180 días de ERA5-Land en 364 días | Sin referencia confiable. La lluvia no entra en la carga |
 | Festivos en la ENUT | Los festivos se cuentan como días hábiles (5,8 % de las personas en día hábil) | Sin ellos, la presencia en día hábil baja de 85,2 % a 84,8 %. Sin efecto práctico |
 | Materiales del catastro (capa 535) | 61 % sin valor de cubierta, categorías que mezclan materiales y ningún registro de cielo raso. Tiene 389.442 filas, más que los 383.724 registros residenciales de la 505 | Pendiente (punto 12) |
 
@@ -57,3 +61,4 @@
 10. Rehacer el consolidado de la ECV 2019 con la llave del hogar (DIRECTORIO + SECUENCIA_ENCUESTA) y regenerar las tablas de horas de uso, tipo de A/C, ventilador, nevera y pago de 2019.
 11. Elegir una sola regla de atípicos del cubo O3 para la calibración y llevar la otra a la sensibilidad ([SUI](24_sui.md)).
 12. Terminar el empalme de la capa 535 con las viviendas (script 12 de `arquetipos/`) y aclarar qué registros cubre.
+13. Corregir la hora del IDEAM entre el 29 de octubre de 2024 y julio de 2026 en `scripts/compuerta/01_clima.py` (pasarla de UTC a hora local o excluirla), y repetir con ella la {numref}`tab-coherencia-clima` y la compuerta con el índice de calor del IDEAM.
