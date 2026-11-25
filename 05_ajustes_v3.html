@@ -217,7 +217,11 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="30_marco_teorico.html">Marco teórico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
@@ -441,7 +445,7 @@
 <p>El error real de la tenencia de A/C es 1,5 veces mayor en varianza que el de un muestreo al azar hogar por hogar. La ECV no sortea hogares sueltos: sortea segmentos (grupos de manzanas) y encuesta varios hogares en cada uno, y los vecinos se parecen entre sí.</p>
 <p><strong>Cómo se calculó.</strong> El archivo «Variables diseño muestral» de la ECV 2024 trae el SEGMENTO de cada vivienda: 76 segmentos en Barranquilla, todos en un mismo estrato de diseño. Para una proporción ponderada p = Σ w·y / Σ w se usó la linealización de Taylor, con segmentos tratados como sorteados con reemplazo:</p>
 <div class="math notranslate nohighlight" id="equation-05-ajustes-v3-0">
-<span class="eqno">(7)<a class="headerlink" href="#equation-05-ajustes-v3-0" title="Link to this equation">#</a></span>\[z_i = \frac{w_i\,(y_i - \hat p)}{\sum_j w_j}, \qquad \widehat{V}(\hat p) = \frac{C}{C-1} \sum_{c=1}^{C} \Big(Z_c - \bar Z\Big)^2, \quad Z_c = \sum_{i \in c} z_i\]</div>
+<span class="eqno">(51)<a class="headerlink" href="#equation-05-ajustes-v3-0" title="Link to this equation">#</a></span>\[z_i = \frac{w_i\,(y_i - \hat p)}{\sum_j w_j}, \qquad \widehat{V}(\hat p) = \frac{C}{C-1} \sum_{c=1}^{C} \Big(Z_c - \bar Z\Big)^2, \quad Z_c = \sum_{i \in c} z_i\]</div>
 <p>donde C = 76 segmentos. Para un estrato se usa la misma fórmula con y y w iguales a cero fuera del estrato (estimación por dominio). El efecto de diseño es deff = V(conglomerados) / V(muestreo simple), con V(muestreo simple) = p(1 − p)/n. Para la ciudad se aplicó a la suma postestratificada Σ W_e p_e, con W_e = suscriptores del SUI en diciembre de 2024.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -518,7 +522,7 @@
 <a class="reference internal image-reference" href="_images/efecto_diseno.png"><img alt="_images/efecto_diseno.png" src="_images/efecto_diseno.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 86 </span><span class="caption-text">Semiancho del IC 95 % con y sin el diseño muestral.</span><a class="headerlink" href="#fig-efecto-diseno" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 107 </span><span class="caption-text">Semiancho del IC 95 % con y sin el diseño muestral.</span><a class="headerlink" href="#fig-efecto-diseno" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -537,7 +541,7 @@
 <p><strong>Datos.</strong> Tasa ponderada de hogares con A/C (P1077S11, factor FEX_C) por estrato en las olas 2018, 2019, 2021, 2022, 2023, 2024 y 2025 de la ECV en Barranquilla. La ola 2020 se excluye (encuesta en parte telefónica, año fuera de la calibración); 2015, 2016 y 2017 no traen municipio.</p>
 <p><strong>Dos ajustes por estrato</strong> (modelo lineal generalizado binomial, enlace logit, peso = n de hogares):</p>
 <div class="math notranslate nohighlight" id="equation-05-ajustes-v3-1">
-<span class="eqno">(8)<a class="headerlink" href="#equation-05-ajustes-v3-1" title="Link to this equation">#</a></span>\[\text{A:}\ \operatorname{logit} p_{e,t} = b_{0e} + b_{1e}\,(t - 2021), \qquad \text{B:}\ \operatorname{logit} p_{e,t} = b_{0e} \ \text{(salvo E1 y E3, que conservan la tendencia)}\]</div>
+<span class="eqno">(52)<a class="headerlink" href="#equation-05-ajustes-v3-1" title="Link to this equation">#</a></span>\[\text{A:}\ \operatorname{logit} p_{e,t} = b_{0e} + b_{1e}\,(t - 2021), \qquad \text{B:}\ \operatorname{logit} p_{e,t} = b_{0e} \ \text{(salvo E1 y E3, que conservan la tendencia)}\]</div>
 <ul class="simple">
 <li><p>A: tendencia en los seis estratos y n sin corregir.</p></li>
 <li><p>B: tendencia solo donde es significativa, E1 (p = 0,03) y E3 (p = 0,007); nivel constante en E2, E4, E5 y E6 (p de la tendencia entre 0,39 y 0,53); n efectivo = n / 1,5 por el efecto de diseño.</p></li>
@@ -545,7 +549,7 @@
 </ul>
 <p><strong>Mezcla C.</strong> Mitad A y mitad B, para cada estrato y año:</p>
 <div class="math notranslate nohighlight" id="equation-05-ajustes-v3-2">
-<span class="eqno">(9)<a class="headerlink" href="#equation-05-ajustes-v3-2" title="Link to this equation">#</a></span>\[m_C = \tfrac{1}{2}(m_A + m_B), \qquad \mathrm{DE}_C^2 = \tfrac{1}{2}(\mathrm{DE}_A^2 + \mathrm{DE}_B^2) + \tfrac{1}{4}(m_A - m_B)^2\]</div>
+<span class="eqno">(53)<a class="headerlink" href="#equation-05-ajustes-v3-2" title="Link to this equation">#</a></span>\[m_C = \tfrac{1}{2}(m_A + m_B), \qquad \mathrm{DE}_C^2 = \tfrac{1}{2}(\mathrm{DE}_A^2 + \mathrm{DE}_B^2) + \tfrac{1}{4}(m_A - m_B)^2\]</div>
 <p>El último término agrega la distancia entre A y B a la incertidumbre. La Beta de cada celda se obtiene por momentos: α = m·k, β = (1 − m)·k, con k = m(1 − m)/DE² − 1. La ciudad es Σ W_e m_e con los suscriptores del SUI de diciembre de cada año (2026–2027 con los de 2025) y DE = √Σ W_e² DE_e².</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -624,7 +628,7 @@
 <a class="reference internal image-reference" href="_images/tenencia_ciudad_variantes.png"><img alt="_images/tenencia_ciudad_variantes.png" src="_images/tenencia_ciudad_variantes.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 87 </span><span class="caption-text">Variantes A, B y C para la ciudad.</span><a class="headerlink" href="#fig-tenencia-ciudad-variantes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 108 </span><span class="caption-text">Variantes A, B y C para la ciudad.</span><a class="headerlink" href="#fig-tenencia-ciudad-variantes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -728,7 +732,7 @@
 <a class="reference internal image-reference" href="_images/pac_posicion.png"><img alt="_images/pac_posicion.png" src="_images/pac_posicion.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 88 </span><span class="caption-text">P(A/C) media de 2024 por posición, variante C.</span><a class="headerlink" href="#fig-pac-posicion" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 109 </span><span class="caption-text">P(A/C) media de 2024 por posición, variante C.</span><a class="headerlink" href="#fig-pac-posicion" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Redacción sugerida para la tesis:</strong> «Tras la imputación, las casas con cubierta propia quedan con la menor probabilidad de A/C (27 % frente a 64 % en los pisos intermedios). La mayor parte de esa diferencia se debe a que se concentran en los estratos 1 y 2; el resto (unos 13 puntos a igual estrato) refleja el supuesto de techo liviano en las viviendas de hasta tres pisos y no una observación directa.»</p>

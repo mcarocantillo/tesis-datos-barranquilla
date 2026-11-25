@@ -217,7 +217,11 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="30_marco_teorico.html">Marco teórico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
@@ -449,7 +453,7 @@
 <td><p>2020 fuera del ajuste</p></td>
 </tr>
 <tr class="row-even"><td><p>E1 en el SUI</p></td>
-<td><p>Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6). En 2021–2024, con solo lecturas reales, CEELA da 229 kWh/mes frente a 311 en el repositorio (+36 %); en E2–E6 la diferencia es de 3–7 % (<a class="reference internal" href="16_ceela.html#tab-ceela-sui"><span class="std std-numref">Tabla 74</span></a>)</p></td>
+<td><p>Consume más que E2–E3 con 5–19 % de AC; en 2018–2020 su kWh es el más caro (656–764 COP vs 452–514 en E6). En 2021–2024, con solo lecturas reales, CEELA da 229 kWh/mes frente a 311 en el repositorio (+36 %); en E2–E6 la diferencia es de 3–7 % (<a class="reference internal" href="16_ceela.html#tab-ceela-sui"><span class="std std-numref">Tabla 75</span></a>)</p></td>
 <td><p><strong>Resuelto el consumo</strong> con el SUI por tipo de lectura: 50–62 % del consumo facturado de E1 es estimado o de usuarios sin medidor (sin meses atípicos); con lecturas reales E1 consume 209 kWh/mes (2023–2025), como E2. Calibrar E1 solo con lecturas reales (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>). <strong>Sin explicar el precio:</strong> con solo lecturas reales, el kWh de E1 en 2018–2020 sigue siendo el más caro (614–779 COP frente a 441–509 en E6) (<a class="reference internal" href="24_sui.html"><span class="std std-doc">SUI</span></a>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Catastro vs ECV en E1</p></td>
@@ -534,7 +538,7 @@
 </tr>
 <tr class="row-odd"><td><p>Hora del IDEAM en UTC</p></td>
 <td><p>Del 29-oct-2024 a jul-2026 la serie de datos.gov.co tiene el máximo diario a las 16–19 h, cinco horas después de lo normal: viene en UTC</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">09_contraste_ideha.py</span></code> excluye el tramo. Pendiente (punto 13) en <code class="docutils literal notranslate"><span class="pre">01_clima.py</span></code>, la <a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 83</span></a> y la compuerta con el HI del IDEAM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">09_contraste_ideha.py</span></code> excluye el tramo. Pendiente (punto 13) en <code class="docutils literal notranslate"><span class="pre">01_clima.py</span></code>, la <a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 84</span></a> y la compuerta con el HI del IDEAM</p></td>
 </tr>
 <tr class="row-even"><td><p>Reloj de IDEHA-01 (Uninorte)</p></td>
 <td><p>Corrido entre 1 y 3 h (algunos días 12 h) hasta may-2026, según la radiación medida frente a la de cielo despejado</p></td>
@@ -571,7 +575,7 @@
 </ol>
 <p><strong>Ya procesado:</strong></p>
 <ul class="simple">
-<li><p><strong>IDEAM</strong>, estación 0029045190 «APTO ERNESTO CORTISSOZ» (temperatura sbwg-7ju4 y humedad relativa uext-mhny de datos.gov.co), agregada a horario y contrastada con ERA5-Land (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 83</span></a>).</p></li>
+<li><p><strong>IDEAM</strong>, estación 0029045190 «APTO ERNESTO CORTISSOZ» (temperatura sbwg-7ju4 y humedad relativa uext-mhny de datos.gov.co), agregada a horario y contrastada con ERA5-Land (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 84</span></a>).</p></li>
 <li><p><strong>Clima horario</strong> de ERA5-Land (copia de Open-Meteo) en hora local, con humedad relativa e índice de calor.</p></li>
 <li><p><strong>Demanda horaria de XM</strong> del mercado de Air-e (2021–2025) y de Electricaribe (2015–2019), con la compuerta horaria: la forma horaria del A/C queda en capa C (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>).</p></li>
 <li><p><strong>Línea base de CEELA</strong>: envolvente, zona climatizada, consigna y COP de los edificios representativos de Barranquilla (<a class="reference internal" href="16_ceela.html"><span class="std std-doc">Línea base de CEELA</span></a>).</p></li>
@@ -586,7 +590,7 @@
 <li><p>Rehacer el consolidado de la ECV 2019 con la llave del hogar (DIRECTORIO + SECUENCIA_ENCUESTA) y regenerar las tablas de horas de uso, tipo de A/C, ventilador, nevera y pago de 2019.</p></li>
 <li><p>Elegir una sola regla de atípicos del cubo O3 para la calibración y llevar la otra a la sensibilidad (<a class="reference internal" href="24_sui.html"><span class="std std-doc">SUI</span></a>).</p></li>
 <li><p>Terminar el empalme de la capa 535 con las viviendas (script 12 de <code class="docutils literal notranslate"><span class="pre">arquetipos/</span></code>) y aclarar qué registros cubre.</p></li>
-<li><p>Corregir la hora del IDEAM entre el 29 de octubre de 2024 y julio de 2026 en <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/01_clima.py</span></code> (pasarla de UTC a hora local o excluirla), y repetir con ella la <a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 83</span></a> y la compuerta con el índice de calor del IDEAM.</p></li>
+<li><p>Corregir la hora del IDEAM entre el 29 de octubre de 2024 y julio de 2026 en <code class="docutils literal notranslate"><span class="pre">scripts/compuerta/01_clima.py</span></code> (pasarla de UTC a hora local o excluirla), y repetir con ella la <a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 84</span></a> y la compuerta con el índice de calor del IDEAM.</p></li>
 </ol>
 </section>
 </section>

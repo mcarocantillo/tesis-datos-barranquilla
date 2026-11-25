@@ -217,7 +217,11 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="30_marco_teorico.html">Marco teórico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Insumos del modelo</a></li>
@@ -438,17 +442,17 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="insumos-del-modelo">
 <h1>Insumos del modelo<a class="headerlink" href="#insumos-del-modelo" title="Link to this heading">#</a></h1>
-<p>Este capítulo resume los insumos que el procesamiento entrega al modelo. Para cada parámetro se indica el valor o la distribución adoptada, su incertidumbre, la fuente y el paso de la propuesta donde se usa. La <a class="reference internal" href="#tab-insumos-resumen"><span class="std std-numref">Tabla 1</span></a> es el índice. Las tablas siguientes dan el detalle por estrato. E1 a E6 son los estratos socioeconómicos; los porcentajes se refieren a hogares, salvo que se indique otra unidad.</p>
+<p>Este capítulo resume los insumos que el procesamiento entrega al modelo. Para cada parámetro se indica el valor o la distribución adoptada, su incertidumbre, la fuente y el paso de la propuesta donde se usa. La <a class="reference internal" href="#tab-insumos-resumen"><span class="std std-numref">Tabla 2</span></a> es el índice. Las tablas siguientes dan el detalle por estrato. E1 a E6 son los estratos socioeconómicos; los porcentajes se refieren a hogares, salvo que se indique otra unidad.</p>
 <p>Las proporciones (tenencia de equipos, material del techo) entran al modelo como distribuciones Beta <span class="bibtex-citation" id="id1">(<a class="reference internal" href="09_referencias.html#id47" title="Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari y Donald B. Rubin. Bayesian Data Analysis. CRC Press, Boca Raton, 2013.">Gelman et al., 2013</a>)</span>. Sus parámetros se obtienen por el método de momentos a partir de la media <span class="math notranslate nohighlight">\(\bar p\)</span> y la desviación estándar <span class="math notranslate nohighlight">\(s\)</span> de cada estimación:</p>
 <div class="math notranslate nohighlight" id="equation-eq-beta-momentos">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-beta-momentos" title="Link to this equation">#</a></span>\[
+<span class="eqno">(45)<a class="headerlink" href="#equation-eq-beta-momentos" title="Link to this equation">#</a></span>\[
 \alpha = \bar p\,\kappa, \qquad \beta = (1-\bar p)\,\kappa, \qquad \kappa = \frac{\bar p\,(1-\bar p)}{s^{2}} - 1
 \]</div>
 <p>Si una proporción observada es de 100 % (por ejemplo, la tenencia de nevera en los estratos 4 a 6), el método de momentos no aplica. En ese caso se propone una Beta<span class="math notranslate nohighlight">\((n + 0{,}5;\ 0{,}5)\)</span>, que equivale al prior de Jeffreys actualizado con los <span class="math notranslate nohighlight">\(n\)</span> hogares de la muestra <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id47" title="Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari y Donald B. Rubin. Bayesian Data Analysis. CRC Press, Boca Raton, 2013.">Gelman et al., 2013</a>)</span>.</p>
 <section id="indice-de-insumos">
 <h2>Índice de insumos<a class="headerlink" href="#indice-de-insumos" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-insumos-resumen">
-<caption><span class="caption-number">Tabla 1 </span><span class="caption-text">Insumos del modelo, fuente y paso de la propuesta en que se usan.</span><a class="headerlink" href="#tab-insumos-resumen" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 2 </span><span class="caption-text">Insumos del modelo, fuente y paso de la propuesta en que se usan.</span><a class="headerlink" href="#tab-insumos-resumen" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Insumo</p></th>
 <th class="head"><p>Valor o distribución</p></th>
@@ -459,104 +463,104 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Tenencia de A/C por estrato y año</p></td>
-<td><p>Beta por estrato y año, 2015–2027 (<a class="reference internal" href="#tab-ac-beta"><span class="std std-numref">Tabla 3</span></a>)</p></td>
+<td><p>Beta por estrato y año, 2015–2027 (<a class="reference internal" href="#tab-ac-beta"><span class="std std-numref">Tabla 4</span></a>)</p></td>
 <td><p>DE de 1,5 a 6,6 puntos por estrato en 2024; ciudad ± 2,9 puntos (IC 95 %)</p></td>
 <td><p>ECV 2018–2025 sin 2020; SUI</p></td>
 <td><p>Fase 2, paso 2</p></td>
 </tr>
 <tr class="row-odd"><td><p>Efecto del techo sobre la tenencia de A/C</p></td>
-<td><p>Razón de momios frente a concreto: 0,35 asbesto-cemento, 0,14 zinc (<a class="reference internal" href="#tab-techo"><span class="std std-numref">Tabla 4</span></a>)</p></td>
+<td><p>Razón de momios frente a concreto: 0,35 asbesto-cemento, 0,14 zinc (<a class="reference internal" href="#tab-techo"><span class="std std-numref">Tabla 5</span></a>)</p></td>
 <td><p>IC 95 % de cada razón</p></td>
 <td><p>ECV 2024</p></td>
 <td><p>Fase 1, paso 6; Fase 2, paso 2</p></td>
 </tr>
 <tr class="row-even"><td><p>Material del techo por estrato</p></td>
-<td><p>Proporciones por grupo de estrato (<a class="reference internal" href="#tab-techo"><span class="std std-numref">Tabla 4</span></a>)</p></td>
+<td><p>Proporciones por grupo de estrato (<a class="reference internal" href="#tab-techo"><span class="std std-numref">Tabla 5</span></a>)</p></td>
 <td><p>Tamaño de muestra de cada celda, dividido por el efecto de diseño del techo (3,4 a 4,2 en la ECV 2024), que deja cerca de un cuarto de la muestra efectiva (<a class="reference internal" href="21_ecv.html"><span class="std std-doc">ECV</span></a>)</p></td>
 <td><p>ECV 2024</p></td>
 <td><p>Fase 1, paso 6</p></td>
 </tr>
 <tr class="row-odd"><td><p>Posición frente a la cubierta</p></td>
-<td><p>Casa, último piso, intermedio, primer piso por estrato (<a class="reference internal" href="#tab-posicion"><span class="std std-numref">Tabla 5</span></a>)</p></td>
+<td><p>Casa, último piso, intermedio, primer piso por estrato (<a class="reference internal" href="#tab-posicion"><span class="std std-numref">Tabla 6</span></a>)</p></td>
 <td><p>Censal (catastro)</p></td>
 <td><p>Catastro</p></td>
 <td><p>Fase 1, paso 2; Fase 2, paso 4</p></td>
 </tr>
 <tr class="row-even"><td><p>Tenencia de ventilador y nevera</p></td>
-<td><p>Beta por estrato (<a class="reference internal" href="#tab-vent-nevera"><span class="std std-numref">Tabla 7</span></a>)</p></td>
+<td><p>Beta por estrato (<a class="reference internal" href="#tab-vent-nevera"><span class="std std-numref">Tabla 8</span></a>)</p></td>
 <td><p>IC 95 % con efecto de diseño</p></td>
 <td><p>ECV 2024</p></td>
 <td><p>Fase 2, pasos 2, 6 y 7</p></td>
 </tr>
 <tr class="row-odd"><td><p>Tipo de A/C</p></td>
-<td><p>82–97 % minisplit; central 0–18 % (<a class="reference internal" href="#tab-uso-ac"><span class="std std-numref">Tabla 8</span></a>)</p></td>
+<td><p>82–97 % minisplit; central 0–18 % (<a class="reference internal" href="#tab-uso-ac"><span class="std std-numref">Tabla 9</span></a>)</p></td>
 <td><p>Muestras de 33 a 66 hogares con A/C</p></td>
 <td><p>ECV 2019</p></td>
 <td><p>Fase 2, paso 2</p></td>
 </tr>
 <tr class="row-even"><td><p>Horas diarias de A/C del hogar</p></td>
-<td><p>Mediana 6–8 h por estrato (<a class="reference internal" href="#tab-uso-ac"><span class="std std-numref">Tabla 8</span></a>)</p></td>
+<td><p>Mediana 6–8 h por estrato (<a class="reference internal" href="#tab-uso-ac"><span class="std std-numref">Tabla 9</span></a>)</p></td>
 <td><p>P25–P75</p></td>
 <td><p>ECV 2019</p></td>
 <td><p>Fase 2, paso 5; Fase 3, paso 5</p></td>
 </tr>
 <tr class="row-odd"><td><p>Número de equipos de A/C</p></td>
-<td><p>Prior ligado a la fracción de hogares con más de 12 h de uso (<a class="reference internal" href="#tab-uso-ac"><span class="std std-numref">Tabla 8</span></a>) y a la zona climatizada de CEELA</p></td>
+<td><p>Prior ligado a la fracción de hogares con más de 12 h de uso (<a class="reference internal" href="#tab-uso-ac"><span class="std std-numref">Tabla 9</span></a>) y a la zona climatizada de CEELA</p></td>
 <td><p>Rango del prior por estrato</p></td>
 <td><p>ECV 2019; CEELA</p></td>
 <td><p>Fase 2, paso 2</p></td>
 </tr>
 <tr class="row-even"><td><p>Relación ventilador–A/C (<span class="math notranslate nohighlight">\(p_c\)</span>)</p></td>
-<td><p>≈ 0,95 (<a class="reference internal" href="#tab-pc"><span class="std std-numref">Tabla 9</span></a>)</p></td>
+<td><p>≈ 0,95 (<a class="reference internal" href="#tab-pc"><span class="std std-numref">Tabla 10</span></a>)</p></td>
 <td><p>Rango 0,8–1,0</p></td>
 <td><p>ECV 2019</p></td>
 <td><p>Fase 2, paso 6</p></td>
 </tr>
 <tr class="row-odd"><td><p>Tamaño y antigüedad de la nevera</p></td>
-<td><p>Distribución por estrato (<a class="reference internal" href="#tab-nevera"><span class="std std-numref">Tabla 10</span></a>)</p></td>
+<td><p>Distribución por estrato (<a class="reference internal" href="#tab-nevera"><span class="std std-numref">Tabla 11</span></a>)</p></td>
 <td><p>Muestra por estrato</p></td>
 <td><p>ECV 2019</p></td>
 <td><p>Fase 2, paso 7</p></td>
 </tr>
 <tr class="row-even"><td><p>Personas y cuartos por hogar</p></td>
-<td><p>Media por estrato (<a class="reference internal" href="#tab-hogar"><span class="std std-numref">Tabla 11</span></a>)</p></td>
+<td><p>Media por estrato (<a class="reference internal" href="#tab-hogar"><span class="std std-numref">Tabla 12</span></a>)</p></td>
 <td><p>Muestra por estrato</p></td>
 <td><p>ECV 2024</p></td>
 <td><p>Fase 1, paso 7</p></td>
 </tr>
 <tr class="row-odd"><td><p>Composición y presencia en la vivienda</p></td>
-<td><p>Tipo de persona, sueño y presencia diurna por grupo de estrato (<a class="reference internal" href="#tab-presencia"><span class="std std-numref">Tabla 12</span></a>)</p></td>
+<td><p>Tipo de persona, sueño y presencia diurna por grupo de estrato (<a class="reference internal" href="#tab-presencia"><span class="std std-numref">Tabla 13</span></a>)</p></td>
 <td><p>Muestra por grupo</p></td>
 <td><p>ENUT 2024–2025</p></td>
 <td><p>Fase 2, paso 3</p></td>
 </tr>
 <tr class="row-even"><td><p>Trabajo en la propia vivienda</p></td>
-<td><p>15,6 % (E1) a 28,5 % (E6) de los ocupados (<a class="reference internal" href="#tab-hogar"><span class="std std-numref">Tabla 11</span></a>)</p></td>
+<td><p>15,6 % (E1) a 28,5 % (E6) de los ocupados (<a class="reference internal" href="#tab-hogar"><span class="std std-numref">Tabla 12</span></a>)</p></td>
 <td><p>Muestra por estrato</p></td>
 <td><p>GEIH 2024</p></td>
 <td><p>Fase 2, paso 3</p></td>
 </tr>
 <tr class="row-odd"><td><p>Hogares por estrato</p></td>
-<td><p>Suscriptores residenciales de diciembre (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 13</span></a>)</p></td>
+<td><p>Suscriptores residenciales de diciembre (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 14</span></a>)</p></td>
 <td><p>Diferencia con el catastro menor de 2,5 puntos</p></td>
 <td><p>SUI; catastro</p></td>
 <td><p>Fase 2, paso 9; Fase 3, paso 1</p></td>
 </tr>
 <tr class="row-even"><td><p>Consumo facturado por suscriptor</p></td>
-<td><p>kWh/mes por estrato, 2015–2019 (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 13</span></a>)</p></td>
+<td><p>kWh/mes por estrato, 2015–2019 (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 14</span></a>)</p></td>
 <td><p>Rango interanual</p></td>
 <td><p>SUI</p></td>
 <td><p>Fase 3, paso 4</p></td>
 </tr>
 <tr class="row-odd"><td><p>Alza estacional del consumo</p></td>
-<td><p>Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) (<a class="reference internal" href="17_lecturas_reales.html#tab-o3-cambio"><span class="std std-numref">Tabla 76</span></a>); con el consolidado, 10,9 % a 29,1 % (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 13</span></a>)</p></td>
+<td><p>Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) (<a class="reference internal" href="17_lecturas_reales.html#tab-o3-cambio"><span class="std std-numref">Tabla 77</span></a>); con el consolidado, 10,9 % a 29,1 % (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 14</span></a>)</p></td>
 <td><p>Variación entre años</p></td>
 <td><p>SUI 2015–2025</p></td>
 <td><p>Fase 3, pasos 2 y 5</p></td>
 </tr>
 <tr class="row-even"><td><p>Clima horario</p></td>
 <td><p>Temperatura, humedad, presión, radiación de onda corta y larga, viento, lluvia e índice de calor en hora local, 2015 a septiembre de 2026</p></td>
-<td><p>Sesgo frente al IDEAM: −0,5 °C en temperatura (+0,3 de noche, −2,1 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 83</span></a>)</p></td>
+<td><p>Sesgo frente al IDEAM: −0,5 °C en temperatura (+0,3 de noche, −2,1 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 84</span></a>)</p></td>
 <td><p>ERA5-Land de GDEX (NCAR); copia de Open-Meteo como contraste; IDEAM. Serie de la Fase 2 con radiación en muros y cubierta, temperatura del cielo (aire 7,3 K por encima en promedio) y calendario, y EPW de 2024 en <code class="docutils literal notranslate"><span class="pre">fase2/clima/</span></code></p></td>
 <td><p>Fase 2, paso 1</p></td>
 </tr>
@@ -591,19 +595,19 @@
 <td><p>Fase 2 y Fase 3 (si el cómputo lo exige, sección 7.6 de la propuesta)</p></td>
 </tr>
 <tr class="row-even"><td><p>Fracción climatizada</p></td>
-<td><p>Una habitación en E1–E2 (VIS) y en casas de E3–E4; las habitaciones en apartamentos de E3–E4; toda la vivienda en E5–E6 (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 6</span></a>)</p></td>
+<td><p>Una habitación en E1–E2 (VIS) y en casas de E3–E4; las habitaciones en apartamentos de E3–E4; toda la vivienda en E5–E6 (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 7</span></a>)</p></td>
 <td><p>Sin medición en hogares</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 1, paso 6; Fase 2, paso 2</p></td>
 </tr>
 <tr class="row-odd"><td><p>Envolvente de los arquetipos</p></td>
-<td><p>Relación ventana-muro, U de vidrio, muros y cubierta, SRI y sombreamiento por tipología (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 6</span></a>)</p></td>
+<td><p>Relación ventana-muro, U de vidrio, muros y cubierta, SRI y sombreamiento por tipología (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 7</span></a>)</p></td>
 <td><p>Centro de los rangos (S15); un edificio por tipología</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 1, paso 6; Fase 2, paso 4</p></td>
 </tr>
 <tr class="row-even"><td><p>Consigna de refrigeración</p></td>
-<td><p>Rango de 22 a 26,5 °C (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 6</span></a>)</p></td>
+<td><p>Rango de 22 a 26,5 °C (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 7</span></a>)</p></td>
 <td><p>26,5 °C de CEELA; 22 °C supuesto propio (S14)</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 2, paso 5</p></td>
@@ -615,7 +619,7 @@
 <td><p>Fase 2, paso 5</p></td>
 </tr>
 <tr class="row-even"><td><p>Respuesta horaria de la demanda al calor</p></td>
-<td><p>Noche 1,92 %/°C (1,79–2,05) con Open-Meteo y 1,90 (1,78–2,02) con GDEX (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-fuentes"><span class="std std-numref">Tabla 70</span></a>); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-franjas"><span class="std std-numref">Tabla 68</span></a>)</p></td>
+<td><p>Noche 1,92 %/°C (1,79–2,05) con Open-Meteo y 1,90 (1,78–2,02) con GDEX (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-fuentes"><span class="std std-numref">Tabla 71</span></a>); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-franjas"><span class="std std-numref">Tabla 69</span></a>)</p></td>
 <td><p>Forma hora a hora inestable entre años: capa C (S16)</p></td>
 <td><p>XM; ERA5-Land</p></td>
 <td><p>Fase 3, pasos 1 y 4 (blanco de validación)</p></td>
@@ -628,7 +632,7 @@
 <h2>Tenencia de aire acondicionado<a class="headerlink" href="#tenencia-de-aire-acondicionado" title="Link to this heading">#</a></h2>
 <p>La tenencia de A/C proviene de la serie suavizada por estrato y año descrita en el capítulo <a class="reference internal" href="05_ajustes_v3.html"><span class="std std-doc">Serie de tenencia, error de la encuesta e imputación</span></a>. Los años con encuesta (2018, 2019 y 2021–2025) se estiman con las olas de la ECV. Los años 2015–2017 y 2026–2027 se extrapolan, y por eso su incertidumbre es mayor.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-ac-media">
-<caption><span class="caption-number">Tabla 2 </span><span class="caption-text">Tenencia de A/C por estrato, variante C: media y desviación estándar (puntos porcentuales).</span><a class="headerlink" href="#tab-ac-media" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 3 </span><span class="caption-text">Tenencia de A/C por estrato, variante C: media y desviación estándar (puntos porcentuales).</span><a class="headerlink" href="#tab-ac-media" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Año</p></th>
 <th class="head"><p>E1</p></th>
@@ -690,7 +694,7 @@
 </table>
 </div>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-ac-beta">
-<caption><span class="caption-number">Tabla 3 </span><span class="caption-text">Parámetros de la distribución Beta(α, β) de la tenencia de A/C, variante C, según la ecuación <a class="reference internal" href="#equation-eq-beta-momentos">(1)</a>.</span><a class="headerlink" href="#tab-ac-beta" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 4 </span><span class="caption-text">Parámetros de la distribución Beta(α, β) de la tenencia de A/C, variante C, según la ecuación <a class="reference internal" href="#equation-eq-beta-momentos">(45)</a>.</span><a class="headerlink" href="#tab-ac-beta" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Año</p></th>
 <th class="head"><p>E1</p></th>
@@ -726,7 +730,7 @@
 <section id="envolvente-y-posicion-de-la-vivienda">
 <h2>Envolvente y posición de la vivienda<a class="headerlink" href="#envolvente-y-posicion-de-la-vivienda" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-techo">
-<caption><span class="caption-number">Tabla 4 </span><span class="caption-text">Material del techo por grupo de estrato (ECV 2024) y efecto sobre la tenencia de A/C.</span><a class="headerlink" href="#tab-techo" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Material del techo por grupo de estrato (ECV 2024) y efecto sobre la tenencia de A/C.</span><a class="headerlink" href="#tab-techo" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepto</p></th>
 <th class="head"><p>E1–2</p></th>
@@ -763,9 +767,9 @@
 </tbody>
 </table>
 </div>
-<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 82</span></a>).</p>
+<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 83</span></a>).</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-posicion">
-<caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Viviendas del catastro por estrato y posición frente a la cubierta (% de las viviendas de cada estrato).</span><a class="headerlink" href="#tab-posicion" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 6 </span><span class="caption-text">Viviendas del catastro por estrato y posición frente a la cubierta (% de las viviendas de cada estrato).</span><a class="headerlink" href="#tab-posicion" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepto</p></th>
 <th class="head"><p>E1</p></th>
@@ -841,7 +845,7 @@
 <section id="envolvente-climatizacion-y-consigna-ceela">
 <h2>Envolvente, climatización y consigna (CEELA)<a class="headerlink" href="#envolvente-climatizacion-y-consigna-ceela" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-ceela-insumos">
-<caption><span class="caption-number">Tabla 6 </span><span class="caption-text">Insumos de la línea base de CEELA para los arquetipos de Barranquilla.</span><a class="headerlink" href="#tab-ceela-insumos" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 7 </span><span class="caption-text">Insumos de la línea base de CEELA para los arquetipos de Barranquilla.</span><a class="headerlink" href="#tab-ceela-insumos" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Insumo</p></th>
 <th class="head"><p>E1–E2 (VIS)</p></th>
@@ -902,12 +906,12 @@
 </tbody>
 </table>
 </div>
-<p>La <a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 6</span></a> traduce las tipologías de CEELA a estratos con la correspondencia VIS = E1–E2 y no VIS = E3–E6 (supuesto S15), y separa casas y apartamentos con la posición frente a la cubierta del catastro (<a class="reference internal" href="#tab-posicion"><span class="std std-numref">Tabla 5</span></a>). En CEELA la vivienda unifamiliar no VIS es de estratos 5 y 6 en la tabla de ventanas y de estratos 3 a 6 en la de climatización; aquí se usa para las casas de E3 a E6. Los valores son el centro de los rangos de cada arquetipo; el detalle por tipología y las limitaciones están en <a class="reference internal" href="16_ceela.html"><span class="std std-doc">Línea base de CEELA</span></a>.</p>
+<p>La <a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 7</span></a> traduce las tipologías de CEELA a estratos con la correspondencia VIS = E1–E2 y no VIS = E3–E6 (supuesto S15), y separa casas y apartamentos con la posición frente a la cubierta del catastro (<a class="reference internal" href="#tab-posicion"><span class="std std-numref">Tabla 6</span></a>). En CEELA la vivienda unifamiliar no VIS es de estratos 5 y 6 en la tabla de ventanas y de estratos 3 a 6 en la de climatización; aquí se usa para las casas de E3 a E6. Los valores son el centro de los rangos de cada arquetipo; el detalle por tipología y las limitaciones están en <a class="reference internal" href="16_ceela.html"><span class="std std-doc">Línea base de CEELA</span></a>.</p>
 </section>
 <section id="equipos-y-uso">
 <h2>Equipos y uso<a class="headerlink" href="#equipos-y-uso" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-vent-nevera">
-<caption><span class="caption-number">Tabla 7 </span><span class="caption-text">Tenencia de ventilador y nevera por estrato, ECV 2024 (% de hogares; entre paréntesis, semiancho del IC 95 % con efecto de diseño).</span><a class="headerlink" href="#tab-vent-nevera" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 8 </span><span class="caption-text">Tenencia de ventilador y nevera por estrato, ECV 2024 (% de hogares; entre paréntesis, semiancho del IC 95 % con efecto de diseño).</span><a class="headerlink" href="#tab-vent-nevera" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Equipo</p></th>
 <th class="head"><p>E1</p></th>
@@ -951,7 +955,7 @@
 </table>
 </div>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-uso-ac">
-<caption><span class="caption-number">Tabla 8 </span><span class="caption-text">Uso del A/C según la ECV 2019, hogares con A/C.</span><a class="headerlink" href="#tab-uso-ac" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 9 </span><span class="caption-text">Uso del A/C según la ECV 2019, hogares con A/C.</span><a class="headerlink" href="#tab-uso-ac" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepto</p></th>
 <th class="head"><p>E1</p></th>
@@ -1006,9 +1010,9 @@
 </tbody>
 </table>
 </div>
-<p>La ECV 2019 no pregunta el número de equipos de A/C. Las horas declaradas son la suma de los equipos del hogar, así que más de 12 h al día indica, con probabilidad alta, más de un equipo. Esa fracción es de 0 % a 2,7 % en los estratos 1 a 4 y de 8 % a 9 % en los estratos 5 y 6. El prior del número de equipos se construirá con esa fracción y con la zona climatizada de CEELA (Fase 1, paso 6; <a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 6</span></a>).</p>
+<p>La ECV 2019 no pregunta el número de equipos de A/C. Las horas declaradas son la suma de los equipos del hogar, así que más de 12 h al día indica, con probabilidad alta, más de un equipo. Esa fracción es de 0 % a 2,7 % en los estratos 1 a 4 y de 8 % a 9 % en los estratos 5 y 6. El prior del número de equipos se construirá con esa fracción y con la zona climatizada de CEELA (Fase 1, paso 6; <a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 7</span></a>).</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-pc">
-<caption><span class="caption-number">Tabla 9 </span><span class="caption-text">Horas diarias de ventilador en hogares con y sin A/C (ECV 2019) y valor implícito de <span class="math notranslate nohighlight">\(p_c\)</span>.</span><a class="headerlink" href="#tab-pc" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 10 </span><span class="caption-text">Horas diarias de ventilador en hogares con y sin A/C (ECV 2019) y valor implícito de <span class="math notranslate nohighlight">\(p_c\)</span>.</span><a class="headerlink" href="#tab-pc" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepto</p></th>
 <th class="head"><p>E1</p></th>
@@ -1053,12 +1057,12 @@
 </div>
 <p>En la propuesta, <span class="math notranslate nohighlight">\(p_c\)</span> es la probabilidad de que el ventilador de la zona siga encendido mientras funciona el A/C (Tabla 5 de la propuesta). Si el A/C funciona dentro de las horas en que el hogar usaría el ventilador, las horas de ventilador que se pierden son la fracción <span class="math notranslate nohighlight">\(1-p_c\)</span> de las horas de A/C:</p>
 <div class="math notranslate nohighlight" id="equation-eq-pc">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq-pc" title="Link to this equation">#</a></span>\[
+<span class="eqno">(46)<a class="headerlink" href="#equation-eq-pc" title="Link to this equation">#</a></span>\[
 1 - p_c \approx \frac{\bar h_{v}^{\,\text{sin A/C}} - \bar h_{v}^{\,\text{con A/C}}}{\bar h_{\text{A/C}}}
 \]</div>
-<p>Con la ecuación <a class="reference internal" href="#equation-eq-pc">(2)</a>, el A/C desplaza menos de media hora de ventilador al día en los estratos 1, 3 y 4, y 1,2 h en el estrato 2. Se propone un prior centrado en <span class="math notranslate nohighlight">\(p_c \approx 0{,}95\)</span> con rango de 0,8 a 1,0. Los estratos 5 y 6 no permiten la comparación, porque solo 7 y 1 hogares de la muestra no tienen A/C. Para ellos se usa el mismo prior.</p>
+<p>Con la ecuación <a class="reference internal" href="#equation-eq-pc">(46)</a>, el A/C desplaza menos de media hora de ventilador al día en los estratos 1, 3 y 4, y 1,2 h en el estrato 2. Se propone un prior centrado en <span class="math notranslate nohighlight">\(p_c \approx 0{,}95\)</span> con rango de 0,8 a 1,0. Los estratos 5 y 6 no permiten la comparación, porque solo 7 y 1 hogares de la muestra no tienen A/C. Para ellos se usa el mismo prior.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-nevera">
-<caption><span class="caption-number">Tabla 10 </span><span class="caption-text">Tamaño y antigüedad de la nevera, ECV 2019 (% de los hogares con nevera).</span><a class="headerlink" href="#tab-nevera" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 11 </span><span class="caption-text">Tamaño y antigüedad de la nevera, ECV 2019 (% de los hogares con nevera).</span><a class="headerlink" href="#tab-nevera" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepto</p></th>
 <th class="head"><p>E1</p></th>
@@ -1106,7 +1110,7 @@
 <section id="hogar-y-presencia-en-la-vivienda">
 <h2>Hogar y presencia en la vivienda<a class="headerlink" href="#hogar-y-presencia-en-la-vivienda" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-hogar">
-<caption><span class="caption-number">Tabla 11 </span><span class="caption-text">Atributos del hogar por estrato.</span><a class="headerlink" href="#tab-hogar" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 12 </span><span class="caption-text">Atributos del hogar por estrato.</span><a class="headerlink" href="#tab-hogar" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepto</p></th>
 <th class="head"><p>E1</p></th>
@@ -1150,7 +1154,7 @@
 </table>
 </div>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-presencia">
-<caption><span class="caption-number">Tabla 12 </span><span class="caption-text">Composición de las personas de 10 años o más y presencia en la vivienda por grupo de estrato, ENUT 2024–2025 (Atlántico, cabeceras).</span><a class="headerlink" href="#tab-presencia" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 13 </span><span class="caption-text">Composición de las personas de 10 años o más y presencia en la vivienda por grupo de estrato, ENUT 2024–2025 (Atlántico, cabeceras).</span><a class="headerlink" href="#tab-presencia" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepto</p></th>
 <th class="head"><p>E1–2</p></th>
@@ -1202,7 +1206,7 @@
 <section id="expansion-y-calibracion">
 <h2>Expansión y calibración<a class="headerlink" href="#expansion-y-calibracion" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-calibracion">
-<caption><span class="caption-number">Tabla 13 </span><span class="caption-text">Hogares por estrato y consumo facturado residencial (SUI, Barranquilla urbano).</span><a class="headerlink" href="#tab-calibracion" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 14 </span><span class="caption-text">Hogares por estrato y consumo facturado residencial (SUI, Barranquilla urbano).</span><a class="headerlink" href="#tab-calibracion" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepto</p></th>
 <th class="head"><p>E1</p></th>

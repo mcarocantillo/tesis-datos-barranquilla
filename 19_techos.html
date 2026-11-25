@@ -217,7 +217,11 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="30_marco_teorico.html">Marco teórico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
@@ -471,7 +475,7 @@ convolucional acierta más que reglas simples sobre el promedio de los píxeles 
 CC BY-SA 4.0. Se descargaron el 20 de noviembre de 2026 desde el navegador, porque el servidor rechaza las descargas
 automáticas.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-techos-capas">
-<caption><span class="caption-number">Tabla 27 </span><span class="caption-text">Capas usadas en el piloto.</span><a class="headerlink" href="#tab-techos-capas" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 28 </span><span class="caption-text">Capas usadas en el piloto.</span><a class="headerlink" href="#tab-techos-capas" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Capa</p></th>
 <th class="head"><p>Servicio</p></th>
@@ -507,7 +511,7 @@ para las seis zonas, entre los percentiles 2 y 98 de cada banda, de modo que un 
 <p>Se tomó un recorte de 200 × 200 m por estrato, en el barrio con más construcciones de uno o dos pisos y más manzanas de
 ese estrato, entre diez candidatos.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-techos-zonas">
-<caption><span class="caption-number">Tabla 28 </span><span class="caption-text">Zonas del piloto. Construcciones del catastro que caen en el recorte y techos después de unirlas por predio.</span><a class="headerlink" href="#tab-techos-zonas" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 29 </span><span class="caption-text">Zonas del piloto. Construcciones del catastro que caen en el recorte y techos después de unirlas por predio.</span><a class="headerlink" href="#tab-techos-zonas" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Zona</p></th>
 <th class="head"><p>Barrio</p></th>
@@ -579,14 +583,14 @@ ese estrato, entre diez candidatos.</p>
 cocina de atrás o un patio cubierto, cada una con su polígono. En las zonas de los estratos 1 a 3, cerca de una de cada
 cinco construcciones mide menos de 20 m², y en la primera versión del piloto esos pedazos se etiquetaban como techos
 completos. Por eso las construcciones que se tocan y pertenecen al mismo terreno, es decir, que comparten los 21
-primeros dígitos del número predial, se unen en un solo techo (<a class="reference internal" href="#fig-techos-union"><span class="std std-numref">Figura 22</span></a>). La unión se hace ampliando
+primeros dígitos del número predial, se unen en un solo techo (<a class="reference internal" href="#fig-techos-union"><span class="std std-numref">Figura 43</span></a>). La unión se hace ampliando
 cada polígono 0,3 m, uniéndolos y reduciendo el resultado 0,3 m, para cerrar las rendijas entre polígonos vecinos. Los
 techos de menos de 20 m² se descartan.</p>
 <figure class="align-default" id="fig-techos-union">
 <a class="reference internal image-reference" href="_images/1_union_poligonos.png"><img alt="_images/1_union_poligonos.png" src="_images/1_union_poligonos.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 22 </span><span class="caption-text">Construcciones del catastro antes y después de unirlas por predio, en un área de 60 × 60 m de El Milagro. Los puntos rojos marcan polígonos de menos de 20 m².</span><a class="headerlink" href="#fig-techos-union" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 43 </span><span class="caption-text">Construcciones del catastro antes y después de unirlas por predio, en un área de 60 × 60 m de El Milagro. Los puntos rojos marcan polígonos de menos de 20 m².</span><a class="headerlink" href="#fig-techos-union" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Los polígonos a veces quedan corridos uno o dos metros respecto al techo de la imagen, y en los edificios altos el techo
@@ -595,7 +599,7 @@ el color se mide solo con los píxeles que están a más de 0,7 m del borde del 
 </section>
 <section id="arboles-y-sombra">
 <h3>Árboles y sombra<a class="headerlink" href="#arboles-y-sombra" title="Link to this heading">#</a></h3>
-<p>Los árboles y la sombra se marcan píxel por píxel antes de medir el color (<a class="reference internal" href="#fig-techos-mascara"><span class="std std-numref">Figura 23</span></a>). Un píxel es
+<p>Los árboles y la sombra se marcan píxel por píxel antes de medir el color (<a class="reference internal" href="#fig-techos-mascara"><span class="std std-numref">Figura 44</span></a>). Un píxel es
 árbol si su índice de vegetación de diferencia normalizada <span class="bibtex-citation" id="id2">(<a class="reference internal" href="09_referencias.html#id87" title="J. W. Rouse, R. H. Haas, J. A. Schell y D. W. Deering. Monitoring Vegetation Systems in the Great Plains with ERTS. En Third Earth Resources Technology Satellite-1 Symposium, volumen 1, 309–317. NASA, 1974. NASA SP-351.">Rouse et al., 1974</a>)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -609,7 +613,7 @@ negros. Con un umbral más alto, de 0,12 en el visible, la máscara marcaba como
 <a class="reference internal image-reference" href="_images/2_sombra_arboles.png"><img alt="_images/2_sombra_arboles.png" src="_images/2_sombra_arboles.png" style="width: 85%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 23 </span><span class="caption-text">Píxeles marcados como árbol (verde) y como sombra (morado) en Cevillar y El Golf.</span><a class="headerlink" href="#fig-techos-mascara" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 44 </span><span class="caption-text">Píxeles marcados como árbol (verde) y como sombra (morado) en Cevillar y El Golf.</span><a class="headerlink" href="#fig-techos-mascara" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Un techo con menos de la mitad de sus píxeles interiores visibles queda como «no visible» sin etiquetarlo a mano. En
@@ -618,9 +622,9 @@ la primera versión esa clase se etiquetaba a ojo y era la que más se confundí
 <section id="tono-y-color">
 <h3>Tono y color<a class="headerlink" href="#tono-y-color" title="Link to this heading">#</a></h3>
 <p>La absortancia depende de cuán claro u oscuro es el techo más que de su matiz. Por eso la clase que se predice para la
-tesis es el tono, en tres niveles, y el color queda aparte como demostración (<a class="reference internal" href="#tab-techos-tonos"><span class="std std-numref">Tabla 29</span></a>).</p>
+tesis es el tono, en tres niveles, y el color queda aparte como demostración (<a class="reference internal" href="#tab-techos-tonos"><span class="std std-numref">Tabla 30</span></a>).</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-techos-tonos">
-<caption><span class="caption-number">Tabla 29 </span><span class="caption-text">Tonos que se predicen y colores que incluye cada uno.</span><a class="headerlink" href="#tab-techos-tonos" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 30 </span><span class="caption-text">Tonos que se predicen y colores que incluye cada uno.</span><a class="headerlink" href="#tab-techos-tonos" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Tono</p></th>
 <th class="head"><p>Incluye</p></th>
@@ -701,7 +705,7 @@ corregidas y la fracción de techos no visibles de cada estrato.</p>
 misma validación por zona. Se etiquetaron 229 techos: 125 gris oscuro, 54 claros o blancos, 30 no visibles, 15 de teja
 roja y 5 pintados de verde o azul. La clase gris metálico no llegó a cinco ejemplos y quedó fuera.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-techos-v1">
-<caption><span class="caption-number">Tabla 30 </span><span class="caption-text">Resultados de la primera versión, con validación por zona.</span><a class="headerlink" href="#tab-techos-v1" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Tabla 31 </span><span class="caption-text">Resultados de la primera versión, con validación por zona.</span><a class="headerlink" href="#tab-techos-v1" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Modelo</p></th>
 <th class="head"><p>Exactitud</p></th>
@@ -725,7 +729,7 @@ roja y 5 pintados de verde o azul. La clase gris metálico no llegó a cinco eje
 </div>
 <p>La mayor exactitud del bosque es engañosa. El 55 % de los techos etiquetados era gris oscuro, y el bosque acierta sobre
 todo esa clase, mientras que no acierta ninguno de los 30 no visibles ni de los 5 pintados
-(<a class="reference internal" href="#fig-techos-v1"><span class="std std-numref">Figura 24</span></a>). La ResNet50 reparte mejor el acierto entre clases, pero clasifica como no visibles 33 de
+(<a class="reference internal" href="#fig-techos-v1"><span class="std std-numref">Figura 45</span></a>). La ResNet50 reparte mejor el acierto entre clases, pero clasifica como no visibles 33 de
 los 125 techos gris oscuro. Al revisar los recortes aparecieron tres causas comunes a los dos modelos. Muchos
 polígonos eran solo una parte del techo, la sombra y los árboles se confundían con los techos oscuros, y los techos
 marrón oscuro, verdes y azul claro no cabían bien en las clases de color. Esas tres causas son las que corrige la
@@ -734,7 +738,7 @@ segunda versión.</p>
 <a class="reference internal image-reference" href="_images/0_v1_matrices_confusion.png"><img alt="_images/0_v1_matrices_confusion.png" src="_images/0_v1_matrices_confusion.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 24 </span><span class="caption-text">Matrices de confusión de la primera versión con validación por zona. Filas: clase etiquetada. Columnas: clase predicha.</span><a class="headerlink" href="#fig-techos-v1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 45 </span><span class="caption-text">Matrices de confusión de la primera versión con validación por zona. Filas: clase etiquetada. Columnas: clase predicha.</span><a class="headerlink" href="#fig-techos-v1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Por zona, la exactitud de la ResNet50 fue de 0,51 en El Golf a 0,67 en El Prado, y la del bosque de 0,49 en El Golf a
@@ -747,19 +751,19 @@ diferencia entre zonas no se puede separar de la diferencia entre estratos.</p>
 método. Con la misma regla aplicada en local, sin etiquetas, el tono automático deja 642 techos oscuros, 110 medios, 60
 claros y 52 no visibles. Esta distribución no es todavía un resultado, porque los cortes de brillo no se han comparado
 con las etiquetas, pero muestra que los techos oscuros dominan en las zonas de los estratos 1 a 4 y que los techos claros son más
-frecuentes en El Prado y El Golf (<a class="reference internal" href="#fig-techos-tono"><span class="std std-numref">Figura 25</span></a>).</p>
+frecuentes en El Prado y El Golf (<a class="reference internal" href="#fig-techos-tono"><span class="std std-numref">Figura 46</span></a>).</p>
 <figure class="align-default" id="fig-techos-tono">
 <a class="reference internal image-reference" href="_images/3_ejemplos_tono.png"><img alt="_images/3_ejemplos_tono.png" src="_images/3_ejemplos_tono.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 25 </span><span class="caption-text">Ejemplos de techos por tono automático, con el polígono unido por predio en amarillo. Entre paréntesis, el número de techos de cada tono en las seis zonas.</span><a class="headerlink" href="#fig-techos-tono" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 46 </span><span class="caption-text">Ejemplos de techos por tono automático, con el polígono unido por predio en amarillo. Entre paréntesis, el número de techos de cada tono en las seis zonas.</span><a class="headerlink" href="#fig-techos-tono" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="demostracion-para-catastro-color-de-los-techos">
 <h2>Demostración para Catastro: color de los techos<a class="headerlink" href="#demostracion-para-catastro-color-de-los-techos" title="Link to this heading">#</a></h2>
 <p>Además de lo que necesita la tesis, la combinación de la ortoimagen con las construcciones del catastro permite asignar
-un color a cada techo de la ciudad sin entrenar ningún modelo (<a class="reference internal" href="#fig-techos-color"><span class="std std-numref">Figura 26</span></a> y <a class="reference internal" href="#fig-techos-mapa"><span class="std std-numref">Figura 27</span></a>).
+un color a cada techo de la ciudad sin entrenar ningún modelo (<a class="reference internal" href="#fig-techos-color"><span class="std std-numref">Figura 47</span></a> y <a class="reference internal" href="#fig-techos-mapa"><span class="std std-numref">Figura 48</span></a>).
 Esta información podría servir a la Gerencia de Gestión Catastral para actualizar la calificación de la cubierta, para
 identificar techos claros y oscuros en programas de techos fríos o para ubicar techos aptos para paneles solares. Los
 nombres de color son relativos a esta imagen, que no está calibrada, y los marrones oscuros todavía se confunden con los
@@ -768,14 +772,14 @@ grises oscuros. La segunda versión mide cuánto coincide el color automático c
 <a class="reference internal image-reference" href="_images/4_ejemplos_color.png"><img alt="_images/4_ejemplos_color.png" src="_images/4_ejemplos_color.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 26 </span><span class="caption-text">Ejemplos de techos por color automático. Entre paréntesis, el número de techos de cada color en las seis zonas.</span><a class="headerlink" href="#fig-techos-color" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 47 </span><span class="caption-text">Ejemplos de techos por color automático. Entre paréntesis, el número de techos de cada color en las seis zonas.</span><a class="headerlink" href="#fig-techos-color" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="fig-techos-mapa">
 <a class="reference internal image-reference" href="_images/5_mapa_colores_demo.png"><img alt="_images/5_mapa_colores_demo.png" src="_images/5_mapa_colores_demo.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 27 </span><span class="caption-text">Color automático de los techos en las seis zonas del piloto.</span><a class="headerlink" href="#fig-techos-mapa" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 48 </span><span class="caption-text">Color automático de los techos en las seis zonas del piloto.</span><a class="headerlink" href="#fig-techos-mapa" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -810,7 +814,7 @@ entre las dos.</p></li>
 <p>La carpeta <a class="reference external" href="https://github.com/mcarocantillo/tesis-datos-barranquilla/tree/main/techos"><code class="docutils literal notranslate"><span class="pre">techos/</span></code></a> del repositorio
 tiene el notebook del piloto para Colab (<code class="docutils literal notranslate"><span class="pre">piloto_techos.ipynb</span></code>), el script que genera las figuras de ejemplo
 (<code class="docutils literal notranslate"><span class="pre">scripts/ejemplos_techos.py</span></code>) y las figuras de este capítulo. Las imágenes y los polígonos no se versionan, pero se
-pueden descargar del servidor de la Gerencia de Gestión Catastral con los servicios de la <a class="reference internal" href="#tab-techos-capas"><span class="std std-numref">Tabla 27</span></a>.
+pueden descargar del servidor de la Gerencia de Gestión Catastral con los servicios de la <a class="reference internal" href="#tab-techos-capas"><span class="std std-numref">Tabla 28</span></a>.
 Las etiquetas por techo no se publican.</p>
 </section>
 </section>
