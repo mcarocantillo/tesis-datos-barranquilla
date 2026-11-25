@@ -1,6 +1,9 @@
 format: jb-book
 root: intro
 parts:
+  - caption: Fundamentos
+    chapters:
+      - file: 30_marco_teorico
   - caption: Lo principal
     chapters:
       - file: 02_analisis
