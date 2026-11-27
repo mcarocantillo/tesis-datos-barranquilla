@@ -249,6 +249,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="29_temperatura_base.html">Temperatura base de los grados-hora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
 </ul>
@@ -596,7 +597,11 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">scripts/07_dias_representativos.py</span></code></p></td>
 <td><p>Tres días representativos por mes de cada año (k-medoides exacto) con su peso, y su validación frente al mes completo</p></td>
 </tr>
-<tr class="row-even"><td><p>9</p></td>
+<tr class="row-even"><td><p>8</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">scripts/08_temperatura_base_xm.py</span></code></p></td>
+<td><p>Temperatura base de los grados-hora con la demanda diaria del mercado regulado de Air-e (XM), con bootstrap por meses, variantes y pruebas de la forma de la respuesta; usa las funciones y los datos procesados de la compuerta horaria (<a class="reference internal" href="29_temperatura_base.html"><span class="std std-doc">Temperatura base</span></a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">scripts/09_contraste_ideha.py</span> <span class="pre">CARPETA_IDEHA</span></code></p></td>
 <td><p>Contraste con la estación IDEHA-01 de Uninorte (Davis, 30 min, desde mayo de 2025): desfase diario del reloj con la radiación de cielo despejado, sesgo de ERA5-Land por hora y mes en temperatura, humedad e índice de calor, radiación global, viento y lluvia; excluye el tramo del IDEAM en UTC (29-oct-2024 a jul-2026). Los datos de la estación no se publican</p></td>
 </tr>

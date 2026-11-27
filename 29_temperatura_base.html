@@ -1,0 +1,799 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Temperatura base de los grados-hora &#8212; Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=845c8974" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '29_temperatura_base';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Línea base de CEELA para Barranquilla" href="16_ceela.html" />
+    <link rel="prev" title="Respuesta horaria al calor (compuerta horaria)" href="15_compuerta_horaria.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Datos de entrada de la tesis — demanda de enfriamiento en Barranquilla</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Datos de entrada de la tesis: demanda de enfriamiento residencial en Barranquilla
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="30_marco_teorico.html">Marco teórico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lo principal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02_analisis.html">Análisis y conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_insumos.html">Insumos del modelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_arquetipos.html">Arquetipos de vivienda (Fase 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_techos.html">Color de los techos con la ortoimagen (piloto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_propuesta.html">Cambios a la propuesta</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_datos.html">Bases de datos de la tesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_ecv.html">Encuesta de Calidad de Vida (ECV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_enut.html">Encuesta Nacional de Uso del Tiempo (ENUT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_geih.html">Gran Encuesta Integrada de Hogares (GEIH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_sui.html">Sistema Único de Información (SUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_catastro.html">Catastro de Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_xm.html">Demanda horaria de XM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27_clima.html">Clima horario (ERA5-Land, Open-Meteo e IDEAM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28_enso.html">El Niño y La Niña (ONI de la NOAA)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Detalle</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="14_encuestas.html">Encuestas usadas y representatividad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_fuentes.html">Fuentes, decisiones y glosario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_resultados.html">Resultados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Temperatura base de los grados-hora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Validación</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="11_coherencia.html">Coherencia entre fuentes y validación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_supuestos.html">Supuestos, sensibilidad y limitaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_datos_sospechosos.html">Datos sospechosos y pendientes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="08_reproducibilidad.html">Reproducibilidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_referencias.html">Referencias</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/mcarocantillo/tesis-datos-barranquilla" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/29_temperatura_base.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Temperatura base de los grados-hora</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-espera-desde-la-fisica-del-edificio">Qué se espera desde la física del edificio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos">Datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo">Método</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados">Resultados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-critica">Revisión crítica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-con-la-estimacion-mensual">Comparación con la estimación mensual</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-usa-la-tesis">Qué usa la tesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduccion">Reproducción</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="temperatura-base-de-los-grados-hora">
+<h1>Temperatura base de los grados-hora<a class="headerlink" href="#temperatura-base-de-los-grados-hora" title="Link to this heading">#</a></h1>
+<p>La propuesta resume el efecto del calor sobre el consumo con grados-hora de enfriamiento sobre una temperatura base, <span class="math notranslate nohighlight">\(CDH = \sum_h \max(0,\, HI_h - T_b)\)</span> (Ecuación 2), y prevé estimar esa base con los datos, como hace el método PRISM con facturas mensuales. La base interviene en la regresión de grados-hora con que se comparará el modelo bottom-up (Fase 3) y en los grados-hora de las fases de El Niño y La Niña (<a class="reference internal" href="28_enso.html"><span class="std std-doc">El Niño y La Niña</span></a>). Este capítulo explica cómo se estimó, qué resultó, cómo se lee desde el punto de vista térmico y qué puede estar mal en el análisis.</p>
+<p>La conclusión es que la demanda agregada de la región no tiene una temperatura base dentro del clima de Barranquilla. La base que mejor ajusta queda por debajo de la hora más fresca del periodo, de modo que los datos solo fijan un tope, unos 25 °C de índice de calor, y la demanda crece de forma casi lineal con el calor en todo el rango observado, 1,9 % por cada °C de índice de calor medio del día.</p>
+<section id="que-se-espera-desde-la-fisica-del-edificio">
+<h2>Qué se espera desde la física del edificio<a class="headerlink" href="#que-se-espera-desde-la-fisica-del-edificio" title="Link to this heading">#</a></h2>
+<p>En la teoría de los grados-día, la temperatura base no es la consigna del termostato, sino la <em>temperatura de equilibrio</em> del edificio, la temperatura exterior a la que las ganancias internas y solares compensan las pérdidas por la envolvente y la ventilación:</p>
+<div class="math notranslate nohighlight">
+\[
+T_b = T_{\text{consigna}} - \frac{\dot Q_{\text{internas}} + \dot Q_{\text{solares}}}{UA + \dot m c_p}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(UA\)</span> es la conductancia de la envolvente y <span class="math notranslate nohighlight">\(\dot m c_p\)</span> la de la ventilación. Como las ganancias son positivas, la base queda por debajo de la consigna, más cuanto mayores sean las ganancias y mejor aislada esté la vivienda. Tres razones hacen esperar en Barranquilla una base baja frente a su clima:</p>
+<ol class="arabic simple">
+<li><p><strong>Noches cálidas.</strong> La temperatura exterior rara vez baja de 24 °C y el índice de calor rara vez de 25,5 °C. Con consignas de A/C habituales, de 22 a 26 °C, y con las ganancias de la noche (personas, nevera, iluminación y el calor que la masa del edificio acumuló de día), la vivienda puede necesitar enfriamiento a cualquier hora.</p></li>
+<li><p><strong>Equipos que responden a la temperatura sin umbral.</strong> La nevera, los congeladores y los ventiladores consumen más cuanto más calor hace, de forma gradual. El compresor de una nevera trabaja más horas cuando el ambiente es más cálido, sin un punto de encendido.</p></li>
+<li><p><strong>Agregación.</strong> La demanda de XM suma cientos de miles de usuarios con consignas, viviendas y hábitos distintos. Aunque cada hogar tuviera un umbral, la suma de muchos umbrales repartidos produce una curva suave, y si casi todos están por debajo del clima observado la curva agregada se ve como una recta.</p></li>
+</ol>
+<p>Por eso una base agregada por debajo del rango observado es lo esperable, y no contradice que cada hogar encienda el A/C con un criterio de confort. Lo que mide este capítulo es la base del agregado, no la consigna de un equipo.</p>
+</section>
+<section id="datos">
+<h2>Datos<a class="headerlink" href="#datos" title="Link to this heading">#</a></h2>
+<p><strong>Demanda.</strong> Demanda comercial diaria del mercado regulado CARIBE SOL (Air-e: Atlántico, Magdalena y La Guajira), 2021–2025, suma de las 24 horas de XM (<a class="reference internal" href="26_xm.html"><span class="std std-doc">XM</span></a>). Se excluyen los mismos días que en la compuerta horaria (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>): los que tienen alguna hora anómala y los que tienen demanda no atendida mayor que 0,5 % de la del mercado. Quedan 1.399 días. Para contrastar, se usó la demanda regulada de Electricaribe (agente EDIC, siete departamentos) en 2017–2019, con 931 días.</p>
+<p><strong>Clima.</strong> Índice de calor horario de ERA5-Land de GDEX en la celda de Barranquilla (<a class="reference internal" href="27_clima.html"><span class="std std-doc">Clima</span></a>), con el mismo algoritmo de la NOAA que la compuerta. El día va de 00:00 a 24:00, hora local, igual que la demanda de XM.</p>
+</section>
+<section id="metodo">
+<h2>Método<a class="headerlink" href="#metodo" title="Link to this heading">#</a></h2>
+<p>Para cada base <span class="math notranslate nohighlight">\(T_b\)</span> de 18 a 36 °C, cada 0,1 °C, se ajusta</p>
+<div class="math notranslate nohighlight" id="equation-eq-tbase">
+<span class="eqno">(55)<a class="headerlink" href="#equation-eq-tbase" title="Link to this equation">#</a></span>\[
+100\,\ln L_d = \beta\, CDH_d(T_b) + \boldsymbol{\gamma}^{\top}\mathbf{t}_d + \delta_{m(d)} + \varepsilon_d,
+\qquad CDH_d(T_b) = \sum_{h=0}^{23} \max(0,\, HI_{d,h} - T_b)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(L_d\)</span> es la demanda del día, <span class="math notranslate nohighlight">\(\mathbf{t}_d\)</span> indica el tipo de día (sábado; domingo o festivo; fin de año; Carnaval; Semana Santa) y <span class="math notranslate nohighlight">\(\delta_{m(d)}\)</span> es un efecto fijo de cada año-mes. Los efectos fijos absorben el crecimiento de la demanda, la estacionalidad y los cambios de mercado, de modo que <span class="math notranslate nohighlight">\(\beta\)</span> y la base salen solo de las diferencias de calor entre días del mismo mes. La base estimada es la de menor suma de cuadrados de los residuos (punto de quiebre). Como medida de ajuste se usa el R² parcial del calor, la fracción de la variación que queda después del calendario y de los efectos fijos y que explican los grados-hora.</p>
+<p>El intervalo de la base se obtiene con 500 réplicas de un bootstrap por bloques de año-mes (semilla 42), que respeta la dependencia entre días del mismo mes y reestima los efectos fijos en cada réplica. Como contraste, se da también el intervalo del perfil de la suma de cuadrados, que no corrige la autocorrelación y es más estrecho de lo debido. El error estándar de la pendiente usa errores HAC de Newey-West con 7 rezagos, como la compuerta.</p>
+<p>Para saber si la respuesta es lineal se hicieron cuatro pruebas con la variante principal:</p>
+<ul class="simple">
+<li><p>la respuesta por deciles del índice de calor medio del día, con los mismos controles, que no impone ninguna forma;</p></li>
+<li><p>un término cuadrático en el índice de calor medio;</p></li>
+<li><p>dos pendientes en el índice de calor medio, con el corte que mejor ajusta;</p></li>
+<li><p>dos bases en los grados-hora horarios, una por debajo de todas las horas y otra alta, que mide si las horas más calientes pesan más por grado que las demás.</p></li>
+</ul>
+<p>En las dos últimas el corte se elige con los mismos datos, así que sus valores <span class="math notranslate nohighlight">\(p\)</span> son optimistas.</p>
+</section>
+<section id="resultados">
+<h2>Resultados<a class="headerlink" href="#resultados" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="fig-tbase">
+<a class="reference internal image-reference" href="_images/tbase_xm.png"><img alt="_images/tbase_xm.png" src="_images/tbase_xm.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 111 </span><span class="caption-text">Temperatura base con la demanda diaria de XM. (a) R² parcial del calor según la base, por variante; (b) demanda por decil del índice de calor medio del día frente al decil más fresco, con su IC 95 % (HAC) y la recta del modelo lineal.</span><a class="headerlink" href="#fig-tbase" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-tbase-variantes">
+<caption><span class="caption-number">Tabla 72 </span><span class="caption-text">Temperatura base estimada por variante. La cota superior es el percentil 97,5 del bootstrap por meses o, donde no se corrió, el extremo del intervalo del perfil.</span><a class="headerlink" href="#tab-tbase-variantes" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variante</p></th>
+<th class="head"><p>Días</p></th>
+<th class="head"><p>Hora más fresca (percentil 1)</p></th>
+<th class="head"><p>Cota superior de <span class="math notranslate nohighlight">\(T_b\)</span></p></th>
+<th class="head"><p>R² parcial del calor</p></th>
+<th class="head"><p>Respuesta (% por °C del día)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Índice de calor, CARIBE SOL 2021–2025 (principal)</p></td>
+<td><p>1.399</p></td>
+<td><p>25,7 °C</p></td>
+<td><p>25,1 °C</p></td>
+<td><p>0,591</p></td>
+<td><p>1,91 (IC 1,82–2,00)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperatura del aire</p></td>
+<td><p>1.399</p></td>
+<td><p>24,9 °C</p></td>
+<td><p>24,9 °C</p></td>
+<td><p>0,570</p></td>
+<td><p>4,42 (IC 4,22–4,63)</p></td>
+</tr>
+<tr class="row-even"><td><p>Con los grados-hora del día anterior</p></td>
+<td><p>1.399</p></td>
+<td><p>25,7 °C</p></td>
+<td><p>25,2 °C</p></td>
+<td><p>0,643</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Índice de calor sin el salto de la fórmula</p></td>
+<td><p>1.399</p></td>
+<td><p>25,7 °C</p></td>
+<td><p>25,1 °C</p></td>
+<td><p>0,589</p></td>
+<td><p>1,91</p></td>
+</tr>
+<tr class="row-even"><td><p>Solo días hábiles</p></td>
+<td><p>940</p></td>
+<td><p>25,7 °C</p></td>
+<td><p>25,6 °C (perfil)</p></td>
+<td><p>0,607</p></td>
+<td><p>1,95</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sin excluir los días con cortes</p></td>
+<td><p>1.605</p></td>
+<td><p>25,7 °C</p></td>
+<td><p>25,5 °C (perfil)</p></td>
+<td><p>0,571</p></td>
+<td><p>1,89</p></td>
+</tr>
+<tr class="row-even"><td><p>Con vacaciones escolares como control</p></td>
+<td><p>1.399</p></td>
+<td><p>25,7 °C</p></td>
+<td><p>25,5 °C (perfil)</p></td>
+<td><p>0,592</p></td>
+<td><p>1,91</p></td>
+</tr>
+<tr class="row-odd"><td><p>Índice de calor medido por el IDEAM</p></td>
+<td><p>421</p></td>
+<td><p>24,1 °C</p></td>
+<td><p>25,0 °C (perfil)</p></td>
+<td><p>0,533</p></td>
+<td><p>1,14</p></td>
+</tr>
+<tr class="row-even"><td><p>Electricaribe (EDIC), 2017–2019</p></td>
+<td><p>931</p></td>
+<td><p>25,4 °C</p></td>
+<td><p>24,9 °C</p></td>
+<td><p>0,574</p></td>
+<td><p>1,82</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>La base queda por debajo del rango observado.</strong> En todas las variantes la mejor base está por debajo de la hora más fresca (<a class="reference internal" href="#tab-tbase-variantes"><span class="std std-numref">Tabla 72</span></a>). Con una base así todas las horas cuentan, los grados-hora del día son <span class="math notranslate nohighlight">\(24\,(\overline{HI}_d - T_b)\)</span> y el ajuste es idéntico al de una regresión con el índice de calor medio del día (R² parcial de 0,591 en los dos casos). Por debajo de la hora más fresca la curva es plana (<a class="reference internal" href="#fig-tbase"><span class="std std-numref">Figura 111</span></a>a), porque cualquier base en ese tramo da el mismo ajuste, y por eso el valor puntual de la base (20,6 °C en la variante principal) no tiene significado. Solo la cota superior lo tiene: la base no supera unos 25 °C de índice de calor, que es casi la hora más fresca de la serie. La mitad de los días tiene su hora más fresca por encima de 27,1 °C, y solo 0,4 % de los días baja de 25,1 °C. Por encima de la cota el ajuste empeora de forma continua: el R² parcial baja a 0,587 con 26 °C, 0,575 con 27 °C, 0,537 con 29 °C y 0,504 con 30 °C.</p>
+<p><strong>La respuesta es casi lineal en todo el rango.</strong> Por deciles del índice de calor medio del día, la demanda sube entre 1,6 % y 2,2 % por °C en cada tramo, y ya sube 2,1 % por °C entre el decil más fresco (27,5 °C) y el siguiente (<a class="reference internal" href="#fig-tbase"><span class="std std-numref">Figura 111</span></a>b). No hay un tramo plano al comienzo, que es lo que mostraría una base dentro del rango. Con el índice de calor aparece una curvatura leve hacia abajo: el término cuadrático es negativo (<span class="math notranslate nohighlight">\(p = 0{,}03\)</span>), con dos pendientes el mejor corte está en 28,1 °C (3,5 % por °C por debajo y 1,8 % por encima), pero la ganancia de ajuste es de 0,07 puntos de R². En los grados-hora horarios, las horas por encima de 27 °C de índice de calor suman menos por grado que las demás. Con la temperatura del aire ninguna de estas pruebas es significativa (cuadrático, <span class="math notranslate nohighlight">\(p = 0{,}22\)</span>; dos pendientes, <span class="math notranslate nohighlight">\(p = 0{,}07\)</span> optimista; horas sobre 30 °C, <span class="math notranslate nohighlight">\(p = 0{,}26\)</span>).</p>
+<p>La curvatura con el índice de calor tiene una explicación sencilla. Con humedad alta, el índice de calor crece más rápido que la temperatura del aire a medida que esta sube, de modo que un grado de índice de calor al mediodía equivale a menos temperatura que un grado de noche. Si la demanda es lineal en la temperatura del aire, como indican las pruebas, en el índice de calor se ve levemente cóncava. La curvatura no indica saturación de los equipos.</p>
+<p><strong>Parte de la respuesta llega al día siguiente.</strong> Sumar los grados-hora del día anterior sube el R² parcial de 0,591 a 0,643. Es coherente con la inercia térmica (la masa de la vivienda devuelve de noche el calor del día) y con el clima, porque los días calientes suelen venir seguidos. La cota de la base no cambia.</p>
+<p><strong>Las variantes no cambian la conclusión.</strong> Ni el índice de calor sin el salto de la fórmula de la NOAA, ni los días hábiles, ni los días con cortes, ni las vacaciones escolares, ni Electricaribe en otro periodo y con otra área mueven la cota más de medio grado, y la respuesta queda entre 1,8 % y 1,95 % por °C. Con el IDEAM la respuesta es menor, 1,14 % por °C, porque la estación tiene más dispersión de un día a otro (al mediodía llega a índices de calor de más de 50 °C, que parecen errores de la humedad) y eso atenúa la pendiente. Solo tiene 421 días completos, pero también deja la base por debajo de 25 °C.</p>
+</section>
+<section id="revision-critica">
+<h2>Revisión crítica<a class="headerlink" href="#revision-critica" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-tbase-riesgos">
+<caption><span class="caption-number">Tabla 73 </span><span class="caption-text">Riesgos del análisis, qué se hizo con cada uno y qué resultó.</span><a class="headerlink" href="#tab-tbase-riesgos" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Riesgo</p></th>
+<th class="head"><p>Por qué importa</p></th>
+<th class="head"><p>Qué se hizo</p></th>
+<th class="head"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>La base no está identificada por debajo del mínimo observado</p></td>
+<td><p>Ningún dato informa qué pasa con temperaturas que no ocurren</p></td>
+<td><p>Se reporta solo la cota superior, no el valor puntual</p></td>
+<td><p>La afirmación se limita a que no hay base dentro del rango</p></td>
+</tr>
+<tr class="row-odd"><td><p>Forma impuesta por el modelo con una sola base</p></td>
+<td><p>Un modelo de una base no puede mostrar una curva convexa o con dos tramos</p></td>
+<td><p>Deciles, término cuadrático, dos pendientes y dos bases horarias</p></td>
+<td><p>Casi lineal; curvatura leve en el índice de calor que desaparece con la temperatura del aire</p></td>
+</tr>
+<tr class="row-even"><td><p>Autocorrelación entre días</p></td>
+<td><p>Intervalos demasiado estrechos</p></td>
+<td><p>Bootstrap por bloques de año-mes y errores HAC</p></td>
+<td><p>Cota de 25,1 °C con el bootstrap, frente a 25,5 °C del perfil sin corregir</p></td>
+</tr>
+<tr class="row-odd"><td><p>Valores <span class="math notranslate nohighlight">\(p\)</span> con el corte elegido en los datos</p></td>
+<td><p>Se sobrestima la evidencia de un cambio de pendiente</p></td>
+<td><p>Se declaran optimistas y se mira la ganancia de ajuste</p></td>
+<td><p>La ganancia es de 0,07 puntos de R² o menos</p></td>
+</tr>
+<tr class="row-even"><td><p>Exclusión de días con cortes</p></td>
+<td><p>Los cortes pueden ser más frecuentes en días calientes y sesgar la respuesta</p></td>
+<td><p>Variante sin excluirlos</p></td>
+<td><p>Cota y respuesta casi iguales</p></td>
+</tr>
+<tr class="row-odd"><td><p>Error de medida del clima (una celda de reanálisis para tres departamentos)</p></td>
+<td><p>Atenúa la pendiente y suaviza un quiebre, que podría ocultar una base</p></td>
+<td><p>Variantes con Electricaribe (siete departamentos) y con la estación del IDEAM</p></td>
+<td><p>La base sigue por debajo del rango. El error de medida puede reducir la pendiente, pero no crear una respuesta en el decil más fresco si no la hubiera</p></td>
+</tr>
+<tr class="row-even"><td><p>Sesgo del reanálisis</p></td>
+<td><p>La base queda en la escala de ERA5-Land</p></td>
+<td><p>La cota la fijan las horas de la noche, donde el sesgo frente al IDEAM es de +0,35 °C (<a class="reference internal" href="27_clima.html"><span class="std std-doc">Clima</span></a>)</p></td>
+<td><p>En la escala medida, la cota sería unas décimas de grado menor. El sesgo del mediodía (−2 °C) no la afecta</p></td>
+</tr>
+<tr class="row-odd"><td><p>Salto del índice de calor cerca de 26,7 °C</p></td>
+<td><p>Cae justo en la zona de la cota</p></td>
+<td><p>Variante con las dos fórmulas mezcladas en ±1 °F del umbral</p></td>
+<td><p>Sin cambios</p></td>
+</tr>
+<tr class="row-even"><td><p>Calendario incompleto</p></td>
+<td><p>Las vacaciones podrían coincidir con el calor dentro del mes</p></td>
+<td><p>Variante con vacaciones escolares</p></td>
+<td><p>Sin cambios</p></td>
+</tr>
+<tr class="row-odd"><td><p>Carga no residencial</p></td>
+<td><p>El mercado regulado incluye comercio pequeño, también con A/C</p></td>
+<td><p>No se puede separar con XM</p></td>
+<td><p>Es la base del mercado regulado, no la de los hogares. La de los hogares por estrato solo puede verse con el SUI mensual, donde queda mal identificada</p></td>
+</tr>
+<tr class="row-even"><td><p>Otras variables del tiempo</p></td>
+<td><p>Un día fresco suele ser nublado o lluvioso, con más iluminación o más gente en casa</p></td>
+<td><p>No se controlan</p></td>
+<td><p>Sesgo probablemente pequeño frente al del calor, sin evaluar</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Desde el punto de vista térmico, el resultado es coherente con la ecuación de la temperatura de equilibrio. Con noches que casi nunca bajan de 25 °C de índice de calor y ganancias internas todo el día, la temperatura de equilibrio de casi cualquier vivienda queda por debajo del clima observado. El efecto del día anterior es el que se espera de la masa térmica. La concavidad en el índice de calor se explica por la forma de ese índice y no por los equipos. Ningún resultado pide una física distinta de la del modelo.</p>
+</section>
+<section id="comparacion-con-la-estimacion-mensual">
+<h2>Comparación con la estimación mensual<a class="headerlink" href="#comparacion-con-la-estimacion-mensual" title="Link to this heading">#</a></h2>
+<p>Con el consumo mensual del SUI por estrato (<code class="docutils literal notranslate"><span class="pre">fase2/clima/scripts/04_cdh_sui.py</span></code>) el R² cambiaba poco entre 24 y 32 °C, con el máximo entre 28,5 y 30,5 °C. Ese análisis no tiene efecto fijo de mes, de modo que los grados-hora con base alta capturan también la estacionalidad del consumo, y con unos 120 meses y poca variación del calor la base no se distingue. La estimación diaria, con efectos fijos de año-mes, compara días del mismo mes y tiene diez veces más observaciones, así que es la que se adopta. La diferencia no es una contradicción, porque la mensual nunca identificó la base.</p>
+</section>
+<section id="que-usa-la-tesis">
+<h2>Qué usa la tesis<a class="headerlink" href="#que-usa-la-tesis" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Regresión de grados-hora de referencia (Fase 3).</strong> Se usará el índice de calor medio (o grados-hora con base de 25 °C o menos, que es lo mismo) en lugar de fijar una base dentro del rango, con los grados-hora del día anterior como término adicional.</p></li>
+<li><p><strong>Patrón empírico para el modelo bottom-up.</strong> El modelo calibrado debería reproducir una respuesta agregada sin umbral dentro del rango, de unos 1,9 % por °C de índice de calor medio diario, y una parte que llega al día siguiente. Es un contraste útil porque el modelo no se calibra con esta serie diaria.</p></li>
+<li><p><strong>Fases de El Niño y La Niña.</strong> La base de 26,5 °C de ese capítulo queda algo por encima de la cota (R² parcial de 0,581 frente a 0,591). Allí solo describe anomalías relativas entre fases, así que no se cambia, y queda declarada.</p></li>
+<li><p><strong>Lo que no se puede decir.</strong> Esta base es la del mercado regulado de la región. No es la consigna de los equipos de A/C ni la base de cada estrato. En el modelo, la decisión de encender el A/C depende del índice de calor interior y de la consigna, que se calibran con las encuestas y con el SUI.</p></li>
+</ul>
+</section>
+<section id="reproduccion">
+<h2>Reproducción<a class="headerlink" href="#reproduccion" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">fase2/clima/scripts/08_temperatura_base_xm.py</span></code>, con el entorno de la compuerta horaria (que tiene <code class="docutils literal notranslate"><span class="pre">holidays</span></code>), tarda unos 2 minutos. Usa la serie horaria de clima del paso 1 de <code class="docutils literal notranslate"><span class="pre">fase2/clima</span></code> y las funciones y los datos procesados de XM de la compuerta (<code class="docutils literal notranslate"><span class="pre">03_estimar.py</span></code>, <code class="docutils literal notranslate"><span class="pre">comun.py</span></code>). Salidas en <code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tbase_xm_perfil.csv</span></code>: suma de cuadrados, R² parcial y pendiente para cada base y variante;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbase_xm_forma.csv</span></code>: respuesta por decil del índice de calor y de la temperatura del aire, con su IC 95 % HAC;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbase_xm_resumen.json</span></code>: base, cotas, intervalos y pruebas de forma;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbase_xm_perfil.png</span></code>: la figura de este capítulo (copiada en <code class="docutils literal notranslate"><span class="pre">figuras/tbase_xm.png</span></code>).</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="15_compuerta_horaria.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Respuesta horaria al calor (compuerta horaria)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="16_ceela.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Línea base de CEELA para Barranquilla</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-espera-desde-la-fisica-del-edificio">Qué se espera desde la física del edificio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos">Datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo">Método</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados">Resultados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-critica">Revisión crítica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-con-la-estimacion-mensual">Comparación con la estimación mensual</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-usa-la-tesis">Qué usa la tesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduccion">Reproducción</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por María Carolina Cantillo Orozco
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

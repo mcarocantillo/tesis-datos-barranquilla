@@ -68,7 +68,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Línea base de CEELA para Barranquilla" href="16_ceela.html" />
+    <link rel="next" title="Temperatura base de los grados-hora" href="29_temperatura_base.html" />
     <link rel="prev" title="Serie de tenencia, error de la encuesta e imputación" href="05_ajustes_v3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -249,6 +249,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="29_temperatura_base.html">Temperatura base de los grados-hora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
 </ul>
@@ -645,7 +646,7 @@
 <h2>Cautelas<a class="headerlink" href="#cautelas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>XM no es demanda residencial.</strong> El mercado de Air-e mezcla usuarios residenciales, comerciales y oficiales de tres departamentos, y se usa el clima de Barranquilla como referencia de todos. Una respuesta nocturna positiva es compatible con el uso residencial del A/C, pero no lo prueba.</p></li>
-<li><p><strong>El nivel de <span class="math notranslate nohighlight">\(b\)</span> depende de la fuente del HI.</strong> Con el HI de IDEAM (654 días con datos suficientes) la respuesta nocturna baja a 0,94 %/°C. ERA5-Land subestima el HI de mediodía (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 84</span></a>), y el HI de IDEAM tiene más ruido de medida y menos días.</p></li>
+<li><p><strong>El nivel de <span class="math notranslate nohighlight">\(b\)</span> depende de la fuente del HI.</strong> Con el HI de IDEAM (654 días con datos suficientes) la respuesta nocturna baja a 0,94 %/°C. ERA5-Land subestima el HI de mediodía (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 86</span></a>), y el HI de IDEAM tiene más ruido de medida y menos días.</p></li>
 <li><p><strong>Fuente del clima.</strong> La estimación se repitió con ERA5-Land de GDEX y da lo mismo que con la copia de Open-Meteo (<a class="reference internal" href="#tab-compuerta-fuentes"><span class="std std-numref">Tabla 71</span></a>). Las dos son el mismo reanálisis, así que la repetición confirma la copia, no la calidad de ERA5-Land; la diferencia que importa sigue siendo frente al IDEAM.</p></li>
 <li><p><strong>La regla es de este ejercicio.</strong> Los umbrales (6 de 8 horas, 4 de 5 años, <span class="math notranslate nohighlight">\(p &gt; 0{,}05\)</span>) se fijaron para esta prueba; no provienen de una norma.</p></li>
 </ul>
@@ -696,11 +697,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="16_ceela.html"
+       href="29_temperatura_base.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Línea base de CEELA para Barranquilla</p>
+        <p class="prev-next-title">Temperatura base de los grados-hora</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

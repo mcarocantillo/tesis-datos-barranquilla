@@ -6,7 +6,7 @@ Los datos muestran una ciudad donde casi todos los hogares tienen ventilador y n
 
 | Tema | Hallazgo principal | Cifras clave | Fuente |
 | --- | --- | --- | --- |
-| Tenencia de A/C | Crece con el estrato y con los años; el aumento viene de más A/C dentro de cada estrato, no de cambios en la composición de la ciudad | 13 % (E1) a 98 % (E6) en 2024; ciudad 33,3 % (2019) → 41,4 % ± 4,1 (2024) → 44,9 % (2025); de los 11,6 puntos de 2019 a 2025, 10,4 vienen de las tasas por estrato | ECV 2018–2025, SUI |
+| Tenencia de A/C | Crece con el estrato y con los años; el aumento viene de más A/C dentro de cada estrato, no de cambios en la composición de la ciudad | 13 % (E1) a 98 % (E6) en 2024; ciudad 35,6 % (2019) → 41,2 % ± 2,9 (2024) → 43,1 % (2025) con la variante C; sin suavizar sube de 33,3 % a 44,9 % entre 2019 y 2025, y de esos 11,6 puntos, 10,4 vienen de las tasas por estrato | ECV 2018–2025, SUI |
 | Quién tiene A/C | El ingreso y el techo pesan aunque se controle el estrato; el tipo de vivienda y el tamaño del hogar no | Quintil 1 → 5 de ingreso: 13 % → 83 %; razón de momios por cada aumento de 1 en el logaritmo del ingreso 2,1; asbesto 0,37 y zinc 0,15 frente a concreto | ECV 2024 |
 | Uso del A/C | El hogar con A/C lo usa unas 8 h al día en todos los estratos; el equipo típico es mini-split | Mediana 8 h; 17 % declara 12 h o más; 92,5 % mini-split; 18 % central en E6 | ECV 2019 |
 | Ventilador | Es casi universal y se usa junto con el A/C, no en su lugar | 98,4 % de los hogares; 9,8 h al día con A/C frente a 11,1 sin A/C | ECV 2019 y 2024 |
@@ -88,6 +88,6 @@ Patrón estacional del consumo.
 - Ninguna fuente da la hora del día del uso. La demanda de XM responde al calor también de noche, pero su forma horaria cambia entre años, así que la forma del perfil queda como supuesto con rango (capa C) y XM se usa solo como blanco de validación por franjas ([Respuesta horaria al calor](15_compuerta_horaria.md)).
 - La ECV no registra el número de equipos de A/C. CEELA da la zona climatizada típica (una habitación en VIS, toda la vivienda en E5–E6), pero no una medición en hogares ([Línea base de CEELA](16_ceela.md)).
 - Los estratos 5 y 6 tienen 20 a 72 hogares por ola; sus tasas son inciertas aunque cercanas a 100 %.
-- El estrato 1 consume en el SUI más que el 2 y el 3 con poco A/C. Con solo lecturas reales, CEELA da 36 % menos para 2021–2024; falta descargar el SUI con ese filtro y la respuesta de Air-e.
+- El estrato 1 consume en el SUI más que el 2 y el 3 con poco A/C. CEELA, con solo lecturas reales, da 26 % menos que el consolidado en 2021–2024, y la consulta del SUI por tipo de lectura confirmó que el exceso viene de la facturación sin medición ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)); falta la respuesta de Air-e.
 - El 16,2 % de las viviendas del catastro no tiene coordenadas (sobre todo estratos 1–2) y la ciudad informal no está.
 - El clima horario se procesó con la copia de ERA5-Land de Open-Meteo y se repitió con ERA5-Land completo de GDEX (NCAR), con el mismo resultado en la compuerta horaria ([Respuesta horaria al calor](15_compuerta_horaria.md)). ERA5-Land sigue subestimando el calor del mediodía frente al IDEAM (HI −1,9 °C en promedio).

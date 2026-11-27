@@ -249,6 +249,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="29_temperatura_base.html">Temperatura base de los grados-hora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
 </ul>
@@ -676,7 +677,7 @@
 </tbody>
 </table>
 </div>
-<p>* extrapolado. Valores en %. DE y parámetros Beta (α, β) de cada celda en <code class="docutils literal notranslate"><span class="pre">Serie_suavizada_AC_2015_2027.xlsx</span></code> y <code class="docutils literal notranslate"><span class="pre">Tenencia_AC_suavizada_estrato_2015_2027.csv</span></code>.</p>
+<p>* extrapolado. Valores en %. DE y parámetros Beta (α, β) de cada celda en <code class="docutils literal notranslate"><span class="pre">Serie_suavizada_AC_2015_2027.xlsx</span></code> y <code class="docutils literal notranslate"><span class="pre">Tenencia_AC_sensibilidad_AB.csv</span></code>.</p>
 <p>Ajuste por estrato (cambio del logit por año, EE, p, sobredispersión): E1 +0,118 (0,055) p 0,03 φ 3,6; E2 +0,038 (0,043) p 0,39 φ 2,5; E3 +0,073 (0,027) p 0,01 φ 1,0; E4 +0,091 (0,108) p 0,40 φ 6,8; E5 +0,072 (0,114) p 0,53 φ 2,3; E6 +0,188 (0,228) p 0,41 φ 1,0.</p>
 </section>
 <section id="uso-ecv-2019-sin-cambios">
@@ -691,7 +692,7 @@
 <ul class="simple">
 <li><p>Horas de AC (hogares con AC): mediana 8 h/día (6 h en E3 y 7 h en E4); media 7,2; 17 % usa 12 h o más, 3,4 % más de 12 h, 1 % 24 h (7 % en E6). Tipo: 92,5 % mini-split, 3,1 % ventana, 4,4 % central (17,7 % en E6).</p></li>
 <li><p>Ventilador: con AC 9,8 h/día, sin AC 11,1 (razón 0,88). Por estrato, razón con/sin AC: E1 0,97; E2 0,90; E3 0,96; E4 1,07; E5–E6 sin datos suficientes (7 y 1 hogares sin AC). Se excluyeron 9 respuestas &gt; 24 h. El A/C desplaza menos de media hora de ventilador al día en E1, E3 y E4 y 1,2 h en E2, de modo que <span class="math notranslate nohighlight">\(p_c\)</span>, la probabilidad de que el ventilador siga encendido mientras funciona el A/C, es alta: ≈ 0,95, con rango de 0,8 a 1,0 (ver «Insumos del modelo»).</p></li>
-<li><p>Número de equipos: la ECV 2019 no lo pregunta. Prior desde horas y AC central. La zona climatizada típica de CEELA confirma lo que cita la propuesta: una habitación en VIS y E3–E4, toda la vivienda en E5–E6 (<a class="reference internal" href="16_ceela.html#tab-ceela-climatizacion"><span class="std std-numref">Tabla 74</span></a>).</p></li>
+<li><p>Número de equipos: la ECV 2019 no lo pregunta. Prior desde horas y AC central. La zona climatizada típica de CEELA confirma lo que cita la propuesta: una habitación en VIS y E3–E4, toda la vivienda en E5–E6 (<a class="reference internal" href="16_ceela.html#tab-ceela-climatizacion"><span class="std std-numref">Tabla 76</span></a>).</p></li>
 </ul>
 </section>
 <section id="techo-y-regresion-logistica">
@@ -806,8 +807,8 @@
 <td><p>4,8 %</p></td>
 <td><p>4,7 %</p></td>
 <td><p>7,3 %</p></td>
-<td><p>41,0 %</p></td>
-<td><p>28,6 %</p></td>
+<td><p>39,9 %</p></td>
+<td><p>27,7 %</p></td>
 </tr>
 <tr class="row-even"><td><p>E3</p></td>
 <td><p>52,7 %</p></td>
@@ -824,8 +825,8 @@
 <td><p>55,7 %</p></td>
 <td><p>9,8 %</p></td>
 <td><p>69,4 %</p></td>
-<td><p>81,3 %</p></td>
-<td><p>73,5 %</p></td>
+<td><p>79,0 %</p></td>
+<td><p>70,7 %</p></td>
 </tr>
 <tr class="row-even"><td><p>E5</p></td>
 <td><p>17,5 %</p></td>
@@ -833,8 +834,8 @@
 <td><p>57,8 %</p></td>
 <td><p>10,5 %</p></td>
 <td><p>73,8 %</p></td>
-<td><p>90,0 %</p></td>
-<td><p>83,5 %</p></td>
+<td><p>89,2 %</p></td>
+<td><p>82,3 %</p></td>
 </tr>
 <tr class="row-odd"><td><p>E6</p></td>
 <td><p>10,2 %</p></td>
@@ -842,8 +843,8 @@
 <td><p>71,9 %</p></td>
 <td><p>7,4 %</p></td>
 <td><p>84,2 %</p></td>
-<td><p>99,0 %</p></td>
-<td><p>97,8 %</p></td>
+<td><p>98,4 %</p></td>
+<td><p>96,6 %</p></td>
 </tr>
 <tr class="row-even"><td><p>Total</p></td>
 <td><p>54,5 %</p></td>
@@ -857,8 +858,8 @@
 </tbody>
 </table>
 </div>
-<p>Ciudad 2024 con el catastro: 41,3 % (≈ 137.500 viviendas con AC), frente a 41,8 % de la serie suavizada postestratificada (41,4 % sin suavizar). Serie del catastro 2015–2027: 30,7 / 31,8 / 32,9 / 34,1 / 35,2 / 36,4 / 37,6 / 38,8 / 40,0 / 41,3 / 42,6 / 43,9 / 45,3 %.</p>
-<p>P(AC) media por posición (2024): casas con cubierta propia 27,8 %, primeros pisos 42,1 %, últimos pisos 50,9 %, intermedios 64,7 %. <strong>Lectura:</strong> la diferencia es sobre todo efecto del estrato (estandarizada: 36,9 / 43,1 / 43,9 / 50,3 %) y el resto viene del supuesto de imputación, no de una observación.</p>
+<p>Ciudad 2024 con el catastro: 40,7 % (≈ 135.300 viviendas con AC), frente a 41,2 % de la serie suavizada postestratificada (41,4 % sin suavizar). Serie del catastro 2015–2027: 32,3 / 33,1 / 34,0 / 34,8 / 35,7 / 36,7 / 37,6 / 38,6 / 39,6 / 40,7 / 41,7 / 42,9 / 44,0 %.</p>
+<p>P(AC) media por posición (2024): casas con cubierta propia 27,3 %, primeros pisos 41,5 %, últimos pisos 50,1 %, intermedios 63,8 %. <strong>Lectura:</strong> la diferencia es sobre todo efecto del estrato (estandarizada: 36,2 / 42,4 / 43,2 / 49,6 %) y el resto viene del supuesto de imputación, no de una observación.</p>
 </section>
 <section id="sui-20152025-kwh-mes-por-suscriptor-meses-validos">
 <h2>4.7 SUI 2015–2025 (kWh/mes por suscriptor, meses válidos)<a class="headerlink" href="#sui-20152025-kwh-mes-por-suscriptor-meses-validos" title="Link to this heading">#</a></h2>
@@ -1008,7 +1009,7 @@
 </tbody>
 </table>
 </div>
-<p>Estacionalidad (2019–2025; igual con 2015–2025): alza ago–sep vs feb–mar +11 % (E1) a +28 % (E6), total +19 %. Ningún mes de 2015–2018 tiene bandera de calidad.</p>
+<p>Estacionalidad (2019–2025; igual con 2015–2025): alza ago–sep vs feb–mar +11 % (E1) a +28 % (E6), total +19 %, con todas las lecturas; con solo lecturas reales, como en la propuesta, va de +16 % a +31 % (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>). Ningún mes de 2015–2018 tiene bandera de calidad.</p>
 </section>
 <section id="ocupacion-enut-geih-sin-cambios">
 <h2>4.8 Ocupación (ENUT/GEIH), sin cambios<a class="headerlink" href="#ocupacion-enut-geih-sin-cambios" title="Link to this heading">#</a></h2>

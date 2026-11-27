@@ -268,7 +268,7 @@ Con la base (709 hogares, 646 en E1–E6): tenencia por estrato, pago mediano (P
 3. Catastro: si el uso contiene «Apartamentos» (edificio 4+), techo = concreto. Si no (hasta 3 pisos), concreto restante c' = máx(s_concreto − f_e, 0)/(1 − f_e), con f_e = fracción de viviendas del estrato en edificios 4+ y s_t = mezcla de techos de la ECV 2024 en el estrato; el resto (1 − c') se reparte entre asbesto y zinc en la proporción de la ECV.
 4. a_e se calcula (método de Brent) para que la P(AC) media **de las viviendas del catastro** del estrato sea exactamente p_e,año (E1 queda forzado; control = 0 en el Excel).
 5. Simplificación: la mezcla de techos es la de la ECV 2024 en todos los años (afecta el reparto dentro del estrato, no su total).
-6. Salidas: `Catastro_PAC_por_anio_estrato_tipo.csv` (unir por estrato_num + tipo de edificio) y hojas Imputacion_catastro, Ciudad_catastro y Por_posicion del Excel.
+6. Salidas: `Catastro_PAC_por_anio_estrato_tipo_C.csv` (se publica solo la variante C) (unir por estrato_num + tipo de edificio) y hojas Imputacion_catastro, Ciudad_catastro y Por_posicion del Excel.
 7. Sensibilidad E1 sin forzar (2024): a_E1 calibrado con la mezcla de la ECV → P(AC) E1 en catastro 14,4 % (edificio 4+ 25,8 %, hasta 3 pisos 9,7 %).
 
 

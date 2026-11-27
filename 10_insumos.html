@@ -249,6 +249,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="29_temperatura_base.html">Temperatura base de los grados-hora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
 </ul>
@@ -553,14 +554,14 @@
 <td><p>Fase 3, paso 4</p></td>
 </tr>
 <tr class="row-odd"><td><p>Alza estacional del consumo</p></td>
-<td><p>Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) (<a class="reference internal" href="17_lecturas_reales.html#tab-o3-cambio"><span class="std std-numref">Tabla 77</span></a>); con el consolidado, 10,9 % a 29,1 % (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 14</span></a>)</p></td>
+<td><p>Con lecturas reales, 15,8 % (E1) a 31,3 % (E5) (<a class="reference internal" href="17_lecturas_reales.html#tab-o3-cambio"><span class="std std-numref">Tabla 79</span></a>); con el consolidado, 10,9 % a 29,1 % (<a class="reference internal" href="#tab-calibracion"><span class="std std-numref">Tabla 14</span></a>)</p></td>
 <td><p>Variación entre años</p></td>
 <td><p>SUI 2015–2025</p></td>
 <td><p>Fase 3, pasos 2 y 5</p></td>
 </tr>
 <tr class="row-even"><td><p>Clima horario</p></td>
 <td><p>Temperatura, humedad, presión, radiación de onda corta y larga, viento, lluvia e índice de calor en hora local, 2015 a septiembre de 2026</p></td>
-<td><p>Sesgo frente al IDEAM: −0,5 °C en temperatura (+0,3 de noche, −2,1 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 84</span></a>)</p></td>
+<td><p>Sesgo frente al IDEAM: −0,5 °C en temperatura (+0,3 de noche, −2,1 °C a mediodía) (<a class="reference internal" href="11_coherencia.html#tab-coherencia-clima"><span class="std std-numref">Tabla 86</span></a>)</p></td>
 <td><p>ERA5-Land de GDEX (NCAR); copia de Open-Meteo como contraste; IDEAM. Serie de la Fase 2 con radiación en muros y cubierta, temperatura del cielo (aire 7,3 K por encima en promedio) y calendario, y EPW de 2024 en <code class="docutils literal notranslate"><span class="pre">fase2/clima/</span></code></p></td>
 <td><p>Fase 2, paso 1</p></td>
 </tr>
@@ -572,53 +573,59 @@
 </tr>
 <tr class="row-even"><td><p>Respuesta mensual del consumo al calor (Ecuación 9)</p></td>
 <td><p>Con lecturas reales, 3,3 (E4), 4,2 (E5) y 4,7 (E6) %/°C de HI medio mensual; 2,3 en E2; no significativa en E1 y E3</p></td>
-<td><p>Intervalos anchos en E1–E3 (solo anomalías interanuales); temperatura base mal identificada, rango 26,5–30 °C</p></td>
+<td><p>Intervalos anchos en E1–E3 (solo anomalías interanuales); con datos mensuales la temperatura base queda mal identificada (ver la fila siguiente)</p></td>
 <td><p>SUI (O3); ERA5-Land de GDEX; <code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/cdh_*</span></code></p></td>
 <td><p>Fase 3, paso 2 (patrón empírico)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Elección de la celda de clima</p></td>
+<tr class="row-odd"><td><p>Temperatura base de los grados-hora</p></td>
+<td><p>Con la demanda diaria de XM (2021–2025), no supera unos 25 °C de índice de calor (IC 95 % bootstrap) y queda por debajo de la hora más fresca: en el rango observado la demanda responde de forma casi lineal al HI, 1,9 % por °C de HI medio diario, y en parte al día siguiente (<a class="reference internal" href="29_temperatura_base.html"><span class="std std-doc">Temperatura base</span></a>)</p></td>
+<td><p>Cota del mercado regulado agregado, no por estrato; igual con temperatura del aire, HI sin salto, días hábiles, días con cortes, vacaciones, IDEAM y Electricaribe 2017–2019; la cota está en la escala de ERA5-Land</p></td>
+<td><p>XM; ERA5-Land de GDEX; <code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/tbase_xm_*</span></code></p></td>
+<td><p>Fase 3 (regresión de grados-hora con que se compara el modelo)</p></td>
+</tr>
+<tr class="row-even"><td><p>Elección de la celda de clima</p></td>
 <td><p>Entre las seis celdas de tierra vecinas, HI −0,8 a +0,7 °C y carga del Paso 3 −2,7 % a +3,4 %</p></td>
 <td><p>Cota de la elección de celda, no de la isla de calor</p></td>
 <td><p>ERA5-Land de GDEX; <code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/celdas_vecinas.csv</span></code></p></td>
 <td><p>Fase 2, paso 1 (sensibilidad)</p></td>
 </tr>
-<tr class="row-even"><td><p>Corrección de onda larga de la cubierta</p></td>
+<tr class="row-odd"><td><p>Corrección de onda larga de la cubierta</p></td>
 <td><p>2,3 K con la onda larga de ERA5-Land (ε = 0,9; ΔR = 43 W/m²), frente a los 3,9 K de ASHRAE del Paso 3; con ella la carga sube 3,5 % y el R² de los arquetipos no cambia</p></td>
 <td><p>ε entre 0,8 y 0,95: 2,0 a 2,4 K</p></td>
 <td><p>ERA5-Land de GDEX; <code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/onda_larga_paso3.csv</span></code></p></td>
 <td><p>Fase 2, paso 4 (módulo térmico 5R1C con la onda larga horaria)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Días representativos</p></td>
+<tr class="row-even"><td><p>Días representativos</p></td>
 <td><p>3 por mes de cada año (423 días, 2015 a septiembre de 2026) con su peso; carga mensual reconstruida con error medio de 1,2 % y anomalías mensuales con correlación 0,98</p></td>
 <td><p>Error máximo mensual de 5 % en la carga</p></td>
 <td><p>ERA5-Land de GDEX; <code class="docutils literal notranslate"><span class="pre">fase2/clima/salidas/dias_representativos*</span></code></p></td>
 <td><p>Fase 2 y Fase 3 (si el cómputo lo exige, sección 7.6 de la propuesta)</p></td>
 </tr>
-<tr class="row-even"><td><p>Fracción climatizada</p></td>
+<tr class="row-odd"><td><p>Fracción climatizada</p></td>
 <td><p>Una habitación en E1–E2 (VIS) y en casas de E3–E4; las habitaciones en apartamentos de E3–E4; toda la vivienda en E5–E6 (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 7</span></a>)</p></td>
 <td><p>Sin medición en hogares</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 1, paso 6; Fase 2, paso 2</p></td>
 </tr>
-<tr class="row-odd"><td><p>Envolvente de los arquetipos</p></td>
+<tr class="row-even"><td><p>Envolvente de los arquetipos</p></td>
 <td><p>Relación ventana-muro, U de vidrio, muros y cubierta, SRI y sombreamiento por tipología (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 7</span></a>)</p></td>
 <td><p>Centro de los rangos (S15); un edificio por tipología</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 1, paso 6; Fase 2, paso 4</p></td>
 </tr>
-<tr class="row-even"><td><p>Consigna de refrigeración</p></td>
+<tr class="row-odd"><td><p>Consigna de refrigeración</p></td>
 <td><p>Rango de 22 a 26,5 °C (<a class="reference internal" href="#tab-ceela-insumos"><span class="std std-numref">Tabla 7</span></a>)</p></td>
 <td><p>26,5 °C de CEELA; 22 °C supuesto propio (S14)</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 2, paso 5</p></td>
 </tr>
-<tr class="row-odd"><td><p>Rendimiento del A/C</p></td>
+<tr class="row-even"><td><p>Rendimiento del A/C</p></td>
 <td><p>COP de 3,0</p></td>
 <td><p>Valor central</p></td>
 <td><p>CEELA</p></td>
 <td><p>Fase 2, paso 5</p></td>
 </tr>
-<tr class="row-even"><td><p>Respuesta horaria de la demanda al calor</p></td>
+<tr class="row-odd"><td><p>Respuesta horaria de la demanda al calor</p></td>
 <td><p>Noche 1,92 %/°C (1,79–2,05) con Open-Meteo y 1,90 (1,78–2,02) con GDEX (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-fuentes"><span class="std std-numref">Tabla 71</span></a>); la noche aporta 31–34 % de la respuesta diaria; noche/tarde 0,77–0,98 (<a class="reference internal" href="15_compuerta_horaria.html#tab-compuerta-franjas"><span class="std std-numref">Tabla 69</span></a>)</p></td>
 <td><p>Forma hora a hora inestable entre años: capa C (S16)</p></td>
 <td><p>XM; ERA5-Land</p></td>
@@ -767,7 +774,7 @@
 </tbody>
 </table>
 </div>
-<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 83</span></a>).</p>
+<p>Las razones de momios provienen del modelo M2 (techo y estrato), que es el que se usa en la imputación al catastro. Al añadir el ingreso per cápita y el tipo de vivienda (modelo M3), los valores casi no cambian: 0,37 (0,24–0,57) y 0,15 (0,04–0,54). La regresión es logística ponderada con errores robustos HC1 <span class="bibtex-citation" id="id4">(<a class="reference internal" href="09_referencias.html#id40" title="David W. Hosmer, Stanley Lemeshow y Rodney X. Sturdivant. Applied Logistic Regression. Wiley, Hoboken, 2013.">Hosmer et al., 2013</a>, <a class="reference internal" href="09_referencias.html#id42" title="James G. MacKinnon y Halbert White. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29(3):305–325, 1985.">MacKinnon y White, 1985</a>)</span>, con 633 hogares. En el estrato 1, la muestra de la ECV casi no capta los edificios de 4 o más pisos, por lo que las proporciones de techo del grupo E1–2 describen sobre todo casas (<a class="reference internal" href="11_coherencia.html#tab-e1-edificios"><span class="std std-numref">Tabla 85</span></a>).</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-posicion">
 <caption><span class="caption-number">Tabla 6 </span><span class="caption-text">Viviendas del catastro por estrato y posición frente a la cubierta (% de las viviendas de cada estrato).</span><a class="headerlink" href="#tab-posicion" title="Link to this table">#</a></caption>
 <thead>

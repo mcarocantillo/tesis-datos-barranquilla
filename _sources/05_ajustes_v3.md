@@ -84,7 +84,7 @@ Variantes A, B y C para la ciudad.
 
 ## 4. Probabilidad de A/C por vivienda del catastro (variante C)
 
-Con la variante C, 40,7 % de las 332.718 viviendas del catastro tendría A/C en 2024 (unas 135.400) y 35,7 % en 2019. Con la variante A serían 41,3 % y 35,2 %.
+Con la variante C, 40,7 % de las 332.718 viviendas del catastro tendría A/C en 2024 (unas 135.300) y 35,7 % en 2019. Con la variante A serían 41,3 % y 35,2 %.
 
 **Procedimiento** (igual al de la variante A; solo cambia la tasa objetivo):
 
@@ -141,7 +141,7 @@ P(A/C) media de 2024 por posición, variante C.
 
 **ECV 2015** (catálogo 419 del DANE). Trae departamento pero no municipio, así que no sirve para Barranquilla. Sí tiene el módulo de uso de energéticos con el tipo y las horas de A/C y ventilador (P5523–P5526), igual que la de 2019, pero solo a nivel del Atlántico.
 
-**SUI, estrato 3, diciembre de 2024.** El consumo es normal (265 kWh por suscriptor), pero el valor facturado equivale a 449 COP/kWh, frente a 676–858 en los meses vecinos. Lo más probable es un crédito o una refacturación después de octubre de 2024, mes en que no se reportó consumo. Ese mes se usa para consumo y no para tarifa. Noviembre de 2024 (todos los estratos) puede incluir consumo atrasado de octubre. Ambos quedan marcados en la columna nueva `bandera_revision` del archivo del SUI.
+**SUI, estrato 3, diciembre de 2024.** El consumo es normal (265 kWh por suscriptor), pero el valor facturado equivale a 449 COP/kWh, frente a 676 en noviembre y de 1.085 a 1.161 de enero a agosto. Lo más probable es un crédito o una refacturación después de octubre de 2024, mes en que no se reportó consumo. Ese mes se usa para consumo y no para tarifa. Noviembre de 2024 (todos los estratos) puede incluir consumo atrasado de octubre. Ambos quedan marcados en la columna nueva `bandera_revision` del archivo del SUI.
 
 
 

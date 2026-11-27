@@ -249,6 +249,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="29_temperatura_base.html">Temperatura base de los grados-hora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
 </ul>
@@ -453,7 +454,7 @@
 <tbody>
 <tr class="row-even"><td><p>Tenencia de A/C</p></td>
 <td><p>Crece con el estrato y con los años; el aumento viene de más A/C dentro de cada estrato, no de cambios en la composición de la ciudad</p></td>
-<td><p>13 % (E1) a 98 % (E6) en 2024; ciudad 33,3 % (2019) → 41,4 % ± 4,1 (2024) → 44,9 % (2025); de los 11,6 puntos de 2019 a 2025, 10,4 vienen de las tasas por estrato</p></td>
+<td><p>13 % (E1) a 98 % (E6) en 2024; ciudad 35,6 % (2019) → 41,2 % ± 2,9 (2024) → 43,1 % (2025) con la variante C; sin suavizar sube de 33,3 % a 44,9 % entre 2019 y 2025, y de esos 11,6 puntos, 10,4 vienen de las tasas por estrato</p></td>
 <td><p>ECV 2018–2025, SUI</p></td>
 </tr>
 <tr class="row-odd"><td><p>Quién tiene A/C</p></td>
@@ -593,7 +594,7 @@
 <li><p>Ninguna fuente da la hora del día del uso. La demanda de XM responde al calor también de noche, pero su forma horaria cambia entre años, así que la forma del perfil queda como supuesto con rango (capa C) y XM se usa solo como blanco de validación por franjas (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>).</p></li>
 <li><p>La ECV no registra el número de equipos de A/C. CEELA da la zona climatizada típica (una habitación en VIS, toda la vivienda en E5–E6), pero no una medición en hogares (<a class="reference internal" href="16_ceela.html"><span class="std std-doc">Línea base de CEELA</span></a>).</p></li>
 <li><p>Los estratos 5 y 6 tienen 20 a 72 hogares por ola; sus tasas son inciertas aunque cercanas a 100 %.</p></li>
-<li><p>El estrato 1 consume en el SUI más que el 2 y el 3 con poco A/C. Con solo lecturas reales, CEELA da 36 % menos para 2021–2024; falta descargar el SUI con ese filtro y la respuesta de Air-e.</p></li>
+<li><p>El estrato 1 consume en el SUI más que el 2 y el 3 con poco A/C. CEELA, con solo lecturas reales, da 26 % menos que el consolidado en 2021–2024, y la consulta del SUI por tipo de lectura confirmó que el exceso viene de la facturación sin medición (<a class="reference internal" href="17_lecturas_reales.html"><span class="std std-doc">Consumo del SUI por tipo de lectura</span></a>); falta la respuesta de Air-e.</p></li>
 <li><p>El 16,2 % de las viviendas del catastro no tiene coordenadas (sobre todo estratos 1–2) y la ciudad informal no está.</p></li>
 <li><p>El clima horario se procesó con la copia de ERA5-Land de Open-Meteo y se repitió con ERA5-Land completo de GDEX (NCAR), con el mismo resultado en la compuerta horaria (<a class="reference internal" href="15_compuerta_horaria.html"><span class="std std-doc">Respuesta horaria al calor</span></a>). ERA5-Land sigue subestimando el calor del mediodía frente al IDEAM (HI −1,9 °C en promedio).</p></li>
 </ul>

@@ -247,6 +247,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04_metodologia.html">Metodología</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_ajustes_v3.html">Serie de tenencia, error de la encuesta e imputación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15_compuerta_horaria.html">Respuesta horaria al calor (compuerta horaria)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="29_temperatura_base.html">Temperatura base de los grados-hora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_ceela.html">Línea base de CEELA para Barranquilla</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_lecturas_reales.html">Consumo del SUI por tipo de lectura</a></li>
 </ul>
@@ -448,7 +449,7 @@
 <tbody>
 <tr class="row-even"><td><p>ECV 2019 (DANE, cat. 678)</p></td>
 <td><p>Única ola con horas y tipo de AC (P5523, P5524) y horas de ventilador (P5526); tamaño y edad de nevera</p></td>
-<td><p>No pregunta número de equipos de AC (verificado en el DDI). 1.009 hogares en Barranquilla (P1_DEPARTAMENTO 08 + P1_MUNICIPIO 001)</p></td>
+<td><p>No pregunta número de equipos de AC (verificado en el DDI). 1.022 hogares en 1.009 viviendas en Barranquilla (P1_DEPARTAMENTO 08 + P1_MUNICIPIO 001)</p></td>
 </tr>
 <tr class="row-odd"><td><p>ECV 2024 (cat. 861)</p></td>
 <td><p>Tenencia (P1077S11 AC, S12 ventilador, S2 nevera), techo, tipo, ingreso</p></td>
@@ -456,7 +457,7 @@
 </tr>
 <tr class="row-even"><td><p>ECV 2018–2025 (cat. 607, 678, 718, 734, 793, 827, 861, 905)</p></td>
 <td><p>Serie anual de tenencia</p></td>
-<td><p>2016 (456) y 2017 (544) no traen municipio. 2015 no se ha revisado</p></td>
+<td><p>2016 (456) y 2017 (544) no traen municipio. 2015 (cat. 419) trae departamento pero no municipio</p></td>
 </tr>
 <tr class="row-odd"><td><p>ENUT 2024–2025 (cat. 910)</p></td>
 <td><p>Duraciones de actividades</p></td>
@@ -487,7 +488,7 @@
 <li><p><strong>ECV 2024</strong> (hogar = DIRECTORIO + SECUENCIA_ENCUESTA): 709 hogares, 389.372 hogares expandidos. Todas las tablas de 2024 se recalcularon (<code class="docutils literal notranslate"><span class="pre">ecv24_tablas.py</span></code>).</p></li>
 <li><p><strong>Penetración de la ciudad = postestratificación</strong> con suscriptores SUI de diciembre de cada año (no con los pesos de la ECV, que subestiman 1–6 pp porque la ECV tiene demasiados hogares de E1).</p></li>
 <li><p><strong>Tenencia para el modelo = variante C de la serie suavizada por estrato y año</strong> (mezcla de un ajuste logit-lineal y uno de nivel constante, sin la ola 2020, con sobredispersión), expresada como <strong>Beta por estrato y año</strong>, 2015–2027. Esto sigue la propuesta («ola de cada año, suavizada entre olas», «cada proporción como Beta»).</p></li>
-<li><p><strong>Estrato 4</strong>: ya no se fija un valor; se usa la serie suavizada (70,4 % en 2019, 79,0 % en 2024). El 53 % observado en 2019 se considera sospechoso.</p></li>
+<li><p><strong>Estrato 4</strong>: ya no se fija un valor; se usa la serie suavizada, variante C (72,2 % en 2019, 76,4 % en 2024). El 53 % observado en 2019 se considera sospechoso.</p></li>
 <li><p><strong>Estrato 1 en el catastro forzado a la tasa de la ECV</strong> (suavizada), porque la propuesta dice que la tenencia viene de la ECV y no se calibra. La versión sin forzar (≈ +2 pp en E1, +0,7 pp en la ciudad) queda como <strong>sensibilidad</strong> en el registro de supuestos.</p></li>
 <li><p><strong>Imputación al catastro</strong>: tasa del estrato fija; la regresión (modelo M2 de 2024) solo reparte la tenencia según el techo dentro del estrato; edificio de 4+ pisos (uso catastral con «Apartamentos») = techo de concreto.</p></li>
 <li><p><strong>Quintiles de ingreso</strong>: excluir hogares con ingreso 0 (13 en 2024) al construir quintiles.</p></li>

@@ -1,11 +1,11 @@
 # Cambios a la propuesta
 
-**Estado (27 de octubre de 2026).** Los seis cambios de la tabla se incorporaron a la propuesta, con dos ajustes: el alza estacional de la Tabla 10 se calcula ahora con lecturas reales (+16 / +19 / +27 / +31 / +31 / +29 %), y la tenencia de la ciudad sin suavizar se reporta como 33 % (2019) y 41 % (2024).
+**Estado (27 de octubre de 2026).** Los seis cambios de la tabla se incorporaron a la propuesta, con dos ajustes: el alza estacional de la Tabla 10 se calcula ahora con lecturas reales (+16 / +19 / +27 / +31 / +31 / +29 %), y la tenencia de la ciudad sin suavizar se reporta como 33 % (2019) y 41 % (2024). La versión de noviembre de 2026 reporta en cambio la serie suavizada (variante C): 35,6 % en 2019 y 41,2 % ± 2,9 en 2024.
 
 Con la consulta del SUI por tipo de lectura ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)) se agregaron estos cambios:
 
 - La calibración usa el consumo por suscriptor con lectura real y excluye las cuentas «n/a» sin consumo; el estrato 1 se calibra solo con sus lecturas reales.
-- La Ecuación (5) incluye un factor de precio con una elasticidad por grupo de estratos (supuesto S17).
+- La Ecuación (5) incluye un factor de precio con una elasticidad por grupo de estratos (supuesto S20).
 - Se calibra con 2015 a 2025, salvo 2020, y se reservan 2023 y 2025 para la validación; la Tabla 6 se ajustó a esos años.
 - La Ecuación (10) es la que se estimó en la compuerta horaria (logaritmo de la demanda y efectos fijos de cada hora en cada mes), y en la Ecuación (9) el efecto de mes es el del mes calendario.
 - La Tabla 10 usa el consumo con lecturas reales de 2024 y la sección de avances describe el estrato 1 y la caída del consumo por suscriptor.
