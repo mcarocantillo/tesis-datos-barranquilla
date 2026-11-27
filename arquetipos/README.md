@@ -103,6 +103,7 @@ envolvente con su fuente (`salidas/tablas/env_priors_*.csv` y `.json`, y `env_pr
 | `18_atipicos_todos_edificios.py` | 2 (robustez) | DBSCAN con los 177.093 edificios, sin la matriz de Gower (distancia de Manhattan sobre las variables reescaladas, con los edificios repetidos reunidos por peso), y la solución final ajustada sin esos atípicos (AJ29, Nota 12). Primero verifica que el método reproduce los atípicos de la submuestra | 12 min |
 | `19_materiales_catastro_ecv.py` | 6 (complementario) | Techo y paredes del catastro frente a la ECV 2024 con la regla de la Nota 13, diferencias entre viviendas con y sin materiales, y el escenario de sensibilidad del techo de la Fase 2 (AJ30, AJ31); usa la salida del 12 | 2 min |
 | `20_analisis_variables.py` | 2 (complementario) | Análisis univariado, bivariado y multivariado de las variables del catastro frente a la carga, la solución final con una variable más de la variante ampliada, la ocupación del lote y la tenencia de aire acondicionado según los sanitarios en la ECV (Nota 14, A13) | 4 min |
+| `21_r2_tipologias_ceela.py` | 4 (complementario) | R² de la carga con las cuatro tipologías de CEELA (casa o apartamento, VIS o no VIS) frente a la posición × bloque y a los arquetipos | segundos |
 
 Desde la carpeta `arquetipos/`:
 

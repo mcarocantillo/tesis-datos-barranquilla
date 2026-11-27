@@ -98,7 +98,11 @@ ventanas cerradas es lognormal {cite:p}`nazaroff2021`, con anclas medidas en cli
 
 Como referencia, la sola partición por posición y bloque de estratos (9 grupos) explica 0,40 de la varianza por
 vivienda y 0,90 por m², y la tipología por reglas (tipo × posición × época × bloque, 16 tipos), 0,40 y 0,91. El
-agrupamiento suma, entonces, 0,23 por vivienda y 0,02 por m². El estrato explica entre el 12 y el 18 % de la varianza
+agrupamiento suma, entonces, 0,23 por vivienda y 0,02 por m². Las cuatro tipologías de CEELA (unifamiliar o
+multifamiliar, VIS o no VIS) {cite:p}`ceela2025b`, armadas con el catastro como casa o apartamento y estratos 1-2 o 3
+a 6, explican 0,28 por vivienda y 0,64 por m², y 0,88 si se toma la intensidad de cada tipología por el área de cada
+vivienda (frente a 0,96 de los 15 arquetipos), porque juntan el apartamento intermedio con el de último piso
+([`agr_r2_tipologias_ceela.csv`](https://github.com/mcarocantillo/tesis-datos-barranquilla/blob/main/arquetipos/salidas/tablas/agr_r2_tipologias_ceela.csv)). El estrato explica entre el 12 y el 18 % de la varianza
 que queda dentro de los grupos del diseño plano, por encima del umbral de 6 %, así que en las dos medidas se adoptó el
 diseño anidado.
 
