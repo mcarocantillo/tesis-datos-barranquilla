@@ -47,7 +47,7 @@ Esta es la variante A. El modelo usa la variante C; ver el capítulo «Serie de 
 | 2026* | 16,2 | 31,1 | 52,1 | 81,8 | 89,7 | 99,2 | 45,3 ± 2,2 |
 | 2027* | 17,9 | 31,9 | 54,0 | 83,1 | 90,4 | 99,3 | 46,7 ± 2,6 |
 
-\* extrapolado. Valores en %. DE y parámetros Beta (α, β) de cada celda en `Serie_suavizada_AC_2015_2027.xlsx` y `Tenencia_AC_suavizada_estrato_2015_2027.csv`.
+\* extrapolado. Valores en %. DE y parámetros Beta (α, β) de cada celda en `Serie_suavizada_AC_2015_2027.xlsx` y `Tenencia_AC_sensibilidad_AB.csv`.
 
 Ajuste por estrato (cambio del logit por año, EE, p, sobredispersión): E1 +0,118 (0,055) p 0,03 φ 3,6; E2 +0,038 (0,043) p 0,39 φ 2,5; E3 +0,073 (0,027) p 0,01 φ 1,0; E4 +0,091 (0,108) p 0,40 φ 6,8; E5 +0,072 (0,114) p 0,53 φ 2,3; E6 +0,188 (0,228) p 0,41 φ 1,0.
 
@@ -103,16 +103,16 @@ P(A/C) imputada por tipo de edificio, variante C.
 | Estrato | Casa | Último piso | Intermedio | 1.er piso con vivienda encima | En edificio 4+ | P(AC) 2024 edificio 4+ | P(AC) 2024 hasta 3 pisos |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | E1 | 62,1 % | 6,6 % | 19,7 % | 11,6 % | 29,5 % | 23,9 % | 8,8 % |
-| E2 | 84,0 % | 6,5 % | 4,8 % | 4,7 % | 7,3 % | 41,0 % | 28,6 % |
+| E2 | 84,0 % | 6,5 % | 4,8 % | 4,7 % | 7,3 % | 39,9 % | 27,7 % |
 | E3 | 52,7 % | 10,5 % | 27,3 % | 9,3 % | 33,9 % | 63,3 % | 40,9 % |
-| E4 | 21,3 % | 13,0 % | 55,7 % | 9,8 % | 69,4 % | 81,3 % | 73,5 % |
-| E5 | 17,5 % | 14,0 % | 57,8 % | 10,5 % | 73,8 % | 90,0 % | 83,5 % |
-| E6 | 10,2 % | 10,3 % | 71,9 % | 7,4 % | 84,2 % | 99,0 % | 97,8 % |
+| E4 | 21,3 % | 13,0 % | 55,7 % | 9,8 % | 69,4 % | 79,0 % | 70,7 % |
+| E5 | 17,5 % | 14,0 % | 57,8 % | 10,5 % | 73,8 % | 89,2 % | 82,3 % |
+| E6 | 10,2 % | 10,3 % | 71,9 % | 7,4 % | 84,2 % | 98,4 % | 96,6 % |
 | Total | 54,5 % | 8,9 % | 27,4 % | 9,1 % | | | |
 
-Ciudad 2024 con el catastro: 41,3 % (≈ 137.500 viviendas con AC), frente a 41,8 % de la serie suavizada postestratificada (41,4 % sin suavizar). Serie del catastro 2015–2027: 30,7 / 31,8 / 32,9 / 34,1 / 35,2 / 36,4 / 37,6 / 38,8 / 40,0 / 41,3 / 42,6 / 43,9 / 45,3 %.
+Ciudad 2024 con el catastro: 40,7 % (≈ 135.300 viviendas con AC), frente a 41,2 % de la serie suavizada postestratificada (41,4 % sin suavizar). Serie del catastro 2015–2027: 32,3 / 33,1 / 34,0 / 34,8 / 35,7 / 36,7 / 37,6 / 38,6 / 39,6 / 40,7 / 41,7 / 42,9 / 44,0 %.
 
-P(AC) media por posición (2024): casas con cubierta propia 27,8 %, primeros pisos 42,1 %, últimos pisos 50,9 %, intermedios 64,7 %. **Lectura:** la diferencia es sobre todo efecto del estrato (estandarizada: 36,9 / 43,1 / 43,9 / 50,3 %) y el resto viene del supuesto de imputación, no de una observación.
+P(AC) media por posición (2024): casas con cubierta propia 27,3 %, primeros pisos 41,5 %, últimos pisos 50,1 %, intermedios 63,8 %. **Lectura:** la diferencia es sobre todo efecto del estrato (estandarizada: 36,2 / 42,4 / 43,2 / 49,6 %) y el resto viene del supuesto de imputación, no de una observación.
 
 ## 4.7 SUI 2015–2025 (kWh/mes por suscriptor, meses válidos)
 
@@ -136,7 +136,7 @@ Suscriptores residenciales por estrato.
 | 2024 | 318 | 205 | 245 | 319 | 396 | 690 | 299 | 1.178 | 330.101 |
 | 2025 | 317 | 196 | 242 | 324 | 389 | 692 | 297 | 1.181 | 329.892 |
 
-Estacionalidad (2019–2025; igual con 2015–2025): alza ago–sep vs feb–mar +11 % (E1) a +28 % (E6), total +19 %. Ningún mes de 2015–2018 tiene bandera de calidad.
+Estacionalidad (2019–2025; igual con 2015–2025): alza ago–sep vs feb–mar +11 % (E1) a +28 % (E6), total +19 %, con todas las lecturas; con solo lecturas reales, como en la propuesta, va de +16 % a +31 % ([Consumo del SUI por tipo de lectura](17_lecturas_reales.md)). Ningún mes de 2015–2018 tiene bandera de calidad.
 
 ## 4.8 Ocupación (ENUT/GEIH), sin cambios
 

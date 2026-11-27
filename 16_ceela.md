@@ -51,7 +51,7 @@ Los valores de SRI se transcriben en la escala en que los reporta CEELA {cite:p}
 | Multifamiliar no VIS | E5–E6 | Toda la vivienda | Minisplit, multitubería o VRF |
 :::
 
-CEELA no da una fracción climatizada numérica. Da la zona climatizada típica por tipología y segmento ({numref}`tab-ceela-climatizacion`): una habitación en la vivienda VIS, las habitaciones en los estratos 3 y 4, y toda la vivienda en los estratos 5 y 6. Es el insumo que faltaba para el prior del número de equipos ([Insumos del modelo](10_insumos.md)), y es coherente con la ECV 2019: la fracción de hogares con A/C que lo usa más de 12 h al día, un indicio de más de un equipo, es de 0 % a 2,7 % en los estratos 1 a 4 y de 8 % a 9 % en los estratos 5 y 6 ({numref}`tab-uso-ac`).
+CEELA no da una fracción climatizada numérica. Da la zona climatizada típica por tipología y segmento ({numref}`tab-ceela-climatizacion`): una habitación en la vivienda VIS, una habitación en las casas y las habitaciones en los apartamentos de los estratos 3 y 4, y toda la vivienda en los estratos 5 y 6. Es el insumo que faltaba para el prior del número de equipos ([Insumos del modelo](10_insumos.md)), y es coherente con la ECV 2019: la fracción de hogares con A/C que lo usa más de 12 h al día, un indicio de más de un equipo, es de 0 % a 2,7 % en los estratos 1 a 4 y de 8 % a 9 % en los estratos 5 y 6 ({numref}`tab-uso-ac`).
 
 En las simulaciones, la consigna de refrigeración de Barranquilla es de **26,5 °C de temperatura operativa**, la temperatura operativa óptima del modelo de confort adaptativo de ASHRAE 55 para la ciudad, y no la temperatura del aire. El COP de refrigeración de las viviendas es **3,0**, y el sistema solo funciona cuando hay personas en la vivienda {cite:p}`ceela2025c`.
 
@@ -85,6 +85,6 @@ En los estratos 2 a 6 los dos promedios difieren entre 3 % y 7 %, y el de CEELA 
 
 - Los parámetros de la {numref}`tab-ceela-envolvente` son el **centro de los rangos** de la envolvente de cada arquetipo en la Fase 1, con la correspondencia VIS para los estratos 1 y 2 y no VIS para los estratos 3 a 6 (supuesto S15).
 - La consigna de 26,5 °C es el **límite superior** del rango de consigna del A/C; el límite inferior, 22 °C, es un supuesto propio (S14).
-- El COP de 3,0 es el valor central del rendimiento del A/C en la Fase 2.
+- El COP de 3,0 es el límite superior del prior del rendimiento del A/C en la Fase 2; el centro es la eficiencia media del parque de 2,7 W/W del BEU.
 - La zona climatizada de la {numref}`tab-ceela-climatizacion` es el prior del número de equipos y de la fracción climatizada por estrato.
 - El consumo de 64 a 107 kWh/m²·año es una **cota superior** de referencia: corresponde a climatizar toda la vivienda siempre que hay ocupantes.

@@ -30,6 +30,7 @@ parts:
       - file: 04_metodologia
       - file: 05_ajustes_v3
       - file: 15_compuerta_horaria
+      - file: 29_temperatura_base
       - file: 16_ceela
       - file: 17_lecturas_reales
   - caption: Validación

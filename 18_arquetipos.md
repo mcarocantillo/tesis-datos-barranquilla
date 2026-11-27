@@ -510,7 +510,7 @@ correr la Fase 1 completa con las mismas reglas y la misma semilla (preregistro,
 3. En la variante con diez variables, las tres numéricas agregadas entraban también como categóricas en
    k-prototypes. No afectaba la solución final.
 
-Además se calculan la V de Cramér entre los grupos del diseño plano y el estrato (0,26 por vivienda y 0,28 por m²) y el
+Además se calculan la V de Cramér entre los grupos del diseño plano y el estrato (0,26 por vivienda y 0,28 por m², con la corrección de sesgo de Bergsma) y el
 η² del estrato dentro de cada grupo, que el preregistro pedía reportar. Con la nueva corrida, la solución por m² no
 cambia. La solución por vivienda pasa de 17 a 15 arquetipos y su R² de 0,66 a 0,63, porque las casas de los estratos
 3-4 quedan en 4 grupos y no en 6. El paso de 16 a 17 estaba justo en el umbral (subía el R² en 0,0205), y la nueva
@@ -588,8 +588,9 @@ que muchas calificaciones vengan de un levantamiento antiguo que no registra tec
 la entrega no trae la fecha de la calificación y no se puede comprobar.
 
 En las paredes las dos fuentes coinciden, con entre 94 % y 100 % de bloque o ladrillo en todas las celdas, lo que
-respalda tratar los muros como mampostería. La regla marca desacuerdo en cinco celdas solo porque, cuando la ECV da
-100 %, su intervalo no tiene ancho.
+respalda tratar los muros como mampostería. La regla marca desacuerdo en cinco celdas. En tres (casas de 3-4 y de 5-6 y apartamentos de 5-6) es solo
+porque la ECV da 100 % y su intervalo no tiene ancho. En las casas y los apartamentos de 1-2 el catastro (94 %)
+queda algo por debajo del intervalo de la ECV (95–100 % y 98–100 %), una diferencia real pero pequeña.
 
 Los materiales del catastro sí entran en la Fase 2 como escenario de sensibilidad (AJ31). En cada arquetipo con techo
 propio, la proporción de concreto del prior se reemplaza por la del catastro, con la categoría ambigua como liviana, y

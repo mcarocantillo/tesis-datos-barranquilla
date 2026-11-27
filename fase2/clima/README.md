@@ -18,6 +18,7 @@ esta carpeta:
 | 5 | `scripts/05_celdas_vecinas.py [carpeta]` | Clima y carga del Paso 3 en las celdas vecinas (relee los NetCDF de GDEX, unos 10 min) |
 | 6 | `scripts/06_onda_larga_paso3.py` | Corrección de onda larga del sol-aire de la cubierta con ERA5-Land y su efecto en la carga y el R² del Paso 3 (necesita el catastro, que no se publica) |
 | 7 | `scripts/07_dias_representativos.py` | Tres días representativos por mes de cada año (k-medoides) con su peso y validación frente al mes completo |
+| 8 | `scripts/08_temperatura_base_xm.py` | Temperatura base de los grados-hora con la demanda diaria del mercado regulado de Air-e (XM), con bootstrap por meses variantes de robustez y pruebas de la forma de la respuesta; usa los datos y el entorno de la compuerta horaria (2 min) |
 | 9 | `scripts/09_contraste_ideha.py CARPETA_IDEHA` | Contraste con la estación IDEHA-01 de Uninorte (Davis, 30 min, desde mayo de 2025): desfase diario del reloj con la radiación de cielo despejado, sesgo de ERA5-Land por hora y mes en temperatura, humedad e índice de calor, radiación global, viento y lluvia; excluye el tramo del IDEAM en UTC (29-oct-2024 a jul-2026). Los datos de la estación no se publican |
 
 ## Salidas (`salidas/`)
@@ -101,7 +102,7 @@ anterior o la mitad de cada uno; la mitad de cada uno ajusta mejor, como se espe
 base: de 0,143 a 0,157 entre 24 y 32 °C (máximo en 30,5 °C). En los estratos 4 a 6, donde el ajuste es bueno (R² de
 0,54 a 0,74), el máximo está en 28,5–29 °C, pero el R² varía menos de 0,03 entre 24 y 30 °C. Con datos mensuales la
 base queda mal identificada, así que conviene tratarla como parámetro con rango (por ejemplo, 26,5 a 30 °C) y no fijarla
-con esta prueba.
+con esta prueba. La demanda diaria de XM la identifica mejor (sección siguiente).
 
 **Respuesta mensual al calor (Ecuación 9, con efectos fijos de año y de mes; HAC):**
 
@@ -118,6 +119,29 @@ La respuesta crece con el estrato, como la tenencia de A/C (13 % en el estrato 1
 estratos 4 a 6. En los estratos 1 a 3 los intervalos son anchos: con los efectos fijos de mes, β sale solo de las
 anomalías interanuales, y en el estrato 1 la fracción de suscriptores con lectura real cambia mucho entre años. Es lo
 que la propuesta anticipa: si el intervalo es muy amplio, extender la estimación a otros municipios del Caribe.
+
+## Temperatura base con la demanda diaria de XM (`scripts/08_temperatura_base_xm.py`)
+
+Detalle completo, con la lectura térmica y la revisión crítica, en el capítulo
+[Temperatura base de los grados-hora](../../29_temperatura_base.md).
+
+Con la demanda diaria del mercado regulado de Air-e (CARIBE SOL, 2021–2025, 1.399 días), los días excluidos y los
+efectos fijos de año-mes de la compuerta horaria, la base se busca de 18 a 36 °C con la menor suma de cuadrados y su
+intervalo con un bootstrap por bloques de año-mes.
+
+- La mejor base queda por debajo de la hora más fresca del periodo (percentil 1 del índice de calor horario: 25,7 °C),
+  así que el ajuste es el mismo que con el índice de calor medio del día y los datos solo dan una cota: la base no
+  supera 25,1 °C de índice de calor (24,9 °C de temperatura del aire). El valor puntual no tiene significado.
+- La respuesta es casi lineal en todo el rango: por deciles del índice de calor medio del día sube entre 1,6 % y 2,2 %
+  por °C en cada tramo, también entre los dos deciles más frescos. La curvatura leve que aparece con el índice de calor
+  desaparece con la temperatura del aire y se debe a la forma del índice.
+- Respuesta: 1,91 % por °C de índice de calor medio del día (IC HAC 1,82–2,00). Los grados-hora del día anterior suben
+  el R² parcial de 0,591 a 0,643.
+- La cota no cambia con la temperatura del aire, el índice de calor sin el salto, los días hábiles, los días con
+  cortes, las vacaciones escolares, la estación del IDEAM ni Electricaribe en 2017–2019.
+
+Salidas: `salidas/tbase_xm_perfil.csv`, `salidas/tbase_xm_forma.csv`, `salidas/tbase_xm_resumen.json` y
+`salidas/tbase_xm_perfil.png`.
 
 ## Sensibilidad a la celda (`scripts/05_celdas_vecinas.py`)
 

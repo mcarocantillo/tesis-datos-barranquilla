@@ -1,4 +1,4 @@
-"""Consumo residencial por estrato 2021-2024: SUI del repositorio frente a la Tabla 42 de CEELA (2025c).
+"""Consumo residencial por estrato 2021-2024: SUI del repositorio frente a la Tabla 42 de CEELA (2025b).
 CEELA: promedio mensual 2021-2024 con el filtro «tipo de lectura: real» del SUI (Características comunes, 3.5.1).
 Repositorio: media de kWh/suscriptor de los meses 2021-2024 sin bandera y con consumo > 0.
 Correr desde la raíz del repositorio: python scripts/ceela_sui.py"""

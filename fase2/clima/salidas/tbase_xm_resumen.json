@@ -1,0 +1,268 @@
+{
+  "variantes": [
+    {
+      "variante": "principal: HI, CARIBE SOL 2021-2025",
+      "dias": 1399,
+      "T_b": 20.6,
+      "beta_pct_por_100_CDH": 7.9533,
+      "R2_dentro_mes": 0.5909,
+      "R2_dentro_mes_lineal_media_diaria": 0.5909,
+      "beta_lineal_pct_por_C": 1.909,
+      "horas_sobre_T_b_pct": 100.0,
+      "rango_horario_variable": [
+        25.66,
+        31.0,
+        37.96
+      ],
+      "IC_perfil_aprox": [
+        18.0,
+        25.5
+      ],
+      "IC95_bootstrap_meses": [
+        18.0,
+        25.1
+      ],
+      "bootstrap_mediana": 21.8
+    },
+    {
+      "variante": "temperatura del aire",
+      "dias": 1399,
+      "T_b": 24.4,
+      "beta_pct_por_100_CDH": 18.429,
+      "R2_dentro_mes": 0.5697,
+      "R2_dentro_mes_lineal_media_diaria": 0.5697,
+      "beta_lineal_pct_por_C": 4.423,
+      "horas_sobre_T_b_pct": 99.9,
+      "rango_horario_variable": [
+        24.85,
+        27.47,
+        30.52
+      ],
+      "IC_perfil_aprox": [
+        18.0,
+        24.8
+      ],
+      "IC95_bootstrap_meses": [
+        18.2,
+        24.9
+      ],
+      "bootstrap_mediana": 24.4
+    },
+    {
+      "variante": "HI con grados-hora del día anterior",
+      "dias": 1399,
+      "T_b": 18.4,
+      "beta_pct_por_100_CDH": 6.2441,
+      "R2_dentro_mes": 0.6426,
+      "R2_dentro_mes_lineal_media_diaria": 0.5909,
+      "beta_lineal_pct_por_C": 1.909,
+      "horas_sobre_T_b_pct": 100.0,
+      "rango_horario_variable": [
+        25.66,
+        31.0,
+        37.96
+      ],
+      "IC_perfil_aprox": [
+        18.0,
+        25.5
+      ],
+      "IC95_bootstrap_meses": [
+        18.0,
+        25.2
+      ],
+      "bootstrap_mediana": 19.3
+    },
+    {
+      "variante": "HI sin el salto de la fórmula",
+      "dias": 1399,
+      "T_b": 22.1,
+      "beta_pct_por_100_CDH": 7.9491,
+      "R2_dentro_mes": 0.5893,
+      "R2_dentro_mes_lineal_media_diaria": 0.5893,
+      "beta_lineal_pct_por_C": 1.908,
+      "horas_sobre_T_b_pct": 100.0,
+      "rango_horario_variable": [
+        25.66,
+        31.0,
+        37.96
+      ],
+      "IC_perfil_aprox": [
+        18.0,
+        25.5
+      ],
+      "IC95_bootstrap_meses": [
+        18.1,
+        25.1
+      ],
+      "bootstrap_mediana": 21.3
+    },
+    {
+      "variante": "solo días hábiles",
+      "dias": 940,
+      "T_b": 21.3,
+      "beta_pct_por_100_CDH": 8.1183,
+      "R2_dentro_mes": 0.6072,
+      "R2_dentro_mes_lineal_media_diaria": 0.6072,
+      "beta_lineal_pct_por_C": 1.948,
+      "horas_sobre_T_b_pct": 100.0,
+      "rango_horario_variable": [
+        25.65,
+        31.13,
+        38.03
+      ],
+      "IC_perfil_aprox": [
+        18.0,
+        25.6
+      ]
+    },
+    {
+      "variante": "sin excluir días con cortes (DNA)",
+      "dias": 1605,
+      "T_b": 23.4,
+      "beta_pct_por_100_CDH": 7.8689,
+      "R2_dentro_mes": 0.5705,
+      "R2_dentro_mes_lineal_media_diaria": 0.5705,
+      "beta_lineal_pct_por_C": 1.889,
+      "horas_sobre_T_b_pct": 100.0,
+      "rango_horario_variable": [
+        25.7,
+        31.05,
+        37.92
+      ],
+      "IC_perfil_aprox": [
+        18.0,
+        25.5
+      ]
+    },
+    {
+      "variante": "con vacaciones escolares",
+      "dias": 1399,
+      "T_b": 19.5,
+      "beta_pct_por_100_CDH": 7.9629,
+      "R2_dentro_mes": 0.5921,
+      "R2_dentro_mes_lineal_media_diaria": 0.5921,
+      "beta_lineal_pct_por_C": 1.911,
+      "horas_sobre_T_b_pct": 100.0,
+      "rango_horario_variable": [
+        25.66,
+        31.0,
+        37.96
+      ],
+      "IC_perfil_aprox": [
+        18.0,
+        25.5
+      ]
+    },
+    {
+      "variante": "HI medido por el IDEAM (días completos)",
+      "dias": 421,
+      "T_b": 19.2,
+      "beta_pct_por_100_CDH": 4.7675,
+      "R2_dentro_mes": 0.5334,
+      "R2_dentro_mes_lineal_media_diaria": 0.5334,
+      "beta_lineal_pct_por_C": 1.144,
+      "horas_sobre_T_b_pct": 100.0,
+      "rango_horario_variable": [
+        24.07,
+        32.18,
+        53.67
+      ],
+      "IC_perfil_aprox": [
+        18.0,
+        25.0
+      ]
+    },
+    {
+      "variante": "Electricaribe (EDIC) 2017-2019",
+      "dias": 931,
+      "T_b": 23.2,
+      "beta_pct_por_100_CDH": 7.5877,
+      "R2_dentro_mes": 0.5743,
+      "R2_dentro_mes_lineal_media_diaria": 0.5743,
+      "beta_lineal_pct_por_C": 1.821,
+      "horas_sobre_T_b_pct": 100.0,
+      "rango_horario_variable": [
+        25.39,
+        31.08,
+        37.03
+      ],
+      "IC_perfil_aprox": [
+        18.0,
+        25.5
+      ],
+      "IC95_bootstrap_meses": [
+        18.1,
+        24.9
+      ],
+      "bootstrap_mediana": 22.3
+    }
+  ],
+  "forma_HI": {
+    "lineal": {
+      "beta_pct_por_C": 1.909,
+      "IC95_HAC": [
+        1.818,
+        2.0
+      ]
+    },
+    "cuadratico": {
+      "coef_c2": -0.0296,
+      "p": 0.0267
+    },
+    "dos_pendientes_hi_medio": {
+      "corte": 28.1,
+      "pendiente_bajo": 3.491,
+      "pendiente_sobre": 1.849,
+      "p_cambio_optimista": 0.0,
+      "R2_ganancia": 0.00067
+    },
+    "dos_bases_horarias": {
+      "umbral_alto": 27.0,
+      "pct_por_100_CDH_todas": 18.182,
+      "pct_por_100_CDH_extra_sobre_umbral": -10.792,
+      "p_optimista": 0.0
+    },
+    "minimo_diario": {
+      "percentiles_5_50_95": [
+        25.65,
+        27.08,
+        32.64
+      ],
+      "dias_con_alguna_hora_bajo_25.1_pct": 0.4
+    }
+  },
+  "forma_T": {
+    "lineal": {
+      "beta_pct_por_C": 4.423,
+      "IC95_HAC": [
+        4.218,
+        4.628
+      ]
+    },
+    "cuadratico": {
+      "coef_c2": -0.0883,
+      "p": 0.2201
+    },
+    "dos_pendientes_hi_medio": {
+      "corte": 26.8,
+      "pendiente_bajo": 4.969,
+      "pendiente_sobre": 4.305,
+      "p_cambio_optimista": 0.0656,
+      "R2_ganancia": 9e-05
+    },
+    "dos_bases_horarias": {
+      "umbral_alto": 30.0,
+      "pct_por_100_CDH_todas": 18.184,
+      "pct_por_100_CDH_extra_sobre_umbral": 8.321,
+      "p_optimista": 0.255
+    },
+    "minimo_diario": {
+      "percentiles_5_50_95": [
+        24.75,
+        26.13,
+        27.88
+      ],
+      "dias_con_alguna_hora_bajo_25.1_pct": 11.4
+    }
+  }
+}

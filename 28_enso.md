@@ -34,7 +34,7 @@ El archivo `fase2/clima/datos/noaa/oni.ascii.txt`, descargado el 3 de noviembre 
 
 ### Fases y episodios
 
-De los 141 meses, 49 son de El Niño (35 %), 30 de La Niña (21 %) y 62 neutros. Los episodios no se reparten de forma pareja en la década ({numref}`fig-eda-enso-oni`): la serie empieza con El Niño muy fuerte de 2015–2016, tiene tres episodios de La Niña seguidos entre 2017 y 2023 y termina con El Niño fuerte de 2023–2024 y uno nuevo que empezó en mayo de 2026. En 2022 los doce meses son de La Niña y en 2015 los doce de El Niño (`tablas/eda/enso_meses_por_fase.csv`). En el contexto de 1950 a 2026 (panel a), el pico de 2015–2016 (2,59 en noviembre–enero) es el más alto del registro, y el de 2026 (2,46 en agosto–octubre, todavía en aumento) ya supera al de 1997–1998 (2,37).
+De los 141 meses, 49 son de El Niño (35 %), 30 de La Niña (21 %) y 62 neutros. Los episodios no se reparten de forma pareja en la década ({numref}`fig-eda-enso-oni`): la serie empieza con El Niño muy fuerte de 2015–2016, tiene un episodio de La Niña en 2017–2018, dos de El Niño y tres de La Niña seguidos entre 2020 y 2023 y termina con El Niño fuerte de 2023–2024 y uno nuevo que empezó en mayo de 2026. En 2022 los doce meses son de La Niña y en 2015 los doce de El Niño (`tablas/eda/enso_meses_por_fase.csv`). En el contexto de 1950 a 2026 (panel a), el pico de 2015–2016 (2,59 en noviembre–enero) es el más alto del registro, y el de 2026 (2,46 en agosto–octubre, todavía en aumento) ya supera al de 1997–1998 (2,37).
 
 ```{figure} figuras/eda/enso_oni.png
 :name: fig-eda-enso-oni

@@ -52,7 +52,10 @@ lotes = a.groupby('npn_edificio').agg(
     habitaciones_mediana=('total_habitaciones', 'median'), anio_registrado_mediana=('anio_construccion', 'median'),
     lat=('centroide_lat', 'median'), lon=('centroide_lon', 'median')).sort_values('unidades', ascending=False)
 lotes['anio_implausible'] = lotes.anio_registrado_mediana < 1975
-lotes.reset_index().to_csv(OUT_T + 'Catastro_E1_edificios_4pisos_por_lote.csv', sep=';', index=False, encoding='utf-8-sig', decimal=',')
+# sin número predial y con coordenadas a 3 decimales: solo se publican agregados
+lotes = lotes.reset_index(drop=True); lotes.insert(0, 'edificio', [f'E{i:03d}' for i in range(1, len(lotes) + 1)])
+lotes[['lat', 'lon']] = lotes[['lat', 'lon']].round(3)
+lotes.to_csv(OUT_T + 'Catastro_E1_edificios_4pisos_por_lote.csv', sep=';', index=False, encoding='utf-8-sig', decimal=',')
 
 # ---------- 2. ECV ----------
 TE = {1: 'Concreto', 2: 'Teja de barro', 3: 'Asbesto-cemento', 4: 'Zinc/metálica', 5: 'Teja plástica'}

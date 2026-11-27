@@ -57,7 +57,7 @@
 6. Aplicar en la propuesta los seis cambios del documento «Ajustes metodológicos…».
 7. Fase 1: arquetipos con catastro + GEIH (k-prototypes; ejes estrato y tipo; diseño plano vs anidado según la propuesta), asignación de techos por estrato y tipo antes del AC, con la envolvente de CEELA como centro de los rangos (S15).
 8. Fase 2–3: cadena de presencia con ENUT, módulo térmico 5R1C, calibración ABC-SMC con SUI y XM; de XM se usa la respuesta por franjas como blanco de validación, no la forma hora a hora (S16).
-9. Evaluar el salto del índice de calor: repetir la compuerta, la Ecuación 9 y los grados-hora con un HI sin discontinuidad (por ejemplo, suavizando el paso entre las dos fórmulas) y ver si cambian $b_h$, β y la temperatura base.
+9. Evaluar el salto del índice de calor: repetir la compuerta, la Ecuación 9 y los grados-hora con un HI sin discontinuidad (por ejemplo, suavizando el paso entre las dos fórmulas) y ver si cambian $b_h$, β y la temperatura base. Avance (19-nov-2026): con un HI que mezcla las dos fórmulas en ±1 °F del umbral, la temperatura base estimada con la demanda diaria de XM no cambia (cota de 25,1 °C) y la respuesta diaria tampoco (1,91 % por °C), `fase2/clima/scripts/08_temperatura_base_xm.py`. Faltan la compuerta por hora y la Ecuación 9.
 10. Rehacer el consolidado de la ECV 2019 con la llave del hogar (DIRECTORIO + SECUENCIA_ENCUESTA) y regenerar las tablas de horas de uso, tipo de A/C, ventilador, nevera y pago de 2019.
 11. Elegir una sola regla de atípicos del cubo O3 para la calibración y llevar la otra a la sensibilidad ([SUI](24_sui.md)).
 12. Terminar el empalme de la capa 535 con las viviendas (script 12 de `arquetipos/`) y aclarar qué registros cubre.

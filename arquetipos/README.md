@@ -29,7 +29,7 @@ posición. La incertidumbre de la asignación sale de repetir el agrupamiento en
 (script 10), no de las probabilidades del clasificador. Y el puente entre las casas del catastro y las de la ECV y la
 elección de olas de la ECV entran como factores en la sensibilidad de la Fase 2.
 
-Tres pruebas de robustez dejan la solución igual. Con el clima completo de ERA5-Land de GDEX la carga sube 4,4 % y el
+Cuatro pruebas de robustez dejan la solución igual. Con el clima completo de ERA5-Land de GDEX la carga sube 4,4 % y el
 R² no cambia (AJ24, script 11). Con un techo propio por vivienda, sorteado de los priors del Paso 6, el techo solo
 entraría al agrupamiento si los techos livianos tienen cielo raso, que ni el catastro ni la ECV registran (AJ25,
 script 13). Y con todos los edificios en lugar de la submuestra, la solución por m² es idéntica y en la de por vivienda
